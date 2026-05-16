@@ -378,6 +378,9 @@
       <input type="password" id="token-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
       <button class="btn btn-green" onclick="saveToken()">Save</button>
     </div>
+    <button class="btn btn-gray btn-block" style="margin-top:8px" onclick="testToken()">
+      Test Connection
+    </button>
     <button class="btn btn-red btn-block" style="margin-top:8px" onclick="clearToken()">
       Clear Token
     </button>
@@ -449,7 +452,7 @@
     try {
       const headers = { 'Accept': 'application/vnd.github.v3+json' };
       const token = getToken();
-      if (token) headers['Authorization'] = `token ${token}`;
+      if (token) headers['Authorization'] = `Bearer ${token}`;
 
       const res  = await fetch(API, { headers });
       if (!res.ok) throw new Error(`GitHub returned ${res.status}`);
@@ -480,6 +483,23 @@
       return false;
     }
 
+    // Always fetch the freshest SHA right before writing —
+    // avoids 409 conflicts when Actions has committed since page load.
+    const freshRes = await fetch(API, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Accept':        'application/vnd.github.v3+json',
+      },
+    });
+    if (freshRes.status === 401) {
+      throw new Error('Invalid token — go to Settings, clear it, and paste it again');
+    }
+    if (!freshRes.ok) {
+      throw new Error(`Could not reach GitHub (${freshRes.status}) — check your internet connection`);
+    }
+    const freshData = await freshRes.json();
+    fileSHA = freshData.sha;   // always use the live SHA
+
     const header = '# Your stock watchlist — one ticker per line\n# Lines starting with # are ignored\n\n';
     const content = header + [...new Set(newTickers)].sort().join('\n') + '\n';
     const encoded = btoa(unescape(encodeURIComponent(content)));
@@ -487,7 +507,7 @@
     const res = await fetch(API, {
       method: 'PUT',
       headers: {
-        'Authorization': `token ${token}`,
+        'Authorization': `Bearer ${token}`,
         'Content-Type':  'application/json',
         'Accept':        'application/vnd.github.v3+json',
       },
@@ -498,12 +518,20 @@
       }),
     });
 
+    if (res.status === 401) {
+      throw new Error('Invalid token — go to Settings, clear it, and paste it again');
+    }
+    if (res.status === 409) {
+      // Conflict — someone else saved in the same instant; retry with fresh data
+      await fetchTickers();
+      throw new Error('File was just updated elsewhere — please try saving again');
+    }
     if (!res.ok) {
-      const err = await res.json();
-      throw new Error(err.message || `HTTP ${res.status}`);
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.message || `GitHub returned ${res.status}`);
     }
     const data = await res.json();
-    fileSHA = data.content.sha;   // update SHA for next save
+    fileSHA = data.content.sha;   // keep SHA in sync for subsequent saves
     return true;
   }
 
@@ -686,12 +714,17 @@
 
   // ── Settings ─────────────────────────────────────────────
   function saveToken() {
-    const t = document.getElementById('token-input').value.trim();
+    // Strip all whitespace — catches spaces, newlines, tabs, and invisible chars
+    const t = document.getElementById('token-input').value.replace(/\s/g, '');
     if (!t) { showToast('Enter a token first', 'error'); return; }
+    if (!t.startsWith('ghp_') && !t.startsWith('github_pat_')) {
+      showToast('That doesn\'t look like a GitHub token (should start with ghp_)', 'error');
+      return;
+    }
     localStorage.setItem('gh_token', t);
     document.getElementById('token-input').value = '';
     refreshTokenDisplay();
-    showToast('Token saved locally ✓', 'success');
+    showToast('Token saved ✓ — testing connection…', 'success');
     fetchTickers();
   }
 
@@ -699,6 +732,36 @@
     localStorage.removeItem('gh_token');
     refreshTokenDisplay();
     showToast('Token cleared', 'info');
+  }
+
+  async function testToken() {
+    const token = getToken();
+    if (!token) {
+      showToast('No token set — paste one above and tap Save first', 'error');
+      return;
+    }
+    showToast('Testing connection…', 'info');
+    try {
+      const res = await fetch(API, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept':        'application/vnd.github.v3+json',
+        },
+      });
+      if (res.status === 401) {
+        showToast('❌ Token rejected — clear it and paste a fresh one', 'error');
+      } else if (res.status === 404) {
+        showToast('❌ Repo not found — check OWNER/REPO in app config', 'error');
+      } else if (res.ok) {
+        const data = await res.json();
+        fileSHA = data.sha;   // refresh SHA while we're here
+        showToast(`✅ Token works — ${tickers.length} stocks loaded`, 'success');
+      } else {
+        showToast(`⚠️ Unexpected response: ${res.status}`, 'error');
+      }
+    } catch (e) {
+      showToast('Network error — check your internet connection', 'error');
+    }
   }
 
   function refreshTokenDisplay() {
