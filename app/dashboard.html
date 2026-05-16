@@ -349,6 +349,125 @@
       flex-shrink: 0;
     }
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+    /* ─── Dictionary tab button ──────────────────────────────── */
+    .tab-btn.dict         { color: var(--amber); }
+    .tab-btn.dict.active  { color: var(--amber); border-bottom-color: var(--amber); }
+
+    /* ─── Dictionary content wrapper ────────────────────────── */
+    .dict-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 20px 14px 48px;
+    }
+    .dict-section {
+      margin-bottom: 0;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+    .dict-section:first-child { border-top: none; padding-top: 0; }
+    .dict-section-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.8px;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+    }
+    .dict-h2 {
+      font-size: 17px; font-weight: 800; letter-spacing: -0.3px;
+      color: var(--text); margin-bottom: 8px;
+    }
+    .dict-p {
+      font-size: 13px; color: #4b5563; line-height: 1.7; margin-bottom: 8px;
+    }
+
+    /* Card + callout side-by-side */
+    .dict-card-stage {
+      display: flex; gap: 12px; align-items: flex-start; margin: 14px 0 20px;
+    }
+    .dict-card-stage .stock-card {
+      width: 162px; flex-shrink: 0; cursor: default; pointer-events: none;
+    }
+    .dict-callout-list {
+      flex: 1; display: flex; flex-direction: column; gap: 7px; padding-top: 2px;
+    }
+    .dict-callout-item {
+      display: flex; align-items: flex-start; gap: 7px;
+      font-size: 11.5px; line-height: 1.4;
+    }
+    .dict-callout-num {
+      width: 19px; height: 19px; border-radius: 50%;
+      background: var(--text); color: #fff;
+      font-size: 9.5px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .dict-callout-text { color: #4b5563; }
+    .dict-callout-text strong { color: var(--text); font-weight: 700; }
+
+    /* Metric breakdown table */
+    .dict-table {
+      width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 12.5px;
+    }
+    .dict-table th {
+      text-align: left; font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+      text-transform: uppercase; color: var(--muted);
+      border-bottom: 2px solid var(--border); padding: 5px 8px;
+    }
+    .dict-table td {
+      padding: 9px 8px; border-bottom: 1px solid var(--border); vertical-align: top;
+    }
+    .dict-table tr:last-child td { border-bottom: none; }
+    .dict-table td:first-child { font-weight: 700; color: var(--text); width: 36%; }
+    .dict-table td:last-child { color: #4b5563; line-height: 1.5; }
+
+    /* Metric value chips */
+    .mv   { display:inline-block; background:var(--bg); border:1px solid var(--border); border-radius:4px; padding:1px 6px; font-family:monospace; font-size:11px; font-weight:700; color:var(--text); margin-bottom:2px; }
+    .mv.g { background:#ecfdf5; border-color:#a7f3d0; color:#065f46; }
+    .mv.r { background:#fef2f2; border-color:#fecaca; color:#991b1b; }
+    .mv.a { background:#fffbeb; border-color:#fde68a; color:#92400e; }
+
+    /* Signal grid */
+    .dict-signal-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px;
+    }
+    .dict-signal-item {
+      background: var(--card); border: 1px solid var(--border);
+      border-left: 4px solid; border-radius: 8px; padding: 10px;
+    }
+    .dict-signal-label { font-size: 11px; font-weight: 800; letter-spacing: 0.3px; margin-bottom: 2px; }
+    .dict-signal-desc  { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+    /* Run schedule grid */
+    .dict-run-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px;
+    }
+    .dict-run-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px;
+    }
+    .dict-run-card h4 { font-size: 12px; font-weight: 800; color: var(--text); margin-bottom: 3px; }
+    .dict-run-card p  { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+    /* Setup steps */
+    .dict-steps { margin-top: 12px; }
+    .dict-step  { display: flex; gap: 10px; margin-bottom: 12px; align-items: flex-start; }
+    .dict-step-num {
+      width: 25px; height: 25px; border-radius: 50%;
+      background: var(--bg); border: 2px solid var(--border);
+      color: var(--text); font-size: 12px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .dict-step-title { font-size: 13px; font-weight: 700; color: var(--text); display: block; margin-bottom: 1px; }
+    .dict-step-desc  { font-size: 12px; color: var(--muted); }
+    .dict-step-url   {
+      display: inline-block; font-family: monospace; font-size: 10.5px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 4px; padding: 2px 7px; margin-top: 3px;
+      color: var(--text); word-break: break-all;
+    }
+
+    /* Disclaimer */
+    .dict-disclaimer {
+      background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px;
+      padding: 12px 14px; margin-top: 12px;
+      font-size: 11.5px; color: #78350f; line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -519,7 +638,20 @@
       bar.appendChild(btn);
     });
 
-    const restore = (activeTabId && tabMeta.find(t => t.id === activeTabId))
+    // Always append Dictionary tab at the far right
+    const dictSep = document.createElement('div');
+    dictSep.className = 'tab-sep';
+    bar.appendChild(dictSep);
+    const dictBtn = document.createElement('button');
+    dictBtn.className = 'tab-btn dict';
+    dictBtn.dataset.id = 'dictionary';
+    dictBtn.textContent = '📖 Dictionary';
+    dictBtn.onclick = () => selectTab('dictionary');
+    bar.appendChild(dictBtn);
+    tabMeta.push({ id: 'dictionary', label: '📖 Dictionary', type: 'dictionary' });
+
+    // Restore active tab — but never auto-restore to Dictionary on data refresh
+    const restore = (activeTabId && activeTabId !== 'dictionary' && tabMeta.find(t => t.id === activeTabId))
                     ? activeTabId : tabMeta[0]?.id;
     if (restore) selectTab(restore);
   }
@@ -537,7 +669,11 @@
     btn?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
 
     updateHeaderDate(tab);
-    renderRun(tab.run);
+    if (tab.type === 'dictionary') {
+      renderDictionary();
+    } else {
+      renderRun(tab.run);
+    }
   }
 
   // ── Header date ───────────────────────────────────────────────────────────
@@ -545,7 +681,10 @@
     const p = document.getElementById('date-primary');
     const s = document.getElementById('date-secondary');
 
-    if (tab.type === 'archive') {
+    if (tab.type === 'dictionary') {
+      p.textContent = '📖 Dictionary';
+      s.textContent = 'How to read your picks';
+    } else if (tab.type === 'archive') {
       const [y, m] = tab.monthKey.split('-');
       const dt = new Date(Number(y), Number(m) - 1);
       p.textContent = dt.toLocaleDateString('en-AU', { month: 'long', year: 'numeric' });
@@ -697,7 +836,20 @@
   }
 
   function showEmpty(msg) {
-    document.getElementById('tab-bar').innerHTML = '';
+    // Even on empty state, render tabs with Dictionary available
+    const bar = document.getElementById('tab-bar');
+    bar.innerHTML = '';
+    const dictBtn = document.createElement('button');
+    dictBtn.className = 'tab-btn dict';
+    dictBtn.dataset.id = 'dictionary';
+    dictBtn.textContent = '📖 Dictionary';
+    dictBtn.onclick = () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.id === 'dictionary'));
+      document.getElementById('date-primary').textContent   = '📖 Dictionary';
+      document.getElementById('date-secondary').textContent = 'How to read your picks';
+      renderDictionary();
+    };
+    bar.appendChild(dictBtn);
     document.getElementById('content').innerHTML =
       `<div class="state-box"><p>${msg}</p></div>`;
   }
@@ -712,6 +864,119 @@
       mins === 1 ? 'Updated 1 min ago' :
                   `Updated ${mins} min ago`
     );
+  }
+
+  // ── Dictionary ────────────────────────────────────────────────────────────
+  function renderDictionary() {
+    document.getElementById('content').innerHTML = `
+<div class="dict-wrap">
+
+  <!-- Section 1: Card visual -->
+  <div class="dict-section" style="border-top:none;padding-top:0">
+    <div class="dict-section-label">Section 1</div>
+    <h2 class="dict-h2">What a stock card looks like</h2>
+    <p class="dict-p">Every stock is shown as a card. Here's the NVDA (NVIDIA) card from the 16 May 2026 morning run — each part is numbered so you can follow along below.</p>
+
+    <div class="dict-card-stage">
+      <!-- NVDA card — reuses existing dashboard card CSS -->
+      <div class="stock-card" style="border-top-color:#00a876;width:162px;cursor:default;pointer-events:none">
+        <div class="card-top"><span class="card-rank">#1</span><span class="card-ext-icon">↗</span></div>
+        <div class="card-ticker">NVDA</div>
+        <div class="card-signal" style="color:#00a876">🟢 STRONG BUY</div>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:80%;background:#00a876"></div></div>
+        <div class="card-score-row">
+          <span class="card-score" style="color:#00a876">80</span>
+          <span class="card-upside" style="color:#00a876">+21.1%</span>
+        </div>
+        <div class="card-price">$225.32 → $273<br><span class="stop-label">Stop </span><span class="stop-value">$207.29</span></div>
+        <div class="card-analyst">
+          <div class="analyst-moves">
+            <span class="analyst-up">↑5</span>
+            <span class="analyst-period">last 7d</span>
+            <span class="analyst-down">↓0</span>
+          </div>
+          <div class="bullish-bar-bg"><div class="bullish-bar-fill" style="width:93%;background:#00a876"></div></div>
+          <div class="analyst-caption"><span>71 analysts</span><span class="bullish-pct" style="color:#00a876">93% bullish</span></div>
+        </div>
+        <div class="card-sources" onclick="event.stopPropagation()">
+          <a style="pointer-events:none">YF</a><a style="pointer-events:none">FV</a><a style="pointer-events:none">SA</a>
+        </div>
+      </div>
+
+      <!-- Numbered callouts -->
+      <div class="dict-callout-list">
+        <div class="dict-callout-item"><div class="dict-callout-num">1</div><div class="dict-callout-text"><strong>#1 rank</strong> — top pick this run</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">2</div><div class="dict-callout-text"><strong>STRONG BUY</strong> — overall signal</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">3</div><div class="dict-callout-text"><strong>80</strong> — composite score (0–100)</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">4</div><div class="dict-callout-text"><strong>+21.1%</strong> — upside to analyst target</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">5</div><div class="dict-callout-text"><strong>$225 → $273</strong> — price now → target</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">6</div><div class="dict-callout-text"><strong>Stop $207.29</strong> — exit level if trade turns</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">7</div><div class="dict-callout-text"><strong>↑5 ↓0</strong> — upgrades / downgrades last 7 days</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">8</div><div class="dict-callout-text"><strong>93% of 71 analysts</strong> bullish on NVDA</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Metric table -->
+  <div class="dict-section">
+    <div class="dict-section-label">Section 2</div>
+    <h2 class="dict-h2">What each number means</h2>
+    <p class="dict-p">Each row maps a number on the NVDA card to a plain-English explanation.</p>
+    <table class="dict-table">
+      <thead><tr><th>Card element</th><th>What it means</th></tr></thead>
+      <tbody>
+        <tr><td><span class="mv">#1</span><br>Rank</td><td>Out of all stocks analysed that run, NVDA came out top. Lower = stronger overall case across all signals.</td></tr>
+        <tr><td><span class="mv g">STRONG BUY</span><br>Signal</td><td>The engine's overall verdict, driven by the composite score. Four possible signals — explained in Section 3.</td></tr>
+        <tr><td><span class="mv g">80</span><br>Score</td><td>A 0–100 score built from six data layers: price momentum, technical trend, analyst consensus, earnings quality, relative value vs the market, and news sentiment. The coloured bar fills to show it visually.</td></tr>
+        <tr><td><span class="mv g">+21.1%</span><br>Upside</td><td>How far today's price ($225.32) sits below the average analyst target ($273). If analysts are right, buying now and holding to target = +21.1%. Not a guarantee — it's what Wall Street collectively expects over 12 months.</td></tr>
+        <tr><td><span class="mv">$225 → $273</span><br>Price → Target</td><td>Left: where NVDA is trading now. Right: the average 12-month price target set by professional analysts. The gap between them is the upside figure above.</td></tr>
+        <tr><td><span class="mv r">Stop $207.29</span><br>Stop Loss</td><td>A risk management level. If NVDA drops to $207.29 (−8% from today) the bullish case may be broken. Investors often set a sell order here to cap losses. Shown in bold red so it stands out.</td></tr>
+        <tr><td><span class="mv g">↑5</span> <span class="mv r">↓0</span><br>Upgrades / Downgrades</td><td>In the last 7 days: 5 analysts raised their NVDA rating (e.g. Hold → Buy). Zero lowered it. High upgrades + zero downgrades = Wall Street getting <em>more</em> bullish — a strong positive signal.</td></tr>
+        <tr><td><span class="mv">71 analysts</span><br><span class="mv g">93% bullish</span><br>Consensus bar</td><td>71 professional analysts cover NVDA. 93% currently rate it Buy or Strong Buy. Bar colour: green ≥ 60%, amber 40–59%, red &lt; 40%.</td></tr>
+        <tr><td><span class="mv">YF</span> <span class="mv">FV</span> <span class="mv">SA</span><br>Source buttons</td><td><strong>YF</strong> = Yahoo Finance (price, news, financials). <strong>FV</strong> = Finviz (chart, ratios, insider trades). <strong>SA</strong> = Seeking Alpha (analyst articles). Tapping the card itself also opens YF.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Section 3: Signals -->
+  <div class="dict-section">
+    <div class="dict-section-label">Section 3</div>
+    <h2 class="dict-h2">What the four signals mean</h2>
+    <p class="dict-p">The coloured bar at the top of each card and the signal label are driven by the composite score (0–100).</p>
+    <div class="dict-signal-grid">
+      <div class="dict-signal-item" style="border-left-color:#00a876"><div class="dict-signal-label" style="color:#00a876">🟢 STRONG BUY</div><div class="dict-signal-desc">Score ≥ 65. Multiple strong signals aligned — momentum, analysts, and value all pointing up. Highest conviction.</div></div>
+      <div class="dict-signal-item" style="border-left-color:#d97706"><div class="dict-signal-label" style="color:#d97706">🟡 BUY</div><div class="dict-signal-desc">Score 50–64. Solid setup with most signals positive. Worth watching closely and doing more research.</div></div>
+      <div class="dict-signal-item" style="border-left-color:#9ca3af"><div class="dict-signal-label" style="color:#6b7280">⚪ WATCH</div><div class="dict-signal-desc">Score 35–49. Mixed signals. Not a clear buy yet — add to watchlist and revisit the next run.</div></div>
+      <div class="dict-signal-item" style="border-left-color:#dc2626"><div class="dict-signal-label" style="color:#dc2626">🔴 AVOID</div><div class="dict-signal-desc">Score &lt; 35. Weak or deteriorating signals. Not the right time — don't chase it.</div></div>
+    </div>
+  </div>
+
+  <!-- Section 4: Run schedule -->
+  <div class="dict-section">
+    <div class="dict-section-label">Section 4</div>
+    <h2 class="dict-h2">Why there are two runs each weekday</h2>
+    <p class="dict-p">The engine runs automatically every weekday morning Sydney time. The dashboard shows a tab for each run so you can see how signals shifted overnight vs after market open.</p>
+    <div class="dict-run-grid">
+      <div class="dict-run-card"><h4>⏰ 5am — Early Signal</h4><p>Runs before the US market opens. Uses overnight data, pre-market moves, and the latest analyst revisions.</p></div>
+      <div class="dict-run-card"><h4>🔔 7am — Final Signal</h4><p>Runs after the US open. Incorporates the first hour of live trading. More data = higher confidence. <strong>Primary run to act on.</strong></p></div>
+    </div>
+  </div>
+
+  <!-- Section 5: Setup -->
+  <div class="dict-section">
+    <div class="dict-section-label">Section 5</div>
+    <h2 class="dict-h2">How to set up on your iPhone</h2>
+    <div class="dict-steps">
+      <div class="dict-step"><div class="dict-step-num">1</div><div><span class="dict-step-title">Open Safari</span><span class="dict-step-desc">Must be Safari (not Chrome) to add to Home Screen.</span></div></div>
+      <div class="dict-step"><div class="dict-step-num">2</div><div><span class="dict-step-title">Go to the dashboard</span><div class="dict-step-url">karthikpalsg.github.io/stock-recommender/app/dashboard.html</div></div></div>
+      <div class="dict-step"><div class="dict-step-num">3</div><div><span class="dict-step-title">Enter your access token (first visit only)</span><span class="dict-step-desc">A "Connect GitHub" screen appears. Karthik sends you a personal token — paste it once and tap Save. Stays saved permanently.</span></div></div>
+      <div class="dict-step"><div class="dict-step-num">4</div><div><span class="dict-step-title">Add to Home Screen</span><span class="dict-step-desc">Tap Share (box + arrow) → "Add to Home Screen" → Add. Full-screen app icon, no browser chrome.</span></div></div>
+      <div class="dict-step"><div class="dict-step-num">5</div><div><span class="dict-step-title">It updates automatically</span><span class="dict-step-desc">Dashboard polls for new data every 5 minutes. Cards refresh on their own after each weekday morning run.</span></div></div>
+    </div>
+    <div class="dict-disclaimer"><strong>⚠️ Not financial advice.</strong> Data Glimpse Stocks aggregates publicly available data and analyst ratings. Nothing shown is a recommendation to buy or sell. All investments carry risk. Consult a licensed financial adviser before making investment decisions.</div>
+  </div>
+
+</div>`;
   }
 </script>
 </body>
