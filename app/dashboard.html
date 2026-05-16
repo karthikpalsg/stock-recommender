@@ -16,16 +16,20 @@
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
     :root {
-      --bg:      #f0f2f5;
-      --surface: #e2e5ea;
-      --card:    #ffffff;
-      --border:  #cbd0d8;
-      --green:   #00a876;
-      --amber:   #d97706;
-      --red:     #dc2626;
-      --muted:   #6b7280;
-      --text:    #111827;
-      --radius:  10px;
+      --bg:      #0d1117;
+      --surface: #161b22;
+      --card:    #1c2128;
+      --card2:   #21262d;
+      --border:  #30363d;
+      --green:   #2ea043;
+      --green-l: #3fb950;
+      --amber:   #d29922;
+      --amber-l: #e3b341;
+      --red:     #da3633;
+      --red-l:   #f85149;
+      --muted:   #8b949e;
+      --text:    #e6edf3;
+      --radius:  12px;
     }
 
     body {
@@ -39,18 +43,17 @@
 
     /* ─── Header ─────────────────────────────────────────────── */
     .header {
-      background: var(--surface);
+      background: rgba(22,27,34,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
       padding: calc(14px + env(safe-area-inset-top)) 16px 11px;
       position: sticky;
       top: 0;
       z-index: 30;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     }
     .header-left h1 {
       font-size: 20px;
@@ -58,7 +61,7 @@
       letter-spacing: -0.4px;
       color: var(--text);
     }
-    .header-left h1 em { color: var(--green); font-style: normal; }
+    .header-left h1 em { color: var(--green-l); font-style: normal; }
     .header-subtitle {
       font-size: 11px;
       color: var(--muted);
@@ -68,46 +71,49 @@
       gap: 5px;
     }
 
-    /* Bold date — top right — key design element */
     .header-date { text-align: right; flex-shrink: 0; margin-left: 10px; }
-    .date-primary   { font-size: 14px; font-weight: 800; color: var(--green); letter-spacing: -0.2px; line-height: 1.2; }
+    .date-primary   { font-size: 14px; font-weight: 800; color: var(--green-l); letter-spacing: -0.2px; line-height: 1.2; }
     .date-secondary { font-size: 10px; font-weight: 500; color: var(--muted); margin-top: 2px; }
 
-    /* ─── Tab bar ─────────────────────────────────────────────── */
+    /* ─── Tab bar — pill style ────────────────────────────────── */
     .tab-bar-wrap {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
+      padding: 8px 10px;
       position: sticky;
       z-index: 29;
     }
     .tab-bar {
       display: flex;
-      align-items: stretch;
+      align-items: center;
+      gap: 4px;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding: 0 6px;
     }
     .tab-bar::-webkit-scrollbar { display: none; }
 
     .tab-btn {
       flex-shrink: 0;
-      padding: 10px 12px;
+      padding: 5px 13px;
       font-size: 12px;
       font-weight: 600;
-      color: var(--muted);
-      background: none;
+      border-radius: 20px;
       border: none;
-      border-bottom: 2px solid transparent;
       cursor: pointer;
       white-space: nowrap;
-      transition: color 0.15s;
+      background: transparent;
+      color: var(--muted);
+      transition: background 0.12s, color 0.12s;
     }
     .tab-btn:active { opacity: 0.6; }
-    .tab-btn.active { color: var(--green); border-bottom-color: var(--green); }
+    .tab-btn.active { background: var(--green); color: #fff; }
     .tab-btn.archive { font-size: 11px; }
-    .tab-btn.archive.active { opacity: 1; }
-    .tab-sep { width: 1px; background: var(--border); flex-shrink: 0; margin: 7px 5px; }
+    .tab-sep { width: 1px; height: 20px; background: var(--border); flex-shrink: 0; margin: 0 3px; }
+
+    /* Dictionary pill */
+    .tab-btn.dict        { color: var(--amber-l); }
+    .tab-btn.dict.active { background: var(--amber); color: #fff; }
 
     /* ─── Run meta bar ───────────────────────────────────────── */
     .run-meta {
@@ -119,7 +125,7 @@
       color: var(--muted);
       border-bottom: 1px solid var(--border);
     }
-    .run-meta-label { color: var(--green); font-weight: 700; }
+    .run-meta-label { color: var(--green-l); font-weight: 700; }
 
     /* ─── 2-column stock grid ────────────────────────────────── */
     .stock-grid {
@@ -129,31 +135,30 @@
       padding: 10px 9px 6px;
     }
 
-    /* Each card is a clickable div — tapping opens Yahoo Finance */
+    /* Card — left border strip per signal */
     .stock-card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-top: 3px solid var(--border);   /* overridden per signal */
+      border-left: 4px solid transparent;
       border-radius: var(--radius);
-      padding: 9px 8px 7px;
+      padding: 10px 10px 8px;
       cursor: pointer;
       display: flex;
       flex-direction: column;
       gap: 0;
-      transition: transform 0.1s, opacity 0.1s;
+      transition: background 0.1s, opacity 0.1s;
       -webkit-user-select: none;
       user-select: none;
       position: relative;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
     }
-    .stock-card:active { transform: scale(0.95); opacity: 0.75; }
+    .stock-card:active { background: var(--card2); opacity: 0.85; }
 
     /* ── Card internals ── */
     .card-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
     .card-rank {
       font-size: 9px;
@@ -161,47 +166,49 @@
       color: var(--muted);
       letter-spacing: 0.2px;
     }
-    .card-ext-icon {
-      font-size: 10px;
-      color: var(--muted);
-      line-height: 1;
+    .card-upside-badge {
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
     }
 
     .card-ticker {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 900;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.8px;
       line-height: 1;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
       color: var(--text);
     }
 
     .card-signal {
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.3px;
-      margin-bottom: 6px;
+      letter-spacing: 0.2px;
+      margin-bottom: 8px;
       line-height: 1;
     }
 
-    /* Score bar */
+    /* Score bar — thin strip above big number */
     .score-bar-bg {
       height: 3px;
       background: var(--border);
       border-radius: 2px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       overflow: hidden;
     }
     .score-bar-fill { height: 100%; border-radius: 2px; }
 
+    /* Score row — big number + / 100 label */
     .card-score-row {
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 4px;
+      align-items: flex-end;
+      gap: 6px;
+      margin-bottom: 6px;
     }
-    .card-score   { font-size: 20px; font-weight: 900; letter-spacing: -0.8px; line-height: 1; }
-    .card-upside  { font-size: 10px; font-weight: 700; }
+    .card-score       { font-size: 32px; font-weight: 900; letter-spacing: -1.5px; line-height: 1; }
+    .card-score-label { font-size: 9px; color: var(--muted); font-weight: 600; margin-bottom: 4px; }
 
     .card-price {
       font-size: 11px;
@@ -219,7 +226,7 @@
     .card-price .stop-value {
       font-size: 11px;
       font-weight: 800;
-      color: var(--red);
+      color: var(--red-l);
     }
 
     /* ── Analyst summary section ────────────────────────── */
@@ -230,15 +237,14 @@
       margin-bottom: 6px;
     }
 
-    /* Upgrade ↑ / Downgrade ↓ row */
     .analyst-moves {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 5px;
     }
-    .analyst-up   { font-size: 13px; font-weight: 800; color: var(--green); letter-spacing: -0.2px; }
-    .analyst-down { font-size: 13px; font-weight: 800; color: var(--red);   letter-spacing: -0.2px; }
+    .analyst-up   { font-size: 13px; font-weight: 800; color: var(--green-l); letter-spacing: -0.2px; }
+    .analyst-down { font-size: 13px; font-weight: 800; color: var(--red-l);   letter-spacing: -0.2px; }
     .analyst-period {
       font-size: 9px;
       font-weight: 600;
@@ -247,9 +253,8 @@
       letter-spacing: 0.3px;
     }
 
-    /* Bullish % bar */
     .bullish-bar-bg {
-      height: 4px;
+      height: 3px;
       background: var(--border);
       border-radius: 2px;
       overflow: hidden;
@@ -257,19 +262,18 @@
     }
     .bullish-bar-fill { height: 100%; border-radius: 2px; }
 
-    /* Caption row: "71 analysts" left, "93% bullish" right */
     .analyst-caption {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 600;
-      color: var(--text);
+      color: var(--muted);
       line-height: 1;
     }
-    .analyst-caption .bullish-pct { font-weight: 800; font-size: 11px; }
+    .analyst-caption .bullish-pct { font-weight: 800; font-size: 10px; }
 
-    /* ── Source link buttons at bottom of each card ── */
+    /* ── Source link buttons ── */
     .card-sources {
       display: flex;
       gap: 3px;
@@ -277,7 +281,6 @@
       padding-top: 6px;
       border-top: 1px solid var(--border);
     }
-    /* Stop card click firing when a source button is tapped */
     .card-sources a {
       flex: 1;
       text-align: center;
@@ -285,14 +288,14 @@
       font-weight: 800;
       color: var(--muted);
       padding: 4px 2px;
-      background: rgba(0,0,0,0.04);
+      background: rgba(255,255,255,0.04);
       border: 1px solid var(--border);
       border-radius: 4px;
       text-decoration: none;
       letter-spacing: 0.3px;
       line-height: 1;
     }
-    .card-sources a:active { background: rgba(0,0,0,0.12); color: var(--text); }
+    .card-sources a:active { background: rgba(255,255,255,0.1); color: var(--text); }
 
     /* ─── Legend strip ───────────────────────────────────────── */
     .legend {
@@ -334,7 +337,7 @@
     .spinner {
       width: 28px; height: 28px;
       border: 2px solid var(--border);
-      border-top-color: var(--green);
+      border-top-color: var(--green-l);
       border-radius: 50%;
       animation: spin 0.75s linear infinite;
     }
@@ -344,15 +347,11 @@
       display: inline-block;
       width: 6px; height: 6px;
       border-radius: 50%;
-      background: var(--green);
+      background: var(--green-l);
       animation: pulse 2.4s ease-in-out infinite;
       flex-shrink: 0;
     }
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.2} }
-
-    /* ─── Dictionary tab button ──────────────────────────────── */
-    .tab-btn.dict         { color: var(--amber); }
-    .tab-btn.dict.active  { color: var(--amber); border-bottom-color: var(--amber); }
 
     /* ─── Dictionary content wrapper ────────────────────────── */
     .dict-wrap {
@@ -375,7 +374,7 @@
       color: var(--text); margin-bottom: 8px;
     }
     .dict-p {
-      font-size: 13px; color: #4b5563; line-height: 1.7; margin-bottom: 8px;
+      font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 8px;
     }
 
     /* Card + callout side-by-side */
@@ -394,11 +393,11 @@
     }
     .dict-callout-num {
       width: 19px; height: 19px; border-radius: 50%;
-      background: var(--text); color: #fff;
+      background: var(--muted); color: var(--bg);
       font-size: 9.5px; font-weight: 800;
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .dict-callout-text { color: #4b5563; }
+    .dict-callout-text { color: var(--muted); }
     .dict-callout-text strong { color: var(--text); font-weight: 700; }
 
     /* Metric breakdown table */
@@ -415,13 +414,13 @@
     }
     .dict-table tr:last-child td { border-bottom: none; }
     .dict-table td:first-child { font-weight: 700; color: var(--text); width: 36%; }
-    .dict-table td:last-child { color: #4b5563; line-height: 1.5; }
+    .dict-table td:last-child { color: var(--muted); line-height: 1.5; }
 
-    /* Metric value chips */
-    .mv   { display:inline-block; background:var(--bg); border:1px solid var(--border); border-radius:4px; padding:1px 6px; font-family:monospace; font-size:11px; font-weight:700; color:var(--text); margin-bottom:2px; }
-    .mv.g { background:#ecfdf5; border-color:#a7f3d0; color:#065f46; }
-    .mv.r { background:#fef2f2; border-color:#fecaca; color:#991b1b; }
-    .mv.a { background:#fffbeb; border-color:#fde68a; color:#92400e; }
+    /* Metric value chips — dark theme */
+    .mv   { display:inline-block; background:var(--card2); border:1px solid var(--border); border-radius:4px; padding:1px 6px; font-family:monospace; font-size:11px; font-weight:700; color:var(--text); margin-bottom:2px; }
+    .mv.g { background:rgba(46,160,67,0.15); border-color:rgba(63,185,80,0.3); color:#3fb950; }
+    .mv.r { background:rgba(218,54,51,0.15); border-color:rgba(248,81,73,0.3); color:#f85149; }
+    .mv.a { background:rgba(210,153,34,0.15); border-color:rgba(227,179,65,0.3); color:#e3b341; }
 
     /* Signal grid */
     .dict-signal-grid {
@@ -449,7 +448,7 @@
     .dict-step  { display: flex; gap: 10px; margin-bottom: 12px; align-items: flex-start; }
     .dict-step-num {
       width: 25px; height: 25px; border-radius: 50%;
-      background: var(--bg); border: 2px solid var(--border);
+      background: var(--card2); border: 2px solid var(--border);
       color: var(--text); font-size: 12px; font-weight: 800;
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
@@ -457,16 +456,16 @@
     .dict-step-desc  { font-size: 12px; color: var(--muted); }
     .dict-step-url   {
       display: inline-block; font-family: monospace; font-size: 10.5px;
-      background: var(--bg); border: 1px solid var(--border);
+      background: var(--card2); border: 1px solid var(--border);
       border-radius: 4px; padding: 2px 7px; margin-top: 3px;
       color: var(--text); word-break: break-all;
     }
 
-    /* Disclaimer */
+    /* Disclaimer — dark amber */
     .dict-disclaimer {
-      background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px;
+      background: rgba(210,153,34,0.1); border: 1px solid rgba(227,179,65,0.25); border-radius: 8px;
       padding: 12px 14px; margin-top: 12px;
-      font-size: 11.5px; color: #78350f; line-height: 1.6;
+      font-size: 11.5px; color: var(--amber-l); line-height: 1.6;
     }
   </style>
 </head>
@@ -517,17 +516,17 @@
 
   // Signal → accent colour
   const SIG_COLOR = {
-    'STRONG BUY': 'var(--green)',
-    'BUY':        'var(--amber)',
+    'STRONG BUY': 'var(--green-l)',
+    'BUY':        'var(--amber-l)',
     'WATCH':      'var(--muted)',
-    'AVOID':      'var(--red)',
+    'AVOID':      'var(--red-l)',
   };
-  // Raw hex values for border-top (CSS variables don't work in inline border shorthand on older WebKit)
+  // Raw hex values for border-left (CSS variables don't work in inline border shorthand on older WebKit)
   const SIG_HEX = {
-    'STRONG BUY': '#00a876',
-    'BUY':        '#d97706',
-    'WATCH':      '#9ca3af',
-    'AVOID':      '#dc2626',
+    'STRONG BUY': '#3fb950',
+    'BUY':        '#e3b341',
+    'WATCH':      '#8b949e',
+    'AVOID':      '#f85149',
   };
   // Local emoji map — ignores signal_emoji from data (which sometimes contains full label text)
   const SIG_EMOJI = {
@@ -713,24 +712,27 @@
 
     const cards = run.stocks.map(s => {
       const color  = SIG_COLOR[s.signal] || 'var(--muted)';
-      const hex    = SIG_HEX[s.signal]   || '#333';
+      const hex    = SIG_HEX[s.signal]   || '#8b949e';
       const score  = Math.round(s.composite_score ?? 0);
       const up     = s.upside_pct != null;
       const upside = up ? `${s.upside_pct > 0 ? '+' : ''}${s.upside_pct.toFixed(1)}%` : '—';
-      const uColor = up && s.upside_pct > 0 ? 'var(--green)' : 'var(--red)';
+      const badgeStyle = !up
+        ? 'background:rgba(255,255,255,0.05);color:var(--muted)'
+        : s.upside_pct > 0
+          ? 'background:rgba(63,185,80,0.15);color:#3fb950'
+          : 'background:rgba(248,81,73,0.15);color:#f85149';
       const price  = s.price != null ? `$${Number(s.price).toFixed(2)}` : '—';
       const target = s.analyst_target_price != null ? `$${Number(s.analyst_target_price).toFixed(0)}` : '—';
       const stop   = s.stop_loss_price != null ? `$${Number(s.stop_loss_price).toFixed(2)}` : '—';
-      const t      = encodeURIComponent(s.ticker);
 
       return `
         <div class="stock-card"
-             style="border-top-color:${hex}"
+             style="border-left-color:${hex}"
              onclick="openStock('${s.ticker}')">
 
           <div class="card-top">
             <span class="card-rank">#${s.rank}</span>
-            <span class="card-ext-icon">↗</span>
+            <span class="card-upside-badge" style="${badgeStyle}">${upside}</span>
           </div>
 
           <div class="card-ticker">${s.ticker}</div>
@@ -739,21 +741,19 @@
           <div class="score-bar-bg">
             <div class="score-bar-fill" style="width:${score}%;background:${hex}"></div>
           </div>
-
           <div class="card-score-row">
             <span class="card-score" style="color:${color}">${score}</span>
-            <span class="card-upside" style="color:${uColor}">${upside}</span>
+            <span class="card-score-label">/ 100</span>
           </div>
 
           <div class="card-price">${price} → ${target}<br><span class="stop-label">Stop </span><span class="stop-value">${stop}</span></div>
 
           ${analystHTML(s.signal_details?.analyst)}
 
-          <!-- Source buttons — stopPropagation so card click doesn't also fire -->
           <div class="card-sources" onclick="event.stopPropagation()">
-            <a href="${SRC.YF(s.ticker)}" target="_blank" rel="noopener" title="Yahoo Finance — price, news, financials, analyst ratings">YF</a>
-            <a href="${SRC.FV(s.ticker)}" target="_blank" rel="noopener" title="Finviz — chart, ratios, insider trades, news snapshot">FV</a>
-            <a href="${SRC.SA(s.ticker)}" target="_blank" rel="noopener" title="Seeking Alpha — analyst articles and buy/sell ratings">SA</a>
+            <a href="${SRC.YF(s.ticker)}" target="_blank" rel="noopener" title="Yahoo Finance">YF</a>
+            <a href="${SRC.FV(s.ticker)}" target="_blank" rel="noopener" title="Finviz">FV</a>
+            <a href="${SRC.SA(s.ticker)}" target="_blank" rel="noopener" title="Seeking Alpha">SA</a>
           </div>
         </div>`;
     }).join('');
@@ -764,10 +764,10 @@
         <span class="run-meta-label">${run.run_label ?? 'Run'}</span>
       </div>
       <div class="legend">
-        <div class="legend-item"><div class="legend-dot" style="background:#00a876"></div>STRONG BUY</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#d97706"></div>BUY</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#9ca3af"></div>WATCH</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#dc2626"></div>AVOID</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#3fb950"></div>STRONG BUY</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#e3b341"></div>BUY</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#8b949e"></div>WATCH</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#f85149"></div>AVOID</div>
         <div class="legend-item" style="margin-left:auto;font-size:8px;color:var(--muted)">Tap card = YF &nbsp;·&nbsp; YF/FV/SA = sources</div>
       </div>
       <div class="stock-grid">${cards}</div>`;
@@ -801,10 +801,10 @@
 
     // Bar colour: green ≥60%, amber 40–59%, red <40%
     const pct   = a.bullishPct;
-    const bCol  = pct == null  ? '#9ca3af'
-                : pct >= 60    ? '#00a876'
-                : pct >= 40    ? '#d97706'
-                :                '#dc2626';
+    const bCol  = pct == null  ? '#8b949e'
+                : pct >= 60    ? '#3fb950'
+                : pct >= 40    ? '#e3b341'
+                :                '#f85149';
 
     const barHTML = pct != null
       ? `<div class="bullish-bar-bg">
@@ -886,14 +886,17 @@
 
     <div class="dict-card-stage">
       <!-- NVDA card — reuses existing dashboard card CSS -->
-      <div class="stock-card" style="border-top-color:#00a876;width:162px;cursor:default;pointer-events:none">
-        <div class="card-top"><span class="card-rank">#1</span><span class="card-ext-icon">↗</span></div>
+      <div class="stock-card" style="border-left-color:#3fb950;width:162px;cursor:default;pointer-events:none">
+        <div class="card-top">
+          <span class="card-rank">#1</span>
+          <span class="card-upside-badge" style="background:rgba(63,185,80,0.15);color:#3fb950">+21.1%</span>
+        </div>
         <div class="card-ticker">NVDA</div>
-        <div class="card-signal" style="color:#00a876">🟢 STRONG BUY</div>
-        <div class="score-bar-bg"><div class="score-bar-fill" style="width:80%;background:#00a876"></div></div>
+        <div class="card-signal" style="color:#3fb950">🟢 STRONG BUY</div>
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:80%;background:#3fb950"></div></div>
         <div class="card-score-row">
-          <span class="card-score" style="color:#00a876">80</span>
-          <span class="card-upside" style="color:#00a876">+21.1%</span>
+          <span class="card-score" style="color:#3fb950">80</span>
+          <span class="card-score-label">/ 100</span>
         </div>
         <div class="card-price">$225.32 → $273<br><span class="stop-label">Stop </span><span class="stop-value">$207.29</span></div>
         <div class="card-analyst">
@@ -902,8 +905,8 @@
             <span class="analyst-period">last 7d</span>
             <span class="analyst-down">↓0</span>
           </div>
-          <div class="bullish-bar-bg"><div class="bullish-bar-fill" style="width:93%;background:#00a876"></div></div>
-          <div class="analyst-caption"><span>71 analysts</span><span class="bullish-pct" style="color:#00a876">93% bullish</span></div>
+          <div class="bullish-bar-bg"><div class="bullish-bar-fill" style="width:93%;background:#3fb950"></div></div>
+          <div class="analyst-caption"><span>71 analysts</span><span class="bullish-pct" style="color:#3fb950">93% bullish</span></div>
         </div>
         <div class="card-sources" onclick="event.stopPropagation()">
           <a style="pointer-events:none">YF</a><a style="pointer-events:none">FV</a><a style="pointer-events:none">SA</a>
@@ -935,7 +938,7 @@
         <tr><td><span class="mv">#1</span><br>Rank</td><td>Out of all stocks analysed that run, NVDA came out top. Lower = stronger overall case across all signals.</td></tr>
         <tr><td><span class="mv g">STRONG BUY</span><br>Signal</td><td>The engine's overall verdict, driven by the composite score. Four possible signals — explained in Section 3.</td></tr>
         <tr><td><span class="mv g">80</span><br>Score</td><td>A 0–100 score built from six data layers: price momentum, technical trend, analyst consensus, earnings quality, relative value vs the market, and news sentiment. The coloured bar fills to show it visually.</td></tr>
-        <tr><td><span class="mv g">+21.1%</span><br>Upside</td><td>How far today's price sits from the average analyst price target.<br><br><strong style="color:#00a876">Green (+)</strong>: stock is below target — upside potential remains. NVDA at $225 vs target $273 = +21.1% to go.<br><br><strong style="color:#dc2626">Red (−)</strong>: stock has <em>already exceeded</em> the analyst target — e.g. MU at $724 vs target $584 = −19.4%, meaning MU is trading 19.4% above where analysts think it should be. This often means analysts haven't updated their targets after a strong run yet. The score can still be high if momentum and consensus are strong.</td></tr>
+        <tr><td><span class="mv g">+21.1%</span><br>Upside</td><td>How far today's price sits from the average analyst price target.<br><br><strong style="color:#3fb950">Green (+)</strong>: stock is below target — upside potential remains. NVDA at $225 vs target $273 = +21.1% to go.<br><br><strong style="color:#f85149">Red (−)</strong>: stock has <em>already exceeded</em> the analyst target — e.g. MU at $724 vs target $584 = −19.4%, meaning MU is trading 19.4% above where analysts think it should be. This often means analysts haven't updated their targets after a strong run yet. The score can still be high if momentum and consensus are strong.</td></tr>
         <tr><td><span class="mv">$225 → $273</span><br>Price → Target</td><td>Left: where the stock is trading now. Right: the average 12-month price target set by professional analysts. When the right number is lower than the left (e.g. $724 → $584 for MU), the stock has run past analyst expectations and upside will show as negative in red.</td></tr>
         <tr><td><span class="mv r">Stop $207.29</span><br>Stop Loss</td><td>A risk management level. If NVDA drops to $207.29 (−8% from today) the bullish case may be broken. Investors often set a sell order here to cap losses. Shown in bold red so it stands out.</td></tr>
         <tr><td><span class="mv g">↑5</span> <span class="mv r">↓0</span><br>Upgrades / Downgrades</td><td>In the last 7 days: 5 analysts raised their NVDA rating (e.g. Hold → Buy). Zero lowered it. High upgrades + zero downgrades = Wall Street getting <em>more</em> bullish — a strong positive signal.</td></tr>
@@ -951,10 +954,10 @@
     <h2 class="dict-h2">What the four signals mean</h2>
     <p class="dict-p">The coloured bar at the top of each card and the signal label are driven by the composite score (0–100).</p>
     <div class="dict-signal-grid">
-      <div class="dict-signal-item" style="border-left-color:#00a876"><div class="dict-signal-label" style="color:#00a876">🟢 STRONG BUY</div><div class="dict-signal-desc">Score ≥ 65. Multiple strong signals aligned — momentum, analysts, and value all pointing up. Highest conviction.</div></div>
-      <div class="dict-signal-item" style="border-left-color:#d97706"><div class="dict-signal-label" style="color:#d97706">🟡 BUY</div><div class="dict-signal-desc">Score 50–64. Solid setup with most signals positive. Worth watching closely and doing more research.</div></div>
-      <div class="dict-signal-item" style="border-left-color:#9ca3af"><div class="dict-signal-label" style="color:#6b7280">⚪ WATCH</div><div class="dict-signal-desc">Score 35–49. Mixed signals. Not a clear buy yet — add to watchlist and revisit the next run.</div></div>
-      <div class="dict-signal-item" style="border-left-color:#dc2626"><div class="dict-signal-label" style="color:#dc2626">🔴 AVOID</div><div class="dict-signal-desc">Score &lt; 35. Weak or deteriorating signals. Not the right time — don't chase it.</div></div>
+      <div class="dict-signal-item" style="border-left-color:#3fb950"><div class="dict-signal-label" style="color:#3fb950">🟢 STRONG BUY</div><div class="dict-signal-desc">Score ≥ 65. Multiple strong signals aligned — momentum, analysts, and value all pointing up. Highest conviction.</div></div>
+      <div class="dict-signal-item" style="border-left-color:#e3b341"><div class="dict-signal-label" style="color:#e3b341">🟡 BUY</div><div class="dict-signal-desc">Score 50–64. Solid setup with most signals positive. Worth watching closely and doing more research.</div></div>
+      <div class="dict-signal-item" style="border-left-color:#8b949e"><div class="dict-signal-label" style="color:#8b949e">⚪ WATCH</div><div class="dict-signal-desc">Score 35–49. Mixed signals. Not a clear buy yet — add to watchlist and revisit the next run.</div></div>
+      <div class="dict-signal-item" style="border-left-color:#f85149"><div class="dict-signal-label" style="color:#f85149">🔴 AVOID</div><div class="dict-signal-desc">Score &lt; 35. Weak or deteriorating signals. Not the right time — don't chase it.</div></div>
     </div>
   </div>
 
