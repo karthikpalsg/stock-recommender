@@ -206,6 +206,52 @@
       margin-bottom: 7px;
     }
 
+    /* ── Analyst summary section ────────────────────────── */
+    .card-analyst {
+      border-top: 1px solid var(--border);
+      padding-top: 6px;
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
+
+    /* Upgrade ↑ / Downgrade ↓ row */
+    .analyst-moves {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    .analyst-up   { font-size: 10px; font-weight: 800; color: #00c896; letter-spacing: -0.2px; }
+    .analyst-down { font-size: 10px; font-weight: 800; color: #ff4d4d; letter-spacing: -0.2px; }
+    .analyst-period {
+      font-size: 7.5px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* Bullish % bar */
+    .bullish-bar-bg {
+      height: 3px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 4px;
+    }
+    .bullish-bar-fill { height: 100%; border-radius: 2px; }
+
+    /* Caption row: "71 analysts" left, "93% bullish" right */
+    .analyst-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 7.5px;
+      color: var(--muted);
+      line-height: 1;
+    }
+    .analyst-caption .bullish-pct { font-weight: 700; }
+
     /* ── Source link buttons at bottom of each card ── */
     .card-sources {
       display: flex;
@@ -538,6 +584,8 @@
 
           <div class="card-price">${price} → ${target}<br>Stop ${stop}</div>
 
+          ${analystHTML(s.signal_details?.analyst)}
+
           <!-- Source buttons — stopPropagation so card click doesn't also fire -->
           <div class="card-sources" onclick="event.stopPropagation()">
             <a href="${SRC.YF(s.ticker)}" target="_blank" rel="noopener" title="Yahoo Finance — price, news, financials, analyst ratings">YF</a>
@@ -565,6 +613,57 @@
   // Opens Yahoo Finance (primary action — whole card tap)
   function openStock(ticker) {
     window.open(SRC.YF(ticker), '_blank', 'noopener');
+  }
+
+  // ── Analyst summary parser ────────────────────────────────────────────────
+  // Parses the stored signal_details.analyst string, e.g.:
+  //   "5 upgrade(s), 0 downgrade(s) in last 7d | 93% of 71 analysts bullish"
+  function parseAnalyst(detail) {
+    if (!detail) return null;
+    const up    = detail.match(/(\d+)\s+upgrade/i);
+    const down  = detail.match(/(\d+)\s+downgrade/i);
+    const bull  = detail.match(/(\d+)%\s+of\s+(\d+)\s+analysts/i);
+    return {
+      upgrades:      up   ? parseInt(up[1])   : 0,
+      downgrades:    down ? parseInt(down[1]) : 0,
+      bullishPct:    bull ? parseInt(bull[1]) : null,
+      totalAnalysts: bull ? parseInt(bull[2]) : null,
+    };
+  }
+
+  // Build the analyst summary HTML block for a card
+  function analystHTML(detail) {
+    const a = parseAnalyst(detail);
+    if (!a) return '';
+
+    // Bar colour: green ≥60%, amber 40–59%, red <40%
+    const pct   = a.bullishPct;
+    const bCol  = pct == null  ? '#333'
+                : pct >= 60    ? '#00c896'
+                : pct >= 40    ? '#f59e0b'
+                :                '#ff4d4d';
+
+    const barHTML = pct != null
+      ? `<div class="bullish-bar-bg">
+           <div class="bullish-bar-fill" style="width:${pct}%;background:${bCol}"></div>
+         </div>
+         <div class="analyst-caption">
+           <span>${a.totalAnalysts ? a.totalAnalysts + ' analysts' : 'analysts'}</span>
+           <span class="bullish-pct" style="color:${bCol}">${pct}% bullish</span>
+         </div>`
+      : `<div class="analyst-caption">
+           <span style="color:var(--muted)">No consensus data</span>
+         </div>`;
+
+    return `
+      <div class="card-analyst">
+        <div class="analyst-moves">
+          <span class="analyst-up">↑${a.upgrades}</span>
+          <span class="analyst-period">last 7d</span>
+          <span class="analyst-down">↓${a.downgrades}</span>
+        </div>
+        ${barHTML}
+      </div>`;
   }
 
   // ── Helpers ───────────────────────────────────────────────────────────────
