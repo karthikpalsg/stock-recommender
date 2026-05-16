@@ -716,7 +716,7 @@
       const hex    = SIG_HEX[s.signal]   || '#333';
       const score  = Math.round(s.composite_score ?? 0);
       const up     = s.upside_pct != null;
-      const upside = up ? `+${s.upside_pct.toFixed(1)}%` : '—';
+      const upside = up ? `${s.upside_pct > 0 ? '+' : ''}${s.upside_pct.toFixed(1)}%` : '—';
       const uColor = up && s.upside_pct > 0 ? 'var(--green)' : 'var(--red)';
       const price  = s.price != null ? `$${Number(s.price).toFixed(2)}` : '—';
       const target = s.analyst_target_price != null ? `$${Number(s.analyst_target_price).toFixed(0)}` : '—';
