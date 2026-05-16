@@ -14,6 +14,7 @@ from datetime import datetime, timedelta
 import os
 import json
 import time
+import shutil
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -566,6 +567,42 @@ def send_email(df):
 
 
 # ============================================================
+# MONTHLY BACKUP — runs only on the 1st of each month
+# ============================================================
+def backup_json_if_first_of_month(json_path="data/history.json", backup_dir="data/backups"):
+    """
+    On the 1st of every month, copies history.json to data/backups/
+    with a timestamp suffix before today's data is appended.
+    This preserves a clean snapshot of the previous month's full history.
+    Skipped silently on all other days.
+    """
+    today = datetime.now()
+
+    if today.day != 1:
+        return   # Not the 1st — nothing to do
+
+    if not os.path.exists(json_path):
+        print("  Monthly backup skipped — no history file yet")
+        return
+
+    os.makedirs(backup_dir, exist_ok=True)
+
+    # Filename: history_backup_2026-06-01_083000.json
+    timestamp   = today.strftime("%Y-%m-%d_%H%M%S")
+    backup_name = f"history_backup_{timestamp}.json"
+    backup_path = os.path.join(backup_dir, backup_name)
+
+    shutil.copy2(json_path, backup_path)
+
+    # Verify backup size matches original
+    original_size = os.path.getsize(json_path)
+    backup_size   = os.path.getsize(backup_path)
+    status = "✓ verified" if original_size == backup_size else "⚠ size mismatch"
+
+    print(f"  📦 Monthly backup created → {backup_path} ({status}, {backup_size:,} bytes)")
+
+
+# ============================================================
 # JSON HISTORY — incremental log for agent analysis
 # ============================================================
 def save_json(df, output_dir="data", filename="history.json"):
@@ -708,8 +745,9 @@ if __name__ == "__main__":
     send_slack(results_df)
     send_email(results_df)
 
-    # Step 5: Append to JSON history
+    # Step 5: Monthly backup (1st of month only) + append to JSON history
     print("\n[5/5] Saving to JSON history...")
+    backup_json_if_first_of_month()
     save_json(results_df)
 
     # Terminal summary

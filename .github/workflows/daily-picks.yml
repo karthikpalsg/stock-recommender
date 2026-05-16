@@ -12,6 +12,10 @@ on:
   # Lets you trigger a manual run anytime from GitHub website
   workflow_dispatch:
 
+# Required so the workflow can commit the JSON history back to the repo
+permissions:
+  contents: write
+
 jobs:
   run-stock-picks:
     runs-on: ubuntu-latest
@@ -20,6 +24,8 @@ jobs:
       # 1. Download your code from GitHub
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       # 2. Install Python
       - name: Set up Python
@@ -63,8 +69,20 @@ jobs:
           SLACK_WEBHOOK_URL:  ${{ secrets.SLACK_WEBHOOK_URL }}
         run: python run.py
 
-      # 6. Save the picks report as a downloadable file in GitHub
-      - name: Upload picks report
+      # 6. Commit the updated JSON history back to the repo
+      #    This is what makes history accumulate across daily runs in the cloud.
+      #    On the 1st of each month, the backup file is also committed here.
+      - name: Commit JSON history to repo
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "GitHub Actions [Stock Bot]"
+          git add data/
+          git diff --staged --quiet && echo "No changes to commit" || \
+            git commit -m "chore: stock history $(date '+%Y-%m-%d') [automated]"
+          git push
+
+      # 7. Save the picks report as a downloadable file in GitHub
+      - name: Upload picks report as artifact
         uses: actions/upload-artifact@v4
         with:
           name: stock-picks-${{ github.run_id }}

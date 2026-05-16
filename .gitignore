@@ -8,6 +8,9 @@ config.py
 # Daily pick reports — saved locally, not needed on GitHub
 picks/
 
+# data/ folder is tracked (history.json + backups must persist on GitHub)
+# Do NOT add data/ to .gitignore
+
 # Python cache files
 __pycache__/
 *.pyc
