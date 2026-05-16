@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="StockPicks">
+  <meta name="apple-mobile-web-app-title" content="DG Stocks">
   <link rel="manifest" href="dashboard-manifest.json">
-  <title>StockPicks Dashboard</title>
+  <title>Data Glimpse Stocks</title>
 
   <!-- PIN gate — must be first script so body is hidden before content renders -->
   <script src="auth.js"></script>
@@ -16,15 +16,15 @@
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
     :root {
-      --bg:      #0a0a0a;
-      --surface: #161616;
-      --card:    #1e1e1e;
-      --border:  #2a2a2a;
-      --green:   #00c896;
-      --amber:   #f59e0b;
-      --red:     #ff4d4d;
-      --muted:   #555;
-      --text:    #f0f0f0;
+      --bg:      #f0f2f5;
+      --surface: #e2e5ea;
+      --card:    #ffffff;
+      --border:  #cbd0d8;
+      --green:   #00a876;
+      --amber:   #d97706;
+      --red:     #dc2626;
+      --muted:   #6b7280;
+      --text:    #111827;
       --radius:  10px;
     }
 
@@ -50,11 +50,13 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     }
     .header-left h1 {
       font-size: 20px;
       font-weight: 800;
       letter-spacing: -0.4px;
+      color: var(--text);
     }
     .header-left h1 em { color: var(--green); font-style: normal; }
     .header-subtitle {
@@ -119,11 +121,11 @@
     }
     .run-meta-label { color: var(--green); font-weight: 700; }
 
-    /* ─── 3-column stock grid ────────────────────────────────── */
+    /* ─── 2-column stock grid ────────────────────────────────── */
     .stock-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 7px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
       padding: 10px 9px 6px;
     }
 
@@ -142,6 +144,7 @@
       -webkit-user-select: none;
       user-select: none;
       position: relative;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
     }
     .stock-card:active { transform: scale(0.95); opacity: 0.75; }
 
@@ -165,15 +168,16 @@
     }
 
     .card-ticker {
-      font-size: 17px;
+      font-size: 20px;
       font-weight: 900;
       letter-spacing: -0.5px;
       line-height: 1;
       margin-bottom: 3px;
+      color: var(--text);
     }
 
     .card-signal {
-      font-size: 8.5px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.3px;
       margin-bottom: 6px;
@@ -200,10 +204,22 @@
     .card-upside  { font-size: 10px; font-weight: 700; }
 
     .card-price {
-      font-size: 8.5px;
-      color: var(--muted);
-      line-height: 1.4;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.7;
       margin-bottom: 7px;
+      letter-spacing: -0.1px;
+    }
+    .card-price .stop-label {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .card-price .stop-value {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--red);
     }
 
     /* ── Analyst summary section ────────────────────────── */
@@ -221,10 +237,10 @@
       align-items: center;
       margin-bottom: 5px;
     }
-    .analyst-up   { font-size: 10px; font-weight: 800; color: #00c896; letter-spacing: -0.2px; }
-    .analyst-down { font-size: 10px; font-weight: 800; color: #ff4d4d; letter-spacing: -0.2px; }
+    .analyst-up   { font-size: 13px; font-weight: 800; color: var(--green); letter-spacing: -0.2px; }
+    .analyst-down { font-size: 13px; font-weight: 800; color: var(--red);   letter-spacing: -0.2px; }
     .analyst-period {
-      font-size: 7.5px;
+      font-size: 9px;
       font-weight: 600;
       color: var(--muted);
       text-transform: uppercase;
@@ -233,7 +249,7 @@
 
     /* Bullish % bar */
     .bullish-bar-bg {
-      height: 3px;
+      height: 4px;
       background: var(--border);
       border-radius: 2px;
       overflow: hidden;
@@ -246,11 +262,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 7.5px;
-      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text);
       line-height: 1;
     }
-    .analyst-caption .bullish-pct { font-weight: 700; }
+    .analyst-caption .bullish-pct { font-weight: 800; font-size: 11px; }
 
     /* ── Source link buttons at bottom of each card ── */
     .card-sources {
@@ -268,14 +285,14 @@
       font-weight: 800;
       color: var(--muted);
       padding: 4px 2px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(0,0,0,0.04);
       border: 1px solid var(--border);
       border-radius: 4px;
       text-decoration: none;
       letter-spacing: 0.3px;
       line-height: 1;
     }
-    .card-sources a:active { background: rgba(255,255,255,0.14); color: var(--text); }
+    .card-sources a:active { background: rgba(0,0,0,0.12); color: var(--text); }
 
     /* ─── Legend strip ───────────────────────────────────────── */
     .legend {
@@ -339,7 +356,7 @@
   <!-- ── Header ──────────────────────────────────────────────── -->
   <div class="header" id="header">
     <div class="header-left">
-      <h1>📈 Stock<em>Picks</em></h1>
+      <h1>📈 Data Glimpse <em>Stocks</em></h1>
       <div class="header-subtitle">
         <span class="dot"></span>
         <span id="subtitle-text">Loading…</span>
@@ -388,10 +405,10 @@
   };
   // Raw hex values for border-top (CSS variables don't work in inline border shorthand on older WebKit)
   const SIG_HEX = {
-    'STRONG BUY': '#00c896',
-    'BUY':        '#f59e0b',
-    'WATCH':      '#333',
-    'AVOID':      '#ff4d4d',
+    'STRONG BUY': '#00a876',
+    'BUY':        '#d97706',
+    'WATCH':      '#9ca3af',
+    'AVOID':      '#dc2626',
   };
 
   // ── State ───────────────────────────────────────────────────────────────
@@ -582,7 +599,7 @@
             <span class="card-upside" style="color:${uColor}">${upside}</span>
           </div>
 
-          <div class="card-price">${price} → ${target}<br>Stop ${stop}</div>
+          <div class="card-price">${price} → ${target}<br><span class="stop-label">Stop </span><span class="stop-value">${stop}</span></div>
 
           ${analystHTML(s.signal_details?.analyst)}
 
@@ -601,10 +618,10 @@
         <span class="run-meta-label">${run.run_label ?? 'Run'}</span>
       </div>
       <div class="legend">
-        <div class="legend-item"><div class="legend-dot" style="background:#00c896"></div>STRONG BUY</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div>BUY</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#333"></div>WATCH</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#ff4d4d"></div>AVOID</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#00a876"></div>STRONG BUY</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#d97706"></div>BUY</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#9ca3af"></div>WATCH</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#dc2626"></div>AVOID</div>
         <div class="legend-item" style="margin-left:auto;font-size:8px;color:var(--muted)">Tap card = YF &nbsp;·&nbsp; YF/FV/SA = sources</div>
       </div>
       <div class="stock-grid">${cards}</div>`;
@@ -638,10 +655,10 @@
 
     // Bar colour: green ≥60%, amber 40–59%, red <40%
     const pct   = a.bullishPct;
-    const bCol  = pct == null  ? '#333'
-                : pct >= 60    ? '#00c896'
-                : pct >= 40    ? '#f59e0b'
-                :                '#ff4d4d';
+    const bCol  = pct == null  ? '#9ca3af'
+                : pct >= 60    ? '#00a876'
+                : pct >= 40    ? '#d97706'
+                :                '#dc2626';
 
     const barHTML = pct != null
       ? `<div class="bullish-bar-bg">
