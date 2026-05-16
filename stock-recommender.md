@@ -1115,7 +1115,7 @@ A permanent `📖 Dictionary` tab (styled in amber) always visible at the far ri
 - Header updates to `📖 Dictionary / How to read your picks` when active
 
 **Content rendered by `renderDictionary()`:**
-1. NVDA card visual — reuses existing `.stock-card` CSS classes (light-grey design, real 16 May 2026 data), with 8 numbered callout labels beside it
+1. NVDA card visual — reuses existing `.stock-card` CSS classes (matches current dashboard theme, real 16 May 2026 data), with 8 numbered callout labels beside it
 2. 9-row metric breakdown table — every card element explained with NVDA as the example, colour-coded value chips (`.mv`, `.mv.g`, `.mv.r`, `.mv.a`)
 3. 4-signal legend grid — STRONG BUY / BUY / WATCH / AVOID with score thresholds
 4. 5am vs 7am run schedule cards
@@ -1160,6 +1160,63 @@ The Upside row in the metric breakdown table now explains both cases:
 Not automatically a reason to avoid — the stock may have outrun short-term analyst models while the underlying thesis (momentum, earnings, analyst consensus sentiment) remains strong. MU scoring 73 (STRONG BUY) with 92% of 53 analysts bullish despite −19.4% upside is a classic case: the momentum is real, the targets haven't caught up yet. Analysts will either raise their targets (confirming the move) or the stock consolidates back toward $584.
 
 The Price → Target row in the Dictionary was also updated to note that when the right number is lower than the left (e.g. `$724 → $584`), upside will show as negative in red.
+
+---
+
+## Step 33 — Deep Slate redesign (GitHub-dark inspired, mobile-first)
+
+**What you asked:**
+Give me a couple of design options that will make the dashboard mobile friendly and sophisticated.
+
+**Two HTML previews built and shown:**
+- **Option 1 — Deep Slate:** GitHub-dark palette, left border strip per signal, pill tabs, big score number
+- **Option 2 — Signal-colour Headers:** Light background, full-bleed gradient card header per signal
+
+**Chosen: Option 1 — Deep Slate**
+
+**Theme change — light grey → dark slate:**
+
+| CSS variable | Before (Step 29) | After |
+|---|---|---|
+| `--bg` | `#f0f2f5` | `#0d1117` |
+| `--surface` | `#e2e5ea` | `#161b22` |
+| `--card` | `#ffffff` | `#1c2128` |
+| `--border` | `#cbd0d8` | `#30363d` |
+| `--green` | `#00a876` | `#2ea043` + `--green-l: #3fb950` |
+| `--amber` | `#d97706` | `#d29922` + `--amber-l: #e3b341` |
+| `--red` | `#dc2626` | `#da3633` + `--red-l: #f85149` |
+| `--muted` | `#6b7280` | `#8b949e` |
+| `--text` | `#111827` | `#e6edf3` |
+
+**Card layout — left border strip:**
+- Removed `border-top: 3px solid [signal-colour]`
+- Added `border-left: 4px solid [signal-colour]` — wider, more prominent signal cue
+
+**Header:** Solid surface colour → `rgba(22,27,34,0.88)` with `backdrop-filter: blur(20px)` (frosted glass)
+
+**Tab bar — pill style:**
+- Underline tabs (`border-bottom: 2px solid`) → pill tabs (`border-radius: 20px; background: [signal-color]`)
+- Active tab: filled green pill. Dictionary tab: amber pill.
+
+**Score display:**
+- Score font: `20px` → `32px bold` with `letter-spacing: -1.5px`
+- Added `/ 100` label (`.card-score-label`) beside the score number
+- Score bar moved above the score row
+
+**Upside badge:**
+- Upside % moved from inline beside score → small coloured badge in card top-right
+- Green badge for positive upside, red badge for negative upside (stock exceeded analyst target)
+
+**Signal hex colours updated (`SIG_HEX`):**
+
+| Signal | Before | After |
+|---|---|---|
+| STRONG BUY | `#00a876` | `#3fb950` |
+| BUY | `#d97706` | `#e3b341` |
+| WATCH | `#9ca3af` | `#8b949e` |
+| AVOID | `#dc2626` | `#f85149` |
+
+Dictionary, analyst section, and legend inline colours all updated to match dark-theme variants. Source buttons changed from `rgba(0,0,0,0.04)` → `rgba(255,255,255,0.04)` for dark glass effect.
 
 ---
 
@@ -1259,5 +1316,5 @@ GitHub repo → Actions tab → watch runs appear at 5am and 7am Sydney time Tue
 
 ---
 
-*Last updated: May 2026 — Steps 1–32 complete*
+*Last updated: May 2026 — Steps 1–33 complete*
 *Built with Claude Code*
