@@ -1130,6 +1130,39 @@ Contains: app links, NVDA card visual + 8 numbered callouts, 9-row metric table,
 
 ---
 
+## Step 32 — Negative upside fix + Dictionary updated to explain both cases
+
+**What you observed:**
+MU card showed `+-19.4%` in red. MU was trading at **$724.66** against an analyst consensus target of **$584** — the stock had already exceeded where analysts thought it should be.
+
+**Two things addressed:**
+
+### 1. Display bug fixed
+Code always prepended `+` to the upside value regardless of sign, producing `+-19.4%` instead of `-19.4%`.
+
+```javascript
+// Before (always added '+'):
+`+${s.upside_pct.toFixed(1)}%`  →  "+-19.4%"
+
+// After (only adds '+' when positive):
+`${s.upside_pct > 0 ? '+' : ''}${s.upside_pct.toFixed(1)}%`  →  "-19.4%"
+```
+
+### 2. Dictionary tab updated
+The Upside row in the metric breakdown table now explains both cases:
+
+| Colour | Meaning |
+|---|---|
+| **Green (+)** | Stock is below analyst target — upside potential remains. NVDA: $225 vs target $273 = +21.1% to go. |
+| **Red (−)** | Stock has already exceeded analyst target. MU: $724 vs target $584 = −19.4% — trading 19.4% above analyst consensus. Analysts likely haven't updated their targets after a strong run yet. |
+
+**What negative upside means in practice:**
+Not automatically a reason to avoid — the stock may have outrun short-term analyst models while the underlying thesis (momentum, earnings, analyst consensus sentiment) remains strong. MU scoring 73 (STRONG BUY) with 92% of 53 analysts bullish despite −19.4% upside is a classic case: the momentum is real, the targets haven't caught up yet. Analysts will either raise their targets (confirming the move) or the stock consolidates back toward $584.
+
+The Price → Target row in the Dictionary was also updated to note that when the right number is lower than the left (e.g. `$724 → $584`), upside will show as negative in red.
+
+---
+
 ---
 
 # API keys and credentials reference
@@ -1226,5 +1259,5 @@ GitHub repo → Actions tab → watch runs appear at 5am and 7am Sydney time Tue
 
 ---
 
-*Last updated: May 2026 — Steps 1–31 complete*
+*Last updated: May 2026 — Steps 1–32 complete*
 *Built with Claude Code*
