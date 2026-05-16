@@ -1,0 +1,17 @@
+# ============================================================
+# .gitignore — keeps your private keys OFF GitHub
+# ============================================================
+
+# Your local config with real API keys — never upload this
+config.py
+
+# Daily pick reports — saved locally, not needed on GitHub
+picks/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Mac system files
+.DS_Store

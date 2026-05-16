@@ -1,0 +1,35 @@
+# ============================================================
+# YOUR 20 IBKR FAVOURITE STOCKS
+# ============================================================
+# Replace the stocks below with your actual IBKR favourites.
+# One ticker per line. No spaces. US stocks only.
+# Lines starting with # are ignored.
+# ============================================================
+
+OKE
+LITE
+LUNR
+COHR
+IPGP
+SNOW
+IRON
+MU
+NBIS
+NVDA
+PLTR
+ASTS
+RKLB
+ONDS
+AMD
+SOFI
+NOK
+PATH
+SNDK
+NVT
+IRM
+GNRC
+INOD
+FIVN
+QUBT
+QBTS
+RGTI

@@ -1,0 +1,72 @@
+name: Daily Stock Picks
+
+# ============================================================
+# Runs automatically Tuesday–Saturday at 8:30am AEST (Sydney)
+# That equals Monday–Friday 10:30pm UTC (after US market close)
+# ============================================================
+
+on:
+  schedule:
+    - cron: '30 22 * * 1-5'   # UTC: Mon–Fri 10:30pm = Tue–Sat 8:30am AEST
+
+  # Lets you trigger a manual run anytime from GitHub website
+  workflow_dispatch:
+
+jobs:
+  run-stock-picks:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Download your code from GitHub
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Install Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 3. Install required libraries
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # 4. Write config.py using your GitHub Secrets
+      #    (your real keys never touch GitHub — they're injected here at runtime)
+      - name: Create config from secrets
+        run: |
+          cat > config.py << 'EOF'
+          import os
+          SLACK_WEBHOOK_URL  = os.environ.get('SLACK_WEBHOOK_URL', '')
+          GMAIL_ADDRESS      = os.environ.get('GMAIL_ADDRESS', '')
+          GMAIL_APP_PASSWORD = os.environ.get('GMAIL_APP_PASSWORD', '')
+          FINNHUB_API_KEY    = os.environ.get('FINNHUB_API_KEY', '')
+          SEND_EMAIL         = True
+          SCORE_WEIGHTS = {
+              'analyst':      0.35,
+              'momentum':     0.25,
+              'fundamentals': 0.25,
+              'social':       0.15,
+          }
+          STOP_LOSS_PCT     = 8
+          TARGET_RETURN_PCT = 20
+          HOLD_MONTHS       = 6
+          TOP_N_PICKS       = 5
+          EOF
+
+      # 5. Run the engine — secrets injected as environment variables
+      - name: Run recommendation engine
+        env:
+          FINNHUB_API_KEY:    ${{ secrets.FINNHUB_API_KEY }}
+          GMAIL_ADDRESS:      ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          SLACK_WEBHOOK_URL:  ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: python run.py
+
+      # 6. Save the picks report as a downloadable file in GitHub
+      - name: Upload picks report
+        uses: actions/upload-artifact@v4
+        with:
+          name: stock-picks-${{ github.run_id }}
+          path: picks/
+          retention-days: 30   # keeps the last 30 days of reports
