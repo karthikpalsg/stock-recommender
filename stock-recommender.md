@@ -56,7 +56,7 @@ data/backups/ folder
 stock-recommender/
 ├── run.py                          ← Main engine. Do not edit.
 ├── config.py                       ← Your settings and API keys. Edit this.
-├── tickers.txt                     ← Your stock watchlist. Edit via iPhone app.
+├── tickers.txt                     ← Your stock watchlist. Edit via Watchlist app.
 ├── requirements.txt                ← Python libraries needed.
 ├── .gitignore                      ← Keeps config.py and picks/ off GitHub.
 ├── SETUP.md                        ← Local setup guide.
@@ -67,9 +67,12 @@ stock-recommender/
 │   └── backups/                    ← Monthly snapshots created on 1st of month.
 ├── picks/                          ← Daily markdown reports (local only).
 ├── app/
-│   ├── index.html                  ← iPhone/iPad web app (PWA).
-│   ├── manifest.json               ← Makes it installable on home screen.
-│   └── icon.svg                    ← App icon.
+│   ├── auth.js                     ← Shared GitHub-linked PIN gate. Included by both apps.
+│   ├── index.html                  ← Watchlist manager PWA (add/remove tickers).
+│   ├── dashboard.html              ← Picks Dashboard PWA (all run results, week tabs, archive).
+│   ├── manifest.json               ← PWA manifest for Watchlist app.
+│   ├── dashboard-manifest.json     ← PWA manifest for Dashboard app.
+│   └── icon.svg                    ← Shared app icon.
 └── .github/
     └── workflows/
         └── daily-picks.yml         ← GitHub Actions schedule and steps.
@@ -97,9 +100,10 @@ git commit -m "Your description"
 git push https://karthikpalsg:<token>@github.com/karthikpalsg/stock-recommender.git main
 ```
 
-**iPhone app URL:**
+**iPhone app URLs:**
 ```
-https://karthikpalsg.github.io/stock-recommender/app/
+Watchlist manager:  https://karthikpalsg.github.io/stock-recommender/app/
+Picks dashboard:    https://karthikpalsg.github.io/stock-recommender/app/dashboard.html
 ```
 
 ---
@@ -851,6 +855,152 @@ Open the app in Safari → hard reload (close and reopen) → Settings tab → t
 
 ---
 
+## Step 24 — StockPicks Dashboard PWA
+
+**What you asked:**
+Build a hosted app that shows the final output of the engine with date in the top-right corner (bold), auto-refreshes after every run, shows current week's runs in separate tabs, and archives past months — all addable to iPhone home screen.
+
+**Files created:**
+
+### `app/dashboard.html`
+Full PWA that reads directly from `data/history.json` on GitHub (public, no token required to read). Key features:
+
+**Tab system:**
+- Current week: one tab per run, labelled by day and time — e.g. `Mon 5am`, `Mon 7am`, `Tue 5am`. Most recent tab is selected on open.
+- Monthly archive: one tab per past month (last run of that month) labelled `Apr '26`, `May '26` etc. Appears after a thin divider to the right of the week tabs.
+- Switching tabs updates the bold date in the top-right header.
+
+**Header date (top right, bold):**
+- On week tab: shows full day + date (e.g. `Friday 16 May`) in bold green, with `5am Early Signal` or `7am Final Signal` below it in muted text.
+- On archive tab: shows `May 2026` in bold green with `Monthly Archive` below.
+
+**Auto-refresh:** Polls `raw.githubusercontent.com` every 5 minutes. If `last_run` timestamp has changed, rebuilds all tabs and content silently. Shows "Updated X min ago" in the subtitle.
+
+**Sticky layout:** Header and tab bar stay fixed at the top. Tab bar `top` offset is calculated dynamically in JS using `ResizeObserver` so it works correctly on all iPhone models including Dynamic Island and notch devices.
+
+### `app/dashboard-manifest.json`
+Separate PWA manifest for the dashboard — allows it to be installed as its own home screen icon, independent of the Watchlist app.
+
+**To add to iPhone home screen:**
+Open the dashboard URL in Safari → Share → Add to Home Screen → "StockPicks"
+
+---
+
+## Step 25 — 3-column grid with external source links
+
+**What you asked:**
+Convert the layout to 3 columns and link each stock card to external pages (financial data, news, analyst reviews) opening in a new tab.
+
+**Layout change:**
+Stock list redesigned from a single-column list to a `CSS grid` with `repeat(3, 1fr)` — fits all 29 stocks visible without scrolling on most iPhones.
+
+**Card design (per stock):**
+- Coloured top border matching signal (green / amber / dark / red) — instant visual scan
+- Rank, ticker, signal label, composite score, score bar, upside %, current price → analyst target, stop loss
+- Three source-link pills at the bottom of every card
+
+**Three source links per card — each opens in a new tab:**
+
+| Pill | Destination | What it shows |
+|---|---|---|
+| **YF** | `finance.yahoo.com/quote/{TICKER}` | Live price, news, analyst ratings, financial statements |
+| **FV** | `finviz.com/quote.ashx?t={TICKER}` | Chart, ratios, insider trading, news snapshot — all on one page |
+| **SA** | `seekingalpha.com/symbol/{TICKER}` | Analyst articles, buy/sell ratings, earnings forecasts |
+
+**Tap behaviour:**
+- Tap anywhere on the card body → opens Yahoo Finance
+- Tap YF / FV / SA pills specifically → opens that source (uses `stopPropagation` so card click doesn't also fire)
+
+**Signal legend strip** added below the run meta bar.
+
+---
+
+## Step 26 — App security: PIN gate (superseded by Step 27)
+
+**What you asked:**
+The apps were open to anyone with the URL. Add a one-time login that, once set up, covers all apps at the same GitHub Pages origin without re-asking.
+
+**What was built (initial version):**
+A client-side PIN gate in `app/auth.js`, included as the first `<script>` in both `index.html` and `dashboard.html`.
+
+**How it worked:**
+- Body hidden immediately via injected `<style>` tag — zero flash of unprotected content
+- First visit: "Create your 6-digit PIN" screen with a native number pad and 6 dot indicators
+- Correct setup: PIN hashed with SHA-256 + site-specific salt, stored in `localStorage`
+- Subsequent visits: enter PIN → hash compared → unlock
+- 🔒 button injected into the header to lock the session
+
+**Limitation:** PIN was not linked to any external identity. Anyone who obtained the PIN could access the app. This led to Step 27.
+
+---
+
+## Step 27 — GitHub-linked authentication (replaced PIN gate)
+
+**What you asked:**
+Security should be linked to your GitHub account — require GitHub approval or SMS on any new device setup. Once set up, all apps at the same origin should work.
+
+**Why pure GitHub OAuth can't work on a static site:**
+A proper "click Approve on GitHub" OAuth flow requires a backend server to hold the `client_secret` and handle the OAuth callback. GitHub Pages is static-only — no server. So traditional OAuth is not possible without adding a backend (e.g. Cloudflare Workers).
+
+**What was built instead — GitHub PAT authentication:**
+The `auth.js` file was completely rewritten to use GitHub Personal Access Tokens as the authentication credential. This achieves the requirement because:
+
+- Creating or retrieving a GitHub PAT requires your **GitHub password + your 2FA method (SMS or authenticator)**. Your GitHub SMS code IS the "SMS sent to mobile" gate.
+- The token is validated **live against the GitHub API** on every new device and re-checked every 24 hours on existing devices.
+- Only tokens belonging to `@karthikpalsg` are accepted — any other account is rejected.
+- **Revoking the token on github.com instantly locks every device** on the next 24-hour validation cycle.
+
+**Authentication flow (new device):**
+
+```
+Open app → "Connect to GitHub" screen
+      ↓
+Tap "↗ Open GitHub token page" (built into the screen)
+      ↓
+GitHub asks for: password + SMS/authenticator code  ← 2FA gate
+      ↓
+Generate token with read:user scope → copy it
+      ↓
+Paste into app → tap "Connect to GitHub"
+      ↓
+App calls GET https://api.github.com/user
+      ↓
+Confirms login === 'karthikpalsg' → access granted
+      ↓
+Token + timestamp stored in localStorage
+```
+
+**Subsequent visits (same device):**
+- If validated within the last 24 hours: app opens instantly, no network call
+- If 24 hours have elapsed: silent background re-check 2 seconds after content loads
+- If token revoked mid-session: red banner shown, full lock on next open
+
+**Network offline:** App opens normally using the cached token — graceful offline support.
+
+**Security controls:**
+
+| Action | Where | Effect |
+|---|---|---|
+| Open on a new device | App | Must provide GitHub PAT (requires GitHub password + 2FA) |
+| Background re-check | Automatic, every 24h | Confirms token is still valid on GitHub |
+| Revoke access on all devices | github.com/settings/tokens | App locks on next validation cycle |
+| Lock this device manually | 🔒 button in header | Clears token, requires re-entry on next open |
+
+**Key code in `app/auth.js`:**
+```javascript
+// Called on every new device and every 24 hours thereafter
+validateToken(token)
+  .then(function(user) {
+    if (!user)                    // 401 from GitHub — revoked
+    if (user.login !== 'karthikpalsg')  // wrong account — rejected
+    localStorage.setItem(VALID_KEY, Date.now())  // mark as validated
+  })
+```
+
+Both `dashboard.html` and `index.html` include `<script src="auth.js"></script>` as their first script. Because they share the same `karthikpalsg.github.io` origin, one token entry covers both apps.
+
+---
+
 ---
 
 # API keys and credentials reference
@@ -921,18 +1071,31 @@ In GitHub repo → Settings → Secrets and variables → Actions → add:
 
 **Step 9 — Enable GitHub Pages**
 Repo → Settings → Pages → Source: Deploy from branch → main → / (root) → Save
-App will be live at `https://karthikpalsg.github.io/stock-recommender/app/`
 
-**Step 10 — Add iPhone app to home screen**
-Open app URL in Safari → Share → Add to Home Screen
+Apps will be live at:
+- `https://karthikpalsg.github.io/stock-recommender/app/` (Watchlist)
+- `https://karthikpalsg.github.io/stock-recommender/app/dashboard.html` (Dashboard)
 
-**Step 11 — Set token in app**
-App → Settings tab → paste GitHub PAT → Save
+**Step 10 — Set up GitHub authentication on each device**
+1. Open either app URL in Safari
+2. The "Connect to GitHub" screen appears
+3. Tap "↗ Open GitHub token page" — GitHub will ask for your password + 2FA
+4. Create a token with `read:user` scope → copy it
+5. Paste into the app → tap "Connect to GitHub"
+6. Token is validated live → access granted
+7. Both apps are now unlocked (same origin = shared auth)
 
-**Step 12 — Verify automated runs**
+**Step 11 — Set watchlist write token**
+Watchlist app → Settings tab → paste a GitHub PAT with `repo` scope → Save
+(This is the write token for modifying tickers.txt — separate from the auth token)
+
+**Step 12 — Add apps to iPhone home screen**
+Open each URL in Safari → Share → Add to Home Screen
+
+**Step 13 — Verify automated runs**
 GitHub repo → Actions tab → watch runs appear at 5am and 7am Sydney time Tuesday–Saturday
 
 ---
 
-*Last updated: May 2026*  
-*Built in one session with Claude Code*
+*Last updated: May 2026 — Steps 1–27 complete*
+*Built with Claude Code*
