@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="StockPicks">
+  <link rel="manifest" href="dashboard-manifest.json">
+  <title>StockPicks Dashboard</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    :root {
+      --bg:      #0a0a0a;
+      --surface: #161616;
+      --card:    #1e1e1e;
+      --card2:   #141414;
+      --border:  #2a2a2a;
+      --green:   #00c896;
+      --amber:   #f59e0b;
+      --red:     #ff4d4d;
+      --muted:   #666;
+      --text:    #f0f0f0;
+      --radius:  12px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+      min-height: 100vh;
+      padding-bottom: calc(env(safe-area-inset-bottom) + 24px);
+      overscroll-behavior: none;
+    }
+
+    /* ─── Header ─────────────────────────────────────────────── */
+    .header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: calc(14px + env(safe-area-inset-top)) 18px 12px;
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .header-left h1 {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+    }
+    .header-left h1 em { color: var(--green); font-style: normal; }
+
+    .header-subtitle {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 3px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Bold date — top right — the focal design element */
+    .header-date {
+      text-align: right;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+    .date-primary {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--green);
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+    }
+    .date-secondary {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ─── Tab bar ─────────────────────────────────────────────── */
+    .tab-bar-wrap {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      z-index: 29;
+      /* top is set dynamically by JS after header renders */
+    }
+
+    .tab-bar {
+      display: flex;
+      align-items: stretch;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 0 8px;
+      gap: 0;
+    }
+    .tab-bar::-webkit-scrollbar { display: none; }
+
+    .tab-btn {
+      flex-shrink: 0;
+      padding: 11px 13px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.15s;
+      line-height: 1;
+    }
+    .tab-btn:active { opacity: 0.7; }
+    .tab-btn.active { color: var(--green); border-bottom-color: var(--green); }
+    .tab-btn.archive { font-size: 12px; opacity: 0.8; }
+    .tab-btn.archive.active { opacity: 1; }
+
+    .tab-sep {
+      width: 1px;
+      background: var(--border);
+      flex-shrink: 0;
+      margin: 8px 6px;
+    }
+
+    /* ─── Run meta bar ───────────────────────────────────────── */
+    .run-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 16px;
+      font-size: 11px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .run-meta-label {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* ─── Stock list ─────────────────────────────────────────── */
+    .stock-list {
+      padding: 10px 12px 4px;
+    }
+
+    .stock-item {
+      margin-bottom: 8px;
+    }
+
+    .stock-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 12px 10px;
+      cursor: pointer;
+      transition: background 0.1s;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .stock-row:active { background: #252525; }
+
+    .stock-item.open .stock-row {
+      border-radius: var(--radius) var(--radius) 0 0;
+      border-bottom-color: transparent;
+    }
+
+    .stock-rank {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      min-width: 26px;
+      padding-top: 3px;
+      letter-spacing: 0.2px;
+    }
+
+    .stock-main { flex: 1; min-width: 0; }
+
+    .stock-top {
+      display: flex;
+      align-items: baseline;
+      gap: 7px;
+      margin-bottom: 7px;
+    }
+    .ticker {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+    }
+    .signal-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.06);
+      letter-spacing: 0.2px;
+    }
+    .score-num {
+      margin-left: auto;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.8px;
+      line-height: 1;
+    }
+
+    /* Score bar */
+    .score-bar-bg {
+      height: 3px;
+      background: var(--border);
+      border-radius: 2px;
+      margin-bottom: 7px;
+      overflow: hidden;
+    }
+    .score-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+    }
+
+    .stock-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .company-name {
+      font-size: 11px;
+      color: var(--muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex: 1;
+    }
+    .price-line {
+      font-size: 11px;
+      color: var(--text);
+      opacity: 0.55;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ─── Detail card ────────────────────────────────────────── */
+    .detail-card {
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 var(--radius) var(--radius);
+      padding: 12px;
+      display: none;
+    }
+    .stock-item.open .detail-card { display: block; }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 14px;
+      margin-bottom: 10px;
+    }
+    .detail-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 3px;
+    }
+    .detail-val {
+      font-size: 11px;
+      color: var(--text);
+      opacity: 0.75;
+      line-height: 1.45;
+    }
+    .detail-risk {
+      font-size: 11px;
+      color: var(--muted);
+      padding-top: 9px;
+      border-top: 1px solid var(--border);
+      line-height: 1.7;
+    }
+    .detail-risk strong { color: var(--text); font-weight: 600; }
+
+    /* ─── States ─────────────────────────────────────────────── */
+    .state-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+      color: var(--muted);
+      gap: 14px;
+      text-align: center;
+    }
+    .state-box p { font-size: 14px; line-height: 1.6; }
+
+    .spinner {
+      width: 30px; height: 30px;
+      border: 2px solid var(--border);
+      border-top-color: var(--green);
+      border-radius: 50%;
+      animation: spin 0.75s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Pulse dot */
+    .dot {
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2.4s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.25; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ──────────────────────────────────────────────── -->
+  <div class="header" id="header">
+    <div class="header-left">
+      <h1>📈 Stock<em>Picks</em></h1>
+      <div class="header-subtitle" id="subtitle">
+        <span class="dot"></span>
+        <span id="subtitle-text">Loading…</span>
+      </div>
+    </div>
+    <div class="header-date" id="header-date">
+      <div class="date-primary" id="date-primary">—</div>
+      <div class="date-secondary" id="date-secondary">—</div>
+    </div>
+  </div>
+
+  <!-- ── Tab bar ─────────────────────────────────────────────── -->
+  <div class="tab-bar-wrap" id="tab-bar-wrap">
+    <div class="tab-bar" id="tab-bar">
+      <div style="padding:12px 8px;color:var(--muted);font-size:12px">Loading runs…</div>
+    </div>
+  </div>
+
+  <!-- ── Content ─────────────────────────────────────────────── -->
+  <div id="content">
+    <div class="state-box">
+      <div class="spinner"></div>
+      <p>Fetching stock picks…</p>
+    </div>
+  </div>
+
+
+<script>
+  // ── Config ─────────────────────────────────────────────────────────────
+  const DATA_URL      = 'https://raw.githubusercontent.com/karthikpalsg/stock-recommender/main/data/history.json';
+  const POLL_INTERVAL = 5 * 60 * 1000;   // re-fetch every 5 min
+
+  // ── State ───────────────────────────────────────────────────────────────
+  let allRuns       = [];
+  let tabMeta       = [];   // [{id, label, run, type, monthKey?}]
+  let activeTabId   = null;
+  let lastRunId     = null;
+  let lastFetchAt   = null;
+
+  // ── Boot ────────────────────────────────────────────────────────────────
+  window.addEventListener('load', () => {
+    positionTabBar();
+    new ResizeObserver(positionTabBar).observe(document.getElementById('header'));
+    fetchData();
+    setInterval(fetchData,      POLL_INTERVAL);
+    setInterval(updateSubtitle, 30_000);
+  });
+
+  // Keep tab bar sticky exactly below the header regardless of device safe area
+  function positionTabBar() {
+    document.getElementById('tab-bar-wrap').style.top =
+      document.getElementById('header').offsetHeight + 'px';
+  }
+
+  // ── Data fetch ──────────────────────────────────────────────────────────
+  async function fetchData() {
+    try {
+      const res  = await fetch(DATA_URL + '?_=' + Date.now());
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      lastFetchAt = Date.now();
+      allRuns     = (data.runs || []).slice();  // defensive copy
+
+      // Only rebuild tabs+content if something new arrived
+      if (data.last_run !== lastRunId) {
+        lastRunId = data.last_run;
+        buildUI();
+      }
+      updateSubtitle();
+    } catch (e) {
+      setSubtitleText('Could not load — check connection');
+    }
+  }
+
+  // ── Week boundary (Sydney time) ─────────────────────────────────────────
+  function getMondayDateStr() {
+    // Returns "YYYY-MM-DD" for Monday of the current Sydney week
+    const syd = new Date().toLocaleDateString('en-CA', { timeZone: 'Australia/Sydney' });
+    const [y, m, d] = syd.split('-').map(Number);
+    const dt  = new Date(y, m - 1, d);
+    const dow = dt.getDay();                       // 0=Sun
+    dt.setDate(dt.getDate() + (dow === 0 ? -6 : 1 - dow));
+    return dt.toLocaleDateString('en-CA');          // "YYYY-MM-DD"
+  }
+
+  // ── Build UI ────────────────────────────────────────────────────────────
+  function buildUI() {
+    if (!allRuns.length) {
+      showEmpty('No runs yet. The engine runs automatically at 5am and 7am Sydney time on weekdays.');
+      return;
+    }
+
+    const monday     = getMondayDateStr();
+    const weekRuns   = [];
+    const monthBest  = {};   // "YYYY-MM" → the latest run in that month
+
+    allRuns.forEach(run => {
+      if (run.run_date >= monday) {
+        weekRuns.push(run);
+      } else {
+        const mk = run.run_date.slice(0, 7);
+        if (!monthBest[mk] || run.run_id > monthBest[mk].run_id) {
+          monthBest[mk] = run;
+        }
+      }
+    });
+
+    // Most recent first within the week
+    weekRuns.sort((a, b) => (b.run_id > a.run_id ? 1 : -1));
+
+    // Most recent month first
+    const archiveKeys = Object.keys(monthBest).sort().reverse();
+
+    buildTabs(weekRuns, archiveKeys, monthBest);
+  }
+
+  // ── Tabs ────────────────────────────────────────────────────────────────
+  function buildTabs(weekRuns, archiveKeys, monthBest) {
+    tabMeta = [];
+
+    // Current week tabs
+    weekRuns.forEach(run => {
+      const dayLabel  = dayName(run.run_date);
+      const timeLabel = runTimeLabel(run);
+      tabMeta.push({
+        id:    'w-' + run.run_id,
+        label: dayLabel + ' ' + timeLabel,
+        run,
+        type:  'week',
+      });
+    });
+
+    // Monthly archive tabs (last run of each past month)
+    archiveKeys.forEach(mk => {
+      const [y, m] = mk.split('-');
+      const label  = new Date(Number(y), Number(m) - 1)
+                       .toLocaleDateString('en-AU', { month: 'short', year: '2-digit' });
+      tabMeta.push({
+        id:       'a-' + mk,
+        label,
+        run:      monthBest[mk],
+        type:     'archive',
+        monthKey: mk,
+      });
+    });
+
+    // Render tab bar
+    const bar = document.getElementById('tab-bar');
+    bar.innerHTML = '';
+
+    tabMeta.forEach((tab, i) => {
+      // Thin separator between week section and archive section
+      if (i > 0 && tab.type === 'archive' && tabMeta[i - 1].type === 'week') {
+        const sep = document.createElement('div');
+        sep.className = 'tab-sep';
+        bar.appendChild(sep);
+      }
+
+      const btn = document.createElement('button');
+      btn.className = 'tab-btn' + (tab.type === 'archive' ? ' archive' : '');
+      btn.dataset.id = tab.id;
+      btn.textContent = tab.label;
+      btn.onclick = () => selectTab(tab.id);
+      bar.appendChild(btn);
+    });
+
+    // Restore previous selection or pick the most recent tab
+    const restore = activeTabId && tabMeta.find(t => t.id === activeTabId)
+                    ? activeTabId
+                    : tabMeta[0]?.id;
+    if (restore) selectTab(restore);
+  }
+
+  function selectTab(id) {
+    const tab = tabMeta.find(t => t.id === id);
+    if (!tab) return;
+    activeTabId = id;
+
+    // Highlight active tab button
+    document.querySelectorAll('.tab-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.id === id);
+    });
+
+    // Scroll active button into view
+    const activeBtn = document.querySelector(`.tab-btn[data-id="${id}"]`);
+    activeBtn?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+    updateHeaderDate(tab);
+    renderRun(tab.run);
+  }
+
+  // ── Header date ─────────────────────────────────────────────────────────
+  function updateHeaderDate(tab) {
+    const p = document.getElementById('date-primary');
+    const s = document.getElementById('date-secondary');
+
+    if (tab.type === 'archive') {
+      // e.g. "May 2026" (month full name, bold) + "Monthly Archive"
+      const [y, m] = tab.monthKey.split('-');
+      const dt = new Date(Number(y), Number(m) - 1);
+      p.textContent = dt.toLocaleDateString('en-AU', { month: 'long', year: 'numeric' });
+      s.textContent = 'Monthly Archive';
+    } else {
+      // e.g. "Friday 16 May" (bold) + "7am Final Signal"
+      const run = tab.run;
+      // Parse as local date (noon avoids any DST edge at midnight)
+      const dt  = new Date(run.run_date + 'T12:00:00');
+      p.textContent = dt.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long' });
+      s.textContent = run.run_label || run.run_time?.slice(0, 5) || '';
+    }
+  }
+
+  // ── Render a run ────────────────────────────────────────────────────────
+  function renderRun(run) {
+    const el = document.getElementById('content');
+    if (!run?.stocks?.length) {
+      el.innerHTML = '<div class="state-box"><p>No stock data for this run.</p></div>';
+      return;
+    }
+
+    const SIG_COLOR = {
+      'STRONG BUY': 'var(--green)',
+      'BUY':        'var(--amber)',
+      'WATCH':      'var(--muted)',
+      'AVOID':      'var(--red)',
+    };
+
+    const items = run.stocks.map(s => {
+      const color  = SIG_COLOR[s.signal] || 'var(--muted)';
+      const score  = Math.round(s.composite_score ?? 0);
+      const upside = s.upside_pct != null ? `+${s.upside_pct.toFixed(1)}%` : '—';
+      const tid    = CSS.escape(s.ticker);
+
+      return `
+        <div class="stock-item" id="item-${tid}">
+          <div class="stock-row" onclick="toggleDetail('${s.ticker}')">
+            <div class="stock-rank">#${s.rank}</div>
+            <div class="stock-main">
+              <div class="stock-top">
+                <span class="ticker">${s.ticker}</span>
+                <span class="signal-badge" style="color:${color}">${s.signal_emoji ?? ''} ${s.signal}</span>
+                <span class="score-num" style="color:${color}">${score}</span>
+              </div>
+              <div class="score-bar-bg">
+                <div class="score-bar-fill" style="width:${score}%;background:${color}"></div>
+              </div>
+              <div class="stock-bottom">
+                <span class="company-name">${s.company}</span>
+                <span class="price-line">$${p2(s.price)} → $${p0(s.analyst_target_price)} (${upside})</span>
+              </div>
+            </div>
+          </div>
+          <div class="detail-card">
+            <div class="detail-grid">
+              <div>
+                <div class="detail-label">🔍 Analyst (${Math.round(s.scores?.analyst ?? 0)})</div>
+                <div class="detail-val">${s.signal_details?.analyst ?? '—'}</div>
+              </div>
+              <div>
+                <div class="detail-label">📈 Momentum (${Math.round(s.scores?.momentum ?? 0)})</div>
+                <div class="detail-val">${s.signal_details?.momentum ?? '—'}</div>
+              </div>
+              <div>
+                <div class="detail-label">📊 Fundamentals (${Math.round(s.scores?.fundamentals ?? 0)})</div>
+                <div class="detail-val">${s.signal_details?.fundamentals ?? '—'}</div>
+              </div>
+              <div>
+                <div class="detail-label">💬 Social (${Math.round(s.scores?.social ?? 0)})</div>
+                <div class="detail-val">${s.signal_details?.social ?? '—'}</div>
+              </div>
+            </div>
+            <div class="detail-risk">
+              Stop loss: <strong>$${p2(s.stop_loss_price)}</strong> &nbsp;·&nbsp;
+              Target: <strong>$${p2(s.analyst_target_price)}</strong> &nbsp;·&nbsp;
+              Upside: <strong>${upside}</strong>
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+
+    el.innerHTML = `
+      <div class="run-meta">
+        <span>${run.total_stocks} stocks &middot; ${run.run_date}</span>
+        <span class="run-meta-label">${run.run_label ?? 'Run'}</span>
+      </div>
+      <div class="stock-list">${items}</div>`;
+  }
+
+  // ── Toggle detail expand/collapse ───────────────────────────────────────
+  function toggleDetail(ticker) {
+    const item = document.getElementById('item-' + CSS.escape(ticker));
+    if (item) item.classList.toggle('open');
+  }
+
+  // ── Helpers ─────────────────────────────────────────────────────────────
+  function dayName(dateStr) {
+    // dateStr = "YYYY-MM-DD"
+    return new Date(dateStr + 'T12:00:00')
+             .toLocaleDateString('en-AU', { weekday: 'short' });
+  }
+
+  function runTimeLabel(run) {
+    const lbl = run.run_label || '';
+    if (lbl.includes('5am')) return '5am';
+    if (lbl.includes('7am')) return '7am';
+    return run.run_time?.slice(0, 5) || '';
+  }
+
+  function p2(v) { return v != null ? Number(v).toFixed(2) : '—'; }
+  function p0(v) { return v != null ? Number(v).toFixed(0) : '—'; }
+
+  function showEmpty(msg) {
+    document.getElementById('tab-bar').innerHTML = '';
+    document.getElementById('content').innerHTML =
+      `<div class="state-box"><p>${msg}</p></div>`;
+  }
+
+  // ── Subtitle (last-updated timer) ────────────────────────────────────────
+  function setSubtitleText(txt) {
+    document.getElementById('subtitle-text').textContent = txt;
+  }
+
+  function updateSubtitle() {
+    if (!lastFetchAt) return;
+    const mins = Math.round((Date.now() - lastFetchAt) / 60_000);
+    setSubtitleText(
+      mins < 1  ? 'Updated just now' :
+      mins === 1 ? 'Updated 1 min ago' :
+                  `Updated ${mins} min ago`
+    );
+  }
+</script>
+</body>
+</html>
