@@ -67,9 +67,10 @@ stock-recommender/
 │   └── backups/                    ← Monthly snapshots created on 1st of month.
 ├── picks/                          ← Daily markdown reports (local only).
 ├── app/
-│   ├── auth.js                     ← Shared GitHub-linked PIN gate. Included by both apps.
+│   ├── auth.js                     ← Shared GitHub-linked PAT authentication. Included by both apps.
 │   ├── index.html                  ← Watchlist manager PWA (add/remove tickers).
-│   ├── dashboard.html              ← Picks Dashboard PWA (all run results, week tabs, archive).
+│   ├── dashboard.html              ← Picks Dashboard PWA (all run results, week tabs, archive, Dictionary tab).
+│   ├── family-guide.html           ← Standalone shareable reference guide (light theme, NVDA card example).
 │   ├── manifest.json               ← PWA manifest for Watchlist app.
 │   ├── dashboard-manifest.json     ← PWA manifest for Dashboard app.
 │   └── icon.svg                    ← Shared app icon.
@@ -855,7 +856,7 @@ Open the app in Safari → hard reload (close and reopen) → Settings tab → t
 
 ---
 
-## Step 24 — StockPicks Dashboard PWA
+## Step 24 — Data Glimpse Stocks Dashboard PWA
 
 **What you asked:**
 Build a hosted app that shows the final output of the engine with date in the top-right corner (bold), auto-refreshes after every run, shows current week's runs in separate tabs, and archives past months — all addable to iPhone home screen.
@@ -882,17 +883,17 @@ Full PWA that reads directly from `data/history.json` on GitHub (public, no toke
 Separate PWA manifest for the dashboard — allows it to be installed as its own home screen icon, independent of the Watchlist app.
 
 **To add to iPhone home screen:**
-Open the dashboard URL in Safari → Share → Add to Home Screen → "StockPicks"
+Open the dashboard URL in Safari → Share → Add to Home Screen → "DG Stocks"
 
 ---
 
-## Step 25 — 3-column grid with external source links
+## Step 25 — Grid layout with external source links
 
 **What you asked:**
 Convert the layout to 3 columns and link each stock card to external pages (financial data, news, analyst reviews) opening in a new tab.
 
-**Layout change:**
-Stock list redesigned from a single-column list to a `CSS grid` with `repeat(3, 1fr)` — fits all 29 stocks visible without scrolling on most iPhones.
+**Layout change (initial):**
+Stock list redesigned from a single-column list to a `CSS grid` with `repeat(3, 1fr)`. Later changed to 2-column (`repeat(2, 1fr)`) in Step 29 for better readability on iPhone.
 
 **Card design (per stock):**
 - Coloured top border matching signal (green / amber / dark / red) — instant visual scan
@@ -1001,6 +1002,134 @@ Both `dashboard.html` and `index.html` include `<script src="auth.js"></script>`
 
 ---
 
+## Step 28 — Analyst review section on dashboard cards
+
+**What you asked:**
+Show analyst upgrade/downgrade activity and overall analyst sentiment on each card in the dashboard.
+
+**What was built:**
+An analyst summary section added to the bottom of every card, parsed from the existing `signal_details.analyst` string already stored in `history.json` — no additional API calls required.
+
+**Data string format (example):**
+```
+"5 upgrade(s), 0 downgrade(s) in last 7d | 93% of 71 analysts bullish"
+```
+
+**Parsed with regex in `parseAnalyst(detail)`:**
+- `↑5` and `↓0` — upgrade and downgrade counts in last 7 days (larger bold text, green/red)
+- Bullish % bar — fills to 93%, colour-coded: green ≥ 60%, amber 40–59%, red < 40%
+- Analyst count — "71 analysts" (plain text, dark, readable)
+- Bullish label — "93% bullish" (bold, coloured by threshold)
+
+**Card visual layout (analyst section, below stop loss):**
+```
+↑5        LAST 7D       ↓0
+━━━━━━━━━━━━━━━━━━━━━━━━━━━ (93% full green bar)
+71 analysts              93% bullish
+```
+
+---
+
+## Step 29 — Dashboard redesign: light grey theme, 2-column grid, new name
+
+**What you asked:**
+Make the background light grey, improve visibility of the number of analysts / current-to-estimated price / stop value, change name from StockPicks to Data Glimpse Stock Recommender, and move to a 2-column layout for readability.
+
+**Theme change — dark → light:**
+
+| CSS variable | Before | After |
+|---|---|---|
+| `--bg` | `#0a0a0a` (black) | `#f0f2f5` (light grey) |
+| `--surface` | `#161616` | `#e2e5ea` |
+| `--card` | `#1e1e1e` | `#ffffff` (white) |
+| `--border` | `#2a2a2a` | `#cbd0d8` |
+| `--green` | `#00c896` | `#00a876` (deeper for light bg) |
+| `--amber` | `#f59e0b` | `#d97706` |
+| `--red` | `#ff4d4d` | `#dc2626` |
+| `--muted` | `#555` | `#6b7280` |
+| `--text` | `#f0f0f0` | `#111827` (dark) |
+
+**Grid:** `repeat(3, 1fr)` → `repeat(2, 1fr)` with `gap: 9px`
+
+**Font visibility improvements:**
+
+| Element | Before | After |
+|---|---|---|
+| Price row (`$225 → $273`) | 8.5px, muted colour | 11px, bold, dark text |
+| Stop loss | same as price | bold red `.stop-value` span |
+| Analyst count | 7.5px, muted | 10px, font-weight 600, dark text |
+| Bullish % | 7.5px | 11px, font-weight 800 |
+| Upgrade/downgrade arrows | 10px | 13px |
+
+**Name change:**
+- `<title>` and `<meta>` updated to `Data Glimpse Stocks`
+- Header `<h1>` updated to `📈 Data Glimpse Stocks`
+- PWA short name updated to `DG Stocks`
+- `SIG_HEX` map updated to match new colour values
+
+Cards also received `box-shadow: 0 1px 3px rgba(0,0,0,0.07)` for depth on the light background.
+
+---
+
+## Step 30 — Signal label duplication bug fixed
+
+**Problem observed:**
+Dashboard cards showed `🟢 STRONG BUY STRONG BUY` — signal label doubled.
+
+**Root cause:**
+The `signal_emoji` field in `history.json` was being populated by the engine with the full label text (e.g. `"🟢 STRONG BUY"`) rather than just the emoji `"🟢"`. The dashboard template was then concatenating it with `s.signal`:
+```javascript
+// Bug: signal_emoji = "🟢 STRONG BUY", s.signal = "STRONG BUY"
+`${s.signal_emoji ?? ''} ${s.signal}`  →  "🟢 STRONG BUY STRONG BUY"
+```
+
+**Fix:**
+Added a local `SIG_EMOJI` map keyed by signal name. Template now uses `SIG_EMOJI[s.signal]` instead of `s.signal_emoji` — fully independent of what the engine stores in the data field:
+```javascript
+const SIG_EMOJI = {
+  'STRONG BUY': '🟢',
+  'BUY':        '🟡',
+  'WATCH':      '⚪',
+  'AVOID':      '🔴',
+};
+// Fixed template:
+`${SIG_EMOJI[s.signal] ?? ''} ${s.signal}`  →  "🟢 STRONG BUY"
+```
+
+---
+
+## Step 31 — Dictionary tab + standalone family guide
+
+**What you asked:**
+Add an inline reference guide to the dashboard as a "Dictionary" tab, and create a standalone shareable HTML page with the same content for family members.
+
+### Dictionary tab (inline, inside dashboard.html)
+
+**What was built:**
+A permanent `📖 Dictionary` tab (styled in amber) always visible at the far right of the tab bar, separated from the run tabs by a thin divider. Tapping it renders the full reference guide in the content area — no separate page, no new browser tab.
+
+**Tab behaviour:**
+- Always appended to `tabMeta` in `buildTabs()` — appears regardless of data state
+- Never auto-selected on data refresh (existing run tab is preserved)
+- Still available on empty/error state via modified `showEmpty()`
+- Header updates to `📖 Dictionary / How to read your picks` when active
+
+**Content rendered by `renderDictionary()`:**
+1. NVDA card visual — reuses existing `.stock-card` CSS classes (light-grey design, real 16 May 2026 data), with 8 numbered callout labels beside it
+2. 9-row metric breakdown table — every card element explained with NVDA as the example, colour-coded value chips (`.mv`, `.mv.g`, `.mv.r`, `.mv.a`)
+3. 4-signal legend grid — STRONG BUY / BUY / WATCH / AVOID with score thresholds
+4. 5am vs 7am run schedule cards
+5. 5-step iPhone setup guide with `dict-step-url` styled URL block
+6. Disclaimer box
+
+### `app/family-guide.html` (standalone shareable page)
+
+A self-contained HTML page at `https://karthikpalsg.github.io/stock-recommender/app/family-guide.html` with the same content as the Dictionary tab but accessible without authentication — shareable directly with family via link, WhatsApp, or paste into Apple Notes.
+
+Contains: app links, NVDA card visual + 8 numbered callouts, 9-row metric table, 4-signal legend, run schedule, iPhone setup steps, disclaimer.
+
+---
+
 ---
 
 # API keys and credentials reference
@@ -1097,5 +1226,5 @@ GitHub repo → Actions tab → watch runs appear at 5am and 7am Sydney time Tue
 
 ---
 
-*Last updated: May 2026 — Steps 1–27 complete*
+*Last updated: May 2026 — Steps 1–31 complete*
 *Built with Claude Code*
