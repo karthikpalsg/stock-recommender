@@ -1,13 +1,14 @@
 name: Daily Stock Picks
 
 # ============================================================
-# Runs automatically Tuesday–Saturday at 8:30am AEST (Sydney)
-# That equals Monday–Friday 10:30pm UTC (after US market close)
+# Runs automatically Tuesday–Saturday at 6:15am AEST (Sydney)
+# That equals Monday–Friday 8:15pm UTC — 15 min after US close
+# Gives you time to review picks and place orders before work
 # ============================================================
 
 on:
   schedule:
-    - cron: '30 22 * * 1-5'   # UTC: Mon–Fri 10:30pm = Tue–Sat 8:30am AEST
+    - cron: '15 20 * * 1-5'   # UTC: Mon–Fri 8:15pm = Tue–Sat 6:15am AEST
 
   # Lets you trigger a manual run anytime from GitHub website
   workflow_dispatch:
