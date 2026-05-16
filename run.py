@@ -566,6 +566,93 @@ def send_email(df):
 
 
 # ============================================================
+# JSON HISTORY — incremental log for agent analysis
+# ============================================================
+def save_json(df, output_dir="data", filename="history.json"):
+    """
+    Appends this run's full results to data/history.json.
+    Each run is a separate record — nothing is ever overwritten.
+    Structure is designed to be pulled directly into another agent.
+    """
+    os.makedirs(output_dir, exist_ok=True)
+    filepath = os.path.join(output_dir, filename)
+
+    # --- Build run metadata ---
+    now        = datetime.now()
+    now_utc    = datetime.utcnow()
+    run_record = {
+        "run_id":              now.strftime("%Y-%m-%dT%H:%M:%S"),
+        "run_date":            now.strftime("%Y-%m-%d"),
+        "run_time":            now.strftime("%H:%M:%S"),
+        "run_timestamp_local": now.strftime("%Y-%m-%dT%H:%M:%S"),
+        "run_timestamp_utc":   now_utc.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "timezone":            "AEST (UTC+10) — Sydney, Australia",
+        "total_stocks":        len(df),
+        "score_weights": {
+            "analyst":      SCORE_WEIGHTS["analyst"],
+            "momentum":     SCORE_WEIGHTS["momentum"],
+            "fundamentals": SCORE_WEIGHTS["fundamentals"],
+            "social":       SCORE_WEIGHTS["social"],
+        },
+        "strategy": {
+            "stop_loss_pct":     STOP_LOSS_PCT,
+            "target_return_pct": TARGET_RETURN_PCT,
+            "hold_months":       HOLD_MONTHS,
+        },
+        "stocks": []
+    }
+
+    # --- Build per-stock records ---
+    for rank, row in df.iterrows():
+        stock_record = {
+            "rank":                 int(rank),
+            "ticker":               row["Ticker"],
+            "company":              row["Company"],
+            "signal":               action_label(row["Score"]).replace("🟢 ", "").replace("🟡 ", "").replace("⚪ ", "").replace("🔴 ", ""),
+            "signal_emoji":         action_label(row["Score"]),
+            "composite_score":      round(float(row["Score"]), 2),
+            "price":                round(float(row["Price"]), 2),
+            "analyst_target_price": round(float(row["Target"]), 2),
+            "upside_pct":           round(float(row["Upside %"]), 2),
+            "stop_loss_price":      round(float(row["Stop Loss"]), 2),
+            "scores": {
+                "analyst":      round(float(row["Analyst Score"]), 2),
+                "momentum":     round(float(row["Momentum Score"]), 2),
+                "fundamentals": round(float(row["Fundamental Score"]), 2),
+                "social":       round(float(row["Social Score"]), 2),
+            },
+            "signal_details": {
+                "analyst":      row["Analyst Detail"],
+                "momentum":     row["Momentum Detail"],
+                "fundamentals": row["Fundamental Detail"],
+                "social":       row["Social Detail"],
+            }
+        }
+        run_record["stocks"].append(stock_record)
+
+    # --- Load existing history and append ---
+    if os.path.exists(filepath):
+        with open(filepath, "r") as f:
+            try:
+                history = json.load(f)
+            except json.JSONDecodeError:
+                history = {"runs": []}
+    else:
+        history = {"runs": []}
+
+    history["runs"].append(run_record)
+    history["total_runs"]    = len(history["runs"])
+    history["first_run"]     = history["runs"][0]["run_id"]
+    history["last_run"]      = run_record["run_id"]
+
+    with open(filepath, "w") as f:
+        json.dump(history, f, indent=2)
+
+    print(f"  JSON history updated → {filepath} ({len(history['runs'])} run(s) stored)")
+    return filepath
+
+
+# ============================================================
 # SLACK NOTIFIER — sends top 3 to your Slack DM
 # ============================================================
 def send_slack(df):
@@ -615,11 +702,15 @@ if __name__ == "__main__":
     print("\n[3/4] Analysing and scoring all tickers...")
     results_df = score_all(tickers, apewisdom_data)
 
-    # Step 4: Save report + optional Slack
-    print("\n[4/4] Generating report...")
+    # Step 4: Save report + notifications
+    print("\n[4/5] Generating report...")
     report_file = generate_report(results_df)
     send_slack(results_df)
     send_email(results_df)
+
+    # Step 5: Append to JSON history
+    print("\n[5/5] Saving to JSON history...")
+    save_json(results_df)
 
     # Terminal summary
     print()
