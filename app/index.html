@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="StockPicks">
+  <link rel="manifest" href="manifest.json">
+  <title>Stock Watchlist</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    :root {
+      --bg:       #0a0a0a;
+      --surface:  #161616;
+      --card:     #1e1e1e;
+      --border:   #2a2a2a;
+      --green:    #00c896;
+      --red:      #ff4d4d;
+      --amber:    #f59e0b;
+      --text:     #f0f0f0;
+      --muted:    #666;
+      --radius:   14px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+      min-height: 100vh;
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: calc(env(safe-area-inset-bottom) + 80px);
+    }
+
+    /* ── Header ── */
+    .header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px 14px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+    .header h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
+    .header h1 span { color: var(--green); }
+    .header .subtitle { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    /* ── Tabs ── */
+    .tabs {
+      display: flex;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 64px;
+      z-index: 9;
+    }
+    .tab {
+      flex: 1;
+      padding: 12px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .tab.active { color: var(--green); border-bottom-color: var(--green); }
+
+    /* ── Content panels ── */
+    .panel { display: none; padding: 16px; }
+    .panel.active { display: block; }
+
+    /* ── Stock chips ── */
+    .section-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 12px;
+    }
+    .stock-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 7px 12px 7px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: border-color 0.15s;
+    }
+    .chip:active { border-color: var(--red); }
+    .chip .del {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--border);
+      border: none;
+      color: var(--muted);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .chip .del:active { background: var(--red); color: white; }
+
+    /* ── Add stock input ── */
+    .add-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    input[type="text"], textarea {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 16px;
+      padding: 13px 16px;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    input[type="text"]:focus, textarea:focus {
+      border-color: var(--green);
+    }
+    textarea {
+      height: 180px;
+      resize: none;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 13px 20px;
+      transition: opacity 0.15s, transform 0.1s;
+      white-space: nowrap;
+    }
+    .btn:active { opacity: 0.75; transform: scale(0.97); }
+    .btn-green  { background: var(--green);  color: #000; }
+    .btn-red    { background: var(--red);    color: #fff; }
+    .btn-gray   { background: var(--card);   color: var(--text); border: 1px solid var(--border); }
+    .btn-block  { width: 100%; text-align: center; padding: 15px; font-size: 16px; }
+
+    /* ── Instruction help ── */
+    .help-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+    .help-box code {
+      background: var(--border);
+      border-radius: 4px;
+      padding: 1px 5px;
+      color: var(--green);
+      font-family: 'SF Mono', Menlo, monospace;
+      font-size: 13px;
+    }
+
+    /* ── Toast notification ── */
+    .toast {
+      position: fixed;
+      bottom: calc(env(safe-area-inset-bottom) + 90px);
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 12px 22px;
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0;
+      transition: all 0.3s;
+      pointer-events: none;
+      white-space: nowrap;
+      z-index: 100;
+      max-width: 90vw;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .toast.success { border-color: var(--green); color: var(--green); }
+    .toast.error   { border-color: var(--red);   color: var(--red);   }
+    .toast.info    { border-color: var(--amber);  color: var(--amber); }
+
+    /* ── Loading spinner ── */
+    .spinner {
+      display: inline-block;
+      width: 18px; height: 18px;
+      border: 2px solid var(--border);
+      border-top-color: var(--green);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      vertical-align: middle;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Settings ── */
+    .setting-row {
+      margin-bottom: 16px;
+    }
+    .setting-label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .token-display {
+      font-family: 'SF Mono', Menlo, monospace;
+      font-size: 13px;
+      color: var(--green);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      word-break: break-all;
+    }
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 20px 0;
+    }
+    .count-badge {
+      display: inline-block;
+      background: var(--green);
+      color: #000;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 10px;
+      padding: 2px 8px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    /* ── Bottom nav ── */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0; right: 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 10px 0 calc(env(safe-area-inset-bottom) + 10px);
+      display: flex;
+      z-index: 20;
+    }
+    .nav-item {
+      flex: 1;
+      text-align: center;
+      cursor: pointer;
+      padding: 4px 0;
+    }
+    .nav-item .nav-icon { font-size: 22px; }
+    .nav-item .nav-label { font-size: 10px; color: var(--muted); display: block; margin-top: 2px; }
+    .nav-item.active .nav-label { color: var(--green); }
+
+    /* ── Empty state ── */
+    .empty { text-align: center; color: var(--muted); padding: 40px 20px; font-size: 15px; }
+
+    /* ── Diff preview ── */
+    .diff-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin: 16px 0;
+      font-family: 'SF Mono', Menlo, monospace;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+    .diff-add    { color: var(--green); }
+    .diff-remove { color: var(--red); text-decoration: line-through; }
+    .diff-keep   { color: var(--muted); }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>📈 <span>Stock</span>Picks</h1>
+    <div class="subtitle" id="subtitle">Loading watchlist…</div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('watchlist')">Watchlist</div>
+    <div class="tab" onclick="switchTab('bulk')">Bulk Update</div>
+    <div class="tab" onclick="switchTab('settings')">Settings</div>
+  </div>
+
+  <!-- ── PANEL: Watchlist ── -->
+  <div class="panel active" id="panel-watchlist">
+
+    <div class="section-title">
+      Current stocks
+      <span class="count-badge" id="stock-count">0</span>
+    </div>
+    <div class="stock-grid" id="stock-grid">
+      <div class="empty">Loading…</div>
+    </div>
+
+    <div class="section-title">Add a stock</div>
+    <div class="add-row">
+      <input type="text" id="add-input" placeholder="e.g. AAPL"
+             maxlength="8" style="text-transform:uppercase"
+             oninput="this.value=this.value.toUpperCase()"
+             onkeydown="if(event.key==='Enter') addSingle()">
+      <button class="btn btn-green" onclick="addSingle()">Add</button>
+    </div>
+
+    <button class="btn btn-green btn-block" onclick="saveChanges()" id="save-btn" style="display:none">
+      Save Changes to GitHub
+    </button>
+
+  </div>
+
+  <!-- ── PANEL: Bulk Update ── -->
+  <div class="panel" id="panel-bulk">
+
+    <div class="help-box">
+      One instruction per line:<br>
+      <code>ADD AAPL</code> — add a stock<br>
+      <code>DELETE IRON</code> or <code>REMOVE IRON</code> — remove a stock<br>
+      <code>REPLACE LUNR RKLB</code> — swap one for another<br>
+      Lines starting with <code>#</code> are ignored
+    </div>
+
+    <div class="section-title">Your instructions</div>
+    <textarea id="bulk-input" placeholder="ADD AAPL&#10;DELETE IRON&#10;REPLACE LUNR RKLB&#10;ADD TSLA"></textarea>
+
+    <button class="btn btn-gray btn-block" style="margin-top:12px" onclick="previewBulk()">
+      Preview Changes
+    </button>
+
+    <div id="diff-preview" style="display:none">
+      <div class="section-title" style="margin-top:20px">Preview</div>
+      <div class="diff-box" id="diff-content"></div>
+      <button class="btn btn-green btn-block" onclick="applyBulk()" id="apply-btn">
+        Apply & Save to GitHub
+      </button>
+    </div>
+
+  </div>
+
+  <!-- ── PANEL: Settings ── -->
+  <div class="panel" id="panel-settings">
+
+    <div class="section-title">GitHub Token</div>
+    <div class="setting-row">
+      <div class="setting-label">Used to read and write your tickers.txt on GitHub</div>
+      <div class="token-display" id="token-display">Not set</div>
+    </div>
+    <div class="add-row" style="margin-top:12px">
+      <input type="password" id="token-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+      <button class="btn btn-green" onclick="saveToken()">Save</button>
+    </div>
+    <button class="btn btn-red btn-block" style="margin-top:8px" onclick="clearToken()">
+      Clear Token
+    </button>
+
+    <div class="divider"></div>
+
+    <div class="section-title">About</div>
+    <div class="help-box" style="line-height:2">
+      Repo: <code>karthikpalsg/stock-recommender</code><br>
+      File: <code>tickers.txt</code><br>
+      Changes push directly to GitHub and take effect on the next scheduled engine run.<br><br>
+      <b>Token scope needed:</b> <code>repo</code>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-title">Add to Home Screen</div>
+    <div class="help-box">
+      In Safari: tap the <b>Share</b> button → <b>Add to Home Screen</b>.<br>
+      The app will open fullscreen like a native app.
+    </div>
+
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Bottom Nav -->
+  <div class="bottom-nav">
+    <div class="nav-item active" id="nav-watchlist" onclick="switchTab('watchlist')">
+      <div class="nav-icon">📋</div>
+      <span class="nav-label">Watchlist</span>
+    </div>
+    <div class="nav-item" id="nav-bulk" onclick="switchTab('bulk')">
+      <div class="nav-icon">✏️</div>
+      <span class="nav-label">Bulk Edit</span>
+    </div>
+    <div class="nav-item" id="nav-settings" onclick="switchTab('settings')">
+      <div class="nav-icon">⚙️</div>
+      <span class="nav-label">Settings</span>
+    </div>
+  </div>
+
+<script>
+  // ── Config ──────────────────────────────────────────────
+  const OWNER = 'karthikpalsg';
+  const REPO  = 'stock-recommender';
+  const FILE  = 'tickers.txt';
+  const API   = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`;
+
+  // ── State ────────────────────────────────────────────────
+  let tickers  = [];      // current list (array of strings, uppercase)
+  let fileSHA  = '';      // GitHub file SHA needed for updates
+  let modified = false;   // tracks unsaved changes
+
+  // ── Init ─────────────────────────────────────────────────
+  window.addEventListener('load', () => {
+    refreshTokenDisplay();
+    fetchTickers();
+  });
+
+  // ── GitHub API helpers ───────────────────────────────────
+  function getToken() {
+    return localStorage.getItem('gh_token') || '';
+  }
+
+  async function fetchTickers() {
+    setSubtitle('Fetching watchlist…');
+    try {
+      const headers = { 'Accept': 'application/vnd.github.v3+json' };
+      const token = getToken();
+      if (token) headers['Authorization'] = `token ${token}`;
+
+      const res  = await fetch(API, { headers });
+      if (!res.ok) throw new Error(`GitHub returned ${res.status}`);
+      const data = await res.json();
+
+      fileSHA  = data.sha;
+      const raw = atob(data.content.replace(/\n/g, ''));
+      tickers  = raw.split('\n')
+                    .map(l => l.trim().toUpperCase())
+                    .filter(l => l && !l.startsWith('#'));
+
+      renderGrid();
+      setSubtitle(`${tickers.length} stocks tracked`);
+      modified = false;
+      document.getElementById('save-btn').style.display = 'none';
+
+    } catch (e) {
+      setSubtitle('Failed to load — check token in Settings');
+      showToast('Load failed: ' + e.message, 'error');
+    }
+  }
+
+  async function pushTickers(newTickers, commitMsg) {
+    const token = getToken();
+    if (!token) {
+      showToast('Set your GitHub token in Settings first', 'error');
+      switchTab('settings');
+      return false;
+    }
+
+    const header = '# Your stock watchlist — one ticker per line\n# Lines starting with # are ignored\n\n';
+    const content = header + [...new Set(newTickers)].sort().join('\n') + '\n';
+    const encoded = btoa(unescape(encodeURIComponent(content)));
+
+    const res = await fetch(API, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `token ${token}`,
+        'Content-Type':  'application/json',
+        'Accept':        'application/vnd.github.v3+json',
+      },
+      body: JSON.stringify({
+        message: commitMsg || `Watchlist update from StockPicks app`,
+        content: encoded,
+        sha:     fileSHA,
+      }),
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.message || `HTTP ${res.status}`);
+    }
+    const data = await res.json();
+    fileSHA = data.content.sha;   // update SHA for next save
+    return true;
+  }
+
+  // ── Render ───────────────────────────────────────────────
+  function renderGrid() {
+    const grid = document.getElementById('stock-grid');
+    document.getElementById('stock-count').textContent = tickers.length;
+
+    if (tickers.length === 0) {
+      grid.innerHTML = '<div class="empty">No stocks yet — add one above</div>';
+      return;
+    }
+
+    grid.innerHTML = [...tickers].sort().map(t => `
+      <div class="chip" id="chip-${t}">
+        ${t}
+        <button class="del" onclick="removeStock('${t}')" title="Remove ${t}">×</button>
+      </div>
+    `).join('');
+  }
+
+  function setSubtitle(text) {
+    document.getElementById('subtitle').textContent = text;
+  }
+
+  // ── Watchlist actions ────────────────────────────────────
+  function addSingle() {
+    const input  = document.getElementById('add-input');
+    const symbol = input.value.trim().toUpperCase().replace(/[^A-Z]/g, '');
+    if (!symbol) return;
+    if (tickers.includes(symbol)) {
+      showToast(`${symbol} is already in your list`, 'info');
+      input.value = '';
+      return;
+    }
+    tickers.push(symbol);
+    input.value = '';
+    renderGrid();
+    markModified();
+    showToast(`${symbol} added`, 'success');
+  }
+
+  function removeStock(symbol) {
+    tickers = tickers.filter(t => t !== symbol);
+    renderGrid();
+    markModified();
+    showToast(`${symbol} removed`, 'info');
+  }
+
+  function markModified() {
+    modified = true;
+    document.getElementById('save-btn').style.display = 'block';
+    setSubtitle(`${tickers.length} stocks — unsaved changes`);
+  }
+
+  async function saveChanges() {
+    const btn = document.getElementById('save-btn');
+    btn.innerHTML = '<span class="spinner"></span> Saving…';
+    btn.disabled  = true;
+    try {
+      await pushTickers(tickers, `Update watchlist (${tickers.length} stocks) via StockPicks app`);
+      showToast('Saved to GitHub ✓', 'success');
+      setSubtitle(`${tickers.length} stocks tracked`);
+      modified = false;
+      btn.style.display = 'none';
+    } catch (e) {
+      showToast('Save failed: ' + e.message, 'error');
+    } finally {
+      btn.innerHTML = 'Save Changes to GitHub';
+      btn.disabled  = false;
+    }
+  }
+
+  // ── Bulk update ──────────────────────────────────────────
+  function parseInstructions(text) {
+    const adds     = [];
+    const removes  = [];
+    const replaces = [];
+    const errors   = [];
+
+    text.split('\n').forEach((line, i) => {
+      const raw = line.trim();
+      if (!raw || raw.startsWith('#')) return;
+
+      const parts = raw.toUpperCase().split(/\s+/);
+      const cmd   = parts[0];
+
+      if (cmd === 'ADD' && parts[1]) {
+        adds.push(parts[1]);
+      } else if ((cmd === 'DELETE' || cmd === 'REMOVE') && parts[1]) {
+        removes.push(parts[1]);
+      } else if (cmd === 'REPLACE' && parts[1] && parts[2]) {
+        replaces.push({ from: parts[1], to: parts[2] });
+      } else {
+        errors.push(`Line ${i+1}: "${raw}" — not recognised`);
+      }
+    });
+
+    return { adds, removes, replaces, errors };
+  }
+
+  function applyInstructions(base, instructions) {
+    let result = [...base];
+    const { adds, removes, replaces } = instructions;
+
+    removes.forEach(t  => { result = result.filter(x => x !== t); });
+    replaces.forEach(r => {
+      result = result.map(x => x === r.from ? r.to : x);
+    });
+    adds.forEach(t => {
+      if (!result.includes(t)) result.push(t);
+    });
+
+    return result;
+  }
+
+  function previewBulk() {
+    const text = document.getElementById('bulk-input').value;
+    if (!text.trim()) { showToast('Enter some instructions first', 'info'); return; }
+
+    const instr   = parseInstructions(text);
+    const newList = applyInstructions(tickers, instr);
+
+    // Show errors
+    if (instr.errors.length > 0) {
+      showToast(instr.errors[0], 'error');
+      return;
+    }
+
+    // Build diff display
+    const toAdd    = new Set(instr.adds.filter(t => !tickers.includes(t)));
+    const toRemove = new Set(instr.removes.filter(t =>  tickers.includes(t)));
+    const toFrom   = new Set(instr.replaces.map(r => r.from));
+    const toTo     = new Set(instr.replaces.map(r => r.to));
+
+    const allSymbols = [...new Set([...tickers, ...newList])].sort();
+    const lines = allSymbols.map(sym => {
+      if (toRemove.has(sym) || toFrom.has(sym)) return `<div class="diff-remove">− ${sym}</div>`;
+      if (toAdd.has(sym)    || toTo.has(sym))   return `<div class="diff-add">+ ${sym}</div>`;
+      return `<div class="diff-keep">  ${sym}</div>`;
+    });
+
+    document.getElementById('diff-content').innerHTML = lines.join('');
+    document.getElementById('diff-preview').style.display = 'block';
+    document.getElementById('apply-btn').dataset.newList = JSON.stringify(newList);
+
+    showToast(`Preview: +${toAdd.size + toTo.size} added, −${toRemove.size + toFrom.size} removed`, 'info');
+  }
+
+  async function applyBulk() {
+    const btn     = document.getElementById('apply-btn');
+    const newList = JSON.parse(btn.dataset.newList || '[]');
+    if (!newList.length) return;
+
+    btn.innerHTML = '<span class="spinner"></span> Saving…';
+    btn.disabled  = true;
+
+    try {
+      const text  = document.getElementById('bulk-input').value;
+      const instr = parseInstructions(text);
+      const added   = instr.adds.length + instr.replaces.length;
+      const removed = instr.removes.length + instr.replaces.length;
+      const msg = `Bulk update: +${added} added, −${removed} removed (${newList.length} total) via StockPicks app`;
+
+      await pushTickers(newList, msg);
+      tickers = newList;
+      renderGrid();
+      setSubtitle(`${tickers.length} stocks tracked`);
+      document.getElementById('bulk-input').value = '';
+      document.getElementById('diff-preview').style.display = 'none';
+      showToast(`Saved — ${tickers.length} stocks now tracked ✓`, 'success');
+      switchTab('watchlist');
+    } catch (e) {
+      showToast('Save failed: ' + e.message, 'error');
+    } finally {
+      btn.innerHTML = 'Apply & Save to GitHub';
+      btn.disabled  = false;
+    }
+  }
+
+  // ── Settings ─────────────────────────────────────────────
+  function saveToken() {
+    const t = document.getElementById('token-input').value.trim();
+    if (!t) { showToast('Enter a token first', 'error'); return; }
+    localStorage.setItem('gh_token', t);
+    document.getElementById('token-input').value = '';
+    refreshTokenDisplay();
+    showToast('Token saved locally ✓', 'success');
+    fetchTickers();
+  }
+
+  function clearToken() {
+    localStorage.removeItem('gh_token');
+    refreshTokenDisplay();
+    showToast('Token cleared', 'info');
+  }
+
+  function refreshTokenDisplay() {
+    const t = getToken();
+    const el = document.getElementById('token-display');
+    el.textContent = t ? t.slice(0, 8) + '••••••••••••••••' + t.slice(-4) : 'Not set — go to Settings';
+  }
+
+  // ── UI helpers ───────────────────────────────────────────
+  let currentTab = 'watchlist';
+
+  function switchTab(name) {
+    ['watchlist','bulk','settings'].forEach(t => {
+      document.getElementById(`panel-${t}`).classList.toggle('active', t === name);
+      document.getElementById(`nav-${t}`)?.classList.toggle('active', t === name);
+    });
+    document.querySelectorAll('.tab').forEach((el, i) => {
+      el.classList.toggle('active', ['watchlist','bulk','settings'][i] === name);
+    });
+    currentTab = name;
+    if (name === 'bulk') {
+      document.getElementById('diff-preview').style.display = 'none';
+    }
+  }
+
+  let toastTimer;
+  function showToast(msg, type = 'info') {
+    const el = document.getElementById('toast');
+    el.textContent = msg;
+    el.className   = `toast ${type} show`;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { el.classList.remove('show'); }, 3000);
+  }
+</script>
+
+</body>
+</html>
