@@ -529,6 +529,13 @@
     'WATCH':      '#9ca3af',
     'AVOID':      '#dc2626',
   };
+  // Local emoji map — ignores signal_emoji from data (which sometimes contains full label text)
+  const SIG_EMOJI = {
+    'STRONG BUY': '🟢',
+    'BUY':        '🟡',
+    'WATCH':      '⚪',
+    'AVOID':      '🔴',
+  };
 
   // ── State ───────────────────────────────────────────────────────────────
   let allRuns     = [];
@@ -727,7 +734,7 @@
           </div>
 
           <div class="card-ticker">${s.ticker}</div>
-          <div class="card-signal" style="color:${color}">${s.signal_emoji ?? ''} ${s.signal}</div>
+          <div class="card-signal" style="color:${color}">${SIG_EMOJI[s.signal] ?? ''} ${s.signal}</div>
 
           <div class="score-bar-bg">
             <div class="score-bar-fill" style="width:${score}%;background:${hex}"></div>
