@@ -817,29 +817,37 @@ jobs:
 
 ---
 
-## Step 23 — iPhone app credential error (in progress)
+## Step 23 — iPhone app credential error (fixed)
 
 **What you reported:**
 Bad credential error when deleting a stock and saving changes in the iPhone app.
 
-**Investigation status:**
-Token confirmed still valid (HTTP 200 returned). Issue likely one of:
-1. Token not saved correctly in Settings tab (extra space on paste)
-2. File SHA gone stale (GitHub Actions committed since app last loaded)
-3. Token pasted with line break or invisible character
+**Root causes identified:**
+1. **Stale file SHA** — The app stores the file's SHA when the page first loads. If GitHub Actions committed a data update in the meantime, the SHA is outdated. GitHub rejects writes with a stale SHA.
+2. **`token` vs `Bearer` auth format** — The old code used `token <PAT>` in the Authorization header. `Bearer` is more universally accepted by GitHub for both classic PATs and fine-grained tokens.
+3. **Hidden whitespace in stored token** — Pasting from iPhone clipboard can include a trailing newline or invisible character. `.trim()` alone doesn't catch all whitespace variants.
 
-**Fixes applied (partially):**
-- Added better error messages distinguishing credential errors from conflict errors
-- Added whitespace trimming on token save
-- (Further fixes were interrupted)
+**Fixes applied to `app/index.html`:**
 
-**Recommended action if still happening:**
-1. Open app → Settings tab
-2. Tap "Clear Token"
-3. Re-paste your token carefully (from your GitHub → Settings → Developer Settings → PAT)
-4. Tap Save
-5. The app will reload your stock list — this refreshes the file SHA
-6. Then try delete and save again
+1. **Fresh SHA before every write** — `pushTickers()` now does a live GET request immediately before every PUT write to fetch the latest SHA. This makes stale-SHA conflicts impossible:
+   ```javascript
+   // Always fetch the freshest SHA right before writing
+   const freshRes = await fetch(API, { headers: { Authorization: `Bearer ${token}` } });
+   fileSHA = freshData.sha;   // always use the live SHA
+   ```
+
+2. **Switched to `Bearer` auth** — All API calls updated from `token ${token}` to `Bearer ${token}`.
+
+3. **Specific error messages** — 401 and 409 now give clear, actionable messages:
+   - 401: "Invalid token — go to Settings, clear it, and paste it again"
+   - 409: "File was just updated elsewhere — please try saving again" (auto-reloads)
+
+4. **Stronger token sanitisation** — On save, strips all whitespace (not just leading/trailing) and validates the token starts with `ghp_` or `github_pat_` before storing.
+
+5. **"Test Connection" button added** — New button in Settings tab. Tapping it pings GitHub, reports whether the token is valid, and refreshes the cached SHA. Green ✅ = working, red message = what to fix.
+
+**To apply on your iPhone:**
+Open the app in Safari → hard reload (close and reopen) → Settings tab → tap "Test Connection" → should show ✅ — then delete a stock and save.
 
 ---
 
