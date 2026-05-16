@@ -20,7 +20,7 @@ from email.mime.text import MIMEText
 
 # Load your personal settings from config.py
 from config import SLACK_WEBHOOK_URL, FINNHUB_API_KEY, SCORE_WEIGHTS, \
-                   STOP_LOSS_PCT, TARGET_RETURN_PCT, TOP_N_PICKS, \
+                   STOP_LOSS_PCT, TARGET_RETURN_PCT, TOP_N_PICKS, HOLD_MONTHS, \
                    GMAIL_ADDRESS, GMAIL_APP_PASSWORD, SEND_EMAIL
 
 
@@ -411,7 +411,7 @@ def generate_report(df, output_dir="picks"):
 
 
 # ============================================================
-# EMAIL NOTIFIER — sends top 5 picks to your Gmail
+# EMAIL NOTIFIER — sends all stocks ranked by score to Gmail
 # ============================================================
 def send_email(df):
     if not SEND_EMAIL or not GMAIL_ADDRESS or not GMAIL_APP_PASSWORD:
@@ -420,64 +420,137 @@ def send_email(df):
     today = datetime.now().strftime("%d %B %Y")
     top   = df.head(TOP_N_PICKS)
 
-    # --- Build HTML email body ---
-    rows_html = ""
+    # --- Section 1: Top picks with full signal detail ---
+    top_rows_html = ""
     for rank, row in top.iterrows():
         signal = action_label(row['Score'])
-        color  = "#1a7a3f" if "STRONG" in signal else ("#b8860b" if "BUY" in signal else "#555")
-        rows_html += f"""
+        color  = "#1a7a3f" if "STRONG" in signal else ("#b8860b" if "BUY" in signal else "#666")
+        top_rows_html += f"""
         <tr style="border-bottom:1px solid #eee;">
-          <td style="padding:10px;font-weight:bold;font-size:16px;">#{rank}</td>
+          <td style="padding:10px;font-weight:bold;font-size:15px;color:#333;">#{rank}</td>
           <td style="padding:10px;">
-            <span style="font-size:18px;font-weight:bold;">{row['Ticker']}</span><br>
-            <span style="color:#666;font-size:13px;">{row['Company']}</span>
+            <span style="font-size:17px;font-weight:bold;">{row['Ticker']}</span><br>
+            <span style="color:#888;font-size:12px;">{row['Company']}</span>
           </td>
           <td style="padding:10px;">${row['Price']:.2f}</td>
-          <td style="padding:10px;">${row['Target']:.0f} <span style="color:#1a7a3f;">({row['Upside %']:+.0f}%)</span></td>
+          <td style="padding:10px;">${row['Target']:.0f}<br>
+            <span style="color:#1a7a3f;font-size:12px;">+{row['Upside %']:.0f}%</span>
+          </td>
           <td style="padding:10px;color:#c0392b;">${row['Stop Loss']:.2f}</td>
           <td style="padding:10px;font-weight:bold;font-size:16px;">{row['Score']}/100</td>
-          <td style="padding:10px;color:{color};font-weight:bold;">{signal}</td>
+          <td style="padding:10px;font-weight:bold;color:{color};">{signal}</td>
         </tr>
-        <tr style="background:#f9f9f9;border-bottom:1px solid #eee;">
+        <tr style="background:#fafafa;border-bottom:2px solid #ddd;">
           <td></td>
-          <td colspan="6" style="padding:6px 10px;font-size:12px;color:#555;">
-            🔬 <b>Analyst:</b> {row['Analyst Detail']} &nbsp;|&nbsp;
-            📈 <b>Momentum:</b> {row['Momentum Detail']}
+          <td colspan="6" style="padding:5px 10px 10px;font-size:11px;color:#666;">
+            🔬 <b>Analyst {row['Analyst Score']:.0f}/100:</b> {row['Analyst Detail']}<br>
+            📈 <b>Momentum {row['Momentum Score']:.0f}/100:</b> {row['Momentum Detail']}<br>
+            💰 <b>Fundamentals {row['Fundamental Score']:.0f}/100:</b> {row['Fundamental Detail']}<br>
+            💬 <b>Social {row['Social Score']:.0f}/100:</b> {row['Social Detail']}
           </td>
         </tr>"""
 
+    # --- Section 2: Full watchlist sorted by score ---
+    all_rows_html = ""
+    for rank, row in df.iterrows():
+        signal = action_label(row['Score'])
+        bg     = "#fff" if rank % 2 == 1 else "#f9f9f9"
+        color  = "#1a7a3f" if "STRONG" in signal else \
+                 "#b8860b" if "BUY" in signal else \
+                 "#555"    if "WATCH" in signal else "#c0392b"
+        all_rows_html += f"""
+        <tr style="background:{bg};border-bottom:1px solid #eee;">
+          <td style="padding:8px 10px;color:#999;">#{rank}</td>
+          <td style="padding:8px 10px;font-weight:bold;">{row['Ticker']}</td>
+          <td style="padding:8px 10px;font-size:12px;color:#888;">{row['Company']}</td>
+          <td style="padding:8px 10px;font-weight:bold;">{row['Score']}/100</td>
+          <td style="padding:8px 10px;">${row['Price']:.2f}</td>
+          <td style="padding:8px 10px;">${row['Target']:.0f}
+            <span style="color:#1a7a3f;font-size:11px;">(+{row['Upside %']:.0f}%)</span>
+          </td>
+          <td style="padding:8px 10px;color:#c0392b;">${row['Stop Loss']:.2f}</td>
+          <td style="padding:8px 10px;font-size:11px;">{row['Analyst Score']:.0f}</td>
+          <td style="padding:8px 10px;font-size:11px;">{row['Momentum Score']:.0f}</td>
+          <td style="padding:8px 10px;font-size:11px;">{row['Fundamental Score']:.0f}</td>
+          <td style="padding:8px 10px;font-size:11px;">{row['Social Score']:.0f}</td>
+          <td style="padding:8px 10px;font-weight:bold;color:{color};font-size:12px;">{signal}</td>
+        </tr>"""
+
     html = f"""
-    <html><body style="font-family:Arial,sans-serif;max-width:700px;margin:auto;color:#222;">
+    <html><body style="font-family:Arial,sans-serif;max-width:800px;margin:auto;color:#222;">
+
+      <!-- Header -->
       <div style="background:#111;padding:20px;border-radius:8px 8px 0 0;">
         <h2 style="color:#fff;margin:0;">📈 Daily Stock Picks — {today}</h2>
-        <p style="color:#aaa;margin:4px 0 0;">Data & AI Recommendation Engine</p>
+        <p style="color:#aaa;margin:6px 0 0;font-size:13px;">
+          Data & AI Recommendation Engine &nbsp;|&nbsp;
+          {len(df)} stocks analysed &nbsp;|&nbsp;
+          Top pick: {df.iloc[0]['Ticker']} at {df.iloc[0]['Score']}/100
+        </p>
       </div>
-      <div style="padding:20px;background:#fff;border:1px solid #ddd;">
+
+      <!-- Top 5 detailed -->
+      <div style="padding:16px 20px 4px;background:#fff;border:1px solid #ddd;border-top:none;">
+        <h3 style="margin:0 0 12px;font-size:15px;color:#333;">🏆 Top {TOP_N_PICKS} Picks — Full Breakdown</h3>
+      </div>
+      <div style="background:#fff;border:1px solid #ddd;border-top:none;">
         <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
           <thead>
-            <tr style="background:#f0f0f0;font-size:13px;color:#555;">
-              <th style="padding:10px;text-align:left;">#</th>
-              <th style="padding:10px;text-align:left;">Ticker</th>
-              <th style="padding:10px;text-align:left;">Price</th>
-              <th style="padding:10px;text-align:left;">Target</th>
-              <th style="padding:10px;text-align:left;">Stop Loss</th>
-              <th style="padding:10px;text-align:left;">Score</th>
-              <th style="padding:10px;text-align:left;">Signal</th>
+            <tr style="background:#f0f0f0;font-size:12px;color:#666;text-transform:uppercase;">
+              <th style="padding:8px 10px;text-align:left;">Rank</th>
+              <th style="padding:8px 10px;text-align:left;">Ticker</th>
+              <th style="padding:8px 10px;text-align:left;">Price</th>
+              <th style="padding:8px 10px;text-align:left;">Target</th>
+              <th style="padding:8px 10px;text-align:left;">Stop Loss</th>
+              <th style="padding:8px 10px;text-align:left;">Score</th>
+              <th style="padding:8px 10px;text-align:left;">Signal</th>
             </tr>
           </thead>
-          <tbody>{rows_html}</tbody>
+          <tbody>{top_rows_html}</tbody>
         </table>
       </div>
-      <div style="padding:16px;background:#f9f9f9;border:1px solid #ddd;border-top:none;font-size:12px;color:#888;border-radius:0 0 8px 8px;">
-        Stop-loss: -{STOP_LOSS_PCT}% from entry &nbsp;|&nbsp; Target return: +{TARGET_RETURN_PCT}% &nbsp;|&nbsp; Hold: 6 months<br>
-        Weights: Analyst 35% · Momentum 25% · Fundamentals 25% · Social 15%<br>
-        <i>This is a personal research tool, not financial advice.</i>
+
+      <!-- Full watchlist -->
+      <div style="padding:16px 20px 4px;margin-top:24px;background:#fff;border:1px solid #ddd;">
+        <h3 style="margin:0 0 4px;font-size:15px;color:#333;">📋 Full Watchlist — All {len(df)} Stocks Ranked</h3>
+        <p style="margin:0 0 12px;font-size:12px;color:#888;">Sorted highest to lowest score</p>
       </div>
-    </html></body>"""
+      <div style="background:#fff;border:1px solid #ddd;border-top:none;">
+        <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+          <thead>
+            <tr style="background:#f0f0f0;font-size:11px;color:#666;text-transform:uppercase;">
+              <th style="padding:8px 10px;text-align:left;">#</th>
+              <th style="padding:8px 10px;text-align:left;">Ticker</th>
+              <th style="padding:8px 10px;text-align:left;">Company</th>
+              <th style="padding:8px 10px;text-align:left;">Score</th>
+              <th style="padding:8px 10px;text-align:left;">Price</th>
+              <th style="padding:8px 10px;text-align:left;">Target</th>
+              <th style="padding:8px 10px;text-align:left;">Stop</th>
+              <th style="padding:8px 10px;text-align:left;">Analyst</th>
+              <th style="padding:8px 10px;text-align:left;">Momentum</th>
+              <th style="padding:8px 10px;text-align:left;">Fund.</th>
+              <th style="padding:8px 10px;text-align:left;">Social</th>
+              <th style="padding:8px 10px;text-align:left;">Signal</th>
+            </tr>
+          </thead>
+          <tbody>{all_rows_html}</tbody>
+        </table>
+      </div>
+
+      <!-- Footer -->
+      <div style="padding:14px 20px;background:#f9f9f9;border:1px solid #ddd;border-top:none;
+                  font-size:11px;color:#999;border-radius:0 0 8px 8px;margin-bottom:20px;">
+        Weights: Analyst 35% · Momentum 25% · Fundamentals 25% · Social 15%<br>
+        Stop-loss: -{STOP_LOSS_PCT}% from entry &nbsp;|&nbsp;
+        Target return: +{TARGET_RETURN_PCT}% &nbsp;|&nbsp; Hold: {HOLD_MONTHS} months<br>
+        <i>Personal research tool — not financial advice.</i>
+      </div>
+
+    </body></html>"""
 
     try:
         msg = MIMEMultipart("alternative")
-        msg["Subject"] = f"📈 Stock Picks {today} — Top pick: {df.iloc[0]['Ticker']} ({df.iloc[0]['Score']}/100)"
+        msg["Subject"] = f"📈 Stock Picks {today} — #{1} {df.iloc[0]['Ticker']} {df.iloc[0]['Score']}/100 | All {len(df)} stocks ranked"
         msg["From"]    = GMAIL_ADDRESS
         msg["To"]      = GMAIL_ADDRESS
         msg.attach(MIMEText(html, "html"))
