@@ -45,47 +45,63 @@ def load_tickers(file_path="tickers.txt"):
 # ============================================================
 def get_analyst_score(ticker_obj, symbol):
     try:
-        # --- Yahoo Finance analyst recommendations ---
-        recs = ticker_obj.recommendations
         upgrades = 0
         downgrades = 0
         detail_parts = []
 
-        if recs is not None and not recs.empty:
-            recs.index = pd.to_datetime(recs.index, utc=True).tz_localize(None)
-            cutoff = datetime.now() - timedelta(days=7)
-            recent = recs[recs.index >= cutoff]
+        # --- Yahoo Finance: upgrade/downgrade history (yfinance 1.x) ---
+        try:
+            ud = ticker_obj.upgrades_downgrades   # correct attribute in yfinance 1.x
+            if ud is not None and not ud.empty:
+                # Index is timezone-aware — convert cleanly
+                ud.index = pd.to_datetime(ud.index).tz_localize(None) \
+                           if ud.index.tzinfo is None \
+                           else pd.to_datetime(ud.index).tz_convert(None)
+                cutoff = datetime.now() - timedelta(days=7)
+                recent = ud[ud.index >= cutoff]
+                if not recent.empty:
+                    # GradeChange column: 'up', 'down', 'init', 'main' (maintain/reiterate)
+                    col = 'Action' if 'Action' in recent.columns else \
+                          'GradeChange' if 'GradeChange' in recent.columns else None
+                    if col:
+                        upgrades   = recent[recent[col].str.lower().isin(['up', 'init', 'main', 'reit'])].shape[0]
+                        downgrades = recent[recent[col].str.lower() == 'down'].shape[0]
+                        if upgrades > 0 or downgrades > 0:
+                            detail_parts.append(f"{upgrades} upgrade(s), {downgrades} downgrade(s) in last 7d")
+        except Exception:
+            pass   # fall through to Finnhub
 
-            if not recent.empty:
-                # Actions: 'up'=upgrade, 'init'=new coverage, 'reit'=reiterate, 'down'=downgrade
-                upgrades   = recent[recent['Action'].isin(['up', 'init', 'reit'])].shape[0]
-                downgrades = recent[recent['Action'] == 'down'].shape[0]
-                detail_parts.append(f"{upgrades} upgrade(s), {downgrades} downgrade(s) in last 7d")
-
-        # --- Optional: Finnhub for richer analyst data ---
+        # --- Finnhub: consensus bullish % across all analysts ---
+        finnhub_score = 0
         if FINNHUB_API_KEY:
             try:
                 url = f"https://finnhub.io/api/v1/stock/recommendation?symbol={symbol}&token={FINNHUB_API_KEY}"
                 resp = requests.get(url, timeout=8)
                 data = resp.json()
                 if data and isinstance(data, list):
-                    latest = data[0]   # Most recent month
+                    latest      = data[0]
                     strong_buy  = latest.get('strongBuy', 0)
                     buy         = latest.get('buy', 0)
                     hold        = latest.get('hold', 0)
                     sell        = latest.get('sell', 0)
                     strong_sell = latest.get('strongSell', 0)
-                    total_analysts = strong_buy + buy + hold + sell + strong_sell
-                    if total_analysts > 0:
-                        bullish_pct = round(((strong_buy + buy) / total_analysts) * 100)
-                        detail_parts.append(f"{bullish_pct}% of {total_analysts} analysts bullish (Finnhub)")
+                    total       = strong_buy + buy + hold + sell + strong_sell
+                    if total > 0:
+                        bullish_pct  = ((strong_buy + buy) / total) * 100
+                        # Score: 70%+ bullish = 60 pts, 50% = 30 pts, etc.
+                        finnhub_score = max(0, min(60, (bullish_pct - 30) * 1.5))
+                        detail_parts.append(f"{bullish_pct:.0f}% of {total} analysts bullish")
             except Exception:
-                pass  # Finnhub is optional, skip silently
+                pass
 
-        # Calculate score
-        net = upgrades - downgrades
-        score = max(-100, min(100, net * 25))   # Each net upgrade = +25 pts
-        detail = " | ".join(detail_parts) if detail_parts else "No recent analyst activity"
+        # --- Composite analyst score ---
+        # Upgrade/downgrade actions (last 7d): each net upgrade = +30 pts
+        # Finnhub consensus: up to 60 pts baseline
+        # Combined and clamped to 0–100
+        action_score = max(-100, min(100, (upgrades - downgrades) * 30))
+        score = max(0, min(100, finnhub_score + action_score))
+
+        detail = " | ".join(detail_parts) if detail_parts else "No recent upgrade/downgrade activity"
         return score, detail
 
     except Exception as e:
@@ -307,9 +323,9 @@ def score_all(tickers, apewisdom_data):
 # REPORT GENERATOR — saves Markdown to picks/ folder
 # ============================================================
 def action_label(score):
-    if score >= 72:   return "🟢 STRONG BUY"
-    elif score >= 55: return "🟡 BUY"
-    elif score >= 40: return "⚪ WATCH"
+    if score >= 65:   return "🟢 STRONG BUY"
+    elif score >= 50: return "🟡 BUY"
+    elif score >= 35: return "⚪ WATCH"
     else:             return "🔴 AVOID"
 
 
