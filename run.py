@@ -24,6 +24,11 @@ from config import SLACK_WEBHOOK_URL, FINNHUB_API_KEY, SCORE_WEIGHTS, \
                    STOP_LOSS_PCT, TARGET_RETURN_PCT, TOP_N_PICKS, HOLD_MONTHS, \
                    GMAIL_ADDRESS, GMAIL_APP_PASSWORD, SEND_EMAIL
 
+# Run label injected by GitHub Actions (e.g. "5am Early Signal" or "7am Final Signal")
+# Falls back to a plain label when running locally
+RUN_LABEL = os.environ.get('RUN_LABEL', 'Manual Run')
+RUN_EMOJI = os.environ.get('RUN_EMOJI', '🔧')
+
 
 # ============================================================
 # HELPER: Load tickers from tickers.txt
@@ -482,7 +487,7 @@ def send_email(df):
 
       <!-- Header -->
       <div style="background:#111;padding:20px;border-radius:8px 8px 0 0;">
-        <h2 style="color:#fff;margin:0;">📈 Daily Stock Picks — {today}</h2>
+        <h2 style="color:#fff;margin:0;">{RUN_EMOJI} {RUN_LABEL} — {today}</h2>
         <p style="color:#aaa;margin:6px 0 0;font-size:13px;">
           Data & AI Recommendation Engine &nbsp;|&nbsp;
           {len(df)} stocks analysed &nbsp;|&nbsp;
@@ -551,7 +556,7 @@ def send_email(df):
 
     try:
         msg = MIMEMultipart("alternative")
-        msg["Subject"] = f"📈 Stock Picks {today} — #{1} {df.iloc[0]['Ticker']} {df.iloc[0]['Score']}/100 | All {len(df)} stocks ranked"
+        msg["Subject"] = f"{RUN_EMOJI} [{RUN_LABEL}] Stock Picks {today} — #{1} {df.iloc[0]['Ticker']} {df.iloc[0]['Score']}/100 | All {len(df)} stocks"
         msg["From"]    = GMAIL_ADDRESS
         msg["To"]      = GMAIL_ADDRESS
         msg.attach(MIMEText(html, "html"))
@@ -621,9 +626,10 @@ def save_json(df, output_dir="data", filename="history.json"):
         "run_id":              now.strftime("%Y-%m-%dT%H:%M:%S"),
         "run_date":            now.strftime("%Y-%m-%d"),
         "run_time":            now.strftime("%H:%M:%S"),
+        "run_label":           RUN_LABEL,
         "run_timestamp_local": now.strftime("%Y-%m-%dT%H:%M:%S"),
         "run_timestamp_utc":   now_utc.strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "timezone":            "AEST (UTC+10) — Sydney, Australia",
+        "timezone":            "Australia/Sydney (AEST/AEDT — DST-aware)",
         "total_stocks":        len(df),
         "score_weights": {
             "analyst":      SCORE_WEIGHTS["analyst"],
@@ -725,6 +731,7 @@ if __name__ == "__main__":
     print("=" * 55)
     print("  📈  STOCK RECOMMENDATION ENGINE")
     print(f"  {datetime.now().strftime('%A, %d %B %Y — %H:%M')}")
+    print(f"  {RUN_EMOJI}  {RUN_LABEL}")
     print("=" * 55)
 
     # Step 1: Load tickers

@@ -1,14 +1,21 @@
 name: Daily Stock Picks
 
 # ============================================================
-# Runs automatically Tuesday–Saturday at 6:15am AEST (Sydney)
-# That equals Monday–Friday 8:15pm UTC — 15 min after US close
-# Gives you time to review picks and place orders before work
+# Runs at exactly 5:00am AND 7:00am Sydney time every weekday.
+# DST-aware: 4 UTC crons cover both AEST (UTC+10) and AEDT (UTC+11).
+# A time-guard job checks the actual Sydney clock and skips any
+# trigger that doesn't land on 5am or 7am.
+#
+# 5am AEST  = 19:00 UTC  |  5am AEDT  = 18:00 UTC
+# 7am AEST  = 21:00 UTC  |  7am AEDT  = 20:00 UTC
 # ============================================================
 
 on:
   schedule:
-    - cron: '15 20 * * 1-5'   # UTC: Mon–Fri 8:15pm = Tue–Sat 6:15am AEST
+    - cron: '0 19 * * 1-5'   # 5am AEST  (Australian winter — Apr to Oct)
+    - cron: '0 18 * * 1-5'   # 5am AEDT  (Australian summer — Oct to Apr)
+    - cron: '0 21 * * 1-5'   # 7am AEST  (Australian winter — Apr to Oct)
+    - cron: '0 20 * * 1-5'   # 7am AEDT  (Australian summer — Oct to Apr)
 
   # Lets you trigger a manual run anytime from GitHub website
   workflow_dispatch:
@@ -17,8 +24,50 @@ on:
 permissions:
   contents: write
 
+# ============================================================
+# JOB 1 — Time guard
+# Checks the actual Sydney clock. Only lets the right runs through.
+# ============================================================
 jobs:
+  check-sydney-time:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.check.outputs.should_run }}
+      run_label:  ${{ steps.check.outputs.run_label }}
+      run_emoji:  ${{ steps.check.outputs.run_emoji }}
+
+    steps:
+      - name: Verify Sydney local time is 5am or 7am
+        id: check
+        run: |
+          SYDNEY_HOUR=$(TZ='Australia/Sydney' date +%H)
+          SYDNEY_TIME=$(TZ='Australia/Sydney' date '+%H:%M %Z')
+          echo "Current Sydney time: $SYDNEY_TIME"
+
+          if [ "$SYDNEY_HOUR" = "05" ]; then
+            echo "should_run=true"   >> $GITHUB_OUTPUT
+            echo "run_label=5am Early Signal"  >> $GITHUB_OUTPUT
+            echo "run_emoji=🌅"      >> $GITHUB_OUTPUT
+            echo "✅ 5am run — proceeding"
+          elif [ "$SYDNEY_HOUR" = "07" ]; then
+            echo "should_run=true"   >> $GITHUB_OUTPUT
+            echo "run_label=7am Final Signal"  >> $GITHUB_OUTPUT
+            echo "run_emoji=📈"      >> $GITHUB_OUTPUT
+            echo "✅ 7am run — proceeding"
+          else
+            echo "should_run=false"  >> $GITHUB_OUTPUT
+            echo "run_label=skip"    >> $GITHUB_OUTPUT
+            echo "run_emoji=⏭"      >> $GITHUB_OUTPUT
+            echo "⏭ Sydney hour is $SYDNEY_HOUR — not 5am or 7am. Skipping."
+          fi
+
+  # ============================================================
+  # JOB 2 — Main engine
+  # Only runs if the time guard says go.
+  # ============================================================
   run-stock-picks:
+    needs: check-sydney-time
+    if: needs.check-sydney-time.outputs.should_run == 'true'
     runs-on: ubuntu-latest
 
     steps:
@@ -39,7 +88,6 @@ jobs:
         run: pip install -r requirements.txt
 
       # 4. Write config.py using your GitHub Secrets
-      #    (your real keys never touch GitHub — they're injected here at runtime)
       - name: Create config from secrets
         run: |
           cat > config.py << 'EOF'
@@ -61,31 +109,31 @@ jobs:
           TOP_N_PICKS       = 5
           EOF
 
-      # 5. Run the engine — secrets injected as environment variables
+      # 5. Run the engine — run label passed in so email subject reflects which run it is
       - name: Run recommendation engine
         env:
           FINNHUB_API_KEY:    ${{ secrets.FINNHUB_API_KEY }}
           GMAIL_ADDRESS:      ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           SLACK_WEBHOOK_URL:  ${{ secrets.SLACK_WEBHOOK_URL }}
+          RUN_LABEL:          ${{ needs.check-sydney-time.outputs.run_label }}
+          RUN_EMOJI:          ${{ needs.check-sydney-time.outputs.run_emoji }}
         run: python run.py
 
       # 6. Commit the updated JSON history back to the repo
-      #    This is what makes history accumulate across daily runs in the cloud.
-      #    On the 1st of each month, the backup file is also committed here.
       - name: Commit JSON history to repo
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "GitHub Actions [Stock Bot]"
           git add data/
           git diff --staged --quiet && echo "No changes to commit" || \
-            git commit -m "chore: stock history $(date '+%Y-%m-%d') [automated]"
+            git commit -m "chore: stock history $(TZ='Australia/Sydney' date '+%Y-%m-%d %H:%M %Z') — ${{ needs.check-sydney-time.outputs.run_label }} [automated]"
           git push
 
-      # 7. Save the picks report as a downloadable file in GitHub
+      # 7. Upload picks report as downloadable artifact
       - name: Upload picks report as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: stock-picks-${{ github.run_id }}
+          name: stock-picks-${{ needs.check-sydney-time.outputs.run_label }}-${{ github.run_id }}
           path: picks/
-          retention-days: 30   # keeps the last 30 days of reports
+          retention-days: 30
