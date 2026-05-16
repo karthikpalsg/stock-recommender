@@ -3,364 +3,556 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>StockPicks — Family Guide</title>
+  <title>Data Glimpse Stocks — Family Guide</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
-      max-width: 660px;
-      margin: 0 auto;
-      padding: 40px 24px 60px;
-      color: #1a1a1a;
-      line-height: 1.7;
-      font-size: 16px;
-      background: #ffffff;
-    }
-
-    /* ── Typography ───────────────────────────────────────────── */
-    .tag      { font-size: 11px; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 0.7px; margin-bottom: 6px; }
-    h1        { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 4px; }
-    .subtitle { font-size: 14px; color: #888; margin-top: 6px; margin-bottom: 0; }
-    h2        { font-size: 18px; font-weight: 800; margin-top: 40px; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 2px solid #f0f0f0; }
-    h3        { font-size: 15px; font-weight: 700; margin-top: 22px; margin-bottom: 6px; }
-    p         { margin-bottom: 16px; }
-    b         { font-weight: 700; }
-    hr        { border: none; border-top: 1px solid #eee; margin: 32px 0; }
-    a         { color: #00a37a; }
-
-    /* ── Callout boxes ────────────────────────────────────────── */
-    .box {
-      border-radius: 10px;
-      padding: 14px 18px;
-      margin: 18px 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
       font-size: 15px;
+      line-height: 1.6;
+      padding: 0 0 60px 0;
     }
-    .box-green  { background: #f0fdf8; border: 1.5px solid #a8f0dc; }
-    .box-yellow { background: #fffbf0; border: 1.5px solid #ffe0a0; color: #7a5800; }
-    .box-grey   { background: #f7f7f7; border: 1px solid #e8e8e8; }
-    .box a      { display: block; margin-top: 4px; font-weight: 600; }
 
-    /* ── NVDA Card (light theme replica of the dashboard card) ── */
-    .card-section {
-      margin: 28px 0 32px;
+    /* ── Page header ── */
+    .page-header {
+      background: #ffffff;
+      border-bottom: 1px solid #d2d2d7;
+      padding: 28px 24px 20px;
+      text-align: center;
     }
-    .card-caption {
+    .page-header h1 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #1d1d1f;
+      margin-bottom: 4px;
+    }
+    .page-header h1 em { color: #00a876; font-style: normal; }
+    .page-header p {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 16px;
+    }
+    .app-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .app-links a {
+      display: inline-block;
+      background: #00a876;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      letter-spacing: 0.1px;
+    }
+    .app-links a.secondary {
+      background: #f0f2f5;
+      color: #374151;
+      border: 1px solid #cbd0d8;
+    }
+
+    /* ── Sections ── */
+    .section {
+      margin: 0 auto;
+      max-width: 640px;
+      padding: 28px 20px 0;
+    }
+    .section-title {
       font-size: 11px;
       font-weight: 700;
-      color: #aaa;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 12px;
+      color: #9ca3af;
+      margin-bottom: 10px;
+    }
+    .section h2 {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: #1d1d1f;
+      margin-bottom: 10px;
+    }
+    .section p {
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.7;
+      margin-bottom: 10px;
     }
 
-    .nvda-card {
-      display: inline-flex;
-      flex-direction: column;
+    /* ── Card replica ── */
+    .card-stage {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin: 18px 0 4px;
+    }
+
+    .stock-card {
       background: #ffffff;
-      border: 1.5px solid #d8d8d8;
-      border-top: 4px solid #00c896;
+      border: 1px solid #cbd0d8;
+      border-top: 4px solid #00a876;
       border-radius: 12px;
-      padding: 14px 14px 10px;
-      width: 188px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.09);
-      font-family: -apple-system, 'Helvetica Neue', sans-serif;
-      gap: 0;
+      padding: 12px 11px 9px;
+      width: 175px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .card-rank { font-size: 10px; font-weight: 700; color: #6b7280; }
+    .card-arrow { font-size: 11px; color: #9ca3af; }
+    .card-ticker { font-size: 22px; font-weight: 900; letter-spacing: -0.6px; color: #111827; margin-bottom: 3px; }
+    .card-signal { font-size: 10.5px; font-weight: 700; color: #00a876; margin-bottom: 7px; }
+
+    .score-bar-bg { height: 4px; background: #e5e7eb; border-radius: 2px; margin-bottom: 7px; overflow: hidden; }
+    .score-bar-fill { height: 100%; border-radius: 2px; background: #00a876; width: 80%; }
+
+    .card-score-row {
+      display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px;
+    }
+    .card-score  { font-size: 26px; font-weight: 900; letter-spacing: -1px; color: #00a876; }
+    .card-upside { font-size: 11px; font-weight: 800; color: #00a876; }
+
+    .card-price {
+      font-size: 11.5px; font-weight: 700; color: #111827; line-height: 1.7; margin-bottom: 8px;
+    }
+    .stop-label { font-size: 11px; font-weight: 600; color: #6b7280; }
+    .stop-value { font-size: 11.5px; font-weight: 800; color: #dc2626; }
+
+    .card-analyst { border-top: 1px solid #e5e7eb; padding-top: 7px; margin-bottom: 7px; }
+    .analyst-moves {
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;
+    }
+    .analyst-up   { font-size: 14px; font-weight: 800; color: #00a876; }
+    .analyst-down { font-size: 14px; font-weight: 800; color: #dc2626; }
+    .analyst-period { font-size: 9px; font-weight: 600; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.4px; }
+
+    .bullish-bar-bg { height: 4px; background: #e5e7eb; border-radius: 2px; overflow: hidden; margin-bottom: 5px; }
+    .bullish-bar-fill { height: 100%; border-radius: 2px; background: #00a876; width: 93%; }
+
+    .analyst-caption {
+      display: flex; justify-content: space-between; font-size: 10.5px; font-weight: 600; color: #111827;
+    }
+    .bullish-pct { font-weight: 800; font-size: 11px; color: #00a876; }
+
+    .card-sources { display: flex; gap: 3px; padding-top: 6px; border-top: 1px solid #e5e7eb; }
+    .card-sources span {
+      flex: 1; text-align: center; font-size: 8.5px; font-weight: 800; color: #6b7280;
+      padding: 4px 2px; background: #f3f4f6; border: 1px solid #e5e7eb;
+      border-radius: 4px; letter-spacing: 0.3px;
     }
 
-    .nc-top  { display: flex; justify-content: space-between; margin-bottom: 5px; }
-    .nc-rank { font-size: 10px; font-weight: 700; color: #bbb; }
-    .nc-ext  { font-size: 10px; color: #ccc; }
-
-    .nc-ticker { font-size: 24px; font-weight: 900; letter-spacing: -0.6px; color: #111; line-height: 1; margin-bottom: 4px; }
-    .nc-signal { font-size: 10px; font-weight: 700; color: #00c896; margin-bottom: 8px; line-height: 1; }
-
-    .nc-bar-bg   { height: 4px; background: #ebebeb; border-radius: 2px; margin-bottom: 8px; overflow: hidden; }
-    .nc-bar-fill { height: 100%; background: #00c896; border-radius: 2px; }
-
-    .nc-score-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
-    .nc-score  { font-size: 28px; font-weight: 900; color: #00c896; letter-spacing: -1px; line-height: 1; }
-    .nc-upside { font-size: 12px; font-weight: 800; color: #00c896; }
-
-    .nc-price { font-size: 10px; color: #aaa; margin-bottom: 0; line-height: 1.55; }
-
-    /* Analyst section within card */
-    .nc-analyst { border-top: 1px solid #ebebeb; padding-top: 8px; margin-top: 8px; margin-bottom: 8px; }
-    .nc-moves   { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
-    .nc-up      { font-size: 12px; font-weight: 800; color: #00c896; }
-    .nc-down    { font-size: 12px; font-weight: 800; color: #ff4d4d; }
-    .nc-period  { font-size: 8px; font-weight: 600; color: #bbb; text-transform: uppercase; letter-spacing: 0.3px; }
-
-    .bull-bg   { height: 3px; background: #ebebeb; border-radius: 2px; margin-bottom: 4px; overflow: hidden; }
-    .bull-fill { height: 100%; background: #00c896; border-radius: 2px; }
-
-    .nc-caption { display: flex; justify-content: space-between; font-size: 9px; color: #bbb; }
-    .nc-bpct    { font-weight: 700; color: #00c896; }
-
-    /* Source buttons */
-    .nc-sources { border-top: 1px solid #ebebeb; padding-top: 8px; display: flex; gap: 4px; }
-    .nc-src {
-      flex: 1; text-align: center;
-      font-size: 9px; font-weight: 800; color: #aaa;
-      padding: 4px 2px;
-      background: #f5f5f5; border: 1px solid #e5e5e5;
-      border-radius: 4px; text-decoration: none;
+    /* ── Callout legend next to card ── */
+    .callout-list {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-top: 4px;
     }
+    .callout-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    .callout-num {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #111827;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .callout-text { color: #374151; }
+    .callout-text strong { color: #111827; font-weight: 700; }
 
-    /* ── Metric breakdown table ───────────────────────────────── */
-    .metrics {
+    /* ── Metric table ── */
+    .metric-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 20px 0;
-      font-size: 14px;
+      margin-top: 14px;
+      font-size: 13.5px;
     }
-    .metrics th {
+    .metric-table th {
       text-align: left;
       font-size: 11px;
       font-weight: 700;
-      color: #888;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
-      letter-spacing: 0.4px;
-      padding: 9px 14px;
-      background: #f8f8f8;
-      border: 1px solid #eee;
+      color: #9ca3af;
+      border-bottom: 2px solid #e5e7eb;
+      padding: 6px 10px;
     }
-    .metrics td {
-      padding: 11px 14px;
-      border: 1px solid #eee;
+    .metric-table td {
+      padding: 10px 10px;
+      border-bottom: 1px solid #f3f4f6;
       vertical-align: top;
-      line-height: 1.5;
     }
-    .metrics td:first-child {
+    .metric-table tr:last-child td { border-bottom: none; }
+    .metric-table td:first-child {
       font-weight: 700;
+      color: #111827;
       white-space: nowrap;
-      background: #fcfcfc;
-      width: 30%;
+      width: 38%;
     }
-    .metrics td:nth-child(2) {
+    .metric-table td:last-child { color: #374151; line-height: 1.5; }
+
+    .metric-value {
+      display: inline-block;
+      background: #f0f2f5;
+      border: 1px solid #cbd0d8;
+      border-radius: 5px;
+      padding: 1px 7px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 12px;
       font-weight: 700;
-      color: #00a37a;
-      white-space: nowrap;
+      color: #111827;
+      margin-bottom: 3px;
     }
-    .metrics tr:hover td { background: #fafff9; }
+    .metric-value.green { background: #ecfdf5; border-color: #a7f3d0; color: #065f46; }
+    .metric-value.red   { background: #fef2f2; border-color: #fecaca; color: #991b1b; }
+    .metric-value.amber { background: #fffbeb; border-color: #fde68a; color: #92400e; }
 
-    /* Signal legend table */
-    .signals { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
-    .signals th { text-align: left; padding: 8px 12px; background: #f8f8f8; border: 1px solid #eee; font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.4px; }
-    .signals td { padding: 10px 12px; border: 1px solid #eee; vertical-align: top; }
+    /* ── Signal legend ── */
+    .signal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .signal-item {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 12px;
+      border-left: 4px solid;
+    }
+    .signal-label { font-size: 12px; font-weight: 800; letter-spacing: 0.3px; margin-bottom: 2px; }
+    .signal-desc  { font-size: 11.5px; color: #6b7280; line-height: 1.4; }
 
-    /* Footer */
-    .sign-off { margin-top: 36px; font-size: 15px; }
+    /* ── Run schedule ── */
+    .run-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .run-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .run-card h4 { font-size: 13px; font-weight: 800; color: #111827; margin-bottom: 4px; }
+    .run-card p  { font-size: 12px; color: #6b7280; line-height: 1.5; }
+
+    /* ── Step-by-step access ── */
+    .steps { margin-top: 14px; }
+    .step  { display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start; }
+    .step-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: #f0f2f5; border: 2px solid #cbd0d8;
+      color: #374151; font-size: 13px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .step-body { padding-top: 3px; }
+    .step-body strong { font-size: 14px; font-weight: 700; color: #111827; display: block; margin-bottom: 2px; }
+    .step-body span   { font-size: 13px; color: #6b7280; }
+    .step-url {
+      display: inline-block;
+      font-family: 'SF Mono', monospace; font-size: 11px;
+      background: #f3f4f6; border: 1px solid #e5e7eb;
+      border-radius: 5px; padding: 3px 8px; margin-top: 4px;
+      color: #374151; word-break: break-all;
+    }
+
+    /* ── Disclaimer ── */
+    .disclaimer {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-top: 14px;
+      font-size: 12px;
+      color: #78350f;
+      line-height: 1.6;
+    }
+    .disclaimer strong { font-weight: 700; }
+
+    hr { border: none; border-top: 1px solid #e5e7eb; margin: 0; }
   </style>
 </head>
 <body>
 
-  <div class="tag">May 2026 · For the family</div>
-  <h1>My Stock Picks Tool —<br>How to Read It</h1>
-  <p class="subtitle">Using NVIDIA (NVDA) from the 16 May 2026 run as the worked example</p>
-
-  <hr>
-
-  <p>I built a tool that analyses 29 US tech stocks every morning and ranks them by signal strength. It runs automatically at 5am and 7am Sydney time, Monday to Friday — no one needs to do anything. Here's what it is and how to read it.</p>
-
-  <!-- ── Open the dashboard ──────────────────────────────────── -->
-  <h2>Opening the Dashboard</h2>
-
-  <div class="box box-green">
-    📊 <b>Dashboard:</b>
-    <a href="https://karthikpalsg.github.io/stock-recommender/app/dashboard.html">
-      karthikpalsg.github.io/stock-recommender/app/dashboard.html
-    </a>
-    <span style="font-size:13px;color:#555;display:block;margin-top:6px">
-      First time on any device: message me for an access token. Takes 30 seconds to paste in — you'll never need to do it again on that device.
-    </span>
-  </div>
-
-  <p>The dashboard shows all 29 stocks as cards, three across, ranked by score — strongest signal top-left. The page refreshes itself every 5 minutes. At the top, tabs let you flip between today's two runs and past months as archives.</p>
-
-  <!-- ── The NVDA card ──────────────────────────────────────── -->
-  <h2>Reading a Card — NVIDIA as the Example</h2>
-
-  <p>NVIDIA came in at #1 on 16 May 2026. Here is the actual card from that run, followed by what every number means.</p>
-
-  <div class="card-section">
-    <div class="card-caption">NVDA card · 16 May 2026 · 5am Early Signal</div>
-
-    <div class="nvda-card">
-
-      <div class="nc-top">
-        <span class="nc-rank">#1</span>
-        <span class="nc-ext">↗</span>
-      </div>
-
-      <div class="nc-ticker">NVDA</div>
-      <div class="nc-signal">🟢 STRONG BUY</div>
-
-      <div class="nc-bar-bg">
-        <div class="nc-bar-fill" style="width:80%"></div>
-      </div>
-
-      <div class="nc-score-row">
-        <span class="nc-score">80</span>
-        <span class="nc-upside">+21.1%</span>
-      </div>
-
-      <div class="nc-price">$225.32 → $273<br>Stop $207.29</div>
-
-      <div class="nc-analyst">
-        <div class="nc-moves">
-          <span class="nc-up">↑5</span>
-          <span class="nc-period">last 7d</span>
-          <span class="nc-down">↓0</span>
-        </div>
-        <div class="bull-bg">
-          <div class="bull-fill" style="width:93%"></div>
-        </div>
-        <div class="nc-caption">
-          <span>71 analysts</span>
-          <span class="nc-bpct">93% bullish</span>
-        </div>
-      </div>
-
-      <div class="nc-sources">
-        <a class="nc-src" href="https://finance.yahoo.com/quote/NVDA" target="_blank">YF</a>
-        <a class="nc-src" href="https://finviz.com/quote.ashx?t=NVDA" target="_blank">FV</a>
-        <a class="nc-src" href="https://seekingalpha.com/symbol/NVDA" target="_blank">SA</a>
-      </div>
-
+  <!-- ── Page Header ── -->
+  <div class="page-header">
+    <h1>📈 Data Glimpse <em>Stocks</em></h1>
+    <p>A family guide to reading the dashboard · Runs daily at 5am &amp; 7am Sydney time on weekdays</p>
+    <div class="app-links">
+      <a href="https://karthikpalsg.github.io/stock-recommender/app/dashboard.html">📊 Open Dashboard</a>
+      <a href="https://karthikpalsg.github.io/stock-recommender/app/index.html" class="secondary">📋 My Watchlist</a>
     </div>
   </div>
 
-  <!-- ── Metric-by-metric breakdown ────────────────────────── -->
-  <h3>What each number means</h3>
 
-  <table class="metrics">
-    <tr>
-      <th>On the card</th>
-      <th>NVDA value</th>
-      <th>Plain-English meaning</th>
-    </tr>
-    <tr>
-      <td>#1</td>
-      <td>Rank 1 of 29</td>
-      <td>Highest composite score of all 29 tracked stocks in this run.</td>
-    </tr>
-    <tr>
-      <td>🟢 STRONG BUY</td>
-      <td>Score 80/100</td>
-      <td>The signal is determined by the composite score — anything above 65 is a Strong Buy. The score combines analyst views (35%), price momentum (25%), company fundamentals (25%), and social activity (15%).</td>
-    </tr>
-    <tr>
-      <td>Score bar</td>
-      <td>80% filled · green</td>
-      <td>A visual bar showing how close to 100 the stock scored. Green = strong, amber = moderate, red = weak.</td>
-    </tr>
-    <tr>
-      <td>↑ 5 &nbsp;last 7d&nbsp; ↓ 0</td>
-      <td>5 upgrades, 0 downgrades</td>
-      <td>This week, five professional analysts at major banks formally raised their NVIDIA rating. Not one cut it. An upgrade means an analyst has moved their recommendation up — for example from Hold to Buy. These moves influence where large funds put money.</td>
-    </tr>
-    <tr>
-      <td>93% bullish</td>
-      <td>66 of 71 analysts</td>
-      <td>71 analysts across the world formally cover NVIDIA. 93% currently have a Buy or Strong Buy recommendation. The bar is colour-coded: green above 60%, amber from 40–60%, red below 40%.</td>
-    </tr>
-    <tr>
-      <td>$225.32 → $273</td>
-      <td>Current price → target</td>
-      <td>NVDA is trading at $225 today. The average of all 71 analysts' 12-month price targets is $273. The gap between these two numbers is the potential upside.</td>
-    </tr>
-    <tr>
-      <td>+21.1%</td>
-      <td>Upside to analyst target</td>
-      <td>If NVDA reaches the $273 consensus target, the gain from today's price is 21.1%. This is the opportunity the signal is pointing at — not a guarantee.</td>
-    </tr>
-    <tr>
-      <td>Stop $207.29</td>
-      <td>Exit point if wrong</td>
-      <td>If the price falls to $207 — 8% below entry — the strategy says exit and cut the loss. This limits downside to 8% while leaving room for the 21% upside. The ratio is intentional: the potential gain is 2.6× the maximum accepted loss.</td>
-    </tr>
-    <tr>
-      <td>YF · FV · SA</td>
-      <td>Research source links</td>
-      <td>
-        <b>YF</b> (Yahoo Finance) — live price, news, analyst ratings, earnings reports<br>
-        <b>FV</b> (Finviz) — one-page snapshot: chart, financial ratios, insider trading<br>
-        <b>SA</b> (Seeking Alpha) — analyst articles and buy/sell commentary<br><br>
-        Tapping the card opens Yahoo Finance. The three buttons open specific sources.
-      </td>
-    </tr>
-  </table>
+  <!-- ── SECTION 1: What the card looks like ── -->
+  <div class="section">
+    <div class="section-title">Section 1</div>
+    <h2>What a stock card looks like</h2>
+    <p>Every stock in the dashboard is shown as a card. Here's the NVDA (NVIDIA) card from the 16 May 2026 morning run — each part is numbered so you can follow along below.</p>
 
-  <!-- ── Signal legend ─────────────────────────────────────── -->
-  <h2>The Four Signals</h2>
+    <div class="card-stage">
 
-  <table class="signals">
-    <tr>
-      <th>Colour</th>
-      <th>Signal</th>
-      <th>Score</th>
-      <th>What it means</th>
-    </tr>
-    <tr>
-      <td style="font-size:18px">🟢</td>
-      <td><b>STRONG BUY</b></td>
-      <td style="font-weight:700;color:#00a37a">≥ 65</td>
-      <td>Strong analyst activity, good price momentum, solid fundamentals — all signals aligned</td>
-    </tr>
-    <tr>
-      <td style="font-size:18px">🟡</td>
-      <td><b>BUY</b></td>
-      <td style="font-weight:700;color:#b07800">50 – 64</td>
-      <td>Positive lean but not a standout — worth watching</td>
-    </tr>
-    <tr>
-      <td style="font-size:18px">⚫</td>
-      <td><b>WATCH</b></td>
-      <td style="font-weight:700;color:#888">35 – 49</td>
-      <td>No clear direction — monitoring but no action signal</td>
-    </tr>
-    <tr>
-      <td style="font-size:18px">🔴</td>
-      <td><b>AVOID</b></td>
-      <td style="font-weight:700;color:#cc3333">&lt; 35</td>
-      <td>Weak signals across the board</td>
-    </tr>
-  </table>
+      <!-- NVDA card replica — matches new light-grey dashboard -->
+      <div class="stock-card">
+        <div class="card-top">
+          <span class="card-rank">#1</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <div class="card-ticker">NVDA</div>
+        <div class="card-signal">🟢 STRONG BUY</div>
+        <div class="score-bar-bg"><div class="score-bar-fill"></div></div>
+        <div class="card-score-row">
+          <span class="card-score">80</span>
+          <span class="card-upside">+21.1%</span>
+        </div>
+        <div class="card-price">
+          $225.32 → $273<br>
+          <span class="stop-label">Stop </span><span class="stop-value">$207.29</span>
+        </div>
+        <div class="card-analyst">
+          <div class="analyst-moves">
+            <span class="analyst-up">↑5</span>
+            <span class="analyst-period">last 7d</span>
+            <span class="analyst-down">↓0</span>
+          </div>
+          <div class="bullish-bar-bg"><div class="bullish-bar-fill"></div></div>
+          <div class="analyst-caption">
+            <span>71 analysts</span>
+            <span class="bullish-pct">93% bullish</span>
+          </div>
+        </div>
+        <div class="card-sources">
+          <span>YF</span><span>FV</span><span>SA</span>
+        </div>
+      </div>
 
-  <!-- ── Tabs ──────────────────────────────────────────────── -->
-  <h2>The Tabs Along the Top</h2>
-
-  <p>The tab bar shows every run from the current week — <b>Mon 5am</b>, <b>Mon 7am</b>, <b>Tue 5am</b> and so on — with the most recent selected automatically. Past months appear as archive tabs to the right — <b>Apr '26</b>, <b>Mar '26</b> — each showing the last run of that month. The page refreshes itself every 5 minutes.</p>
-
-  <!-- ── Why two runs per day ───────────────────────────────── -->
-  <h2>Why Two Runs per Day?</h2>
-
-  <p>The US market closes at 4pm New York time — which is <b>6am Sydney time</b> in winter (AEST) and <b>7am in summer</b> (AEDT). The two daily runs are timed around that close:</p>
-
-  <div class="box box-grey">
-    <b>🌅 5am Early Signal</b> — US market still open, most analyst activity already published. Gives a window to prepare before the close.<br><br>
-    <b>📈 7am Final Signal</b> — US market has closed. Full picture for the day. Last signal before the next trading session opens.
+      <!-- Numbered callouts -->
+      <div class="callout-list">
+        <div class="callout-item">
+          <div class="callout-num">1</div>
+          <div class="callout-text"><strong>#1 rank</strong> — top pick this run</div>
+        </div>
+        <div class="callout-item">
+          <div class="callout-num">2</div>
+          <div class="callout-text"><strong>STRONG BUY</strong> — overall signal</div>
+        </div>
+        <div class="callout-item">
+          <div class="callout-num">3</div>
+          <div class="callout-text"><strong>80</strong> — composite score (0–100)</div>
+        </div>
+        <div class="callout-item">
+          <div class="callout-num">4</div>
+          <div class="callout-text"><strong>+21.1%</strong> — upside to analyst target</div>
+        </div>
+        <div class="callout-item">
+          <div class="callout-num">5</div>
+          <div class="callout-text"><strong>$225 → $273</strong> — price now → analyst target</div>
+        </div>
+        <div class="callout-item">
+          <div class="callout-num">6</div>
+          <div class="callout-text"><strong>Stop $207.29</strong> — exit level if trade turns</div>
+        </div>
+        <div class="callout-item">
+          <div class="callout-num">7</div>
+          <div class="callout-text"><strong>↑5 ↓0</strong> — analyst upgrades / downgrades this week</div>
+        </div>
+        <div class="callout-item">
+          <div class="callout-num">8</div>
+          <div class="callout-text"><strong>93% of 71 analysts</strong> are bullish on NVDA</div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- ── Disclaimer ─────────────────────────────────────────── -->
-  <h2>One Thing to Be Clear About</h2>
+  <hr style="margin-top:28px">
 
-  <div class="box box-yellow">
-    <b>This is a research tool, not financial advice.</b> The scores surface what publicly available data says — analyst reports, price history, company filings, Reddit activity. I decide whether to act on any of it. The system has no access to any brokerage account and cannot execute trades. NVIDIA scoring 80/100 on 16 May means the signals are pointing up — it does not mean the stock will go up.
+  <!-- ── SECTION 2: Metric-by-metric breakdown ── -->
+  <div class="section">
+    <div class="section-title">Section 2</div>
+    <h2>What each number means</h2>
+    <p>Each row maps a number on the NVDA card above to a plain-English explanation.</p>
+
+    <table class="metric-table">
+      <thead>
+        <tr>
+          <th>Card element</th>
+          <th>What it means (NVDA example)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="metric-value">#1</span><br>Rank</td>
+          <td>Out of all stocks analysed in that run, NVDA came out on top. Lower number = stronger overall case across all signals combined.</td>
+        </tr>
+        <tr>
+          <td><span class="metric-value green">STRONG BUY</span><br>Signal</td>
+          <td>The engine's overall verdict. Driven by the composite score. Four possible signals — STRONG BUY, BUY, WATCH, AVOID — explained in Section 3.</td>
+        </tr>
+        <tr>
+          <td><span class="metric-value green">80</span><br>Score</td>
+          <td>A 0–100 score built from six data layers: price momentum, technical trend, analyst consensus, earnings quality, relative value vs the market, and news sentiment. 80 is a very strong reading. The green bar below the signal fills to show it visually.</td>
+        </tr>
+        <tr>
+          <td><span class="metric-value green">+21.1%</span><br>Upside</td>
+          <td>How far the current price ($225.32) sits below the average analyst price target ($273). If analysts are right, buying today and holding to target = +21.1% gain. Not a guarantee — it's what Wall Street analysts collectively expect over 12 months.</td>
+        </tr>
+        <tr>
+          <td><span class="metric-value">$225.32 → $273</span><br>Price → Target</td>
+          <td>Left: where NVDA is trading right now. Right: the average 12-month price target set by professional analysts covering the stock. The gap between them is the upside figure above.</td>
+        </tr>
+        <tr>
+          <td><span class="metric-value red">Stop $207.29</span><br>Stop Loss</td>
+          <td>A risk management level. If NVDA falls to $207.29, it has dropped 8% from today — a sign the bullish case may have broken down. Investors often place a sell order at this level to limit losses if the trade goes wrong. Shown in bold red so it stands out clearly.</td>
+        </tr>
+        <tr>
+          <td><span class="metric-value green">↑5</span> <span class="metric-value red">↓0</span><br>Upgrades / Downgrades</td>
+          <td>In the last 7 days: 5 professional analysts raised their rating on NVDA (e.g. Hold → Buy, or Buy → Strong Buy). Zero lowered theirs. High upgrades + zero downgrades means Wall Street is getting <em>more</em> bullish — a strong positive signal.</td>
+        </tr>
+        <tr>
+          <td><span class="metric-value">71 analysts</span><br><span class="metric-value green">93% bullish</span><br>Consensus bar</td>
+          <td>71 professional analysts actively cover NVDA. Of those, 93% currently have a Buy or Strong Buy rating. The bar fills to 93% to show this visually. Colour guide: green = ≥60% bullish, amber = 40–59%, red = below 40%.</td>
+        </tr>
+        <tr>
+          <td><span class="metric-value">YF</span> <span class="metric-value">FV</span> <span class="metric-value">SA</span><br>Source buttons</td>
+          <td>Tap to open the stock on a financial site in a new tab: <strong>YF</strong> = Yahoo Finance (price, news, financials), <strong>FV</strong> = Finviz (chart, ratios, insider trades), <strong>SA</strong> = Seeking Alpha (analyst articles). Tapping the card body itself also opens Yahoo Finance.</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <hr>
+  <hr style="margin-top:28px">
 
-  <div class="sign-off">
-    <p>Message me if the access setup gives you trouble.</p>
-    <p>— Karthik</p>
+  <!-- ── SECTION 3: Signal legend ── -->
+  <div class="section">
+    <div class="section-title">Section 3</div>
+    <h2>What the four signals mean</h2>
+    <p>The coloured bar at the top of each card and the signal label are both driven by the composite score (0–100).</p>
+
+    <div class="signal-grid">
+      <div class="signal-item" style="border-left-color:#00a876">
+        <div class="signal-label" style="color:#00a876">🟢 STRONG BUY</div>
+        <div class="signal-desc">Score ≥ 65. Multiple strong signals aligned — momentum, analysts, and value all pointing up. Highest conviction.</div>
+      </div>
+      <div class="signal-item" style="border-left-color:#d97706">
+        <div class="signal-label" style="color:#d97706">🟡 BUY</div>
+        <div class="signal-desc">Score 50–64. Solid setup with most signals positive. Worth watching closely and doing more research.</div>
+      </div>
+      <div class="signal-item" style="border-left-color:#9ca3af">
+        <div class="signal-label" style="color:#6b7280">⚪ WATCH</div>
+        <div class="signal-desc">Score 35–49. Mixed signals. Not a clear buy yet — add to watchlist and revisit the next day's run.</div>
+      </div>
+      <div class="signal-item" style="border-left-color:#dc2626">
+        <div class="signal-label" style="color:#dc2626">🔴 AVOID</div>
+        <div class="signal-desc">Score &lt; 35. Weak or deteriorating signals across multiple layers. Not the right time — don't chase it.</div>
+      </div>
+    </div>
   </div>
 
-  <div class="box box-grey" style="margin-top:24px">
-    <b>Quick links</b><br>
-    <a href="https://karthikpalsg.github.io/stock-recommender/app/dashboard.html">📊 Picks Dashboard</a>
-    <a href="https://karthikpalsg.github.io/stock-recommender/app/">📋 Watchlist Manager</a>
+  <hr style="margin-top:28px">
+
+  <!-- ── SECTION 4: Run schedule ── -->
+  <div class="section">
+    <div class="section-title">Section 4</div>
+    <h2>Why there are two runs each weekday</h2>
+    <p>The engine runs automatically every weekday morning Sydney time. The dashboard shows a separate tab for each run so you can compare how signals shifted overnight vs after market open.</p>
+
+    <div class="run-grid">
+      <div class="run-card">
+        <h4>⏰ 5am — Early Signal</h4>
+        <p>Runs before the US market opens. Uses overnight data, pre-market moves, and the latest analyst revisions. Good for spotting overnight shifts before markets react.</p>
+      </div>
+      <div class="run-card">
+        <h4>🔔 7am — Final Signal</h4>
+        <p>Runs after the US market open. Incorporates the first hour of live trading. More data = higher confidence. <strong>This is the primary run to focus on.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <hr style="margin-top:28px">
+
+  <!-- ── SECTION 5: How to access ── -->
+  <div class="section">
+    <div class="section-title">Section 5</div>
+    <h2>How to open the dashboard on your iPhone</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <strong>Open Safari</strong>
+          <span>Must be Safari — not Chrome or Firefox — to add to Home Screen.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <strong>Go to the dashboard URL</strong>
+          <div class="step-url">karthikpalsg.github.io/stock-recommender/app/dashboard.html</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <strong>First visit: enter your access token</strong>
+          <span>You'll see a "Connect GitHub" screen. Karthik will send you a personal token — paste it in once and tap Save. It stays saved on your device permanently.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <strong>Add to Home Screen (optional but recommended)</strong>
+          <span>Tap the Share icon (box with arrow pointing up) → "Add to Home Screen" → Add. You get a full-screen app icon — no browser chrome, no URL bar.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <strong>It updates itself</strong>
+          <span>The dashboard polls for new data every 5 minutes automatically. After each weekday morning run the cards refresh on their own — no need to reload.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr style="margin-top:28px">
+
+  <!-- ── Disclaimer ── -->
+  <div class="section">
+    <div class="disclaimer">
+      <strong>⚠️ Not financial advice.</strong> Data Glimpse Stocks is a personal research tool that aggregates publicly available financial data and analyst ratings. Nothing shown constitutes investment advice or a recommendation to buy or sell any security. All investments carry risk. Past signals do not guarantee future results. Always do your own research and consult a licensed financial adviser before making any investment decisions.
+    </div>
   </div>
 
 </body>
