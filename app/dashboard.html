@@ -16,14 +16,13 @@
       --bg:      #0a0a0a;
       --surface: #161616;
       --card:    #1e1e1e;
-      --card2:   #141414;
       --border:  #2a2a2a;
       --green:   #00c896;
       --amber:   #f59e0b;
       --red:     #ff4d4d;
-      --muted:   #666;
+      --muted:   #555;
       --text:    #f0f0f0;
-      --radius:  12px;
+      --radius:  10px;
     }
 
     body {
@@ -39,7 +38,7 @@
     .header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
-      padding: calc(14px + env(safe-area-inset-top)) 18px 12px;
+      padding: calc(14px + env(safe-area-inset-top)) 16px 11px;
       position: sticky;
       top: 0;
       z-index: 30;
@@ -49,14 +48,12 @@
       justify-content: space-between;
       align-items: flex-start;
     }
-
     .header-left h1 {
-      font-size: 21px;
+      font-size: 20px;
       font-weight: 800;
       letter-spacing: -0.4px;
     }
     .header-left h1 em { color: var(--green); font-style: normal; }
-
     .header-subtitle {
       font-size: 11px;
       color: var(--muted);
@@ -66,25 +63,10 @@
       gap: 5px;
     }
 
-    /* Bold date — top right — the focal design element */
-    .header-date {
-      text-align: right;
-      flex-shrink: 0;
-      margin-left: 12px;
-    }
-    .date-primary {
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--green);
-      letter-spacing: -0.3px;
-      line-height: 1.2;
-    }
-    .date-secondary {
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--muted);
-      margin-top: 2px;
-    }
+    /* Bold date — top right — key design element */
+    .header-date { text-align: right; flex-shrink: 0; margin-left: 10px; }
+    .date-primary   { font-size: 14px; font-weight: 800; color: var(--green); letter-spacing: -0.2px; line-height: 1.2; }
+    .date-secondary { font-size: 10px; font-weight: 500; color: var(--muted); margin-top: 2px; }
 
     /* ─── Tab bar ─────────────────────────────────────────────── */
     .tab-bar-wrap {
@@ -92,24 +74,21 @@
       border-bottom: 1px solid var(--border);
       position: sticky;
       z-index: 29;
-      /* top is set dynamically by JS after header renders */
     }
-
     .tab-bar {
       display: flex;
       align-items: stretch;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding: 0 8px;
-      gap: 0;
+      padding: 0 6px;
     }
     .tab-bar::-webkit-scrollbar { display: none; }
 
     .tab-btn {
       flex-shrink: 0;
-      padding: 11px 13px;
-      font-size: 13px;
+      padding: 10px 12px;
+      font-size: 12px;
       font-weight: 600;
       color: var(--muted);
       background: none;
@@ -118,99 +97,83 @@
       cursor: pointer;
       white-space: nowrap;
       transition: color 0.15s;
-      line-height: 1;
     }
-    .tab-btn:active { opacity: 0.7; }
+    .tab-btn:active { opacity: 0.6; }
     .tab-btn.active { color: var(--green); border-bottom-color: var(--green); }
-    .tab-btn.archive { font-size: 12px; opacity: 0.8; }
+    .tab-btn.archive { font-size: 11px; }
     .tab-btn.archive.active { opacity: 1; }
-
-    .tab-sep {
-      width: 1px;
-      background: var(--border);
-      flex-shrink: 0;
-      margin: 8px 6px;
-    }
+    .tab-sep { width: 1px; background: var(--border); flex-shrink: 0; margin: 7px 5px; }
 
     /* ─── Run meta bar ───────────────────────────────────────── */
     .run-meta {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 9px 16px;
+      padding: 8px 14px;
       font-size: 11px;
       color: var(--muted);
       border-bottom: 1px solid var(--border);
     }
-    .run-meta-label {
-      color: var(--green);
-      font-weight: 700;
+    .run-meta-label { color: var(--green); font-weight: 700; }
+
+    /* ─── 3-column stock grid ────────────────────────────────── */
+    .stock-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 7px;
+      padding: 10px 9px 6px;
     }
 
-    /* ─── Stock list ─────────────────────────────────────────── */
-    .stock-list {
-      padding: 10px 12px 4px;
-    }
-
-    .stock-item {
-      margin-bottom: 8px;
-    }
-
-    .stock-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
+    /* Each card is a clickable div — tapping opens Yahoo Finance */
+    .stock-card {
       background: var(--card);
       border: 1px solid var(--border);
+      border-top: 3px solid var(--border);   /* overridden per signal */
       border-radius: var(--radius);
-      padding: 12px 12px 10px;
+      padding: 9px 8px 7px;
       cursor: pointer;
-      transition: background 0.1s;
-      user-select: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: transform 0.1s, opacity 0.1s;
       -webkit-user-select: none;
+      user-select: none;
+      position: relative;
     }
-    .stock-row:active { background: #252525; }
+    .stock-card:active { transform: scale(0.95); opacity: 0.75; }
 
-    .stock-item.open .stock-row {
-      border-radius: var(--radius) var(--radius) 0 0;
-      border-bottom-color: transparent;
+    /* ── Card internals ── */
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
     }
-
-    .stock-rank {
-      font-size: 12px;
+    .card-rank {
+      font-size: 9px;
       font-weight: 700;
       color: var(--muted);
-      min-width: 26px;
-      padding-top: 3px;
       letter-spacing: 0.2px;
     }
-
-    .stock-main { flex: 1; min-width: 0; }
-
-    .stock-top {
-      display: flex;
-      align-items: baseline;
-      gap: 7px;
-      margin-bottom: 7px;
-    }
-    .ticker {
-      font-size: 18px;
-      font-weight: 800;
-      letter-spacing: -0.4px;
-    }
-    .signal-badge {
+    .card-ext-icon {
       font-size: 10px;
-      font-weight: 700;
-      padding: 2px 7px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.06);
-      letter-spacing: 0.2px;
+      color: var(--muted);
+      line-height: 1;
     }
-    .score-num {
-      margin-left: auto;
-      font-size: 22px;
+
+    .card-ticker {
+      font-size: 17px;
       font-weight: 900;
-      letter-spacing: -0.8px;
+      letter-spacing: -0.5px;
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    .card-signal {
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      margin-bottom: 6px;
       line-height: 1;
     }
 
@@ -219,75 +182,75 @@
       height: 3px;
       background: var(--border);
       border-radius: 2px;
-      margin-bottom: 7px;
+      margin-bottom: 6px;
       overflow: hidden;
     }
-    .score-bar-fill {
-      height: 100%;
-      border-radius: 2px;
-    }
+    .score-bar-fill { height: 100%; border-radius: 2px; }
 
-    .stock-bottom {
+    .card-score-row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      gap: 8px;
+      align-items: baseline;
+      margin-bottom: 4px;
     }
-    .company-name {
-      font-size: 11px;
+    .card-score   { font-size: 20px; font-weight: 900; letter-spacing: -0.8px; line-height: 1; }
+    .card-upside  { font-size: 10px; font-weight: 700; }
+
+    .card-price {
+      font-size: 8.5px;
       color: var(--muted);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      flex: 1;
+      line-height: 1.4;
+      margin-bottom: 7px;
     }
-    .price-line {
-      font-size: 11px;
-      color: var(--text);
-      opacity: 0.55;
-      white-space: nowrap;
+
+    /* ── Source link buttons at bottom of each card ── */
+    .card-sources {
+      display: flex;
+      gap: 3px;
+      margin-top: auto;
+      padding-top: 6px;
+      border-top: 1px solid var(--border);
+    }
+    /* Stop card click firing when a source button is tapped */
+    .card-sources a {
+      flex: 1;
+      text-align: center;
+      font-size: 8px;
+      font-weight: 800;
+      color: var(--muted);
+      padding: 4px 2px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+      line-height: 1;
+    }
+    .card-sources a:active { background: rgba(255,255,255,0.14); color: var(--text); }
+
+    /* ─── Legend strip ───────────────────────────────────────── */
+    .legend {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 7px 10px 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 9px;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
       flex-shrink: 0;
     }
-
-    /* ─── Detail card ────────────────────────────────────────── */
-    .detail-card {
-      background: var(--card2);
-      border: 1px solid var(--border);
-      border-top: none;
-      border-radius: 0 0 var(--radius) var(--radius);
-      padding: 12px;
-      display: none;
-    }
-    .stock-item.open .detail-card { display: block; }
-
-    .detail-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px 14px;
-      margin-bottom: 10px;
-    }
-    .detail-label {
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-      margin-bottom: 3px;
-    }
-    .detail-val {
-      font-size: 11px;
-      color: var(--text);
-      opacity: 0.75;
-      line-height: 1.45;
-    }
-    .detail-risk {
-      font-size: 11px;
-      color: var(--muted);
-      padding-top: 9px;
-      border-top: 1px solid var(--border);
-      line-height: 1.7;
-    }
-    .detail-risk strong { color: var(--text); font-weight: 600; }
 
     /* ─── States ─────────────────────────────────────────────── */
     .state-box {
@@ -300,10 +263,10 @@
       gap: 14px;
       text-align: center;
     }
-    .state-box p { font-size: 14px; line-height: 1.6; }
+    .state-box p { font-size: 14px; line-height: 1.7; }
 
     .spinner {
-      width: 30px; height: 30px;
+      width: 28px; height: 28px;
       border: 2px solid var(--border);
       border-top-color: var(--green);
       border-radius: 50%;
@@ -311,7 +274,6 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* Pulse dot */
     .dot {
       display: inline-block;
       width: 6px; height: 6px;
@@ -320,10 +282,7 @@
       animation: pulse 2.4s ease-in-out infinite;
       flex-shrink: 0;
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0.25; }
-    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.2} }
   </style>
 </head>
 <body>
@@ -332,13 +291,13 @@
   <div class="header" id="header">
     <div class="header-left">
       <h1>📈 Stock<em>Picks</em></h1>
-      <div class="header-subtitle" id="subtitle">
+      <div class="header-subtitle">
         <span class="dot"></span>
         <span id="subtitle-text">Loading…</span>
       </div>
     </div>
-    <div class="header-date" id="header-date">
-      <div class="date-primary" id="date-primary">—</div>
+    <div class="header-date">
+      <div class="date-primary"   id="date-primary">—</div>
       <div class="date-secondary" id="date-secondary">—</div>
     </div>
   </div>
@@ -346,7 +305,7 @@
   <!-- ── Tab bar ─────────────────────────────────────────────── -->
   <div class="tab-bar-wrap" id="tab-bar-wrap">
     <div class="tab-bar" id="tab-bar">
-      <div style="padding:12px 8px;color:var(--muted);font-size:12px">Loading runs…</div>
+      <div style="padding:11px 8px;color:var(--muted);font-size:11px">Loading…</div>
     </div>
   </div>
 
@@ -360,16 +319,38 @@
 
 
 <script>
-  // ── Config ─────────────────────────────────────────────────────────────
+  // ── Config ──────────────────────────────────────────────────────────────
   const DATA_URL      = 'https://raw.githubusercontent.com/karthikpalsg/stock-recommender/main/data/history.json';
-  const POLL_INTERVAL = 5 * 60 * 1000;   // re-fetch every 5 min
+  const POLL_INTERVAL = 5 * 60 * 1000;  // poll every 5 min
+
+  // External source URLs per ticker
+  const SRC = {
+    YF:   t => `https://finance.yahoo.com/quote/${t}`,           // price, news, analyst ratings, financials
+    FV:   t => `https://finviz.com/quote.ashx?t=${t}`,           // chart, ratios, insider trades, news
+    SA:   t => `https://seekingalpha.com/symbol/${t}`,           // analyst articles & buy/sell ratings
+  };
+
+  // Signal → accent colour
+  const SIG_COLOR = {
+    'STRONG BUY': 'var(--green)',
+    'BUY':        'var(--amber)',
+    'WATCH':      'var(--muted)',
+    'AVOID':      'var(--red)',
+  };
+  // Raw hex values for border-top (CSS variables don't work in inline border shorthand on older WebKit)
+  const SIG_HEX = {
+    'STRONG BUY': '#00c896',
+    'BUY':        '#f59e0b',
+    'WATCH':      '#333',
+    'AVOID':      '#ff4d4d',
+  };
 
   // ── State ───────────────────────────────────────────────────────────────
-  let allRuns       = [];
-  let tabMeta       = [];   // [{id, label, run, type, monthKey?}]
-  let activeTabId   = null;
-  let lastRunId     = null;
-  let lastFetchAt   = null;
+  let allRuns     = [];
+  let tabMeta     = [];
+  let activeTabId = null;
+  let lastRunId   = null;
+  let lastFetchAt = null;
 
   // ── Boot ────────────────────────────────────────────────────────────────
   window.addEventListener('load', () => {
@@ -380,22 +361,20 @@
     setInterval(updateSubtitle, 30_000);
   });
 
-  // Keep tab bar sticky exactly below the header regardless of device safe area
   function positionTabBar() {
     document.getElementById('tab-bar-wrap').style.top =
       document.getElementById('header').offsetHeight + 'px';
   }
 
-  // ── Data fetch ──────────────────────────────────────────────────────────
+  // ── Fetch ────────────────────────────────────────────────────────────────
   async function fetchData() {
     try {
       const res  = await fetch(DATA_URL + '?_=' + Date.now());
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       lastFetchAt = Date.now();
-      allRuns     = (data.runs || []).slice();  // defensive copy
+      allRuns     = (data.runs || []).slice();
 
-      // Only rebuild tabs+content if something new arrived
       if (data.last_run !== lastRunId) {
         lastRunId = data.last_run;
         buildUI();
@@ -406,90 +385,66 @@
     }
   }
 
-  // ── Week boundary (Sydney time) ─────────────────────────────────────────
+  // ── Week boundary ────────────────────────────────────────────────────────
   function getMondayDateStr() {
-    // Returns "YYYY-MM-DD" for Monday of the current Sydney week
     const syd = new Date().toLocaleDateString('en-CA', { timeZone: 'Australia/Sydney' });
     const [y, m, d] = syd.split('-').map(Number);
     const dt  = new Date(y, m - 1, d);
-    const dow = dt.getDay();                       // 0=Sun
+    const dow = dt.getDay();
     dt.setDate(dt.getDate() + (dow === 0 ? -6 : 1 - dow));
-    return dt.toLocaleDateString('en-CA');          // "YYYY-MM-DD"
+    return dt.toLocaleDateString('en-CA');
   }
 
-  // ── Build UI ────────────────────────────────────────────────────────────
+  // ── Build tabs + content ──────────────────────────────────────────────────
   function buildUI() {
     if (!allRuns.length) {
       showEmpty('No runs yet. The engine runs automatically at 5am and 7am Sydney time on weekdays.');
       return;
     }
 
-    const monday     = getMondayDateStr();
-    const weekRuns   = [];
-    const monthBest  = {};   // "YYYY-MM" → the latest run in that month
+    const monday    = getMondayDateStr();
+    const weekRuns  = [];
+    const monthBest = {};
 
     allRuns.forEach(run => {
       if (run.run_date >= monday) {
         weekRuns.push(run);
       } else {
         const mk = run.run_date.slice(0, 7);
-        if (!monthBest[mk] || run.run_id > monthBest[mk].run_id) {
-          monthBest[mk] = run;
-        }
+        if (!monthBest[mk] || run.run_id > monthBest[mk].run_id) monthBest[mk] = run;
       }
     });
 
-    // Most recent first within the week
     weekRuns.sort((a, b) => (b.run_id > a.run_id ? 1 : -1));
-
-    // Most recent month first
     const archiveKeys = Object.keys(monthBest).sort().reverse();
-
     buildTabs(weekRuns, archiveKeys, monthBest);
   }
 
-  // ── Tabs ────────────────────────────────────────────────────────────────
+  // ── Tabs ──────────────────────────────────────────────────────────────────
   function buildTabs(weekRuns, archiveKeys, monthBest) {
     tabMeta = [];
 
-    // Current week tabs
     weekRuns.forEach(run => {
-      const dayLabel  = dayName(run.run_date);
-      const timeLabel = runTimeLabel(run);
-      tabMeta.push({
-        id:    'w-' + run.run_id,
-        label: dayLabel + ' ' + timeLabel,
-        run,
-        type:  'week',
-      });
+      const day  = dayName(run.run_date);
+      const time = runTimeLabel(run);
+      tabMeta.push({ id: 'w-' + run.run_id, label: day + ' ' + time, run, type: 'week' });
     });
 
-    // Monthly archive tabs (last run of each past month)
     archiveKeys.forEach(mk => {
       const [y, m] = mk.split('-');
       const label  = new Date(Number(y), Number(m) - 1)
                        .toLocaleDateString('en-AU', { month: 'short', year: '2-digit' });
-      tabMeta.push({
-        id:       'a-' + mk,
-        label,
-        run:      monthBest[mk],
-        type:     'archive',
-        monthKey: mk,
-      });
+      tabMeta.push({ id: 'a-' + mk, label, run: monthBest[mk], type: 'archive', monthKey: mk });
     });
 
-    // Render tab bar
     const bar = document.getElementById('tab-bar');
     bar.innerHTML = '';
-
     tabMeta.forEach((tab, i) => {
-      // Thin separator between week section and archive section
-      if (i > 0 && tab.type === 'archive' && tabMeta[i - 1].type === 'week') {
+      if (i > 0 && tab.type === 'archive' && tabMeta[i-1].type === 'week') {
         const sep = document.createElement('div');
         sep.className = 'tab-sep';
         bar.appendChild(sep);
       }
-
       const btn = document.createElement('button');
       btn.className = 'tab-btn' + (tab.type === 'archive' ? ' archive' : '');
       btn.dataset.id = tab.id;
@@ -498,10 +453,8 @@
       bar.appendChild(btn);
     });
 
-    // Restore previous selection or pick the most recent tab
-    const restore = activeTabId && tabMeta.find(t => t.id === activeTabId)
-                    ? activeTabId
-                    : tabMeta[0]?.id;
+    const restore = (activeTabId && tabMeta.find(t => t.id === activeTabId))
+                    ? activeTabId : tabMeta[0]?.id;
     if (restore) selectTab(restore);
   }
 
@@ -510,41 +463,35 @@
     if (!tab) return;
     activeTabId = id;
 
-    // Highlight active tab button
-    document.querySelectorAll('.tab-btn').forEach(b => {
-      b.classList.toggle('active', b.dataset.id === id);
-    });
+    document.querySelectorAll('.tab-btn').forEach(b =>
+      b.classList.toggle('active', b.dataset.id === id)
+    );
 
-    // Scroll active button into view
-    const activeBtn = document.querySelector(`.tab-btn[data-id="${id}"]`);
-    activeBtn?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    const btn = document.querySelector(`.tab-btn[data-id="${id}"]`);
+    btn?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
 
     updateHeaderDate(tab);
     renderRun(tab.run);
   }
 
-  // ── Header date ─────────────────────────────────────────────────────────
+  // ── Header date ───────────────────────────────────────────────────────────
   function updateHeaderDate(tab) {
     const p = document.getElementById('date-primary');
     const s = document.getElementById('date-secondary');
 
     if (tab.type === 'archive') {
-      // e.g. "May 2026" (month full name, bold) + "Monthly Archive"
       const [y, m] = tab.monthKey.split('-');
       const dt = new Date(Number(y), Number(m) - 1);
       p.textContent = dt.toLocaleDateString('en-AU', { month: 'long', year: 'numeric' });
       s.textContent = 'Monthly Archive';
     } else {
-      // e.g. "Friday 16 May" (bold) + "7am Final Signal"
-      const run = tab.run;
-      // Parse as local date (noon avoids any DST edge at midnight)
-      const dt  = new Date(run.run_date + 'T12:00:00');
+      const dt = new Date(tab.run.run_date + 'T12:00:00');
       p.textContent = dt.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long' });
-      s.textContent = run.run_label || run.run_time?.slice(0, 5) || '';
+      s.textContent = tab.run.run_label || tab.run.run_time?.slice(0, 5) || '';
     }
   }
 
-  // ── Render a run ────────────────────────────────────────────────────────
+  // ── Render 3-column grid ──────────────────────────────────────────────────
   function renderRun(run) {
     const el = document.getElementById('content');
     if (!run?.stocks?.length) {
@@ -552,62 +499,47 @@
       return;
     }
 
-    const SIG_COLOR = {
-      'STRONG BUY': 'var(--green)',
-      'BUY':        'var(--amber)',
-      'WATCH':      'var(--muted)',
-      'AVOID':      'var(--red)',
-    };
-
-    const items = run.stocks.map(s => {
+    const cards = run.stocks.map(s => {
       const color  = SIG_COLOR[s.signal] || 'var(--muted)';
+      const hex    = SIG_HEX[s.signal]   || '#333';
       const score  = Math.round(s.composite_score ?? 0);
-      const upside = s.upside_pct != null ? `+${s.upside_pct.toFixed(1)}%` : '—';
-      const tid    = CSS.escape(s.ticker);
+      const up     = s.upside_pct != null;
+      const upside = up ? `+${s.upside_pct.toFixed(1)}%` : '—';
+      const uColor = up && s.upside_pct > 0 ? 'var(--green)' : 'var(--red)';
+      const price  = s.price != null ? `$${Number(s.price).toFixed(2)}` : '—';
+      const target = s.analyst_target_price != null ? `$${Number(s.analyst_target_price).toFixed(0)}` : '—';
+      const stop   = s.stop_loss_price != null ? `$${Number(s.stop_loss_price).toFixed(2)}` : '—';
+      const t      = encodeURIComponent(s.ticker);
 
       return `
-        <div class="stock-item" id="item-${tid}">
-          <div class="stock-row" onclick="toggleDetail('${s.ticker}')">
-            <div class="stock-rank">#${s.rank}</div>
-            <div class="stock-main">
-              <div class="stock-top">
-                <span class="ticker">${s.ticker}</span>
-                <span class="signal-badge" style="color:${color}">${s.signal_emoji ?? ''} ${s.signal}</span>
-                <span class="score-num" style="color:${color}">${score}</span>
-              </div>
-              <div class="score-bar-bg">
-                <div class="score-bar-fill" style="width:${score}%;background:${color}"></div>
-              </div>
-              <div class="stock-bottom">
-                <span class="company-name">${s.company}</span>
-                <span class="price-line">$${p2(s.price)} → $${p0(s.analyst_target_price)} (${upside})</span>
-              </div>
-            </div>
+        <div class="stock-card"
+             style="border-top-color:${hex}"
+             onclick="openStock('${s.ticker}')">
+
+          <div class="card-top">
+            <span class="card-rank">#${s.rank}</span>
+            <span class="card-ext-icon">↗</span>
           </div>
-          <div class="detail-card">
-            <div class="detail-grid">
-              <div>
-                <div class="detail-label">🔍 Analyst (${Math.round(s.scores?.analyst ?? 0)})</div>
-                <div class="detail-val">${s.signal_details?.analyst ?? '—'}</div>
-              </div>
-              <div>
-                <div class="detail-label">📈 Momentum (${Math.round(s.scores?.momentum ?? 0)})</div>
-                <div class="detail-val">${s.signal_details?.momentum ?? '—'}</div>
-              </div>
-              <div>
-                <div class="detail-label">📊 Fundamentals (${Math.round(s.scores?.fundamentals ?? 0)})</div>
-                <div class="detail-val">${s.signal_details?.fundamentals ?? '—'}</div>
-              </div>
-              <div>
-                <div class="detail-label">💬 Social (${Math.round(s.scores?.social ?? 0)})</div>
-                <div class="detail-val">${s.signal_details?.social ?? '—'}</div>
-              </div>
-            </div>
-            <div class="detail-risk">
-              Stop loss: <strong>$${p2(s.stop_loss_price)}</strong> &nbsp;·&nbsp;
-              Target: <strong>$${p2(s.analyst_target_price)}</strong> &nbsp;·&nbsp;
-              Upside: <strong>${upside}</strong>
-            </div>
+
+          <div class="card-ticker">${s.ticker}</div>
+          <div class="card-signal" style="color:${color}">${s.signal_emoji ?? ''} ${s.signal}</div>
+
+          <div class="score-bar-bg">
+            <div class="score-bar-fill" style="width:${score}%;background:${hex}"></div>
+          </div>
+
+          <div class="card-score-row">
+            <span class="card-score" style="color:${color}">${score}</span>
+            <span class="card-upside" style="color:${uColor}">${upside}</span>
+          </div>
+
+          <div class="card-price">${price} → ${target}<br>Stop ${stop}</div>
+
+          <!-- Source buttons — stopPropagation so card click doesn't also fire -->
+          <div class="card-sources" onclick="event.stopPropagation()">
+            <a href="${SRC.YF(s.ticker)}" target="_blank" rel="noopener" title="Yahoo Finance — price, news, financials, analyst ratings">YF</a>
+            <a href="${SRC.FV(s.ticker)}" target="_blank" rel="noopener" title="Finviz — chart, ratios, insider trades, news snapshot">FV</a>
+            <a href="${SRC.SA(s.ticker)}" target="_blank" rel="noopener" title="Seeking Alpha — analyst articles and buy/sell ratings">SA</a>
           </div>
         </div>`;
     }).join('');
@@ -617,18 +549,23 @@
         <span>${run.total_stocks} stocks &middot; ${run.run_date}</span>
         <span class="run-meta-label">${run.run_label ?? 'Run'}</span>
       </div>
-      <div class="stock-list">${items}</div>`;
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#00c896"></div>STRONG BUY</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div>BUY</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#333"></div>WATCH</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ff4d4d"></div>AVOID</div>
+        <div class="legend-item" style="margin-left:auto;font-size:8px;color:var(--muted)">Tap card = YF &nbsp;·&nbsp; YF/FV/SA = sources</div>
+      </div>
+      <div class="stock-grid">${cards}</div>`;
   }
 
-  // ── Toggle detail expand/collapse ───────────────────────────────────────
-  function toggleDetail(ticker) {
-    const item = document.getElementById('item-' + CSS.escape(ticker));
-    if (item) item.classList.toggle('open');
+  // Opens Yahoo Finance (primary action — whole card tap)
+  function openStock(ticker) {
+    window.open(SRC.YF(ticker), '_blank', 'noopener');
   }
 
-  // ── Helpers ─────────────────────────────────────────────────────────────
+  // ── Helpers ───────────────────────────────────────────────────────────────
   function dayName(dateStr) {
-    // dateStr = "YYYY-MM-DD"
     return new Date(dateStr + 'T12:00:00')
              .toLocaleDateString('en-AU', { weekday: 'short' });
   }
@@ -640,25 +577,19 @@
     return run.run_time?.slice(0, 5) || '';
   }
 
-  function p2(v) { return v != null ? Number(v).toFixed(2) : '—'; }
-  function p0(v) { return v != null ? Number(v).toFixed(0) : '—'; }
-
   function showEmpty(msg) {
     document.getElementById('tab-bar').innerHTML = '';
     document.getElementById('content').innerHTML =
       `<div class="state-box"><p>${msg}</p></div>`;
   }
 
-  // ── Subtitle (last-updated timer) ────────────────────────────────────────
-  function setSubtitleText(txt) {
-    document.getElementById('subtitle-text').textContent = txt;
-  }
+  function setSubtitleText(t) { document.getElementById('subtitle-text').textContent = t; }
 
   function updateSubtitle() {
     if (!lastFetchAt) return;
     const mins = Math.round((Date.now() - lastFetchAt) / 60_000);
     setSubtitleText(
-      mins < 1  ? 'Updated just now' :
+      mins < 1   ? 'Updated just now' :
       mins === 1 ? 'Updated 1 min ago' :
                   `Updated ${mins} min ago`
     );
