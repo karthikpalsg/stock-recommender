@@ -890,7 +890,7 @@
         <div class="filter-row">
           <span class="filter-label">Ticker</span>
           <input class="filter-search" id="f-ticker" type="text"
-                 placeholder="e.g. DDOG" autocomplete="off" autocapitalize="characters"
+                 placeholder="e.g. DDOG, NVDA" autocomplete="off" autocapitalize="characters"
                  oninput="this.value=this.value.toUpperCase(); applyFilters()">
         </div>
         <div class="filter-row">
@@ -926,17 +926,18 @@
   function applyFilters() {
     if (!currentRun?.stocks?.length) return;
 
-    const ticker   = (document.getElementById('f-ticker')?.value   || '').trim().toUpperCase();
-    const priceMin = parseFloat(document.getElementById('f-price-min')?.value) || 0;
-    const priceMax = parseFloat(document.getElementById('f-price-max')?.value) || Infinity;
-    const hasFilter = ticker !== '' || priceMin > 0 || priceMax < Infinity;
+    const rawTicker = (document.getElementById('f-ticker')?.value || '').toUpperCase();
+    const tickers   = rawTicker.split(/[\s,]+/).map(t => t.trim()).filter(Boolean);
+    const priceMin  = parseFloat(document.getElementById('f-price-min')?.value) || 0;
+    const priceMax  = parseFloat(document.getElementById('f-price-max')?.value) || Infinity;
+    const hasFilter = tickers.length > 0 || priceMin > 0 || priceMax < Infinity;
 
     // Highlight clear button when filters are set
     document.getElementById('clear-btn')?.classList.toggle('has-filters', hasFilter);
 
     const stocks = hasFilter
       ? currentRun.stocks.filter(s => {
-          if (ticker && s.ticker !== ticker) return false;
+          if (tickers.length > 0 && !tickers.includes(s.ticker)) return false;
           if (s.price != null && (s.price < priceMin || s.price > priceMax)) return false;
           return true;
         })
