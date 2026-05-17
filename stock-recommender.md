@@ -18,13 +18,15 @@ A complete record of every decision, every file created, and every problem solve
 ## What the system does (in plain English)
 
 Every weekday at **5am and 7am Sydney time**, an automated system:
-1. Reads your personal list of 29 US stocks
+1. Reads your personal list of 30 US stocks
 2. Pulls analyst ratings, price momentum, company fundamentals, and social media sentiment for each stock
 3. Scores every stock from 0–100 and ranks them
 4. Emails you the full ranked list with buy/sell signals, price targets, and stop-loss levels
-5. Saves every run to a growing history file for future analysis
+5. Saves every run to a JSON history file — one record per day, overwriting if the engine re-runs
 
 You manage your stock list from your iPhone using a web app. Your Mac does not need to be switched on. The whole thing costs $0/month to run.
+
+The **dashboard PWA** shows each day's results as a tab. Current-month days appear as individual tabs (Mon, Tue…). At the start of a new month, previous-month tabs collapse to a single archive tab (Apr '26, Mar '26…). Every card shows a 1M/3M sparkline trend chart and a filter panel lets you narrow by ticker or price range.
 
 ---
 
@@ -63,7 +65,7 @@ stock-recommender/
 ├── GITHUB_SETUP.md                 ← GitHub setup guide.
 ├── stock-recommender.md            ← This document.
 ├── data/
-│   ├── history.json                ← Grows after every run. Never overwritten.
+│   ├── history.json                ← One record per day. Same-day re-runs overwrite. 1st-of-month collapses prior month.
 │   └── backups/                    ← Monthly snapshots created on 1st of month.
 ├── picks/                          ← Daily markdown reports (local only).
 ├── app/
@@ -867,8 +869,8 @@ Build a hosted app that shows the final output of the engine with date in the to
 Full PWA that reads directly from `data/history.json` on GitHub (public, no token required to read). Key features:
 
 **Tab system:**
-- Current week: one tab per run, labelled by day and time — e.g. `Mon 5am`, `Mon 7am`, `Tue 5am`. Most recent tab is selected on open.
-- Monthly archive: one tab per past month (last run of that month) labelled `Apr '26`, `May '26` etc. Appears after a thin divider to the right of the week tabs.
+- Current month: one tab per day, labelled by weekday — `Mon`, `Tue`, `Wed`… The engine runs at 5am and 7am but the 7am result overwrites the 5am one, so only one tab per day is ever shown. Most recent tab is selected on open.
+- Monthly archive: one tab per past month labelled `Apr '26`, `May '26` etc. Appears after a thin divider. On the 1st of each month, the previous month's day tabs collapse to a single archive tab showing the last day's data.
 - Switching tabs updates the bold date in the top-right header.
 
 **Header date (top right, bold):**
@@ -1360,5 +1362,113 @@ GitHub repo → Actions tab → watch runs appear at 5am and 7am Sydney time Tue
 
 ---
 
-*Last updated: May 2026 — Steps 1–34 complete*
+---
+
+## Step 35 — Filter panel on dashboard
+
+**What you asked:**
+Add filters to the dashboard so you can narrow the card grid without leaving the tab. Initially requested 5 filters; revised to 2: **ticker** (multi-value) and **price range**.
+
+**Behaviour:**
+- Non-matching cards are **completely hidden** (not dimmed)
+- If nothing matches, a "no results" empty state appears with an inline clear button
+- A red **Clear filters** button resets both filters at once
+
+**Multi-ticker input:**
+Type one or more tickers separated by comma, space, or both — e.g. `NVDA DDOG, RKLB`. Split regex: `/[\s,]+/`
+
+**Architecture:**
+- `currentRun` holds the active run object
+- `applyFilters()` reads filter inputs, filters `currentRun.stocks`, calls `renderGrid()`
+- `buildCard(s)` generates card HTML per stock
+- Filter panel is toggled by `filterOpen` bool; `.filter-panel.hidden` CSS class controls visibility
+- Filters reset (panel closes) when switching tabs
+
+**New CSS classes:** `.legend-row`, `.filter-btn`, `.filter-btn.active`, `.filter-panel`, `.filter-panel.hidden`, `.filter-clear-btn.has-filters`, `.result-bar`, `.result-bar.visible`, `.no-results`
+
+---
+
+## Step 36 — 1M/3M sparkline trend charts on cards
+
+**What you asked:**
+Add a 1-month price trend chart to each card. Chose **Option 1 (SVG sparkline)** over Option 2 (% return number only). Added a 1M/3M toggle after seeing both previews.
+
+**Data (run.py changes):**
+In `score_ticker()`, after stop_loss calculation:
+```python
+hist3m = ticker.history(period='3mo', interval='1d')['Close']
+prices_3m = [round(float(p), 2) for p in hist3m.tolist() if not pd.isna(p)]
+prices_1m = prices_3m[-22:] if len(prices_3m) >= 22 else prices_3m
+```
+Added to stock record in `save_json()`:
+```python
+"prices_1m": row["Prices 1M"],   # last 22 trading days
+"prices_3m": row["Prices 3M"],   # ~63 trading days
+```
+
+**Rendering (dashboard.html):**
+`buildSparkline(prices)` — pure inline SVG, no external libraries:
+- Maps price array to `<polyline>` coordinates normalised to `viewBox="0 0 200 28"`
+- `preserveAspectRatio="none"` stretches full card width
+- Green (`#3fb950`) if `prices[last] >= prices[0]`, red (`#f85149`) if down
+- Filled `<path>` area in matching colour at 8% opacity
+- Endpoint `<circle r="2.5">` highlights latest price
+- Header row shows period label and % return
+
+**1M/3M toggle:**
+- `trendMode` state var (`'1m'` | `'3m'`)
+- `setTrend(mode)` updates button classes and calls `applyFilters()` to re-render all cards
+- Toggle pill sits in the legend row between the legend items and Filter button
+
+---
+
+## Step 37 — One tab per day (overwrite on same-day refresh)
+
+**What you asked:**
+Keep only one tab per day. If the engine runs multiple times in a day, overwrite rather than add a new tab.
+
+**run.py change (`save_json()`):**
+Before appending, check if a run for today's date already exists:
+```python
+existing_idx = next((i for i, r in enumerate(history["runs"]) if r["run_date"] == today_date), None)
+if existing_idx is not None:
+    history["runs"][existing_idx] = run_record   # overwrite
+else:
+    history["runs"].append(run_record)           # new day
+```
+
+**dashboard.html changes:**
+- `buildUI()` deduplicates `monthRuns` by date (keeps latest `run_id` per date) — handles any legacy history with multiple runs per day
+- Tab ID changed from `'w-' + run.run_id` (timestamp) to `'w-' + run.run_date` (e.g. `'w-2026-05-17'`) — so the active tab survives a data refresh
+- Tab label changed from `day + ' ' + time` to just `day` (since there is only one run per day)
+
+---
+
+## Step 38 — Month-boundary tab logic
+
+**What you asked:**
+On the first day of the month: rename the last day tab of the previous month to "Month Year", delete all other previous month day tabs, then create the new day tab.
+
+**run.py change (`save_json()`):**
+After same-day dedup, if `now.day == 1`:
+```python
+prev_month = (now.replace(day=1) - timedelta(days=1)).strftime("%Y-%m")
+prev_runs  = [r for r in history["runs"] if r["run_date"].startswith(prev_month)]
+if len(prev_runs) > 1:
+    last_day = max(prev_runs, key=lambda r: r["run_date"])["run_date"]
+    history["runs"] = [r for r in history["runs"]
+                       if not r["run_date"].startswith(prev_month) or r["run_date"] == last_day]
+```
+This fires after today's run is already in place, so the cleanup and new-day creation happen atomically.
+
+**dashboard.html change:**
+Replaced `getMondayDateStr()` (week boundary) with `getMonthStartDateStr()` (returns `'YYYY-MM-01'` in Sydney time):
+- Runs with `run_date >= monthStart` → individual day tabs (`Mon`, `Tue`…)
+- Older runs → one archive tab per month (`Apr '26`, `Mar '26`…)
+
+Result: during a month you see daily tabs; at the turn of a month the previous month's tabs collapse automatically to a single archive entry.
+
+---
+
+*Last updated: May 2026 — Steps 1–38 complete*
 *Built with Claude Code*
