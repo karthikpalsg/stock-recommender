@@ -786,14 +786,11 @@
     }
   }
 
-  // ── Week boundary ────────────────────────────────────────────────────────
-  function getMondayDateStr() {
+  // ── Month boundary ────────────────────────────────────────────────────────
+  function getMonthStartDateStr() {
+    // Returns 'YYYY-MM-01' in Sydney time — the first day of the current month
     const syd = new Date().toLocaleDateString('en-CA', { timeZone: 'Australia/Sydney' });
-    const [y, m, d] = syd.split('-').map(Number);
-    const dt  = new Date(y, m - 1, d);
-    const dow = dt.getDay();
-    dt.setDate(dt.getDate() + (dow === 0 ? -6 : 1 - dow));
-    return dt.toLocaleDateString('en-CA');
+    return syd.slice(0, 8) + '01';
   }
 
   // ── Build tabs + content ──────────────────────────────────────────────────
@@ -803,13 +800,13 @@
       return;
     }
 
-    const monday    = getMondayDateStr();
-    const weekRuns  = [];
-    const monthBest = {};
+    const monthStart = getMonthStartDateStr();
+    const monthRuns  = [];
+    const monthBest  = {};
 
     allRuns.forEach(run => {
-      if (run.run_date >= monday) {
-        weekRuns.push(run);
+      if (run.run_date >= monthStart) {
+        monthRuns.push(run);           // current month → individual day tabs
       } else {
         const mk = run.run_date.slice(0, 7);
         if (!monthBest[mk] || run.run_id > monthBest[mk].run_id) monthBest[mk] = run;
@@ -818,14 +815,14 @@
 
     // Deduplicate by date — keep the latest run per day (handles legacy multi-run days)
     const dayBest = {};
-    weekRuns.forEach(run => {
+    monthRuns.forEach(run => {
       if (!dayBest[run.run_date] || run.run_id > dayBest[run.run_date].run_id)
         dayBest[run.run_date] = run;
     });
-    const dedupedWeek = Object.values(dayBest).sort((a, b) => b.run_date.localeCompare(a.run_date));
+    const dedupedMonth = Object.values(dayBest).sort((a, b) => b.run_date.localeCompare(a.run_date));
 
     const archiveKeys = Object.keys(monthBest).sort().reverse();
-    buildTabs(dedupedWeek, archiveKeys, monthBest);
+    buildTabs(dedupedMonth, archiveKeys, monthBest);
   }
 
   // ── Tabs ──────────────────────────────────────────────────────────────────

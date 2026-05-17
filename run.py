@@ -707,6 +707,21 @@ def save_json(df, output_dir="data", filename="history.json"):
     else:
         history["runs"].append(run_record)
 
+    # On the 1st of the month, consolidate the previous month to its last day only.
+    # That single entry becomes the "Month Year" archive tab; all earlier days are dropped.
+    if now.day == 1:
+        prev_month = (now.replace(day=1) - timedelta(days=1)).strftime("%Y-%m")
+        prev_runs  = [r for r in history["runs"] if r["run_date"].startswith(prev_month)]
+        if len(prev_runs) > 1:
+            last_day = max(prev_runs, key=lambda r: r["run_date"])["run_date"]
+            before   = len(history["runs"])
+            history["runs"] = [
+                r for r in history["runs"]
+                if not r["run_date"].startswith(prev_month) or r["run_date"] == last_day
+            ]
+            removed = before - len(history["runs"])
+            print(f"  1st-of-month: kept {prev_month}/{last_day[-2:]} as archive, removed {removed} earlier day(s)")
+
     history["total_runs"]    = len(history["runs"])
     history["first_run"]     = history["runs"][0]["run_id"]
     history["last_run"]      = run_record["run_id"]
