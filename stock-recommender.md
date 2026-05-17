@@ -1220,6 +1220,50 @@ Dictionary, analyst section, and legend inline colours all updated to match dark
 
 ---
 
+## Step 34 — Score + current price on same row
+
+**What you asked:**
+The current stock price needs to be displayed in the same font colour and size as the composite score — in the same row but on the right side. Font size can be reduced a bit to accommodate both.
+
+**What changed in `dashboard.html`:**
+
+**Card score row (before):**
+```
+[score bar]
+80 / 100
+$225.32 → $273
+Stop $207.29
+```
+
+**Card score row (after):**
+```
+[score bar]
+80 / 100              $225.32
+→ $273   Stop $207.29
+```
+
+**CSS changes:**
+
+| Property | Before | After |
+|---|---|---|
+| `.card-score-row` | `align-items: flex-end; gap: 6px` | `justify-content: space-between; align-items: flex-end` |
+| `.card-score` font-size | `32px` | `24px` |
+| `.card-score` letter-spacing | `-1.5px` | `-1px` |
+| New `.score-left` wrapper | — | `display: flex; align-items: flex-end; gap: 5px` |
+| New `.card-price-now` | — | `font-size: 24px; font-weight: 900; letter-spacing: -1px` |
+| `.card-price` (target row) | Full price + arrow + stop on two lines | Muted `→ $target  Stop $x.xx` on one line |
+| New `.card-price .tv` | — | `color: var(--text); font-weight: 700` (target value highlight) |
+
+**JS template change:**
+- Score row now wraps score + `/ 100` in `.score-left` div, and adds `<span class="card-price-now">` on the right — both coloured with `${color}` (signal colour)
+- Price row changed from `` `${price} → ${target}<br>Stop...` `` to `` `→ <span class="tv">${target}</span> &nbsp; Stop...` ``
+
+**Dictionary updated:**
+- Callout #3 updated to: "80 / 100 · $225.32 — score (left) and current price (right) share one row, both in signal colour"
+- Metric table "Score" row expanded to "Score & Price" — explains both halves of the row
+
+---
+
 ---
 
 # API keys and credentials reference
@@ -1316,5 +1360,5 @@ GitHub repo → Actions tab → watch runs appear at 5am and 7am Sydney time Tue
 
 ---
 
-*Last updated: May 2026 — Steps 1–33 complete*
+*Last updated: May 2026 — Steps 1–34 complete*
 *Built with Claude Code*
