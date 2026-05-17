@@ -22,7 +22,13 @@ from email.mime.text import MIMEText
 # Load your personal settings from config.py
 from config import SLACK_WEBHOOK_URL, FINNHUB_API_KEY, SCORE_WEIGHTS, \
                    STOP_LOSS_PCT, TARGET_RETURN_PCT, TOP_N_PICKS, HOLD_MONTHS, \
-                   GMAIL_ADDRESS, GMAIL_APP_PASSWORD, SEND_EMAIL
+                   GMAIL_ADDRESS, GMAIL_APP_PASSWORD, SEND_EMAIL, ANTHROPIC_API_KEY
+
+try:
+    import anthropic as _anthropic
+    _ANTHROPIC_AVAILABLE = True
+except ImportError:
+    _ANTHROPIC_AVAILABLE = False
 
 # Run label injected by GitHub Actions (e.g. "5am Early Signal" or "7am Final Signal")
 # Falls back to a plain label when running locally
@@ -251,9 +257,170 @@ def get_social_score(symbol, apewisdom_data):
 
 
 # ============================================================
-# SCORING ENGINE — combines all 4 signals
+# SIGNAL 5: Filing Sentiment (SEC 8-K via EDGAR + Claude)
+# Source: SEC EDGAR free API + Anthropic Claude Haiku (low cost)
+# Score: 0 to 100 (guidance tone)
+# Cost:  ~$0 most days (cached); under $0.50/month total
 # ============================================================
-def score_ticker(symbol, apewisdom_data):
+
+_EDGAR_HEADERS  = {"User-Agent": "stockrecommender karthik.bia@gmail.com"}
+_CIK_CACHE_PATH = "data/cik_map.json"
+_SENT_CACHE_PATH = "data/sentiment_cache.json"
+
+# Tickers that don't file 8-Ks with SEC EDGAR — skip lookup, return neutral
+_NO_EDGAR = {'REA', 'NOK'}   # REA = ASX-listed; NOK = Finnish FPI, files 6-K not 8-K
+
+
+def _get_cik_map():
+    """
+    Downloads ticker→CIK mapping from EDGAR once a month (cached locally).
+    Returns a dict: {'NVDA': '0001045810', 'AMD': '0000002488', ...}
+    """
+    if os.path.exists(_CIK_CACHE_PATH):
+        if (time.time() - os.path.getmtime(_CIK_CACHE_PATH)) < 30 * 86400:
+            with open(_CIK_CACHE_PATH) as f:
+                return json.load(f)
+    try:
+        url  = "https://www.sec.gov/files/company_tickers.json"
+        resp = requests.get(url, headers=_EDGAR_HEADERS, timeout=15)
+        raw  = resp.json()
+        # Format: {"0": {"cik_str": 1045810, "ticker": "NVDA", "title": "..."}, ...}
+        cmap = {v["ticker"]: str(v["cik_str"]).zfill(10) for v in raw.values()}
+        os.makedirs("data", exist_ok=True)
+        with open(_CIK_CACHE_PATH, "w") as f:
+            json.dump(cmap, f)
+        print(f"  EDGAR CIK map loaded ({len(cmap):,} companies)")
+        return cmap
+    except Exception as e:
+        print(f"  EDGAR CIK map unavailable: {e}")
+        return {}
+
+
+def _load_sentiment_cache():
+    """Loads the local filing sentiment cache (keyed by ticker_accession)."""
+    if os.path.exists(_SENT_CACHE_PATH):
+        with open(_SENT_CACHE_PATH) as f:
+            return json.load(f)
+    return {}
+
+
+def _save_sentiment_cache(cache):
+    """Persists the sentiment cache back to disk."""
+    with open(_SENT_CACHE_PATH, "w") as f:
+        json.dump(cache, f, indent=2)
+
+
+def get_filing_sentiment_score(symbol, cik_map, sentiment_cache):
+    """
+    Fetches the most recent 8-K filing from SEC EDGAR (last 30 days),
+    sends the text to Claude Haiku, and returns a guidance tone score 0–100.
+
+    Scoring bands:
+      80–100  Major beat + guidance raise / transformational event
+      60–79   Beat estimates, positive outlook
+      40–59   Neutral / no recent filing (default baseline)
+      20–39   Cautious / soft guidance / macro headwinds
+       0–19   Guidance cut / earnings miss + lowered outlook
+
+    Each unique filing is scored once and cached — no re-scoring on daily re-runs.
+    Tickers without a recent 8-K return neutral (50) — no penalty.
+    """
+    if symbol in _NO_EDGAR:
+        return 50, f"EDGAR not applicable ({symbol} files outside SEC) — neutral"
+
+    if not ANTHROPIC_API_KEY or not _ANTHROPIC_AVAILABLE:
+        return 50, "Anthropic API not configured — filing sentiment skipped"
+
+    try:
+        cik = cik_map.get(symbol.upper())
+        if not cik:
+            return 50, "CIK not found in EDGAR — neutral"
+
+        # Fetch the company's recent filing index
+        url  = f"https://data.sec.gov/submissions/CIK{cik}.json"
+        resp = requests.get(url, headers=_EDGAR_HEADERS, timeout=10)
+        if resp.status_code != 200:
+            return 50, "EDGAR submissions unavailable — neutral"
+
+        data     = resp.json()
+        recent   = data.get("filings", {}).get("recent", {})
+        forms    = recent.get("form", [])
+        dates    = recent.get("filingDate", [])
+        accnums  = recent.get("accessionNumber", [])
+        prim_docs = recent.get("primaryDocument", [])
+        cutoff   = datetime.now() - timedelta(days=30)
+
+        filing_text = None
+        accession   = None
+        filing_date = None
+
+        for form, date_str, acc, doc in zip(forms, dates, accnums, prim_docs):
+            if form != "8-K":
+                continue
+            if datetime.strptime(date_str, "%Y-%m-%d") < cutoff:
+                break   # EDGAR returns reverse-chronological — nothing older is useful
+
+            cache_key = f"{symbol}_{acc}"
+            if cache_key in sentiment_cache:
+                c = sentiment_cache[cache_key]
+                return c["score"], f"[{date_str}] {c['reason']}"
+
+            # Download the primary document of the filing
+            acc_clean = acc.replace("-", "")
+            doc_url   = (f"https://www.sec.gov/Archives/edgar/data/"
+                         f"{int(cik)}/{acc_clean}/{doc}")
+            try:
+                dr = requests.get(doc_url, headers=_EDGAR_HEADERS, timeout=15)
+                filing_text = dr.text[:8000]   # cap at 8K chars — ~2K tokens
+                accession   = acc
+                filing_date = date_str
+                break
+            except Exception:
+                continue
+
+        if not filing_text:
+            return 50, "No 8-K filed in last 30 days — neutral"
+
+        # Send to Claude Haiku for guidance tone scoring
+        client = _anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+        prompt = (
+            f"Analyse this SEC 8-K filing for {symbol}. "
+            f"Score the GUIDANCE TONE on a scale of 0–100:\n"
+            f"  80–100: Very positive (major beat, large guidance raise, transformational event)\n"
+            f"  60–79:  Positive (beat + raise, new contract wins, expansion)\n"
+            f"  40–59:  Neutral (meets expectations, no clear direction change)\n"
+            f"  20–39:  Cautious (soft language, in-line results, macro headwinds)\n"
+            f"  0–19:   Very negative (guidance cut, earnings miss, warning)\n\n"
+            f"Filing excerpt:\n{filing_text[:4000]}\n\n"
+            f"Return ONLY valid JSON — no markdown, no explanation:\n"
+            f'  {{"score": <integer 0-100>, "reason": "<max 12 words>"}}'
+        )
+        response = client.messages.create(
+            model="claude-haiku-4-5",
+            max_tokens=80,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        raw    = response.content[0].text.strip()
+        result = json.loads(raw)
+        score  = max(0, min(100, int(result["score"])))
+        reason = result.get("reason", "guidance scored")
+
+        # Cache — this filing won't be re-scored
+        sentiment_cache[f"{symbol}_{accession}"] = {
+            "score": score, "reason": reason, "filing_date": filing_date
+        }
+        _save_sentiment_cache(sentiment_cache)
+
+        return score, f"8-K {filing_date}: {reason}"
+
+    except Exception as e:
+        return 50, f"Filing sentiment error — neutral ({str(e)[:40]})"
+
+
+# ============================================================
+# SCORING ENGINE — combines all 5 signals
+# ============================================================
+def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None):
     """Returns a dict with all scores and details for one ticker."""
     try:
         ticker = yf.Ticker(symbol)
@@ -267,12 +434,18 @@ def score_ticker(symbol, apewisdom_data):
         momentum_score,    momentum_detail    = get_momentum_score(ticker, symbol)
         fundamental_score, fundamental_detail = get_fundamentals_score(ticker, symbol)
         social_score,      social_detail      = get_social_score(symbol, apewisdom_data)
+        filing_score,      filing_detail      = get_filing_sentiment_score(
+                                                    symbol,
+                                                    cik_map or {},
+                                                    sentiment_cache if sentiment_cache is not None else {}
+                                                )
 
         composite = (
-            analyst_score     * SCORE_WEIGHTS['analyst']      +
-            momentum_score    * SCORE_WEIGHTS['momentum']     +
-            fundamental_score * SCORE_WEIGHTS['fundamentals'] +
-            social_score      * SCORE_WEIGHTS['social']
+            analyst_score     * SCORE_WEIGHTS['analyst']            +
+            momentum_score    * SCORE_WEIGHTS['momentum']           +
+            fundamental_score * SCORE_WEIGHTS['fundamentals']       +
+            social_score      * SCORE_WEIGHTS['social']             +
+            filing_score      * SCORE_WEIGHTS.get('filing', 0)
         )
 
         upside = 0
@@ -303,10 +476,12 @@ def score_ticker(symbol, apewisdom_data):
             'Momentum Score':      round(momentum_score, 1),
             'Fundamental Score':   round(fundamental_score, 1),
             'Social Score':        round(social_score, 1),
+            'Filing Score':        round(filing_score, 1),
             'Analyst Detail':      analyst_detail,
             'Momentum Detail':     momentum_detail,
             'Fundamental Detail':  fundamental_detail,
             'Social Detail':       social_detail,
+            'Filing Detail':       filing_detail,
             'Prices 3M':           prices_3m,
             'Prices 1M':           prices_1m,
         }
@@ -316,19 +491,20 @@ def score_ticker(symbol, apewisdom_data):
             'Ticker': symbol, 'Company': symbol,
             'Price': 0, 'Target': 0, 'Upside %': 0, 'Stop Loss': 0,
             'Score': 0, 'Analyst Score': 0, 'Momentum Score': 0,
-            'Fundamental Score': 0, 'Social Score': 0,
+            'Fundamental Score': 0, 'Social Score': 0, 'Filing Score': 50,
             'Analyst Detail': 'Error', 'Momentum Detail': 'Error',
             'Fundamental Detail': 'Error', 'Social Detail': f'Error: {str(e)[:60]}',
-            'Prices 3M': [], 'Prices 1M': [],
+            'Filing Detail': 'Error', 'Prices 3M': [], 'Prices 1M': [],
         }
 
 
-def score_all(tickers, apewisdom_data):
+def score_all(tickers, apewisdom_data, cik_map=None, sentiment_cache=None):
     results = []
     for i, symbol in enumerate(tickers):
         print(f"  [{i+1}/{len(tickers)}] Analyzing {symbol}...", end=" ", flush=True)
-        row = score_ticker(symbol, apewisdom_data)
-        print(f"Score: {row['Score']}/100")
+        row = score_ticker(symbol, apewisdom_data, cik_map, sentiment_cache)
+        filing_note = f" | 8-K: {row['Filing Score']}" if row['Filing Score'] != 50 else ""
+        print(f"Score: {row['Score']}/100{filing_note}")
         results.append(row)
         time.sleep(0.3)   # Small delay to avoid rate limits on Yahoo Finance
 
@@ -389,10 +565,11 @@ def generate_report(df, output_dir="picks"):
             f"",
             f"| Signal | Score | Detail |",
             f"|--------|-------|--------|",
-            f"| 🔬 Analyst (35%)     | {row['Analyst Score']}/100    | {row['Analyst Detail']} |",
+            f"| 🔬 Analyst (30%)     | {row['Analyst Score']}/100    | {row['Analyst Detail']} |",
             f"| 📈 Momentum (25%)    | {row['Momentum Score']}/100   | {row['Momentum Detail']} |",
             f"| 💰 Fundamentals (25%)| {row['Fundamental Score']}/100 | {row['Fundamental Detail']} |",
-            f"| 💬 Social (15%)      | {row['Social Score']}/100     | {row['Social Detail']} |",
+            f"| 💬 Social (10%)      | {row['Social Score']}/100     | {row['Social Detail']} |",
+            f"| 📄 Filing (10%)      | {row['Filing Score']}/100     | {row['Filing Detail']} |",
             f"",
         ]
 
@@ -417,7 +594,8 @@ def generate_report(df, output_dir="picks"):
         f"*Weights: Analyst {int(SCORE_WEIGHTS['analyst']*100)}% | "
         f"Momentum {int(SCORE_WEIGHTS['momentum']*100)}% | "
         f"Fundamentals {int(SCORE_WEIGHTS['fundamentals']*100)}% | "
-        f"Social {int(SCORE_WEIGHTS['social']*100)}%*",
+        f"Social {int(SCORE_WEIGHTS['social']*100)}% | "
+        f"Filing {int(SCORE_WEIGHTS.get('filing', 0)*100)}%*",
         f"*Stop-loss: -{STOP_LOSS_PCT}% | Target return: +{TARGET_RETURN_PCT}% | Hold: 6 months*",
         f"*Data sources: Yahoo Finance · Finnhub (optional) · Apewisdom*",
     ]
@@ -465,7 +643,8 @@ def send_email(df):
             🔬 <b>Analyst {row['Analyst Score']:.0f}/100:</b> {row['Analyst Detail']}<br>
             📈 <b>Momentum {row['Momentum Score']:.0f}/100:</b> {row['Momentum Detail']}<br>
             💰 <b>Fundamentals {row['Fundamental Score']:.0f}/100:</b> {row['Fundamental Detail']}<br>
-            💬 <b>Social {row['Social Score']:.0f}/100:</b> {row['Social Detail']}
+            💬 <b>Social {row['Social Score']:.0f}/100:</b> {row['Social Detail']}<br>
+            📄 <b>Filing {row['Filing Score']:.0f}/100:</b> {row['Filing Detail']}
           </td>
         </tr>"""
 
@@ -492,6 +671,7 @@ def send_email(df):
           <td style="padding:8px 10px;font-size:11px;">{row['Momentum Score']:.0f}</td>
           <td style="padding:8px 10px;font-size:11px;">{row['Fundamental Score']:.0f}</td>
           <td style="padding:8px 10px;font-size:11px;">{row['Social Score']:.0f}</td>
+          <td style="padding:8px 10px;font-size:11px;">{row['Filing Score']:.0f}</td>
           <td style="padding:8px 10px;font-weight:bold;color:{color};font-size:12px;">{signal}</td>
         </tr>"""
 
@@ -549,6 +729,7 @@ def send_email(df):
               <th style="padding:8px 10px;text-align:left;">Momentum</th>
               <th style="padding:8px 10px;text-align:left;">Fund.</th>
               <th style="padding:8px 10px;text-align:left;">Social</th>
+              <th style="padding:8px 10px;text-align:left;">8-K</th>
               <th style="padding:8px 10px;text-align:left;">Signal</th>
             </tr>
           </thead>
@@ -559,7 +740,7 @@ def send_email(df):
       <!-- Footer -->
       <div style="padding:14px 20px;background:#f9f9f9;border:1px solid #ddd;border-top:none;
                   font-size:11px;color:#999;border-radius:0 0 8px 8px;margin-bottom:20px;">
-        Weights: Analyst 35% · Momentum 25% · Fundamentals 25% · Social 15%<br>
+        Weights: Analyst 30% · Momentum 25% · Fundamentals 25% · Social 10% · Filing 10%<br>
         Stop-loss: -{STOP_LOSS_PCT}% from entry &nbsp;|&nbsp;
         Target return: +{TARGET_RETURN_PCT}% &nbsp;|&nbsp; Hold: {HOLD_MONTHS} months<br>
         <i>Personal research tool — not financial advice.</i>
@@ -676,12 +857,14 @@ def save_json(df, output_dir="data", filename="history.json"):
                 "momentum":     round(float(row["Momentum Score"]), 2),
                 "fundamentals": round(float(row["Fundamental Score"]), 2),
                 "social":       round(float(row["Social Score"]), 2),
+                "filing":       round(float(row.get("Filing Score", 50)), 2),
             },
             "signal_details": {
                 "analyst":      row["Analyst Detail"],
                 "momentum":     row["Momentum Detail"],
                 "fundamentals": row["Fundamental Detail"],
                 "social":       row["Social Detail"],
+                "filing":       row.get("Filing Detail", ""),
             },
             "prices_1m":  row["Prices 1M"] if "Prices 1M" in row and isinstance(row["Prices 1M"], list) else [],
             "prices_3m":  row["Prices 3M"] if "Prices 3M" in row and isinstance(row["Prices 3M"], list) else [],
@@ -773,19 +956,26 @@ if __name__ == "__main__":
     print("=" * 55)
 
     # Step 1: Load tickers
-    print("\n[1/4] Loading your tickers...")
+    print("\n[1/5] Loading your tickers...")
     tickers = load_tickers("tickers.txt")
 
     # Step 2: Fetch social data (one call covers all tickers)
-    print("\n[2/4] Fetching social sentiment (Reddit/Apewisdom)...")
+    print("\n[2/5] Fetching social sentiment (Reddit/Apewisdom)...")
     apewisdom_data = fetch_apewisdom()
 
+    # Step 2b: Load EDGAR CIK map + sentiment cache (for 8-K Signal 5)
+    print("\n[2b/5] Loading EDGAR CIK map and filing sentiment cache...")
+    cik_map         = _get_cik_map()
+    sentiment_cache = _load_sentiment_cache()
+    cached_count    = len(sentiment_cache)
+    print(f"  {len(cik_map):,} companies in CIK map | {cached_count} filing(s) already cached")
+
     # Step 3: Score every ticker
-    print("\n[3/4] Analysing and scoring all tickers...")
-    results_df = score_all(tickers, apewisdom_data)
+    print("\n[3/5] Analysing and scoring all tickers...")
+    results_df = score_all(tickers, apewisdom_data, cik_map, sentiment_cache)
 
     # Step 4: Save report + notifications
-    print("\n[4/5] Generating report...")
+    print("\n[4/5] Generating report and sending notifications...")
     report_file = generate_report(results_df)
     send_slack(results_df)
     send_email(results_df)

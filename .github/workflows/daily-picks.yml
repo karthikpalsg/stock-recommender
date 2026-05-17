@@ -96,12 +96,14 @@ jobs:
           GMAIL_ADDRESS      = os.environ.get('GMAIL_ADDRESS', '')
           GMAIL_APP_PASSWORD = os.environ.get('GMAIL_APP_PASSWORD', '')
           FINNHUB_API_KEY    = os.environ.get('FINNHUB_API_KEY', '')
+          ANTHROPIC_API_KEY  = os.environ.get('ANTHROPIC_API_KEY', '')
           SEND_EMAIL         = True
           SCORE_WEIGHTS = {
-              'analyst':      0.35,
+              'analyst':      0.30,
               'momentum':     0.25,
               'fundamentals': 0.25,
-              'social':       0.15,
+              'social':       0.10,
+              'filing':       0.10,
           }
           STOP_LOSS_PCT     = 8
           TARGET_RETURN_PCT = 20
@@ -116,6 +118,7 @@ jobs:
           GMAIL_ADDRESS:      ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           SLACK_WEBHOOK_URL:  ${{ secrets.SLACK_WEBHOOK_URL }}
+          ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
           RUN_LABEL:          ${{ needs.check-sydney-time.outputs.run_label }}
           RUN_EMOJI:          ${{ needs.check-sydney-time.outputs.run_emoji }}
         run: python run.py
