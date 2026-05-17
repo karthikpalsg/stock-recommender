@@ -698,7 +698,15 @@ def save_json(df, output_dir="data", filename="history.json"):
     else:
         history = {"runs": []}
 
-    history["runs"].append(run_record)
+    # Replace existing run for today's date; otherwise append (one run per day)
+    today_date   = run_record["run_date"]
+    existing_idx = next((i for i, r in enumerate(history["runs"]) if r["run_date"] == today_date), None)
+    if existing_idx is not None:
+        history["runs"][existing_idx] = run_record
+        print(f"  Overwrote existing run for {today_date} with latest results")
+    else:
+        history["runs"].append(run_record)
+
     history["total_runs"]    = len(history["runs"])
     history["first_run"]     = history["runs"][0]["run_id"]
     history["last_run"]      = run_record["run_id"]

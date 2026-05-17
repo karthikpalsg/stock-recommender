@@ -816,9 +816,16 @@
       }
     });
 
-    weekRuns.sort((a, b) => (b.run_id > a.run_id ? 1 : -1));
+    // Deduplicate by date — keep the latest run per day (handles legacy multi-run days)
+    const dayBest = {};
+    weekRuns.forEach(run => {
+      if (!dayBest[run.run_date] || run.run_id > dayBest[run.run_date].run_id)
+        dayBest[run.run_date] = run;
+    });
+    const dedupedWeek = Object.values(dayBest).sort((a, b) => b.run_date.localeCompare(a.run_date));
+
     const archiveKeys = Object.keys(monthBest).sort().reverse();
-    buildTabs(weekRuns, archiveKeys, monthBest);
+    buildTabs(dedupedWeek, archiveKeys, monthBest);
   }
 
   // ── Tabs ──────────────────────────────────────────────────────────────────
@@ -826,9 +833,8 @@
     tabMeta = [];
 
     weekRuns.forEach(run => {
-      const day  = dayName(run.run_date);
-      const time = runTimeLabel(run);
-      tabMeta.push({ id: 'w-' + run.run_id, label: day + ' ' + time, run, type: 'week' });
+      const day = dayName(run.run_date);
+      tabMeta.push({ id: 'w-' + run.run_date, label: day, run, type: 'week' });
     });
 
     archiveKeys.forEach(mk => {
