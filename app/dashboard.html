@@ -300,6 +300,144 @@
     }
     .card-sources a:active { background: rgba(255,255,255,0.1); color: var(--text); }
 
+    /* ── 8-K filing button ── */
+    .filing-btn {
+      font-size: 8px;
+      font-weight: 800;
+      padding: 4px 5px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      cursor: pointer;
+      font-family: inherit;
+      letter-spacing: 0.3px;
+      line-height: 1;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+    .filing-btn.bullish {
+      background: rgba(63,185,80,0.12) !important;
+      border-color: rgba(63,185,80,0.35) !important;
+      color: #3fb950 !important;
+    }
+    .filing-btn.bearish {
+      background: rgba(248,81,73,0.12) !important;
+      border-color: rgba(248,81,73,0.35) !important;
+      color: #f85149 !important;
+    }
+    .filing-btn.cautious {
+      background: rgba(227,179,65,0.12) !important;
+      border-color: rgba(227,179,65,0.35) !important;
+      color: #e3b341 !important;
+    }
+    .filing-btn.neutral {
+      opacity: 0.35 !important;
+      cursor: not-allowed !important;
+      pointer-events: none;
+    }
+
+    /* ── Filing modal overlay ── */
+    .filing-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      z-index: 200;
+      align-items: flex-end;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+    .filing-overlay.open {
+      display: flex;
+      animation: fOverlayIn 0.15s ease;
+    }
+    @keyframes fOverlayIn { from { opacity:0 } to { opacity:1 } }
+    .filing-sheet {
+      background: #1c2128;
+      border: 1px solid var(--border);
+      border-radius: 18px 18px 0 0;
+      width: 100%;
+      max-width: 460px;
+      padding: 20px 20px 40px;
+      animation: fSheetUp 0.22s cubic-bezier(0.32,0.72,0,1);
+    }
+    @keyframes fSheetUp { from { transform:translateY(100%) } to { transform:translateY(0) } }
+    .filing-handle {
+      width: 36px; height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      margin: 0 auto 18px;
+    }
+    .filing-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .filing-title {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .filing-ticker {
+      font-size: 22px; font-weight: 900;
+      letter-spacing: -0.5px; line-height: 1.1;
+    }
+    .filing-close {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-family: inherit;
+    }
+    .filing-close:hover { background: rgba(255,255,255,0.1); color: var(--text); }
+    .filing-score-row {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 16px; padding: 14px 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border); border-radius: 10px;
+    }
+    .filing-score-circle {
+      width: 56px; height: 56px; border-radius: 50%;
+      border: 3px solid;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .filing-score-circle span { font-size: 18px; font-weight: 900; letter-spacing: -1px; }
+    .filing-score-label { font-size: 12px; color: var(--muted); line-height: 1.4; }
+    .filing-score-label strong {
+      display: block; font-size: 14px; font-weight: 800;
+      letter-spacing: -0.2px; margin-bottom: 2px;
+    }
+    .filing-detail {
+      font-size: 13px; line-height: 1.55; color: var(--text);
+      padding: 13px 15px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border); border-radius: 10px;
+      margin-bottom: 14px;
+    }
+    .filing-detail-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 6px;
+    }
+    .filing-date {
+      font-size: 10px; color: var(--muted);
+      text-align: right; letter-spacing: 0.2px;
+    }
+    .filing-bands { display: flex; gap: 4px; margin-top: 14px; }
+    .filing-band { flex: 1; height: 3px; border-radius: 2px; }
+    .filing-band-labels {
+      display: flex; justify-content: space-between; margin-top: 5px;
+    }
+    .filing-band-labels span { font-size: 9px; color: var(--muted); }
+
     /* ─── Legend + Filter row ────────────────────────────────── */
     .legend-row {
       display: flex;
@@ -1079,6 +1217,28 @@
       </div>`;
   }
 
+  // ── 8-K filing button HTML helper ────────────────────────────────────────
+  function filingBtnHTML(s) {
+    const fs = s.scores?.filing;
+    const fd = (s.signal_details?.filing || '').trim();
+    // Real filings have detail prefixed "8-K YYYY-MM-DD: reason..."
+    const m = fd.match(/^(8-K \d{4}-\d{2}-\d{2}):\s*([\s\S]*)/);
+    if (!m || fs == null) {
+      return `<button class="filing-btn neutral" title="No recent 8-K">📄 —</button>`;
+    }
+    const dateLabel  = m[1];
+    const reason     = m[2];
+    const cls        = fs >= 60 ? 'bullish' : fs < 35 ? 'bearish' : 'cautious';
+    const safeDate   = dateLabel.replace(/"/g, '&quot;');
+    const safeReason = reason.replace(/"/g, '&quot;');
+    return `<button class="filing-btn ${cls}"
+      data-ticker="${s.ticker}"
+      data-score="${fs}"
+      data-date="${safeDate}"
+      data-reason="${safeReason}"
+      onclick="openFilingModal(this)">📄 ${Math.round(fs)}</button>`;
+  }
+
   // ── Build card HTML for a single stock ───────────────────────────────────
   function buildCard(s) {
     const color  = SIG_COLOR[s.signal] || 'var(--muted)';
@@ -1122,6 +1282,7 @@
           <a href="${SRC.YF(s.ticker)}" target="_blank" rel="noopener" title="Yahoo Finance">YF</a>
           <a href="${SRC.FV(s.ticker)}" target="_blank" rel="noopener" title="Finviz">FV</a>
           <a href="${SRC.SA(s.ticker)}" target="_blank" rel="noopener" title="Seeking Alpha">SA</a>
+          ${filingBtnHTML(s)}
         </div>
       </div>`;
   }
@@ -1386,6 +1547,77 @@
   </div>
 
 </div>`;
+  }
+</script>
+
+<!-- ── 8-K Filing Modal ─────────────────────────────────────────────────── -->
+<div class="filing-overlay" id="filing-overlay" onclick="closeFilingModalOverlay(event)">
+  <div class="filing-sheet">
+    <div class="filing-handle"></div>
+    <div class="filing-header">
+      <div>
+        <div class="filing-title">SEC 8-K Filing</div>
+        <div class="filing-ticker" id="fm-ticker"></div>
+      </div>
+      <button class="filing-close" onclick="closeFilingModal()">✕</button>
+    </div>
+    <div class="filing-score-row">
+      <div class="filing-score-circle" id="fm-circle">
+        <span id="fm-score"></span>
+      </div>
+      <div class="filing-score-label">
+        <strong id="fm-band"></strong>
+        <span>Guidance tone score out of 100.<br>Scored by Claude from the filing text.</span>
+      </div>
+    </div>
+    <div class="filing-detail">
+      <div class="filing-detail-label">What drove the score</div>
+      <span id="fm-reason"></span>
+    </div>
+    <div class="filing-date" id="fm-date"></div>
+    <div class="filing-bands">
+      <div class="filing-band" style="background:#f85149;flex:2"></div>
+      <div class="filing-band" style="background:#e3b341;flex:2"></div>
+      <div class="filing-band" style="background:#8b949e;flex:2"></div>
+      <div class="filing-band" style="background:#3fb950;flex:2"></div>
+      <div class="filing-band" style="background:#2ea043;flex:2"></div>
+    </div>
+    <div class="filing-band-labels">
+      <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── 8-K Filing Modal JS ───────────────────────────────────────────────────
+  const _FM_BANDS = [
+    { min:0,  max:20,  label:'Very negative', color:'#f85149', border:'rgba(248,81,73,0.4)'   },
+    { min:20, max:40,  label:'Cautious',       color:'#e3b341', border:'rgba(227,179,65,0.4)'  },
+    { min:40, max:60,  label:'Neutral',        color:'#8b949e', border:'rgba(139,148,158,0.4)' },
+    { min:60, max:80,  label:'Positive',       color:'#3fb950', border:'rgba(63,185,80,0.4)'   },
+    { min:80, max:101, label:'Very positive',  color:'#2ea043', border:'rgba(46,160,67,0.4)'   },
+  ];
+  function _getFMBand(score) {
+    return _FM_BANDS.find(b => score >= b.min && score < b.max) || _FM_BANDS[2];
+  }
+  function openFilingModal(btn) {
+    const score  = parseInt(btn.dataset.score, 10);
+    const band   = _getFMBand(score);
+    document.getElementById('fm-ticker').textContent = btn.dataset.ticker;
+    document.getElementById('fm-score').textContent  = score;
+    document.getElementById('fm-band').textContent   = band.label;
+    document.getElementById('fm-reason').textContent = btn.dataset.reason;
+    document.getElementById('fm-date').textContent   = '📅 ' + btn.dataset.date;
+    const circle = document.getElementById('fm-circle');
+    circle.style.borderColor = band.border;
+    circle.querySelector('span').style.color = band.color;
+    document.getElementById('filing-overlay').classList.add('open');
+  }
+  function closeFilingModal() {
+    document.getElementById('filing-overlay').classList.remove('open');
+  }
+  function closeFilingModalOverlay(e) {
+    if (e.target === document.getElementById('filing-overlay')) closeFilingModal();
   }
 </script>
 </body>
