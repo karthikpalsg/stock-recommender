@@ -26,7 +26,7 @@ Every weekday at **5am and 7am Sydney time**, an automated system:
 
 You manage your stock list from your iPhone using a web app. Your Mac does not need to be switched on. The whole thing costs $0/month to run.
 
-The **dashboard PWA** shows each day's results as a tab. Current-month days appear as individual tabs (Mon, Tue…). At the start of a new month, previous-month tabs collapse to a single archive tab (Apr '26, Mar '26…). Every card shows a 1M/3M sparkline trend chart and a filter panel lets you narrow by ticker or price range.
+The **dashboard PWA** shows each day's results as a tab. Current-month days appear as individual tabs labelled `17-May`, `16-May`… At the start of a new month, previous-month tabs collapse to a single archive tab labelled `May-2026`, `Apr-2026`… Every card shows a 1M/3M sparkline trend chart and a filter panel lets you narrow by ticker or price range.
 
 ---
 
@@ -869,8 +869,8 @@ Build a hosted app that shows the final output of the engine with date in the to
 Full PWA that reads directly from `data/history.json` on GitHub (public, no token required to read). Key features:
 
 **Tab system:**
-- Current month: one tab per day, labelled by weekday — `Mon`, `Tue`, `Wed`… The engine runs at 5am and 7am but the 7am result overwrites the 5am one, so only one tab per day is ever shown. Most recent tab is selected on open.
-- Monthly archive: one tab per past month labelled `Apr '26`, `May '26` etc. Appears after a thin divider. On the 1st of each month, the previous month's day tabs collapse to a single archive tab showing the last day's data.
+- Current month: one tab per day, labelled `17-May`, `16-May`… The engine runs at 5am and 7am but the 7am result overwrites the 5am one (same for any manual run). Only one tab per day is ever shown. Most recent tab is selected on open.
+- Monthly archive: one tab per past month labelled `May-2026`, `Apr-2026`… Appears after a thin divider. On the 1st of each month, the previous month's day tabs collapse to a single archive tab showing the last day's data.
 - Switching tabs updates the bold date in the top-right header.
 
 **Header date (top right, bold):**
@@ -1463,12 +1463,44 @@ This fires after today's run is already in place, so the cleanup and new-day cre
 
 **dashboard.html change:**
 Replaced `getMondayDateStr()` (week boundary) with `getMonthStartDateStr()` (returns `'YYYY-MM-01'` in Sydney time):
-- Runs with `run_date >= monthStart` → individual day tabs (`Mon`, `Tue`…)
-- Older runs → one archive tab per month (`Apr '26`, `Mar '26`…)
+- Runs with `run_date >= monthStart` → individual day tabs (`17-May`, `16-May`…)
+- Older runs → one archive tab per month (`May-2026`, `Apr-2026`…)
 
 Result: during a month you see daily tabs; at the turn of a month the previous month's tabs collapse automatically to a single archive entry.
 
 ---
 
-*Last updated: May 2026 — Steps 1–38 complete*
+---
+
+## Step 39 — Tab label format: day-Month and Month-Year
+
+**What you asked:**
+Tabs were showing weekday names ("Sun", "Sat") because manual runs on weekends used `dayName()` which just returns the weekday. Labels should be date-based, not weekday-based. Confirmed that multiple runs on the same day overwrite the single tab — no duplicates.
+
+**New label formats:**
+
+| Tab type | Old label | New label |
+|---|---|---|
+| Current month day | `Mon`, `Sun` | `17-May`, `16-May` |
+| Previous month archive | `Apr '26` | `May-2026`, `Apr-2026` |
+
+**dashboard.html changes:**
+- Removed `dayName(dateStr)` (returned weekday name — broken for weekend manual runs)
+- Removed `runTimeLabel(run)` (no longer needed — time is not shown in tab label)
+- Added `dayTabLabel(dateStr)` — splits `'2026-05-17'` into day `17` + month abbr `May` → `'17-May'`
+- Added `archiveTabLabel(monthKey)` — splits `'2026-05'` into month abbr `May` + year `2026` → `'May-2026'`
+- Updated `buildTabs()` to call the new helpers
+
+**Algorithm (confirmed):**
+
+Running through May into June:
+```
+During May:    17-May  16-May  15-May  ...  |  📖 Dictionary
+June 1 run:   1-Jun  |  May-2026  |  📖 Dictionary
+Mid-June:    17-Jun  16-Jun  ...  1-Jun  |  May-2026  |  Apr-2026  |  📖 Dictionary
+```
+
+Same-day re-runs (auto or manual) overwrite the existing tab — one tab per day, always.
+
+*Last updated: May 2026 — Steps 1–39 complete*
 *Built with Claude Code*
