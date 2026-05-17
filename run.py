@@ -365,13 +365,54 @@ def get_filing_sentiment_score(symbol, cik_map, sentiment_cache):
                 c = sentiment_cache[cache_key]
                 return c["score"], f"[{date_str}] {c['reason']}"
 
-            # Download the primary document of the filing
-            acc_clean = acc.replace("-", "")
-            doc_url   = (f"https://www.sec.gov/Archives/edgar/data/"
-                         f"{int(cik)}/{acc_clean}/{doc}")
+            # Download the filing and extract meaningful text.
+            # 8-Ks often put the earnings press release in Exhibit 99.1
+            # (e.g. ex991pressrelease.htm) rather than the primary doc.
+            # Strategy: try primary doc; if thin, scan folder for ex99 file.
+            import re as _re
+            acc_clean  = acc.replace("-", "")
+            base_url   = (f"https://www.sec.gov/Archives/edgar/data/"
+                          f"{int(cik)}/{acc_clean}/")
+
+            def _fetch_clean(url):
+                """Fetch URL and return stripped plain text, or '' on failure."""
+                try:
+                    r = requests.get(url, headers=_EDGAR_HEADERS, timeout=15)
+                    if r.status_code != 200:
+                        return ''
+                    txt = _re.sub(r'<[^>]+>', ' ', r.text)
+                    txt = _re.sub(r'\s+', ' ', txt).strip()
+                    return txt
+                except Exception:
+                    return ''
+
             try:
-                dr = requests.get(doc_url, headers=_EDGAR_HEADERS, timeout=15)
-                filing_text = dr.text[:8000]   # cap at 8K chars — ~2K tokens
+                # Strategy: prefer Exhibit 99.1 (earnings press release) over
+                # primary doc, which is often an XBRL wrapper with no guidance text.
+                # 1. Scan folder for ex99 / pressrelease files first.
+                # 2. Fall back to primary doc if no exhibit found.
+                text_only   = ''
+                folder_html = requests.get(base_url, headers=_EDGAR_HEADERS,
+                                           timeout=10).text
+                ex99_files  = _re.findall(
+                    r'href="(/[^"]*(?:ex.?99|pressrelease|exhibit.?99|ex\.99|99\.1)[^"]*\.htm[l]?)"',
+                    folder_html, _re.IGNORECASE
+                )
+                for ex_path in ex99_files[:3]:
+                    ex_url  = f"https://www.sec.gov{ex_path}"
+                    ex_text = _fetch_clean(ex_url)
+                    if len(ex_text) > 500:
+                        text_only = ex_text
+                        break
+
+                # Fall back to primary document if no usable exhibit found
+                if len(text_only) < 500:
+                    text_only = _fetch_clean(base_url + doc)
+
+                if len(text_only) < 200:
+                    continue
+
+                filing_text = text_only[:12000]   # ~3K tokens of clean text
                 accession   = acc
                 filing_date = date_str
                 break
@@ -401,6 +442,12 @@ def get_filing_sentiment_score(symbol, cik_map, sentiment_cache):
             messages=[{"role": "user", "content": prompt}]
         )
         raw    = response.content[0].text.strip()
+        # Strip markdown fences if Claude wraps the JSON (e.g. ```json ... ```)
+        if raw.startswith("```"):
+            raw = raw.split("```")[1]
+            if raw.startswith("json"):
+                raw = raw[4:]
+            raw = raw.strip()
         result = json.loads(raw)
         score  = max(0, min(100, int(result["score"])))
         reason = result.get("reason", "guidance scored")
