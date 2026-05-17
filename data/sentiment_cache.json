@@ -23,5 +23,100 @@
     "score": 88,
     "reason": "Record results, 54% YoY growth, guidance raised, major new customer",
     "filing_date": "2026-05-07"
+  },
+  "AMD_0001193125-26-226746": {
+    "score": 28,
+    "reason": "Credit facility refinance, no earnings/guidance data, neutral financing event",
+    "filing_date": "2026-05-15"
+  },
+  "COHR_0001193125-26-208972": {
+    "score": 85,
+    "reason": "Strong beat, margin expansion, AI datacenter demand acceleration, capacity ramp",
+    "filing_date": "2026-05-06"
+  },
+  "DDOG_0001628280-26-031677": {
+    "score": 78,
+    "reason": "Strong 32% YoY growth, robust customer expansion, multiple product launches",
+    "filing_date": "2026-05-07"
+  },
+  "FIVN_0001288847-26-000081": {
+    "score": 45,
+    "reason": "Neutral capital allocation signal; no earnings guidance or operational updates provided",
+    "filing_date": "2026-05-05"
+  },
+  "GNRC_0001437749-26-013726": {
+    "score": 45,
+    "reason": "Routine earnings announcement with segment reorganization, no guidance change disclosed",
+    "filing_date": "2026-04-29"
+  },
+  "HOOD_0001783879-26-000065": {
+    "score": 18,
+    "reason": "CTO departure without cause; no guidance provided; negative signal",
+    "filing_date": "2026-05-08"
+  },
+  "IPGP_0001111928-26-000120": {
+    "score": 25,
+    "reason": "Routine annual meeting voting results; no financial guidance or business updates provided.",
+    "filing_date": "2026-05-15"
+  },
+  "IREN_0001140361-26-021285": {
+    "score": 72,
+    "reason": "Large capital raise demonstrates confidence; neutral on guidance specifics",
+    "filing_date": "2026-05-14"
+  },
+  "IRM_0001020569-26-000055": {
+    "score": 42,
+    "reason": "Routine annual meeting results, no financial guidance or material business updates",
+    "filing_date": "2026-05-12"
+  },
+  "LITE_0001628280-26-030530": {
+    "score": 85,
+    "reason": "90% YoY revenue growth, record $808M, massive margin expansion",
+    "filing_date": "2026-05-05"
+  },
+  "LUNR_0001628280-26-034807": {
+    "score": 78,
+    "reason": "Major strategic acquisition expanding capacity, infrastructure, and market reach significantly",
+    "filing_date": "2026-05-14"
+  },
+  "NVT_0001628280-26-029098": {
+    "score": 85,
+    "reason": "Major beat, record results, significant guidance raise, strong momentum",
+    "filing_date": "2026-05-01"
+  },
+  "OKLO_0001104659-26-060385": {
+    "score": 45,
+    "reason": "At-the-market offering announced; capital raise, neutral strategic signal.",
+    "filing_date": "2026-05-13"
+  },
+  "ONDS_0001213900-26-057935": {
+    "score": 35,
+    "reason": "Acquisition filing with equity resale; no revenue or earnings guidance provided.",
+    "filing_date": "2026-05-15"
+  },
+  "QBTS_0001907982-26-000061": {
+    "score": 15,
+    "reason": "Administrative correction filing; no business guidance, earnings miss, or strategic updates.",
+    "filing_date": "2026-05-13"
+  },
+  "QUBT_0001213900-26-054470": {
+    "score": 72,
+    "reason": "Strategic acquisitions, 94x revenue growth YoY, strong cash position",
+    "filing_date": "2026-05-11"
+  },
+  "RGTI_0001104659-26-058635": {
+    "score": 65,
+    "reason": "108-qubit launch, customer wins, $100M UK investment, strong cash position",
+    "filing_date": "2026-05-11"
+  },
+  "SNDK_0001193125-26-224694": {
+    "score": 15,
+    "reason": "Mini-tender offer warning; defensive posture, no business guidance",
+    "filing_date": "2026-05-15"
+  },
+  "SOFI_0001818874-26-000020": {
+    "score": 0,
+    "reason": "8-K filing only; actual press release content not provided for analysis",
+    "filing_date": "2026-04-29"
   }
 }
