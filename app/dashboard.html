@@ -300,13 +300,19 @@
     }
     .card-sources a:active { background: rgba(255,255,255,0.1); color: var(--text); }
 
-    /* ─── Legend strip ───────────────────────────────────────── */
-    .legend {
+    /* ─── Legend + Filter row ────────────────────────────────── */
+    .legend-row {
+      display: flex;
+      align-items: center;
+      padding: 7px 10px 6px;
+      border-bottom: 1px solid var(--border);
+      gap: 8px;
+    }
+    .legend-items {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      padding: 7px 10px 6px;
-      border-bottom: 1px solid var(--border);
+      flex: 1;
     }
     .legend-item {
       display: flex;
@@ -322,6 +328,149 @@
       height: 8px;
       border-radius: 2px;
       flex-shrink: 0;
+    }
+
+    /* ── Filter toggle button ── */
+    .filter-btn {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 10px 4px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.12s, border-color 0.12s, color 0.12s;
+    }
+    .filter-btn.active {
+      background: rgba(63,185,80,0.12);
+      border-color: rgba(63,185,80,0.4);
+      color: var(--green-l);
+    }
+
+    /* ─── Filter panel ───────────────────────────────────────── */
+    .filter-panel {
+      background: var(--surface);
+      border-bottom: 2px solid var(--border);
+      padding: 10px 12px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .filter-panel.hidden { display: none; }
+
+    .filter-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .filter-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      min-width: 52px;
+      flex-shrink: 0;
+    }
+    .filter-search {
+      flex: 1;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .filter-search:focus { border-color: var(--green-l); }
+    .filter-search::placeholder { color: var(--muted); font-weight: 400; }
+
+    .filter-range {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+    }
+    .range-input {
+      flex: 1;
+      min-width: 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      text-align: center;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .range-input:focus { border-color: var(--green-l); }
+    .range-input::placeholder { color: var(--muted); font-weight: 400; font-size: 12px; }
+    .range-dash { font-size: 12px; color: var(--muted); font-weight: 700; flex-shrink: 0; }
+
+    .filter-clear-btn {
+      align-self: flex-end;
+      margin-top: 2px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .filter-clear-btn.has-filters {
+      border-color: rgba(248,81,73,0.4);
+      background: rgba(248,81,73,0.08);
+      color: var(--red-l);
+    }
+
+    /* ─── Result count bar ───────────────────────────────────── */
+    .result-bar {
+      padding: 5px 12px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--green-l);
+      border-bottom: 1px solid var(--border);
+      background: rgba(63,185,80,0.06);
+      display: none;
+    }
+    .result-bar.visible { display: block; }
+
+    /* ─── No-results empty state ─────────────────────────────── */
+    .no-results {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+      gap: 10px;
+      color: var(--muted);
+      text-align: center;
+    }
+    .no-results-icon { font-size: 32px; }
+    .no-results-text { font-size: 13px; line-height: 1.6; }
+    .no-results-clear {
+      margin-top: 4px;
+      padding: 7px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
     }
 
     /* ─── States ─────────────────────────────────────────────── */
@@ -545,6 +694,8 @@
   let activeTabId = null;
   let lastRunId   = null;
   let lastFetchAt = null;
+  let currentRun  = null;   // run currently displayed
+  let filterOpen  = false;  // filter panel visibility
 
   // ── Boot ────────────────────────────────────────────────────────────────
   window.addEventListener('load', () => {
@@ -713,75 +864,170 @@
       return;
     }
 
-    const cards = run.stocks.map(s => {
-      const color  = SIG_COLOR[s.signal] || 'var(--muted)';
-      const hex    = SIG_HEX[s.signal]   || '#8b949e';
-      const score  = Math.round(s.composite_score ?? 0);
-      const up     = s.upside_pct != null;
-      const upside = up ? `${s.upside_pct > 0 ? '+' : ''}${s.upside_pct.toFixed(1)}%` : '—';
-      const badgeStyle = !up
-        ? 'background:rgba(255,255,255,0.05);color:var(--muted)'
-        : s.upside_pct > 0
-          ? 'background:rgba(63,185,80,0.15);color:#3fb950'
-          : 'background:rgba(248,81,73,0.15);color:#f85149';
-      const price  = s.price != null ? `$${Number(s.price).toFixed(2)}` : '—';
-      const target = s.analyst_target_price != null ? `$${Number(s.analyst_target_price).toFixed(0)}` : '—';
-      const stop   = s.stop_loss_price != null ? `$${Number(s.stop_loss_price).toFixed(2)}` : '—';
-
-      return `
-        <div class="stock-card"
-             style="border-left-color:${hex}"
-             onclick="openStock('${s.ticker}')">
-
-          <div class="card-top">
-            <span class="card-rank">#${s.rank}</span>
-            <span class="card-upside-badge" style="${badgeStyle}">${upside}</span>
-          </div>
-
-          <div class="card-ticker">${s.ticker}</div>
-          <div class="card-signal" style="color:${color}">${SIG_EMOJI[s.signal] ?? ''} ${s.signal}</div>
-
-          <div class="score-bar-bg">
-            <div class="score-bar-fill" style="width:${score}%;background:${hex}"></div>
-          </div>
-          <div class="card-score-row">
-            <div class="score-left">
-              <span class="card-score" style="color:${color}">${score}</span>
-              <span class="card-score-label">/ 100</span>
-            </div>
-            <span class="card-price-now" style="color:${color}">${price}</span>
-          </div>
-
-          <div class="card-price">→ <span class="tv">${target}</span> &nbsp; <span class="stop-label">Stop </span><span class="stop-value">${stop}</span></div>
-
-          ${analystHTML(s.signal_details?.analyst)}
-
-          <div class="card-sources" onclick="event.stopPropagation()">
-            <a href="${SRC.YF(s.ticker)}" target="_blank" rel="noopener" title="Yahoo Finance">YF</a>
-            <a href="${SRC.FV(s.ticker)}" target="_blank" rel="noopener" title="Finviz">FV</a>
-            <a href="${SRC.SA(s.ticker)}" target="_blank" rel="noopener" title="Seeking Alpha">SA</a>
-          </div>
-        </div>`;
-    }).join('');
+    currentRun = run;
+    filterOpen = false;
 
     el.innerHTML = `
       <div class="run-meta">
         <span>${run.total_stocks} stocks &middot; ${run.run_date}</span>
         <span class="run-meta-label">${run.run_label ?? 'Run'}</span>
       </div>
-      <div class="legend">
-        <div class="legend-item"><div class="legend-dot" style="background:#3fb950"></div>STRONG BUY</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#e3b341"></div>BUY</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#8b949e"></div>WATCH</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#f85149"></div>AVOID</div>
-        <div class="legend-item" style="margin-left:auto;font-size:8px;color:var(--muted)">Tap card = YF &nbsp;·&nbsp; YF/FV/SA = sources</div>
+      <div class="legend-row">
+        <div class="legend-items">
+          <div class="legend-item"><div class="legend-dot" style="background:#3fb950"></div>STRONG BUY</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#e3b341"></div>BUY</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#8b949e"></div>WATCH</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#f85149"></div>AVOID</div>
+        </div>
+        <button class="filter-btn" id="filter-btn" onclick="toggleFilter()">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v1.586a1.5 1.5 0 0 1-.44 1.06L9.5 10.207V14.5a.5.5 0 0 1-.777.416L5.723 13A.5.5 0 0 1 5.5 12.582V10.207L1.44 5.146A1.5 1.5 0 0 1 1 4.086V2.5z"/>
+          </svg>
+          Filter
+        </button>
       </div>
-      <div class="stock-grid">${cards}</div>`;
+      <div class="filter-panel hidden" id="filter-panel">
+        <div class="filter-row">
+          <span class="filter-label">Ticker</span>
+          <input class="filter-search" id="f-ticker" type="text"
+                 placeholder="e.g. DDOG" autocomplete="off" autocapitalize="characters"
+                 oninput="this.value=this.value.toUpperCase(); applyFilters()">
+        </div>
+        <div class="filter-row">
+          <span class="filter-label">Price $</span>
+          <div class="filter-range">
+            <input class="range-input" id="f-price-min" type="number"
+                   placeholder="Min" min="0" oninput="applyFilters()">
+            <span class="range-dash">—</span>
+            <input class="range-input" id="f-price-max" type="number"
+                   placeholder="Max" min="0" oninput="applyFilters()">
+          </div>
+        </div>
+        <button class="filter-clear-btn" id="clear-btn" onclick="clearFilters()">Clear filters</button>
+      </div>
+      <div class="result-bar" id="result-bar"></div>
+      <div class="stock-grid" id="stock-grid"></div>`;
+
+    applyFilters();
   }
 
   // Opens Yahoo Finance (primary action — whole card tap)
   function openStock(ticker) {
     window.open(SRC.YF(ticker), '_blank', 'noopener');
+  }
+
+  // ── Filter ────────────────────────────────────────────────────────────────
+  function toggleFilter() {
+    filterOpen = !filterOpen;
+    document.getElementById('filter-panel')?.classList.toggle('hidden', !filterOpen);
+    document.getElementById('filter-btn')?.classList.toggle('active', filterOpen);
+  }
+
+  function applyFilters() {
+    if (!currentRun?.stocks?.length) return;
+
+    const ticker   = (document.getElementById('f-ticker')?.value   || '').trim().toUpperCase();
+    const priceMin = parseFloat(document.getElementById('f-price-min')?.value) || 0;
+    const priceMax = parseFloat(document.getElementById('f-price-max')?.value) || Infinity;
+    const hasFilter = ticker !== '' || priceMin > 0 || priceMax < Infinity;
+
+    // Highlight clear button when filters are set
+    document.getElementById('clear-btn')?.classList.toggle('has-filters', hasFilter);
+
+    const stocks = hasFilter
+      ? currentRun.stocks.filter(s => {
+          if (ticker && s.ticker !== ticker) return false;
+          if (s.price != null && (s.price < priceMin || s.price > priceMax)) return false;
+          return true;
+        })
+      : currentRun.stocks;
+
+    // Result bar
+    const rb = document.getElementById('result-bar');
+    if (rb) {
+      if (hasFilter) {
+        rb.textContent = `Showing ${stocks.length} of ${currentRun.stocks.length} stocks`;
+        rb.classList.add('visible');
+      } else {
+        rb.classList.remove('visible');
+      }
+    }
+
+    renderGrid(stocks, hasFilter);
+  }
+
+  function clearFilters() {
+    const t = document.getElementById('f-ticker');
+    const mn = document.getElementById('f-price-min');
+    const mx = document.getElementById('f-price-max');
+    if (t)  t.value  = '';
+    if (mn) mn.value = '';
+    if (mx) mx.value = '';
+    applyFilters();
+  }
+
+  // ── Build card HTML for a single stock ───────────────────────────────────
+  function buildCard(s) {
+    const color  = SIG_COLOR[s.signal] || 'var(--muted)';
+    const hex    = SIG_HEX[s.signal]   || '#8b949e';
+    const score  = Math.round(s.composite_score ?? 0);
+    const up     = s.upside_pct != null;
+    const upside = up ? `${s.upside_pct > 0 ? '+' : ''}${s.upside_pct.toFixed(1)}%` : '—';
+    const badgeStyle = !up
+      ? 'background:rgba(255,255,255,0.05);color:var(--muted)'
+      : s.upside_pct > 0
+        ? 'background:rgba(63,185,80,0.15);color:#3fb950'
+        : 'background:rgba(248,81,73,0.15);color:#f85149';
+    const price  = s.price != null ? `$${Number(s.price).toFixed(2)}` : '—';
+    const target = s.analyst_target_price != null ? `$${Number(s.analyst_target_price).toFixed(0)}` : '—';
+    const stop   = s.stop_loss_price != null ? `$${Number(s.stop_loss_price).toFixed(2)}` : '—';
+
+    return `
+      <div class="stock-card"
+           style="border-left-color:${hex}"
+           onclick="openStock('${s.ticker}')">
+        <div class="card-top">
+          <span class="card-rank">#${s.rank}</span>
+          <span class="card-upside-badge" style="${badgeStyle}">${upside}</span>
+        </div>
+        <div class="card-ticker">${s.ticker}</div>
+        <div class="card-signal" style="color:${color}">${SIG_EMOJI[s.signal] ?? ''} ${s.signal}</div>
+        <div class="score-bar-bg">
+          <div class="score-bar-fill" style="width:${score}%;background:${hex}"></div>
+        </div>
+        <div class="card-score-row">
+          <div class="score-left">
+            <span class="card-score" style="color:${color}">${score}</span>
+            <span class="card-score-label">/ 100</span>
+          </div>
+          <span class="card-price-now" style="color:${color}">${price}</span>
+        </div>
+        <div class="card-price">→ <span class="tv">${target}</span> &nbsp; <span class="stop-label">Stop </span><span class="stop-value">${stop}</span></div>
+        ${analystHTML(s.signal_details?.analyst)}
+        <div class="card-sources" onclick="event.stopPropagation()">
+          <a href="${SRC.YF(s.ticker)}" target="_blank" rel="noopener" title="Yahoo Finance">YF</a>
+          <a href="${SRC.FV(s.ticker)}" target="_blank" rel="noopener" title="Finviz">FV</a>
+          <a href="${SRC.SA(s.ticker)}" target="_blank" rel="noopener" title="Seeking Alpha">SA</a>
+        </div>
+      </div>`;
+  }
+
+  // ── Render filtered grid into #stock-grid ─────────────────────────────────
+  function renderGrid(stocks, filtered) {
+    const grid = document.getElementById('stock-grid');
+    if (!grid) return;
+
+    if (filtered && stocks.length === 0) {
+      grid.innerHTML = `
+        <div class="no-results">
+          <div class="no-results-icon">🔍</div>
+          <div class="no-results-text">No stocks match your filter.<br>Try a different ticker or price range.</div>
+          <button class="no-results-clear" onclick="clearFilters()">Clear filters</button>
+        </div>`;
+      return;
+    }
+
+    grid.innerHTML = stocks.map(buildCard).join('');
   }
 
   // ── Analyst summary parser ────────────────────────────────────────────────
