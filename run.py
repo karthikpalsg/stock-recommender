@@ -281,6 +281,16 @@ def score_ticker(symbol, apewisdom_data):
 
         stop_loss = round(current_price * (1 - STOP_LOSS_PCT / 100), 2) if current_price else 0
 
+        # ── 3-month daily close prices for sparkline (dashboard trend charts) ──
+        prices_3m = []
+        prices_1m = []
+        try:
+            hist3m = ticker.history(period='3mo', interval='1d')['Close']
+            prices_3m = [round(float(p), 2) for p in hist3m.tolist() if not pd.isna(p)]
+            prices_1m = prices_3m[-22:] if len(prices_3m) >= 22 else prices_3m
+        except Exception:
+            pass
+
         return {
             'Ticker':              symbol,
             'Company':             company_name,
@@ -297,6 +307,8 @@ def score_ticker(symbol, apewisdom_data):
             'Momentum Detail':     momentum_detail,
             'Fundamental Detail':  fundamental_detail,
             'Social Detail':       social_detail,
+            'Prices 3M':           prices_3m,
+            'Prices 1M':           prices_1m,
         }
 
     except Exception as e:
@@ -307,6 +319,7 @@ def score_ticker(symbol, apewisdom_data):
             'Fundamental Score': 0, 'Social Score': 0,
             'Analyst Detail': 'Error', 'Momentum Detail': 'Error',
             'Fundamental Detail': 'Error', 'Social Detail': f'Error: {str(e)[:60]}',
+            'Prices 3M': [], 'Prices 1M': [],
         }
 
 
@@ -669,7 +682,9 @@ def save_json(df, output_dir="data", filename="history.json"):
                 "momentum":     row["Momentum Detail"],
                 "fundamentals": row["Fundamental Detail"],
                 "social":       row["Social Detail"],
-            }
+            },
+            "prices_1m":  row["Prices 1M"] if "Prices 1M" in row and isinstance(row["Prices 1M"], list) else [],
+            "prices_3m":  row["Prices 3M"] if "Prices 3M" in row and isinstance(row["Prices 3M"], list) else [],
         }
         run_record["stocks"].append(stock_record)
 
