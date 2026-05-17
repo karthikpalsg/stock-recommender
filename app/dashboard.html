@@ -830,15 +830,12 @@
     tabMeta = [];
 
     weekRuns.forEach(run => {
-      const day = dayName(run.run_date);
-      tabMeta.push({ id: 'w-' + run.run_date, label: day, run, type: 'week' });
+      tabMeta.push({ id: 'w-' + run.run_date, label: dayTabLabel(run.run_date), run, type: 'week' });
     });
 
     archiveKeys.forEach(mk => {
       const [y, m] = mk.split('-');
-      const label  = new Date(Number(y), Number(m) - 1)
-                       .toLocaleDateString('en-AU', { month: 'short', year: '2-digit' });
-      tabMeta.push({ id: 'a-' + mk, label, run: monthBest[mk], type: 'archive', monthKey: mk });
+      tabMeta.push({ id: 'a-' + mk, label: archiveTabLabel(mk), run: monthBest[mk], type: 'archive', monthKey: mk });
     });
 
     const bar = document.getElementById('tab-bar');
@@ -1199,16 +1196,18 @@
   }
 
   // ── Helpers ───────────────────────────────────────────────────────────────
-  function dayName(dateStr) {
-    return new Date(dateStr + 'T12:00:00')
-             .toLocaleDateString('en-AU', { weekday: 'short' });
+  function dayTabLabel(dateStr) {
+    // '2026-05-17' → '17-May'
+    const [y, m, d] = dateStr.split('-').map(Number);
+    const mon = new Date(y, m - 1).toLocaleDateString('en-AU', { month: 'short' });
+    return `${d}-${mon}`;
   }
 
-  function runTimeLabel(run) {
-    const lbl = run.run_label || '';
-    if (lbl.includes('5am')) return '5am';
-    if (lbl.includes('7am')) return '7am';
-    return run.run_time?.slice(0, 5) || '';
+  function archiveTabLabel(monthKey) {
+    // '2026-05' → 'May-2026'
+    const [y, m] = monthKey.split('-').map(Number);
+    const mon = new Date(y, m - 1).toLocaleDateString('en-AU', { month: 'short' });
+    return `${mon}-${y}`;
   }
 
   function showEmpty(msg) {
