@@ -598,6 +598,13 @@
     }
     .filter-panel.hidden { display: none; }
 
+    /* ── Sticky control band (run-meta + legend + filter + result) ── */
+    .sticky-controls {
+      position: sticky;
+      z-index: 8;
+      background: var(--bg);
+    }
+
     .filter-row {
       display: flex;
       align-items: center;
@@ -992,7 +999,9 @@
   // ── Boot ────────────────────────────────────────────────────────────────
   window.addEventListener('load', () => {
     positionTabBar();
-    new ResizeObserver(positionTabBar).observe(document.getElementById('header'));
+    new ResizeObserver(() => { positionTabBar(); positionControls(); })
+      .observe(document.getElementById('header'));
+    window.addEventListener('resize', positionTableWrap);
     fetchData();
     setInterval(fetchData,      POLL_INTERVAL);
     setInterval(updateSubtitle, 30_000);
@@ -1001,6 +1010,29 @@
   function positionTabBar() {
     document.getElementById('tab-bar-wrap').style.top =
       document.getElementById('header').offsetHeight + 'px';
+  }
+
+  // Sticks the run-meta + legend row + filter + result band just below the tab bar
+  function positionControls() {
+    const header  = document.getElementById('header');
+    const tabBar  = document.getElementById('tab-bar-wrap');
+    const ctrl    = document.getElementById('sticky-controls');
+    if (!ctrl || !header || !tabBar) return;
+    ctrl.style.top = (header.offsetHeight + tabBar.offsetHeight) + 'px';
+    positionTableWrap();   // recalculate table height whenever controls move
+  }
+
+  // Sizes the table scroll container to exactly fill the remaining viewport
+  function positionTableWrap() {
+    const wrap = document.querySelector('.stock-table-wrap');
+    if (!wrap) return;
+    const header = document.getElementById('header');
+    const tabBar = document.getElementById('tab-bar-wrap');
+    const ctrl   = document.getElementById('sticky-controls');
+    const used   = (header?.offsetHeight || 0)
+                 + (tabBar?.offsetHeight  || 0)
+                 + (ctrl?.offsetHeight    || 0);
+    wrap.style.maxHeight = (window.innerHeight - used) + 'px';
   }
 
   // ── Fetch ────────────────────────────────────────────────────────────────
@@ -1160,54 +1192,57 @@
     filterOpen = false;
 
     el.innerHTML = `
-      <div class="run-meta">
-        <span>${run.total_stocks} stocks &middot; ${run.run_date}</span>
-        <span class="run-meta-label">${run.run_label ?? 'Run'}</span>
-      </div>
-      <div class="legend-row">
-        <div class="legend-items">
-          <div class="legend-item"><div class="legend-dot" style="background:#3fb950"></div>STRONG BUY</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#e3b341"></div>BUY</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#8b949e"></div>WATCH</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#f85149"></div>AVOID</div>
+      <div class="sticky-controls" id="sticky-controls">
+        <div class="run-meta">
+          <span>${run.total_stocks} stocks &middot; ${run.run_date}</span>
+          <span class="run-meta-label">${run.run_label ?? 'Run'}</span>
         </div>
-        <div class="trend-toggle">
-          <button class="trend-opt ${trendMode==='1m'?'active':''}" id="trend-1m" onclick="setTrend('1m')">1M</button>
-          <button class="trend-opt ${trendMode==='3m'?'active':''}" id="trend-3m" onclick="setTrend('3m')">3M</button>
-        </div>
-        <button class="view-toggle-btn${viewMode==='table'?' active':''}" id="view-toggle-btn" onclick="toggleView()">
-          ${viewMode==='table' ? '⊞ Cards' : '☰ Table'}
-        </button>
-        <button class="filter-btn" id="filter-btn" onclick="toggleFilter()">
-          <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v1.586a1.5 1.5 0 0 1-.44 1.06L9.5 10.207V14.5a.5.5 0 0 1-.777.416L5.723 13A.5.5 0 0 1 5.5 12.582V10.207L1.44 5.146A1.5 1.5 0 0 1 1 4.086V2.5z"/>
-          </svg>
-          Filter
-        </button>
-      </div>
-      <div class="filter-panel hidden" id="filter-panel">
-        <div class="filter-row">
-          <span class="filter-label">Ticker</span>
-          <input class="filter-search" id="f-ticker" type="text"
-                 placeholder="e.g. DDOG, NVDA" autocomplete="off" autocapitalize="characters"
-                 oninput="this.value=this.value.toUpperCase(); applyFilters()">
-        </div>
-        <div class="filter-row">
-          <span class="filter-label">Price $</span>
-          <div class="filter-range">
-            <input class="range-input" id="f-price-min" type="number"
-                   placeholder="Min" min="0" oninput="applyFilters()">
-            <span class="range-dash">—</span>
-            <input class="range-input" id="f-price-max" type="number"
-                   placeholder="Max" min="0" oninput="applyFilters()">
+        <div class="legend-row">
+          <div class="legend-items">
+            <div class="legend-item"><div class="legend-dot" style="background:#3fb950"></div>STRONG BUY</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#e3b341"></div>BUY</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#8b949e"></div>WATCH</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#f85149"></div>AVOID</div>
           </div>
+          <div class="trend-toggle">
+            <button class="trend-opt ${trendMode==='1m'?'active':''}" id="trend-1m" onclick="setTrend('1m')">1M</button>
+            <button class="trend-opt ${trendMode==='3m'?'active':''}" id="trend-3m" onclick="setTrend('3m')">3M</button>
+          </div>
+          <button class="view-toggle-btn${viewMode==='table'?' active':''}" id="view-toggle-btn" onclick="toggleView()">
+            ${viewMode==='table' ? '⊞ Cards' : '☰ Table'}
+          </button>
+          <button class="filter-btn" id="filter-btn" onclick="toggleFilter()">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v1.586a1.5 1.5 0 0 1-.44 1.06L9.5 10.207V14.5a.5.5 0 0 1-.777.416L5.723 13A.5.5 0 0 1 5.5 12.582V10.207L1.44 5.146A1.5 1.5 0 0 1 1 4.086V2.5z"/>
+            </svg>
+            Filter
+          </button>
         </div>
-        <button class="filter-clear-btn" id="clear-btn" onclick="clearFilters()">Clear filters</button>
+        <div class="filter-panel hidden" id="filter-panel">
+          <div class="filter-row">
+            <span class="filter-label">Ticker</span>
+            <input class="filter-search" id="f-ticker" type="text"
+                   placeholder="e.g. DDOG, NVDA" autocomplete="off" autocapitalize="characters"
+                   oninput="this.value=this.value.toUpperCase(); applyFilters()">
+          </div>
+          <div class="filter-row">
+            <span class="filter-label">Price $</span>
+            <div class="filter-range">
+              <input class="range-input" id="f-price-min" type="number"
+                     placeholder="Min" min="0" oninput="applyFilters()">
+              <span class="range-dash">—</span>
+              <input class="range-input" id="f-price-max" type="number"
+                     placeholder="Max" min="0" oninput="applyFilters()">
+            </div>
+          </div>
+          <button class="filter-clear-btn" id="clear-btn" onclick="clearFilters()">Clear filters</button>
+        </div>
+        <div class="result-bar" id="result-bar"></div>
       </div>
-      <div class="result-bar" id="result-bar"></div>
       <div class="stock-grid" id="stock-grid"></div>`;
 
     applyFilters();
+    positionControls();   // pin the control band below header + tab bar
   }
 
   // Opens Yahoo Finance (primary action — whole card tap)
@@ -1542,6 +1577,7 @@
           <tbody>${rows}</tbody>
         </table>
       </div>`;
+    positionTableWrap();   // fit table to remaining viewport below sticky band
   }
 
   // ── Analyst summary parser ────────────────────────────────────────────────
