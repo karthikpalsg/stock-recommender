@@ -386,6 +386,7 @@
     .data-refresh-row {
       display: flex;
       justify-content: flex-end;
+      gap: 8px;
       margin-bottom: 12px;
     }
     .btn-refresh {
@@ -400,6 +401,18 @@
       font-family: inherit;
     }
     .btn-refresh:active { opacity: 0.6; }
+    .btn-csv {
+      background: none;
+      border: 1px solid var(--green);
+      border-radius: 20px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-csv:active { opacity: 0.6; }
   </style>
 </head>
 
@@ -483,6 +496,7 @@
   <div class="panel" id="panel-data">
     <div class="section-title">Latest Picks</div>
     <div class="data-refresh-row">
+      <button class="btn-csv"     onclick="downloadCSV()">⬇ Download CSV</button>
       <button class="btn-refresh" onclick="refreshDataTable()">🔄 Refresh</button>
     </div>
     <div id="data-table-container">
@@ -1123,6 +1137,75 @@
           <tbody>${rows}</tbody>
         </table>
       </div>`;
+  }
+
+  function downloadCSV() {
+    if (!dtStocks.length) { alert('No data loaded — tap Refresh first.'); return; }
+
+    function esc(v) {
+      const s = v == null ? '' : String(v);
+      // Wrap in quotes if the value contains a comma, quote, or newline
+      return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+    }
+
+    const headers = [
+      'Rank','Ticker','Company','Signal','Score',
+      'Price','Target','Upside%','Stop',
+      'Analyst','Momentum','Fundamentals','Social','8-K'
+    ];
+
+    const sorted = [...dtStocks].sort((a, b) => {
+      function v(s) {
+        switch (dtSort.col) {
+          case 0:  return s.rank ?? 0;
+          case 1:  return s.ticker;
+          case 2:  return s.company || '';
+          case 3:  return s.signal;
+          case 4:  return s.composite_score ?? 0;
+          case 5:  return s.price ?? 0;
+          case 6:  return s.analyst_target_price ?? 0;
+          case 7:  return s.upside_pct ?? 0;
+          case 8:  return s.stop_loss_price ?? 0;
+          case 9:  return s.scores?.analyst ?? 0;
+          case 10: return s.scores?.momentum ?? 0;
+          case 11: return s.scores?.fundamentals ?? 0;
+          case 12: return s.scores?.social ?? 0;
+          case 13: return s.scores?.filing ?? 50;
+          default: return 0;
+        }
+      }
+      const va = v(a), vb = v(b);
+      if (typeof va === 'number') return dtSort.desc ? vb - va : va - vb;
+      return dtSort.desc ? String(vb).localeCompare(String(va)) : String(va).localeCompare(String(vb));
+    });
+
+    const lines = [headers.join(',')];
+    sorted.forEach(s => {
+      lines.push([
+        esc(s.rank),
+        esc(s.ticker),
+        esc(s.company ?? ''),
+        esc(s.signal),
+        esc(Math.round(s.composite_score ?? 0)),
+        esc(s.price != null ? Number(s.price).toFixed(2) : ''),
+        esc(s.analyst_target_price != null ? Number(s.analyst_target_price).toFixed(2) : ''),
+        esc(s.upside_pct != null ? Number(s.upside_pct).toFixed(1) : ''),
+        esc(s.stop_loss_price != null ? Number(s.stop_loss_price).toFixed(2) : ''),
+        esc(s.scores?.analyst ?? ''),
+        esc(s.scores?.momentum ?? ''),
+        esc(s.scores?.fundamentals ?? ''),
+        esc(s.scores?.social ?? ''),
+        esc(s.scores?.filing ?? ''),
+      ].join(','));
+    });
+
+    const blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8;' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = `picks_${dtRunMeta?.run_date || 'latest'}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
   }
 </script>
 
