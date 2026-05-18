@@ -1,11 +1,17 @@
 # Your stock watchlist — one ticker per line
 # Lines starting with # are ignored
 
+AIPO
 AMD
+ARKK
 ASTS
 COHR
+CRWD
 DDOG
 FIVN
+FLNC
+FTNT
+GLW
 GNRC
 HOOD
 IDCC
@@ -15,6 +21,7 @@ IREN
 IRM
 LITE
 LUNR
+MRVL
 MU
 NBIS
 NOK
@@ -22,6 +29,7 @@ NVDA
 NVT
 OKLO
 ONDS
+OUST
 PATH
 PLTR
 POET
@@ -33,3 +41,6 @@ RKLB
 SNDK
 SNOW
 SOFI
+SOXQ
+SOXX
+UNH
