@@ -141,7 +141,6 @@
   function addLockButton() {
     var header = document.querySelector('.header');
     if (!header || document.getElementById('__sp_lock_btn')) return;
-    header.style.position = 'relative';
     var btn = document.createElement('button');
     btn.id        = '__sp_lock_btn';
     btn.title     = 'Disconnect GitHub — requires token on next open';
