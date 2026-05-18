@@ -522,7 +522,8 @@
 
     /* ── Stock table view (dark, Option C style) ── */
     .stock-table-wrap {
-      overflow-x: auto;
+      overflow: auto;                          /* both axes scroll inside wrapper */
+      max-height: calc(100vh - 185px);         /* leaves room for header + tabs + legend */
       -webkit-overflow-scrolling: touch;
     }
     .stock-table {
@@ -531,6 +532,9 @@
       min-width: 860px;
     }
     .stock-table thead th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
       background: var(--surface);
       border-bottom: 1px solid var(--border);
       border-right: 1px solid rgba(48,54,61,0.5);
