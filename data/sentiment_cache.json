@@ -118,5 +118,40 @@
     "score": 0,
     "reason": "8-K filing only; actual press release content not provided for analysis",
     "filing_date": "2026-04-29"
+  },
+  "CRWD_0001535527-26-000018": {
+    "score": 45,
+    "reason": "Executive compensation action; no financial guidance, earnings data, or forward outlook provided.",
+    "filing_date": "2026-04-21"
+  },
+  "FLNC_0001104659-26-062654": {
+    "score": 32,
+    "reason": "Equity redemption and dilutive offering; no guidance or earnings news.",
+    "filing_date": "2026-05-15"
+  },
+  "FTNT_0001262039-26-000010": {
+    "score": 78,
+    "reason": "Beat guidance, raised FY2026 revenue outlook, strong billings growth",
+    "filing_date": "2026-05-06"
+  },
+  "GLW_0001206774-26-000285": {
+    "score": 35,
+    "reason": "Routine conference presentation announcement; no material guidance or results disclosed.",
+    "filing_date": "2026-05-15"
+  },
+  "IDCC_0001405495-26-000034": {
+    "score": 65,
+    "reason": "Beat guidance, record ARR, but reaffirmed full-year outlook unchanged",
+    "filing_date": "2026-04-30"
+  },
+  "OUST_0001193125-26-215081": {
+    "score": 25,
+    "reason": "At-the-market equity offering signals capital need, cautious dilution signal.",
+    "filing_date": "2026-05-08"
+  },
+  "UNH_0000731766-26-000129": {
+    "score": 25,
+    "reason": "Routine conference disclosure. No earnings results, guidance, or material updates provided.",
+    "filing_date": "2026-05-11"
   }
 }
