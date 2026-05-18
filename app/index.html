@@ -299,6 +299,105 @@
     .diff-add    { color: var(--green); }
     .diff-remove { color: var(--red); text-decoration: line-through; }
     .diff-keep   { color: var(--muted); }
+
+    /* ── Data table (Option C white) ── */
+    .data-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #fff;
+      margin-bottom: 16px;
+    }
+    .data-meta {
+      padding: 10px 14px 8px;
+      font-size: 12px;
+      color: #666;
+      border-bottom: 1px solid #e0e0e0;
+      background: #fafafa;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+    .data-meta-left  { font-weight: 700; color: #111; font-size: 13px; }
+    .data-meta-right { font-size: 11px; color: #999; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 860px;
+      background: #fff;
+    }
+    .data-table thead th {
+      background: #fafafa;
+      border-bottom: 1px solid #ddd;
+      border-right: 1px solid #eee;
+      padding: 8px 10px;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #777;
+      text-align: right;
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+    }
+    .data-table thead th:first-child,
+    .data-table thead th:nth-child(2),
+    .data-table thead th:nth-child(3),
+    .data-table thead th:nth-child(4) { text-align: left; }
+    .data-table thead th:hover { background: #f0f0f0; color: #333; }
+    .data-table thead th.dt-sorted { background: #fffbe6; color: #e65100; }
+    .data-table thead th .dt-sort { margin-left: 3px; font-size: 8px; color: #aaa; }
+    .data-table thead th.dt-sorted .dt-sort { color: #e65100; }
+    .data-table tbody tr {
+      border-left: 3px solid transparent;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .data-table tbody tr.dt-sb    { border-left-color: #2e7d32; }
+    .data-table tbody tr.dt-buy   { border-left-color: #f59e0b; }
+    .data-table tbody tr.dt-watch { border-left-color: #9e9e9e; }
+    .data-table tbody tr.dt-sell  { border-left-color: #c62828; }
+    .data-table tbody tr:hover { background: #fafafa; }
+    .data-table tbody td {
+      padding: 7px 10px;
+      font-size: 12px;
+      color: #222;
+      text-align: right;
+      white-space: nowrap;
+      border-right: 1px solid #f5f5f5;
+    }
+    .data-table tbody td:first-child  { color: #aaa; font-size: 10px; font-weight: 700; text-align: center; }
+    .data-table tbody td:nth-child(2) { font-weight: 900; font-size: 13px; text-align: left; font-family: 'SF Mono', Menlo, monospace; }
+    .data-table tbody td:nth-child(3) { text-align: left; color: #666; }
+    .data-table tbody td:nth-child(4) { text-align: left; }
+    .data-table tbody td:last-child   { border-right: none; }
+    .dt-sig-sb    { color: #2e7d32; font-size: 10px; font-weight: 700; }
+    .dt-sig-buy   { color: #c77700; font-size: 10px; font-weight: 700; }
+    .dt-sig-watch { color: #757575; font-size: 10px; font-weight: 700; }
+    .dt-sig-sell  { color: #c62828; font-size: 10px; font-weight: 700; }
+    .dt-bar-wrap  { display: flex; align-items: center; gap: 5px; justify-content: flex-end; }
+    .dt-bar-bg    { width: 36px; height: 4px; background: #e0e0e0; border-radius: 2px; flex-shrink: 0; }
+    .dt-bar-fill  { height: 100%; border-radius: 2px; }
+    .dt-score     { font-size: 12px; font-weight: 900; min-width: 26px; text-align: right; }
+    .data-refresh-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 12px;
+    }
+    .btn-refresh {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-refresh:active { opacity: 0.6; }
   </style>
 </head>
 
@@ -313,7 +412,8 @@
   <!-- Tabs -->
   <div class="tabs">
     <div class="tab active" onclick="switchTab('watchlist')">Watchlist</div>
-    <div class="tab" onclick="switchTab('bulk')">Bulk Update</div>
+    <div class="tab" onclick="switchTab('bulk')">Bulk</div>
+    <div class="tab" onclick="switchTab('data')">Data</div>
     <div class="tab" onclick="switchTab('settings')">Settings</div>
   </div>
 
@@ -377,6 +477,17 @@
 
   </div>
 
+  <!-- ── PANEL: Data ── -->
+  <div class="panel" id="panel-data">
+    <div class="section-title">Latest Picks</div>
+    <div class="data-refresh-row">
+      <button class="btn-refresh" onclick="refreshDataTable()">🔄 Refresh</button>
+    </div>
+    <div id="data-table-container">
+      <div class="empty">Tap a stock to load…</div>
+    </div>
+  </div>
+
   <!-- ── PANEL: Settings ── -->
   <div class="panel" id="panel-settings">
 
@@ -429,6 +540,10 @@
       <div class="nav-icon">✏️</div>
       <span class="nav-label">Bulk Edit</span>
     </div>
+    <div class="nav-item" id="nav-data" onclick="switchTab('data')">
+      <div class="nav-icon">📊</div>
+      <span class="nav-label">Data</span>
+    </div>
     <div class="nav-item" id="nav-settings" onclick="switchTab('settings')">
       <div class="nav-icon">⚙️</div>
       <span class="nav-label">Settings</span>
@@ -442,11 +557,16 @@
   const FILE     = 'tickers.txt';
   const API      = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`;
   const RUN_API  = `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/daily-picks.yml/dispatches`;
+  const HISTORY_RAW = `https://raw.githubusercontent.com/${OWNER}/${REPO}/main/data/history.json`;
 
   // ── State ────────────────────────────────────────────────
   let tickers  = [];      // current list (array of strings, uppercase)
   let fileSHA  = '';      // GitHub file SHA needed for updates
   let modified = false;   // tracks unsaved changes
+  let dtSort    = { col: 4, desc: true };
+  let dtStocks  = [];
+  let dtRunMeta = null;
+  let dtLoaded  = false;
 
   // ── Init ─────────────────────────────────────────────────
   window.addEventListener('load', () => {
@@ -823,16 +943,19 @@
   let currentTab = 'watchlist';
 
   function switchTab(name) {
-    ['watchlist','bulk','settings'].forEach(t => {
-      document.getElementById(`panel-${t}`).classList.toggle('active', t === name);
+    ['watchlist','bulk','data','settings'].forEach(t => {
+      document.getElementById(`panel-${t}`)?.classList.toggle('active', t === name);
       document.getElementById(`nav-${t}`)?.classList.toggle('active', t === name);
     });
     document.querySelectorAll('.tab').forEach((el, i) => {
-      el.classList.toggle('active', ['watchlist','bulk','settings'][i] === name);
+      el.classList.toggle('active', ['watchlist','bulk','data','settings'][i] === name);
     });
     currentTab = name;
     if (name === 'bulk') {
       document.getElementById('diff-preview').style.display = 'none';
+    }
+    if (name === 'data' && !dtLoaded) {
+      fetchLatestData();
     }
   }
 
@@ -843,6 +966,161 @@
     el.className   = `toast ${type} show`;
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => { el.classList.remove('show'); }, 3000);
+  }
+
+  // ── Data tab ─────────────────────────────────────────────
+  async function fetchLatestData() {
+    const wrap = document.getElementById('data-table-container');
+    if (!wrap) return;
+    wrap.innerHTML = '<div class="empty" style="background:#fff;border-radius:14px;padding:40px 20px">⏳ Loading latest picks…</div>';
+    try {
+      const res = await fetch(HISTORY_RAW + '?cb=' + Date.now());
+      if (!res.ok) throw new Error(`GitHub returned ${res.status}`);
+      const d   = await res.json();
+      const runs = d.runs || [];
+      if (!runs.length) throw new Error('No runs found in history.json');
+      dtRunMeta = runs[runs.length - 1];
+      dtStocks  = dtRunMeta.stocks || [];
+      dtLoaded  = true;
+      renderDataTable();
+    } catch (e) {
+      wrap.innerHTML = `<div class="empty" style="color:#c62828;background:#fff;border-radius:14px;padding:40px 20px">⚠️ ${e.message}</div>`;
+    }
+  }
+
+  function refreshDataTable() {
+    dtLoaded = false;
+    fetchLatestData();
+  }
+
+  function sortDtCol(col, numeric) {
+    if (dtSort.col === col) { dtSort.desc = !dtSort.desc; }
+    else { dtSort.col = col; dtSort.desc = !!numeric; }
+    renderDataTable();
+  }
+
+  function renderDataTable() {
+    const wrap = document.getElementById('data-table-container');
+    if (!wrap || !dtStocks.length) return;
+
+    function sigCls(sig) {
+      if (sig === 'STRONG BUY') return 'sb';
+      if (sig === 'BUY')        return 'buy';
+      if (sig === 'WATCH')      return 'watch';
+      return 'sell';
+    }
+    function sigColor(sig) {
+      if (sig === 'STRONG BUY') return '#2e7d32';
+      if (sig === 'BUY')        return '#f59e0b';
+      if (sig === 'WATCH')      return '#9e9e9e';
+      return '#c62828';
+    }
+    function subColor(v) {
+      if (v == null) return '#aaa';
+      if (v >= 70)  return '#2e7d32';
+      if (v >= 45)  return '#333';
+      return '#c62828';
+    }
+
+    const COLS = [
+      { label: '#',         numeric: false },
+      { label: 'Ticker',    numeric: false },
+      { label: 'Company',   numeric: false },
+      { label: 'Signal',    numeric: false },
+      { label: 'Score',     numeric: true  },
+      { label: 'Price',     numeric: true  },
+      { label: 'Target',    numeric: true  },
+      { label: 'Upside %',  numeric: true  },
+      { label: 'Stop',      numeric: true  },
+      { label: 'Analyst',   numeric: true  },
+      { label: 'Momentum',  numeric: true  },
+      { label: 'Fundmntls', numeric: true  },
+      { label: 'Social',    numeric: true  },
+      { label: '8-K',       numeric: true  },
+    ];
+
+    function getVal(s, col) {
+      switch (col) {
+        case 0:  return s.rank ?? 0;
+        case 1:  return s.ticker;
+        case 2:  return s.company || '';
+        case 3:  return s.signal;
+        case 4:  return s.composite_score ?? 0;
+        case 5:  return s.price ?? 0;
+        case 6:  return s.analyst_target_price ?? 0;
+        case 7:  return s.upside_pct ?? 0;
+        case 8:  return s.stop_loss_price ?? 0;
+        case 9:  return s.scores?.analyst ?? 0;
+        case 10: return s.scores?.momentum ?? 0;
+        case 11: return s.scores?.fundamentals ?? 0;
+        case 12: return s.scores?.social ?? 0;
+        case 13: return s.scores?.filing ?? 50;
+        default: return '';
+      }
+    }
+
+    const sorted = [...dtStocks].sort((a, b) => {
+      const va = getVal(a, dtSort.col);
+      const vb = getVal(b, dtSort.col);
+      if (typeof va === 'number') return dtSort.desc ? vb - va : va - vb;
+      return dtSort.desc
+        ? String(vb).localeCompare(String(va))
+        : String(va).localeCompare(String(vb));
+    });
+
+    const ths = COLS.map((c, i) => {
+      const active = dtSort.col === i;
+      const arrow  = active ? (dtSort.desc ? '↓' : '↑') : '↕';
+      return `<th class="${active ? 'dt-sorted' : ''}" onclick="sortDtCol(${i},${c.numeric})">${c.label}<span class="dt-sort">${arrow}</span></th>`;
+    }).join('');
+
+    const rows = sorted.map(s => {
+      const sc     = sigCls(s.signal);
+      const sColor = sigColor(s.signal);
+      const score  = Math.round(s.composite_score ?? 0);
+      const up     = s.upside_pct;
+      const upStr  = up != null ? `${up > 0 ? '+' : ''}${up.toFixed(1)}%` : '—';
+      const upClr  = (up ?? 0) > 0 ? '#2e7d32' : '#c62828';
+      const emoji  = { sb: '🟢', buy: '🟡', watch: '⚪', sell: '🔴' }[sc];
+      const fs     = s.scores?.filing;
+      const fsStr  = fs != null ? fs : '—';
+      return `<tr class="dt-${sc}">
+        <td>${s.rank}</td>
+        <td>${s.ticker}</td>
+        <td>${s.company ?? ''}</td>
+        <td><span class="dt-sig-${sc}">${emoji} ${s.signal}</span></td>
+        <td>
+          <div class="dt-bar-wrap">
+            <div class="dt-bar-bg"><div class="dt-bar-fill" style="width:${score}%;background:${sColor}"></div></div>
+            <span class="dt-score" style="color:${sColor}">${score}</span>
+          </div>
+        </td>
+        <td>${s.price != null ? '$' + Number(s.price).toFixed(2) : '—'}</td>
+        <td>${s.analyst_target_price != null ? '$' + Number(s.analyst_target_price).toFixed(0) : '—'}</td>
+        <td style="color:${upClr};font-weight:700">${upStr}</td>
+        <td>${s.stop_loss_price != null ? '$' + Number(s.stop_loss_price).toFixed(2) : '—'}</td>
+        <td style="color:${subColor(s.scores?.analyst)}">${s.scores?.analyst ?? '—'}</td>
+        <td style="color:${subColor(s.scores?.momentum)}">${s.scores?.momentum ?? '—'}</td>
+        <td style="color:${subColor(s.scores?.fundamentals)}">${s.scores?.fundamentals ?? '—'}</td>
+        <td style="color:${subColor(s.scores?.social)}">${s.scores?.social ?? '—'}</td>
+        <td style="color:${subColor(fs)}">${fsStr}</td>
+      </tr>`;
+    }).join('');
+
+    const runDate  = dtRunMeta?.run_date  || '';
+    const runLabel = dtRunMeta?.run_label || '';
+
+    wrap.innerHTML = `
+      <div class="data-table-wrap">
+        <div class="data-meta">
+          <span class="data-meta-left">${runDate}</span>
+          <span class="data-meta-right">${runLabel} · ${dtStocks.length} stocks</span>
+        </div>
+        <table class="data-table">
+          <thead><tr>${ths}</tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>`;
   }
 </script>
 

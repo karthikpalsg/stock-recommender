@@ -491,6 +491,93 @@
       color: var(--green-l);
     }
 
+    /* ── View toggle button ── */
+    .view-toggle-btn {
+      flex-shrink: 0;
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 11px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      cursor: pointer;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: background 0.12s, border-color 0.12s, color 0.12s;
+      font-family: inherit;
+    }
+    .view-toggle-btn.active {
+      background: rgba(88,166,255,0.12);
+      border-color: rgba(88,166,255,0.4);
+      color: #58a6ff;
+    }
+
+    /* ── Stock table view (dark, Option C style) ── */
+    .stock-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .stock-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 860px;
+    }
+    .stock-table thead th {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid rgba(48,54,61,0.5);
+      padding: 8px 10px;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+    }
+    .stock-table thead th:first-child,
+    .stock-table thead th:nth-child(2),
+    .stock-table thead th:nth-child(3),
+    .stock-table thead th:nth-child(4) { text-align: left; }
+    .stock-table thead th:hover { color: var(--text); background: var(--card); }
+    .stock-table thead th.tbl-sorted { color: var(--green-l); background: rgba(63,185,80,0.07); }
+    .stock-table thead th .th-sort { margin-left: 2px; font-size: 8px; }
+    .stock-table tbody tr {
+      border-left: 3px solid transparent;
+      border-bottom: 1px solid rgba(48,54,61,0.6);
+    }
+    .stock-table tbody tr.tr-sb    { border-left-color: #3fb950; }
+    .stock-table tbody tr.tr-buy   { border-left-color: #e3b341; }
+    .stock-table tbody tr.tr-watch { border-left-color: #8b949e; }
+    .stock-table tbody tr.tr-sell  { border-left-color: #f85149; }
+    .stock-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+    .stock-table tbody td {
+      padding: 7px 10px;
+      font-size: 11px;
+      color: var(--text);
+      text-align: right;
+      white-space: nowrap;
+      border-right: 1px solid rgba(48,54,61,0.4);
+    }
+    .stock-table tbody td:first-child  { color: var(--muted); font-size: 10px; text-align: center; }
+    .stock-table tbody td:nth-child(2) { font-weight: 900; font-size: 13px; text-align: left; font-family: 'SF Mono', Menlo, monospace; }
+    .stock-table tbody td:nth-child(3) { text-align: left; color: var(--muted); font-size: 11px; }
+    .stock-table tbody td:nth-child(4) { text-align: left; }
+    .stock-table tbody td:last-child   { border-right: none; }
+    .tbl-sig-sb    { color: #3fb950; font-size: 10px; font-weight: 700; }
+    .tbl-sig-buy   { color: #e3b341; font-size: 10px; font-weight: 700; }
+    .tbl-sig-watch { color: #8b949e; font-size: 10px; font-weight: 700; }
+    .tbl-sig-sell  { color: #f85149; font-size: 10px; font-weight: 700; }
+    .tbl-bar-wrap  { display: flex; align-items: center; gap: 5px; justify-content: flex-end; }
+    .tbl-bar-bg    { width: 36px; height: 4px; background: var(--border); border-radius: 2px; flex-shrink: 0; }
+    .tbl-bar-fill  { height: 100%; border-radius: 2px; }
+    .tbl-score     { font-size: 12px; font-weight: 900; min-width: 26px; text-align: right; }
+
     /* ─── Filter panel ───────────────────────────────────────── */
     .filter-panel {
       background: var(--surface);
@@ -890,6 +977,8 @@
   let currentRun  = null;   // run currently displayed
   let filterOpen  = false;  // filter panel visibility
   let trendMode   = '1m';   // sparkline window: '1m' | '3m'
+  let viewMode    = 'cards';          // 'cards' | 'table'
+  let tableSort   = { col: 4, desc: true };
 
   // ── Boot ────────────────────────────────────────────────────────────────
   window.addEventListener('load', () => {
@@ -1077,6 +1166,9 @@
           <button class="trend-opt ${trendMode==='1m'?'active':''}" id="trend-1m" onclick="setTrend('1m')">1M</button>
           <button class="trend-opt ${trendMode==='3m'?'active':''}" id="trend-3m" onclick="setTrend('3m')">3M</button>
         </div>
+        <button class="view-toggle-btn${viewMode==='table'?' active':''}" id="view-toggle-btn" onclick="toggleView()">
+          ${viewMode==='table' ? '⊞ Cards' : '☰ Table'}
+        </button>
         <button class="filter-btn" id="filter-btn" onclick="toggleFilter()">
           <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
             <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v1.586a1.5 1.5 0 0 1-.44 1.06L9.5 10.207V14.5a.5.5 0 0 1-.777.416L5.723 13A.5.5 0 0 1 5.5 12.582V10.207L1.44 5.146A1.5 1.5 0 0 1 1 4.086V2.5z"/>
@@ -1287,7 +1379,7 @@
       </div>`;
   }
 
-  // ── Render filtered grid into #stock-grid ─────────────────────────────────
+  // ── Render filtered grid ──────────────────────────────────────────────────
   function renderGrid(stocks, filtered) {
     const grid = document.getElementById('stock-grid');
     if (!grid) return;
@@ -1302,7 +1394,142 @@
       return;
     }
 
-    grid.innerHTML = stocks.map(buildCard).join('');
+    if (viewMode === 'table') {
+      renderTableView(stocks);
+    } else {
+      grid.innerHTML = stocks.map(buildCard).join('');
+    }
+  }
+
+  // ── Toggle cards ↔ table ──────────────────────────────────────────────────
+  function toggleView() {
+    viewMode = viewMode === 'cards' ? 'table' : 'cards';
+    applyFilters();
+  }
+
+  // ── Sort table column ─────────────────────────────────────────────────────
+  function sortTableCol(col, numeric) {
+    if (tableSort.col === col) { tableSort.desc = !tableSort.desc; }
+    else { tableSort.col = col; tableSort.desc = numeric; }
+    applyFilters();
+  }
+
+  // ── Table view renderer (Option C dark) ───────────────────────────────────
+  function renderTableView(stocks) {
+    const grid = document.getElementById('stock-grid');
+    if (!grid) return;
+
+    function sigCls(sig) {
+      if (sig === 'STRONG BUY') return 'sb';
+      if (sig === 'BUY')        return 'buy';
+      if (sig === 'WATCH')      return 'watch';
+      return 'sell';
+    }
+    function sigColor(sig) {
+      if (sig === 'STRONG BUY') return '#3fb950';
+      if (sig === 'BUY')        return '#e3b341';
+      if (sig === 'WATCH')      return '#8b949e';
+      return '#f85149';
+    }
+    function subColor(v) {
+      if (v == null) return 'var(--muted)';
+      if (v >= 70)  return '#3fb950';
+      if (v >= 45)  return 'var(--text)';
+      return '#f85149';
+    }
+
+    const COLS = [
+      { label: '#',         numeric: false },
+      { label: 'Ticker',    numeric: false },
+      { label: 'Company',   numeric: false },
+      { label: 'Signal',    numeric: false },
+      { label: 'Score',     numeric: true  },
+      { label: 'Price',     numeric: true  },
+      { label: 'Target',    numeric: true  },
+      { label: 'Upside %',  numeric: true  },
+      { label: 'Stop',      numeric: true  },
+      { label: 'Analyst',   numeric: true  },
+      { label: 'Momentum',  numeric: true  },
+      { label: 'Fundmntls', numeric: true  },
+      { label: 'Social',    numeric: true  },
+      { label: '8-K',       numeric: true  },
+    ];
+
+    function getVal(s, col) {
+      switch (col) {
+        case 0:  return s.rank ?? 0;
+        case 1:  return s.ticker;
+        case 2:  return s.company || '';
+        case 3:  return s.signal;
+        case 4:  return s.composite_score ?? 0;
+        case 5:  return s.price ?? 0;
+        case 6:  return s.analyst_target_price ?? 0;
+        case 7:  return s.upside_pct ?? 0;
+        case 8:  return s.stop_loss_price ?? 0;
+        case 9:  return s.scores?.analyst ?? 0;
+        case 10: return s.scores?.momentum ?? 0;
+        case 11: return s.scores?.fundamentals ?? 0;
+        case 12: return s.scores?.social ?? 0;
+        case 13: return s.scores?.filing ?? 50;
+        default: return '';
+      }
+    }
+
+    const sorted = [...stocks].sort((a, b) => {
+      const va = getVal(a, tableSort.col);
+      const vb = getVal(b, tableSort.col);
+      if (typeof va === 'number') return tableSort.desc ? vb - va : va - vb;
+      return tableSort.desc
+        ? String(vb).localeCompare(String(va))
+        : String(va).localeCompare(String(vb));
+    });
+
+    const ths = COLS.map((c, i) => {
+      const active = tableSort.col === i;
+      const arrow  = active ? (tableSort.desc ? '↓' : '↑') : '↕';
+      return `<th class="${active ? 'tbl-sorted' : ''}" onclick="sortTableCol(${i},${c.numeric})">${c.label}<span class="th-sort">${arrow}</span></th>`;
+    }).join('');
+
+    const rows = sorted.map(s => {
+      const sc     = sigCls(s.signal);
+      const sColor = sigColor(s.signal);
+      const score  = Math.round(s.composite_score ?? 0);
+      const up     = s.upside_pct;
+      const upStr  = up != null ? `${up > 0 ? '+' : ''}${up.toFixed(1)}%` : '—';
+      const upClr  = (up ?? 0) > 0 ? '#3fb950' : '#f85149';
+      const emoji  = { sb: '🟢', buy: '🟡', watch: '⚪', sell: '🔴' }[sc];
+      const fs     = s.scores?.filing;
+      const fsStr  = fs != null ? fs : '—';
+      return `<tr class="tr-${sc}">
+        <td>${s.rank}</td>
+        <td>${s.ticker}</td>
+        <td>${s.company ?? ''}</td>
+        <td><span class="tbl-sig-${sc}">${emoji} ${s.signal}</span></td>
+        <td>
+          <div class="tbl-bar-wrap">
+            <div class="tbl-bar-bg"><div class="tbl-bar-fill" style="width:${score}%;background:${sColor}"></div></div>
+            <span class="tbl-score" style="color:${sColor}">${score}</span>
+          </div>
+        </td>
+        <td>${s.price != null ? '$' + Number(s.price).toFixed(2) : '—'}</td>
+        <td>${s.analyst_target_price != null ? '$' + Number(s.analyst_target_price).toFixed(0) : '—'}</td>
+        <td style="color:${upClr};font-weight:700">${upStr}</td>
+        <td>${s.stop_loss_price != null ? '$' + Number(s.stop_loss_price).toFixed(2) : '—'}</td>
+        <td style="color:${subColor(s.scores?.analyst)}">${s.scores?.analyst ?? '—'}</td>
+        <td style="color:${subColor(s.scores?.momentum)}">${s.scores?.momentum ?? '—'}</td>
+        <td style="color:${subColor(s.scores?.fundamentals)}">${s.scores?.fundamentals ?? '—'}</td>
+        <td style="color:${subColor(s.scores?.social)}">${s.scores?.social ?? '—'}</td>
+        <td style="color:${subColor(fs)}">${fsStr}</td>
+      </tr>`;
+    }).join('');
+
+    grid.innerHTML = `
+      <div class="stock-table-wrap">
+        <table class="stock-table">
+          <thead><tr>${ths}</tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>`;
   }
 
   // ── Analyst summary parser ────────────────────────────────────────────────
