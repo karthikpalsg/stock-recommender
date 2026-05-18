@@ -134,6 +134,11 @@
       gap: 9px;
       padding: 10px 9px 6px;
     }
+    /* Table mode: collapse the 2-col grid so the table fills full width */
+    .stock-grid.table-mode {
+      display: block;
+      padding: 0;
+    }
 
     /* Card — left border strip per signal */
     .stock-card {
@@ -1385,6 +1390,7 @@
     if (!grid) return;
 
     if (filtered && stocks.length === 0) {
+      grid.classList.remove('table-mode');
       grid.innerHTML = `
         <div class="no-results">
           <div class="no-results-icon">🔍</div>
@@ -1397,6 +1403,7 @@
     if (viewMode === 'table') {
       renderTableView(stocks);
     } else {
+      grid.classList.remove('table-mode');  // restore 2-col card grid
       grid.innerHTML = stocks.map(buildCard).join('');
     }
   }
@@ -1418,6 +1425,7 @@
   function renderTableView(stocks) {
     const grid = document.getElementById('stock-grid');
     if (!grid) return;
+    grid.classList.add('table-mode');   // collapse 2-col grid → full-width block
 
     function sigCls(sig) {
       if (sig === 'STRONG BUY') return 'sb';
