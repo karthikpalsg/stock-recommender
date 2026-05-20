@@ -168,5 +168,20 @@
     "score": 65,
     "reason": "Market growth projections, leadership positioning, multi-platform advantages shown",
     "filing_date": "2026-05-18"
+  },
+  "REKR_0001437749-26-017309": {
+    "score": 15,
+    "reason": "Failed quorum at annual meeting, no business conducted, negative signal",
+    "filing_date": "2026-05-15"
+  },
+  "SOUN_0001840856-26-000012": {
+    "score": 78,
+    "reason": "Record revenue +52%, transformational OASYS launch, major LivePerson acquisition",
+    "filing_date": "2026-05-07"
+  },
+  "SYNA_0000817720-26-000035": {
+    "score": 72,
+    "reason": "Beat guidance, 31% IoT growth, 40%+ full-year growth expected",
+    "filing_date": "2026-05-07"
   }
 }
