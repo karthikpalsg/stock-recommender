@@ -78,13 +78,17 @@
       color: var(--muted);
       font-size: 14px;
       cursor: pointer;
-      padding: 0 1px;
+      padding: 0;
+      min-width: 36px;
+      min-height: 36px;
       line-height: 1;
       opacity: 0.65;
       -webkit-tap-highlight-color: transparent;
       transition: opacity 0.15s;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
+      touch-action: manipulation;
     }
     .btn-update:active { opacity: 1; }
     .btn-update.spinning {
@@ -1448,7 +1452,7 @@
   }
 
   // ── Fetch ────────────────────────────────────────────────────────────────
-  async function fetchData() {
+  async function fetchData(force = false) {
     try {
       const res  = await fetch(DATA_URL + '?_=' + Date.now());
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -1456,7 +1460,7 @@
       lastFetchAt = Date.now();
       allRuns     = (data.runs || []).slice();
 
-      if (data.last_run !== lastRunId) {
+      if (force || data.last_run !== lastRunId) {
         lastRunId = data.last_run;
         buildUI();
       }
@@ -2131,7 +2135,7 @@
     const btn = document.getElementById('btn-update');
     btn.classList.add('spinning');
     setSubtitleText('Checking for updates…');
-    await fetchData();
+    await fetchData(true);   // force=true: always re-render current tab
     btn.classList.remove('spinning');
   }
 
