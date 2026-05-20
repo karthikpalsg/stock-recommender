@@ -2148,10 +2148,10 @@
   <div class="dict-section" style="border-top:none;padding-top:0">
     <div class="dict-section-label">Section 1</div>
     <h2 class="dict-h2">What a stock card looks like</h2>
-    <p class="dict-p">Every stock is shown as a card. Here's the NVDA (NVIDIA) card from the 17 May 2026 run — the coloured strip on the left shows the signal at a glance. Each part is numbered so you can follow along below.</p>
+    <p class="dict-p">Every stock is shown as a card. Here's the NVDA (NVIDIA) card — the coloured strip on the left shows the signal at a glance. Each part is numbered so you can follow along below.</p>
 
     <div class="dict-card-stage">
-      <!-- NVDA card — reuses existing dashboard card CSS -->
+      <!-- NVDA card — matches actual card layout exactly: sparkline before analyst section -->
       <div class="stock-card" style="border-left-color:#3fb950;width:162px;cursor:default;pointer-events:none">
         <div class="card-top">
           <span class="card-rank">#1</span>
@@ -2168,15 +2168,6 @@
           <span class="card-price-now" style="color:#3fb950">$225.32</span>
         </div>
         <div class="card-price">→ <span class="tv">$273</span> &nbsp; <span class="stop-label">Stop </span><span class="stop-value">$207.29</span></div>
-        <div class="card-analyst">
-          <div class="analyst-moves">
-            <span class="analyst-up">↑5</span>
-            <span class="analyst-period">last 7d</span>
-            <span class="analyst-down">↓0</span>
-          </div>
-          <div class="bullish-bar-bg"><div class="bullish-bar-fill" style="width:93%;background:#3fb950"></div></div>
-          <div class="analyst-caption"><span>71 analysts</span><span class="bullish-pct" style="color:#3fb950">93% bullish</span></div>
-        </div>
         <div class="sparkline-wrap">
           <div class="sparkline-header">
             <span class="sparkline-label">1 month</span>
@@ -2188,24 +2179,38 @@
             <circle cx="200" cy="2" r="2.5" fill="#3fb950"/>
           </svg>
         </div>
-        <div class="card-sources" onclick="event.stopPropagation()">
-          <a style="pointer-events:none">YF</a><a style="pointer-events:none">FV</a><a style="pointer-events:none">SA</a>
+        <div class="card-analyst">
+          <div class="analyst-moves">
+            <span class="analyst-up">↑5</span>
+            <span class="analyst-period">last 7d</span>
+            <span class="analyst-down">↓0</span>
+          </div>
+          <div class="bullish-bar-bg"><div class="bullish-bar-fill" style="width:93%;background:#3fb950"></div></div>
+          <div class="analyst-caption"><span>71 analysts</span><span class="bullish-pct" style="color:#3fb950">93% bullish</span></div>
+        </div>
+        <div class="card-sources">
+          <a style="pointer-events:none">YF</a>
+          <a style="pointer-events:none">FV</a>
+          <a style="pointer-events:none">SA</a>
           <a style="pointer-events:none;background:rgba(63,185,80,0.08);border:1px solid rgba(63,185,80,0.25);color:#3fb950;padding:2px 5px;border-radius:4px;font-size:10px">📰+</a>
+          <button class="filing-btn neutral" style="pointer-events:none">📄 —</button>
         </div>
       </div>
 
-      <!-- Numbered callouts -->
+      <!-- Numbered callouts — match card order top to bottom -->
       <div class="dict-callout-list">
-        <div class="dict-callout-item"><div class="dict-callout-num">1</div><div class="dict-callout-text"><strong>#1 rank</strong> — top pick this run. Left border colour = signal (green / amber / grey / red)</div></div>
-        <div class="dict-callout-item"><div class="dict-callout-num">2</div><div class="dict-callout-text"><strong>STRONG BUY</strong> — overall signal</div></div>
-        <div class="dict-callout-item"><div class="dict-callout-num">3</div><div class="dict-callout-text"><strong>80 / 100 · $225.32</strong> — score (left) and current price (right) share one row, both in signal colour</div></div>
-        <div class="dict-callout-item"><div class="dict-callout-num">4</div><div class="dict-callout-text"><strong>+21.1%</strong> — upside badge. Green = below target. Red = already exceeded target.</div></div>
-        <div class="dict-callout-item"><div class="dict-callout-num">5</div><div class="dict-callout-text"><strong>→ $273</strong> — analyst target price (row below score)</div></div>
-        <div class="dict-callout-item"><div class="dict-callout-num">6</div><div class="dict-callout-text"><strong>Stop $207.29</strong> — exit level if trade turns</div></div>
-        <div class="dict-callout-item"><div class="dict-callout-num">7</div><div class="dict-callout-text"><strong>↑5 ↓0</strong> — upgrades / downgrades last 7 days</div></div>
-        <div class="dict-callout-item"><div class="dict-callout-num">8</div><div class="dict-callout-text"><strong>93% of 71 analysts</strong> bullish on NVDA</div></div>
-        <div class="dict-callout-item"><div class="dict-callout-num">9</div><div class="dict-callout-text"><strong>Sparkline (+12.4%)</strong> — 1-month price trend. Green = up over the period, red = down. Toggle 1M / 3M in the legend bar above the cards.</div></div>
-        <div class="dict-callout-item"><div class="dict-callout-num">10</div><div class="dict-callout-text"><strong>📰+</strong> — news link. Opens Google News for that ticker filtered to the last 7 days. Green (📰+) for buys = positive analyst coverage. Red (📰–) for avoids = bearish/downgrade coverage. Opens in a new tab, no sign-in needed.</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">1</div><div class="dict-callout-text"><strong>#1 rank badge</strong> — position out of all stocks this run. Left border colour = signal (green / amber / grey / red).</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">2</div><div class="dict-callout-text"><strong>+21.1% upside badge</strong> — gap between today's price and analyst consensus target. Green = stock is below target (room to run). Red = already exceeded target.</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">3</div><div class="dict-callout-text"><strong>🟢 STRONG BUY</strong> — the engine's overall signal, driven by the composite score. Four possible values — see Section 3.</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">4</div><div class="dict-callout-text"><strong>Score bar</strong> — fills to the composite score (0–100). Coloured by signal.</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">5</div><div class="dict-callout-text"><strong>80 / 100</strong> (left) and <strong>$225.32</strong> (right) share one row, both in signal colour. Left = composite score. Right = current market price.</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">6</div><div class="dict-callout-text"><strong>→ $273</strong> — average 12-month analyst price target. <strong>Stop $207.29</strong> — −8% from entry; exit level if the trade turns.</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">7</div><div class="dict-callout-text"><strong>Sparkline (+12.4%)</strong> — mini price chart. Green = up over the period, red = down. Period and % shown top-right. Toggle 1M / 3M in the legend bar above the cards.</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">8</div><div class="dict-callout-text"><strong>↑5 ↓0 last 7d</strong> — analyst upgrades and downgrades in the past 7 days. Upgrades in green, downgrades in red.</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">9</div><div class="dict-callout-text"><strong>93% bullish bar</strong> — 93 out of 100 analysts covering NVDA currently rate it Buy or Strong Buy. Bar fills to the %. Colour: green ≥ 60%, amber 40–59%, red &lt; 40%.</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">10</div><div class="dict-callout-text"><strong>YF / FV / SA</strong> — source links. Yahoo Finance, Finviz, Seeking Alpha. Tap any to open in a new tab. Tapping the card itself also opens Yahoo Finance.</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">11</div><div class="dict-callout-text"><strong>📰+</strong> — news link. Green (📰+) for buys = Google News filtered to positive analyst coverage, last 7 days. Red (📰–) for avoids = bearish/downgrade coverage. Opens in a new tab.</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">12</div><div class="dict-callout-text"><strong>📄 filing button</strong> — recent SEC 8-K filing sentiment. 📄 — = no recent 8-K. Shows a score (e.g. 📄 85) when a filing was found and analysed by AI. Tap it to see the filing date and a plain-English summary. Colour: green = bullish, amber = cautious, red = bearish.</div></div>
       </div>
     </div>
   </div>
@@ -2213,21 +2218,23 @@
   <!-- Section 2: Metric table -->
   <div class="dict-section">
     <div class="dict-section-label">Section 2</div>
-    <h2 class="dict-h2">What each number means</h2>
-    <p class="dict-p">Each row maps a number on the NVDA card to a plain-English explanation.</p>
+    <h2 class="dict-h2">What each element means</h2>
+    <p class="dict-p">Every element on the card, in order from top to bottom.</p>
     <table class="dict-table">
       <thead><tr><th>Card element</th><th>What it means</th></tr></thead>
       <tbody>
-        <tr><td><span class="mv">#1</span><br>Rank</td><td>Out of all stocks analysed that run, NVDA came out top. Lower = stronger overall case across all signals.</td></tr>
-        <tr><td><span class="mv g">STRONG BUY</span><br>Signal</td><td>The engine's overall verdict, driven by the composite score. Four possible signals — explained in Section 3.</td></tr>
-        <tr><td><span class="mv g">80</span> / 100 · <span class="mv g">$225.32</span><br>Score &amp; Price</td><td>Both share one row in signal colour. <strong>Left (80)</strong>: composite 0–100 score built from analyst consensus, price momentum, fundamentals, and social sentiment. The bar above fills to match. <strong>Right ($225.32)</strong>: where the stock is trading right now.</td></tr>
-        <tr><td><span class="mv g">+21.1%</span><br>Upside</td><td>How far today's price sits from the average analyst price target.<br><br><strong style="color:#3fb950">Green (+)</strong>: stock is below target — upside potential remains. NVDA at $225 vs target $273 = +21.1% to go.<br><br><strong style="color:#f85149">Red (−)</strong>: stock has <em>already exceeded</em> the analyst target — e.g. MU at $724 vs target $584 = −19.4%, meaning MU is trading 19.4% above where analysts think it should be. This often means analysts haven't updated their targets after a strong run yet. The score can still be high if momentum and consensus are strong.</td></tr>
-        <tr><td><span class="mv">$225.32</span> → <span class="mv">$273</span><br>Price &amp; Target</td><td>Current price appears on the score row (right side, same colour as score). The line below shows → target: the average 12-month analyst price target. When target is lower than price (e.g. $584 vs $724 for MU), upside shows as negative in red.</td></tr>
-        <tr><td><span class="mv r">Stop $207.29</span><br>Stop Loss</td><td>A risk management level. If NVDA drops to $207.29 (−8% from today) the bullish case may be broken. Investors often set a sell order here to cap losses. Shown in bold red so it stands out.</td></tr>
-        <tr><td><span class="mv g">↑5</span> <span class="mv r">↓0</span><br>Upgrades / Downgrades</td><td>In the last 7 days: 5 analysts raised their NVDA rating (e.g. Hold → Buy). Zero lowered it. High upgrades + zero downgrades = Wall Street getting <em>more</em> bullish — a strong positive signal.</td></tr>
-        <tr><td><span class="mv">71 analysts</span><br><span class="mv g">93% bullish</span><br>Consensus bar</td><td>71 professional analysts cover NVDA. 93% currently rate it Buy or Strong Buy. Bar colour: green ≥ 60%, amber 40–59%, red &lt; 40%.</td></tr>
-        <tr><td>Sparkline<br>1M / 3M trend</td><td>Mini price chart for the past month (22 trading days) or 3 months (~63 days). Green line = price up over that period, red = down. The % in the top-right shows the exact return. Toggle 1M ↔ 3M using the pill in the legend bar above the cards — all cards switch at once.</td></tr>
-        <tr><td><span class="mv">YF</span> <span class="mv">FV</span> <span class="mv">SA</span> <span class="mv g">📰+</span><br>Source buttons</td><td><strong>YF</strong> = Yahoo Finance (price, news, financials). <strong>FV</strong> = Finviz (chart, ratios, insider trades). <strong>SA</strong> = Seeking Alpha (analyst articles). Tapping the card itself also opens YF.<br><br><strong>📰+</strong> = Google News deep link for BUY / STRONG BUY stocks — filtered to positive analyst coverage for that ticker in the last 7 days. Shows as <strong style="color:#f85149">📰–</strong> for AVOID stocks and filters for bearish/downgrade stories instead. No API key or login needed.</td></tr>
+        <tr><td><span class="mv">#1</span><br>Rank</td><td>Position out of all stocks scored this run. #1 = highest composite score. The rank can move up or down between runs — the Today tab shows rank movement arrows.</td></tr>
+        <tr><td><span class="mv g">+21.1%</span><br>Upside badge</td><td>Gap between the current price and the average analyst 12-month target.<br><br><strong style="color:#3fb950">Green (+)</strong>: below target — upside remains. NVDA at $225 vs $273 target = +21.1% to go.<br><br><strong style="color:#f85149">Red (−)</strong>: already above target. MU at $732 vs $613 target = −16% — the stock has outrun analyst models. Targets often lag strong momentum moves; the score can still be high.</td></tr>
+        <tr><td><span class="mv g">STRONG BUY</span><br>Signal label</td><td>The engine's overall verdict. Four possible signals — see Section 3. Colour matches the left border strip.</td></tr>
+        <tr><td>Score bar</td><td>Visual fill from 0 to 100, coloured by signal. A quick scan of the bar height tells you how strong the case is without reading the number.</td></tr>
+        <tr><td><span class="mv g">80</span> / 100 · <span class="mv g">$225.32</span><br>Score &amp; Price</td><td><strong>80</strong> = composite 0–100 score built from five signals: analyst (30%), momentum (25%), fundamentals (25%), social (10%), filing (10%). <strong>$225.32</strong> = current market price. Both in signal colour on the same row.</td></tr>
+        <tr><td>→ <span class="mv">$273</span> &nbsp; <span class="mv r">Stop $207.29</span></td><td><strong>$273</strong> = average 12-month analyst price target (consensus). <strong>Stop $207.29</strong> = −8% from today's price — a risk management level. If the stock falls here, the bullish case may be broken.</td></tr>
+        <tr><td>Sparkline<br>1M / 3M trend</td><td>Mini SVG price chart for the past month (22 trading days) or 3 months (~63 days). Green line = price up over that period, red = down. The % in the top-right corner shows the exact return. Toggle 1M ↔ 3M using the pill in the legend bar — all cards switch at once. Appears directly below the stop-loss row.</td></tr>
+        <tr><td><span class="mv g">↑5</span> <span class="mv r">↓0</span><br>Upgrades / Downgrades</td><td>In the past 7 days: 5 analysts raised NVDA's rating (e.g. Hold → Buy). Zero lowered it. High upgrades + zero downgrades = Wall Street getting more bullish — a strong positive signal for the analyst score.</td></tr>
+        <tr><td><span class="mv">71 analysts</span><br><span class="mv g">93% bullish</span><br>Consensus bar</td><td>71 professional analysts cover NVDA. 93% currently rate it Buy or Strong Buy. Bar colour: green ≥ 60%, amber 40–59%, red &lt; 40%. Appears below the sparkline.</td></tr>
+        <tr><td><span class="mv">YF</span> <span class="mv">FV</span> <span class="mv">SA</span><br>Source links</td><td><strong>YF</strong> = Yahoo Finance (price, news, financial statements). <strong>FV</strong> = Finviz (chart, technical ratios, insider trades). <strong>SA</strong> = Seeking Alpha (analyst articles and ratings). Each opens in a new tab. Tapping anywhere on the card also opens Yahoo Finance.</td></tr>
+        <tr><td><span class="mv g">📰+</span> / <span class="mv r">📰–</span><br>News link</td><td>Sentiment-aware Google News deep link, filtered to the past 7 days. <strong style="color:#3fb950">📰+</strong> (green) = positive analyst / upgrade stories for STRONG BUY and BUY stocks. <strong style="color:#f85149">📰–</strong> (red) = bearish / downgrade stories for AVOID stocks. No API key or login required.</td></tr>
+        <tr><td><span style="font-size:11px;color:#8b949e">📄 —</span> / <span style="font-size:11px;color:#3fb950">📄 85</span><br>Filing button</td><td>SEC 8-K filing sentiment, analysed by Claude AI. <strong>📄 —</strong> = no recent 8-K found. <strong>📄 85</strong> (green) = bullish filing. <strong>📄 45</strong> (amber) = cautious. <strong>📄 12</strong> (red) = bearish. Tap the button to open a modal showing the filing date and a plain-English AI summary. Score range: 0–100. Requires Anthropic API key to be configured; shows neutral (50) when not set up.</td></tr>
       </tbody>
     </table>
   </div>
@@ -2236,61 +2243,100 @@
   <div class="dict-section">
     <div class="dict-section-label">Section 3</div>
     <h2 class="dict-h2">What the four signals mean</h2>
-    <p class="dict-p">The coloured bar at the top of each card and the signal label are driven by the composite score (0–100).</p>
+    <p class="dict-p">The left border strip and signal label are both driven by the composite score (0–100). Score is a weighted average of five signals: analyst 30%, momentum 25%, fundamentals 25%, social 10%, filing 10%.</p>
     <div class="dict-signal-grid">
-      <div class="dict-signal-item" style="border-left-color:#3fb950"><div class="dict-signal-label" style="color:#3fb950">🟢 STRONG BUY</div><div class="dict-signal-desc">Score ≥ 65. Multiple strong signals aligned — momentum, analysts, and value all pointing up. Highest conviction.</div></div>
-      <div class="dict-signal-item" style="border-left-color:#e3b341"><div class="dict-signal-label" style="color:#e3b341">🟡 BUY</div><div class="dict-signal-desc">Score 50–64. Solid setup with most signals positive. Worth watching closely and doing more research.</div></div>
-      <div class="dict-signal-item" style="border-left-color:#8b949e"><div class="dict-signal-label" style="color:#8b949e">⚪ WATCH</div><div class="dict-signal-desc">Score 35–49. Mixed signals. Not a clear buy yet — add to watchlist and revisit the next run.</div></div>
-      <div class="dict-signal-item" style="border-left-color:#f85149"><div class="dict-signal-label" style="color:#f85149">🔴 AVOID</div><div class="dict-signal-desc">Score &lt; 35. Weak or deteriorating signals. Not the right time — don't chase it.</div></div>
+      <div class="dict-signal-item" style="border-left-color:#3fb950"><div class="dict-signal-label" style="color:#3fb950">🟢 STRONG BUY</div><div class="dict-signal-desc">Score ≥ 65. Multiple strong signals aligned — momentum, analysts, and fundamentals all pointing up. Highest conviction.</div></div>
+      <div class="dict-signal-item" style="border-left-color:#e3b341"><div class="dict-signal-label" style="color:#e3b341">🟡 BUY</div><div class="dict-signal-desc">Score 50–64. Solid setup with most signals positive. Worth watching closely and doing more research before acting.</div></div>
+      <div class="dict-signal-item" style="border-left-color:#8b949e"><div class="dict-signal-label" style="color:#8b949e">⚪ WATCH</div><div class="dict-signal-desc">Score 35–49. Mixed signals. Not a clear entry yet — add to watchlist and revisit on the next run.</div></div>
+      <div class="dict-signal-item" style="border-left-color:#f85149"><div class="dict-signal-label" style="color:#f85149">🔴 AVOID</div><div class="dict-signal-desc">Score &lt; 35. Weak or deteriorating signals across most dimensions. Not the right time — don't chase it.</div></div>
     </div>
   </div>
 
   <!-- Section 4: Tab system & run schedule -->
   <div class="dict-section">
     <div class="dict-section-label">Section 4</div>
-    <h2 class="dict-h2">Tab system &amp; run schedule</h2>
+    <h2 class="dict-h2">Tab types &amp; run schedule</h2>
     <p class="dict-p">The tab bar has four kinds of tabs. The engine runs automatically at <strong>5am</strong>, <strong>7am</strong>, and <strong>12pm</strong> Sydney time every weekday. All three runs on the same day merge into one tab — the latest run wins.</p>
     <div class="dict-run-grid">
-      <div class="dict-run-card" style="border-left:3px solid var(--green);"><h4>📋 Today tab — always first</h4><p>Always the first tab. Shows the engine's current buy and sell recommendation for today — top 3 buys, top 2 sells — with a cross-run comparison table for each pick and an auto-generated analytical write-up. Uses the most recent run's data regardless of when you open the app. Tap <strong>⬇</strong> to download as an image.</p></div>
-      <div class="dict-run-card"><h4>📅 Day tabs — current month</h4><p>Each day gets one tab labelled <strong>21-May, 20-May…</strong> Running the engine again on the same day overwrites the existing tab — no duplicates.</p></div>
-      <div class="dict-run-card"><h4>🗂 Archive tabs — past months</h4><p>Previous months collapse to a single tab each: <strong>May-2026, Apr-2026…</strong> On the 1st of every month the previous month's day tabs are removed and only the final day is kept as the archive.</p></div>
-      <div class="dict-run-card"><h4>📖 Dictionary tab — always last</h4><p>This guide. Always visible at the far right of the tab bar, separated by a thin divider. Never auto-selected on data refresh — it stays open if you're reading it.</p></div>
+      <div class="dict-run-card" style="border-left:3px solid var(--green);">
+        <h4>📋 Today tab — always first</h4>
+        <p>Always the first tab. Shows the engine's current buy and sell recommendation using the most recent run. Content: <strong>Top 3 Buys</strong> (STRONG BUY / BUY ranked by score) and <strong>Top 2 Exits</strong> (AVOID + already above analyst target) — each with entry price, target, upside %, stop, R/R ratio, cross-run comparison table, analyst consensus bar, sparkline, and an auto-generated write-up (full text on desktop ≥700px, compact on mobile). Tap <strong>⬇</strong> (top right) to save the full recommendation as a PNG image.</p>
+      </div>
+      <div class="dict-run-card">
+        <h4>📅 Day tabs — current month</h4>
+        <p>Each day gets one tab labelled <strong>21-May, 20-May…</strong> Shows the full card grid for that day's run — all stocks scored and ranked. Running the engine again on the same day overwrites — no duplicates. The most recent day is selected by default when you open the app.</p>
+      </div>
+      <div class="dict-run-card">
+        <h4>🗂 Archive tabs — past months</h4>
+        <p>Previous months collapse to a single tab each: <strong>May-2026, Apr-2026…</strong> On the 1st of every month the previous month's day tabs are removed and only the last day's data is kept as the archive entry.</p>
+      </div>
+      <div class="dict-run-card">
+        <h4>📖 Dictionary tab — always last</h4>
+        <p>This guide. Separated from the run tabs by a thin vertical divider. Never auto-selected on data refresh — it stays open if you're reading it. Styled in amber to distinguish it from the run tabs.</p>
+      </div>
     </div>
     <p class="dict-p" style="margin-top:12px">
-      <strong>5am Early Signal 🌅</strong> — pre-market data, overnight analyst revisions. Good for planning.<br>
-      <strong>7am Final Signal 📈</strong> — incorporates the first hour of live US trading. This is the run to act on.<br>
-      <strong>12pm Midday Signal ☀️</strong> — mid-session check. Picks up any analyst moves or price swings from the morning session.
+      <strong>🌅 5am Early Signal</strong> — pre-market data, overnight analyst revisions. Good for planning ahead.<br>
+      <strong>📈 7am Final Signal</strong> — first hour of US trading captured. The run to act on.<br>
+      <strong>☀️ 12pm Midday Signal</strong> — mid-session check. Catches intraday analyst moves and gap fills.
     </p>
   </div>
 
-  <!-- Section 5: Controls & tools -->
+  <!-- Section 5: Day tab controls -->
   <div class="dict-section">
     <div class="dict-section-label">Section 5</div>
-    <h2 class="dict-h2">Controls &amp; tools</h2>
-    <p class="dict-p">The legend bar above the cards and the header give you four controls.</p>
-    <table class="dict-table">
-      <thead><tr><th>Control</th><th>How to use it</th></tr></thead>
+    <h2 class="dict-h2">Day tab buttons and controls</h2>
+    <p class="dict-p">Every day tab (and archive tab) has two control areas above the card grid: the <strong>run meta bar</strong> and the <strong>legend bar</strong>.</p>
+
+    <p class="dict-p" style="font-weight:700;margin-bottom:4px">Run meta bar</p>
+    <table class="dict-table" style="margin-bottom:16px">
+      <thead><tr><th>Element</th><th>What it does</th></tr></thead>
       <tbody>
-        <tr><td>1M / 3M toggle</td><td>Pill button in the legend bar. Switches the sparkline on every card between 1-month (22 trading days) and 3-month (~63 days) view. Tap once — all cards update instantly.</td></tr>
-        <tr><td>Filter button</td><td>Tap <strong>Filter</strong> (top-right of the legend bar) to open the filter panel. Two filters: <strong>Ticker</strong> — type one or more stock codes separated by comma or space (e.g. <em>NVDA DDOG, RKLB</em>) — and <strong>Price range</strong> — min and/or max current price in $. Cards that don't match are hidden completely. Tap <strong style="color:#f85149">Clear filters</strong> to reset.</td></tr>
-        <tr><td>📊 Brief button</td><td>Tap <strong>📊 Brief</strong> in the legend bar to open a full-screen summary sheet for that run. Shows the run label, date, top picks with scores and signal details, and a disclaimer. Includes a <strong>⬇ Download as Image</strong> button that saves the full summary as a PNG — useful for sharing or keeping a record. Works on both mobile and desktop.</td></tr>
-        <tr><td>↻ Refresh button</td><td>The small <strong>↻</strong> next to the subtitle text in the header. Tap it to force a fresh data fetch from GitHub and re-render the current tab immediately. The engine data is also checked automatically every 5 minutes — the refresh button is for when you want it right now. The button spins while loading.</td></tr>
+        <tr><td>Stock count &amp; date<br><span style="font-size:11px;color:var(--muted)">e.g. "47 stocks · 2026-05-21"</span></td><td>Shows how many stocks were analysed in this run and the run date. Read-only — no interaction.</td></tr>
+        <tr><td><strong>📊 Brief</strong> button</td><td>Opens a full-screen summary sheet for that run. Shows the run label, date, all top picks with signal details. Includes a <strong>⬇ Download as Image</strong> button that saves the complete summary as a PNG — useful for sharing or keeping a daily record. Tap anywhere outside the sheet or the ✕ button to close.</td></tr>
+        <tr><td>Run label<br><span style="font-size:11px;color:var(--muted)">e.g. "7am Final Signal"</span></td><td>Shows which scheduled run produced this data (5am Early, 7am Final, or 12pm Midday). Read-only.</td></tr>
+      </tbody>
+    </table>
+
+    <p class="dict-p" style="font-weight:700;margin-bottom:4px">Legend bar</p>
+    <table class="dict-table">
+      <thead><tr><th>Button / Control</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td>Signal legend<br><span style="font-size:11px;color:var(--muted)">🟢 STRONG BUY · 🟡 BUY · ⚪ WATCH · 🔴 AVOID</span></td><td>Reference dots — not interactive. Shows the four signal colours at a glance.</td></tr>
+        <tr><td><strong>1M</strong> / <strong>3M</strong> toggle</td><td>Switches the sparkline on every card between 1-month (22 trading days) and 3-month (~63 days) view. Tap once — all cards re-render instantly. Active period shown with a filled background.</td></tr>
+        <tr><td><strong>☰ Table</strong> / <strong>⊞ Cards</strong> toggle</td><td>Switches the main view between the default 2-column card grid and a full-width sortable table. In table mode, tap any column header to sort ascending or descending (↕ arrow shows direction). Columns: Rank, Ticker, Company, Signal, Score, Price, Target, Upside %, Stop, Analyst, Momentum, Fundamentals, Social, 8-K filing score. Tap <strong>⊞ Cards</strong> to switch back.</td></tr>
+        <tr><td><strong>Filter</strong> button</td><td>Tap to open the filter panel. Two filters: <strong>Ticker</strong> — type one or more tickers separated by comma or space (e.g. <em>NVDA DDOG, RKLB</em>); <strong>Price $</strong> — min and/or max current price. Cards that don't match are hidden completely. A result count bar appears below when a filter is active. Tap <strong style="color:#f85149">Clear filters</strong> to reset all filters and show all stocks again. Filters persist when switching between tabs.</td></tr>
       </tbody>
     </table>
   </div>
 
-  <!-- Section 6: Setup -->
+  <!-- Section 6: Header buttons -->
   <div class="dict-section">
     <div class="dict-section-label">Section 6</div>
+    <h2 class="dict-h2">Header buttons</h2>
+    <p class="dict-p">The sticky header at the top of the screen has two interactive elements.</p>
+    <table class="dict-table">
+      <thead><tr><th>Element</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><strong>↻</strong> Refresh button<br><span style="font-size:11px;color:var(--muted)">next to the subtitle</span></td><td>Forces an immediate data fetch from GitHub and re-renders the current tab. The button spins while loading. Data is also checked automatically every 5 minutes in the background — the ↻ button is for when you want it right now, e.g. just after the 5am or 7am run fires.</td></tr>
+        <tr><td>Subtitle text<br><span style="font-size:11px;color:var(--muted)">"Updated X min ago"</span></td><td>Shows when the data was last fetched. Read-only — tap ↻ next to it if the time looks stale.</td></tr>
+        <tr><td>Date display<br><span style="font-size:11px;color:var(--muted)">top-right corner</span></td><td>Updates when you switch tabs — shows the run date (day tabs), month (archive tabs), or a label for special tabs. Read-only.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Section 7: iPhone setup -->
+  <div class="dict-section">
+    <div class="dict-section-label">Section 7</div>
     <h2 class="dict-h2">How to set up on your iPhone</h2>
     <div class="dict-steps">
       <div class="dict-step"><div class="dict-step-num">1</div><div><span class="dict-step-title">Open Safari</span><span class="dict-step-desc">Must be Safari (not Chrome) to add to Home Screen.</span></div></div>
       <div class="dict-step"><div class="dict-step-num">2</div><div><span class="dict-step-title">Go to the dashboard</span><div class="dict-step-url">karthikpalsg.github.io/stock-recommender/app/dashboard.html</div></div></div>
-      <div class="dict-step"><div class="dict-step-num">3</div><div><span class="dict-step-title">Enter your access token (first visit only)</span><span class="dict-step-desc">A "Connect GitHub" screen appears. Karthik sends you a personal token — paste it once and tap Save. Stays saved permanently.</span></div></div>
-      <div class="dict-step"><div class="dict-step-num">4</div><div><span class="dict-step-title">Add to Home Screen</span><span class="dict-step-desc">Tap Share (box + arrow) → "Add to Home Screen" → Add. Full-screen app icon, no browser chrome.</span></div></div>
-      <div class="dict-step"><div class="dict-step-num">5</div><div><span class="dict-step-title">It updates automatically</span><span class="dict-step-desc">Dashboard polls for new data every 5 minutes. Cards refresh on their own after each run. Tap <strong>↻</strong> in the header to force an immediate refresh at any time.</span></div></div>
+      <div class="dict-step"><div class="dict-step-num">3</div><div><span class="dict-step-title">Enter your access token (first visit only)</span><span class="dict-step-desc">A "Connect GitHub" screen appears. Karthik sends you a personal token — paste it once and tap Save. Stays saved permanently on that device.</span></div></div>
+      <div class="dict-step"><div class="dict-step-num">4</div><div><span class="dict-step-title">Add to Home Screen</span><span class="dict-step-desc">Tap Share (box + arrow) → "Add to Home Screen" → Add. Opens full-screen with no browser chrome, like a native app.</span></div></div>
+      <div class="dict-step"><div class="dict-step-num">5</div><div><span class="dict-step-title">It updates automatically</span><span class="dict-step-desc">Dashboard polls for new data every 5 minutes. Tap <strong>↻</strong> in the header for an immediate refresh — useful right after a 5am, 7am, or 12pm run.</span></div></div>
     </div>
-    <div class="dict-disclaimer"><strong>⚠️ Not financial advice.</strong> Data Glimpse Stocks aggregates publicly available data and analyst ratings. Nothing shown is a recommendation to buy or sell. All investments carry risk. Consult a licensed financial adviser before making investment decisions.</div>
+    <div class="dict-disclaimer"><strong>⚠️ Not financial advice.</strong> Data Glimpse Stocks aggregates publicly available data and analyst ratings. Nothing shown is a recommendation to buy or sell. All investments carry risk. Consult a licensed financial adviser before making any investment decisions.</div>
   </div>
 
 </div>`;
