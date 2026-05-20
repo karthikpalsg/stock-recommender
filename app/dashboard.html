@@ -2190,6 +2190,7 @@
         </div>
         <div class="card-sources" onclick="event.stopPropagation()">
           <a style="pointer-events:none">YF</a><a style="pointer-events:none">FV</a><a style="pointer-events:none">SA</a>
+          <a style="pointer-events:none;background:rgba(63,185,80,0.08);border:1px solid rgba(63,185,80,0.25);color:#3fb950;padding:2px 5px;border-radius:4px;font-size:10px">📰+</a>
         </div>
       </div>
 
@@ -2204,6 +2205,7 @@
         <div class="dict-callout-item"><div class="dict-callout-num">7</div><div class="dict-callout-text"><strong>↑5 ↓0</strong> — upgrades / downgrades last 7 days</div></div>
         <div class="dict-callout-item"><div class="dict-callout-num">8</div><div class="dict-callout-text"><strong>93% of 71 analysts</strong> bullish on NVDA</div></div>
         <div class="dict-callout-item"><div class="dict-callout-num">9</div><div class="dict-callout-text"><strong>Sparkline (+12.4%)</strong> — 1-month price trend. Green = up over the period, red = down. Toggle 1M / 3M in the legend bar above the cards.</div></div>
+        <div class="dict-callout-item"><div class="dict-callout-num">10</div><div class="dict-callout-text"><strong>📰+</strong> — news link. Opens Google News for that ticker filtered to the last 7 days. Green (📰+) for buys = positive analyst coverage. Red (📰–) for avoids = bearish/downgrade coverage. Opens in a new tab, no sign-in needed.</div></div>
       </div>
     </div>
   </div>
@@ -2225,7 +2227,7 @@
         <tr><td><span class="mv g">↑5</span> <span class="mv r">↓0</span><br>Upgrades / Downgrades</td><td>In the last 7 days: 5 analysts raised their NVDA rating (e.g. Hold → Buy). Zero lowered it. High upgrades + zero downgrades = Wall Street getting <em>more</em> bullish — a strong positive signal.</td></tr>
         <tr><td><span class="mv">71 analysts</span><br><span class="mv g">93% bullish</span><br>Consensus bar</td><td>71 professional analysts cover NVDA. 93% currently rate it Buy or Strong Buy. Bar colour: green ≥ 60%, amber 40–59%, red &lt; 40%.</td></tr>
         <tr><td>Sparkline<br>1M / 3M trend</td><td>Mini price chart for the past month (22 trading days) or 3 months (~63 days). Green line = price up over that period, red = down. The % in the top-right shows the exact return. Toggle 1M ↔ 3M using the pill in the legend bar above the cards — all cards switch at once.</td></tr>
-        <tr><td><span class="mv">YF</span> <span class="mv">FV</span> <span class="mv">SA</span><br>Source buttons</td><td><strong>YF</strong> = Yahoo Finance (price, news, financials). <strong>FV</strong> = Finviz (chart, ratios, insider trades). <strong>SA</strong> = Seeking Alpha (analyst articles). Tapping the card itself also opens YF.</td></tr>
+        <tr><td><span class="mv">YF</span> <span class="mv">FV</span> <span class="mv">SA</span> <span class="mv g">📰+</span><br>Source buttons</td><td><strong>YF</strong> = Yahoo Finance (price, news, financials). <strong>FV</strong> = Finviz (chart, ratios, insider trades). <strong>SA</strong> = Seeking Alpha (analyst articles). Tapping the card itself also opens YF.<br><br><strong>📰+</strong> = Google News deep link for BUY / STRONG BUY stocks — filtered to positive analyst coverage for that ticker in the last 7 days. Shows as <strong style="color:#f85149">📰–</strong> for AVOID stocks and filters for bearish/downgrade stories instead. No API key or login needed.</td></tr>
       </tbody>
     </table>
   </div>
@@ -2247,24 +2249,32 @@
   <div class="dict-section">
     <div class="dict-section-label">Section 4</div>
     <h2 class="dict-h2">Tab system &amp; run schedule</h2>
-    <p class="dict-p">The tab bar organises every run by date. The engine runs automatically at <strong>5am</strong> and <strong>7am</strong> Sydney time every weekday — the 7am result overwrites the 5am one, so you always see one tab per day.</p>
+    <p class="dict-p">The tab bar has four kinds of tabs. The engine runs automatically at <strong>5am</strong>, <strong>7am</strong>, and <strong>12pm</strong> Sydney time every weekday. All three runs on the same day merge into one tab — the latest run wins.</p>
     <div class="dict-run-grid">
-      <div class="dict-run-card"><h4>📅 Day tabs — current month</h4><p>Each day gets one tab labelled <strong>17-May, 16-May…</strong> Running the engine again on the same day overwrites the existing tab — no duplicates. The most recent tab opens by default.</p></div>
+      <div class="dict-run-card" style="border-left:3px solid var(--green);"><h4>📋 Today tab — always first</h4><p>Always the first tab. Shows the engine's current buy and sell recommendation for today — top 3 buys, top 2 sells — with a cross-run comparison table for each pick and an auto-generated analytical write-up. Uses the most recent run's data regardless of when you open the app. Tap <strong>⬇</strong> to download as an image.</p></div>
+      <div class="dict-run-card"><h4>📅 Day tabs — current month</h4><p>Each day gets one tab labelled <strong>21-May, 20-May…</strong> Running the engine again on the same day overwrites the existing tab — no duplicates.</p></div>
       <div class="dict-run-card"><h4>🗂 Archive tabs — past months</h4><p>Previous months collapse to a single tab each: <strong>May-2026, Apr-2026…</strong> On the 1st of every month the previous month's day tabs are removed and only the final day is kept as the archive.</p></div>
+      <div class="dict-run-card"><h4>📖 Dictionary tab — always last</h4><p>This guide. Always visible at the far right of the tab bar, separated by a thin divider. Never auto-selected on data refresh — it stays open if you're reading it.</p></div>
     </div>
-    <p class="dict-p" style="margin-top:10px"><strong>5am Early Signal</strong> — pre-market data, overnight analyst revisions. Good for planning. &nbsp;|&nbsp; <strong>7am Final Signal</strong> — incorporates the first hour of live US trading. This is the run to act on.</p>
+    <p class="dict-p" style="margin-top:12px">
+      <strong>5am Early Signal 🌅</strong> — pre-market data, overnight analyst revisions. Good for planning.<br>
+      <strong>7am Final Signal 📈</strong> — incorporates the first hour of live US trading. This is the run to act on.<br>
+      <strong>12pm Midday Signal ☀️</strong> — mid-session check. Picks up any analyst moves or price swings from the morning session.
+    </p>
   </div>
 
-  <!-- Section 5: Filters & trend toggle -->
+  <!-- Section 5: Controls & tools -->
   <div class="dict-section">
     <div class="dict-section-label">Section 5</div>
-    <h2 class="dict-h2">Filters &amp; trend toggle</h2>
-    <p class="dict-p">Two controls in the legend bar let you narrow what you see without leaving the tab.</p>
+    <h2 class="dict-h2">Controls &amp; tools</h2>
+    <p class="dict-p">The legend bar above the cards and the header give you four controls.</p>
     <table class="dict-table">
       <thead><tr><th>Control</th><th>How to use it</th></tr></thead>
       <tbody>
         <tr><td>1M / 3M toggle</td><td>Pill button in the legend bar. Switches the sparkline on every card between 1-month (22 trading days) and 3-month (~63 days) view. Tap once — all cards update instantly.</td></tr>
-        <tr><td>Filter button</td><td>Tap <strong>Filter</strong> (top-right of the legend bar) to open the filter panel. Two filters: <strong>Ticker</strong> — type one or more stock codes separated by comma or space (e.g. <em>NVDA DDOG, RKLB</em>) — and <strong>Price range</strong> — min and/or max current price in $. Cards that don't match are hidden completely. Tap <strong style="color:#f85149">Clear filters</strong> to reset and show all cards again.</td></tr>
+        <tr><td>Filter button</td><td>Tap <strong>Filter</strong> (top-right of the legend bar) to open the filter panel. Two filters: <strong>Ticker</strong> — type one or more stock codes separated by comma or space (e.g. <em>NVDA DDOG, RKLB</em>) — and <strong>Price range</strong> — min and/or max current price in $. Cards that don't match are hidden completely. Tap <strong style="color:#f85149">Clear filters</strong> to reset.</td></tr>
+        <tr><td>📊 Brief button</td><td>Tap <strong>📊 Brief</strong> in the legend bar to open a full-screen summary sheet for that run. Shows the run label, date, top picks with scores and signal details, and a disclaimer. Includes a <strong>⬇ Download as Image</strong> button that saves the full summary as a PNG — useful for sharing or keeping a record. Works on both mobile and desktop.</td></tr>
+        <tr><td>↻ Refresh button</td><td>The small <strong>↻</strong> next to the subtitle text in the header. Tap it to force a fresh data fetch from GitHub and re-render the current tab immediately. The engine data is also checked automatically every 5 minutes — the refresh button is for when you want it right now. The button spins while loading.</td></tr>
       </tbody>
     </table>
   </div>
@@ -2278,7 +2288,7 @@
       <div class="dict-step"><div class="dict-step-num">2</div><div><span class="dict-step-title">Go to the dashboard</span><div class="dict-step-url">karthikpalsg.github.io/stock-recommender/app/dashboard.html</div></div></div>
       <div class="dict-step"><div class="dict-step-num">3</div><div><span class="dict-step-title">Enter your access token (first visit only)</span><span class="dict-step-desc">A "Connect GitHub" screen appears. Karthik sends you a personal token — paste it once and tap Save. Stays saved permanently.</span></div></div>
       <div class="dict-step"><div class="dict-step-num">4</div><div><span class="dict-step-title">Add to Home Screen</span><span class="dict-step-desc">Tap Share (box + arrow) → "Add to Home Screen" → Add. Full-screen app icon, no browser chrome.</span></div></div>
-      <div class="dict-step"><div class="dict-step-num">5</div><div><span class="dict-step-title">It updates automatically</span><span class="dict-step-desc">Dashboard polls for new data every 5 minutes. Cards refresh on their own after each weekday morning run.</span></div></div>
+      <div class="dict-step"><div class="dict-step-num">5</div><div><span class="dict-step-title">It updates automatically</span><span class="dict-step-desc">Dashboard polls for new data every 5 minutes. Cards refresh on their own after each run. Tap <strong>↻</strong> in the header to force an immediate refresh at any time.</span></div></div>
     </div>
     <div class="dict-disclaimer"><strong>⚠️ Not financial advice.</strong> Data Glimpse Stocks aggregates publicly available data and analyst ratings. Nothing shown is a recommendation to buy or sell. All investments carry risk. Consult a licensed financial adviser before making investment decisions.</div>
   </div>

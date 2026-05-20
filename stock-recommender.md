@@ -17,16 +17,16 @@ A complete record of every decision, every file created, and every problem solve
 
 ## What the system does (in plain English)
 
-Every weekday at **5am and 7am Sydney time**, an automated system:
-1. Reads your personal list of 30 US stocks
-2. Pulls analyst ratings, price momentum, company fundamentals, and social media sentiment for each stock
+Every weekday at **5am, 7am, and 12pm Sydney time**, an automated system:
+1. Reads your personal list of ~47 US stocks
+2. Pulls analyst ratings, price momentum, company fundamentals, social media sentiment, and SEC filing sentiment for each stock
 3. Scores every stock from 0–100 and ranks them
 4. Emails you the full ranked list with buy/sell signals, price targets, and stop-loss levels
 5. Saves every run to a JSON history file — one record per day, overwriting if the engine re-runs
 
 You manage your stock list from your iPhone using a web app. Your Mac does not need to be switched on. The whole thing costs $0/month to run.
 
-The **dashboard PWA** shows each day's results as a tab. Current-month days appear as individual tabs labelled `17-May`, `16-May`… At the start of a new month, previous-month tabs collapse to a single archive tab labelled `May-2026`, `Apr-2026`… Every card shows a 1M/3M sparkline trend chart and a filter panel lets you narrow by ticker or price range.
+The **dashboard PWA** shows each day's results as a tab. The first tab (📋 Today) always shows the latest run's current buy/sell recommendation with cross-run comparison tables and an auto-generated analytical write-up. Current-month days appear as individual tabs labelled `21-May`, `20-May`… At the start of a new month, previous-month tabs collapse to a single archive tab labelled `May-2026`, `Apr-2026`… Every card shows a 1M/3M sparkline trend chart, a filter panel, a 📊 Brief summary modal with image download, and analyst news deep links.
 
 ---
 
@@ -71,7 +71,7 @@ stock-recommender/
 ├── app/
 │   ├── auth.js                     ← Shared GitHub-linked PAT authentication. Included by both apps.
 │   ├── index.html                  ← Watchlist manager PWA (add/remove tickers).
-│   ├── dashboard.html              ← Picks Dashboard PWA (all run results, week tabs, archive, Dictionary tab).
+│   ├── dashboard.html              ← Picks Dashboard PWA (📋 Today tab, day tabs, archive, Dictionary tab, Brief modal, news links, image download).
 │   ├── family-guide.html           ← Standalone shareable reference guide (light theme, NVDA card example).
 │   ├── manifest.json               ← PWA manifest for Watchlist app.
 │   ├── dashboard-manifest.json     ← PWA manifest for Dashboard app.
@@ -124,14 +124,15 @@ Picks dashboard:    https://karthikpalsg.github.io/stock-recommender/app/dashboa
 
 ## Scoring model
 
-Each stock is scored 0–100 on four signals, then combined:
+Each stock is scored 0–100 on five signals, then combined:
 
 | Signal | Weight | What it measures |
 |---|---|---|
-| Analyst | 35% | Upgrades/downgrades last 7 days + % of analysts bullish (Finnhub) |
+| Analyst | 30% | Upgrades/downgrades last 7 days + % of analysts bullish (Finnhub) |
 | Momentum | 25% | Price vs 50-day moving average, 4-week return, volume |
 | Fundamentals | 25% | Gap to analyst price target, revenue growth, gross margin |
-| Social | 15% | Reddit mention count and direction vs yesterday |
+| Social | 10% | Reddit mention count and direction vs yesterday |
+| Filing | 10% | SEC filing sentiment (Claude AI — requires Anthropic API key; defaults to 50/100 neutral if not configured) |
 
 **Signal thresholds:**
 - 🟢 STRONG BUY: score ≥ 65
@@ -1502,5 +1503,220 @@ Mid-June:    17-Jun  16-Jun  ...  1-Jun  |  May-2026  |  Apr-2026  |  📖 Dicti
 
 Same-day re-runs (auto or manual) overwrite the existing tab — one tab per day, always.
 
-*Last updated: May 2026 — Steps 1–39 complete*
+---
+
+## Step 40 — Three daily runs: adding 12pm midday signal
+
+**What changed:**
+A third scheduled run was added at 12pm Sydney time to capture mid-session analyst moves and price action after the US morning session.
+
+**Workflow changes (`.github/workflows/daily-picks.yml`):**
+Two new cron lines added — one for AEST, one for AEDT:
+```yaml
+- cron: '0  2 * * 2-6'   # 12pm AEST (Australian winter)
+- cron: '0  1 * * 2-6'   # 12pm AEDT (Australian summer)
+```
+
+**Time guard updated:**
+```bash
+elif [ "$SYDNEY_HOUR" = "12" ]; then
+  echo "should_run=true"             >> $GITHUB_OUTPUT
+  echo "run_label=12pm Midday Signal" >> $GITHUB_OUTPUT
+  echo "run_emoji=☀️"                >> $GITHUB_OUTPUT
+```
+
+**Context for each run:**
+| Time (Sydney) | Label | Context |
+|---|---|---|
+| 5:00am | 🌅 5am Early Signal | Pre-market — overnight analyst revisions, futures |
+| 7:00am | 📈 7am Final Signal | US close confirmed, first-hour trading captured |
+| 12:00pm | ☀️ 12pm Midday Signal | Mid-session check — intraday analyst moves, price gaps |
+
+All three runs on the same day overwrite to one tab — the latest run always wins.
+
+---
+
+## Step 41 — Analyst news deep links (📰+ / 📰–)
+
+**What you asked:**
+Provide links to the latest positive analyst articles for buys and latest negative articles for sells, directly from each card.
+
+**What was built:**
+Two helper functions added to `dashboard.html`:
+
+```javascript
+function getNewsLink(ticker, signal) {
+  const isBuy  = signal === 'STRONG BUY' || signal === 'BUY';
+  const isAvoid = signal === 'AVOID';
+  const q = isBuy  ? `${ticker} stock analyst upgrade buy`
+          : isAvoid ? `${ticker} stock analyst downgrade sell`
+          : `${ticker} stock analyst`;
+  return `https://www.google.com/search?q=${encodeURIComponent(q)}&tbm=nws&tbs=qdr:w`;
+}
+```
+
+**Behaviour:**
+- STRONG BUY / BUY: 📰+ badge (green) — opens Google News filtered to positive analyst upgrade news for that ticker, last 7 days
+- AVOID: 📰– badge (red) — opens Google News filtered to bearish/downgrade coverage
+- WATCH: 📰 (neutral grey)
+
+**Key detail:** Uses Google News's `tbm=nws&tbs=qdr:w` URL parameters — no API key, no backend, works from any device. The news link is added alongside YF / FV / SA source buttons on every card.
+
+---
+
+## Step 42 — Responsive thesis text
+
+**What you asked:**
+Full analytical text on desktop, compact card view on mobile.
+
+**What was built:**
+`.summary-thesis` and `.rec-thesis` CSS classes hide longer write-up text by default on mobile, revealed at ≥700px:
+```css
+.summary-thesis { display: none; }
+@media (min-width: 700px) { .summary-thesis { display: block; } }
+```
+This means the card grid stays clean and scannable on iPhone while desktop users see the full analytical paragraph per pick.
+
+---
+
+## Step 43 — 📊 Brief modal + image download
+
+**What you asked:**
+A button on every run tab that opens a window showing a summary of the recommendation for the day, with a link to download it as an image.
+
+**What was built:**
+
+### 📊 Brief button
+A `📊 Brief` button in the legend bar above each run's card grid. Clicking it opens a full-screen modal sheet (`summary-overlay`) showing:
+- Run label and date
+- Top picks with composite score, signal, entry price, target, stop-loss
+- Signal details (analyst score, momentum, fundamentals, social)
+- Disclaimer
+
+### ⬇ Download as Image
+Inside the modal: a "⬇ Download as Image" button powered by **html2canvas** (CDN):
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+```
+
+**Off-screen clone trick** — the modal has `max-height` + `overflow: auto` for scrolling. html2canvas only captures the visible portion unless scroll is removed. The download function:
+1. Clones the modal card DOM off-screen
+2. Sets `max-height: none; overflow: visible` on the clone
+3. Passes the clone to html2canvas
+4. Removes the clone after capture
+
+Result: the downloaded PNG contains the full summary, not just the visible scroll window.
+
+---
+
+## Step 44 — 📋 Today tab (current recommendation view)
+
+**What you asked:**
+A new first tab called "Current Recommendation" that always shows the latest run's full buy/sell recommendation — separate from the day tabs, always up to date.
+
+**What was built:**
+A new `📋 Today` tab always prepended to the tab bar (before the day tabs, separated by a thin divider). Styled with a green pill (`rec-tab` class) to stand out.
+
+**Content rendered by `renderRecommendation()`:**
+
+**Top 3 Buys** — stocks with `signal === 'STRONG BUY'` or `'BUY'`, ranked by composite score, top 3:
+- Header: rank, ticker, company, current price, target, upside%, stop-loss
+- Cross-run comparison table: shows Rank / Score / Analyst / Momentum / Fundamentals across up to 4 historical runs (oldest → latest). Latest column starred (★), cells colour-coded green (improved vs previous run) / red (declined)
+- Auto-generated thesis paragraph: parses `signal_details.*` strings using regex to extract analyst consensus %, upgrade counts, 4-week return, whether above 50-day MA, revenue growth, gross margin
+
+**Top 2 Sells** — stocks with `signal === 'AVOID'` AND `upside_pct < -10` (already trading above analyst target), ranked by score descending:
+- Same layout: header, comparison table, sell thesis
+
+**⬇ Download** button at the top of the recommendation view — saves the full Today tab content as a PNG using html2canvas.
+
+**Latest run lookup:**
+```javascript
+const run = allRuns.find(r => r.run_id === lastRunId) ?? sortedDesc[0];
+```
+Uses `lastRunId` (set directly from `data.last_run` during fetch) — no sort dependency.
+
+---
+
+## Step 45 — History cleanup (May 16/17 removed)
+
+**What you did:**
+Removed the 2026-05-16 and 2026-05-17 run data from `data/history.json` to clean up the tab bar.
+
+**Method:**
+Python one-liner to filter runs and recompute metadata:
+```python
+import json
+with open('data/history.json') as f: d = json.load(f)
+d['runs'] = [r for r in d['runs'] if r['run_date'] >= '2026-05-18']
+d['total_runs'] = len(d['runs'])
+d['first_run']  = min(r['run_id'] for r in d['runs'])
+d['last_run']   = max(r['run_id'] for r in d['runs'])
+with open('data/history.json','w') as f: json.dump(d, f, indent=2)
+```
+
+**Result:** 6 runs → 4 runs. Remaining: 2026-05-18, 2026-05-19, 2026-05-20, 2026-05-21.
+
+---
+
+## Step 46 — Today tab sort bug fix (direct lastRunId lookup)
+
+**Problem reported (twice):**
+"Today tab does not show latest day data. It still shows the oldest tab data."
+
+**Root cause:**
+`allRuns` is stored in file insertion order (oldest first). The sort used arithmetic subtraction on ISO datetime strings:
+```javascript
+sort((a, b) => b.run_id - a.run_id)   // NaN - NaN = NaN → no reorder
+```
+`NaN` comparisons leave the array unchanged. `sortedDesc[0]` was always the oldest run (May 18), not the latest (May 21).
+
+**Fix applied:**
+Replaced sort-based lookup with a direct find using `lastRunId` — already set from `data.last_run` during `fetchData()`:
+```javascript
+const run = allRuns.find(r => r.run_id === lastRunId) ?? sortedDesc[0];
+```
+`lastRunId` is the authoritative `"2026-05-21T07:39:33"` value from the JSON. No sort needed, no array-order dependency.
+
+The same fix was applied in `downloadRecAsImage()` to ensure the download filename also reflects the correct date.
+
+---
+
+## Step 47 — Refresh button: force re-render + mobile tap fix
+
+**Problem reported:**
+"The app refresh button does not reflect the latest changes on the mobile screen."
+
+**Two root causes found and fixed:**
+
+### 1. Logic: conditional buildUI() blocked re-render
+`fetchData()` only called `buildUI()` when `data.last_run !== lastRunId`. On a manual refresh where data hadn't changed, the condition was false — the UI was never rebuilt, leaving any stale tab content in place.
+
+**Fix:** Added `force` parameter to `fetchData()`:
+```javascript
+async function fetchData(force = false) {
+  ...
+  if (force || data.last_run !== lastRunId) {
+    lastRunId = data.last_run;
+    buildUI();
+  }
+}
+```
+`manualRefresh()` now calls `fetchData(true)` — always rebuilds on every tap.
+
+### 2. Mobile tap target too small
+The ↻ button had `padding: 0 1px` — effectively a ~14px tap area. Apple's Human Interface Guidelines recommend 44×44px minimum.
+
+**Fix:**
+```css
+.btn-update {
+  min-width: 36px;
+  min-height: 36px;
+  justify-content: center;
+  touch-action: manipulation;   /* removes 300ms iOS double-tap delay */
+}
+```
+
+---
+
+*Last updated: May 2026 — Steps 1–47 complete*
 *Built with Claude Code*
