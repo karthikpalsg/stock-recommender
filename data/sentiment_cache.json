@@ -188,5 +188,20 @@
     "score": 0,
     "reason": "Filing contains only debt registration; no operational or guidance content.",
     "filing_date": "2026-05-11"
+  },
+  "FIVN_0001288847-26-000085": {
+    "score": 28,
+    "reason": "Routine shareholder meeting; no financial guidance, earnings, or business updates provided",
+    "filing_date": "2026-05-20"
+  },
+  "NVDA_0001045810-26-000051": {
+    "score": 40,
+    "reason": "8-K filing structure only; actual financial results not disclosed in excerpt",
+    "filing_date": "2026-05-20"
+  },
+  "RKLB_0001819994-26-000045": {
+    "score": 45,
+    "reason": "Equity offering announced; no earnings guidance, operational metrics, or contract wins disclosed",
+    "filing_date": "2026-05-20"
   }
 }
