@@ -1030,6 +1030,7 @@
   let lastFetchAt = null;
   let currentRun  = null;   // run currently displayed
   let filterOpen  = false;  // filter panel visibility
+  let filterState = { ticker: '', priceMin: '', priceMax: '' }; // persists across tab switches
   let trendMode   = '1m';   // sparkline window: '1m' | '3m'
   let viewMode    = 'cards';          // 'cards' | 'table'
   let tableSort   = { col: 4, desc: true };
@@ -1227,7 +1228,6 @@
     }
 
     currentRun = run;
-    filterOpen = false;
 
     el.innerHTML = `
       <div class="sticky-controls" id="sticky-controls">
@@ -1279,6 +1279,18 @@
       </div>
       <div class="stock-grid" id="stock-grid"></div>`;
 
+    // Restore persisted filter values and panel state across tab switches
+    const ftEl  = document.getElementById('f-ticker');
+    const fminEl = document.getElementById('f-price-min');
+    const fmaxEl = document.getElementById('f-price-max');
+    if (ftEl)   ftEl.value   = filterState.ticker;
+    if (fminEl) fminEl.value = filterState.priceMin;
+    if (fmaxEl) fmaxEl.value = filterState.priceMax;
+    if (filterOpen) {
+      document.getElementById('filter-panel')?.classList.remove('hidden');
+      document.getElementById('filter-btn')?.classList.add('active');
+    }
+
     applyFilters();
     positionControls();   // pin the control band below header + tab bar
   }
@@ -1303,6 +1315,11 @@
     const priceMin  = parseFloat(document.getElementById('f-price-min')?.value) || 0;
     const priceMax  = parseFloat(document.getElementById('f-price-max')?.value) || Infinity;
     const hasFilter = tickers.length > 0 || priceMin > 0 || priceMax < Infinity;
+
+    // Persist current filter values so they survive tab switches
+    filterState.ticker   = document.getElementById('f-ticker')?.value   || '';
+    filterState.priceMin = document.getElementById('f-price-min')?.value || '';
+    filterState.priceMax = document.getElementById('f-price-max')?.value || '';
 
     // Highlight clear button when filters are set
     document.getElementById('clear-btn')?.classList.toggle('has-filters', hasFilter);
@@ -1336,6 +1353,7 @@
     if (t)  t.value  = '';
     if (mn) mn.value = '';
     if (mx) mx.value = '';
+    filterState = { ticker: '', priceMin: '', priceMax: '' };
     applyFilters();
   }
 
