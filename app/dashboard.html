@@ -2286,11 +2286,11 @@
   function renderRecommendation() {
     const el = document.getElementById('content');
 
-    // Sort by run_id as string — ISO datetime strings sort lexicographically
-    const sortedDesc = [...allRuns].sort((a, b) => b.run_id.localeCompare(a.run_id));
+    // Use lastRunId (set directly from data.last_run during fetch) — bypasses sort entirely
+    const sortedDesc = [...allRuns].sort((a, b) => b.run_date.localeCompare(a.run_date));
     const sortedAsc  = [...sortedDesc].reverse();   // oldest → latest, for comparison tables
-    const run        = sortedDesc[0];               // LATEST run
-    const prevRun    = sortedDesc[1] ?? null;
+    const run        = allRuns.find(r => r.run_id === lastRunId) ?? sortedDesc[0]; // LATEST run
+    const prevRun    = sortedDesc.find(r => r.run_id !== run.run_id) ?? null;
 
     if (!run?.stocks?.length) {
       el.innerHTML = '<div class="state-box"><p>No recommendation data available.</p></div>';
@@ -2582,7 +2582,7 @@
     try {
       const el     = document.getElementById('rec-wrap');
       const canvas = await html2canvas(el, { backgroundColor:'#0d1117', scale:2, useCORS:true, logging:false });
-      const latest = [...allRuns].sort((a,b)=>b.run_id.localeCompare(a.run_id))[0];
+      const latest = allRuns.find(r => r.run_id === lastRunId) ?? [...allRuns].sort((a,b)=>b.run_date.localeCompare(a.run_date))[0];
       const link   = document.createElement('a');
       link.download = `recommendation-${latest?.run_date??'today'}.png`;
       link.href = canvas.toDataURL('image/png');
