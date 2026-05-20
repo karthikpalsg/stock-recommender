@@ -71,6 +71,30 @@
       align-items: center;
       gap: 5px;
     }
+    .btn-update {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 14px;
+      cursor: pointer;
+      padding: 0 1px;
+      line-height: 1;
+      opacity: 0.65;
+      -webkit-tap-highlight-color: transparent;
+      transition: opacity 0.15s;
+      display: inline-flex;
+      align-items: center;
+    }
+    .btn-update:active { opacity: 1; }
+    .btn-update.spinning {
+      animation: btn-spin 0.7s linear infinite;
+      pointer-events: none;
+      opacity: 1;
+    }
+    @keyframes btn-spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
 
     .header-date { text-align: right; flex-shrink: 0; margin-left: 10px; }
     .date-primary   { font-size: 14px; font-weight: 800; color: var(--green-l); letter-spacing: -0.2px; line-height: 1.2; }
@@ -931,6 +955,7 @@
       <div class="header-subtitle">
         <span class="dot"></span>
         <span id="subtitle-text">Loading…</span>
+        <button class="btn-update" id="btn-update" onclick="manualRefresh()" title="Refresh now">↻</button>
       </div>
     </div>
     <div class="header-date">
@@ -1069,7 +1094,7 @@
   // ── Build tabs + content ──────────────────────────────────────────────────
   function buildUI() {
     if (!allRuns.length) {
-      showEmpty('No runs yet. The engine runs automatically at 5am and 7am Sydney time on weekdays.');
+      showEmpty('No runs yet. The engine runs automatically at 5am, 7am and 12pm Sydney time on weekdays.');
       return;
     }
 
@@ -1680,6 +1705,14 @@
       mins === 1 ? 'Updated 1 min ago' :
                   `Updated ${mins} min ago`
     );
+  }
+
+  async function manualRefresh() {
+    const btn = document.getElementById('btn-update');
+    btn.classList.add('spinning');
+    setSubtitleText('Checking for updates…');
+    await fetchData();
+    btn.classList.remove('spinning');
   }
 
   // ── Dictionary ────────────────────────────────────────────────────────────
