@@ -2042,6 +2042,7 @@
       { label: 'Fundmntls', numeric: true  },
       { label: 'Social',    numeric: true  },
       { label: '8-K',       numeric: true  },
+      { label: 'Group',      numeric: false },
     ];
 
     function getVal(s, col) {
@@ -2060,6 +2061,7 @@
         case 11: return s.scores?.fundamentals ?? 0;
         case 12: return s.scores?.social ?? 0;
         case 13: return s.scores?.filing ?? 50;
+        case 14: return (tickerGroupsMap[s.ticker] || []).join(', ');
         default: return '';
       }
     }
@@ -2109,6 +2111,7 @@
         <td style="color:${subColor(s.scores?.fundamentals)}">${s.scores?.fundamentals ?? '—'}</td>
         <td style="color:${subColor(s.scores?.social)}">${s.scores?.social ?? '—'}</td>
         <td style="color:${subColor(fs)}">${fsStr}</td>
+        <td style="color:var(--muted);font-size:10px">${(tickerGroupsMap[s.ticker]||[]).map(g=>`<span class="card-group-tag">${g}</span>`).join(' ')}</td>
       </tr>`;
     }).join('');
 
