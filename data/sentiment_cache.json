@@ -213,5 +213,20 @@
     "score": 25,
     "reason": "At-the-market offering only; no operational guidance or earnings discussion provided.",
     "filing_date": "2026-05-13"
+  },
+  "ONDS_0001213900-26-059869": {
+    "score": 82,
+    "reason": "Transformational acquisition, $100M+ revenue guidance, combat-proven technology, strategic expansion",
+    "filing_date": "2026-05-21"
+  },
+  "QBTS_0001907982-26-000066": {
+    "score": 85,
+    "reason": "Transformational $100M government funding, equity stake, dual-platform advancement",
+    "filing_date": "2026-05-21"
+  },
+  "RGTI_0001104659-26-064861": {
+    "score": 85,
+    "reason": "Major government contract, $100M funding, transformational partnership for quantum computing",
+    "filing_date": "2026-05-21"
   }
 }
