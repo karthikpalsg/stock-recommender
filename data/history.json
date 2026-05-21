@@ -15046,14 +15046,14 @@
       ]
     },
     {
-      "run_id": "2026-05-21T21:38:13",
+      "run_id": "2026-05-21T22:33:33",
       "run_date": "2026-05-21",
-      "run_time": "21:38:13",
+      "run_time": "22:33:33",
       "run_label": "Manual Run",
-      "run_timestamp_local": "2026-05-21T21:38:13",
-      "run_timestamp_utc": "2026-05-21T21:38:13Z",
+      "run_timestamp_local": "2026-05-21T22:33:33",
+      "run_timestamp_utc": "2026-05-21T22:33:33Z",
       "timezone": "Australia/Sydney (AEST/AEDT \u2014 DST-aware)",
-      "total_stocks": 50,
+      "total_stocks": 52,
       "score_weights": {
         "analyst": 0.3,
         "momentum": 0.25,
@@ -15187,7 +15187,7 @@
           "company": "Rigetti Computing, Inc.",
           "signal": "STRONG BUY",
           "signal_emoji": "\ud83d\udfe2 STRONG BUY",
-          "composite_score": 76.0,
+          "composite_score": 77.5,
           "price": 22.04,
           "analyst_target_price": 29.24,
           "upside_pct": 32.7,
@@ -15196,14 +15196,14 @@
             "analyst": 60.0,
             "momentum": 100.0,
             "fundamentals": 80.0,
-            "social": 45.0,
+            "social": 60.0,
             "filing": 85.0
           },
           "signal_details": {
             "analyst": "78% of 18 analysts bullish",
             "momentum": "$22.04 | 4-wk return: +32.7% | above 50-day MA | Volume ratio: 1.5x",
             "fundamentals": "Target: $29 (+33% upside) | Revenue growth: 199% | Gross margin: 30%",
-            "social": "Rank #34 on social | 24 mentions | \u2191 rising (+23 vs yesterday)",
+            "social": "Rank #30 on social | 27 mentions | \u2191 rising (+26 vs yesterday)",
             "filing": "[2026-05-21] Major government contract, $100M funding, transformational partnership for quantum computing"
           },
           "prices_1m": [
@@ -15298,6 +15298,236 @@
         },
         {
           "rank": 3,
+          "ticker": "CIFR",
+          "company": "Cipher Digital Inc.",
+          "signal": "STRONG BUY",
+          "signal_emoji": "\ud83d\udfe2 STRONG BUY",
+          "composite_score": 76.5,
+          "price": 21.52,
+          "analyst_target_price": 30.53,
+          "upside_pct": 41.9,
+          "stop_loss_price": 19.8,
+          "scores": {
+            "analyst": 100.0,
+            "momentum": 81.5,
+            "fundamentals": 62.5,
+            "social": 30.0,
+            "filing": 75.0
+          },
+          "signal_details": {
+            "analyst": "2 upgrade(s), 0 downgrade(s) in last 7d | 91% of 22 analysts bullish",
+            "momentum": "$21.52 | 4-wk return: +18.2% | above 50-day MA | Volume ratio: 0.9x",
+            "fundamentals": "Target: $31 (+42% upside) | Revenue growth: -29% | Gross margin: 12%",
+            "social": "Not in top social mentions (neutral score)",
+            "filing": "8-K 2026-05-05: Strong operational progress, major lease signed, credit facility secured"
+          },
+          "prices_1m": [
+            19.44,
+            18.69,
+            18.2,
+            18.16,
+            17.26,
+            16.92,
+            17.74,
+            17.04,
+            17.89,
+            22.1,
+            21.91,
+            20.68,
+            20.55,
+            20.28,
+            20.06,
+            21.24,
+            22.29,
+            20.33,
+            19.12,
+            18.8,
+            19.48,
+            21.52
+          ],
+          "prices_3m": [
+            15.22,
+            17.12,
+            16.61,
+            16.48,
+            15.6,
+            15.76,
+            14.71,
+            16.04,
+            15.15,
+            13.62,
+            14.31,
+            13.96,
+            14.11,
+            13.71,
+            14.08,
+            15.14,
+            15.09,
+            14.67,
+            14.64,
+            14.01,
+            14.89,
+            14.88,
+            15.88,
+            14.35,
+            13.74,
+            12.02,
+            12.87,
+            12.64,
+            12.82,
+            13.35,
+            14.01,
+            15.42,
+            16.36,
+            16.53,
+            17.76,
+            18.45,
+            18.0,
+            17.34,
+            19.37,
+            19.29,
+            18.04,
+            19.44,
+            18.69,
+            18.2,
+            18.16,
+            17.26,
+            16.92,
+            17.74,
+            17.04,
+            17.89,
+            22.1,
+            21.91,
+            20.68,
+            20.55,
+            20.28,
+            20.06,
+            21.24,
+            22.29,
+            20.33,
+            19.12,
+            18.8,
+            19.48,
+            21.52
+          ]
+        },
+        {
+          "rank": 4,
+          "ticker": "APLD",
+          "company": "Applied Digital Corporation",
+          "signal": "STRONG BUY",
+          "signal_emoji": "\ud83d\udfe2 STRONG BUY",
+          "composite_score": 75.8,
+          "price": 48.02,
+          "analyst_target_price": 55.1,
+          "upside_pct": 14.7,
+          "stop_loss_price": 44.18,
+          "scores": {
+            "analyst": 100.0,
+            "momentum": 85.0,
+            "fundamentals": 56.2,
+            "social": 60.0,
+            "filing": 45.0
+          },
+          "signal_details": {
+            "analyst": "4 upgrade(s), 0 downgrade(s) in last 7d | 95% of 19 analysts bullish",
+            "momentum": "$48.02 | 4-wk return: +37.3% | above 50-day MA | Volume ratio: 1.0x",
+            "fundamentals": "Target: $55 (+15% upside) | Revenue growth: 139% | Gross margin: 45%",
+            "social": "Rank #18 on social | 54 mentions | \u2191 rising (+23 vs yesterday)",
+            "filing": "8-K 2026-05-05: Neutral strategic restructuring; maintains 97% ownership, no guidance provided"
+          },
+          "prices_1m": [
+            32.43,
+            36.35,
+            34.98,
+            33.67,
+            32.11,
+            32.69,
+            34.25,
+            33.55,
+            35.63,
+            39.88,
+            44.24,
+            41.53,
+            41.25,
+            44.59,
+            43.93,
+            45.48,
+            46.71,
+            42.56,
+            39.14,
+            36.62,
+            39.52,
+            48.02
+          ],
+          "prices_3m": [
+            30.0,
+            30.66,
+            29.08,
+            28.65,
+            27.27,
+            27.93,
+            26.15,
+            28.65,
+            28.09,
+            25.14,
+            27.03,
+            27.4,
+            28.52,
+            27.48,
+            27.05,
+            27.71,
+            27.51,
+            26.65,
+            26.7,
+            25.93,
+            27.26,
+            26.79,
+            28.37,
+            25.72,
+            23.76,
+            20.55,
+            23.74,
+            24.49,
+            24.56,
+            25.19,
+            25.18,
+            27.79,
+            25.57,
+            26.26,
+            27.6,
+            31.47,
+            30.81,
+            30.09,
+            31.53,
+            32.19,
+            31.32,
+            32.43,
+            36.35,
+            34.98,
+            33.67,
+            32.11,
+            32.69,
+            34.25,
+            33.55,
+            35.63,
+            39.88,
+            44.24,
+            41.53,
+            41.25,
+            44.59,
+            43.93,
+            45.48,
+            46.71,
+            42.56,
+            39.14,
+            36.62,
+            39.52,
+            48.02
+          ]
+        },
+        {
+          "rank": 5,
           "ticker": "LUNR",
           "company": "Intuitive Machines, Inc.",
           "signal": "STRONG BUY",
@@ -15412,7 +15642,7 @@
           ]
         },
         {
-          "rank": 4,
+          "rank": 6,
           "ticker": "MU",
           "company": "Micron Technology, Inc.",
           "signal": "STRONG BUY",
@@ -15433,7 +15663,7 @@
             "analyst": "3 upgrade(s), 0 downgrade(s) in last 7d | 92% of 53 analysts bullish",
             "momentum": "$762.10 | 4-wk return: +53.4% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $613 (-20% upside) | Revenue growth: 196% | Gross margin: 58%",
-            "social": "Rank #2 on social | 528 mentions | \u2191 rising (+34 vs yesterday)",
+            "social": "Rank #2 on social | 536 mentions | \u2191 rising (+30 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
           "prices_1m": [
@@ -15527,7 +15757,7 @@
           ]
         },
         {
-          "rank": 5,
+          "rank": 7,
           "ticker": "NVDA",
           "company": "NVIDIA Corporation",
           "signal": "STRONG BUY",
@@ -15548,7 +15778,7 @@
             "analyst": "23 upgrade(s), 0 downgrade(s) in last 7d | 93% of 71 analysts bullish",
             "momentum": "$219.51 | 4-wk return: +5.4% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $278 (+27% upside) | Revenue growth: 73% | Gross margin: 71%",
-            "social": "Rank #1 on social | 965 mentions | \u2193 falling (-465 vs yesterday)",
+            "social": "Rank #1 on social | 832 mentions | \u2193 falling (-850 vs yesterday)",
             "filing": "[2026-05-20] 8-K filing structure only; actual financial results not disclosed in excerpt"
           },
           "prices_1m": [
@@ -15642,7 +15872,7 @@
           ]
         },
         {
-          "rank": 6,
+          "rank": 8,
           "ticker": "QBTS",
           "company": "D-Wave Quantum Inc.",
           "signal": "STRONG BUY",
@@ -15663,7 +15893,7 @@
             "analyst": "86% of 22 analysts bullish",
             "momentum": "$25.74 | 4-wk return: +39.2% | above 50-day MA | Volume ratio: 1.4x",
             "fundamentals": "Target: $35 (+37% upside) | Revenue growth: -81% | Gross margin: 66%",
-            "social": "Rank #45 on social | 19 mentions | \u2191 rising (+18 vs yesterday)",
+            "social": "Rank #38 on social | 21 mentions | \u2191 rising (+20 vs yesterday)",
             "filing": "[2026-05-21] Transformational $100M government funding, equity stake, dual-platform advancement"
           },
           "prices_1m": [
@@ -15757,7 +15987,7 @@
           ]
         },
         {
-          "rank": 7,
+          "rank": 9,
           "ticker": "NBIS",
           "company": "Nebius Group N.V.",
           "signal": "STRONG BUY",
@@ -15778,7 +16008,7 @@
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 77% of 22 analysts bullish",
             "momentum": "$219.93 | 4-wk return: +49.4% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $231 (+5% upside) | Revenue growth: 622% | Gross margin: 72%",
-            "social": "Rank #9 on social | 104 mentions | \u2191 rising (+64 vs yesterday)",
+            "social": "Rank #8 on social | 106 mentions | \u2191 rising (+65 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
           "prices_1m": [
@@ -15872,7 +16102,7 @@
           ]
         },
         {
-          "rank": 8,
+          "rank": 10,
           "ticker": "CRWD",
           "company": "CrowdStrike Holdings, Inc.",
           "signal": "STRONG BUY",
@@ -15987,7 +16217,7 @@
           ]
         },
         {
-          "rank": 9,
+          "rank": 11,
           "ticker": "QUBT",
           "company": "Quantum Computing Inc.",
           "signal": "STRONG BUY",
@@ -16008,7 +16238,7 @@
             "analyst": "73% of 11 analysts bullish",
             "momentum": "$11.41 | 4-wk return: +27.6% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $18 (+56% upside) | Revenue growth: 9364% | Gross margin: -15%",
-            "social": "Not in top social mentions (neutral score)",
+            "social": "Social data unavailable (neutral)",
             "filing": "[2026-05-18] Market growth projections, leadership positioning, multi-platform advantages shown"
           },
           "prices_1m": [
@@ -16102,7 +16332,7 @@
           ]
         },
         {
-          "rank": 10,
+          "rank": 12,
           "ticker": "AMD",
           "company": "Advanced Micro Devices, Inc.",
           "signal": "STRONG BUY",
@@ -16123,7 +16353,7 @@
             "analyst": "2 upgrade(s), 0 downgrade(s) in last 7d | 76% of 59 analysts bullish",
             "momentum": "$449.59 | 4-wk return: +29.3% | above 50-day MA | Volume ratio: 0.7x",
             "fundamentals": "Target: $472 (+5% upside) | Revenue growth: 38% | Gross margin: 53%",
-            "social": "Rank #11 on social | 92 mentions | \u2193 falling (-40 vs yesterday)",
+            "social": "Rank #13 on social | 83 mentions | \u2193 falling (-63 vs yesterday)",
             "filing": "[2026-05-15] Credit facility refinance, no earnings/guidance data, neutral financing event"
           },
           "prices_1m": [
@@ -16217,7 +16447,7 @@
           ]
         },
         {
-          "rank": 11,
+          "rank": 13,
           "ticker": "SNDK",
           "company": "Sandisk Corporation",
           "signal": "STRONG BUY",
@@ -16238,7 +16468,7 @@
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 81% of 27 analysts bullish",
             "momentum": "$1542.24 | 4-wk return: +55.8% | above 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $1493 (-3% upside) | Revenue growth: 251% | Gross margin: 56%",
-            "social": "Rank #7 on social | 113 mentions | \u2191 rising (+78 vs yesterday)",
+            "social": "Rank #6 on social | 115 mentions | \u2191 rising (+76 vs yesterday)",
             "filing": "[2026-05-15] Mini-tender offer warning; defensive posture, no business guidance"
           },
           "prices_1m": [
@@ -16332,7 +16562,7 @@
           ]
         },
         {
-          "rank": 12,
+          "rank": 14,
           "ticker": "SOUN",
           "company": "SoundHound AI, Inc.",
           "signal": "BUY",
@@ -16447,7 +16677,7 @@
           ]
         },
         {
-          "rank": 13,
+          "rank": 15,
           "ticker": "MRVL",
           "company": "Marvell Technology, Inc.",
           "signal": "BUY",
@@ -16562,7 +16792,7 @@
           ]
         },
         {
-          "rank": 14,
+          "rank": 16,
           "ticker": "SYNA",
           "company": "Synaptics Incorporated",
           "signal": "BUY",
@@ -16677,7 +16907,7 @@
           ]
         },
         {
-          "rank": 15,
+          "rank": 17,
           "ticker": "IREN",
           "company": "IREN LIMITED",
           "signal": "BUY",
@@ -16698,7 +16928,7 @@
             "analyst": "74% of 23 analysts bullish",
             "momentum": "$58.06 | 4-wk return: +14.7% | above 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $75 (+29% upside) | Revenue growth: 0% | Gross margin: 68%",
-            "social": "Rank #38 on social | 22 mentions | \u2191 rising (+9 vs yesterday)",
+            "social": "Rank #44 on social | 19 mentions | \u2191 rising (+6 vs yesterday)",
             "filing": "[2026-05-14] Large capital raise demonstrates confidence; neutral on guidance specifics"
           },
           "prices_1m": [
@@ -16792,7 +17022,7 @@
           ]
         },
         {
-          "rank": 16,
+          "rank": 18,
           "ticker": "ONDS",
           "company": "Ondas Inc",
           "signal": "BUY",
@@ -16813,7 +17043,7 @@
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 93% of 14 analysts bullish",
             "momentum": "$9.18 | 4-wk return: -13.0% | below 50-day MA | Volume ratio: 1.2x",
             "fundamentals": "Target: $20 (+119% upside) | Revenue growth: 629% | Gross margin: 40%",
-            "social": "Rank #78 on social | 11 mentions | \u2191 rising (+4 vs yesterday)",
+            "social": "Rank #68 on social | 12 mentions | \u2191 rising (+5 vs yesterday)",
             "filing": "[2026-05-21] Transformational acquisition, $100M+ revenue guidance, combat-proven technology, strategic expansion"
           },
           "prices_1m": [
@@ -16907,7 +17137,7 @@
           ]
         },
         {
-          "rank": 17,
+          "rank": 19,
           "ticker": "PLTR",
           "company": "Palantir Technologies Inc.",
           "signal": "BUY",
@@ -16928,7 +17158,7 @@
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 68% of 38 analysts bullish",
             "momentum": "$137.41 | 4-wk return: -4.0% | below 50-day MA | Volume ratio: 0.7x",
             "fundamentals": "Target: $184 (+34% upside) | Revenue growth: 85% | Gross margin: 84%",
-            "social": "Rank #66 on social | 12 mentions | \u2193 falling (-9 vs yesterday)",
+            "social": "Rank #51 on social | 16 mentions | \u2193 falling (-6 vs yesterday)",
             "filing": "[2026-05-04] Massive beat, raises guidance, Rule of 40 score of 145%, accelerating growth"
           },
           "prices_1m": [
@@ -17022,7 +17252,7 @@
           ]
         },
         {
-          "rank": 18,
+          "rank": 20,
           "ticker": "OUST",
           "company": "Ouster, Inc.",
           "signal": "BUY",
@@ -17137,7 +17367,7 @@
           ]
         },
         {
-          "rank": 19,
+          "rank": 21,
           "ticker": "INOD",
           "company": "Innodata Inc.",
           "signal": "BUY",
@@ -17252,122 +17482,7 @@
           ]
         },
         {
-          "rank": 20,
-          "ticker": "FIVN",
-          "company": "Five9, Inc.",
-          "signal": "BUY",
-          "signal_emoji": "\ud83d\udfe1 BUY",
-          "composite_score": 59.5,
-          "price": 21.84,
-          "analyst_target_price": 27.81,
-          "upside_pct": 27.3,
-          "stop_loss_price": 20.09,
-          "scores": {
-            "analyst": 60.0,
-            "momentum": 85.0,
-            "fundamentals": 57.6,
-            "social": 30.0,
-            "filing": 28.0
-          },
-          "signal_details": {
-            "analyst": "75% of 28 analysts bullish",
-            "momentum": "$21.84 | 4-wk return: +32.0% | above 50-day MA | Volume ratio: 0.9x",
-            "fundamentals": "Target: $28 (+27% upside) | Revenue growth: 9% | Gross margin: 55%",
-            "social": "Not in top social mentions (neutral score)",
-            "filing": "[2026-05-20] Routine shareholder meeting; no financial guidance, earnings, or business updates provided"
-          },
-          "prices_1m": [
-            16.59,
-            15.46,
-            16.55,
-            16.56,
-            16.76,
-            17.05,
-            17.2,
-            22.24,
-            23.34,
-            24.26,
-            21.9,
-            22.2,
-            22.1,
-            21.41,
-            20.93,
-            21.12,
-            20.75,
-            21.64,
-            21.13,
-            22.52,
-            22.29,
-            21.84
-          ],
-          "prices_3m": [
-            17.74,
-            17.83,
-            17.85,
-            18.7,
-            17.44,
-            17.47,
-            17.66,
-            17.89,
-            18.24,
-            18.09,
-            18.04,
-            16.97,
-            16.78,
-            16.25,
-            15.76,
-            15.73,
-            15.98,
-            15.64,
-            15.8,
-            15.53,
-            16.07,
-            15.03,
-            14.6,
-            15.12,
-            14.43,
-            14.77,
-            15.17,
-            15.06,
-            15.01,
-            15.17,
-            14.96,
-            14.59,
-            13.82,
-            13.61,
-            14.44,
-            14.43,
-            15.36,
-            15.68,
-            15.78,
-            16.24,
-            16.49,
-            16.59,
-            15.46,
-            16.55,
-            16.56,
-            16.76,
-            17.05,
-            17.2,
-            22.24,
-            23.34,
-            24.26,
-            21.9,
-            22.2,
-            22.1,
-            21.41,
-            20.93,
-            21.12,
-            20.75,
-            21.64,
-            21.13,
-            22.52,
-            22.29,
-            21.84
-          ]
-        },
-        {
-          "rank": 21,
+          "rank": 22,
           "ticker": "DDOG",
           "company": "Datadog, Inc.",
           "signal": "BUY",
@@ -17482,7 +17597,122 @@
           ]
         },
         {
-          "rank": 22,
+          "rank": 23,
+          "ticker": "FIVN",
+          "company": "Five9, Inc.",
+          "signal": "BUY",
+          "signal_emoji": "\ud83d\udfe1 BUY",
+          "composite_score": 59.5,
+          "price": 21.84,
+          "analyst_target_price": 27.81,
+          "upside_pct": 27.3,
+          "stop_loss_price": 20.09,
+          "scores": {
+            "analyst": 60.0,
+            "momentum": 85.0,
+            "fundamentals": 57.6,
+            "social": 30.0,
+            "filing": 28.0
+          },
+          "signal_details": {
+            "analyst": "75% of 28 analysts bullish",
+            "momentum": "$21.84 | 4-wk return: +32.0% | above 50-day MA | Volume ratio: 0.9x",
+            "fundamentals": "Target: $28 (+27% upside) | Revenue growth: 9% | Gross margin: 55%",
+            "social": "Not in top social mentions (neutral score)",
+            "filing": "[2026-05-20] Routine shareholder meeting; no financial guidance, earnings, or business updates provided"
+          },
+          "prices_1m": [
+            16.59,
+            15.46,
+            16.55,
+            16.56,
+            16.76,
+            17.05,
+            17.2,
+            22.24,
+            23.34,
+            24.26,
+            21.9,
+            22.2,
+            22.1,
+            21.41,
+            20.93,
+            21.12,
+            20.75,
+            21.64,
+            21.13,
+            22.52,
+            22.29,
+            21.84
+          ],
+          "prices_3m": [
+            17.74,
+            17.83,
+            17.85,
+            18.7,
+            17.44,
+            17.47,
+            17.66,
+            17.89,
+            18.24,
+            18.09,
+            18.04,
+            16.97,
+            16.78,
+            16.25,
+            15.76,
+            15.73,
+            15.98,
+            15.64,
+            15.8,
+            15.53,
+            16.07,
+            15.03,
+            14.6,
+            15.12,
+            14.43,
+            14.77,
+            15.17,
+            15.06,
+            15.01,
+            15.17,
+            14.96,
+            14.59,
+            13.82,
+            13.61,
+            14.44,
+            14.43,
+            15.36,
+            15.68,
+            15.78,
+            16.24,
+            16.49,
+            16.59,
+            15.46,
+            16.55,
+            16.56,
+            16.76,
+            17.05,
+            17.2,
+            22.24,
+            23.34,
+            24.26,
+            21.9,
+            22.2,
+            22.1,
+            21.41,
+            20.93,
+            21.12,
+            20.75,
+            21.64,
+            21.13,
+            22.52,
+            22.29,
+            21.84
+          ]
+        },
+        {
+          "rank": 24,
           "ticker": "RKLB",
           "company": "Rocket Lab Corporation",
           "signal": "BUY",
@@ -17503,7 +17733,7 @@
             "analyst": "78% of 27 analysts bullish",
             "momentum": "$125.45 | 4-wk return: +57.4% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $101 (-20% upside) | Revenue growth: 64% | Gross margin: 37%",
-            "social": "Rank #5 on social | 138 mentions | \u2191 rising (+101 vs yesterday)",
+            "social": "Rank #5 on social | 119 mentions | \u2191 rising (+57 vs yesterday)",
             "filing": "[2026-05-21] Routine shareholder meeting voting results, no business guidance or financial information disclosed."
           },
           "prices_1m": [
@@ -17597,7 +17827,7 @@
           ]
         },
         {
-          "rank": 23,
+          "rank": 25,
           "ticker": "LITE",
           "company": "Lumentum Holdings Inc.",
           "signal": "BUY",
@@ -17712,7 +17942,7 @@
           ]
         },
         {
-          "rank": 24,
+          "rank": 26,
           "ticker": "GNRC",
           "company": "Generac Holdlings Inc.",
           "signal": "BUY",
@@ -17827,7 +18057,7 @@
           ]
         },
         {
-          "rank": 25,
+          "rank": 27,
           "ticker": "RDW",
           "company": "Redwire Corporation",
           "signal": "BUY",
@@ -17849,7 +18079,7 @@
             "momentum": "$15.35 | 4-wk return: +58.6% | above 50-day MA | Volume ratio: 1.6x",
             "fundamentals": "Target: $14 (-7% upside) | Revenue growth: 58% | Gross margin: 13%",
             "social": "Not in top social mentions (neutral score)",
-            "filing": "8-K 2026-05-20: Routine shareholder meeting filing; no earnings, guidance, or material updates disclosed"
+            "filing": "[2026-05-20] Routine shareholder meeting filing; no earnings, guidance, or material updates disclosed"
           },
           "prices_1m": [
             11.93,
@@ -17942,7 +18172,7 @@
           ]
         },
         {
-          "rank": 26,
+          "rank": 28,
           "ticker": "ASTS",
           "company": "AST SpaceMobile, Inc.",
           "signal": "BUY",
@@ -17963,7 +18193,7 @@
             "analyst": "50% of 18 analysts bullish",
             "momentum": "$96.23 | 4-wk return: +26.0% | above 50-day MA | Volume ratio: 1.1x",
             "fundamentals": "Target: $83 (-13% upside) | Revenue growth: 1952% | Gross margin: 45%",
-            "social": "Rank #13 on social | 84 mentions | \u2191 rising (+51 vs yesterday)",
+            "social": "Rank #12 on social | 85 mentions | \u2191 rising (+49 vs yesterday)",
             "filing": "[2026-05-11] FCC approval, 45 satellites 2026 target, 98.9 Mbps achievement, massive ecosystem"
           },
           "prices_1m": [
@@ -18057,7 +18287,7 @@
           ]
         },
         {
-          "rank": 27,
+          "rank": 29,
           "ticker": "OKLO",
           "company": "Oklo Inc.",
           "signal": "BUY",
@@ -18078,7 +18308,7 @@
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 75% of 28 analysts bullish",
             "momentum": "$65.09 | 4-wk return: -8.3% | above 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $91 (+40% upside) | Revenue growth: 0% | Gross margin: 0%",
-            "social": "Rank #88 on social | 9 mentions | \u2193 falling (-6 vs yesterday)",
+            "social": "Rank #90 on social | 9 mentions | \u2193 falling (-6 vs yesterday)",
             "filing": "[2026-05-13] At-the-market offering announced; capital raise, neutral strategic signal."
           },
           "prices_1m": [
@@ -18172,7 +18402,7 @@
           ]
         },
         {
-          "rank": 28,
+          "rank": 30,
           "ticker": "NVT",
           "company": "nVent Electric plc",
           "signal": "BUY",
@@ -18287,7 +18517,7 @@
           ]
         },
         {
-          "rank": 29,
+          "rank": 31,
           "ticker": "COHR",
           "company": "Coherent Corp.",
           "signal": "BUY",
@@ -18402,7 +18632,7 @@
           ]
         },
         {
-          "rank": 30,
+          "rank": 32,
           "ticker": "CRWV",
           "company": "CoreWeave, Inc.",
           "signal": "WATCH",
@@ -18423,7 +18653,7 @@
             "analyst": "0 upgrade(s), 1 downgrade(s) in last 7d | 67% of 42 analysts bullish",
             "momentum": "$107.58 | 4-wk return: -2.3% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $139 (+29% upside) | Revenue growth: 112% | Gross margin: 69%",
-            "social": "Rank #69 on social | 12 mentions | \u2191 rising (+4 vs yesterday)",
+            "social": "Rank #76 on social | 11 mentions | \u2191 rising (+1 vs yesterday)",
             "filing": "[2026-05-18] Transformational financing milestone, oversubscribed facility, major capital raise momentum"
           },
           "prices_1m": [
@@ -18517,7 +18747,7 @@
           ]
         },
         {
-          "rank": 31,
+          "rank": 33,
           "ticker": "IRM",
           "company": "Iron Mountain Incorporated (Del",
           "signal": "WATCH",
@@ -18632,7 +18862,7 @@
           ]
         },
         {
-          "rank": 32,
+          "rank": 34,
           "ticker": "UNH",
           "company": "UnitedHealth Group Incorporated",
           "signal": "WATCH",
@@ -18747,7 +18977,7 @@
           ]
         },
         {
-          "rank": 33,
+          "rank": 35,
           "ticker": "IDCC",
           "company": "InterDigital, Inc.",
           "signal": "WATCH",
@@ -18862,7 +19092,7 @@
           ]
         },
         {
-          "rank": 34,
+          "rank": 36,
           "ticker": "GLW",
           "company": "Corning Incorporated",
           "signal": "WATCH",
@@ -18977,7 +19207,7 @@
           ]
         },
         {
-          "rank": 35,
+          "rank": 37,
           "ticker": "POET",
           "company": "POET Technologies Inc.",
           "signal": "WATCH",
@@ -18998,7 +19228,7 @@
             "analyst": "86% of 7 analysts bullish",
             "momentum": "$14.82 | 4-wk return: -1.9% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $8 (-45% upside) | Revenue growth: 1075% | Gross margin: 100%",
-            "social": "Rank #63 on social | 13 mentions | \u2193 falling (-24 vs yesterday)",
+            "social": "Rank #62 on social | 13 mentions | \u2193 falling (-23 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
           "prices_1m": [
@@ -19092,7 +19322,7 @@
           ]
         },
         {
-          "rank": 36,
+          "rank": 38,
           "ticker": "NOK",
           "company": "Nokia Corporation Sponsored",
           "signal": "WATCH",
@@ -19113,7 +19343,7 @@
             "analyst": "57% of 37 analysts bullish",
             "momentum": "$14.18 | 4-wk return: +35.6% | above 50-day MA | Volume ratio: 0.7x",
             "fundamentals": "Target: $13 (-12% upside) | Revenue growth: 2% | Gross margin: 45%",
-            "social": "Rank #46 on social | 18 mentions | \u2193 falling (-4 vs yesterday)",
+            "social": "Rank #43 on social | 19 mentions | \u2193 falling (-3 vs yesterday)",
             "filing": "EDGAR not applicable (NOK files outside SEC) \u2014 neutral"
           },
           "prices_1m": [
@@ -19207,7 +19437,7 @@
           ]
         },
         {
-          "rank": 37,
+          "rank": 39,
           "ticker": "BKNG",
           "company": "Booking Holdings Inc. Common St",
           "signal": "WATCH",
@@ -19322,7 +19552,7 @@
           ]
         },
         {
-          "rank": 38,
+          "rank": 40,
           "ticker": "REKR",
           "company": "Rekor Systems, Inc.",
           "signal": "WATCH",
@@ -19437,7 +19667,7 @@
           ]
         },
         {
-          "rank": 39,
+          "rank": 41,
           "ticker": "FTNT",
           "company": "Fortinet, Inc.",
           "signal": "WATCH",
@@ -19552,7 +19782,7 @@
           ]
         },
         {
-          "rank": 40,
+          "rank": 42,
           "ticker": "HOOD",
           "company": "Robinhood Markets, Inc.",
           "signal": "WATCH",
@@ -19573,7 +19803,7 @@
             "analyst": "82% of 34 analysts bullish",
             "momentum": "$75.92 | 4-wk return: -10.4% | below 50-day MA | Volume ratio: 0.7x",
             "fundamentals": "Target: $98 (+30% upside) | Revenue growth: 15% | Gross margin: 92%",
-            "social": "Rank #37 on social | 22 mentions | \u2191 rising (+2 vs yesterday)",
+            "social": "Rank #41 on social | 20 mentions | \u2191 rising (+1 vs yesterday)",
             "filing": "[2026-05-08] CTO departure without cause; no guidance provided; negative signal"
           },
           "prices_1m": [
@@ -19667,7 +19897,7 @@
           ]
         },
         {
-          "rank": 41,
+          "rank": 43,
           "ticker": "IPGP",
           "company": "IPG Photonics Corporation",
           "signal": "WATCH",
@@ -19782,7 +20012,7 @@
           ]
         },
         {
-          "rank": 42,
+          "rank": 44,
           "ticker": "NVTS",
           "company": "Navitas Semiconductor Corporati",
           "signal": "WATCH",
@@ -19897,7 +20127,7 @@
           ]
         },
         {
-          "rank": 43,
+          "rank": 45,
           "ticker": "SOFI",
           "company": "SoFi Technologies, Inc.",
           "signal": "AVOID",
@@ -19918,7 +20148,7 @@
             "analyst": "45% of 31 analysts bullish",
             "momentum": "$15.65 | 4-wk return: -15.1% | below 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $21 (+35% upside) | Revenue growth: 42% | Gross margin: 84%",
-            "social": "Rank #98 on social | 8 mentions | \u2193 falling (-2 vs yesterday)",
+            "social": "Rank #86 on social | 9 mentions | \u2193 falling (-4 vs yesterday)",
             "filing": "[2026-04-29] 8-K filing only; actual press release content not provided for analysis"
           },
           "prices_1m": [
@@ -20012,7 +20242,7 @@
           ]
         },
         {
-          "rank": 44,
+          "rank": 46,
           "ticker": "PATH",
           "company": "UiPath, Inc.",
           "signal": "AVOID",
@@ -20127,7 +20357,7 @@
           ]
         },
         {
-          "rank": 45,
+          "rank": 47,
           "ticker": "SOXX",
           "company": "iShares PHLX SOX Semiconductor ",
           "signal": "AVOID",
@@ -20242,7 +20472,7 @@
           ]
         },
         {
-          "rank": 46,
+          "rank": 48,
           "ticker": "FLNC",
           "company": "Fluence Energy, Inc.",
           "signal": "AVOID",
@@ -20357,7 +20587,7 @@
           ]
         },
         {
-          "rank": 47,
+          "rank": 49,
           "ticker": "SOXQ",
           "company": "Invesco PHLX Semiconductor ETF",
           "signal": "AVOID",
@@ -20472,7 +20702,7 @@
           ]
         },
         {
-          "rank": 48,
+          "rank": 50,
           "ticker": "ARKK",
           "company": "ARK Innovation ETF",
           "signal": "AVOID",
@@ -20587,7 +20817,7 @@
           ]
         },
         {
-          "rank": 49,
+          "rank": 51,
           "ticker": "AIPO",
           "company": "Defiance AI & Power Infrastruct",
           "signal": "AVOID",
@@ -20702,7 +20932,7 @@
           ]
         },
         {
-          "rank": 50,
+          "rank": 52,
           "ticker": "REA",
           "company": "Rare Earths Americas, Inc.",
           "signal": "AVOID",
@@ -20762,5 +20992,5 @@
   ],
   "total_runs": 4,
   "first_run": "2026-05-18T22:00:20",
-  "last_run": "2026-05-21T21:38:13"
+  "last_run": "2026-05-21T22:33:33"
 }
