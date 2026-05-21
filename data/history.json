@@ -15046,12 +15046,12 @@
       ]
     },
     {
-      "run_id": "2026-05-21T19:55:51",
+      "run_id": "2026-05-21T21:26:08",
       "run_date": "2026-05-21",
-      "run_time": "19:55:51",
-      "run_label": "5am Early Signal",
-      "run_timestamp_local": "2026-05-21T19:55:51",
-      "run_timestamp_utc": "2026-05-21T19:55:51Z",
+      "run_time": "21:26:08",
+      "run_label": "7am Final Signal",
+      "run_timestamp_local": "2026-05-21T21:26:08",
+      "run_timestamp_utc": "2026-05-21T21:26:08Z",
       "timezone": "Australia/Sydney (AEST/AEDT \u2014 DST-aware)",
       "total_stocks": 49,
       "score_weights": {
@@ -15073,20 +15073,20 @@
           "signal": "STRONG BUY",
           "signal_emoji": "\ud83d\udfe2 STRONG BUY",
           "composite_score": 82.6,
-          "price": 165.44,
+          "price": 165.54,
           "analyst_target_price": 229.66,
-          "upside_pct": 38.8,
-          "stop_loss_price": 152.2,
+          "upside_pct": 38.7,
+          "stop_loss_price": 152.3,
           "scores": {
             "analyst": 100.0,
-            "momentum": 88.8,
-            "fundamentals": 89.7,
+            "momentum": 88.9,
+            "fundamentals": 89.6,
             "social": 30.0,
             "filing": 50.0
           },
           "signal_details": {
             "analyst": "2 upgrade(s), 0 downgrade(s) in last 7d | 86% of 58 analysts bullish",
-            "momentum": "$165.44 | 4-wk return: +17.9% | above 50-day MA | Volume ratio: 1.1x",
+            "momentum": "$165.54 | 4-wk return: +18.0% | above 50-day MA | Volume ratio: 1.1x",
             "fundamentals": "Target: $230 (+39% upside) | Revenue growth: 30% | Gross margin: 67%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
@@ -15113,7 +15113,7 @@
             164.24,
             169.55,
             166.97,
-            165.44
+            165.54
           ],
           "prices_3m": [
             157.6,
@@ -15178,7 +15178,7 @@
             164.24,
             169.55,
             166.97,
-            165.44
+            165.54
           ]
         },
         {
@@ -15187,24 +15187,24 @@
           "company": "Rigetti Computing, Inc.",
           "signal": "STRONG BUY",
           "signal_emoji": "\ud83d\udfe2 STRONG BUY",
-          "composite_score": 75.7,
-          "price": 21.81,
+          "composite_score": 76.0,
+          "price": 22.04,
           "analyst_target_price": 29.24,
-          "upside_pct": 34.1,
-          "stop_loss_price": 20.07,
+          "upside_pct": 32.7,
+          "stop_loss_price": 20.28,
           "scores": {
             "analyst": 60.0,
             "momentum": 100.0,
-            "fundamentals": 82.1,
-            "social": 37.0,
+            "fundamentals": 80.0,
+            "social": 45.0,
             "filing": 85.0
           },
           "signal_details": {
             "analyst": "78% of 18 analysts bullish",
-            "momentum": "$21.81 | 4-wk return: +31.3% | above 50-day MA | Volume ratio: 1.4x",
-            "fundamentals": "Target: $29 (+34% upside) | Revenue growth: 199% | Gross margin: 30%",
-            "social": "Rank #39 on social | 20 mentions | \u2191 rising (+19 vs yesterday)",
-            "filing": "8-K 2026-05-21: Major government contract, $100M funding, transformational partnership for quantum computing"
+            "momentum": "$22.04 | 4-wk return: +32.7% | above 50-day MA | Volume ratio: 1.5x",
+            "fundamentals": "Target: $29 (+33% upside) | Revenue growth: 199% | Gross margin: 30%",
+            "social": "Rank #34 on social | 23 mentions | \u2191 rising (+22 vs yesterday)",
+            "filing": "[2026-05-21] Major government contract, $100M funding, transformational partnership for quantum computing"
           },
           "prices_1m": [
             18.38,
@@ -15228,7 +15228,7 @@
             16.62,
             15.96,
             16.88,
-            21.82
+            22.04
           ],
           "prices_3m": [
             16.02,
@@ -15293,147 +15293,32 @@
             16.62,
             15.96,
             16.88,
-            21.82
+            22.04
           ]
         },
         {
           "rank": 3,
-          "ticker": "NVDA",
-          "company": "NVIDIA Corporation",
-          "signal": "STRONG BUY",
-          "signal_emoji": "\ud83d\udfe2 STRONG BUY",
-          "composite_score": 75.5,
-          "price": 219.27,
-          "analyst_target_price": 278.03,
-          "upside_pct": 26.8,
-          "stop_loss_price": 201.73,
-          "scores": {
-            "analyst": 100.0,
-            "momentum": 50.6,
-            "fundamentals": 79.4,
-            "social": 90.0,
-            "filing": 40.0
-          },
-          "signal_details": {
-            "analyst": "24 upgrade(s), 0 downgrade(s) in last 7d | 93% of 71 analysts bullish",
-            "momentum": "$219.27 | 4-wk return: +5.3% | above 50-day MA | Volume ratio: 1.0x",
-            "fundamentals": "Target: $278 (+27% upside) | Revenue growth: 73% | Gross margin: 71%",
-            "social": "Rank #1 on social | 1448 mentions | \u2191 rising (+321 vs yesterday)",
-            "filing": "[2026-05-20] 8-K filing structure only; actual financial results not disclosed in excerpt"
-          },
-          "prices_1m": [
-            202.5,
-            199.64,
-            208.27,
-            216.61,
-            213.17,
-            209.25,
-            199.57,
-            198.45,
-            198.48,
-            196.5,
-            207.83,
-            211.5,
-            215.2,
-            219.44,
-            220.78,
-            225.83,
-            235.74,
-            225.32,
-            222.32,
-            220.61,
-            223.47,
-            219.27
-          ],
-          "prices_3m": [
-            191.54,
-            192.84,
-            195.55,
-            184.88,
-            177.18,
-            182.47,
-            180.04,
-            183.03,
-            183.33,
-            177.81,
-            182.64,
-            184.76,
-            186.03,
-            183.14,
-            180.25,
-            183.22,
-            181.93,
-            180.4,
-            178.56,
-            172.7,
-            175.64,
-            175.2,
-            178.68,
-            171.24,
-            167.52,
-            165.17,
-            174.4,
-            175.75,
-            177.39,
-            177.64,
-            178.1,
-            182.08,
-            183.91,
-            188.63,
-            189.31,
-            196.51,
-            198.87,
-            198.35,
-            201.68,
-            202.06,
-            199.88,
-            202.5,
-            199.64,
-            208.27,
-            216.61,
-            213.17,
-            209.25,
-            199.57,
-            198.45,
-            198.48,
-            196.5,
-            207.83,
-            211.5,
-            215.2,
-            219.44,
-            220.78,
-            225.83,
-            235.74,
-            225.32,
-            222.32,
-            220.61,
-            223.47,
-            219.27
-          ]
-        },
-        {
-          "rank": 4,
           "ticker": "LUNR",
           "company": "Intuitive Machines, Inc.",
           "signal": "STRONG BUY",
           "signal_emoji": "\ud83d\udfe2 STRONG BUY",
-          "composite_score": 73.9,
-          "price": 34.02,
+          "composite_score": 75.6,
+          "price": 34.24,
           "analyst_target_price": 38.0,
-          "upside_pct": 11.7,
-          "stop_loss_price": 31.3,
+          "upside_pct": 11.0,
+          "stop_loss_price": 31.5,
           "scores": {
             "analyst": 100.0,
-            "momentum": 85.0,
-            "fundamentals": 44.5,
+            "momentum": 93.0,
+            "fundamentals": 43.4,
             "social": 37.0,
             "filing": 78.0
           },
           "signal_details": {
             "analyst": "4 upgrade(s), 0 downgrade(s) in last 7d | 81% of 16 analysts bullish",
-            "momentum": "$34.06 | 4-wk return: +33.4% | above 50-day MA | Volume ratio: 1.1x",
-            "fundamentals": "Target: $38 (+12% upside) | Revenue growth: 199% | Gross margin: 10%",
-            "social": "Rank #46 on social | 17 mentions | \u2191 rising (+9 vs yesterday)",
+            "momentum": "$34.24 | 4-wk return: +34.1% | above 50-day MA | Volume ratio: 1.1x",
+            "fundamentals": "Target: $38 (+11% upside) | Revenue growth: 199% | Gross margin: 10%",
+            "social": "Rank #48 on social | 17 mentions | \u2191 rising (+9 vs yesterday)",
             "filing": "[2026-05-14] Major strategic acquisition expanding capacity, infrastructure, and market reach significantly"
           },
           "prices_1m": [
@@ -15458,7 +15343,7 @@
             33.59,
             32.46,
             33.67,
-            34.06
+            34.24
           ],
           "prices_3m": [
             18.14,
@@ -15523,147 +15408,32 @@
             33.59,
             32.46,
             33.67,
-            34.06
+            34.24
           ]
         },
         {
-          "rank": 5,
-          "ticker": "QBTS",
-          "company": "D-Wave Quantum Inc.",
-          "signal": "STRONG BUY",
-          "signal_emoji": "\ud83d\udfe2 STRONG BUY",
-          "composite_score": 73.2,
-          "price": 25.25,
-          "analyst_target_price": 35.17,
-          "upside_pct": 39.3,
-          "stop_loss_price": 23.23,
-          "scores": {
-            "analyst": 60.0,
-            "momentum": 100.0,
-            "fundamentals": 72.2,
-            "social": 37.0,
-            "filing": 85.0
-          },
-          "signal_details": {
-            "analyst": "86% of 22 analysts bullish",
-            "momentum": "$25.24 | 4-wk return: +36.5% | above 50-day MA | Volume ratio: 1.3x",
-            "fundamentals": "Target: $35 (+39% upside) | Revenue growth: -81% | Gross margin: 66%",
-            "social": "Rank #59 on social | 14 mentions | \u2191 rising (+13 vs yesterday)",
-            "filing": "8-K 2026-05-21: Transformational $100M government funding, equity stake, dual-platform advancement"
-          },
-          "prices_1m": [
-            21.24,
-            19.31,
-            18.49,
-            18.8,
-            18.11,
-            18.27,
-            20.28,
-            20.49,
-            20.92,
-            21.54,
-            23.83,
-            21.99,
-            22.57,
-            24.03,
-            22.35,
-            21.44,
-            22.13,
-            20.35,
-            19.06,
-            18.19,
-            19.3,
-            25.25
-          ],
-          "prices_3m": [
-            18.05,
-            18.66,
-            19.65,
-            20.14,
-            18.78,
-            18.94,
-            18.24,
-            18.91,
-            18.83,
-            18.59,
-            19.04,
-            18.76,
-            18.91,
-            17.83,
-            17.55,
-            17.46,
-            17.47,
-            16.49,
-            16.1,
-            15.73,
-            16.31,
-            15.93,
-            16.19,
-            14.65,
-            13.9,
-            12.98,
-            14.43,
-            13.7,
-            14.32,
-            14.14,
-            13.74,
-            14.57,
-            13.87,
-            14.25,
-            14.65,
-            16.97,
-            20.81,
-            21.52,
-            21.69,
-            21.66,
-            20.36,
-            21.24,
-            19.31,
-            18.49,
-            18.8,
-            18.11,
-            18.27,
-            20.28,
-            20.49,
-            20.92,
-            21.54,
-            23.83,
-            21.99,
-            22.57,
-            24.03,
-            22.35,
-            21.44,
-            22.13,
-            20.35,
-            19.06,
-            18.19,
-            19.3,
-            25.25
-          ]
-        },
-        {
-          "rank": 6,
+          "rank": 4,
           "ticker": "MU",
           "company": "Micron Technology, Inc.",
           "signal": "STRONG BUY",
           "signal_emoji": "\ud83d\udfe2 STRONG BUY",
-          "composite_score": 72.4,
-          "price": 759.72,
+          "composite_score": 74.4,
+          "price": 762.1,
           "analyst_target_price": 613.23,
-          "upside_pct": -19.3,
-          "stop_loss_price": 698.94,
+          "upside_pct": -19.5,
+          "stop_loss_price": 701.13,
           "scores": {
             "analyst": 100.0,
             "momentum": 85.0,
             "fundamentals": 36.7,
-            "social": 70.0,
+            "social": 90.0,
             "filing": 50.0
           },
           "signal_details": {
             "analyst": "3 upgrade(s), 0 downgrade(s) in last 7d | 92% of 53 analysts bullish",
-            "momentum": "$759.82 | 4-wk return: +53.0% | above 50-day MA | Volume ratio: 1.0x",
-            "fundamentals": "Target: $613 (-19% upside) | Revenue growth: 196% | Gross margin: 58%",
-            "social": "Rank #2 on social | 492 mentions | \u2193 falling (-41 vs yesterday)",
+            "momentum": "$762.10 | 4-wk return: +53.4% | above 50-day MA | Volume ratio: 1.0x",
+            "fundamentals": "Target: $613 (-20% upside) | Revenue growth: 196% | Gross margin: 58%",
+            "social": "Rank #2 on social | 526 mentions | \u2191 rising (+28 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
           "prices_1m": [
@@ -15688,7 +15458,7 @@
             681.54,
             698.74,
             731.99,
-            759.8
+            762.1
           ],
           "prices_3m": [
             420.79,
@@ -15753,7 +15523,237 @@
             681.54,
             698.74,
             731.99,
-            759.8
+            762.1
+          ]
+        },
+        {
+          "rank": 5,
+          "ticker": "NVDA",
+          "company": "NVIDIA Corporation",
+          "signal": "STRONG BUY",
+          "signal_emoji": "\ud83d\udfe2 STRONG BUY",
+          "composite_score": 73.5,
+          "price": 219.51,
+          "analyst_target_price": 278.03,
+          "upside_pct": 26.7,
+          "stop_loss_price": 201.95,
+          "scores": {
+            "analyst": 100.0,
+            "momentum": 50.8,
+            "fundamentals": 79.2,
+            "social": 70.0,
+            "filing": 40.0
+          },
+          "signal_details": {
+            "analyst": "23 upgrade(s), 0 downgrade(s) in last 7d | 93% of 71 analysts bullish",
+            "momentum": "$219.51 | 4-wk return: +5.4% | above 50-day MA | Volume ratio: 1.0x",
+            "fundamentals": "Target: $278 (+27% upside) | Revenue growth: 73% | Gross margin: 71%",
+            "social": "Rank #1 on social | 1005 mentions | \u2193 falling (-425 vs yesterday)",
+            "filing": "[2026-05-20] 8-K filing structure only; actual financial results not disclosed in excerpt"
+          },
+          "prices_1m": [
+            202.5,
+            199.64,
+            208.27,
+            216.61,
+            213.17,
+            209.25,
+            199.57,
+            198.45,
+            198.48,
+            196.5,
+            207.83,
+            211.5,
+            215.2,
+            219.44,
+            220.78,
+            225.83,
+            235.74,
+            225.32,
+            222.32,
+            220.61,
+            223.47,
+            219.51
+          ],
+          "prices_3m": [
+            191.54,
+            192.84,
+            195.55,
+            184.88,
+            177.18,
+            182.47,
+            180.04,
+            183.03,
+            183.33,
+            177.81,
+            182.64,
+            184.76,
+            186.03,
+            183.14,
+            180.25,
+            183.22,
+            181.93,
+            180.4,
+            178.56,
+            172.7,
+            175.64,
+            175.2,
+            178.68,
+            171.24,
+            167.52,
+            165.17,
+            174.4,
+            175.75,
+            177.39,
+            177.64,
+            178.1,
+            182.08,
+            183.91,
+            188.63,
+            189.31,
+            196.51,
+            198.87,
+            198.35,
+            201.68,
+            202.06,
+            199.88,
+            202.5,
+            199.64,
+            208.27,
+            216.61,
+            213.17,
+            209.25,
+            199.57,
+            198.45,
+            198.48,
+            196.5,
+            207.83,
+            211.5,
+            215.2,
+            219.44,
+            220.78,
+            225.83,
+            235.74,
+            225.32,
+            222.32,
+            220.61,
+            223.47,
+            219.51
+          ]
+        },
+        {
+          "rank": 6,
+          "ticker": "QBTS",
+          "company": "D-Wave Quantum Inc.",
+          "signal": "STRONG BUY",
+          "signal_emoji": "\ud83d\udfe2 STRONG BUY",
+          "composite_score": 72.3,
+          "price": 25.74,
+          "analyst_target_price": 35.17,
+          "upside_pct": 36.6,
+          "stop_loss_price": 23.68,
+          "scores": {
+            "analyst": 60.0,
+            "momentum": 100.0,
+            "fundamentals": 68.2,
+            "social": 37.0,
+            "filing": 85.0
+          },
+          "signal_details": {
+            "analyst": "86% of 22 analysts bullish",
+            "momentum": "$25.74 | 4-wk return: +39.2% | above 50-day MA | Volume ratio: 1.4x",
+            "fundamentals": "Target: $35 (+37% upside) | Revenue growth: -81% | Gross margin: 66%",
+            "social": "Rank #46 on social | 18 mentions | \u2191 rising (+17 vs yesterday)",
+            "filing": "[2026-05-21] Transformational $100M government funding, equity stake, dual-platform advancement"
+          },
+          "prices_1m": [
+            21.24,
+            19.31,
+            18.49,
+            18.8,
+            18.11,
+            18.27,
+            20.28,
+            20.49,
+            20.92,
+            21.54,
+            23.83,
+            21.99,
+            22.57,
+            24.03,
+            22.35,
+            21.44,
+            22.13,
+            20.35,
+            19.06,
+            18.19,
+            19.3,
+            25.74
+          ],
+          "prices_3m": [
+            18.05,
+            18.66,
+            19.65,
+            20.14,
+            18.78,
+            18.94,
+            18.24,
+            18.91,
+            18.83,
+            18.59,
+            19.04,
+            18.76,
+            18.91,
+            17.83,
+            17.55,
+            17.46,
+            17.47,
+            16.49,
+            16.1,
+            15.73,
+            16.31,
+            15.93,
+            16.19,
+            14.65,
+            13.9,
+            12.98,
+            14.43,
+            13.7,
+            14.32,
+            14.14,
+            13.74,
+            14.57,
+            13.87,
+            14.25,
+            14.65,
+            16.97,
+            20.81,
+            21.52,
+            21.69,
+            21.66,
+            20.36,
+            21.24,
+            19.31,
+            18.49,
+            18.8,
+            18.11,
+            18.27,
+            20.28,
+            20.49,
+            20.92,
+            21.54,
+            23.83,
+            21.99,
+            22.57,
+            24.03,
+            22.35,
+            21.44,
+            22.13,
+            20.35,
+            19.06,
+            18.19,
+            19.3,
+            25.74
           ]
         },
         {
@@ -15763,22 +15763,22 @@
           "signal": "STRONG BUY",
           "signal_emoji": "\ud83d\udfe2 STRONG BUY",
           "composite_score": 71.2,
-          "price": 219.74,
+          "price": 219.93,
           "analyst_target_price": 230.77,
-          "upside_pct": 5.0,
-          "stop_loss_price": 202.16,
+          "upside_pct": 4.9,
+          "stop_loss_price": 202.34,
           "scores": {
             "analyst": 90.0,
             "momentum": 80.0,
-            "fundamentals": 46.9,
+            "fundamentals": 46.8,
             "social": 75.0,
             "filing": 50.0
           },
           "signal_details": {
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 77% of 22 analysts bullish",
-            "momentum": "$219.91 | 4-wk return: +49.4% | above 50-day MA | Volume ratio: 1.0x",
+            "momentum": "$219.93 | 4-wk return: +49.4% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $231 (+5% upside) | Revenue growth: 622% | Gross margin: 72%",
-            "social": "Rank #8 on social | 101 mentions | \u2191 rising (+64 vs yesterday)",
+            "social": "Rank #9 on social | 104 mentions | \u2191 rising (+64 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
           "prices_1m": [
@@ -15803,7 +15803,7 @@
             199.86,
             197.73,
             191.82,
-            219.91
+            219.93
           ],
           "prices_3m": [
             100.61,
@@ -15868,7 +15868,7 @@
             199.86,
             197.73,
             191.82,
-            219.91
+            219.93
           ]
         },
         {
@@ -15878,10 +15878,10 @@
           "signal": "STRONG BUY",
           "signal_emoji": "\ud83d\udfe2 STRONG BUY",
           "composite_score": 70.2,
-          "price": 646.09,
+          "price": 648.23,
           "analyst_target_price": 527.63,
-          "upside_pct": -18.3,
-          "stop_loss_price": 594.4,
+          "upside_pct": -18.6,
+          "stop_loss_price": 596.37,
           "scores": {
             "analyst": 100.0,
             "momentum": 100.0,
@@ -15891,8 +15891,8 @@
           },
           "signal_details": {
             "analyst": "8 upgrade(s), 0 downgrade(s) in last 7d | 79% of 62 analysts bullish",
-            "momentum": "$646.09 | 4-wk return: +44.2% | above 50-day MA | Volume ratio: 1.3x",
-            "fundamentals": "Target: $528 (-18% upside) | Revenue growth: 23% | Gross margin: 75%",
+            "momentum": "$648.23 | 4-wk return: +44.7% | above 50-day MA | Volume ratio: 1.3x",
+            "fundamentals": "Target: $528 (-19% upside) | Revenue growth: 23% | Gross margin: 75%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
@@ -15918,7 +15918,7 @@
             618.83,
             616.88,
             650.11,
-            646.09
+            648.23
           ],
           "prices_3m": [
             350.33,
@@ -15983,7 +15983,7 @@
             618.83,
             616.88,
             650.11,
-            646.09
+            648.23
           ]
         },
         {
@@ -15993,10 +15993,10 @@
           "signal": "STRONG BUY",
           "signal_emoji": "\ud83d\udfe2 STRONG BUY",
           "composite_score": 70.0,
-          "price": 11.29,
+          "price": 11.41,
           "analyst_target_price": 17.83,
-          "upside_pct": 58.0,
-          "stop_loss_price": 10.38,
+          "upside_pct": 56.3,
+          "stop_loss_price": 10.5,
           "scores": {
             "analyst": 60.0,
             "momentum": 85.0,
@@ -16006,8 +16006,8 @@
           },
           "signal_details": {
             "analyst": "73% of 11 analysts bullish",
-            "momentum": "$11.28 | 4-wk return: +26.2% | above 50-day MA | Volume ratio: 0.9x",
-            "fundamentals": "Target: $18 (+58% upside) | Revenue growth: 9364% | Gross margin: -15%",
+            "momentum": "$11.41 | 4-wk return: +27.6% | above 50-day MA | Volume ratio: 1.0x",
+            "fundamentals": "Target: $18 (+56% upside) | Revenue growth: 9364% | Gross margin: -15%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-18] Market growth projections, leadership positioning, multi-platform advantages shown"
           },
@@ -16033,7 +16033,7 @@
             9.72,
             9.22,
             9.56,
-            11.28
+            11.41
           ],
           "prices_3m": [
             7.88,
@@ -16098,7 +16098,7 @@
             9.72,
             9.22,
             9.56,
-            11.28
+            11.41
           ]
         },
         {
@@ -16107,23 +16107,23 @@
           "company": "Advanced Micro Devices, Inc.",
           "signal": "STRONG BUY",
           "signal_emoji": "\ud83d\udfe2 STRONG BUY",
-          "composite_score": 69.6,
-          "price": 450.93,
+          "composite_score": 69.8,
+          "price": 449.59,
           "analyst_target_price": 472.17,
-          "upside_pct": 4.7,
-          "stop_loss_price": 414.86,
+          "upside_pct": 5.0,
+          "stop_loss_price": 413.62,
           "scores": {
             "analyst": 100.0,
             "momentum": 85.0,
-            "fundamentals": 40.4,
+            "fundamentals": 40.8,
             "social": 55.0,
             "filing": 28.0
           },
           "signal_details": {
             "analyst": "2 upgrade(s), 0 downgrade(s) in last 7d | 76% of 59 analysts bullish",
-            "momentum": "$450.93 | 4-wk return: +29.6% | above 50-day MA | Volume ratio: 0.7x",
+            "momentum": "$449.59 | 4-wk return: +29.3% | above 50-day MA | Volume ratio: 0.7x",
             "fundamentals": "Target: $472 (+5% upside) | Revenue growth: 38% | Gross margin: 53%",
-            "social": "Rank #10 on social | 97 mentions | \u2193 falling (-15 vs yesterday)",
+            "social": "Rank #10 on social | 94 mentions | \u2193 falling (-38 vs yesterday)",
             "filing": "[2026-05-15] Credit facility refinance, no earnings/guidance data, neutral financing event"
           },
           "prices_1m": [
@@ -16148,7 +16148,7 @@
             420.99,
             414.05,
             447.58,
-            451.03
+            449.59
           ],
           "prices_3m": [
             196.6,
@@ -16213,7 +16213,7 @@
             420.99,
             414.05,
             447.58,
-            451.03
+            449.59
           ]
         },
         {
@@ -16223,10 +16223,10 @@
           "signal": "STRONG BUY",
           "signal_emoji": "\ud83d\udfe2 STRONG BUY",
           "composite_score": 66.3,
-          "price": 1537.97,
+          "price": 1542.24,
           "analyst_target_price": 1493.36,
-          "upside_pct": -2.9,
-          "stop_loss_price": 1414.94,
+          "upside_pct": -3.2,
+          "stop_loss_price": 1418.86,
           "scores": {
             "analyst": 90.0,
             "momentum": 85.0,
@@ -16236,9 +16236,9 @@
           },
           "signal_details": {
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 81% of 27 analysts bullish",
-            "momentum": "$1537.97 | 4-wk return: +55.4% | above 50-day MA | Volume ratio: 0.8x",
+            "momentum": "$1542.24 | 4-wk return: +55.8% | above 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $1493 (-3% upside) | Revenue growth: 251% | Gross margin: 56%",
-            "social": "Rank #11 on social | 97 mentions | \u2191 rising (+54 vs yesterday)",
+            "social": "Rank #7 on social | 112 mentions | \u2191 rising (+77 vs yesterday)",
             "filing": "[2026-05-15] Mini-tender offer warning; defensive posture, no business guidance"
           },
           "prices_1m": [
@@ -16263,7 +16263,7 @@
             1333.01,
             1383.29,
             1392.56,
-            1537.97
+            1542.24
           ],
           "prices_3m": [
             666.49,
@@ -16328,7 +16328,7 @@
             1333.01,
             1383.29,
             1392.56,
-            1537.97
+            1542.24
           ]
         },
         {
@@ -16337,23 +16337,23 @@
           "company": "SoundHound AI, Inc.",
           "signal": "BUY",
           "signal_emoji": "\ud83d\udfe1 BUY",
-          "composite_score": 63.4,
-          "price": 8.29,
+          "composite_score": 63.6,
+          "price": 8.32,
           "analyst_target_price": 14.25,
-          "upside_pct": 71.9,
-          "stop_loss_price": 7.63,
+          "upside_pct": 71.3,
+          "stop_loss_price": 7.65,
           "scores": {
             "analyst": 60.0,
-            "momentum": 42.6,
+            "momentum": 43.2,
             "fundamentals": 93.1,
             "social": 37.0,
             "filing": 78.0
           },
           "signal_details": {
             "analyst": "80% of 15 analysts bullish",
-            "momentum": "$8.30 | 4-wk return: +1.3% | above 50-day MA | Volume ratio: 0.6x",
-            "fundamentals": "Target: $14 (+72% upside) | Revenue growth: 52% | Gross margin: 41%",
-            "social": "Rank #45 on social | 17 mentions | \u2191 rising (+16 vs yesterday)",
+            "momentum": "$8.32 | 4-wk return: +1.6% | above 50-day MA | Volume ratio: 0.7x",
+            "fundamentals": "Target: $14 (+71% upside) | Revenue growth: 52% | Gross margin: 41%",
+            "social": "Rank #47 on social | 17 mentions | \u2191 rising (+16 vs yesterday)",
             "filing": "[2026-05-07] Record revenue +52%, transformational OASYS launch, major LivePerson acquisition"
           },
           "prices_1m": [
@@ -16378,7 +16378,7 @@
             8.35,
             8.45,
             8.45,
-            8.3
+            8.32
           ],
           "prices_3m": [
             7.83,
@@ -16443,7 +16443,7 @@
             8.35,
             8.45,
             8.45,
-            8.3
+            8.32
           ]
         },
         {
@@ -16452,23 +16452,23 @@
           "company": "Marvell Technology, Inc.",
           "signal": "BUY",
           "signal_emoji": "\ud83d\udfe1 BUY",
-          "composite_score": 62.4,
-          "price": 190.0,
+          "composite_score": 63.1,
+          "price": 190.69,
           "analyst_target_price": 148.18,
-          "upside_pct": -22.0,
-          "stop_loss_price": 174.8,
+          "upside_pct": -22.3,
+          "stop_loss_price": 175.43,
           "scores": {
             "analyst": 100.0,
-            "momentum": 76.3,
+            "momentum": 77.1,
             "fundamentals": 23.5,
-            "social": 25.0,
+            "social": 30.0,
             "filing": 50.0
           },
           "signal_details": {
             "analyst": "5 upgrade(s), 0 downgrade(s) in last 7d | 84% of 50 analysts bullish",
-            "momentum": "$190.00 | 4-wk return: +15.6% | above 50-day MA | Volume ratio: 1.0x",
+            "momentum": "$190.69 | 4-wk return: +16.1% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $148 (-22% upside) | Revenue growth: 22% | Gross margin: 51%",
-            "social": "Rank #85 on social | 9 mentions | \u2193 falling (-6 vs yesterday)",
+            "social": "Not in top social mentions (neutral score)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
           "prices_1m": [
@@ -16493,7 +16493,7 @@
             168.93,
             176.27,
             186.8,
-            189.92
+            190.69
           ],
           "prices_3m": [
             77.75,
@@ -16558,7 +16558,7 @@
             168.93,
             176.27,
             186.8,
-            189.92
+            190.69
           ]
         },
         {
@@ -16568,10 +16568,10 @@
           "signal": "BUY",
           "signal_emoji": "\ud83d\udfe1 BUY",
           "composite_score": 62.2,
-          "price": 131.57,
+          "price": 132.33,
           "analyst_target_price": 126.45,
-          "upside_pct": -3.9,
-          "stop_loss_price": 121.05,
+          "upside_pct": -4.4,
+          "stop_loss_price": 121.74,
           "scores": {
             "analyst": 90.0,
             "momentum": 85.0,
@@ -16581,7 +16581,7 @@
           },
           "signal_details": {
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 75% of 20 analysts bullish",
-            "momentum": "$131.57 | 4-wk return: +40.2% | above 50-day MA | Volume ratio: 0.9x",
+            "momentum": "$132.33 | 4-wk return: +41.0% | above 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $126 (-4% upside) | Revenue growth: 10% | Gross margin: 44%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-07] Beat guidance, 31% IoT growth, 40%+ full-year growth expected"
@@ -16608,7 +16608,7 @@
             119.16,
             123.64,
             129.82,
-            131.57
+            132.33
           ],
           "prices_3m": [
             81.4,
@@ -16673,7 +16673,7 @@
             119.16,
             123.64,
             129.82,
-            131.57
+            132.33
           ]
         },
         {
@@ -16683,22 +16683,22 @@
           "signal": "BUY",
           "signal_emoji": "\ud83d\udfe1 BUY",
           "composite_score": 61.8,
-          "price": 57.66,
+          "price": 58.06,
           "analyst_target_price": 75.0,
-          "upside_pct": 30.1,
-          "stop_loss_price": 53.05,
+          "upside_pct": 29.2,
+          "stop_loss_price": 53.42,
           "scores": {
             "analyst": 60.0,
-            "momentum": 72.8,
-            "fundamentals": 58.8,
+            "momentum": 74.3,
+            "fundamentals": 57.4,
             "social": 37.0,
             "filing": 72.0
           },
           "signal_details": {
             "analyst": "74% of 23 analysts bullish",
-            "momentum": "$57.69 | 4-wk return: +13.9% | above 50-day MA | Volume ratio: 0.8x",
-            "fundamentals": "Target: $75 (+30% upside) | Revenue growth: 0% | Gross margin: 68%",
-            "social": "Rank #36 on social | 22 mentions | \u2191 rising (+10 vs yesterday)",
+            "momentum": "$58.06 | 4-wk return: +14.7% | above 50-day MA | Volume ratio: 0.8x",
+            "fundamentals": "Target: $75 (+29% upside) | Revenue growth: 0% | Gross margin: 68%",
+            "social": "Rank #38 on social | 22 mentions | \u2191 rising (+9 vs yesterday)",
             "filing": "[2026-05-14] Large capital raise demonstrates confidence; neutral on guidance specifics"
           },
           "prices_1m": [
@@ -16723,7 +16723,7 @@
             50.46,
             47.74,
             52.71,
-            57.7
+            58.06
           ],
           "prices_3m": [
             42.36,
@@ -16788,148 +16788,33 @@
             50.46,
             47.74,
             52.71,
-            57.7
+            58.06
           ]
         },
         {
           "rank": 16,
-          "ticker": "PLTR",
-          "company": "Palantir Technologies Inc.",
-          "signal": "BUY",
-          "signal_emoji": "\ud83d\udfe1 BUY",
-          "composite_score": 61.1,
-          "price": 137.08,
-          "analyst_target_price": 183.73,
-          "upside_pct": 34.0,
-          "stop_loss_price": 126.11,
-          "scores": {
-            "analyst": 87.6,
-            "momentum": 0.0,
-            "fundamentals": 91.0,
-            "social": 25.0,
-            "filing": 95.0
-          },
-          "signal_details": {
-            "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 68% of 38 analysts bullish",
-            "momentum": "$137.08 | 4-wk return: -4.2% | below 50-day MA | Volume ratio: 0.7x",
-            "fundamentals": "Target: $184 (+34% upside) | Revenue growth: 85% | Gross margin: 84%",
-            "social": "Rank #56 on social | 14 mentions | \u2193 falling (-9 vs yesterday)",
-            "filing": "[2026-05-04] Massive beat, raises guidance, Rule of 40 score of 145%, accelerating growth"
-          },
-          "prices_1m": [
-            152.62,
-            141.57,
-            143.09,
-            143.1,
-            141.18,
-            137.97,
-            139.11,
-            144.07,
-            146.03,
-            135.91,
-            133.79,
-            137.05,
-            137.8,
-            136.89,
-            136.0,
-            130.05,
-            133.73,
-            133.99,
-            135.14,
-            135.26,
-            137.15,
-            137.08
-          ],
-          "prices_3m": [
-            130.6,
-            128.84,
-            134.19,
-            135.94,
-            137.19,
-            145.17,
-            147.22,
-            153.19,
-            152.67,
-            157.16,
-            156.43,
-            151.14,
-            151.6,
-            153.5,
-            150.95,
-            152.72,
-            155.08,
-            152.77,
-            155.68,
-            150.68,
-            160.84,
-            154.78,
-            154.96,
-            147.56,
-            143.06,
-            137.55,
-            146.28,
-            146.49,
-            148.46,
-            147.93,
-            150.07,
-            140.76,
-            130.49,
-            128.06,
-            132.37,
-            135.7,
-            142.15,
-            142.76,
-            146.39,
-            145.89,
-            145.97,
-            152.62,
-            141.57,
-            143.09,
-            143.1,
-            141.18,
-            137.97,
-            139.11,
-            144.07,
-            146.03,
-            135.91,
-            133.79,
-            137.05,
-            137.8,
-            136.89,
-            136.0,
-            130.05,
-            133.73,
-            133.99,
-            135.14,
-            135.26,
-            137.15,
-            137.08
-          ]
-        },
-        {
-          "rank": 17,
           "ticker": "ONDS",
           "company": "Ondas Inc",
           "signal": "BUY",
           "signal_emoji": "\ud83d\udfe1 BUY",
-          "composite_score": 60.9,
-          "price": 9.16,
+          "composite_score": 61.4,
+          "price": 9.18,
           "analyst_target_price": 20.12,
-          "upside_pct": 119.7,
-          "stop_loss_price": 8.43,
+          "upside_pct": 119.2,
+          "stop_loss_price": 8.45,
           "scores": {
             "analyst": 90.0,
             "momentum": 0.0,
             "fundamentals": 92.9,
-            "social": 25.0,
+            "social": 30.0,
             "filing": 82.0
           },
           "signal_details": {
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 93% of 14 analysts bullish",
-            "momentum": "$9.16 | 4-wk return: -13.2% | below 50-day MA | Volume ratio: 1.2x",
-            "fundamentals": "Target: $20 (+120% upside) | Revenue growth: 629% | Gross margin: 40%",
-            "social": "Rank #77 on social | 11 mentions | \u2193 falling (-2 vs yesterday)",
-            "filing": "8-K 2026-05-21: Transformational acquisition, $100M+ revenue guidance, combat-proven technology, strategic expansion"
+            "momentum": "$9.18 | 4-wk return: -13.0% | below 50-day MA | Volume ratio: 1.2x",
+            "fundamentals": "Target: $20 (+119% upside) | Revenue growth: 629% | Gross margin: 40%",
+            "social": "Rank #78 on social | 11 mentions | \u2191 rising (+2 vs yesterday)",
+            "filing": "[2026-05-21] Transformational acquisition, $100M+ revenue guidance, combat-proven technology, strategic expansion"
           },
           "prices_1m": [
             11.06,
@@ -16953,7 +16838,7 @@
             9.7,
             9.12,
             9.36,
-            9.17
+            9.18
           ],
           "prices_3m": [
             10.19,
@@ -17018,7 +16903,122 @@
             9.7,
             9.12,
             9.36,
-            9.17
+            9.18
+          ]
+        },
+        {
+          "rank": 17,
+          "ticker": "PLTR",
+          "company": "Palantir Technologies Inc.",
+          "signal": "BUY",
+          "signal_emoji": "\ud83d\udfe1 BUY",
+          "composite_score": 60.9,
+          "price": 137.41,
+          "analyst_target_price": 183.73,
+          "upside_pct": 33.7,
+          "stop_loss_price": 126.42,
+          "scores": {
+            "analyst": 87.6,
+            "momentum": 0.0,
+            "fundamentals": 90.6,
+            "social": 25.0,
+            "filing": 95.0
+          },
+          "signal_details": {
+            "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 68% of 38 analysts bullish",
+            "momentum": "$137.41 | 4-wk return: -4.0% | below 50-day MA | Volume ratio: 0.7x",
+            "fundamentals": "Target: $184 (+34% upside) | Revenue growth: 85% | Gross margin: 84%",
+            "social": "Rank #61 on social | 13 mentions | \u2193 falling (-9 vs yesterday)",
+            "filing": "[2026-05-04] Massive beat, raises guidance, Rule of 40 score of 145%, accelerating growth"
+          },
+          "prices_1m": [
+            152.62,
+            141.57,
+            143.09,
+            143.1,
+            141.18,
+            137.97,
+            139.11,
+            144.07,
+            146.03,
+            135.91,
+            133.79,
+            137.05,
+            137.8,
+            136.89,
+            136.0,
+            130.05,
+            133.73,
+            133.99,
+            135.14,
+            135.26,
+            137.15,
+            137.41
+          ],
+          "prices_3m": [
+            130.6,
+            128.84,
+            134.19,
+            135.94,
+            137.19,
+            145.17,
+            147.22,
+            153.19,
+            152.67,
+            157.16,
+            156.43,
+            151.14,
+            151.6,
+            153.5,
+            150.95,
+            152.72,
+            155.08,
+            152.77,
+            155.68,
+            150.68,
+            160.84,
+            154.78,
+            154.96,
+            147.56,
+            143.06,
+            137.55,
+            146.28,
+            146.49,
+            148.46,
+            147.93,
+            150.07,
+            140.76,
+            130.49,
+            128.06,
+            132.37,
+            135.7,
+            142.15,
+            142.76,
+            146.39,
+            145.89,
+            145.97,
+            152.62,
+            141.57,
+            143.09,
+            143.1,
+            141.18,
+            137.97,
+            139.11,
+            144.07,
+            146.03,
+            135.91,
+            133.79,
+            137.05,
+            137.8,
+            136.89,
+            136.0,
+            130.05,
+            133.73,
+            133.99,
+            135.14,
+            135.26,
+            137.15,
+            137.41
           ]
         },
         {
@@ -17027,22 +17027,22 @@
           "company": "Ouster, Inc.",
           "signal": "BUY",
           "signal_emoji": "\ud83d\udfe1 BUY",
-          "composite_score": 60.8,
-          "price": 34.93,
+          "composite_score": 60.6,
+          "price": 35.09,
           "analyst_target_price": 40.0,
-          "upside_pct": 14.5,
-          "stop_loss_price": 32.14,
+          "upside_pct": 14.0,
+          "stop_loss_price": 32.28,
           "scores": {
             "analyst": 60.0,
             "momentum": 93.0,
-            "fundamentals": 56.3,
+            "fundamentals": 55.5,
             "social": 30.0,
             "filing": 25.0
           },
           "signal_details": {
             "analyst": "92% of 12 analysts bullish",
-            "momentum": "$34.91 | 4-wk return: +23.7% | above 50-day MA | Volume ratio: 1.2x",
-            "fundamentals": "Target: $40 (+15% upside) | Revenue growth: 49% | Gross margin: 48%",
+            "momentum": "$35.09 | 4-wk return: +24.3% | above 50-day MA | Volume ratio: 1.2x",
+            "fundamentals": "Target: $40 (+14% upside) | Revenue growth: 49% | Gross margin: 48%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-08] At-the-market equity offering signals capital need, cautious dilution signal."
           },
@@ -17068,7 +17068,7 @@
             30.74,
             29.72,
             30.87,
-            34.91
+            35.09
           ],
           "prices_3m": [
             18.06,
@@ -17133,7 +17133,7 @@
             30.74,
             29.72,
             30.87,
-            34.91
+            35.09
           ]
         },
         {
@@ -17142,21 +17142,21 @@
           "company": "Innodata Inc.",
           "signal": "BUY",
           "signal_emoji": "\ud83d\udfe1 BUY",
-          "composite_score": 60.1,
-          "price": 98.3,
+          "composite_score": 60.0,
+          "price": 98.53,
           "analyst_target_price": 100.25,
-          "upside_pct": 2.0,
-          "stop_loss_price": 90.44,
+          "upside_pct": 1.7,
+          "stop_loss_price": 90.65,
           "scores": {
             "analyst": 60.0,
             "momentum": 85.0,
-            "fundamentals": 36.3,
+            "fundamentals": 35.9,
             "social": 30.0,
             "filing": 88.0
           },
           "signal_details": {
             "analyst": "90% of 10 analysts bullish",
-            "momentum": "$98.30 | 4-wk return: +132.2% | above 50-day MA | Volume ratio: 0.6x",
+            "momentum": "$98.53 | 4-wk return: +132.7% | above 50-day MA | Volume ratio: 0.6x",
             "fundamentals": "Target: $100 (+2% upside) | Revenue growth: 54% | Gross margin: 42%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-07] Record results, 54% YoY growth, guidance raised, major new customer"
@@ -17183,7 +17183,7 @@
             94.72,
             88.19,
             94.71,
-            98.3
+            98.53
           ],
           "prices_3m": [
             43.87,
@@ -17248,146 +17248,31 @@
             94.72,
             88.19,
             94.71,
-            98.3
+            98.53
           ]
         },
         {
           "rank": 20,
-          "ticker": "RKLB",
-          "company": "Rocket Lab Corporation",
-          "signal": "BUY",
-          "signal_emoji": "\ud83d\udfe1 BUY",
-          "composite_score": 59.6,
-          "price": 124.71,
-          "analyst_target_price": 100.84,
-          "upside_pct": -19.1,
-          "stop_loss_price": 114.73,
-          "scores": {
-            "analyst": 60.0,
-            "momentum": 80.0,
-            "fundamentals": 32.3,
-            "social": 90.0,
-            "filing": 45.0
-          },
-          "signal_details": {
-            "analyst": "78% of 27 analysts bullish",
-            "momentum": "$124.71 | 4-wk return: +56.5% | above 50-day MA | Volume ratio: 1.0x",
-            "fundamentals": "Target: $101 (-19% upside) | Revenue growth: 64% | Gross margin: 37%",
-            "social": "Rank #5 on social | 137 mentions | \u2191 rising (+105 vs yesterday)",
-            "filing": "[2026-05-20] Equity offering announced; no earnings guidance, operational metrics, or contract wins disclosed"
-          },
-          "prices_1m": [
-            90.04,
-            84.6,
-            79.68,
-            82.29,
-            78.59,
-            77.02,
-            82.51,
-            78.81,
-            80.31,
-            78.76,
-            84.65,
-            78.58,
-            105.47,
-            117.35,
-            117.56,
-            124.15,
-            132.55,
-            124.77,
-            131.16,
-            127.31,
-            134.28,
-            124.71
-          ],
-          "prices_3m": [
-            70.21,
-            69.97,
-            70.2,
-            72.65,
-            69.1,
-            70.97,
-            70.13,
-            71.91,
-            70.0,
-            70.11,
-            71.48,
-            68.93,
-            71.96,
-            68.37,
-            68.41,
-            71.31,
-            78.59,
-            69.48,
-            71.93,
-            67.23,
-            68.0,
-            66.07,
-            72.88,
-            65.94,
-            60.93,
-            57.38,
-            64.22,
-            65.52,
-            67.73,
-            67.67,
-            66.32,
-            69.08,
-            66.74,
-            68.05,
-            70.62,
-            72.22,
-            73.6,
-            82.93,
-            84.8,
-            89.46,
-            86.64,
-            90.04,
-            84.6,
-            79.68,
-            82.29,
-            78.59,
-            77.02,
-            82.51,
-            78.81,
-            80.31,
-            78.76,
-            84.65,
-            78.58,
-            105.47,
-            117.35,
-            117.56,
-            124.15,
-            132.55,
-            124.77,
-            131.16,
-            127.31,
-            134.28,
-            124.71
-          ]
-        },
-        {
-          "rank": 21,
           "ticker": "DDOG",
           "company": "Datadog, Inc.",
           "signal": "BUY",
           "signal_emoji": "\ud83d\udfe1 BUY",
-          "composite_score": 59.6,
-          "price": 217.51,
+          "composite_score": 59.5,
+          "price": 218.04,
           "analyst_target_price": 223.02,
-          "upside_pct": 2.5,
-          "stop_loss_price": 200.11,
+          "upside_pct": 2.3,
+          "stop_loss_price": 200.6,
           "scores": {
             "analyst": 60.0,
             "momentum": 85.0,
-            "fundamentals": 38.1,
+            "fundamentals": 37.7,
             "social": 30.0,
             "filing": 78.0
           },
           "signal_details": {
             "analyst": "91% of 56 analysts bullish",
-            "momentum": "$217.51 | 4-wk return: +68.0% | above 50-day MA | Volume ratio: 0.8x",
-            "fundamentals": "Target: $223 (+3% upside) | Revenue growth: 32% | Gross margin: 80%",
+            "momentum": "$218.04 | 4-wk return: +68.4% | above 50-day MA | Volume ratio: 0.8x",
+            "fundamentals": "Target: $223 (+2% upside) | Revenue growth: 32% | Gross margin: 80%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-07] Strong 32% YoY growth, robust customer expansion, multiple product launches"
           },
@@ -17413,7 +17298,7 @@
             208.82,
             215.15,
             212.24,
-            217.51
+            218.04
           ],
           "prices_3m": [
             102.61,
@@ -17478,30 +17363,30 @@
             208.82,
             215.15,
             212.24,
-            217.51
+            218.04
           ]
         },
         {
-          "rank": 22,
+          "rank": 21,
           "ticker": "FIVN",
           "company": "Five9, Inc.",
           "signal": "BUY",
           "signal_emoji": "\ud83d\udfe1 BUY",
           "composite_score": 59.5,
-          "price": 21.81,
+          "price": 21.84,
           "analyst_target_price": 27.81,
-          "upside_pct": 27.5,
-          "stop_loss_price": 20.07,
+          "upside_pct": 27.3,
+          "stop_loss_price": 20.09,
           "scores": {
             "analyst": 60.0,
             "momentum": 85.0,
-            "fundamentals": 57.8,
+            "fundamentals": 57.6,
             "social": 30.0,
             "filing": 28.0
           },
           "signal_details": {
             "analyst": "75% of 28 analysts bullish",
-            "momentum": "$21.81 | 4-wk return: +31.8% | above 50-day MA | Volume ratio: 0.8x",
+            "momentum": "$21.84 | 4-wk return: +32.0% | above 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $28 (+27% upside) | Revenue growth: 9% | Gross margin: 55%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-20] Routine shareholder meeting; no financial guidance, earnings, or business updates provided"
@@ -17528,7 +17413,7 @@
             21.13,
             22.52,
             22.29,
-            21.81
+            21.84
           ],
           "prices_3m": [
             17.74,
@@ -17593,7 +17478,122 @@
             21.13,
             22.52,
             22.29,
-            21.81
+            21.84
+          ]
+        },
+        {
+          "rank": 22,
+          "ticker": "RKLB",
+          "company": "Rocket Lab Corporation",
+          "signal": "BUY",
+          "signal_emoji": "\ud83d\udfe1 BUY",
+          "composite_score": 58.8,
+          "price": 125.45,
+          "analyst_target_price": 100.84,
+          "upside_pct": -19.6,
+          "stop_loss_price": 115.41,
+          "scores": {
+            "analyst": 60.0,
+            "momentum": 85.0,
+            "fundamentals": 32.3,
+            "social": 90.0,
+            "filing": 25.0
+          },
+          "signal_details": {
+            "analyst": "78% of 27 analysts bullish",
+            "momentum": "$125.45 | 4-wk return: +57.4% | above 50-day MA | Volume ratio: 1.0x",
+            "fundamentals": "Target: $101 (-20% upside) | Revenue growth: 64% | Gross margin: 37%",
+            "social": "Rank #5 on social | 140 mentions | \u2191 rising (+103 vs yesterday)",
+            "filing": "8-K 2026-05-21: Routine shareholder meeting voting results, no business guidance or financial information disclosed."
+          },
+          "prices_1m": [
+            90.04,
+            84.6,
+            79.68,
+            82.29,
+            78.59,
+            77.02,
+            82.51,
+            78.81,
+            80.31,
+            78.76,
+            84.65,
+            78.58,
+            105.47,
+            117.35,
+            117.56,
+            124.15,
+            132.55,
+            124.77,
+            131.16,
+            127.31,
+            134.28,
+            125.45
+          ],
+          "prices_3m": [
+            70.21,
+            69.97,
+            70.2,
+            72.65,
+            69.1,
+            70.97,
+            70.13,
+            71.91,
+            70.0,
+            70.11,
+            71.48,
+            68.93,
+            71.96,
+            68.37,
+            68.41,
+            71.31,
+            78.59,
+            69.48,
+            71.93,
+            67.23,
+            68.0,
+            66.07,
+            72.88,
+            65.94,
+            60.93,
+            57.38,
+            64.22,
+            65.52,
+            67.73,
+            67.67,
+            66.32,
+            69.08,
+            66.74,
+            68.05,
+            70.62,
+            72.22,
+            73.6,
+            82.93,
+            84.8,
+            89.46,
+            86.64,
+            90.04,
+            84.6,
+            79.68,
+            82.29,
+            78.59,
+            77.02,
+            82.51,
+            78.81,
+            80.31,
+            78.76,
+            84.65,
+            78.58,
+            105.47,
+            117.35,
+            117.56,
+            124.15,
+            132.55,
+            124.77,
+            131.16,
+            127.31,
+            134.28,
+            125.45
           ]
         },
         {
@@ -17603,20 +17603,20 @@
           "signal": "BUY",
           "signal_emoji": "\ud83d\udfe1 BUY",
           "composite_score": 57.9,
-          "price": 962.9,
+          "price": 964.5,
           "analyst_target_price": 1104.68,
-          "upside_pct": 14.7,
-          "stop_loss_price": 885.87,
+          "upside_pct": 14.5,
+          "stop_loss_price": 887.34,
           "scores": {
             "analyst": 60.0,
-            "momentum": 58.4,
-            "fundamentals": 55.3,
+            "momentum": 58.8,
+            "fundamentals": 55.0,
             "social": 30.0,
             "filing": 85.0
           },
           "signal_details": {
             "analyst": "80% of 30 analysts bullish",
-            "momentum": "$962.90 | 4-wk return: +9.2% | above 50-day MA | Volume ratio: 1.0x",
+            "momentum": "$964.50 | 4-wk return: +9.4% | above 50-day MA | Volume ratio: 1.1x",
             "fundamentals": "Target: $1105 (+15% upside) | Revenue growth: 90% | Gross margin: 41%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-05] 90% YoY revenue growth, record $808M, massive margin expansion"
@@ -17643,7 +17643,7 @@
             884.98,
             890.09,
             868.07,
-            962.9
+            964.5
           ],
           "prices_3m": [
             674.73,
@@ -17708,7 +17708,7 @@
             884.98,
             890.09,
             868.07,
-            962.9
+            964.5
           ]
         },
         {
@@ -17718,20 +17718,20 @@
           "signal": "BUY",
           "signal_emoji": "\ud83d\udfe1 BUY",
           "composite_score": 57.1,
-          "price": 247.35,
+          "price": 247.79,
           "analyst_target_price": 272.4,
-          "upside_pct": 10.1,
-          "stop_loss_price": 227.56,
+          "upside_pct": 9.9,
+          "stop_loss_price": 227.97,
           "scores": {
             "analyst": 86.8,
-            "momentum": 63.9,
-            "fundamentals": 30.3,
+            "momentum": 64.3,
+            "fundamentals": 30.0,
             "social": 30.0,
             "filing": 45.0
           },
           "signal_details": {
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 68% of 28 analysts bullish",
-            "momentum": "$247.35 | 4-wk return: +12.0% | above 50-day MA | Volume ratio: 0.9x",
+            "momentum": "$247.79 | 4-wk return: +12.2% | above 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $272 (+10% upside) | Revenue growth: 12% | Gross margin: 38%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-04-29] Routine earnings announcement with segment reorganization, no guidance change disclosed"
@@ -17758,7 +17758,7 @@
             253.05,
             243.97,
             245.19,
-            247.35
+            247.79
           ],
           "prices_3m": [
             227.45,
@@ -17823,262 +17823,32 @@
             253.05,
             243.97,
             245.19,
-            247.35
+            247.79
           ]
         },
         {
           "rank": 25,
-          "ticker": "OKLO",
-          "company": "Oklo Inc.",
-          "signal": "BUY",
-          "signal_emoji": "\ud83d\udfe1 BUY",
-          "composite_score": 55.7,
-          "price": 64.5,
-          "analyst_target_price": 91.21,
-          "upside_pct": 41.4,
-          "stop_loss_price": 59.34,
-          "scores": {
-            "analyst": 90.0,
-            "momentum": 26.7,
-            "fundamentals": 60.0,
-            "social": 25.0,
-            "filing": 45.0
-          },
-          "signal_details": {
-            "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 75% of 28 analysts bullish",
-            "momentum": "$64.50 | 4-wk return: -9.2% | above 50-day MA | Volume ratio: 0.8x",
-            "fundamentals": "Target: $91 (+41% upside) | Revenue growth: 0% | Gross margin: 0%",
-            "social": "Rank #78 on social | 11 mentions | \u2192 flat (+0 vs yesterday)",
-            "filing": "[2026-05-13] At-the-market offering announced; capital raise, neutral strategic signal."
-          },
-          "prices_1m": [
-            72.41,
-            76.46,
-            71.0,
-            75.93,
-            69.09,
-            64.98,
-            72.5,
-            70.4,
-            68.6,
-            68.38,
-            79.62,
-            71.83,
-            72.51,
-            78.13,
-            73.63,
-            69.66,
-            67.21,
-            62.25,
-            58.56,
-            55.88,
-            62.58,
-            64.5
-          ],
-          "prices_3m": [
-            63.09,
-            65.06,
-            66.32,
-            69.07,
-            62.95,
-            64.68,
-            63.3,
-            65.65,
-            62.03,
-            58.25,
-            61.78,
-            61.38,
-            62.76,
-            59.59,
-            58.37,
-            59.69,
-            60.53,
-            56.7,
-            54.69,
-            53.97,
-            56.26,
-            54.96,
-            55.27,
-            51.81,
-            50.23,
-            45.58,
-            49.59,
-            48.07,
-            48.13,
-            48.76,
-            46.59,
-            50.21,
-            47.75,
-            50.25,
-            53.94,
-            58.58,
-            63.35,
-            64.21,
-            66.81,
-            68.13,
-            62.61,
-            72.41,
-            76.46,
-            71.0,
-            75.93,
-            69.09,
-            64.98,
-            72.5,
-            70.4,
-            68.6,
-            68.38,
-            79.62,
-            71.83,
-            72.51,
-            78.13,
-            73.63,
-            69.66,
-            67.21,
-            62.25,
-            58.56,
-            55.88,
-            62.58,
-            64.5
-          ]
-        },
-        {
-          "rank": 26,
-          "ticker": "NVT",
-          "company": "nVent Electric plc",
-          "signal": "BUY",
-          "signal_emoji": "\ud83d\udfe1 BUY",
-          "composite_score": 55.6,
-          "price": 163.35,
-          "analyst_target_price": 183.31,
-          "upside_pct": 12.2,
-          "stop_loss_price": 150.28,
-          "scores": {
-            "analyst": 60.0,
-            "momentum": 69.8,
-            "fundamentals": 50.7,
-            "social": 30.0,
-            "filing": 45.0
-          },
-          "signal_details": {
-            "analyst": "89% of 19 analysts bullish",
-            "momentum": "$163.35 | 4-wk return: +14.9% | above 50-day MA | Volume ratio: 0.9x",
-            "fundamentals": "Target: $183 (+12% upside) | Revenue growth: 54% | Gross margin: 37%",
-            "social": "Not in top social mentions (neutral score)",
-            "filing": "[2026-05-18] Annual meeting voting results; no earnings, guidance, or strategic announcements"
-          },
-          "prices_1m": [
-            139.92,
-            142.55,
-            142.17,
-            141.71,
-            138.3,
-            137.37,
-            142.9,
-            158.92,
-            162.69,
-            169.41,
-            172.49,
-            166.73,
-            169.95,
-            173.39,
-            170.74,
-            172.91,
-            173.96,
-            169.01,
-            160.69,
-            158.23,
-            161.86,
-            163.35
-          ],
-          "prices_3m": [
-            114.76,
-            118.05,
-            121.62,
-            121.61,
-            118.19,
-            120.09,
-            111.49,
-            113.66,
-            110.39,
-            105.86,
-            107.97,
-            108.97,
-            110.93,
-            107.71,
-            109.77,
-            114.13,
-            114.54,
-            120.09,
-            122.4,
-            116.13,
-            120.82,
-            125.43,
-            126.82,
-            118.27,
-            116.81,
-            112.58,
-            118.11,
-            121.08,
-            117.79,
-            117.24,
-            118.75,
-            126.92,
-            128.44,
-            130.37,
-            132.96,
-            134.28,
-            131.19,
-            129.51,
-            134.49,
-            135.6,
-            136.8,
-            139.92,
-            142.55,
-            142.17,
-            141.71,
-            138.3,
-            137.37,
-            142.9,
-            158.92,
-            162.69,
-            169.41,
-            172.49,
-            166.73,
-            169.95,
-            173.39,
-            170.74,
-            172.91,
-            173.96,
-            169.01,
-            160.69,
-            158.23,
-            161.86,
-            163.35
-          ]
-        },
-        {
-          "rank": 27,
           "ticker": "ASTS",
           "company": "AST SpaceMobile, Inc.",
           "signal": "BUY",
           "signal_emoji": "\ud83d\udfe1 BUY",
-          "composite_score": 55.2,
-          "price": 95.48,
+          "composite_score": 56.7,
+          "price": 96.23,
           "analyst_target_price": 83.47,
-          "upside_pct": -12.6,
-          "stop_loss_price": 87.84,
+          "upside_pct": -13.3,
+          "stop_loss_price": 88.53,
           "scores": {
             "analyst": 30.0,
             "momentum": 93.0,
             "fundamentals": 34.0,
-            "social": 60.0,
+            "social": 75.0,
             "filing": 85.0
           },
           "signal_details": {
             "analyst": "50% of 18 analysts bullish",
-            "momentum": "$95.48 | 4-wk return: +25.0% | above 50-day MA | Volume ratio: 1.1x",
+            "momentum": "$96.23 | 4-wk return: +26.0% | above 50-day MA | Volume ratio: 1.1x",
             "fundamentals": "Target: $83 (-13% upside) | Revenue growth: 1952% | Gross margin: 45%",
-            "social": "Rank #16 on social | 73 mentions | \u2191 rising (+40 vs yesterday)",
+            "social": "Rank #13 on social | 84 mentions | \u2191 rising (+51 vs yesterday)",
             "filing": "[2026-05-11] FCC approval, 45 satellites 2026 target, 98.9 Mbps achievement, massive ecosystem"
           },
           "prices_1m": [
@@ -18103,7 +17873,7 @@
             86.83,
             88.1,
             89.58,
-            95.42
+            96.23
           ],
           "prices_3m": [
             83.9,
@@ -18168,7 +17938,237 @@
             86.83,
             88.1,
             89.58,
-            95.42
+            96.23
+          ]
+        },
+        {
+          "rank": 26,
+          "ticker": "OKLO",
+          "company": "Oklo Inc.",
+          "signal": "BUY",
+          "signal_emoji": "\ud83d\udfe1 BUY",
+          "composite_score": 56.1,
+          "price": 65.09,
+          "analyst_target_price": 91.21,
+          "upside_pct": 40.1,
+          "stop_loss_price": 59.88,
+          "scores": {
+            "analyst": 90.0,
+            "momentum": 28.4,
+            "fundamentals": 60.0,
+            "social": 25.0,
+            "filing": 45.0
+          },
+          "signal_details": {
+            "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 75% of 28 analysts bullish",
+            "momentum": "$65.09 | 4-wk return: -8.3% | above 50-day MA | Volume ratio: 0.9x",
+            "fundamentals": "Target: $91 (+40% upside) | Revenue growth: 0% | Gross margin: 0%",
+            "social": "Rank #91 on social | 9 mentions | \u2193 falling (-5 vs yesterday)",
+            "filing": "[2026-05-13] At-the-market offering announced; capital raise, neutral strategic signal."
+          },
+          "prices_1m": [
+            72.41,
+            76.46,
+            71.0,
+            75.93,
+            69.09,
+            64.98,
+            72.5,
+            70.4,
+            68.6,
+            68.38,
+            79.62,
+            71.83,
+            72.51,
+            78.13,
+            73.63,
+            69.66,
+            67.21,
+            62.25,
+            58.56,
+            55.88,
+            62.58,
+            65.09
+          ],
+          "prices_3m": [
+            63.09,
+            65.06,
+            66.32,
+            69.07,
+            62.95,
+            64.68,
+            63.3,
+            65.65,
+            62.03,
+            58.25,
+            61.78,
+            61.38,
+            62.76,
+            59.59,
+            58.37,
+            59.69,
+            60.53,
+            56.7,
+            54.69,
+            53.97,
+            56.26,
+            54.96,
+            55.27,
+            51.81,
+            50.23,
+            45.58,
+            49.59,
+            48.07,
+            48.13,
+            48.76,
+            46.59,
+            50.21,
+            47.75,
+            50.25,
+            53.94,
+            58.58,
+            63.35,
+            64.21,
+            66.81,
+            68.13,
+            62.61,
+            72.41,
+            76.46,
+            71.0,
+            75.93,
+            69.09,
+            64.98,
+            72.5,
+            70.4,
+            68.6,
+            68.38,
+            79.62,
+            71.83,
+            72.51,
+            78.13,
+            73.63,
+            69.66,
+            67.21,
+            62.25,
+            58.56,
+            55.88,
+            62.58,
+            65.09
+          ]
+        },
+        {
+          "rank": 27,
+          "ticker": "NVT",
+          "company": "nVent Electric plc",
+          "signal": "BUY",
+          "signal_emoji": "\ud83d\udfe1 BUY",
+          "composite_score": 55.7,
+          "price": 163.57,
+          "analyst_target_price": 183.31,
+          "upside_pct": 12.1,
+          "stop_loss_price": 150.48,
+          "scores": {
+            "analyst": 60.0,
+            "momentum": 70.1,
+            "fundamentals": 50.5,
+            "social": 30.0,
+            "filing": 45.0
+          },
+          "signal_details": {
+            "analyst": "89% of 19 analysts bullish",
+            "momentum": "$163.57 | 4-wk return: +15.1% | above 50-day MA | Volume ratio: 0.9x",
+            "fundamentals": "Target: $183 (+12% upside) | Revenue growth: 54% | Gross margin: 37%",
+            "social": "Not in top social mentions (neutral score)",
+            "filing": "[2026-05-18] Annual meeting voting results; no earnings, guidance, or strategic announcements"
+          },
+          "prices_1m": [
+            139.92,
+            142.55,
+            142.17,
+            141.71,
+            138.3,
+            137.37,
+            142.9,
+            158.92,
+            162.69,
+            169.41,
+            172.49,
+            166.73,
+            169.95,
+            173.39,
+            170.74,
+            172.91,
+            173.96,
+            169.01,
+            160.69,
+            158.23,
+            161.86,
+            163.57
+          ],
+          "prices_3m": [
+            114.76,
+            118.05,
+            121.62,
+            121.61,
+            118.19,
+            120.09,
+            111.49,
+            113.66,
+            110.39,
+            105.86,
+            107.97,
+            108.97,
+            110.93,
+            107.71,
+            109.77,
+            114.13,
+            114.54,
+            120.09,
+            122.4,
+            116.13,
+            120.82,
+            125.43,
+            126.82,
+            118.27,
+            116.81,
+            112.58,
+            118.11,
+            121.08,
+            117.79,
+            117.24,
+            118.75,
+            126.92,
+            128.44,
+            130.37,
+            132.96,
+            134.28,
+            131.19,
+            129.51,
+            134.49,
+            135.6,
+            136.8,
+            139.92,
+            142.55,
+            142.17,
+            141.71,
+            138.3,
+            137.37,
+            142.9,
+            158.92,
+            162.69,
+            169.41,
+            172.49,
+            166.73,
+            169.95,
+            173.39,
+            170.74,
+            172.91,
+            173.96,
+            169.01,
+            160.69,
+            158.23,
+            161.86,
+            163.57
           ]
         },
         {
@@ -18178,20 +18178,20 @@
           "signal": "BUY",
           "signal_emoji": "\ud83d\udfe1 BUY",
           "composite_score": 50.9,
-          "price": 378.24,
+          "price": 378.0,
           "analyst_target_price": 380.62,
-          "upside_pct": 0.6,
-          "stop_loss_price": 347.98,
+          "upside_pct": 0.7,
+          "stop_loss_price": 347.76,
           "scores": {
             "analyst": 60.0,
-            "momentum": 65.1,
-            "fundamentals": 20.6,
+            "momentum": 64.9,
+            "fundamentals": 20.7,
             "social": 30.0,
             "filing": 85.0
           },
           "signal_details": {
             "analyst": "76% of 29 analysts bullish",
-            "momentum": "$378.23 | 4-wk return: +12.5% | above 50-day MA | Volume ratio: 0.8x",
+            "momentum": "$378.00 | 4-wk return: +12.5% | above 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $381 (+1% upside) | Revenue growth: 20% | Gross margin: 37%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-06] Strong beat, margin expansion, AI datacenter demand acceleration, capacity ramp"
@@ -18218,7 +18218,7 @@
             362.83,
             353.63,
             358.5,
-            378.23
+            378.0
           ],
           "prices_3m": [
             248.89,
@@ -18283,7 +18283,7 @@
             362.83,
             353.63,
             358.5,
-            378.23
+            378.0
           ]
         },
         {
@@ -18292,23 +18292,23 @@
           "company": "CoreWeave, Inc.",
           "signal": "WATCH",
           "signal_emoji": "\u26aa WATCH",
-          "composite_score": 48.5,
-          "price": 107.12,
+          "composite_score": 49.7,
+          "price": 107.58,
           "analyst_target_price": 138.9,
-          "upside_pct": 29.7,
-          "stop_loss_price": 98.55,
+          "upside_pct": 29.1,
+          "stop_loss_price": 98.97,
           "scores": {
             "analyst": 25.0,
-            "momentum": 34.5,
-            "fundamentals": 83.4,
+            "momentum": 40.4,
+            "fundamentals": 82.5,
             "social": 30.0,
             "filing": 85.0
           },
           "signal_details": {
             "analyst": "0 upgrade(s), 1 downgrade(s) in last 7d | 67% of 42 analysts bullish",
-            "momentum": "$107.12 | 4-wk return: -2.7% | above 50-day MA | Volume ratio: 0.9x",
-            "fundamentals": "Target: $139 (+30% upside) | Revenue growth: 112% | Gross margin: 69%",
-            "social": "Rank #70 on social | 12 mentions | \u2191 rising (+5 vs yesterday)",
+            "momentum": "$107.58 | 4-wk return: -2.3% | above 50-day MA | Volume ratio: 1.0x",
+            "fundamentals": "Target: $139 (+29% upside) | Revenue growth: 112% | Gross margin: 69%",
+            "social": "Rank #69 on social | 12 mentions | \u2191 rising (+4 vs yesterday)",
             "filing": "[2026-05-18] Transformational financing milestone, oversubscribed facility, major capital raise momentum"
           },
           "prices_1m": [
@@ -18333,7 +18333,7 @@
             103.77,
             99.81,
             101.28,
-            107.05
+            107.58
           ],
           "prices_3m": [
             90.84,
@@ -18398,7 +18398,7 @@
             103.77,
             99.81,
             101.28,
-            107.05
+            107.58
           ]
         },
         {
@@ -18407,22 +18407,22 @@
           "company": "Iron Mountain Incorporated (Del",
           "signal": "WATCH",
           "signal_emoji": "\u26aa WATCH",
-          "composite_score": 48.5,
-          "price": 127.02,
+          "composite_score": 48.6,
+          "price": 127.33,
           "analyst_target_price": 131.55,
-          "upside_pct": 3.6,
-          "stop_loss_price": 116.85,
+          "upside_pct": 3.3,
+          "stop_loss_price": 117.14,
           "scores": {
             "analyst": 60.0,
-            "momentum": 63.9,
-            "fundamentals": 29.3,
+            "momentum": 64.5,
+            "fundamentals": 28.9,
             "social": 30.0,
             "filing": 42.0
           },
           "signal_details": {
             "analyst": "88% of 16 analysts bullish",
-            "momentum": "$127.01 | 4-wk return: +9.5% | above 50-day MA | Volume ratio: 0.6x",
-            "fundamentals": "Target: $132 (+4% upside) | Revenue growth: 22% | Gross margin: 55%",
+            "momentum": "$127.33 | 4-wk return: +9.7% | above 50-day MA | Volume ratio: 0.6x",
+            "fundamentals": "Target: $132 (+3% upside) | Revenue growth: 22% | Gross margin: 55%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-12] Routine annual meeting results, no financial guidance or material business updates"
           },
@@ -18448,7 +18448,7 @@
             123.96,
             123.52,
             125.81,
-            127.01
+            127.33
           ],
           "prices_3m": [
             110.29,
@@ -18513,7 +18513,7 @@
             123.96,
             123.52,
             125.81,
-            127.01
+            127.33
           ]
         },
         {
@@ -18522,23 +18522,23 @@
           "company": "UnitedHealth Group Incorporated",
           "signal": "WATCH",
           "signal_emoji": "\u26aa WATCH",
-          "composite_score": 47.9,
-          "price": 382.06,
+          "composite_score": 48.4,
+          "price": 382.48,
           "analyst_target_price": 390.35,
-          "upside_pct": 2.2,
-          "stop_loss_price": 351.5,
+          "upside_pct": 2.1,
+          "stop_loss_price": 351.88,
           "scores": {
             "analyst": 90.0,
-            "momentum": 55.3,
-            "fundamentals": 8.2,
-            "social": 25.0,
+            "momentum": 55.5,
+            "fundamentals": 8.0,
+            "social": 30.0,
             "filing": 25.0
           },
           "signal_details": {
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 76% of 34 analysts bullish",
-            "momentum": "$382.06 | 4-wk return: +7.6% | above 50-day MA | Volume ratio: 1.0x",
+            "momentum": "$382.48 | 4-wk return: +7.8% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $390 (+2% upside) | Revenue growth: 2% | Gross margin: 19%",
-            "social": "Rank #91 on social | 8 mentions | \u2192 flat (+0 vs yesterday)",
+            "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-11] Routine conference disclosure. No earnings results, guidance, or material updates provided."
           },
           "prices_1m": [
@@ -18563,7 +18563,7 @@
             391.13,
             389.24,
             383.3,
-            382.06
+            382.48
           ],
           "prices_3m": [
             280.16,
@@ -18628,7 +18628,7 @@
             391.13,
             389.24,
             383.3,
-            382.06
+            382.48
           ]
         },
         {
@@ -18638,10 +18638,10 @@
           "signal": "WATCH",
           "signal_emoji": "\u26aa WATCH",
           "composite_score": 46.2,
-          "price": 266.19,
+          "price": 267.1,
           "analyst_target_price": 462.67,
-          "upside_pct": 73.8,
-          "stop_loss_price": 244.9,
+          "upside_pct": 73.2,
+          "stop_loss_price": 245.73,
           "scores": {
             "analyst": 60.0,
             "momentum": 0.0,
@@ -18651,8 +18651,8 @@
           },
           "signal_details": {
             "analyst": "91% of 11 analysts bullish",
-            "momentum": "$266.20 | 4-wk return: -27.8% | below 50-day MA | Volume ratio: 0.8x",
-            "fundamentals": "Target: $463 (+74% upside) | Revenue growth: -2% | Gross margin: 85%",
+            "momentum": "$267.10 | 4-wk return: -27.5% | below 50-day MA | Volume ratio: 0.8x",
+            "fundamentals": "Target: $463 (+73% upside) | Revenue growth: -2% | Gross margin: 85%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-04-30] Beat guidance, record ARR, but reaffirmed full-year outlook unchanged"
           },
@@ -18678,7 +18678,7 @@
             263.85,
             264.79,
             266.12,
-            266.2
+            267.1
           ],
           "prices_3m": [
             350.72,
@@ -18743,7 +18743,7 @@
             263.85,
             264.79,
             266.12,
-            266.2
+            267.1
           ]
         },
         {
@@ -18752,21 +18752,21 @@
           "company": "Corning Incorporated",
           "signal": "WATCH",
           "signal_emoji": "\u26aa WATCH",
-          "composite_score": 44.8,
-          "price": 192.44,
+          "composite_score": 44.7,
+          "price": 191.89,
           "analyst_target_price": 197.67,
-          "upside_pct": 2.7,
-          "stop_loss_price": 177.04,
+          "upside_pct": 3.0,
+          "stop_loss_price": 176.54,
           "scores": {
             "analyst": 55.0,
-            "momentum": 63.7,
-            "fundamentals": 23.4,
+            "momentum": 63.2,
+            "fundamentals": 23.8,
             "social": 30.0,
             "filing": 35.0
           },
           "signal_details": {
             "analyst": "67% of 21 analysts bullish",
-            "momentum": "$192.37 | 4-wk return: +9.4% | above 50-day MA | Volume ratio: 0.9x",
+            "momentum": "$191.89 | 4-wk return: +9.1% | above 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $198 (+3% upside) | Revenue growth: 20% | Gross margin: 36%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-15] Routine conference presentation announcement; no material guidance or results disclosed."
@@ -18793,7 +18793,7 @@
             178.55,
             175.83,
             180.69,
-            192.43
+            191.89
           ],
           "prices_3m": [
             144.98,
@@ -18858,7 +18858,7 @@
             178.55,
             175.83,
             180.69,
-            192.43
+            191.89
           ]
         },
         {
@@ -18868,22 +18868,22 @@
           "signal": "WATCH",
           "signal_emoji": "\u26aa WATCH",
           "composite_score": 44.6,
-          "price": 14.83,
+          "price": 14.82,
           "analyst_target_price": 8.2,
           "upside_pct": -44.7,
-          "stop_loss_price": 13.64,
+          "stop_loss_price": 13.63,
           "scores": {
             "analyst": 60.0,
-            "momentum": 36.4,
+            "momentum": 36.3,
             "fundamentals": 40.0,
             "social": 25.0,
             "filing": 50.0
           },
           "signal_details": {
             "analyst": "86% of 7 analysts bullish",
-            "momentum": "$14.83 | 4-wk return: -1.8% | above 50-day MA | Volume ratio: 0.9x",
+            "momentum": "$14.82 | 4-wk return: -1.9% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $8 (-45% upside) | Revenue growth: 1075% | Gross margin: 100%",
-            "social": "Rank #69 on social | 12 mentions | \u2193 falling (-20 vs yesterday)",
+            "social": "Rank #67 on social | 12 mentions | \u2193 falling (-25 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
           "prices_1m": [
@@ -18908,7 +18908,7 @@
             14.21,
             13.07,
             14.78,
-            14.83
+            14.82
           ],
           "prices_3m": [
             5.52,
@@ -18973,7 +18973,7 @@
             14.21,
             13.07,
             14.78,
-            14.83
+            14.82
           ]
         },
         {
@@ -18983,10 +18983,10 @@
           "signal": "WATCH",
           "signal_emoji": "\u26aa WATCH",
           "composite_score": 43.4,
-          "price": 14.13,
+          "price": 14.18,
           "analyst_target_price": 12.51,
-          "upside_pct": -11.5,
-          "stop_loss_price": 13.0,
+          "upside_pct": -11.8,
+          "stop_loss_price": 13.05,
           "scores": {
             "analyst": 40.1,
             "momentum": 85.0,
@@ -18996,9 +18996,9 @@
           },
           "signal_details": {
             "analyst": "57% of 37 analysts bullish",
-            "momentum": "$14.14 | 4-wk return: +35.1% | above 50-day MA | Volume ratio: 0.7x",
-            "fundamentals": "Target: $13 (-11% upside) | Revenue growth: 2% | Gross margin: 45%",
-            "social": "Rank #53 on social | 15 mentions | \u2193 falling (-5 vs yesterday)",
+            "momentum": "$14.18 | 4-wk return: +35.6% | above 50-day MA | Volume ratio: 0.7x",
+            "fundamentals": "Target: $13 (-12% upside) | Revenue growth: 2% | Gross margin: 45%",
+            "social": "Rank #50 on social | 16 mentions | \u2193 falling (-6 vs yesterday)",
             "filing": "EDGAR not applicable (NOK files outside SEC) \u2014 neutral"
           },
           "prices_1m": [
@@ -19023,7 +19023,7 @@
             13.74,
             13.67,
             13.62,
-            14.14
+            14.18
           ],
           "prices_3m": [
             7.57,
@@ -19088,7 +19088,7 @@
             13.74,
             13.67,
             13.62,
-            14.14
+            14.18
           ]
         },
         {
@@ -19098,10 +19098,10 @@
           "signal": "WATCH",
           "signal_emoji": "\u26aa WATCH",
           "composite_score": 42.2,
-          "price": 159.39,
+          "price": 159.68,
           "analyst_target_price": 224.41,
-          "upside_pct": 40.8,
-          "stop_loss_price": 146.64,
+          "upside_pct": 40.5,
+          "stop_loss_price": 146.91,
           "scores": {
             "analyst": 60.0,
             "momentum": 0.0,
@@ -19111,7 +19111,7 @@
           },
           "signal_details": {
             "analyst": "83% of 46 analysts bullish",
-            "momentum": "$159.36 | 4-wk return: -11.6% | below 50-day MA | Volume ratio: 0.9x",
+            "momentum": "$159.68 | 4-wk return: -11.4% | below 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $224 (+41% upside) | Revenue growth: 16% | Gross margin: 87%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-11] Filing contains only debt registration; no operational or guidance content."
@@ -19138,7 +19138,7 @@
             155.07,
             154.54,
             156.95,
-            159.36
+            159.68
           ],
           "prices_3m": [
             154.48,
@@ -19203,7 +19203,7 @@
             155.07,
             154.54,
             156.95,
-            159.36
+            159.68
           ]
         },
         {
@@ -19215,8 +19215,8 @@
           "composite_score": 42.1,
           "price": 0.77,
           "analyst_target_price": 3.0,
-          "upside_pct": 292.0,
-          "stop_loss_price": 0.7,
+          "upside_pct": 287.6,
+          "stop_loss_price": 0.71,
           "scores": {
             "analyst": 60.0,
             "momentum": 0.0,
@@ -19226,8 +19226,8 @@
           },
           "signal_details": {
             "analyst": "88% of 8 analysts bullish",
-            "momentum": "$0.77 | 4-wk return: -11.9% | below 50-day MA | Volume ratio: 0.6x",
-            "fundamentals": "Target: $3 (+292% upside) | Revenue growth: 12% | Gross margin: 57%",
+            "momentum": "$0.77 | 4-wk return: -10.9% | below 50-day MA | Volume ratio: 0.6x",
+            "fundamentals": "Target: $3 (+288% upside) | Revenue growth: 12% | Gross margin: 57%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-15] Failed quorum at annual meeting, no business conducted, negative signal"
           },
@@ -19323,130 +19323,15 @@
         },
         {
           "rank": 38,
-          "ticker": "HOOD",
-          "company": "Robinhood Markets, Inc.",
-          "signal": "WATCH",
-          "signal_emoji": "\u26aa WATCH",
-          "composite_score": 40.0,
-          "price": 75.75,
-          "analyst_target_price": 98.4,
-          "upside_pct": 29.9,
-          "stop_loss_price": 69.69,
-          "scores": {
-            "analyst": 60.0,
-            "momentum": 0.0,
-            "fundamentals": 68.9,
-            "social": 30.0,
-            "filing": 18.0
-          },
-          "signal_details": {
-            "analyst": "82% of 34 analysts bullish",
-            "momentum": "$75.74 | 4-wk return: -10.6% | below 50-day MA | Volume ratio: 0.7x",
-            "fundamentals": "Target: $98 (+30% upside) | Revenue growth: 15% | Gross margin: 92%",
-            "social": "Rank #38 on social | 21 mentions | \u2191 rising (+1 vs yesterday)",
-            "filing": "[2026-05-08] CTO departure without cause; no guidance provided; negative signal"
-          },
-          "prices_1m": [
-            88.43,
-            83.54,
-            84.71,
-            83.95,
-            82.07,
-            71.2,
-            72.89,
-            73.66,
-            76.55,
-            77.03,
-            79.05,
-            76.28,
-            77.03,
-            80.78,
-            78.27,
-            76.75,
-            80.7,
-            77.14,
-            77.15,
-            74.16,
-            75.76,
-            75.74
-          ],
-          "prices_3m": [
-            71.78,
-            73.39,
-            77.53,
-            79.45,
-            75.85,
-            78.78,
-            76.07,
-            82.21,
-            80.56,
-            77.09,
-            79.35,
-            78.53,
-            78.69,
-            76.12,
-            73.39,
-            75.31,
-            77.35,
-            74.9,
-            74.16,
-            70.89,
-            72.49,
-            69.08,
-            72.54,
-            70.35,
-            66.02,
-            65.16,
-            69.3,
-            70.11,
-            68.9,
-            69.78,
-            69.65,
-            71.83,
-            70.12,
-            69.19,
-            71.67,
-            79.09,
-            87.32,
-            86.85,
-            90.75,
-            91.28,
-            86.43,
-            88.43,
-            83.54,
-            84.71,
-            83.95,
-            82.07,
-            71.2,
-            72.89,
-            73.66,
-            76.55,
-            77.03,
-            79.05,
-            76.28,
-            77.03,
-            80.78,
-            78.27,
-            76.75,
-            80.7,
-            77.14,
-            77.15,
-            74.16,
-            75.76,
-            75.74
-          ]
-        },
-        {
-          "rank": 39,
           "ticker": "FTNT",
           "company": "Fortinet, Inc.",
           "signal": "WATCH",
           "signal_emoji": "\u26aa WATCH",
           "composite_score": 40.0,
-          "price": 129.1,
+          "price": 129.46,
           "analyst_target_price": 107.17,
-          "upside_pct": -17.0,
-          "stop_loss_price": 118.78,
+          "upside_pct": -17.2,
+          "stop_loss_price": 119.1,
           "scores": {
             "analyst": 4.0,
             "momentum": 85.0,
@@ -19456,7 +19341,7 @@
           },
           "signal_details": {
             "analyst": "33% of 52 analysts bullish",
-            "momentum": "$129.14 | 4-wk return: +53.1% | above 50-day MA | Volume ratio: 0.9x",
+            "momentum": "$129.46 | 4-wk return: +53.5% | above 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $107 (-17% upside) | Revenue growth: 20% | Gross margin: 80%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-06] Beat guidance, raised FY2026 revenue outlook, strong billings growth"
@@ -19483,7 +19368,7 @@
             126.5,
             127.64,
             130.0,
-            129.14
+            129.46
           ],
           "prices_3m": [
             75.6,
@@ -19548,7 +19433,122 @@
             126.5,
             127.64,
             130.0,
-            129.14
+            129.46
+          ]
+        },
+        {
+          "rank": 39,
+          "ticker": "HOOD",
+          "company": "Robinhood Markets, Inc.",
+          "signal": "WATCH",
+          "signal_emoji": "\u26aa WATCH",
+          "composite_score": 39.9,
+          "price": 75.92,
+          "analyst_target_price": 98.4,
+          "upside_pct": 29.6,
+          "stop_loss_price": 69.85,
+          "scores": {
+            "analyst": 60.0,
+            "momentum": 0.0,
+            "fundamentals": 68.5,
+            "social": 30.0,
+            "filing": 18.0
+          },
+          "signal_details": {
+            "analyst": "82% of 34 analysts bullish",
+            "momentum": "$75.92 | 4-wk return: -10.4% | below 50-day MA | Volume ratio: 0.7x",
+            "fundamentals": "Target: $98 (+30% upside) | Revenue growth: 15% | Gross margin: 92%",
+            "social": "Rank #37 on social | 22 mentions | \u2191 rising (+2 vs yesterday)",
+            "filing": "[2026-05-08] CTO departure without cause; no guidance provided; negative signal"
+          },
+          "prices_1m": [
+            88.43,
+            83.54,
+            84.71,
+            83.95,
+            82.07,
+            71.2,
+            72.89,
+            73.66,
+            76.55,
+            77.03,
+            79.05,
+            76.28,
+            77.03,
+            80.78,
+            78.27,
+            76.75,
+            80.7,
+            77.14,
+            77.15,
+            74.16,
+            75.76,
+            75.92
+          ],
+          "prices_3m": [
+            71.78,
+            73.39,
+            77.53,
+            79.45,
+            75.85,
+            78.78,
+            76.07,
+            82.21,
+            80.56,
+            77.09,
+            79.35,
+            78.53,
+            78.69,
+            76.12,
+            73.39,
+            75.31,
+            77.35,
+            74.9,
+            74.16,
+            70.89,
+            72.49,
+            69.08,
+            72.54,
+            70.35,
+            66.02,
+            65.16,
+            69.3,
+            70.11,
+            68.9,
+            69.78,
+            69.65,
+            71.83,
+            70.12,
+            69.19,
+            71.67,
+            79.09,
+            87.32,
+            86.85,
+            90.75,
+            91.28,
+            86.43,
+            88.43,
+            83.54,
+            84.71,
+            83.95,
+            82.07,
+            71.2,
+            72.89,
+            73.66,
+            76.55,
+            77.03,
+            79.05,
+            76.28,
+            77.03,
+            80.78,
+            78.27,
+            76.75,
+            80.7,
+            77.14,
+            77.15,
+            74.16,
+            75.76,
+            75.92
           ]
         },
         {
@@ -19558,20 +19558,20 @@
           "signal": "WATCH",
           "signal_emoji": "\u26aa WATCH",
           "composite_score": 38.9,
-          "price": 120.6,
+          "price": 120.52,
           "analyst_target_price": 135.79,
-          "upside_pct": 12.6,
-          "stop_loss_price": 110.95,
+          "upside_pct": 12.7,
+          "stop_loss_price": 110.88,
           "scores": {
             "analyst": 48.8,
-            "momentum": 38.7,
-            "fundamentals": 36.4,
+            "momentum": 38.5,
+            "fundamentals": 36.5,
             "social": 30.0,
             "filing": 25.0
           },
           "signal_details": {
             "analyst": "62% of 16 analysts bullish",
-            "momentum": "$120.60 | 4-wk return: -3.2% | above 50-day MA | Volume ratio: 0.8x",
+            "momentum": "$120.52 | 4-wk return: -3.2% | above 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $136 (+13% upside) | Revenue growth: 17% | Gross margin: 38%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-15] Routine annual meeting voting results; no financial guidance or business updates provided."
@@ -19598,7 +19598,7 @@
             106.35,
             113.33,
             120.91,
-            120.6
+            120.52
           ],
           "prices_3m": [
             134.58,
@@ -19663,7 +19663,7 @@
             106.35,
             113.33,
             120.91,
-            120.6
+            120.52
           ]
         },
         {
@@ -19673,10 +19673,10 @@
           "signal": "WATCH",
           "signal_emoji": "\u26aa WATCH",
           "composite_score": 35.8,
-          "price": 24.4,
+          "price": 24.38,
           "analyst_target_price": 13.59,
           "upside_pct": -44.3,
-          "stop_loss_price": 22.45,
+          "stop_loss_price": 22.43,
           "scores": {
             "analyst": 25.0,
             "momentum": 85.0,
@@ -19686,7 +19686,7 @@
           },
           "signal_details": {
             "analyst": "47% of 15 analysts bullish",
-            "momentum": "$24.39 | 4-wk return: +41.1% | above 50-day MA | Volume ratio: 0.9x",
+            "momentum": "$24.38 | 4-wk return: +41.1% | above 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $14 (-44% upside) | Revenue growth: -39% | Gross margin: 30%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-13] At-the-market offering only; no operational guidance or earnings discussion provided."
@@ -19713,7 +19713,7 @@
             19.67,
             19.43,
             22.99,
-            24.39
+            24.38
           ],
           "prices_3m": [
             8.12,
@@ -19778,7 +19778,7 @@
             19.67,
             19.43,
             22.99,
-            24.39
+            24.38
           ]
         },
         {
@@ -19787,23 +19787,23 @@
           "company": "SoFi Technologies, Inc.",
           "signal": "AVOID",
           "signal_emoji": "\ud83d\udd34 AVOID",
-          "composite_score": 32.9,
-          "price": 15.63,
+          "composite_score": 32.4,
+          "price": 15.65,
           "analyst_target_price": 21.1,
-          "upside_pct": 35.0,
-          "stop_loss_price": 14.38,
+          "upside_pct": 34.8,
+          "stop_loss_price": 14.4,
           "scores": {
             "analyst": 22.7,
             "momentum": 0.0,
-            "fundamentals": 92.4,
-            "social": 30.0,
+            "fundamentals": 92.2,
+            "social": 25.0,
             "filing": 0.0
           },
           "signal_details": {
             "analyst": "45% of 31 analysts bullish",
-            "momentum": "$15.64 | 4-wk return: -15.2% | below 50-day MA | Volume ratio: 0.8x",
+            "momentum": "$15.65 | 4-wk return: -15.1% | below 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $21 (+35% upside) | Revenue growth: 42% | Gross margin: 84%",
-            "social": "Rank #75 on social | 11 mentions | \u2191 rising (+3 vs yesterday)",
+            "social": "Rank #86 on social | 9 mentions | \u2193 falling (-1 vs yesterday)",
             "filing": "[2026-04-29] 8-K filing only; actual press release content not provided for analysis"
           },
           "prices_1m": [
@@ -19828,7 +19828,7 @@
             15.71,
             15.23,
             15.69,
-            15.64
+            15.65
           ],
           "prices_3m": [
             18.22,
@@ -19893,7 +19893,7 @@
             15.71,
             15.23,
             15.69,
-            15.64
+            15.65
           ]
         },
         {
@@ -19902,22 +19902,22 @@
           "company": "UiPath, Inc.",
           "signal": "AVOID",
           "signal_emoji": "\ud83d\udd34 AVOID",
-          "composite_score": 30.9,
-          "price": 10.45,
+          "composite_score": 31.0,
+          "price": 10.57,
           "analyst_target_price": 13.5,
-          "upside_pct": 29.2,
-          "stop_loss_price": 9.61,
+          "upside_pct": 27.7,
+          "stop_loss_price": 9.72,
           "scores": {
             "analyst": 8.6,
-            "momentum": 14.5,
-            "fundamentals": 66.9,
+            "momentum": 16.9,
+            "fundamentals": 64.7,
             "social": 30.0,
             "filing": 50.0
           },
           "signal_details": {
             "analyst": "36% of 28 analysts bullish",
-            "momentum": "$10.45 | 4-wk return: +0.8% | below 50-day MA | Volume ratio: 1.2x",
-            "fundamentals": "Target: $13 (+29% upside) | Revenue growth: 14% | Gross margin: 83%",
+            "momentum": "$10.57 | 4-wk return: +1.9% | below 50-day MA | Volume ratio: 1.2x",
+            "fundamentals": "Target: $13 (+28% upside) | Revenue growth: 14% | Gross margin: 83%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
@@ -19943,7 +19943,7 @@
             10.64,
             10.55,
             10.77,
-            10.45
+            10.57
           ],
           "prices_3m": [
             10.17,
@@ -20008,7 +20008,7 @@
             10.64,
             10.55,
             10.77,
-            10.45
+            10.57
           ]
         },
         {
@@ -20017,21 +20017,21 @@
           "company": "iShares PHLX SOX Semiconductor ",
           "signal": "AVOID",
           "signal_emoji": "\ud83d\udd34 AVOID",
-          "composite_score": 28.0,
-          "price": 524.01,
+          "composite_score": 28.1,
+          "price": 524.71,
           "analyst_target_price": 0.0,
           "upside_pct": 0.0,
-          "stop_loss_price": 482.09,
+          "stop_loss_price": 482.73,
           "scores": {
             "analyst": 0.0,
-            "momentum": 80.0,
+            "momentum": 80.3,
             "fundamentals": 0.0,
             "social": 30.0,
             "filing": 50.0
           },
           "signal_details": {
             "analyst": "No recent upgrade/downgrade activity",
-            "momentum": "$524.01 | 4-wk return: +13.5% | above 50-day MA | Volume ratio: 1.1x",
+            "momentum": "$524.71 | 4-wk return: +13.7% | above 50-day MA | Volume ratio: 1.1x",
             "fundamentals": "Target: no target | Revenue growth: 0% | Gross margin: 0%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "CIK not found in EDGAR \u2014 neutral"
@@ -20058,7 +20058,7 @@
             495.87,
             496.74,
             520.31,
-            524.05
+            524.71
           ],
           "prices_3m": [
             356.6,
@@ -20123,7 +20123,7 @@
             495.87,
             496.74,
             520.31,
-            524.05
+            524.71
           ]
         },
         {
@@ -20133,10 +20133,10 @@
           "signal": "AVOID",
           "signal_emoji": "\ud83d\udd34 AVOID",
           "composite_score": 27.9,
-          "price": 20.2,
+          "price": 20.19,
           "analyst_target_price": 18.41,
-          "upside_pct": -8.9,
-          "stop_loss_price": 18.58,
+          "upside_pct": -8.8,
+          "stop_loss_price": 18.57,
           "scores": {
             "analyst": 0.0,
             "momentum": 80.0,
@@ -20146,7 +20146,7 @@
           },
           "signal_details": {
             "analyst": "16% of 25 analysts bullish",
-            "momentum": "$20.20 | 4-wk return: +51.0% | above 50-day MA | Volume ratio: 0.8x",
+            "momentum": "$20.19 | 4-wk return: +50.9% | above 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $18 (-9% upside) | Revenue growth: 8% | Gross margin: 12%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-05-15] Equity redemption and dilutive offering; no guidance or earnings news."
@@ -20173,7 +20173,7 @@
             19.54,
             17.91,
             18.94,
-            20.2
+            20.19
           ],
           "prices_3m": [
             16.07,
@@ -20238,7 +20238,7 @@
             19.54,
             17.91,
             18.94,
-            20.2
+            20.19
           ]
         },
         {
@@ -20247,21 +20247,21 @@
           "company": "Invesco PHLX Semiconductor ETF",
           "signal": "AVOID",
           "signal_emoji": "\ud83d\udd34 AVOID",
-          "composite_score": 26.0,
-          "price": 93.98,
+          "composite_score": 26.2,
+          "price": 94.17,
           "analyst_target_price": 0.0,
           "upside_pct": 0.0,
-          "stop_loss_price": 86.46,
+          "stop_loss_price": 86.64,
           "scores": {
             "analyst": 0.0,
-            "momentum": 72.2,
+            "momentum": 72.7,
             "fundamentals": 0.0,
             "social": 30.0,
             "filing": 50.0
           },
           "signal_details": {
             "analyst": "No recent upgrade/downgrade activity",
-            "momentum": "$93.98 | 4-wk return: +13.6% | above 50-day MA | Volume ratio: 1.1x",
+            "momentum": "$94.17 | 4-wk return: +13.8% | above 50-day MA | Volume ratio: 1.1x",
             "fundamentals": "Target: no target | Revenue growth: 0% | Gross margin: 0%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "CIK not found in EDGAR \u2014 neutral"
@@ -20288,7 +20288,7 @@
             88.96,
             89.03,
             93.02,
-            93.98
+            94.17
           ],
           "prices_3m": [
             64.61,
@@ -20353,7 +20353,7 @@
             88.96,
             89.03,
             93.02,
-            93.98
+            94.17
           ]
         },
         {
@@ -20362,21 +20362,21 @@
           "company": "ARK Innovation ETF",
           "signal": "AVOID",
           "signal_emoji": "\ud83d\udd34 AVOID",
-          "composite_score": 21.2,
-          "price": 76.47,
+          "composite_score": 21.3,
+          "price": 76.62,
           "analyst_target_price": 0.0,
           "upside_pct": 0.0,
-          "stop_loss_price": 70.35,
+          "stop_loss_price": 70.49,
           "scores": {
             "analyst": 0.0,
-            "momentum": 52.9,
+            "momentum": 53.3,
             "fundamentals": 0.0,
             "social": 30.0,
             "filing": 50.0
           },
           "signal_details": {
             "analyst": "No recent upgrade/downgrade activity",
-            "momentum": "$76.47 | 4-wk return: -0.0% | above 50-day MA | Volume ratio: 1.2x",
+            "momentum": "$76.62 | 4-wk return: +0.2% | above 50-day MA | Volume ratio: 1.2x",
             "fundamentals": "Target: no target | Revenue growth: 0% | Gross margin: 0%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "CIK not found in EDGAR \u2014 neutral"
@@ -20403,7 +20403,7 @@
             74.51,
             73.84,
             75.84,
-            76.47
+            76.62
           ],
           "prices_3m": [
             70.0,
@@ -20468,7 +20468,7 @@
             74.51,
             73.84,
             75.84,
-            76.47
+            76.62
           ]
         },
         {
@@ -20477,21 +20477,21 @@
           "company": "Defiance AI & Power Infrastruct",
           "signal": "AVOID",
           "signal_emoji": "\ud83d\udd34 AVOID",
-          "composite_score": 20.1,
-          "price": 32.02,
+          "composite_score": 20.2,
+          "price": 32.09,
           "analyst_target_price": 0.0,
           "upside_pct": 0.0,
-          "stop_loss_price": 29.46,
+          "stop_loss_price": 29.52,
           "scores": {
             "analyst": 0.0,
-            "momentum": 48.3,
+            "momentum": 48.7,
             "fundamentals": 0.0,
             "social": 30.0,
             "filing": 50.0
           },
           "signal_details": {
             "analyst": "No recent upgrade/downgrade activity",
-            "momentum": "$32.02 | 4-wk return: +4.1% | above 50-day MA | Volume ratio: 1.0x",
+            "momentum": "$32.09 | 4-wk return: +4.4% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: no target | Revenue growth: 0% | Gross margin: 0%",
             "social": "Not in top social mentions (neutral score)",
             "filing": "CIK not found in EDGAR \u2014 neutral"
@@ -20518,7 +20518,7 @@
             31.01,
             30.5,
             31.26,
-            32.02
+            32.09
           ],
           "prices_3m": [
             25.98,
@@ -20583,7 +20583,7 @@
             31.01,
             30.5,
             31.26,
-            32.02
+            32.09
           ]
         },
         {
@@ -20593,10 +20593,10 @@
           "signal": "AVOID",
           "signal_emoji": "\ud83d\udd34 AVOID",
           "composite_score": 8.0,
-          "price": 20.87,
+          "price": 20.77,
           "analyst_target_price": 0.0,
           "upside_pct": 0.0,
-          "stop_loss_price": 19.2,
+          "stop_loss_price": 19.11,
           "scores": {
             "analyst": 0.0,
             "momentum": 0.0,
@@ -20624,7 +20624,7 @@
             21.06,
             21.2,
             20.07,
-            20.87
+            20.77
           ],
           "prices_3m": [
             19.0,
@@ -20639,7 +20639,7 @@
             21.06,
             21.2,
             20.07,
-            20.87
+            20.77
           ]
         }
       ]
@@ -20647,5 +20647,5 @@
   ],
   "total_runs": 4,
   "first_run": "2026-05-18T22:00:20",
-  "last_run": "2026-05-21T19:55:51"
+  "last_run": "2026-05-21T21:26:08"
 }
