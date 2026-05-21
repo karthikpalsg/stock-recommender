@@ -203,5 +203,15 @@
     "score": 45,
     "reason": "Equity offering announced; no earnings guidance, operational metrics, or contract wins disclosed",
     "filing_date": "2026-05-20"
+  },
+  "CRWV_0001769628-26-000236": {
+    "score": 85,
+    "reason": "Transformational financing milestone, oversubscribed facility, major capital raise momentum",
+    "filing_date": "2026-05-18"
+  },
+  "NVTS_0001104659-26-059828": {
+    "score": 25,
+    "reason": "At-the-market offering only; no operational guidance or earnings discussion provided.",
+    "filing_date": "2026-05-13"
   }
 }
