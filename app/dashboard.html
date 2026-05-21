@@ -1307,6 +1307,36 @@
       font-size: 12.5px; color: var(--muted); line-height: 1.65; margin-bottom: 10px;
     }
     .rec-writeup strong { color: var(--text); font-weight: 700; }
+
+    /* ── Group tags on cards ── */
+    .card-group {
+      display: flex; flex-wrap: wrap; gap: 3px; margin: 4px 0 0;
+    }
+    .card-group-tag {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.04em;
+      background: rgba(139,148,158,0.12); border: 1px solid rgba(139,148,158,0.2);
+      color: var(--muted); border-radius: 8px; padding: 1px 5px;
+      white-space: nowrap; text-transform: uppercase;
+    }
+
+    /* ── Group filter pills ── */
+    .filter-group-wrap {
+      display: flex; flex-wrap: wrap; gap: 5px; align-items: center;
+    }
+    .grp-pill {
+      padding: 4px 10px; font-size: 11px; font-weight: 600;
+      border-radius: 12px; border: 1px solid var(--border);
+      background: transparent; color: var(--muted);
+      cursor: pointer; white-space: nowrap;
+      transition: background 0.12s, color 0.12s, border-color 0.12s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .grp-pill.active {
+      background: rgba(63,185,80,0.15);
+      border-color: rgba(63,185,80,0.4);
+      color: var(--green-l);
+    }
+    .grp-pill:active { opacity: 0.7; }
   </style>
 </head>
 <body>
@@ -1403,11 +1433,17 @@
   let allRuns     = [];
   let tabMeta     = [];
   let activeTabId = null;
+  // Groups
+  const GROUPS_URL    = 'https://raw.githubusercontent.com/karthikpalsg/stock-recommender/main/data/groups.json';
+  let tickerGroupsMap = {};   // { "NVDA": ["AI & Compute", ...], ... }
+  let allGroupNames   = [];   // sorted group name list
+  let activeGroups    = new Set();
+
   let lastRunId   = null;
   let lastFetchAt = null;
   let currentRun  = null;   // run currently displayed
   let filterOpen  = false;  // filter panel visibility
-  let filterState = { ticker: '', priceMin: '', priceMax: '' }; // persists across tab switches
+  let filterState = { ticker: '', priceMin: '', priceMax: '', groups: [] }; // persists across tab switches
   let trendMode   = '1m';   // sparkline window: '1m' | '3m'
   let viewMode    = 'cards';          // 'cards' | 'table'
   let tableSort   = { col: 4, desc: true };
@@ -1418,6 +1454,7 @@
     new ResizeObserver(() => { positionTabBar(); positionControls(); })
       .observe(document.getElementById('header'));
     window.addEventListener('resize', positionTableWrap);
+    fetchGroups();
     fetchData();
     setInterval(fetchData,      POLL_INTERVAL);
     setInterval(updateSubtitle, 30_000);
@@ -1449,6 +1486,25 @@
                  + (tabBar?.offsetHeight  || 0)
                  + (ctrl?.offsetHeight    || 0);
     wrap.style.maxHeight = (window.innerHeight - used) + 'px';
+  }
+
+  // ── Groups ───────────────────────────────────────────────────────────────
+  async function fetchGroups() {
+    try {
+      const res = await fetch(GROUPS_URL + '?_=' + Date.now());
+      if (!res.ok) return;
+      const data = await res.json();
+      tickerGroupsMap = {};
+      Object.entries(data.groups || {}).forEach(([grp, tickers]) => {
+        tickers.forEach(t => {
+          if (!tickerGroupsMap[t]) tickerGroupsMap[t] = [];
+          tickerGroupsMap[t].push(grp);
+        });
+      });
+      allGroupNames = Object.keys(data.groups || {}).sort();
+    } catch (e) {
+      // Groups optional — fail silently
+    }
   }
 
   // ── Fetch ────────────────────────────────────────────────────────────────
@@ -1670,6 +1726,10 @@
                      placeholder="Max" min="0" oninput="applyFilters()">
             </div>
           </div>
+          <div class="filter-row" id="group-filter-row" style="display:none">
+            <span class="filter-label">Group</span>
+            <div class="filter-group-wrap" id="group-pills"></div>
+          </div>
           <button class="filter-clear-btn" id="clear-btn" onclick="clearFilters()">Clear filters</button>
         </div>
         <div class="result-bar" id="result-bar"></div>
@@ -1704,6 +1764,28 @@
     document.getElementById('filter-btn')?.classList.toggle('active', filterOpen);
   }
 
+  function renderGroupPills() {
+    const row   = document.getElementById('group-filter-row');
+    const wrap  = document.getElementById('group-pills');
+    if (!row || !wrap) return;
+    if (!allGroupNames.length) { row.style.display = 'none'; return; }
+    row.style.display = '';
+    wrap.innerHTML = allGroupNames.map(g =>
+      `<button class="grp-pill${activeGroups.has(g)?' active':''}"
+        onclick="toggleGroupFilter('${g.replace(/'/g,"\\'")}')">
+        ${g}
+      </button>`
+    ).join('');
+  }
+
+  function toggleGroupFilter(group) {
+    if (activeGroups.has(group)) activeGroups.delete(group);
+    else activeGroups.add(group);
+    filterState.groups = [...activeGroups];
+    renderGroupPills();
+    applyFilters();
+  }
+
   function applyFilters() {
     if (!currentRun?.stocks?.length) return;
 
@@ -1711,7 +1793,7 @@
     const tickers   = rawTicker.split(/[\s,]+/).map(t => t.trim()).filter(Boolean);
     const priceMin  = parseFloat(document.getElementById('f-price-min')?.value) || 0;
     const priceMax  = parseFloat(document.getElementById('f-price-max')?.value) || Infinity;
-    const hasFilter = tickers.length > 0 || priceMin > 0 || priceMax < Infinity;
+    const hasFilter = tickers.length > 0 || priceMin > 0 || priceMax < Infinity || activeGroups.size > 0;
 
     // Persist current filter values so they survive tab switches
     filterState.ticker   = document.getElementById('f-ticker')?.value   || '';
@@ -1721,13 +1803,16 @@
     // Highlight clear button when filters are set
     document.getElementById('clear-btn')?.classList.toggle('has-filters', hasFilter);
 
-    const stocks = hasFilter
-      ? currentRun.stocks.filter(s => {
-          if (tickers.length > 0 && !tickers.includes(s.ticker)) return false;
-          if (s.price != null && (s.price < priceMin || s.price > priceMax)) return false;
-          return true;
-        })
-      : currentRun.stocks;
+    let stocks = currentRun.stocks;
+    if (tickers.length > 0)    stocks = stocks.filter(s => tickers.includes(s.ticker));
+    if (priceMin > 0)          stocks = stocks.filter(s => (s.price ?? 0) >= priceMin);
+    if (priceMax < Infinity)   stocks = stocks.filter(s => (s.price ?? 0) <= priceMax);
+    if (activeGroups.size > 0) {
+      stocks = stocks.filter(s => {
+        const grps = tickerGroupsMap[s.ticker] || [];
+        return grps.some(g => activeGroups.has(g));
+      });
+    }
 
     // Result bar
     const rb = document.getElementById('result-bar');
@@ -1740,6 +1825,7 @@
       }
     }
 
+    renderGroupPills();
     renderGrid(stocks, hasFilter);
   }
 
@@ -1750,7 +1836,8 @@
     if (t)  t.value  = '';
     if (mn) mn.value = '';
     if (mx) mx.value = '';
-    filterState = { ticker: '', priceMin: '', priceMax: '' };
+    filterState = { ticker: '', priceMin: '', priceMax: '', groups: [] };
+    activeGroups.clear();
     applyFilters();
   }
 
@@ -1853,6 +1940,7 @@
           <span class="card-upside-badge" style="${badgeStyle}">${upside}</span>
         </div>
         <div class="card-ticker">${s.ticker}</div>
+        ${(tickerGroupsMap[s.ticker]||[]).length ? `<div class="card-group">${(tickerGroupsMap[s.ticker]||[]).map(g=>`<span class="card-group-tag">${g}</span>`).join('')}</div>` : ''}
         <div class="card-signal" style="color:${color}">${SIG_EMOJI[s.signal] ?? ''} ${s.signal}</div>
         <div class="score-bar-bg">
           <div class="score-bar-fill" style="width:${score}%;background:${hex}"></div>

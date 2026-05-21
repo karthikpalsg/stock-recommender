@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "groups": {
+    "AI & Compute":           ["NVDA", "AMD", "NBIS", "MU", "SNDK", "MRVL", "SYNA"],
+    "Cloud & Software":       ["SNOW", "DDOG", "PLTR", "SOUN", "PATH", "FIVN", "INOD"],
+    "Space & Deep Tech":      ["LUNR", "RKLB", "ASTS", "ONDS"],
+    "Quantum Computing":      ["QUBT", "QBTS", "RGTI"],
+    "Cybersecurity":          ["CRWD", "FTNT"],
+    "Energy & Power":         ["OKLO", "IREN", "GNRC", "FLNC"],
+    "Photonics & Networking": ["NOK", "POET", "COHR", "IPGP", "LITE", "GLW"],
+    "Fintech":                ["SOFI", "HOOD"],
+    "Diversified":            ["IRM", "BKNG", "UNH", "NVT", "OUST", "REKR", "IDCC"],
+    "ETFs":                   ["ARKK", "SOXQ", "SOXX", "AIPO"],
+    "Ungrouped":              ["REA"]
+  }
+}

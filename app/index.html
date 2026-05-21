@@ -413,6 +413,83 @@
       font-family: inherit;
     }
     .btn-csv:active { opacity: 0.6; }
+
+/* ── Groups tab ── */
+.group-tag {
+  display: inline-flex; align-items: center; gap: 3px;
+  background: rgba(0,200,150,0.12); border: 1px solid rgba(0,200,150,0.3);
+  color: var(--green); border-radius: 10px;
+  padding: 2px 7px; font-size: 11px; font-weight: 600; line-height: 1.6;
+  white-space: nowrap; cursor: default;
+}
+.group-tag .gt-remove {
+  cursor: pointer; opacity: 0.6; font-size: 12px; margin-left: 1px;
+  line-height: 1; padding: 0 1px;
+}
+.group-tag .gt-remove:hover { opacity: 1; }
+
+.groups-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.groups-table th {
+  font-size: 11px; font-weight: 700; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left;
+}
+.groups-table td {
+  padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.04);
+  vertical-align: middle;
+}
+.groups-table tr:last-child td { border-bottom: none; }
+.gt-ticker {
+  font-weight: 700; font-size: 13px; color: var(--text); font-family: monospace;
+}
+.gt-tags { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+
+/* add-group dropdown */
+.gt-add-wrap { position: relative; display: inline-block; }
+.gt-add-btn {
+  background: rgba(255,255,255,0.05); border: 1px dashed var(--border);
+  color: var(--muted); border-radius: 10px; padding: 2px 8px;
+  font-size: 11px; cursor: pointer; white-space: nowrap;
+  transition: border-color 0.15s, color 0.15s;
+}
+.gt-add-btn:hover { border-color: var(--green); color: var(--green); }
+
+.gt-dropdown {
+  position: absolute; left: 0; top: calc(100% + 4px);
+  background: #1e2430; border: 1px solid var(--border);
+  border-radius: 10px; min-width: 180px; z-index: 50;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4); overflow: hidden;
+}
+.gt-dropdown.hidden { display: none; }
+.gt-dd-item {
+  padding: 9px 14px; font-size: 13px; cursor: pointer;
+  transition: background 0.1s; white-space: nowrap;
+}
+.gt-dd-item:hover { background: rgba(255,255,255,0.07); }
+.gt-dd-item.new-group { color: var(--green); border-top: 1px solid var(--border); }
+.gt-dd-new-input {
+  display: flex; gap: 6px; align-items: center;
+  padding: 8px 10px; border-top: 1px solid var(--border);
+}
+.gt-dd-new-input input {
+  flex: 1; background: var(--bg); border: 1px solid var(--border);
+  color: var(--text); border-radius: 6px; padding: 5px 8px;
+  font-size: 12px; outline: none;
+}
+.gt-dd-new-input input:focus { border-color: var(--green); }
+.gt-dd-new-input button {
+  background: var(--green); border: none; color: #000;
+  border-radius: 6px; padding: 5px 9px; font-size: 12px;
+  font-weight: 700; cursor: pointer;
+}
+
+.groups-save-bar {
+  position: sticky; bottom: 80px; left: 0; right: 0;
+  padding: 10px 16px; background: var(--surface);
+  border-top: 1px solid var(--border); margin: 0 -16px -16px;
+  display: none;
+}
+.groups-save-bar.visible { display: block; }
   </style>
 </head>
 
@@ -428,6 +505,7 @@
   <div class="tabs">
     <div class="tab active" onclick="switchTab('watchlist')">Watchlist</div>
     <div class="tab" onclick="switchTab('bulk')">Bulk</div>
+    <div class="tab" onclick="switchTab('groups')">Groups</div>
     <div class="tab" onclick="switchTab('data')">Data</div>
     <div class="tab" onclick="switchTab('settings')">Settings</div>
   </div>
@@ -504,6 +582,21 @@
     </div>
   </div>
 
+  <!-- ── PANEL: Groups ── -->
+  <div class="panel" id="panel-groups">
+    <div class="section-title" style="display:flex;justify-content:space-between;align-items:center">
+      <span>Ticker Groups</span>
+      <span id="groups-subtitle" style="font-size:12px;color:var(--muted);font-weight:400"></span>
+    </div>
+    <p style="font-size:12px;color:var(--muted);margin:-4px 0 12px">Assign tickers to groups. Use the filter in the dashboard to view stocks by group.</p>
+    <div id="groups-table-wrap">
+      <div class="empty">Loading groups…</div>
+    </div>
+    <div class="groups-save-bar" id="groups-save-bar">
+      <button class="btn btn-green btn-block" onclick="saveGroups()">Save Groups to GitHub</button>
+    </div>
+  </div>
+
   <!-- ── PANEL: Settings ── -->
   <div class="panel" id="panel-settings">
 
@@ -556,6 +649,10 @@
       <div class="nav-icon">✏️</div>
       <span class="nav-label">Bulk Edit</span>
     </div>
+    <div class="nav-item" id="nav-groups" onclick="switchTab('groups')">
+      <div class="nav-icon">🏷️</div>
+      <span class="nav-label">Groups</span>
+    </div>
     <div class="nav-item" id="nav-data" onclick="switchTab('data')">
       <div class="nav-icon">📊</div>
       <span class="nav-label">Data</span>
@@ -573,7 +670,10 @@
   const FILE     = 'tickers.txt';
   const API      = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`;
   const RUN_API  = `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/daily-picks.yml/dispatches`;
-  const HISTORY_RAW = `https://raw.githubusercontent.com/${OWNER}/${REPO}/main/data/history.json`;
+  const HISTORY_RAW  = `https://raw.githubusercontent.com/${OWNER}/${REPO}/main/data/history.json`;
+  const GROUPS_FILE  = 'data/groups.json';
+  const GROUPS_API   = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${GROUPS_FILE}`;
+  const GROUPS_RAW   = `https://raw.githubusercontent.com/${OWNER}/${REPO}/main/${GROUPS_FILE}`;
 
   // ── State ────────────────────────────────────────────────
   let tickers  = [];      // current list (array of strings, uppercase)
@@ -584,10 +684,17 @@
   let dtRunMeta = null;
   let dtLoaded  = false;
 
+  // Groups state
+  let groupsData     = {};   // { "AI & Compute": ["NVDA",...], ... }
+  let groupsSHA      = '';
+  let groupsModified = false;
+  let activeDropdown = null; // currently open dropdown ticker
+
   // ── Init ─────────────────────────────────────────────────
   window.addEventListener('load', () => {
     refreshTokenDisplay();
     fetchTickers();
+    fetchGroups();
   });
 
   // ── GitHub API helpers ───────────────────────────────────
@@ -959,16 +1066,23 @@
   let currentTab = 'watchlist';
 
   function switchTab(name) {
-    ['watchlist','bulk','data','settings'].forEach(t => {
+    ['watchlist','bulk','groups','data','settings'].forEach(t => {
       document.getElementById(`panel-${t}`)?.classList.toggle('active', t === name);
       document.getElementById(`nav-${t}`)?.classList.toggle('active', t === name);
     });
     document.querySelectorAll('.tab').forEach((el, i) => {
-      el.classList.toggle('active', ['watchlist','bulk','data','settings'][i] === name);
+      el.classList.toggle('active', ['watchlist','bulk','groups','data','settings'][i] === name);
     });
     currentTab = name;
     if (name === 'bulk') {
       document.getElementById('diff-preview').style.display = 'none';
+    }
+    if (name === 'groups') {
+      if (Object.keys(groupsData).length === 0) {
+        fetchGroups();
+      } else {
+        renderGroupsTab();
+      }
     }
     if (name === 'data' && !dtLoaded) {
       fetchLatestData();
@@ -982,6 +1096,190 @@
     el.className   = `toast ${type} show`;
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => { el.classList.remove('show'); }, 3000);
+  }
+
+  // ── Groups tab ───────────────────────────────────────────
+
+  async function fetchGroups() {
+    try {
+      // Fetch with auth to get SHA (needed for later saves)
+      const token = getToken();
+      const headers = { 'Accept': 'application/vnd.github.v3+json' };
+      if (token) headers['Authorization'] = `Bearer ${token}`;
+      const res = await fetch(GROUPS_API, { headers });
+      if (res.ok) {
+        const data = await res.json();
+        groupsSHA  = data.sha;
+        const raw  = atob(data.content.replace(/\n/g, ''));
+        const parsed = JSON.parse(raw);
+        groupsData = parsed.groups || {};
+      } else {
+        // File doesn't exist yet — start empty
+        groupsData = {};
+        groupsSHA  = '';
+      }
+    } catch (e) {
+      groupsData = {};
+    }
+    if (currentTab === 'groups') renderGroupsTab();
+  }
+
+  function renderGroupsTab() {
+    const wrap = document.getElementById('groups-table-wrap');
+    if (!wrap) return;
+
+    // Build ticker→groups reverse map
+    const allGroups = Object.keys(groupsData).sort();
+    const tickerGroups = {}; // ticker → Set of group names
+    allGroups.forEach(g => {
+      (groupsData[g] || []).forEach(t => {
+        if (!tickerGroups[t]) tickerGroups[t] = new Set();
+        tickerGroups[t].add(g);
+      });
+    });
+
+    // All known tickers = union of tickers.txt list + any in groupsData
+    const allTickers = [...new Set([...tickers, ...Object.values(groupsData).flat()])].sort();
+
+    const rows = allTickers.map(ticker => {
+      const myGroups = [...(tickerGroups[ticker] || [])].sort();
+      const pills = myGroups.map(g =>
+        `<span class="group-tag">${g}<span class="gt-remove" onclick="removeTickerFromGroup('${ticker}','${g.replace(/'/g,"\\'")}')">×</span></span>`
+      ).join('');
+      return `
+        <tr>
+          <td class="gt-ticker">${ticker}</td>
+          <td>
+            <div class="gt-tags">
+              ${pills}
+              <div class="gt-add-wrap" id="wrap-${ticker}">
+                <button class="gt-add-btn" onclick="toggleGroupDropdown('${ticker}')">＋ group</button>
+                <div class="gt-dropdown hidden" id="dd-${ticker}">
+                  ${allGroups.map(g =>
+                    `<div class="gt-dd-item" onclick="addTickerToGroup('${ticker}','${g.replace(/'/g,"\\'")}');closeDropdowns()">${g}</div>`
+                  ).join('')}
+                  <div class="gt-dd-new-input">
+                    <input type="text" id="new-grp-${ticker}" placeholder="New group name…"
+                           onkeydown="if(event.key==='Enter')createGroupAndAdd('${ticker}',document.getElementById('new-grp-${ticker}').value)">
+                    <button onclick="createGroupAndAdd('${ticker}',document.getElementById('new-grp-${ticker}').value)">Add</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>`;
+    }).join('');
+
+    wrap.innerHTML = `
+      <table class="groups-table">
+        <thead><tr><th>Ticker</th><th>Groups</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+
+    const sub = document.getElementById('groups-subtitle');
+    if (sub) sub.textContent = `${allTickers.length} tickers · ${allGroups.length} groups`;
+  }
+
+  function toggleGroupDropdown(ticker) {
+    closeDropdowns();
+    if (activeDropdown === ticker) { activeDropdown = null; return; }
+    const dd = document.getElementById(`dd-${ticker}`);
+    if (dd) { dd.classList.remove('hidden'); activeDropdown = ticker; }
+  }
+
+  function closeDropdowns() {
+    if (activeDropdown) {
+      const dd = document.getElementById(`dd-${activeDropdown}`);
+      if (dd) dd.classList.add('hidden');
+      activeDropdown = null;
+    }
+  }
+
+  document.addEventListener('click', e => {
+    if (activeDropdown && !e.target.closest('.gt-add-wrap')) closeDropdowns();
+  });
+
+  function addTickerToGroup(ticker, group) {
+    if (!groupsData[group]) groupsData[group] = [];
+    if (!groupsData[group].includes(ticker)) {
+      groupsData[group] = [...groupsData[group], ticker].sort();
+    }
+    markGroupsModified();
+    renderGroupsTab();
+  }
+
+  function removeTickerFromGroup(ticker, group) {
+    if (!groupsData[group]) return;
+    groupsData[group] = groupsData[group].filter(t => t !== ticker);
+    if (groupsData[group].length === 0) delete groupsData[group];
+    markGroupsModified();
+    renderGroupsTab();
+  }
+
+  function createGroupAndAdd(ticker, rawName) {
+    const name = rawName.trim();
+    if (!name) return;
+    if (!groupsData[name]) groupsData[name] = [];
+    addTickerToGroup(ticker, name);
+    closeDropdowns();
+  }
+
+  function markGroupsModified() {
+    groupsModified = true;
+    const bar = document.getElementById('groups-save-bar');
+    if (bar) bar.classList.add('visible');
+  }
+
+  async function saveGroups() {
+    const token = getToken();
+    if (!token) {
+      showToast('Set your GitHub token in Settings first', 'error');
+      switchTab('settings');
+      return;
+    }
+    const btn = document.querySelector('#groups-save-bar button');
+    if (btn) { btn.disabled = true; btn.textContent = 'Saving…'; }
+
+    try {
+      // Always refresh SHA before writing
+      const hRes = await fetch(GROUPS_API, {
+        headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (hRes.ok) { const hd = await hRes.json(); groupsSHA = hd.sha; }
+
+      const payload = JSON.stringify({ version: 1, groups: groupsData }, null, 2) + '\n';
+      const encoded = btoa(unescape(encodeURIComponent(payload)));
+
+      const body = { message: 'chore: update ticker groups [app]', content: encoded };
+      if (groupsSHA) body.sha = groupsSHA;
+
+      const res = await fetch(GROUPS_API, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type':  'application/json',
+          'Accept':        'application/vnd.github.v3+json',
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.message || `GitHub ${res.status}`);
+      }
+
+      const saved = await res.json();
+      groupsSHA = saved.content?.sha || groupsSHA;
+      groupsModified = false;
+      const bar = document.getElementById('groups-save-bar');
+      if (bar) bar.classList.remove('visible');
+      showToast('Groups saved ✓', 'success');
+
+    } catch (e) {
+      showToast('Save failed: ' + e.message, 'error');
+    } finally {
+      if (btn) { btn.disabled = false; btn.textContent = 'Save Groups to GitHub'; }
+    }
   }
 
   // ── Data tab ─────────────────────────────────────────────
