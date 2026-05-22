@@ -258,5 +258,15 @@
     "score": 28,
     "reason": "Equity issuance disclosure; no guidance raised or earnings results provided",
     "filing_date": "2026-05-22"
+  },
+  "NVTS_0001104659-26-065737": {
+    "score": 45,
+    "reason": "Neutral administrative filing; stock issuance tied to past business combination agreement.",
+    "filing_date": "2026-05-22"
+  },
+  "SATS_0001415404-26-000013": {
+    "score": 45,
+    "reason": "Spectrum transfer closing announced; neutral operational event, no guidance provided",
+    "filing_date": "2026-05-22"
   }
 }
