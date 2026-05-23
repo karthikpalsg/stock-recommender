@@ -1,6 +1,7 @@
 # Your stock watchlist — one ticker per line
 # Lines starting with # are ignored
 
+ACHR
 AIPO
 AMD
 APLD
