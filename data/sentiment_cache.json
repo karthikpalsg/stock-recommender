@@ -283,5 +283,15 @@
     "score": 40,
     "reason": "8-K structure only; actual results and guidance absent from filing excerpt",
     "filing_date": "2026-05-06"
+  },
+  "ACHR_0001824502-26-000042": {
+    "score": 28,
+    "reason": "Stock dilution through resale and vendor shares issuance. No guidance provided.",
+    "filing_date": "2026-05-14"
+  },
+  "KTOS_0001069258-26-000064": {
+    "score": 35,
+    "reason": "Annual meeting voting results only; no financial guidance or business updates",
+    "filing_date": "2026-05-15"
   }
 }
