@@ -81,11 +81,16 @@
       "SATS"
     ],
     "Watch": [
+      "AMD",
       "INFQ",
       "IONQ",
+      "NBIS",
+      "OSCR",
+      "PLTR",
       "QBTS",
       "QUBT",
-      "RGTI"
+      "RGTI",
+      "SOFI"
     ]
   }
 }
