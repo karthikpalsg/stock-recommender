@@ -28,8 +28,10 @@
       "RKLB"
     ],
     "Quantum Computing": [
-      "QUBT",
+      "INFQ",
+      "IONQ",
       "QBTS",
+      "QUBT",
       "RGTI"
     ],
     "Cybersecurity": [
@@ -77,6 +79,13 @@
       "RDW",
       "RKLB",
       "SATS"
+    ],
+    "Watch": [
+      "INFQ",
+      "IONQ",
+      "QBTS",
+      "QUBT",
+      "RGTI"
     ]
   }
 }
