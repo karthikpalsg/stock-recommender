@@ -293,5 +293,15 @@
     "score": 35,
     "reason": "Annual meeting voting results only; no financial guidance or business updates",
     "filing_date": "2026-05-15"
+  },
+  "IREN_0001878848-26-000030": {
+    "score": 75,
+    "reason": "Major contract execution: $1.6B GPU purchase supporting $3.4B AI cloud deal",
+    "filing_date": "2026-05-26"
+  },
+  "QBTS_0001907982-26-000071": {
+    "score": 25,
+    "reason": "Defensive statement addressing scientific criticism; no earnings/guidance data.",
+    "filing_date": "2026-05-26"
   }
 }
