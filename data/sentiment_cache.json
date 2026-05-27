@@ -303,5 +303,30 @@
     "score": 25,
     "reason": "Defensive statement addressing scientific criticism; no earnings/guidance data.",
     "filing_date": "2026-05-26"
+  },
+  "BE_0001628280-26-038451": {
+    "score": 35,
+    "reason": "Routine corporate governance amendments, no business or financial guidance disclosed.",
+    "filing_date": "2026-05-27"
+  },
+  "FIVN_0001288847-26-000101": {
+    "score": 40,
+    "reason": "Corporate governance changes only; no business or financial guidance provided.",
+    "filing_date": "2026-05-27"
+  },
+  "MRVL_0001835632-26-000014": {
+    "score": 88,
+    "reason": "Record revenue beat, 28% YoY growth, significant guidance raise, strong AI demand",
+    "filing_date": "2026-05-27"
+  },
+  "SNOW_0001640147-26-000027": {
+    "score": 40,
+    "reason": "No actual financial data or guidance provided in filing excerpt",
+    "filing_date": "2026-05-27"
+  },
+  "SOUN_0001213900-26-061610": {
+    "score": 0,
+    "reason": "Wrong company filing. Document shows LivePerson, not SOUN.",
+    "filing_date": "2026-05-27"
   }
 }
