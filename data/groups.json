@@ -27,7 +27,8 @@
       "NASA",
       "ONDS",
       "RDW",
-      "RKLB"
+      "RKLB",
+      "WARP"
     ],
     "Quantum Computing": [
       "INFQ",
@@ -75,7 +76,8 @@
       "FTXL",
       "SMH",
       "SOXQ",
-      "SOXX"
+      "SOXX",
+      "WARP"
     ],
     "Ungrouped": [
       "REA"
@@ -84,7 +86,8 @@
       "NASA",
       "RDW",
       "RKLB",
-      "SATS"
+      "SATS",
+      "WARP"
     ],
     "Watch": [
       "ACHR",
