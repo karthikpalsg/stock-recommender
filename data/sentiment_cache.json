@@ -328,5 +328,10 @@
     "score": 0,
     "reason": "Wrong company filing. Document shows LivePerson, not SOUN.",
     "filing_date": "2026-05-27"
+  },
+  "ONDS_0001213900-26-061808": {
+    "score": 60,
+    "reason": "Acquisition of Omnisys Ltd. signals growth strategy and expansion.",
+    "filing_date": "2026-05-28"
   }
 }
