@@ -92,6 +92,9 @@
     "Watch": [
       "ACHR",
       "AMD",
+      "ANET",
+      "CEG",
+      "GLW",
       "INFQ",
       "IONQ",
       "KTOS",
@@ -102,6 +105,9 @@
       "QUBT",
       "RGTI",
       "SOFI"
+    ],
+    "Energy": [
+      "ANET"
     ]
   }
 }
