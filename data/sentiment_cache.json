@@ -373,5 +373,15 @@
     "score": 35,
     "reason": "8-K filing cover only; actual results and guidance in exhibit not provided.",
     "filing_date": "2026-05-07"
+  },
+  "LZ_0001286139-26-000020": {
+    "score": 72,
+    "reason": "Beat expectations, raised FY guidance, strong subscription growth, healthy cash flow",
+    "filing_date": "2026-05-06"
+  },
+  "RNG_0001384905-26-000033": {
+    "score": 75,
+    "reason": "Beat guidance, raised full-year outlook, strong margin expansion, AI traction",
+    "filing_date": "2026-05-07"
   }
 }
