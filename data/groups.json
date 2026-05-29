@@ -2,13 +2,14 @@
   "version": 1,
   "groups": {
     "AI & Compute": [
-      "NVDA",
       "AMD",
-      "NBIS",
-      "MU",
-      "SNDK",
       "MRVL",
-      "SYNA"
+      "MU",
+      "NBIS",
+      "NVDA",
+      "SNDK",
+      "SYNA",
+      "TEM"
     ],
     "Cloud & Software": [
       "SNOW",
@@ -42,10 +43,11 @@
       "FTNT"
     ],
     "Energy & Power": [
-      "OKLO",
-      "IREN",
+      "FLNC",
       "GNRC",
-      "FLNC"
+      "IREN",
+      "OKLO",
+      "VST"
     ],
     "Photonics & Networking": [
       "NOK",
@@ -104,7 +106,9 @@
       "QBTS",
       "QUBT",
       "RGTI",
-      "SOFI"
+      "SOFI",
+      "TEM",
+      "VST"
     ],
     "Energy": [
       "ANET"
