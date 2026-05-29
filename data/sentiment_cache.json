@@ -383,5 +383,20 @@
     "score": 75,
     "reason": "Beat guidance, raised full-year outlook, strong margin expansion, AI traction",
     "filing_date": "2026-05-07"
+  },
+  "JOBY_0001819848-26-000321": {
+    "score": 75,
+    "reason": "Multiple operational milestones, FAA progress, manufacturing scale-up, pilot program selection",
+    "filing_date": "2026-05-05"
+  },
+  "LUMN_0001193125-26-240338": {
+    "score": 25,
+    "reason": "Equity plan expansion only; no financial guidance, earnings data, or operational commentary provided.",
+    "filing_date": "2026-05-27"
+  },
+  "TE_0001213900-26-054706": {
+    "score": 65,
+    "reason": "Record Q1 results, on-track construction, but guidance maintained not raised.",
+    "filing_date": "2026-05-12"
   }
 }
