@@ -3,6 +3,7 @@
   "groups": {
     "AI & Compute": [
       "AMD",
+      "MRAM",
       "MRVL",
       "MU",
       "NBIS",
@@ -12,13 +13,15 @@
       "TEM"
     ],
     "Cloud & Software": [
-      "SNOW",
+      "AMPG",
       "DDOG",
-      "PLTR",
-      "SOUN",
-      "PATH",
       "FIVN",
-      "INOD"
+      "INOD",
+      "OCC",
+      "PATH",
+      "PLTR",
+      "SNOW",
+      "SOUN"
     ],
     "Space & Deep Tech": [
       "ACHR",
@@ -94,6 +97,7 @@
     "Watch": [
       "ACHR",
       "AMD",
+      "AMPG",
       "ANET",
       "CEG",
       "GLW",
