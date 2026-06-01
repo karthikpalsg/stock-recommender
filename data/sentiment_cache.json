@@ -418,5 +418,25 @@
     "score": 28,
     "reason": "Debt refinancing with no growth indicators or strategic improvements disclosed.",
     "filing_date": "2026-05-06"
+  },
+  "IREN_0001140361-26-023427": {
+    "score": 75,
+    "reason": "Major $3.6B financing secured with top-tier arrangers signals expansion",
+    "filing_date": "2026-06-01"
+  },
+  "LITE_0001193125-26-249535": {
+    "score": 32,
+    "reason": "Debt exchange, no cash proceeds, shareholder dilution, neutral-cautious signal",
+    "filing_date": "2026-06-01"
+  },
+  "QBTS_0001907982-26-000078": {
+    "score": 35,
+    "reason": "Investor Day announcement only; no financial results or guidance provided",
+    "filing_date": "2026-06-01"
+  },
+  "SATS_0001415404-26-000020": {
+    "score": 5,
+    "reason": "Missed $183M interest payments; severe financial distress signal",
+    "filing_date": "2026-06-01"
   }
 }
