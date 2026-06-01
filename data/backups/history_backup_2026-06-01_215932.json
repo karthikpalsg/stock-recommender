@@ -8991,12 +8991,12 @@
       ]
     },
     {
-      "run_id": "2026-06-01T21:59:32",
+      "run_id": "2026-06-01T21:31:56",
       "run_date": "2026-06-01",
-      "run_time": "21:59:32",
+      "run_time": "21:31:56",
       "run_label": "7am Final Signal",
-      "run_timestamp_local": "2026-06-01T21:59:32",
-      "run_timestamp_utc": "2026-06-01T21:59:32Z",
+      "run_timestamp_local": "2026-06-01T21:31:56",
+      "run_timestamp_utc": "2026-06-01T21:31:56Z",
       "timezone": "Australia/Sydney (AEST/AEDT \u2014 DST-aware)",
       "total_stocks": 81,
       "score_weights": {
@@ -9033,7 +9033,7 @@
             "analyst": "2 upgrade(s), 0 downgrade(s) in last 7d | 93% of 68 analysts bullish",
             "momentum": "$224.36 | 4-wk return: +13.0% | above 50-day MA | Volume ratio: 1.2x",
             "fundamentals": "Target: $297 (+32% upside) | Revenue growth: 85% | Gross margin: 74%",
-            "social": "Rank #4 on social | 322 mentions | \u2191 rising (+260 vs yesterday)",
+            "social": "Rank #4 on social | 323 mentions | \u2191 rising (+265 vs yesterday)",
             "filing": "[2026-05-20] 8-K filing structure only; actual financial results not disclosed in excerpt"
           },
           "prices_1m": [
@@ -9265,7 +9265,7 @@
             "analyst": "6 upgrade(s), 0 downgrade(s) in last 7d | 93% of 55 analysts bullish",
             "momentum": "$1035.50 | 4-wk return: +79.6% | above 50-day MA | Volume ratio: 1.1x",
             "fundamentals": "Target: $703 (-32% upside) | Revenue growth: 196% | Gross margin: 58%",
-            "social": "Rank #2 on social | 678 mentions | \u2191 rising (+549 vs yesterday)",
+            "social": "Rank #2 on social | 675 mentions | \u2191 rising (+549 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
           "prices_1m": [
@@ -9381,7 +9381,7 @@
             "analyst": "22 upgrade(s), 0 downgrade(s) in last 7d | 86% of 49 analysts bullish",
             "momentum": "$219.43 | 4-wk return: +34.1% | above 50-day MA | Volume ratio: 1.5x",
             "fundamentals": "Target: $220 (+0% upside) | Revenue growth: 28% | Gross margin: 52%",
-            "social": "Rank #64 on social | 23 mentions | \u2191 rising (+19 vs yesterday)",
+            "social": "Rank #62 on social | 23 mentions | \u2191 rising (+19 vs yesterday)",
             "filing": "[2026-05-27] Record revenue beat, 28% YoY growth, significant guidance raise, strong AI demand"
           },
           "prices_1m": [
@@ -9497,8 +9497,8 @@
             "analyst": "2 upgrade(s), 0 downgrade(s) in last 7d | 71% of 21 analysts bullish",
             "momentum": "$65.33 | 4-wk return: +32.0% | above 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $80 (+22% upside) | Revenue growth: 0% | Gross margin: 68%",
-            "social": "Rank #93 on social | 13 mentions | \u2191 rising (+12 vs yesterday)",
-            "filing": "[2026-06-01] Major $3.6B financing secured with top-tier arrangers signals expansion"
+            "social": "Rank #94 on social | 13 mentions | \u2191 rising (+12 vs yesterday)",
+            "filing": "8-K 2026-06-01: Major $3.6B financing secured with top-tier arrangers signals expansion"
           },
           "prices_1m": [
             45.51,
@@ -9613,7 +9613,7 @@
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 81% of 16 analysts bullish",
             "momentum": "$38.21 | 4-wk return: +50.7% | above 50-day MA | Volume ratio: 1.6x",
             "fundamentals": "Target: $41 (+7% upside) | Revenue growth: 199% | Gross margin: 10%",
-            "social": "Rank #46 on social | 35 mentions | \u2191 rising (+30 vs yesterday)",
+            "social": "Rank #45 on social | 36 mentions | \u2191 rising (+32 vs yesterday)",
             "filing": "[2026-05-14] Major strategic acquisition expanding capacity, infrastructure, and market reach significantly"
           },
           "prices_1m": [
@@ -9845,7 +9845,7 @@
             "analyst": "3 upgrade(s), 0 downgrade(s) in last 7d | 81% of 32 analysts bullish",
             "momentum": "$90.73 | 4-wk return: +18.5% | above 50-day MA | Volume ratio: 1.5x",
             "fundamentals": "Target: $99 (+9% upside) | Revenue growth: 15% | Gross margin: 92%",
-            "social": "Rank #29 on social | 64 mentions | \u2191 rising (+34 vs yesterday)",
+            "social": "Rank #28 on social | 65 mentions | \u2191 rising (+37 vs yesterday)",
             "filing": "[2026-05-08] CTO departure without cause; no guidance provided; negative signal"
           },
           "prices_1m": [
@@ -9961,7 +9961,7 @@
             "analyst": "29 upgrade(s), 0 downgrade(s) in last 7d | 88% of 58 analysts bullish",
             "momentum": "$280.16 | 4-wk return: +94.3% | above 50-day MA | Volume ratio: 2.0x",
             "fundamentals": "Target: $280 (+0% upside) | Revenue growth: 34% | Gross margin: 67%",
-            "social": "Rank #70 on social | 21 mentions | \u2191 rising (+19 vs yesterday)",
+            "social": "Rank #69 on social | 21 mentions | \u2191 rising (+19 vs yesterday)",
             "filing": "[2026-05-27] No actual financial data or guidance provided in filing excerpt"
           },
           "prices_1m": [
@@ -10425,7 +10425,7 @@
             "analyst": "3 upgrade(s), 0 downgrade(s) in last 7d | 81% of 57 analysts bullish",
             "momentum": "$510.13 | 4-wk return: +49.4% | above 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $472 (-7% upside) | Revenue growth: 38% | Gross margin: 53%",
-            "social": "Rank #14 on social | 115 mentions | \u2191 rising (+79 vs yesterday)",
+            "social": "Rank #14 on social | 115 mentions | \u2191 rising (+84 vs yesterday)",
             "filing": "[2026-05-15] Credit facility refinance, no earnings/guidance data, neutral financing event"
           },
           "prices_1m": [
@@ -10541,7 +10541,7 @@
             "analyst": "2 upgrade(s), 0 downgrade(s) in last 7d | 93% of 56 analysts bullish",
             "momentum": "$459.97 | 4-wk return: +10.4% | above 50-day MA | Volume ratio: 1.3x",
             "fundamentals": "Target: $482 (+5% upside) | Revenue growth: 30% | Gross margin: 77%",
-            "social": "Rank #17 on social | 108 mentions | \u2191 rising (+95 vs yesterday)",
+            "social": "Rank #16 on social | 103 mentions | \u2191 rising (+92 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
           "prices_1m": [
@@ -10657,7 +10657,7 @@
             "analyst": "5 upgrade(s), 0 downgrade(s) in last 7d | 79% of 61 analysts bullish",
             "momentum": "$782.17 | 4-wk return: +66.7% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $556 (-29% upside) | Revenue growth: 23% | Gross margin: 75%",
-            "social": "Rank #49 on social | 32 mentions | \u2191 rising (+27 vs yesterday)",
+            "social": "Rank #51 on social | 31 mentions | \u2191 rising (+26 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
           "prices_1m": [
@@ -10889,7 +10889,7 @@
             "analyst": "3 upgrade(s), 0 downgrade(s) in last 7d | 86% of 29 analysts bullish",
             "momentum": "$1761.43 | 4-wk return: +40.3% | above 50-day MA | Volume ratio: 0.7x",
             "fundamentals": "Target: $1609 (-9% upside) | Revenue growth: 251% | Gross margin: 56%",
-            "social": "Rank #33 on social | 55 mentions | \u2191 rising (+41 vs yesterday)",
+            "social": "Rank #33 on social | 54 mentions | \u2191 rising (+39 vs yesterday)",
             "filing": "[2026-05-15] Mini-tender offer warning; defensive posture, no business guidance"
           },
           "prices_1m": [
@@ -11121,7 +11121,7 @@
             "analyst": "68% of 38 analysts bullish",
             "momentum": "$160.65 | 4-wk return: +10.0% | above 50-day MA | Volume ratio: 1.2x",
             "fundamentals": "Target: $184 (+14% upside) | Revenue growth: 85% | Gross margin: 84%",
-            "social": "Rank #41 on social | 40 mentions | \u2191 rising (+23 vs yesterday)",
+            "social": "Rank #40 on social | 40 mentions | \u2191 rising (+24 vs yesterday)",
             "filing": "[2026-05-04] Massive beat, raises guidance, Rule of 40 score of 145%, accelerating growth"
           },
           "prices_1m": [
@@ -11469,7 +11469,7 @@
             "analyst": "89% of 54 analysts bullish",
             "momentum": "$135.86 | 4-wk return: +47.7% | above 50-day MA | Volume ratio: 1.4x",
             "fundamentals": "Target: $142 (+5% upside) | Revenue growth: 22% | Gross margin: 77%",
-            "social": "Rank #5 on social | 320 mentions | \u2191 rising (+238 vs yesterday)",
+            "social": "Rank #5 on social | 322 mentions | \u2191 rising (+245 vs yesterday)",
             "filing": "[2026-05-22] Administrative filing only; no financial guidance, earnings, or business updates provided."
           },
           "prices_1m": [
@@ -11933,7 +11933,7 @@
             "analyst": "71% of 21 analysts bullish",
             "momentum": "$264.51 | 4-wk return: +49.9% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $238 (-10% upside) | Revenue growth: 684% | Gross margin: 72%",
-            "social": "Rank #12 on social | 157 mentions | \u2191 rising (+144 vs yesterday)",
+            "social": "Rank #12 on social | 157 mentions | \u2191 rising (+145 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
           "prices_1m": [
@@ -12398,7 +12398,7 @@
             "momentum": "$29.18 | 4-wk return: +39.5% | above 50-day MA | Volume ratio: 1.1x",
             "fundamentals": "Target: $35 (+21% upside) | Revenue growth: -81% | Gross margin: 66%",
             "social": "Not in top social mentions (neutral score)",
-            "filing": "[2026-06-01] Investor Day announcement only; no financial results or guidance provided"
+            "filing": "8-K 2026-06-01: Investor Day announcement only; no financial results or guidance provided"
           },
           "prices_1m": [
             20.28,
@@ -12629,7 +12629,7 @@
             "analyst": "81% of 27 analysts bullish",
             "momentum": "$122.39 | 4-wk return: +52.4% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $104 (-15% upside) | Revenue growth: 64% | Gross margin: 37%",
-            "social": "Rank #9 on social | 200 mentions | \u2191 rising (+162 vs yesterday)",
+            "social": "Rank #9 on social | 199 mentions | \u2191 rising (+162 vs yesterday)",
             "filing": "[2026-05-21] Routine shareholder meeting voting results, no business guidance or financial information disclosed."
           },
           "prices_1m": [
@@ -13209,7 +13209,7 @@
             "analyst": "64% of 42 analysts bullish",
             "momentum": "$124.82 | 4-wk return: -0.5% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $139 (+11% upside) | Revenue growth: 112% | Gross margin: 69%",
-            "social": "Rank #47 on social | 34 mentions | \u2191 rising (+30 vs yesterday)",
+            "social": "Rank #48 on social | 34 mentions | \u2191 rising (+30 vs yesterday)",
             "filing": "[2026-05-18] Transformational financing milestone, oversubscribed facility, major capital raise momentum"
           },
           "prices_1m": [
@@ -13325,7 +13325,7 @@
             "analyst": "45% of 31 analysts bullish",
             "momentum": "$18.58 | 4-wk return: +14.7% | above 50-day MA | Volume ratio: 1.4x",
             "fundamentals": "Target: $21 (+13% upside) | Revenue growth: 42% | Gross margin: 84%",
-            "social": "Rank #58 on social | 25 mentions | \u2191 rising (+17 vs yesterday)",
+            "social": "Rank #63 on social | 23 mentions | \u2191 rising (+16 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
           "prices_1m": [
@@ -14833,7 +14833,7 @@
             "analyst": "0 upgrade(s), 1 downgrade(s) in last 7d | 44% of 18 analysts bullish",
             "momentum": "$105.65 | 4-wk return: +54.4% | above 50-day MA | Volume ratio: 1.4x",
             "fundamentals": "Target: $82 (-22% upside) | Revenue growth: 1952% | Gross margin: 45%",
-            "social": "Rank #8 on social | 250 mentions | \u2191 rising (+211 vs yesterday)",
+            "social": "Rank #8 on social | 248 mentions | \u2191 rising (+208 vs yesterday)",
             "filing": "[2026-05-11] FCC approval, 45 satellites 2026 target, 98.9 Mbps achievement, massive ecosystem"
           },
           "prices_1m": [
@@ -14949,8 +14949,8 @@
             "analyst": "81% of 31 analysts bullish",
             "momentum": "$905.00 | 4-wk return: -7.3% | above 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $1105 (+22% upside) | Revenue growth: 90% | Gross margin: 41%",
-            "social": "Rank #74 on social | 19 mentions | \u2191 rising (+18 vs yesterday)",
-            "filing": "[2026-06-01] Debt exchange, no cash proceeds, shareholder dilution, neutral-cautious signal"
+            "social": "Rank #72 on social | 19 mentions | \u2191 rising (+18 vs yesterday)",
+            "filing": "8-K 2026-06-01: Debt exchange, no cash proceeds, shareholder dilution, neutral-cautious signal"
           },
           "prices_1m": [
             902.32,
@@ -15181,7 +15181,7 @@
             "analyst": "0 upgrade(s), 1 downgrade(s) in last 7d | 79% of 14 analysts bullish",
             "momentum": "$20.68 | 4-wk return: +139.4% | above 50-day MA | Volume ratio: 1.6x",
             "fundamentals": "Target: $14 (-31% upside) | Revenue growth: 58% | Gross margin: 13%",
-            "social": "Rank #68 on social | 22 mentions | \u2191 rising (+18 vs yesterday)",
+            "social": "Rank #65 on social | 23 mentions | \u2191 rising (+19 vs yesterday)",
             "filing": "[2026-05-20] Routine shareholder meeting filing; no earnings, guidance, or material updates disclosed"
           },
           "prices_1m": [
@@ -15413,7 +15413,7 @@
             "analyst": "54% of 35 analysts bullish",
             "momentum": "$16.25 | 4-wk return: +23.7% | above 50-day MA | Volume ratio: 1.2x",
             "fundamentals": "Target: $13 (-21% upside) | Revenue growth: 2% | Gross margin: 45%",
-            "social": "Rank #24 on social | 74 mentions | \u2191 rising (+59 vs yesterday)",
+            "social": "Rank #26 on social | 72 mentions | \u2191 rising (+56 vs yesterday)",
             "filing": "EDGAR not applicable (NOK files outside SEC) \u2014 neutral"
           },
           "prices_1m": [
@@ -15946,7 +15946,7 @@
             "momentum": "$127.42 | 4-wk return: +5.9% | above 50-day MA | Volume ratio: 1.3x",
             "fundamentals": "Target: $138 (+8% upside) | Revenue growth: -5% | Gross margin: 27%",
             "social": "Not in top social mentions (neutral score)",
-            "filing": "[2026-06-01] Missed $183M interest payments; severe financial distress signal"
+            "filing": "8-K 2026-06-01: Missed $183M interest payments; severe financial distress signal"
           },
           "prices_1m": [
             123.14,
@@ -18180,5 +18180,5 @@
   ],
   "total_runs": 2,
   "first_run": "2026-05-30T09:31:16",
-  "last_run": "2026-06-01T21:59:32"
+  "last_run": "2026-06-01T21:31:56"
 }
