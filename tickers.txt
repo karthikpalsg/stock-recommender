@@ -2,6 +2,7 @@
 # Lines starting with # are ignored
 
 ACHR
+ADBE
 AIPO
 AMD
 AMPG
