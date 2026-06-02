@@ -438,5 +438,30 @@
     "score": 5,
     "reason": "Missed $183M interest payments; severe financial distress signal",
     "filing_date": "2026-06-01"
+  },
+  "ANET_0001596532-26-000118": {
+    "score": 40,
+    "reason": "8-K contains only shareholder meeting voting results, no guidance or earnings",
+    "filing_date": "2026-06-02"
+  },
+  "BKNG_0001075531-26-000031": {
+    "score": 45,
+    "reason": "Debt refinancing filing; no operational guidance or earnings information disclosed.",
+    "filing_date": "2026-06-02"
+  },
+  "CEG_0001104659-26-069482": {
+    "score": 45,
+    "reason": "Secondary offering and share repurchase; neutral capital allocation activity",
+    "filing_date": "2026-06-02"
+  },
+  "HON_0000773840-26-000068": {
+    "score": 45,
+    "reason": "Director appointment only. No financial guidance, earnings, or strategic announcements.",
+    "filing_date": "2026-06-02"
+  },
+  "OSCR_0001568651-26-000048": {
+    "score": 20,
+    "reason": "Executive transition signals uncertainty; reduced compensation suggests strategic shift.",
+    "filing_date": "2026-06-02"
   }
 }
