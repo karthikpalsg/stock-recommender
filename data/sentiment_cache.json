@@ -468,5 +468,30 @@
     "score": 0,
     "reason": "Filing contains no substantive business content or guidance information",
     "filing_date": "2026-05-22"
+  },
+  "AVGO_0001730168-26-000051": {
+    "score": 85,
+    "reason": "Record revenue, 48% YoY growth, Q3 guidance raised 84% YoY",
+    "filing_date": "2026-06-03"
+  },
+  "CRWD_0001535527-26-000022": {
+    "score": 85,
+    "reason": "Record ARR, 520bps guidance raise, strong cash flow, AI momentum",
+    "filing_date": "2026-06-03"
+  },
+  "HOOD_0001783879-26-000068": {
+    "score": 40,
+    "reason": "8-K reports shareholder meeting results; no guidance or financial updates",
+    "filing_date": "2026-06-03"
+  },
+  "LUNR_0001193125-26-254475": {
+    "score": 65,
+    "reason": "Capital raise approved; positive signal for growth funding and operations.",
+    "filing_date": "2026-06-03"
+  },
+  "ONDS_0001213900-26-064477": {
+    "score": 28,
+    "reason": "Administrative filing for equity resale related to acquisition. No guidance or earnings content.",
+    "filing_date": "2026-06-03"
   }
 }
