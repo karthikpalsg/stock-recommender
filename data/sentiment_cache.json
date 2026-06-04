@@ -493,5 +493,20 @@
     "score": 28,
     "reason": "Administrative filing for equity resale related to acquisition. No guidance or earnings content.",
     "filing_date": "2026-06-03"
+  },
+  "JOBY_0001819848-26-000369": {
+    "score": 35,
+    "reason": "Routine shareholder meeting results, no business guidance or financial updates provided",
+    "filing_date": "2026-06-04"
+  },
+  "LZ_0001286139-26-000024": {
+    "score": 25,
+    "reason": "Routine annual meeting filing, no business guidance or financial updates provided",
+    "filing_date": "2026-06-04"
+  },
+  "NVTS_0001104659-26-070530": {
+    "score": 25,
+    "reason": "Routine share issuance execution, no guidance or earnings information provided",
+    "filing_date": "2026-06-04"
   }
 }
