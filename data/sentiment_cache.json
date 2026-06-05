@@ -508,5 +508,25 @@
     "score": 25,
     "reason": "Routine share issuance execution, no guidance or earnings information provided",
     "filing_date": "2026-06-04"
+  },
+  "FLNC_0001868941-26-000021": {
+    "score": 35,
+    "reason": "Director transition, no financial guidance, operational continuity maintained",
+    "filing_date": "2026-06-05"
+  },
+  "HON_0000773840-26-000072": {
+    "score": 75,
+    "reason": "Major transformational event: aerospace spin-off announced with clear timing and execution plan",
+    "filing_date": "2026-06-05"
+  },
+  "RKLB_0001819994-26-000056": {
+    "score": 28,
+    "reason": "Executive appointment filing; no financial guidance, earnings data, or business updates provided.",
+    "filing_date": "2026-06-05"
+  },
+  "UNH_0000731766-26-000138": {
+    "score": 45,
+    "reason": "Routine shareholder meeting filing with no guidance, earnings, or material announcements.",
+    "filing_date": "2026-06-05"
   }
 }
