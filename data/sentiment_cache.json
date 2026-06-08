@@ -528,5 +528,45 @@
     "score": 45,
     "reason": "Routine shareholder meeting filing with no guidance, earnings, or material announcements.",
     "filing_date": "2026-06-05"
+  },
+  "CIFR_0001819989-26-000032": {
+    "score": 40,
+    "reason": "Routine annual meeting vote; no financial guidance or business updates provided.",
+    "filing_date": "2026-06-08"
+  },
+  "INOD_0001104659-26-071384": {
+    "score": 45,
+    "reason": "Routine annual meeting results, no earnings or guidance disclosure",
+    "filing_date": "2026-06-08"
+  },
+  "LUNR_0001628280-26-041526": {
+    "score": 25,
+    "reason": "Routine shareholder meeting results, no business updates or guidance provided.",
+    "filing_date": "2026-06-08"
+  },
+  "OKLO_0001849056-26-000028": {
+    "score": 28,
+    "reason": "Routine shareholder meeting results, no operational or financial guidance provided",
+    "filing_date": "2026-06-08"
+  },
+  "OSCR_0001568651-26-000054": {
+    "score": 32,
+    "reason": "Reaffirming prior guidance; no new initiatives or positive developments mentioned",
+    "filing_date": "2026-06-08"
+  },
+  "PL_0001140361-26-024109": {
+    "score": 45,
+    "reason": "Neutral. ATM offering announcement, no guidance or earnings commentary provided.",
+    "filing_date": "2026-06-05"
+  },
+  "QBTS_0001907982-26-000084": {
+    "score": 25,
+    "reason": "Routine shareholder meeting votes; no business updates, guidance, or financial metrics disclosed.",
+    "filing_date": "2026-06-08"
+  },
+  "TE_0001213900-26-065997": {
+    "score": 72,
+    "reason": "Strategic acquisition announced; expansion into BESS market, positive M&A activity",
+    "filing_date": "2026-06-08"
   }
 }
