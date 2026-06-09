@@ -568,5 +568,45 @@
     "score": 72,
     "reason": "Strategic acquisition announced; expansion into BESS market, positive M&A activity",
     "filing_date": "2026-06-08"
+  },
+  "APLD_0001493152-26-027984": {
+    "score": 85,
+    "reason": "Major expansion, $36B contracted portfolio, fifth campus, strong hyperscaler demand",
+    "filing_date": "2026-06-09"
+  },
+  "CIFR_0000950103-26-008678": {
+    "score": 72,
+    "reason": "Major capital raise signals growth, facility expansion, positive momentum",
+    "filing_date": "2026-06-09"
+  },
+  "MU_0001104659-26-071845": {
+    "score": 35,
+    "reason": "Board appointment only. No financial guidance, earnings, or operational updates provided.",
+    "filing_date": "2026-06-09"
+  },
+  "NVTS_0001104659-26-071850": {
+    "score": 15,
+    "reason": "Board chair resignation, no guidance provided, potential governance concerns",
+    "filing_date": "2026-06-09"
+  },
+  "ONDS_0001213900-26-066543": {
+    "score": 45,
+    "reason": "Neutral filing. Routine equity issuance from prior acquisition disclosure.",
+    "filing_date": "2026-06-09"
+  },
+  "OSCR_0001568651-26-000059": {
+    "score": 32,
+    "reason": "Routine annual meeting filing, no guidance or earnings information disclosed.",
+    "filing_date": "2026-06-09"
+  },
+  "PLTR_0001321655-26-000033": {
+    "score": 35,
+    "reason": "Routine shareholder meeting disclosure. No earnings, guidance, or business updates.",
+    "filing_date": "2026-06-09"
+  },
+  "RDW_0001819810-26-000078": {
+    "score": 28,
+    "reason": "ATM offering signals capital needs; neutral-to-cautious financing activity.",
+    "filing_date": "2026-06-09"
   }
 }
