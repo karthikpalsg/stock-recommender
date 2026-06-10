@@ -608,5 +608,25 @@
     "score": 28,
     "reason": "ATM offering signals capital needs; neutral-to-cautious financing activity.",
     "filing_date": "2026-06-09"
+  },
+  "AMZN_0001104659-26-072140": {
+    "score": 40,
+    "reason": "Filing incomplete; insufficient content to assess guidance tone or direction",
+    "filing_date": "2026-06-10"
+  },
+  "CRWV_0001769628-26-000270": {
+    "score": 32,
+    "reason": "Administrative 8-K filing; no financial guidance, earnings data, or strategic announcements provided.",
+    "filing_date": "2026-06-10"
+  },
+  "LUMN_0001193125-26-265145": {
+    "score": 28,
+    "reason": "Debt refinancing announcement; extends maturity, neutral operational signal.",
+    "filing_date": "2026-06-10"
+  },
+  "OCC_0001437749-26-020157": {
+    "score": 35,
+    "reason": "8-K filing structure only; press release and transcript not provided for analysis",
+    "filing_date": "2026-06-10"
   }
 }
