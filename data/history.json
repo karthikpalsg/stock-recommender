@@ -84717,12 +84717,12 @@
       ]
     },
     {
-      "run_id": "2026-06-10T21:25:25",
+      "run_id": "2026-06-10T21:57:27",
       "run_date": "2026-06-10",
-      "run_time": "21:25:25",
+      "run_time": "21:57:27",
       "run_label": "7am Final Signal",
-      "run_timestamp_local": "2026-06-10T21:25:25",
-      "run_timestamp_utc": "2026-06-10T21:25:25Z",
+      "run_timestamp_local": "2026-06-10T21:57:27",
+      "run_timestamp_utc": "2026-06-10T21:57:27Z",
       "timezone": "Australia/Sydney (AEST/AEDT \u2014 DST-aware)",
       "total_stocks": 85,
       "score_weights": {
@@ -84991,7 +84991,7 @@
             "analyst": "2 upgrade(s), 0 downgrade(s) in last 7d | 81% of 32 analysts bullish",
             "momentum": "$86.36 | 4-wk return: +12.5% | above 50-day MA | Volume ratio: 1.1x",
             "fundamentals": "Target: $100 (+16% upside) | Revenue growth: 15% | Gross margin: 92%",
-            "social": "Rank #14 on social | 54 mentions | \u2191 rising (+36 vs yesterday)",
+            "social": "Rank #14 on social | 58 mentions | \u2191 rising (+42 vs yesterday)",
             "filing": "[2026-06-03] 8-K reports shareholder meeting results; no guidance or financial updates"
           },
           "prices_1m": [
@@ -85107,7 +85107,7 @@
             "analyst": "16 upgrade(s), 1 downgrade(s) in last 7d | 93% of 56 analysts bullish",
             "momentum": "$372.10 | 4-wk return: -10.7% | below 50-day MA | Volume ratio: 1.6x",
             "fundamentals": "Target: $522 (+40% upside) | Revenue growth: 48% | Gross margin: 76%",
-            "social": "Rank #10 on social | 73 mentions | \u2193 falling (-18 vs yesterday)",
+            "social": "Rank #10 on social | 76 mentions | \u2193 falling (-14 vs yesterday)",
             "filing": "[2026-06-03] Record revenue, 48% YoY growth, Q3 guidance raised 84% YoY"
           },
           "prices_1m": [
@@ -85339,7 +85339,7 @@
             "analyst": "3 upgrade(s), 0 downgrade(s) in last 7d | 93% of 55 analysts bullish",
             "momentum": "$891.88 | 4-wk return: +11.0% | above 50-day MA | Volume ratio: 1.1x",
             "fundamentals": "Target: $789 (-12% upside) | Revenue growth: 196% | Gross margin: 58%",
-            "social": "Rank #3 on social | 238 mentions | \u2193 falling (-186 vs yesterday)",
+            "social": "Rank #3 on social | 244 mentions | \u2193 falling (-180 vs yesterday)",
             "filing": "[2026-06-09] Board appointment only. No financial guidance, earnings, or operational updates provided."
           },
           "prices_1m": [
@@ -85919,7 +85919,7 @@
             "analyst": "89% of 54 analysts bullish",
             "momentum": "$106.06 | 4-wk return: +21.8% | above 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $142 (+34% upside) | Revenue growth: 22% | Gross margin: 77%",
-            "social": "Rank #19 on social | 37 mentions | \u2193 falling (-13 vs yesterday)",
+            "social": "Rank #21 on social | 36 mentions | \u2193 falling (-15 vs yesterday)",
             "filing": "[2026-05-22] Administrative filing only; no financial guidance, earnings, or business updates provided."
           },
           "prices_1m": [
@@ -86035,7 +86035,7 @@
             "analyst": "3 upgrade(s), 0 downgrade(s) in last 7d | 86% of 29 analysts bullish",
             "momentum": "$1643.23 | 4-wk return: +13.5% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $1751 (+7% upside) | Revenue growth: 251% | Gross margin: 56%",
-            "social": "Rank #20 on social | 37 mentions | \u2193 falling (-21 vs yesterday)",
+            "social": "Rank #17 on social | 41 mentions | \u2193 falling (-16 vs yesterday)",
             "filing": "[2026-05-15] Mini-tender offer warning; defensive posture, no business guidance"
           },
           "prices_1m": [
@@ -86267,7 +86267,7 @@
             "analyst": "86% of 49 analysts bullish",
             "momentum": "$252.59 | 4-wk return: +41.9% | above 50-day MA | Volume ratio: 1.5x",
             "fundamentals": "Target: $233 (-8% upside) | Revenue growth: 28% | Gross margin: 52%",
-            "social": "Rank #11 on social | 66 mentions | \u2193 falling (-96 vs yesterday)",
+            "social": "Rank #12 on social | 67 mentions | \u2193 falling (-96 vs yesterday)",
             "filing": "[2026-05-27] Record revenue beat, 28% YoY growth, significant guidance raise, strong AI demand"
           },
           "prices_1m": [
@@ -86499,7 +86499,7 @@
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 71% of 21 analysts bullish",
             "momentum": "$211.69 | 4-wk return: +2.1% | above 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $242 (+14% upside) | Revenue growth: 684% | Gross margin: 72%",
-            "social": "Rank #27 on social | 31 mentions | \u2193 falling (-26 vs yesterday)",
+            "social": "Rank #28 on social | 31 mentions | \u2193 falling (-25 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
           "prices_1m": [
@@ -86731,7 +86731,7 @@
             "analyst": "2 upgrade(s), 0 downgrade(s) in last 7d | 68% of 38 analysts bullish",
             "momentum": "$130.21 | 4-wk return: +0.1% | below 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $184 (+41% upside) | Revenue growth: 85% | Gross margin: 84%",
-            "social": "Rank #47 on social | 16 mentions | \u2191 rising (+3 vs yesterday)",
+            "social": "Rank #46 on social | 16 mentions | \u2191 rising (+3 vs yesterday)",
             "filing": "[2026-06-09] Routine shareholder meeting disclosure. No earnings, guidance, or business updates."
           },
           "prices_1m": [
@@ -86847,7 +86847,7 @@
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 93% of 68 analysts bullish",
             "momentum": "$200.42 | 4-wk return: -11.1% | below 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $298 (+49% upside) | Revenue growth: 85% | Gross margin: 74%",
-            "social": "Rank #6 on social | 144 mentions | \u2193 falling (-17 vs yesterday)",
+            "social": "Rank #6 on social | 154 mentions | \u2193 falling (-8 vs yesterday)",
             "filing": "[2026-05-20] 8-K filing structure only; actual financial results not disclosed in excerpt"
           },
           "prices_1m": [
@@ -87079,7 +87079,7 @@
             "analyst": "4 upgrade(s), 0 downgrade(s) in last 7d | 42% of 45 analysts bullish",
             "momentum": "$233.38 | 4-wk return: -1.1% | below 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $329 (+41% upside) | Revenue growth: 12% | Gross margin: 89%",
-            "social": "Rank #32 on social | 25 mentions | \u2191 rising (+11 vs yesterday)",
+            "social": "Rank #34 on social | 25 mentions | \u2191 rising (+11 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
           "prices_1m": [
@@ -88239,7 +88239,7 @@
             "analyst": "93% of 14 analysts bullish",
             "momentum": "$9.31 | 4-wk return: +5.1% | below 50-day MA | Volume ratio: 0.6x",
             "fundamentals": "Target: $20 (+116% upside) | Revenue growth: 1080% | Gross margin: 45%",
-            "social": "Rank #62 on social | 12 mentions | \u2193 falling (-7 vs yesterday)",
+            "social": "Rank #64 on social | 12 mentions | \u2193 falling (-6 vs yesterday)",
             "filing": "[2026-06-09] Neutral filing. Routine equity issuance from prior acquisition disclosure."
           },
           "prices_1m": [
@@ -89379,6 +89379,122 @@
         },
         {
           "rank": 41,
+          "ticker": "AMD",
+          "company": "Advanced Micro Devices, Inc.",
+          "signal": "WATCH",
+          "signal_emoji": "\u26aa WATCH",
+          "composite_score": 47.6,
+          "price": 452.4,
+          "analyst_target_price": 482.69,
+          "upside_pct": 6.7,
+          "stop_loss_price": 416.21,
+          "scores": {
+            "analyst": 60.0,
+            "momentum": 43.1,
+            "fundamentals": 43.3,
+            "social": 52.0,
+            "filing": 28.0
+          },
+          "signal_details": {
+            "analyst": "81% of 57 analysts bullish",
+            "momentum": "$452.40 | 4-wk return: +1.5% | above 50-day MA | Volume ratio: 1.1x",
+            "fundamentals": "Target: $483 (+7% upside) | Revenue growth: 38% | Gross margin: 53%",
+            "social": "Rank #16 on social | 53 mentions | \u2191 rising (+6 vs yesterday)",
+            "filing": "[2026-05-15] Credit facility refinance, no earnings/guidance data, neutral financing event"
+          },
+          "prices_1m": [
+            458.79,
+            448.29,
+            445.5,
+            449.7,
+            424.1,
+            420.99,
+            414.05,
+            447.58,
+            449.59,
+            467.51,
+            503.89,
+            495.54,
+            518.09,
+            516.1,
+            510.13,
+            521.54,
+            542.52,
+            523.2,
+            466.38,
+            490.33,
+            475.51,
+            452.4
+          ],
+          "prices_3m": [
+            204.83,
+            197.74,
+            193.39,
+            196.58,
+            196.31,
+            199.46,
+            205.27,
+            201.33,
+            202.68,
+            205.37,
+            220.27,
+            203.77,
+            201.99,
+            196.04,
+            203.43,
+            210.21,
+            217.5,
+            220.18,
+            221.53,
+            231.82,
+            236.64,
+            245.04,
+            246.83,
+            255.07,
+            258.12,
+            278.26,
+            278.39,
+            274.95,
+            284.49,
+            303.46,
+            305.33,
+            347.81,
+            334.63,
+            323.21,
+            337.11,
+            354.49,
+            360.54,
+            341.54,
+            355.26,
+            421.39,
+            408.46,
+            455.19,
+            458.79,
+            448.29,
+            445.5,
+            449.7,
+            424.1,
+            420.99,
+            414.05,
+            447.58,
+            449.59,
+            467.51,
+            503.89,
+            495.54,
+            518.09,
+            516.1,
+            510.13,
+            521.54,
+            542.52,
+            523.2,
+            466.38,
+            490.33,
+            475.51,
+            452.4
+          ]
+        },
+        {
+          "rank": 42,
           "ticker": "TEM",
           "company": "Tempus AI, Inc.",
           "signal": "WATCH",
@@ -89494,122 +89610,6 @@
           ]
         },
         {
-          "rank": 42,
-          "ticker": "AMD",
-          "company": "Advanced Micro Devices, Inc.",
-          "signal": "WATCH",
-          "signal_emoji": "\u26aa WATCH",
-          "composite_score": 46.9,
-          "price": 452.4,
-          "analyst_target_price": 482.69,
-          "upside_pct": 6.7,
-          "stop_loss_price": 416.21,
-          "scores": {
-            "analyst": 60.0,
-            "momentum": 43.1,
-            "fundamentals": 43.3,
-            "social": 45.0,
-            "filing": 28.0
-          },
-          "signal_details": {
-            "analyst": "81% of 57 analysts bullish",
-            "momentum": "$452.40 | 4-wk return: +1.5% | above 50-day MA | Volume ratio: 1.1x",
-            "fundamentals": "Target: $483 (+7% upside) | Revenue growth: 38% | Gross margin: 53%",
-            "social": "Rank #16 on social | 49 mentions | \u2191 rising (+1 vs yesterday)",
-            "filing": "[2026-05-15] Credit facility refinance, no earnings/guidance data, neutral financing event"
-          },
-          "prices_1m": [
-            458.79,
-            448.29,
-            445.5,
-            449.7,
-            424.1,
-            420.99,
-            414.05,
-            447.58,
-            449.59,
-            467.51,
-            503.89,
-            495.54,
-            518.09,
-            516.1,
-            510.13,
-            521.54,
-            542.52,
-            523.2,
-            466.38,
-            490.33,
-            475.51,
-            452.4
-          ],
-          "prices_3m": [
-            204.83,
-            197.74,
-            193.39,
-            196.58,
-            196.31,
-            199.46,
-            205.27,
-            201.33,
-            202.68,
-            205.37,
-            220.27,
-            203.77,
-            201.99,
-            196.04,
-            203.43,
-            210.21,
-            217.5,
-            220.18,
-            221.53,
-            231.82,
-            236.64,
-            245.04,
-            246.83,
-            255.07,
-            258.12,
-            278.26,
-            278.39,
-            274.95,
-            284.49,
-            303.46,
-            305.33,
-            347.81,
-            334.63,
-            323.21,
-            337.11,
-            354.49,
-            360.54,
-            341.54,
-            355.26,
-            421.39,
-            408.46,
-            455.19,
-            458.79,
-            448.29,
-            445.5,
-            449.7,
-            424.1,
-            420.99,
-            414.05,
-            447.58,
-            449.59,
-            467.51,
-            503.89,
-            495.54,
-            518.09,
-            516.1,
-            510.13,
-            521.54,
-            542.52,
-            523.2,
-            466.38,
-            490.33,
-            475.51,
-            452.4
-          ]
-        },
-        {
           "rank": 43,
           "ticker": "CRWV",
           "company": "CoreWeave, Inc.",
@@ -89632,7 +89632,7 @@
             "momentum": "$95.61 | 4-wk return: -14.1% | below 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $140 (+47% upside) | Revenue growth: 112% | Gross margin: 69%",
             "social": "Not in top social mentions (neutral score)",
-            "filing": "8-K 2026-06-10: Administrative 8-K filing; no financial guidance, earnings data, or strategic announcements provided."
+            "filing": "[2026-06-10] Administrative 8-K filing; no financial guidance, earnings data, or strategic announcements provided."
           },
           "prices_1m": [
             114.7,
@@ -90095,7 +90095,7 @@
             "analyst": "81% of 16 analysts bullish",
             "momentum": "$26.53 | 4-wk return: -25.6% | below 50-day MA | Volume ratio: 0.7x",
             "fundamentals": "Target: $41 (+54% upside) | Revenue growth: 199% | Gross margin: 10%",
-            "social": "Rank #67 on social | 11 mentions | \u2193 falling (-7 vs yesterday)",
+            "social": "Rank #74 on social | 10 mentions | \u2193 falling (-8 vs yesterday)",
             "filing": "[2026-06-08] Routine shareholder meeting results, no business updates or guidance provided."
           },
           "prices_1m": [
@@ -90891,7 +90891,7 @@
           "company": "Amazon.com, Inc.",
           "signal": "WATCH",
           "signal_emoji": "\u26aa WATCH",
-          "composite_score": 41.3,
+          "composite_score": 41.8,
           "price": 238.0,
           "analyst_target_price": 312.71,
           "upside_pct": 31.4,
@@ -90900,15 +90900,15 @@
             "analyst": 60.0,
             "momentum": 0.0,
             "fundamentals": 67.2,
-            "social": 25.0,
+            "social": 30.0,
             "filing": 40.0
           },
           "signal_details": {
             "analyst": "93% of 76 analysts bullish",
             "momentum": "$238.00 | 4-wk return: -11.9% | below 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $313 (+31% upside) | Revenue growth: 17% | Gross margin: 51%",
-            "social": "Rank #35 on social | 21 mentions | \u2193 falling (-3 vs yesterday)",
-            "filing": "8-K 2026-06-10: Filing incomplete; insufficient content to assess guidance tone or direction"
+            "social": "Rank #33 on social | 25 mentions | \u2191 rising (+2 vs yesterday)",
+            "filing": "[2026-06-10] Filing incomplete; insufficient content to assess guidance tone or direction"
           },
           "prices_1m": [
             268.99,
@@ -91488,7 +91488,7 @@
             "momentum": "$26.92 | 4-wk return: +134.1% | above 50-day MA | Volume ratio: 3.2x",
             "fundamentals": "Target: no target | Revenue growth: 27% | Gross margin: 33%",
             "social": "Not in top social mentions (neutral score)",
-            "filing": "8-K 2026-06-10: 8-K filing structure only; press release and transcript not provided for analysis"
+            "filing": "[2026-06-10] 8-K filing structure only; press release and transcript not provided for analysis"
           },
           "prices_1m": [
             11.36,
@@ -91835,7 +91835,7 @@
             "analyst": "81% of 27 analysts bullish",
             "momentum": "$105.05 | 4-wk return: -15.4% | above 50-day MA | Volume ratio: 0.7x",
             "fundamentals": "Target: $105 (+0% upside) | Revenue growth: 64% | Gross margin: 37%",
-            "social": "Rank #28 on social | 30 mentions | \u2193 falling (-14 vs yesterday)",
+            "social": "Rank #26 on social | 31 mentions | \u2193 falling (-13 vs yesterday)",
             "filing": "[2026-06-05] Executive appointment filing; no financial guidance, earnings data, or business updates provided."
           },
           "prices_1m": [
@@ -91951,7 +91951,7 @@
             "analyst": "44% of 18 analysts bullish",
             "momentum": "$87.32 | 4-wk return: +16.7% | below 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $81 (-7% upside) | Revenue growth: 1952% | Gross margin: 45%",
-            "social": "Rank #26 on social | 32 mentions | \u2193 falling (-37 vs yesterday)",
+            "social": "Rank #25 on social | 32 mentions | \u2193 falling (-37 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral"
           },
           "prices_1m": [
@@ -92067,7 +92067,7 @@
             "analyst": "57% of 35 analysts bullish",
             "momentum": "$234.23 | 4-wk return: -19.2% | below 50-day MA | Volume ratio: 1.1x",
             "fundamentals": "Target: $263 (+12% upside) | Revenue growth: 130% | Gross margin: 30%",
-            "social": "Rank #51 on social | 15 mentions | \u2192 flat (+0 vs yesterday)",
+            "social": "Rank #56 on social | 14 mentions | \u2193 falling (-1 vs yesterday)",
             "filing": "[2026-05-27] Routine corporate governance amendments, no business or financial guidance disclosed."
           },
           "prices_1m": [
@@ -92299,7 +92299,7 @@
             "analyst": "54% of 35 analysts bullish",
             "momentum": "$13.40 | 4-wk return: -8.9% | above 50-day MA | Volume ratio: 1.1x",
             "fundamentals": "Target: $14 (+5% upside) | Revenue growth: 2% | Gross margin: 45%",
-            "social": "Rank #50 on social | 15 mentions | \u2193 falling (-1 vs yesterday)",
+            "social": "Rank #51 on social | 15 mentions | \u2193 falling (-2 vs yesterday)",
             "filing": "EDGAR not applicable (NOK files outside SEC) \u2014 neutral"
           },
           "prices_1m": [
@@ -93289,7 +93289,7 @@
             "analyst": "No recent upgrade/downgrade activity",
             "momentum": "$570.91 | 4-wk return: -0.3% | above 50-day MA | Volume ratio: 1.4x",
             "fundamentals": "Target: no target | Revenue growth: 0% | Gross margin: 0%",
-            "social": "Rank #57 on social | 13 mentions | \u2193 falling (-6 vs yesterday)",
+            "social": "Rank #52 on social | 15 mentions | \u2193 falling (-4 vs yesterday)",
             "filing": "CIK not found in EDGAR \u2014 neutral"
           },
           "prices_1m": [
@@ -93521,7 +93521,7 @@
             "analyst": "No recent upgrade/downgrade activity",
             "momentum": "$178.45 | 4-wk return: -5.4% | above 50-day MA | Volume ratio: 1.5x",
             "fundamentals": "Target: no target | Revenue growth: 0% | Gross margin: 0%",
-            "social": "Rank #96 on social | 7 mentions | \u2191 rising (+1 vs yesterday)",
+            "social": "Rank #94 on social | 7 mentions | \u2191 rising (+1 vs yesterday)",
             "filing": "CIK not found in EDGAR \u2014 neutral"
           },
           "prices_1m": [
@@ -93870,7 +93870,7 @@
             "momentum": "$8.26 | 4-wk return: -12.1% | below 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $8 (+0% upside) | Revenue growth: -9% | Gross margin: 47%",
             "social": "Not in top social mentions (neutral score)",
-            "filing": "8-K 2026-06-10: Debt refinancing announcement; extends maturity, neutral operational signal."
+            "filing": "[2026-06-10] Debt refinancing announcement; extends maturity, neutral operational signal."
           },
           "prices_1m": [
             8.34,
@@ -94406,5 +94406,5 @@
   ],
   "total_runs": 10,
   "first_run": "2026-05-30T09:31:16",
-  "last_run": "2026-06-10T21:25:25"
+  "last_run": "2026-06-10T21:57:27"
 }
