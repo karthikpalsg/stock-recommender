@@ -628,5 +628,35 @@
     "score": 35,
     "reason": "8-K filing structure only; press release and transcript not provided for analysis",
     "filing_date": "2026-06-10"
+  },
+  "ADBE_0000796343-26-000109": {
+    "score": 85,
+    "reason": "Record revenue, guidance raised, AI ARR tripled, strong beat",
+    "filing_date": "2026-06-11"
+  },
+  "AVGO_0001193125-26-266777": {
+    "score": 25,
+    "reason": "Debt refinancing activity; no earnings, guidance, or operational updates provided",
+    "filing_date": "2026-06-11"
+  },
+  "CRWV_0001769628-26-000278": {
+    "score": 72,
+    "reason": "Major capital raise, strong market confidence, positive growth trajectory signal",
+    "filing_date": "2026-06-11"
+  },
+  "LUMN_0001193125-26-267799": {
+    "score": 35,
+    "reason": "Debt exchange settlement; no earnings guidance, operational metrics, or forward outlook provided.",
+    "filing_date": "2026-06-11"
+  },
+  "MRVL_0001193125-26-267688": {
+    "score": 45,
+    "reason": "CFO transition announced; guidance reaffirmed but no new positive metrics provided.",
+    "filing_date": "2026-06-11"
+  },
+  "RGTI_0001104659-26-072623": {
+    "score": 40,
+    "reason": "Annual meeting voting results only. No guidance or financial metrics disclosed.",
+    "filing_date": "2026-06-11"
   }
 }
