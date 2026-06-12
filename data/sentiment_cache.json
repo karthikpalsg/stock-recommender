@@ -663,5 +663,10 @@
     "score": 25,
     "reason": "Routine shareholder meeting filing; no guidance, earnings, or business updates provided.",
     "filing_date": "2026-06-12"
+  },
+  "AMZN_0001104659-26-073562": {
+    "score": 40,
+    "reason": "Filing contains only structural debt issuance information, no guidance or earnings data",
+    "filing_date": "2026-06-12"
   }
 }
