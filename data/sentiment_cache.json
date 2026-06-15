@@ -668,5 +668,35 @@
     "score": 40,
     "reason": "Filing contains only structural debt issuance information, no guidance or earnings data",
     "filing_date": "2026-06-12"
+  },
+  "ASTS_0001493152-26-028544": {
+    "score": 35,
+    "reason": "Routine annual meeting disclosure, no guidance or business updates provided",
+    "filing_date": "2026-06-15"
+  },
+  "CIFR_0000950103-26-008994": {
+    "score": 65,
+    "reason": "Major capital raise for expansion, positive facility financing, moderate leverage",
+    "filing_date": "2026-06-15"
+  },
+  "HON_0000773840-26-000080": {
+    "score": 75,
+    "reason": "Transformational spin-off approved, on-track execution, two strong industry leaders",
+    "filing_date": "2026-06-15"
+  },
+  "IDCC_0001405495-26-000055": {
+    "score": 32,
+    "reason": "Administrative bylaw amendment, no business or financial content disclosed.",
+    "filing_date": "2026-06-15"
+  },
+  "NVTS_0001104659-26-074127": {
+    "score": 32,
+    "reason": "Routine earnout trigger completion, no guidance or operational updates provided.",
+    "filing_date": "2026-06-15"
+  },
+  "ONDS_0001213900-26-068539": {
+    "score": 32,
+    "reason": "Equity issuance filing; no earnings, guidance, or operational updates provided",
+    "filing_date": "2026-06-15"
   }
 }
