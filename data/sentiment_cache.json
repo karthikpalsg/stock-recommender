@@ -698,5 +698,10 @@
     "score": 32,
     "reason": "Equity issuance filing; no earnings, guidance, or operational updates provided",
     "filing_date": "2026-06-15"
+  },
+  "HOOD_0001783879-26-000071": {
+    "score": 72,
+    "reason": "Record trading volumes offset by workforce reduction and restructuring costs.",
+    "filing_date": "2026-06-16"
   }
 }
