@@ -778,5 +778,20 @@
     "score": 15,
     "reason": "Derivative settlement litigation; no operational guidance or financial outlook provided.",
     "filing_date": "2026-06-18"
+  },
+  "SATS_0001415404-26-000027": {
+    "score": 25,
+    "reason": "Debt interest payment delay; no guidance; cautious macro signal",
+    "filing_date": "2026-06-18"
+  },
+  "SOFI_0001818874-26-000043": {
+    "score": 25,
+    "reason": "Routine annual meeting filing with no financial guidance or business updates",
+    "filing_date": "2026-06-18"
+  },
+  "TTD_0001671933-26-000068": {
+    "score": 35,
+    "reason": "Board appointment announcement; no financial guidance, earnings data, or business outlook provided.",
+    "filing_date": "2026-06-09"
   }
 }
