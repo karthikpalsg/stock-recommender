@@ -793,5 +793,30 @@
     "score": 35,
     "reason": "Board appointment announcement; no financial guidance, earnings data, or business outlook provided.",
     "filing_date": "2026-06-09"
+  },
+  "AMPG_0001493152-26-029585": {
+    "score": 15,
+    "reason": "Cyber fraud loss $3.2M, material control weaknesses identified",
+    "filing_date": "2026-06-22"
+  },
+  "CRWD_0001104659-26-076376": {
+    "score": 25,
+    "reason": "Corporate governance amendment only; no business or guidance disclosure",
+    "filing_date": "2026-06-22"
+  },
+  "FIVN_0001288847-26-000110": {
+    "score": 15,
+    "reason": "Executive departure signals internal restructuring, organizational uncertainty.",
+    "filing_date": "2026-06-22"
+  },
+  "IONQ_0001193125-26-276342": {
+    "score": 35,
+    "reason": "Routine shareholder meeting vote. No business, guidance, or financial updates disclosed.",
+    "filing_date": "2026-06-22"
+  },
+  "ONDS_0001213900-26-070403": {
+    "score": 32,
+    "reason": "Routine equity filing for acquisitions, no guidance or earnings announcements",
+    "filing_date": "2026-06-22"
   }
 }
