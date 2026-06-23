@@ -818,5 +818,15 @@
     "score": 32,
     "reason": "Routine equity filing for acquisitions, no guidance or earnings announcements",
     "filing_date": "2026-06-22"
+  },
+  "HOOD_0001783879-26-000074": {
+    "score": 28,
+    "reason": "Convertible debt offering; no operational guidance or earnings commentary provided.",
+    "filing_date": "2026-06-23"
+  },
+  "QUBT_0001213900-26-070872": {
+    "score": 75,
+    "reason": "Strategic acquisition accelerates roadmap, Fab 2 launch ahead of schedule",
+    "filing_date": "2026-06-23"
   }
 }
