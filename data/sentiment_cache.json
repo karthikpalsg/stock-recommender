@@ -833,5 +833,25 @@
     "score": 95,
     "reason": "Record results, transformational customer agreements, strong guidance raise",
     "filing_date": "2026-06-24"
+  },
+  "HOOD_0001783879-26-000077": {
+    "score": 45,
+    "reason": "Debt offering announced; no earnings guidance or operational metrics provided.",
+    "filing_date": "2026-06-25"
+  },
+  "MRVL_0001628280-26-045564": {
+    "score": 45,
+    "reason": "Routine shareholder meeting votes; no guidance, earnings, or strategic announcements",
+    "filing_date": "2026-06-25"
+  },
+  "SATS_0001415404-26-000030": {
+    "score": 28,
+    "reason": "Executive departure after 26 years; no financial guidance or operational updates provided.",
+    "filing_date": "2026-06-25"
+  },
+  "SYNA_0001140361-26-026434": {
+    "score": 85,
+    "reason": "Transformational acquisition, $30B TAM expansion, Physical AI leadership positioning",
+    "filing_date": "2026-06-25"
   }
 }
