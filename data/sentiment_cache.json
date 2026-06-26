@@ -858,5 +858,25 @@
     "score": 35,
     "reason": "Routine equity filing; no guidance, earnings data, or strategic announcements.",
     "filing_date": "2026-06-26"
+  },
+  "APLD_0001493152-26-030333": {
+    "score": 45,
+    "reason": "Neutral: Credit facility expansion, no earnings/guidance metrics disclosed",
+    "filing_date": "2026-06-26"
+  },
+  "HOOD_0001783879-26-000083": {
+    "score": 28,
+    "reason": "Personnel appointment only. No financial guidance, earnings, or business developments.",
+    "filing_date": "2026-06-26"
+  },
+  "IRM_0001104659-26-078307": {
+    "score": 28,
+    "reason": "Debt issuance for refinancing; no earnings guidance or growth announcement",
+    "filing_date": "2026-06-26"
+  },
+  "NVTS_0001104659-26-078274": {
+    "score": 42,
+    "reason": "Routine annual meeting filing; no business guidance or financial projections disclosed.",
+    "filing_date": "2026-06-26"
   }
 }
