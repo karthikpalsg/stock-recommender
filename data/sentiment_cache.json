@@ -878,5 +878,20 @@
     "score": 42,
     "reason": "Routine annual meeting filing; no business guidance or financial projections disclosed.",
     "filing_date": "2026-06-26"
+  },
+  "HON_0000773840-26-000084": {
+    "score": 45,
+    "reason": "Structural transformation completed; no earnings guidance or financial targets provided.",
+    "filing_date": "2026-06-29"
+  },
+  "RKLB_0001753926-26-001085": {
+    "score": 85,
+    "reason": "Transformational $8B acquisition, vertical integration, accretive to cash flow",
+    "filing_date": "2026-06-29"
+  },
+  "TE_0001213900-26-072832": {
+    "score": 15,
+    "reason": "Warrant expiration event. No guidance provided. Neutral administrative announcement.",
+    "filing_date": "2026-06-29"
   }
 }
