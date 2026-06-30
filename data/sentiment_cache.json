@@ -893,5 +893,20 @@
     "score": 15,
     "reason": "Warrant expiration event. No guidance provided. Neutral administrative announcement.",
     "filing_date": "2026-06-29"
+  },
+  "JOBY_0001819848-26-000378": {
+    "score": 75,
+    "reason": "Major partnership with Toyota for manufacturing; transformational manufacturing agreement signed.",
+    "filing_date": "2026-06-30"
+  },
+  "QBTS_0001907982-26-000093": {
+    "score": 68,
+    "reason": "NSF grant + CHIPS funding letter of intent signals positive momentum",
+    "filing_date": "2026-06-30"
+  },
+  "QUBT_0001213900-26-073258": {
+    "score": 32,
+    "reason": "Equity plan amendment; no guidance, earnings, or business updates provided.",
+    "filing_date": "2026-06-30"
   }
 }
