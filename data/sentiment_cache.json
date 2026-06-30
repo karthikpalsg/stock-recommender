@@ -908,5 +908,25 @@
     "score": 32,
     "reason": "Equity plan amendment; no guidance, earnings, or business updates provided.",
     "filing_date": "2026-06-30"
+  },
+  "ACHR_0001824502-26-000046": {
+    "score": 25,
+    "reason": "Redomestication vote failed; routine shareholder meeting with no guidance",
+    "filing_date": "2026-06-30"
+  },
+  "NVDA_0001045810-26-000056": {
+    "score": 35,
+    "reason": "Routine shareholder meeting results; no earnings, guidance, or business updates",
+    "filing_date": "2026-06-30"
+  },
+  "SNOW_0001640147-26-000032": {
+    "score": 25,
+    "reason": "Annual meeting filing only; no earnings, guidance, or business updates provided",
+    "filing_date": "2026-06-30"
+  },
+  "VST_0001140361-26-026944": {
+    "score": 72,
+    "reason": "Major credit facility expansion from $3.44B to $5.50B demonstrates strong financial position",
+    "filing_date": "2026-06-30"
   }
 }
