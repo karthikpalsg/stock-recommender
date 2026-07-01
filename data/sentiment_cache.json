@@ -928,5 +928,20 @@
     "score": 72,
     "reason": "Major credit facility expansion from $3.44B to $5.50B demonstrates strong financial position",
     "filing_date": "2026-06-30"
+  },
+  "AMD_0000002488-26-000115": {
+    "score": 45,
+    "reason": "Executive compensation increases suggest confidence, but filing incomplete and lacks business guidance.",
+    "filing_date": "2026-07-01"
+  },
+  "IREN_0001140361-26-027202": {
+    "score": 42,
+    "reason": "Compensation restructuring; no financial guidance, earnings, or strategic updates provided",
+    "filing_date": "2026-07-01"
+  },
+  "RDW_0001819810-26-000084": {
+    "score": 65,
+    "reason": "Positive credit facility expansion and significant debt prepayment demonstrates financial strength",
+    "filing_date": "2026-07-01"
   }
 }
