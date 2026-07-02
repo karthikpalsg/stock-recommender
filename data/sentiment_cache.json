@@ -943,5 +943,15 @@
     "score": 65,
     "reason": "Positive credit facility expansion and significant debt prepayment demonstrates financial strength",
     "filing_date": "2026-07-01"
+  },
+  "NVDA_0001045810-26-000060": {
+    "score": 25,
+    "reason": "Executive departure and replacement; no financial guidance or business updates.",
+    "filing_date": "2026-07-02"
+  },
+  "PRGS_0000876167-26-000077": {
+    "score": 72,
+    "reason": "Beat expectations, raised guidance, solid growth, strong execution.",
+    "filing_date": "2026-06-30"
   }
 }
