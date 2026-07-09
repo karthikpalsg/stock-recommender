@@ -998,5 +998,15 @@
     "score": 25,
     "reason": "Defensive response to short-seller report; cautious tone despite supply reassurances",
     "filing_date": "2026-07-09"
+  },
+  "AMZN_0001104659-26-082293": {
+    "score": 40,
+    "reason": "8-K filing contains no earnings, guidance, or material business announcements",
+    "filing_date": "2026-07-09"
+  },
+  "MRVL_0001193125-26-299843": {
+    "score": 15,
+    "reason": "Administrative filing only; no guidance, earnings, or business updates provided",
+    "filing_date": "2026-07-09"
   }
 }
