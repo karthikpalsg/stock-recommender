@@ -1018,5 +1018,10 @@
     "score": 32,
     "reason": "Board appointment only; no financial guidance, earnings data, or business outlook provided.",
     "filing_date": "2026-07-13"
+  },
+  "SOUN_0001213900-26-077663": {
+    "score": 45,
+    "reason": "Merger announcement with pro forma financials; neutral transaction structuring details.",
+    "filing_date": "2026-07-13"
   }
 }
