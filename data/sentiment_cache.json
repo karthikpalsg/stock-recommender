@@ -1028,5 +1028,25 @@
     "score": 25,
     "reason": "Stock exchange transfer announcement; no business, financial, or guidance updates",
     "filing_date": "2026-07-14"
+  },
+  "CEG_0001868275-26-000080": {
+    "score": 45,
+    "reason": "Capacity auction clearing is routine; no guidance raise or material developments",
+    "filing_date": "2026-07-14"
+  },
+  "EQT_0000033213-26-000035": {
+    "score": 45,
+    "reason": "Preliminary derivative gains and cash settlements; neutral operational update",
+    "filing_date": "2026-07-14"
+  },
+  "RDW_0001819810-26-000104": {
+    "score": 40,
+    "reason": "Routine board appointment; no business, financial, or guidance content.",
+    "filing_date": "2026-07-14"
+  },
+  "VST_0001140361-26-028454": {
+    "score": 65,
+    "reason": "Substantial capacity cleared at consistent price; solid execution signal",
+    "filing_date": "2026-07-14"
   }
 }
