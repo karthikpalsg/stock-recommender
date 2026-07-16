@@ -5825,5 +5825,93 @@
     "transactions": [
       "S"
     ]
+  },
+  "CRWV_0001769628-26-000322": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Intrator Michael N",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "HOOD_0001783879-26-000095": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "PL_0001364096-26-000006": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Robinson Kristen",
+    "transactions": [
+      "J",
+      "J",
+      "S"
+    ]
+  },
+  "RDW_0001819810-26-000118": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Futch Aaron Michael",
+    "transactions": [
+      "A",
+      "F"
+    ]
+  },
+  "RDW_0001819810-26-000117": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Cannito Peter Anthony Jr",
+    "transactions": [
+      "A",
+      "F"
+    ]
+  },
+  "RDW_0001819810-26-000116": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gold Michael N.",
+    "transactions": [
+      "A",
+      "F"
+    ]
+  },
+  "RDW_0001819810-26-000115": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Edmunds Chris",
+    "transactions": [
+      "A",
+      "F"
+    ]
   }
 }
