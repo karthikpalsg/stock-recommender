@@ -10,7 +10,7 @@
 import yfinance as yf
 import requests
 import pandas as pd
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import os
 import json
 import time
@@ -35,6 +35,23 @@ except ImportError:
 RUN_LABEL = os.environ.get('RUN_LABEL', 'Manual Run')
 RUN_EMOJI = os.environ.get('RUN_EMOJI', '🔧')
 
+# ============================================================
+# SHADOW SCORING (v2)
+# Corrected signal set running in parallel with v1. The email and
+# report still rank on v1; v2 accumulates in history.json so the two
+# models can be compared on real forward returns before cutting over.
+# Weights are normalised by their sum in code, so adding a future
+# signal (e.g. insider) only requires a new entry here.
+# ============================================================
+V2_WEIGHTS = {
+    'analyst':      0.25,   # direction of last 5 actions, not raw counts
+    'momentum':     0.20,
+    'fundamentals': 0.20,   # median target + dispersion + forward P/E
+    'revisions':    0.10,   # forward EPS estimate trend
+    'filing':       0.10,
+    'social':       0.05,
+}
+
 
 # ============================================================
 # HELPER: Load tickers from tickers.txt
@@ -56,10 +73,20 @@ def load_tickers(file_path="tickers.txt"):
 # Score: -100 to 100 (upgrades positive, downgrades negative)
 # ============================================================
 def get_analyst_score(ticker_obj, symbol):
+    """
+    Returns (v1_score, v2_score, detail).
+      v1 — legacy: counts init/main/reit as upgrades. Kept unchanged so
+           historical scores stay comparable during the shadow period.
+      v2 — direction of the last 5 analyst actions within 90 days,
+           recency-weighted: 'up' = +1, 'down' = -1, 'init' = +0.3,
+           maintain/reiterate = 0. A wall of "Maintained" notes no
+           longer scores like a wall of upgrades.
+    """
     try:
         upgrades = 0
         downgrades = 0
         detail_parts = []
+        v2_direction = None
 
         # --- Yahoo Finance: upgrade/downgrade history (yfinance 1.x) ---
         try:
@@ -69,17 +96,28 @@ def get_analyst_score(ticker_obj, symbol):
                 ud.index = pd.to_datetime(ud.index).tz_localize(None) \
                            if ud.index.tzinfo is None \
                            else pd.to_datetime(ud.index).tz_convert(None)
+                # GradeChange column: 'up', 'down', 'init', 'main' (maintain/reiterate)
+                col = 'Action' if 'Action' in ud.columns else \
+                      'GradeChange' if 'GradeChange' in ud.columns else None
+
+                # v1 (legacy) — last 7 days, init/main/reit counted as upgrades
                 cutoff = datetime.now() - timedelta(days=7)
                 recent = ud[ud.index >= cutoff]
-                if not recent.empty:
-                    # GradeChange column: 'up', 'down', 'init', 'main' (maintain/reiterate)
-                    col = 'Action' if 'Action' in recent.columns else \
-                          'GradeChange' if 'GradeChange' in recent.columns else None
-                    if col:
-                        upgrades   = recent[recent[col].str.lower().isin(['up', 'init', 'main', 'reit'])].shape[0]
-                        downgrades = recent[recent[col].str.lower() == 'down'].shape[0]
-                        if upgrades > 0 or downgrades > 0:
-                            detail_parts.append(f"{upgrades} upgrade(s), {downgrades} downgrade(s) in last 7d")
+                if not recent.empty and col:
+                    upgrades   = recent[recent[col].str.lower().isin(['up', 'init', 'main', 'reit'])].shape[0]
+                    downgrades = recent[recent[col].str.lower() == 'down'].shape[0]
+                    if upgrades > 0 or downgrades > 0:
+                        detail_parts.append(f"{upgrades} upgrade(s), {downgrades} downgrade(s) in last 7d")
+
+                # v2 — direction of the last 5 actions within 90 days
+                if col:
+                    cutoff90 = datetime.now() - timedelta(days=90)
+                    last5 = ud[ud.index >= cutoff90].sort_index(ascending=False).head(5)
+                    if not last5.empty:
+                        ACTION_VALUE = {'up': 1.0, 'down': -1.0, 'init': 0.3}
+                        vals    = [ACTION_VALUE.get(str(a).lower(), 0.0) for a in last5[col]]
+                        weights = list(range(len(vals), 0, -1))          # newest weighted heaviest
+                        v2_direction = sum(v * w for v, w in zip(vals, weights)) / sum(weights)
         except Exception:
             pass   # fall through to Finnhub
 
@@ -106,18 +144,24 @@ def get_analyst_score(ticker_obj, symbol):
             except Exception:
                 pass
 
-        # --- Composite analyst score ---
+        # --- v1 composite (legacy math, unchanged) ---
         # Upgrade/downgrade actions (last 7d): each net upgrade = +30 pts
         # Finnhub consensus: up to 60 pts baseline
         # Combined and clamped to 0–100
         action_score = max(-100, min(100, (upgrades - downgrades) * 30))
-        score = max(0, min(100, finnhub_score + action_score))
+        score_v1 = max(0, min(100, finnhub_score + action_score))
+
+        # --- v2 composite: consensus baseline + direction of travel (±40) ---
+        if v2_direction is not None:
+            score_v2 = max(0, min(100, finnhub_score + v2_direction * 40))
+        else:
+            score_v2 = max(0, min(100, finnhub_score))   # no actions in 90d — consensus only
 
         detail = " | ".join(detail_parts) if detail_parts else "No recent upgrade/downgrade activity"
-        return score, detail
+        return score_v1, score_v2, detail
 
     except Exception as e:
-        return 0, f"Analyst data unavailable"
+        return 0, 0, "Analyst data unavailable"
 
 
 # ============================================================
@@ -172,6 +216,15 @@ def get_momentum_score(ticker_obj, symbol):
 # Score: 0 to 100
 # ============================================================
 def get_fundamentals_score(ticker_obj, symbol):
+    """
+    Returns (v1_score, v2_score, detail).
+      v1 — legacy: mean-target upside 60 pts + growth 25 + margin 15.
+      v2 — median-target upside 50 pts (halved when the high/low target
+           spread exceeds 3x — a consensus nobody agrees on is noise),
+           growth 20, margin 10, forward-vs-trailing P/E 20. A forward
+           P/E at a deep discount to trailing is treated as a possible
+           peak-cycle-earnings warning, not a bargain.
+    """
     try:
         info = ticker_obj.info
 
@@ -180,27 +233,112 @@ def get_fundamentals_score(ticker_obj, symbol):
         revenue_growth  = (info.get('revenueGrowth') or 0) * 100       # e.g. 0.25 → 25%
         gross_margin    = (info.get('grossMargins') or 0) * 100         # e.g. 0.70 → 70%
         forward_pe      = info.get('forwardPE', 0) or 0
+        trailing_pe     = info.get('trailingPE', 0) or 0
+        median_target   = info.get('targetMedianPrice', 0) or 0
+        high_target     = info.get('targetHighPrice', 0) or 0
+        low_target      = info.get('targetLowPrice', 0) or 0
 
-        # Upside to analyst consensus target
+        # Upside to analyst consensus target (v1: mean)
         upside = 0
         if current_price > 0 and target_price > 0:
             upside = ((target_price - current_price) / current_price) * 100
 
-        # Score: upside drives 60 pts, growth 25 pts, margin 15 pts
+        # --- v1 (legacy, unchanged): upside 60 pts, growth 25, margin 15 ---
         upside_score  = max(0, min(60, upside * 1.5))         # 40% upside = 60 pts
         growth_score  = max(0, min(25, revenue_growth * 0.6)) # 40% growth = 24 pts
         margin_score  = max(0, min(15, gross_margin * 0.2))   # 75% margin = 15 pts
+        score_v1 = min(100, upside_score + growth_score + margin_score)
 
-        score = min(100, upside_score + growth_score + margin_score)
+        # --- v2: median-target upside 50, growth 20, margin 10, P/E 20 ---
+        upside_med = 0
+        if current_price > 0 and median_target > 0:
+            upside_med = ((median_target - current_price) / current_price) * 100
+        upside_score2 = max(0, min(50, upside_med * 1.25))    # 40% upside = 50 pts
+
+        spread = (high_target / low_target) if low_target > 0 else 0
+        low_confidence = spread > 3
+        if low_confidence:
+            upside_score2 *= 0.5   # wide dispersion — target is low-confidence
+
+        growth_score2 = max(0, min(20, revenue_growth * 0.5))
+        margin_score2 = max(0, min(10, gross_margin * 0.133))
+
+        pe_note = ""
+        if forward_pe > 0 and trailing_pe > 0:
+            if forward_pe < 8 and forward_pe < trailing_pe * 0.5:
+                pe_score2 = 5    # cyclical trap: market pricing peak earnings
+                pe_note   = "⚠ fwd P/E deep-discount — possible peak-cycle earnings"
+            elif forward_pe < trailing_pe * 0.75 and revenue_growth > 0:
+                pe_score2 = 20   # earnings expected to grow into the valuation
+            elif forward_pe < trailing_pe:
+                pe_score2 = 13
+            else:
+                pe_score2 = 5    # earnings expected flat or contracting
+        else:
+            pe_score2 = 8        # neutral when either P/E is missing/negative
+
+        score_v2 = min(100, upside_score2 + growth_score2 + margin_score2 + pe_score2)
 
         target_str = f"${target_price:.0f} ({upside:+.0f}% upside)" if target_price else "no target"
         detail = (f"Target: {target_str} | "
                   f"Revenue growth: {revenue_growth:.0f}% | "
                   f"Gross margin: {gross_margin:.0f}%")
-        return score, detail
+        if median_target:
+            detail += f" | Median tgt: ${median_target:.0f}"
+        if low_confidence:
+            detail += f" | ⚠ target spread {spread:.1f}x"
+        if pe_note:
+            detail += f" | {pe_note}"
+        return score_v1, score_v2, detail
 
     except Exception as e:
-        return 0, "Fundamentals data unavailable"
+        return 0, 0, "Fundamentals data unavailable"
+
+
+# ============================================================
+# SIGNAL 6 (v2 shadow): Forward EPS Estimate Revisions
+# Source: Yahoo Finance (yfinance eps_trend)
+# Score: 0 to 100
+# Rising estimates during a price fall = the market de-rated the
+# stock but the business held — the strongest dip evidence.
+# Falling estimates while price rises = multiple expansion only.
+# ============================================================
+def get_revisions_score(ticker_obj, symbol):
+    try:
+        et = ticker_obj.eps_trend
+        if et is None or len(et) == 0:
+            return 50, "No estimate trend data — neutral"
+
+        # Rows indexed '0q','+1q','0y','+1y'; columns: current, 7daysAgo,
+        # 30daysAgo, 60daysAgo, 90daysAgo. Use the fiscal-year rows.
+        changes = []
+        for period in ('0y', '+1y'):
+            if period in et.index:
+                row  = et.loc[period]
+                cur  = row.get('current')
+                base = row.get('90daysAgo')
+                if base is None or pd.isna(base):
+                    base = row.get('60daysAgo')
+                if (cur is not None and base is not None
+                        and not pd.isna(cur) and not pd.isna(base)
+                        and abs(base) > 0.01):
+                    changes.append((cur - base) / abs(base) * 100)
+
+        if not changes:
+            return 50, "Estimate history incomplete — neutral"
+
+        avg = sum(changes) / len(changes)
+        if   avg >= 5:  score = 90
+        elif avg >= 1:  score = 72
+        elif avg > -1:  score = 50
+        elif avg > -5:  score = 28
+        else:           score = 10
+
+        arrow = "↑" if avg >= 1 else ("→" if avg > -1 else "↓")
+        return score, f"Fwd EPS estimates {arrow} {avg:+.1f}% vs 90d ago"
+
+    except Exception:
+        return 50, "Estimate data unavailable — neutral"
 
 
 # ============================================================
@@ -476,24 +614,86 @@ def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None):
         current_price = info.get('currentPrice') or info.get('regularMarketPrice', 0)
         target_price  = info.get('targetMeanPrice', 0)
         company_name  = info.get('shortName', symbol)
+        quote_type    = (info.get('quoteType') or 'EQUITY').upper()
+        is_etf        = quote_type == 'ETF'
 
-        analyst_score,     analyst_detail     = get_analyst_score(ticker, symbol)
-        momentum_score,    momentum_detail    = get_momentum_score(ticker, symbol)
-        fundamental_score, fundamental_detail = get_fundamentals_score(ticker, symbol)
-        social_score,      social_detail      = get_social_score(symbol, apewisdom_data)
-        filing_score,      filing_detail      = get_filing_sentiment_score(
-                                                    symbol,
-                                                    cik_map or {},
-                                                    sentiment_cache if sentiment_cache is not None else {}
-                                                )
+        # Short float — free field in the same info payload
+        short_float = round((info.get('shortPercentOfFloat') or 0) * 100, 1)
 
-        composite = (
-            analyst_score     * SCORE_WEIGHTS['analyst']            +
-            momentum_score    * SCORE_WEIGHTS['momentum']           +
-            fundamental_score * SCORE_WEIGHTS['fundamentals']       +
-            social_score      * SCORE_WEIGHTS['social']             +
-            filing_score      * SCORE_WEIGHTS.get('filing', 0)
-        )
+        # Next earnings date — from quote data, no extra API call
+        earnings_date    = ''
+        days_to_earnings = None
+        ts = info.get('earningsTimestampStart') or info.get('earningsTimestamp')
+        if ts:
+            try:
+                ed    = datetime.fromtimestamp(ts)
+                delta = (ed.date() - datetime.now().date()).days
+                if delta >= 0:
+                    earnings_date    = ed.strftime('%Y-%m-%d')
+                    days_to_earnings = delta
+            except Exception:
+                pass
+
+        momentum_score, momentum_detail = get_momentum_score(ticker, symbol)
+        social_score,   social_detail   = get_social_score(symbol, apewisdom_data)
+
+        if is_etf:
+            # ETFs have no analyst actions, fundamentals, or 8-Ks. Score on
+            # momentum + social only, re-normalised to each model's weights,
+            # instead of letting missing data drag them to ~8/100.
+            analyst_score = analyst_v2 = 0
+            fundamental_score = fundamental_v2 = 0
+            revisions_score = 0
+            filing_score = 0
+            analyst_detail = fundamental_detail = "n/a — ETF"
+            revisions_detail = filing_detail = "n/a — ETF"
+
+            w1 = SCORE_WEIGHTS['momentum'] + SCORE_WEIGHTS['social']
+            composite = (momentum_score * SCORE_WEIGHTS['momentum'] +
+                         social_score   * SCORE_WEIGHTS['social']) / w1
+            w2 = V2_WEIGHTS['momentum'] + V2_WEIGHTS['social']
+            composite_v2 = (momentum_score * V2_WEIGHTS['momentum'] +
+                            social_score   * V2_WEIGHTS['social']) / w2
+        else:
+            analyst_score, analyst_v2, analyst_detail          = get_analyst_score(ticker, symbol)
+            fundamental_score, fundamental_v2, fundamental_detail = get_fundamentals_score(ticker, symbol)
+            revisions_score, revisions_detail                  = get_revisions_score(ticker, symbol)
+            filing_score,   filing_detail                      = get_filing_sentiment_score(
+                                                                    symbol,
+                                                                    cik_map or {},
+                                                                    sentiment_cache if sentiment_cache is not None else {}
+                                                                )
+
+            composite = (
+                analyst_score     * SCORE_WEIGHTS['analyst']            +
+                momentum_score    * SCORE_WEIGHTS['momentum']           +
+                fundamental_score * SCORE_WEIGHTS['fundamentals']       +
+                social_score      * SCORE_WEIGHTS['social']             +
+                filing_score      * SCORE_WEIGHTS.get('filing', 0)
+            )
+
+            w2 = sum(V2_WEIGHTS.values())
+            composite_v2 = (
+                analyst_v2      * V2_WEIGHTS['analyst']      +
+                momentum_score  * V2_WEIGHTS['momentum']     +
+                fundamental_v2  * V2_WEIGHTS['fundamentals'] +
+                revisions_score * V2_WEIGHTS['revisions']    +
+                filing_score    * V2_WEIGHTS['filing']       +
+                social_score    * V2_WEIGHTS['social']
+            ) / w2
+            if short_float > 15:
+                composite_v2 = max(0, composite_v2 - 5)   # informed money leaning against it
+
+        # Risk flags — warnings on the card, not score changes
+        flags = []
+        if is_etf:
+            flags.append("ETF")
+        if days_to_earnings is not None and days_to_earnings <= 7:
+            flags.append(f"⚠ earnings in {days_to_earnings}d")
+        if short_float > 15:
+            flags.append(f"short float {short_float:.0f}%")
+        if not current_price:
+            flags.append("⚠ no price — delisted?")
 
         upside = 0
         if current_price > 0 and target_price > 0:
@@ -531,6 +731,17 @@ def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None):
             'Filing Detail':       filing_detail,
             'Prices 3M':           prices_3m,
             'Prices 1M':           prices_1m,
+            # ── v2 shadow model + risk flags ──
+            'Score V2':            round(composite_v2, 1),
+            'Analyst V2':          round(analyst_v2, 1),
+            'Fundamental V2':      round(fundamental_v2, 1),
+            'Revisions Score':     round(revisions_score, 1),
+            'Revisions Detail':    revisions_detail,
+            'Short Float %':       short_float,
+            'Earnings Date':       earnings_date,
+            'Days To Earnings':    days_to_earnings,
+            'Type':                'ETF' if is_etf else 'STOCK',
+            'Flags':               " | ".join(flags),
         }
 
     except Exception as e:
@@ -542,6 +753,10 @@ def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None):
             'Analyst Detail': 'Error', 'Momentum Detail': 'Error',
             'Fundamental Detail': 'Error', 'Social Detail': f'Error: {str(e)[:60]}',
             'Filing Detail': 'Error', 'Prices 3M': [], 'Prices 1M': [],
+            'Score V2': 0, 'Analyst V2': 0, 'Fundamental V2': 0,
+            'Revisions Score': 50, 'Revisions Detail': 'Error',
+            'Short Float %': 0, 'Earnings Date': '', 'Days To Earnings': None,
+            'Type': 'STOCK', 'Flags': '⚠ scoring error',
         }
 
 
@@ -571,13 +786,35 @@ def action_label(score):
     else:             return "🔴 AVOID"
 
 
+def select_top_picks(df, n=None):
+    """
+    Top picks by v1 score, skipping names that fail the risk gate:
+      - earnings within 7 days (binary event risk — a pick the night
+        before a report is a coin flip wearing a thesis)
+      - ETFs (tracked on the momentum+social side track, not picks)
+    Skipped names keep their rank and flags in the full table.
+    """
+    n = n or TOP_N_PICKS
+
+    def eligible(row):
+        if row.get('Type') == 'ETF':
+            return False
+        d = row.get('Days To Earnings')
+        if d is not None and pd.notna(d) and d <= 7:
+            return False
+        return True
+
+    mask = df.apply(eligible, axis=1)
+    return df[mask].head(n)
+
+
 def generate_report(df, output_dir="picks"):
     os.makedirs(output_dir, exist_ok=True)
     today    = datetime.now().strftime("%Y-%m-%d")
     run_time = datetime.now().strftime("%H:%M")
     filename = os.path.join(output_dir, f"picks_{today}.md")
 
-    top = df.head(TOP_N_PICKS)
+    top = select_top_picks(df)
     lines = []
 
     # --- Header ---
@@ -617,6 +854,10 @@ def generate_report(df, output_dir="picks"):
             f"| 💰 Fundamentals (25%)| {row['Fundamental Score']}/100 | {row['Fundamental Detail']} |",
             f"| 💬 Social (10%)      | {row['Social Score']}/100     | {row['Social Detail']} |",
             f"| 📄 Filing (10%)      | {row['Filing Score']}/100     | {row['Filing Detail']} |",
+            f"| 🧮 Revisions (v2)    | {row['Revisions Score']}/100  | {row['Revisions Detail']} |",
+            f"",
+            f"*Shadow score v2: {row['Score V2']}/100"
+            + (f" | Flags: {row['Flags']}*" if row['Flags'] else "*"),
             f"",
         ]
 
@@ -624,15 +865,15 @@ def generate_report(df, output_dir="picks"):
     lines += [
         "---\n",
         "## 📋 Full Watchlist Scorecard\n",
-        "| Rank | Ticker | Score | Analyst | Momentum | Fundamentals | Social | Signal |",
-        "|------|--------|-------|---------|----------|--------------|--------|--------|",
+        "| Rank | Ticker | Score | v2 | Analyst | Momentum | Fundamentals | Social | Signal | Flags |",
+        "|------|--------|-------|----|---------|----------|--------------|--------|--------|-------|",
     ]
     for rank, row in df.iterrows():
         lines.append(
-            f"| #{rank} | {row['Ticker']} | {row['Score']} | "
+            f"| #{rank} | {row['Ticker']} | {row['Score']} | {row['Score V2']} | "
             f"{row['Analyst Score']} | {row['Momentum Score']} | "
             f"{row['Fundamental Score']} | {row['Social Score']} | "
-            f"{action_label(row['Score'])} |"
+            f"{action_label(row['Score'])} | {row['Flags']} |"
         )
 
     # --- Footer ---
@@ -645,6 +886,9 @@ def generate_report(df, output_dir="picks"):
         f"Filing {int(SCORE_WEIGHTS.get('filing', 0)*100)}%*",
         f"*Stop-loss: -{STOP_LOSS_PCT}% | Target return: +{TARGET_RETURN_PCT}% | Hold: 6 months*",
         f"*Data sources: Yahoo Finance · Finnhub (optional) · Apewisdom*",
+        f"*Shadow model v2 (not yet ranking): direction-based analyst, median target + "
+        f"dispersion, forward P/E, EPS estimate revisions. Weights: "
+        + " / ".join(f"{k} {int(v*100)}%" for k, v in V2_WEIGHTS.items()) + "*",
     ]
 
     with open(filename, "w") as f:
@@ -662,11 +906,12 @@ def send_email(df):
         return
 
     today = datetime.now().strftime("%d %B %Y")
-    top   = df.head(TOP_N_PICKS)
+    top   = select_top_picks(df)
 
     # --- Section 1: Top picks with full signal detail ---
     top_rows_html = ""
     for rank, row in top.iterrows():
+        flags_html = (f"📌 <b>Flags:</b> {row['Flags']}<br>" if row['Flags'] else "")
         signal = action_label(row['Score'])
         color  = "#1a7a3f" if "STRONG" in signal else ("#b8860b" if "BUY" in signal else "#666")
         top_rows_html += f"""
@@ -691,7 +936,9 @@ def send_email(df):
             📈 <b>Momentum {row['Momentum Score']:.0f}/100:</b> {row['Momentum Detail']}<br>
             💰 <b>Fundamentals {row['Fundamental Score']:.0f}/100:</b> {row['Fundamental Detail']}<br>
             💬 <b>Social {row['Social Score']:.0f}/100:</b> {row['Social Detail']}<br>
-            📄 <b>Filing {row['Filing Score']:.0f}/100:</b> {row['Filing Detail']}
+            📄 <b>Filing {row['Filing Score']:.0f}/100:</b> {row['Filing Detail']}<br>
+            🧮 <b>Revisions {row['Revisions Score']:.0f}/100:</b> {row['Revisions Detail']}<br>
+            {flags_html}🧪 <b>Shadow v2:</b> {row['Score V2']}/100
           </td>
         </tr>"""
 
@@ -703,12 +950,15 @@ def send_email(df):
         color  = "#1a7a3f" if "STRONG" in signal else \
                  "#b8860b" if "BUY" in signal else \
                  "#555"    if "WATCH" in signal else "#c0392b"
+        row_flags = (f"<br><span style='color:#c0392b;font-size:10px;'>{row['Flags']}</span>"
+                     if row['Flags'] else "")
         all_rows_html += f"""
         <tr style="background:{bg};border-bottom:1px solid #eee;">
           <td style="padding:8px 10px;color:#999;">#{rank}</td>
           <td style="padding:8px 10px;font-weight:bold;">{row['Ticker']}</td>
-          <td style="padding:8px 10px;font-size:12px;color:#888;">{row['Company']}</td>
+          <td style="padding:8px 10px;font-size:12px;color:#888;">{row['Company']}{row_flags}</td>
           <td style="padding:8px 10px;font-weight:bold;">{row['Score']}/100</td>
+          <td style="padding:8px 10px;font-size:11px;color:#666;">{row['Score V2']}</td>
           <td style="padding:8px 10px;">${row['Price']:.2f}</td>
           <td style="padding:8px 10px;">${row['Target']:.0f}
             <span style="color:#1a7a3f;font-size:11px;">(+{row['Upside %']:.0f}%)</span>
@@ -769,6 +1019,7 @@ def send_email(df):
               <th style="padding:8px 10px;text-align:left;">Ticker</th>
               <th style="padding:8px 10px;text-align:left;">Company</th>
               <th style="padding:8px 10px;text-align:left;">Score</th>
+              <th style="padding:8px 10px;text-align:left;">v2</th>
               <th style="padding:8px 10px;text-align:left;">Price</th>
               <th style="padding:8px 10px;text-align:left;">Target</th>
               <th style="padding:8px 10px;text-align:left;">Stop</th>
@@ -788,6 +1039,8 @@ def send_email(df):
       <div style="padding:14px 20px;background:#f9f9f9;border:1px solid #ddd;border-top:none;
                   font-size:11px;color:#999;border-radius:0 0 8px 8px;margin-bottom:20px;">
         Weights: Analyst 30% · Momentum 25% · Fundamentals 25% · Social 10% · Filing 10%<br>
+        Shadow v2 (not yet ranking): direction-based analyst · median target + dispersion ·
+        forward P/E · EPS revisions &nbsp;|&nbsp; ⚠-flagged names are excluded from Top {TOP_N_PICKS}<br>
         Stop-loss: -{STOP_LOSS_PCT}% from entry &nbsp;|&nbsp;
         Target return: +{TARGET_RETURN_PCT}% &nbsp;|&nbsp; Hold: {HOLD_MONTHS} months<br>
         <i>Personal research tool — not financial advice.</i>
@@ -862,7 +1115,7 @@ def save_json(df, output_dir="data", filename="history.json"):
 
     # --- Build run metadata ---
     now        = datetime.now()
-    now_utc    = datetime.utcnow()
+    now_utc    = datetime.now(timezone.utc)
     run_record = {
         "run_id":              now.strftime("%Y-%m-%dT%H:%M:%S"),
         "run_date":            now.strftime("%Y-%m-%d"),
@@ -877,7 +1130,9 @@ def save_json(df, output_dir="data", filename="history.json"):
             "momentum":     SCORE_WEIGHTS["momentum"],
             "fundamentals": SCORE_WEIGHTS["fundamentals"],
             "social":       SCORE_WEIGHTS["social"],
+            "filing":       SCORE_WEIGHTS.get("filing", 0),
         },
+        "score_weights_v2": V2_WEIGHTS,
         "strategy": {
             "stop_loss_pct":     STOP_LOSS_PCT,
             "target_return_pct": TARGET_RETURN_PCT,
@@ -905,6 +1160,7 @@ def save_json(df, output_dir="data", filename="history.json"):
                 "fundamentals": round(float(row["Fundamental Score"]), 2),
                 "social":       round(float(row["Social Score"]), 2),
                 "filing":       round(float(row.get("Filing Score", 50)), 2),
+                "revisions":    round(float(row.get("Revisions Score", 50) or 0), 2),
             },
             "signal_details": {
                 "analyst":      row["Analyst Detail"],
@@ -912,7 +1168,20 @@ def save_json(df, output_dir="data", filename="history.json"):
                 "fundamentals": row["Fundamental Detail"],
                 "social":       row["Social Detail"],
                 "filing":       row.get("Filing Detail", ""),
+                "revisions":    row.get("Revisions Detail", ""),
             },
+            "composite_score_v2": round(float(row.get("Score V2", 0) or 0), 2),
+            "scores_v2": {
+                "analyst":      round(float(row.get("Analyst V2", 0) or 0), 2),
+                "fundamentals": round(float(row.get("Fundamental V2", 0) or 0), 2),
+            },
+            "short_float_pct":  round(float(row.get("Short Float %", 0) or 0), 2),
+            "earnings_date":    row.get("Earnings Date", "") or "",
+            "days_to_earnings": (int(row["Days To Earnings"])
+                                 if row.get("Days To Earnings") is not None
+                                 and pd.notna(row.get("Days To Earnings")) else None),
+            "instrument_type":  row.get("Type", "STOCK"),
+            "flags":            row.get("Flags", "") or "",
             "prices_1m":  row["Prices 1M"] if "Prices 1M" in row and isinstance(row["Prices 1M"], list) else [],
             "prices_3m":  row["Prices 3M"] if "Prices 3M" in row and isinstance(row["Prices 3M"], list) else [],
         }
@@ -1037,7 +1306,11 @@ if __name__ == "__main__":
     print("=" * 55)
     print(f"  TODAY'S TOP {TOP_N_PICKS} PICKS")
     print("=" * 55)
-    for rank, row in results_df.head(TOP_N_PICKS).iterrows():
-        print(f"  #{rank}  {row['Ticker']:<6}  {row['Score']:5.1f}/100  {action_label(row['Score'])}")
+    for rank, row in select_top_picks(results_df).iterrows():
+        print(f"  #{rank}  {row['Ticker']:<6}  {row['Score']:5.1f}/100  v2:{row['Score V2']:5.1f}  {action_label(row['Score'])}")
+    skipped = results_df.head(TOP_N_PICKS).index.difference(select_top_picks(results_df).index)
+    for rank in skipped:
+        row = results_df.loc[rank]
+        print(f"  (#{rank} {row['Ticker']} held out of Top {TOP_N_PICKS}: {row['Flags']})")
     print("=" * 55)
     print(f"\n  Open {report_file} for the full report.\n")
