@@ -1058,5 +1058,20 @@
     "score": 45,
     "reason": "Financing announcement; neutral capital raise, vague growth language, no operational progress.",
     "filing_date": "2026-07-15"
+  },
+  "SNOW_0001628280-26-048373": {
+    "score": 40,
+    "reason": "Executive compensation announcement; no business performance, guidance, or outlook disclosed.",
+    "filing_date": "2026-07-16"
+  },
+  "UNH_0000731766-26-000191": {
+    "score": 45,
+    "reason": "Insufficient data in filing excerpt; only cover page and exhibits listed, no results disclosed",
+    "filing_date": "2026-07-16"
+  },
+  "VST_0001140361-26-028619": {
+    "score": 65,
+    "reason": "Facility expansion and extension signals confidence in operations growth",
+    "filing_date": "2026-07-16"
   }
 }
