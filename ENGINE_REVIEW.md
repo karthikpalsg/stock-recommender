@@ -106,10 +106,12 @@ Proposed re-weighting once revisions and insiders exist:
 
 ### Phase 2 — two new signals from proven-reliable sources
 
-| # | Change | Detail |
-|---|---|---|
-| 9 | StockTwits JSON API per ticker | Bullish/bearish ratio + watcher count for all 91 names, not just Apewisdom's top 50. Keep Apewisdom as a "trending" bonus. Discount when bullish % > 80 (the platform skews bullish), exactly as /stock-news does |
-| 10 | EDGAR Form 4 insider signal | Reuse the existing CIK map and headers. Net open-market buys last 30d scores high; cluster selling scores low. Adopt the /stock-news hard rule: steady insider selling caps the signal at BUY, never STRONG BUY, and the card says why |
+**Status: done.** Item 10 shipped as scoped. Item 9 was cut after verification — see below.
+
+| # | Change | Detail | Status |
+|---|---|---|---|
+| 9 | ~~StockTwits JSON API per ticker~~ | **Dropped.** Verified live: `api.stocktwits.com/api/2/streams/symbol/{TICKER}.json` returns a Cloudflare JS challenge page to a plain `requests.get()` call — not JSON. `/stock-news` gets this endpoint via Claude's interactive `WebFetch` tool, a different fetch path than a headless script in GitHub Actions; it does not transfer to an unattended engine, and solving the Cloudflare challenge would be bot-detection bypass, which is off the table regardless. Apewisdom stays the only automated social source; StockTwits sentiment remains available on demand via `/stock-news TICKER` | ❌ Cut |
+| 10 | EDGAR Form 4 insider signal | Shipped. Reuses the CIK map and a shared `submissions.json` fetch already made for the 8-K signal — zero extra top-level SEC requests per ticker. Parses raw Form 4 XML directly (`xml.etree.ElementTree`, no Claude call, no new dependency): nets open-market buys (code `P`) against sales (code `S`) over the last 30 days, weighting officer/director/10%-owner transactions 1.5x. Verified on live data — MU showed 0 buys vs 68 sells and correctly triggered cluster selling. Hard rule from /stock-news adopted: 2+ insiders net-selling caps the v2 composite at 64.9 (BUY, never STRONG BUY), flagged on the card as "⚠ insider cluster selling" | ✅ Shipped |
 
 ### Phase 3 — insight features (the "better insights" half)
 

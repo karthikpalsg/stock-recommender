@@ -16,6 +16,7 @@ import json
 import time
 import shutil
 import smtplib
+import xml.etree.ElementTree as ET
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
@@ -50,6 +51,7 @@ V2_WEIGHTS = {
     'revisions':    0.10,   # forward EPS estimate trend
     'filing':       0.10,
     'social':       0.05,
+    'insider':      0.10,   # net Form 4 open-market buy/sell, last 30 days
 }
 
 
@@ -448,7 +450,31 @@ def _save_sentiment_cache(cache):
         json.dump(cache, f, indent=2)
 
 
-def get_filing_sentiment_score(symbol, cik_map, sentiment_cache):
+def _fetch_submissions(symbol, cik_map):
+    """
+    Fetches the EDGAR 'recent filings' block once per ticker and shares it
+    between the 8-K filing-sentiment signal and the Form 4 insider signal,
+    so a ticker never costs two top-level SEC requests per run.
+    Returns (cik, recent_dict). Either element may be None on failure —
+    callers distinguish "no CIK" from "CIK found but fetch failed" by
+    checking cik first, then recent.
+    """
+    if symbol in _NO_EDGAR:
+        return None, None
+    cik = cik_map.get(symbol.upper())
+    if not cik:
+        return None, None
+    try:
+        url  = f"https://data.sec.gov/submissions/CIK{cik}.json"
+        resp = requests.get(url, headers=_EDGAR_HEADERS, timeout=10)
+        if resp.status_code != 200:
+            return cik, None
+        return cik, resp.json().get("filings", {}).get("recent", {})
+    except Exception:
+        return cik, None
+
+
+def get_filing_sentiment_score(symbol, cik, recent, sentiment_cache):
     """
     Fetches the most recent 8-K filing from SEC EDGAR (last 30 days),
     sends the text to Claude Haiku, and returns a guidance tone score 0–100.
@@ -469,19 +495,13 @@ def get_filing_sentiment_score(symbol, cik_map, sentiment_cache):
     if not ANTHROPIC_API_KEY or not _ANTHROPIC_AVAILABLE:
         return 50, "Anthropic API not configured — filing sentiment skipped"
 
+    if not cik:
+        return 50, "CIK not found in EDGAR — neutral"
+
+    if not recent:
+        return 50, "EDGAR submissions unavailable — neutral"
+
     try:
-        cik = cik_map.get(symbol.upper())
-        if not cik:
-            return 50, "CIK not found in EDGAR — neutral"
-
-        # Fetch the company's recent filing index
-        url  = f"https://data.sec.gov/submissions/CIK{cik}.json"
-        resp = requests.get(url, headers=_EDGAR_HEADERS, timeout=10)
-        if resp.status_code != 200:
-            return 50, "EDGAR submissions unavailable — neutral"
-
-        data     = resp.json()
-        recent   = data.get("filings", {}).get("recent", {})
         forms    = recent.get("form", [])
         dates    = recent.get("filingDate", [])
         accnums  = recent.get("accessionNumber", [])
@@ -603,9 +623,146 @@ def get_filing_sentiment_score(symbol, cik_map, sentiment_cache):
 
 
 # ============================================================
+# SIGNAL 7 (v2 shadow): Insider Activity (SEC Form 4 via EDGAR)
+# Source: SEC EDGAR free API — no Claude call, structured XML only
+# Score: 0 to 100
+# Nets open-market buys (code 'P') against sales (code 'S') in the last
+# 30 days; officer/director/10%-owner transactions count 1.5x a routine
+# holder's. Gifts, grants, and option exercises (G/A/M/F) are not market
+# signals and are ignored. Cluster selling by 2+ insiders caps the v2
+# composite at BUY, never STRONG BUY — the same hard rule /stock-news
+# applies: the street can be bullish, but insiders selling into it wins.
+# ============================================================
+_INSIDER_CACHE_PATH = "data/insider_cache.json"
+
+
+def _load_insider_cache():
+    if os.path.exists(_INSIDER_CACHE_PATH):
+        with open(_INSIDER_CACHE_PATH) as f:
+            return json.load(f)
+    return {}
+
+
+def _save_insider_cache(cache):
+    with open(_INSIDER_CACHE_PATH, "w") as f:
+        json.dump(cache, f, indent=2)
+
+
+def _parse_form4_xml(xml_text):
+    """Extracts transaction codes + reporting-owner role from a raw Form 4 XML."""
+    try:
+        root = ET.fromstring(xml_text)
+    except ET.ParseError:
+        return None
+
+    rel = root.find(".//reportingOwnerRelationship")
+    is_officer  = rel is not None and (rel.findtext("isOfficer") or "0") == "1"
+    is_director = rel is not None and (rel.findtext("isDirector") or "0") == "1"
+    is_ten_pct  = rel is not None and (rel.findtext("isTenPercentOwner") or "0") == "1"
+    owner = root.findtext(".//rptOwnerName") or "unknown"
+
+    txs = []
+    for node in root.findall(".//nonDerivativeTransaction"):
+        code = node.findtext(".//transactionCoding/transactionCode")
+        if code:
+            txs.append(code)
+
+    return {
+        "is_officer": is_officer, "is_director": is_director, "is_ten_pct": is_ten_pct,
+        "owner": owner, "transactions": txs,
+    }
+
+
+def get_insider_score(symbol, cik, recent, insider_cache):
+    """
+    Returns (score, detail, cluster_selling_cap).
+    Reuses the same EDGAR 'recent filings' payload the 8-K signal already
+    fetched — zero extra top-level SEC requests, just one small XML fetch
+    per Form 4 found in the last 30 days (cached by accession number).
+    """
+    if symbol in _NO_EDGAR:
+        return 50, f"EDGAR not applicable ({symbol}) — neutral", False
+    if not cik:
+        return 50, "CIK not found in EDGAR — neutral", False
+    if not recent:
+        return 50, "EDGAR submissions unavailable — neutral", False
+
+    try:
+        forms     = recent.get("form", [])
+        dates     = recent.get("filingDate", [])
+        accnums   = recent.get("accessionNumber", [])
+        prim_docs = recent.get("primaryDocument", [])
+        cutoff    = datetime.now() - timedelta(days=30)
+
+        net_value  = 0.0
+        buy_count  = 0
+        sell_count = 0
+        sellers    = set()
+
+        for form, date_str, acc, doc in zip(forms, dates, accnums, prim_docs):
+            if form not in ("4", "4/A"):
+                continue
+            if datetime.strptime(date_str, "%Y-%m-%d") < cutoff:
+                break   # EDGAR returns reverse-chronological — nothing older is useful
+
+            cache_key = f"{symbol}_{acc}"
+            if cache_key in insider_cache:
+                tx = insider_cache[cache_key]
+            else:
+                acc_clean = acc.replace("-", "")
+                # Raw XML lives at the accession root under its own filename —
+                # 'doc' is often an xslF345X06/-prefixed transform path; strip
+                # any folder prefix and fetch the raw file directly (verified:
+                # no folder-listing scan needed, unlike the 8-K exhibit search).
+                xml_url = (f"https://www.sec.gov/Archives/edgar/data/"
+                           f"{int(cik)}/{acc_clean}/{doc.split('/')[-1]}")
+                try:
+                    r = requests.get(xml_url, headers=_EDGAR_HEADERS, timeout=10)
+                    tx = _parse_form4_xml(r.text) if r.status_code == 200 else None
+                except Exception:
+                    tx = None
+                insider_cache[cache_key] = tx
+                _save_insider_cache(insider_cache)
+
+            if not tx:
+                continue
+
+            weight = 1.5 if (tx["is_officer"] or tx["is_director"] or tx["is_ten_pct"]) else 1.0
+            for code in tx["transactions"]:
+                if code == "P":         # open-market purchase
+                    net_value += weight
+                    buy_count += 1
+                elif code == "S":       # open-market sale
+                    net_value -= weight
+                    sell_count += 1
+                    sellers.add(tx["owner"])
+                # G (gift) / A (grant) / M (exercise) / F (tax withholding) —
+                # not open-market signals, ignored
+
+        if buy_count == 0 and sell_count == 0:
+            return 50, "No insider open-market activity in last 30d — neutral", False
+
+        cluster_selling = len(sellers) >= 2 and sell_count > buy_count
+
+        if   net_value >= 3:  score = 90
+        elif net_value >= 1:  score = 70
+        elif net_value > -1:  score = 50
+        elif net_value > -3:  score = 30
+        else:                 score = 10
+
+        detail = f"{buy_count} buy(s), {sell_count} sell(s) in last 30d (net {net_value:+.1f})"
+        if cluster_selling:
+            detail += " | ⚠ cluster selling"
+        return score, detail, cluster_selling
+
+    except Exception as e:
+        return 50, f"Insider data error — neutral ({str(e)[:40]})", False
+
+
+# ============================================================
 # SCORING ENGINE — combines all 5 signals
 # ============================================================
-def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None):
+def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None, insider_cache=None):
     """Returns a dict with all scores and details for one ticker."""
     try:
         ticker = yf.Ticker(symbol)
@@ -645,8 +802,10 @@ def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None):
             fundamental_score = fundamental_v2 = 0
             revisions_score = 0
             filing_score = 0
+            insider_score = 0
+            insider_cap = False
             analyst_detail = fundamental_detail = "n/a — ETF"
-            revisions_detail = filing_detail = "n/a — ETF"
+            revisions_detail = filing_detail = insider_detail = "n/a — ETF"
 
             w1 = SCORE_WEIGHTS['momentum'] + SCORE_WEIGHTS['social']
             composite = (momentum_score * SCORE_WEIGHTS['momentum'] +
@@ -658,10 +817,17 @@ def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None):
             analyst_score, analyst_v2, analyst_detail          = get_analyst_score(ticker, symbol)
             fundamental_score, fundamental_v2, fundamental_detail = get_fundamentals_score(ticker, symbol)
             revisions_score, revisions_detail                  = get_revisions_score(ticker, symbol)
+
+            # One shared EDGAR submissions fetch feeds both the 8-K filing
+            # signal and the Form 4 insider signal — no duplicate SEC request.
+            cik, submissions = _fetch_submissions(symbol, cik_map or {})
             filing_score,   filing_detail                      = get_filing_sentiment_score(
-                                                                    symbol,
-                                                                    cik_map or {},
+                                                                    symbol, cik, submissions,
                                                                     sentiment_cache if sentiment_cache is not None else {}
+                                                                )
+            insider_score, insider_detail, insider_cap         = get_insider_score(
+                                                                    symbol, cik, submissions,
+                                                                    insider_cache if insider_cache is not None else {}
                                                                 )
 
             composite = (
@@ -679,10 +845,16 @@ def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None):
                 fundamental_v2  * V2_WEIGHTS['fundamentals'] +
                 revisions_score * V2_WEIGHTS['revisions']    +
                 filing_score    * V2_WEIGHTS['filing']       +
-                social_score    * V2_WEIGHTS['social']
+                social_score    * V2_WEIGHTS['social']       +
+                insider_score   * V2_WEIGHTS['insider']
             ) / w2
             if short_float > 15:
                 composite_v2 = max(0, composite_v2 - 5)   # informed money leaning against it
+            if insider_cap:
+                # Hard rule (matches /stock-news): cluster insider selling
+                # caps v2 at BUY regardless of the numeric score — the street
+                # can be bullish, but insiders selling into it wins the tie.
+                composite_v2 = min(composite_v2, 64.9)
 
         # Risk flags — warnings on the card, not score changes
         flags = []
@@ -692,6 +864,8 @@ def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None):
             flags.append(f"⚠ earnings in {days_to_earnings}d")
         if short_float > 15:
             flags.append(f"short float {short_float:.0f}%")
+        if insider_cap:
+            flags.append("⚠ insider cluster selling")
         if not current_price:
             flags.append("⚠ no price — delisted?")
 
@@ -737,6 +911,8 @@ def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None):
             'Fundamental V2':      round(fundamental_v2, 1),
             'Revisions Score':     round(revisions_score, 1),
             'Revisions Detail':    revisions_detail,
+            'Insider Score':       round(insider_score, 1),
+            'Insider Detail':      insider_detail,
             'Short Float %':       short_float,
             'Earnings Date':       earnings_date,
             'Days To Earnings':    days_to_earnings,
@@ -755,18 +931,20 @@ def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None):
             'Filing Detail': 'Error', 'Prices 3M': [], 'Prices 1M': [],
             'Score V2': 0, 'Analyst V2': 0, 'Fundamental V2': 0,
             'Revisions Score': 50, 'Revisions Detail': 'Error',
+            'Insider Score': 50, 'Insider Detail': 'Error',
             'Short Float %': 0, 'Earnings Date': '', 'Days To Earnings': None,
             'Type': 'STOCK', 'Flags': '⚠ scoring error',
         }
 
 
-def score_all(tickers, apewisdom_data, cik_map=None, sentiment_cache=None):
+def score_all(tickers, apewisdom_data, cik_map=None, sentiment_cache=None, insider_cache=None):
     results = []
     for i, symbol in enumerate(tickers):
         print(f"  [{i+1}/{len(tickers)}] Analyzing {symbol}...", end=" ", flush=True)
-        row = score_ticker(symbol, apewisdom_data, cik_map, sentiment_cache)
-        filing_note = f" | 8-K: {row['Filing Score']}" if row['Filing Score'] != 50 else ""
-        print(f"Score: {row['Score']}/100{filing_note}")
+        row = score_ticker(symbol, apewisdom_data, cik_map, sentiment_cache, insider_cache)
+        filing_note  = f" | 8-K: {row['Filing Score']}" if row['Filing Score'] != 50 else ""
+        insider_note = f" | insider: {row['Insider Score']}" if row['Insider Score'] != 50 else ""
+        print(f"Score: {row['Score']}/100{filing_note}{insider_note}")
         results.append(row)
         time.sleep(0.3)   # Small delay to avoid rate limits on Yahoo Finance
 
@@ -855,6 +1033,7 @@ def generate_report(df, output_dir="picks"):
             f"| 💬 Social (10%)      | {row['Social Score']}/100     | {row['Social Detail']} |",
             f"| 📄 Filing (10%)      | {row['Filing Score']}/100     | {row['Filing Detail']} |",
             f"| 🧮 Revisions (v2)    | {row['Revisions Score']}/100  | {row['Revisions Detail']} |",
+            f"| 🕴️ Insider (v2)       | {row['Insider Score']}/100    | {row['Insider Detail']} |",
             f"",
             f"*Shadow score v2: {row['Score V2']}/100"
             + (f" | Flags: {row['Flags']}*" if row['Flags'] else "*"),
@@ -938,6 +1117,7 @@ def send_email(df):
             💬 <b>Social {row['Social Score']:.0f}/100:</b> {row['Social Detail']}<br>
             📄 <b>Filing {row['Filing Score']:.0f}/100:</b> {row['Filing Detail']}<br>
             🧮 <b>Revisions {row['Revisions Score']:.0f}/100:</b> {row['Revisions Detail']}<br>
+            🕴️ <b>Insider {row['Insider Score']:.0f}/100:</b> {row['Insider Detail']}<br>
             {flags_html}🧪 <b>Shadow v2:</b> {row['Score V2']}/100
           </td>
         </tr>"""
@@ -1161,6 +1341,7 @@ def save_json(df, output_dir="data", filename="history.json"):
                 "social":       round(float(row["Social Score"]), 2),
                 "filing":       round(float(row.get("Filing Score", 50)), 2),
                 "revisions":    round(float(row.get("Revisions Score", 50) or 0), 2),
+                "insider":      round(float(row.get("Insider Score", 50) or 0), 2),
             },
             "signal_details": {
                 "analyst":      row["Analyst Detail"],
@@ -1169,6 +1350,7 @@ def save_json(df, output_dir="data", filename="history.json"):
                 "social":       row["Social Detail"],
                 "filing":       row.get("Filing Detail", ""),
                 "revisions":    row.get("Revisions Detail", ""),
+                "insider":      row.get("Insider Detail", ""),
             },
             "composite_score_v2": round(float(row.get("Score V2", 0) or 0), 2),
             "scores_v2": {
@@ -1279,16 +1461,17 @@ if __name__ == "__main__":
     print("\n[2/5] Fetching social sentiment (Reddit/Apewisdom)...")
     apewisdom_data = fetch_apewisdom()
 
-    # Step 2b: Load EDGAR CIK map + sentiment cache (for 8-K Signal 5)
-    print("\n[2b/5] Loading EDGAR CIK map and filing sentiment cache...")
+    # Step 2b: Load EDGAR CIK map + sentiment/insider caches (Signals 5 & 7)
+    print("\n[2b/5] Loading EDGAR CIK map, filing sentiment cache, and insider cache...")
     cik_map         = _get_cik_map()
     sentiment_cache = _load_sentiment_cache()
-    cached_count    = len(sentiment_cache)
-    print(f"  {len(cik_map):,} companies in CIK map | {cached_count} filing(s) already cached")
+    insider_cache   = _load_insider_cache()
+    print(f"  {len(cik_map):,} companies in CIK map | "
+          f"{len(sentiment_cache)} filing(s) cached | {len(insider_cache)} Form 4(s) cached")
 
     # Step 3: Score every ticker
     print("\n[3/5] Analysing and scoring all tickers...")
-    results_df = score_all(tickers, apewisdom_data, cik_map, sentiment_cache)
+    results_df = score_all(tickers, apewisdom_data, cik_map, sentiment_cache, insider_cache)
 
     # Step 4: Save report + notifications
     print("\n[4/5] Generating report and sending notifications...")
