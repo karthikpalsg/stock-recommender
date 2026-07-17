@@ -5913,5 +5913,189 @@
       "A",
       "F"
     ]
+  },
+  "ANET_0001596532-26-000164": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "BECHTOLSHEIM ANDREAS",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "LITE_0001607990-26-000001": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Thad Trent",
+    "transactions": [
+      "A"
+    ]
+  },
+  "LITE_0001714910-26-000003": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Small Ian",
+    "transactions": [
+      "A"
+    ]
+  },
+  "LITE_0001648231-26-000004": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Lillie Brian",
+    "transactions": [
+      "A"
+    ]
+  },
+  "LITE_0001722289-26-000001": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Johnson Julia Suzanne",
+    "transactions": [
+      "A"
+    ]
+  },
+  "LITE_0001232019-26-000005": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "HERSCHER PENNY",
+    "transactions": [
+      "A"
+    ]
+  },
+  "LITE_0001711035-26-000002": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fletcher Pamela",
+    "transactions": [
+      "A"
+    ]
+  },
+  "MRVL_0001628280-26-048556": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bharathi Sandeep",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F",
+      "S"
+    ]
+  },
+  "MRVL_0001628280-26-048548": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Casper Mark",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "MRVL_0001628280-26-048546": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Koopmans Chris",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "MRVL_0001628280-26-048543": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Scarpulla Justin",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "MRVL_0001628280-26-048541": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "MURPHY MATTHEW J",
+    "transactions": [
+      "S",
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "NBIS_0001513845-26-000084": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Boynton John Wilson IV",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SNOW_0001979088-26-000014": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kleinerman Christian",
+    "transactions": [
+      "S"
+    ]
+  },
+  "SNOW_0001821737-26-000009": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Dageville Benoit",
+    "transactions": [
+      "S",
+      "G"
+    ]
   }
 }
