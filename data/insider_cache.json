@@ -6097,5 +6097,14 @@
       "S",
       "G"
     ]
+  },
+  "JOBY_0001819848-26-000424": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Bevirt JoeBen",
+    "transactions": [
+      "S"
+    ]
   }
 }
