@@ -6246,5 +6246,82 @@
       "S",
       "S"
     ]
+  },
+  "CRWD_0001778564-26-000121": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "KTOS_0001660112-26-000009": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Mendoza Marie",
+    "transactions": [
+      "S"
+    ]
+  },
+  "KTOS_0001509409-26-000009": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Carrai Phillip D",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "MU_0001652149-26-000004": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "ALLEN SCOTT R.",
+    "transactions": [
+      "F",
+      "F"
+    ]
+  },
+  "PLTR_0001823952-26-000018": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Moore Alexander D.",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SNOW_0001715472-26-000008": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Ramaswamy Sridhar",
+    "transactions": []
   }
 }
