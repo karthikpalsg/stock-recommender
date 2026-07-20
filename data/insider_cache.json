@@ -6323,5 +6323,46 @@
     "is_ten_pct": false,
     "owner": "Ramaswamy Sridhar",
     "transactions": []
+  },
+  "DDOG_0001561550-26-000246": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Agarwal Amit",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "HOOD_0001783879-26-000097": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "NVT_0000897069-26-001525": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Leopold Diane",
+    "transactions": [
+      "F"
+    ]
   }
 }
