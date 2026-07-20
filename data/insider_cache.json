@@ -6364,5 +6364,74 @@
     "transactions": [
       "F"
     ]
+  },
+  "HON_0001973103-26-000007": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hammoud Billal",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "HON_0002004222-26-000006": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "West Kenneth J",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "HON_0002056381-26-000004": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Stepniak Michal",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "HON_0001748614-26-000007": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Lu Su Ping",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "HON_0002077291-26-000002": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Masso James",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "HON_0001742938-26-000007": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Kapur Vimal",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "NVT_0000897069-26-001527": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Jain Nitin",
+    "transactions": [
+      "F"
+    ]
   }
 }
