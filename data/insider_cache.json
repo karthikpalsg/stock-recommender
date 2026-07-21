@@ -6433,5 +6433,57 @@
     "transactions": [
       "F"
     ]
+  },
+  "SYNA_0001984784-26-000020": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gupta Vikram",
+    "transactions": [
+      "F",
+      "S",
+      "S"
+    ]
+  },
+  "SYNA_0001785783-26-000010": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Patel Rahul G.",
+    "transactions": [
+      "F",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SYNA_0002014633-26-000014": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ganesan Satish",
+    "transactions": [
+      "F"
+    ]
+  },
+  "SYNA_0001846472-26-000013": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Rizvi Ken",
+    "transactions": [
+      "F"
+    ]
+  },
+  "SYNA_0001213272-26-000017": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bodensteiner Lisa",
+    "transactions": [
+      "F",
+      "S",
+      "S"
+    ]
   }
 }
