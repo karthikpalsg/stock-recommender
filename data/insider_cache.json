@@ -6495,5 +6495,14 @@
       "M",
       "F"
     ]
+  },
+  "QBTS_0002129321-26-000011": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "AMES SOPHIE C",
+    "transactions": [
+      "S"
+    ]
   }
 }
