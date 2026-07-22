@@ -6504,5 +6504,41 @@
     "transactions": [
       "S"
     ]
+  },
+  "CRWD_0001778564-26-000123": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SOFI_0002032458-26-000022": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Keough Kelli",
+    "transactions": [
+      "S"
+    ]
   }
 }
