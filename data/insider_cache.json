@@ -6540,5 +6540,46 @@
     "transactions": [
       "S"
     ]
+  },
+  "DDOG_0001561550-26-000248": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Le-Quoc Alexis",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "HOOD_0001783879-26-000099": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "IPGP_0001111928-26-000145": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Valentin Gapontsev Trust I",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
   }
 }
