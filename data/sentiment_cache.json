@@ -1143,5 +1143,15 @@
     "score": 78,
     "reason": "Beat guidance, raised full-year outlook, strong AI adoption, dividend increase",
     "filing_date": "2026-07-23"
+  },
+  "QBTS_0001907982-26-000109": {
+    "score": 35,
+    "reason": "Exchange listing announcement; no financial guidance, earnings, or concrete business updates provided.",
+    "filing_date": "2026-07-24"
+  },
+  "SOUN_0001213900-26-081088": {
+    "score": 40,
+    "reason": "Merger announcement with LivePerson; neutral event disclosure, no guidance provided",
+    "filing_date": "2026-07-24"
   }
 }

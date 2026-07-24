@@ -6743,5 +6743,154 @@
       "S",
       "S"
     ]
+  },
+  "CRM_0001108524-26-000156": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Tallapragada Srinivas",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "CRM_0001108524-26-000154": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Harris Parker",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "CRWV_0001769628-26-000327": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Intrator Michael N",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "IDCC_0001628280-26-049491": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Schmidt Joshua D.",
+    "transactions": [
+      "A"
+    ]
+  },
+  "IDCC_0001628280-26-049489": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "RANKIN JEAN F",
+    "transactions": [
+      "A"
+    ]
+  },
+  "IDCC_0001628280-26-049487": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Pankaj Rajesh",
+    "transactions": [
+      "A"
+    ]
+  },
+  "IDCC_0001628280-26-049485": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Mattis Julia C",
+    "transactions": [
+      "A"
+    ]
+  },
+  "IDCC_0001628280-26-049483": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Markley John D. Jr.",
+    "transactions": [
+      "A"
+    ]
+  },
+  "IDCC_0001628280-26-049481": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "KRITZMACHER JOHN A",
+    "transactions": [
+      "A"
+    ]
+  },
+  "IDCC_0001628280-26-049479": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "HUTCHESON STEWART D",
+    "transactions": [
+      "A"
+    ]
+  },
+  "IDCC_0001628280-26-049477": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Gillman Joan H",
+    "transactions": [
+      "A"
+    ]
+  },
+  "IDCC_0001628280-26-049475": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Chen Lawrence Liren",
+    "transactions": [
+      "A"
+    ]
+  },
+  "IDCC_0001628280-26-049473": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "BREZSKI RICHARD",
+    "transactions": [
+      "A"
+    ]
+  },
+  "IDCC_0001628280-26-049471": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Armaly Samir",
+    "transactions": [
+      "A"
+    ]
+  },
+  "IDCC_0001628280-26-049469": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "ABERLE DEREK K",
+    "transactions": [
+      "A"
+    ]
   }
 }
