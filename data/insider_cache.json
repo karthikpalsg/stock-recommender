@@ -6892,5 +6892,87 @@
     "transactions": [
       "A"
     ]
+  },
+  "AMPG_0001493152-26-034586": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Flores Jorge Luis",
+    "transactions": [
+      "M"
+    ]
+  },
+  "AMPG_0001493152-26-034584": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Mazziota Daniel Richard",
+    "transactions": [
+      "M"
+    ]
+  },
+  "AMPG_0001493152-26-034581": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Maqbool Fawad",
+    "transactions": [
+      "M"
+    ]
+  },
+  "CRWD_0000950103-26-011156": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "HOOD_0001783879-26-000101": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "NBIS_0001513845-26-000086": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Almog Yael",
+    "transactions": [
+      "A"
+    ]
+  },
+  "PL_0001572854-26-000003": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Johnson Ashley F.",
+    "transactions": [
+      "J",
+      "J",
+      "S",
+      "S"
+    ]
   }
 }
