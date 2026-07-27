@@ -1163,5 +1163,15 @@
     "score": 75,
     "reason": "Major contract expansion with AT&T, multiple use cases, future gate-model evaluation",
     "filing_date": "2026-07-27"
+  },
+  "APLD_0001144879-26-000044": {
+    "score": 35,
+    "reason": "8-K references press release; actual financial details and guidance not provided in filing excerpt",
+    "filing_date": "2026-07-27"
+  },
+  "NVTS_0001628280-26-049795": {
+    "score": 72,
+    "reason": "Strong sequential growth, margin expansion, AI infrastructure momentum, strategic transition",
+    "filing_date": "2026-07-27"
   }
 }
