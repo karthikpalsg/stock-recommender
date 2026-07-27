@@ -6974,5 +6974,21 @@
       "S",
       "S"
     ]
+  },
+  "COHR_0000899140-26-000726": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Luther Sherri R",
+    "transactions": [
+      "S"
+    ]
+  },
+  "PLTR_0001705189-26-000013": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Buckley Jeffrey",
+    "transactions": []
   }
 }
