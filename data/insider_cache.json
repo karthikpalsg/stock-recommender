@@ -6990,5 +6990,37 @@
     "is_ten_pct": false,
     "owner": "Buckley Jeffrey",
     "transactions": []
+  },
+  "DDOG_0001561550-26-000252": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Pomel Olivier",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000251": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Agarwal Amit",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
   }
 }
