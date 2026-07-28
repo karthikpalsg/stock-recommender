@@ -7022,5 +7022,77 @@
       "S",
       "S"
     ]
+  },
+  "MU_0001652149-26-000005": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "ALLEN SCOTT R.",
+    "transactions": [
+      "S"
+    ]
+  },
+  "SOFI_0001196460-26-000004": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "HUTTON GEORGE THOMPSON",
+    "transactions": []
+  },
+  "SOFI_0001866161-26-000004": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Ruzwana Bashir",
+    "transactions": []
+  },
+  "SOFI_0001892579-26-000006": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Borden William A.",
+    "transactions": []
+  },
+  "SOFI_0001460835-26-000002": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Hele John C.R.",
+    "transactions": []
+  },
+  "SOFI_0001887601-26-000006": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Meltzer Gary",
+    "transactions": []
+  },
+  "SOFI_0002011525-26-000002": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Green Dana R.",
+    "transactions": []
+  },
+  "SOFI_0001338913-26-000008": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Freiberg Steven J",
+    "transactions": []
+  },
+  "SOFI_0001863185-26-000004": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Liang Clara",
+    "transactions": []
+  },
+  "SOFI_0001225481-26-000006": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "YESIL MAGDALENA",
+    "transactions": []
   }
 }
