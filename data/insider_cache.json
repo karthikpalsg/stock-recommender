@@ -7109,5 +7109,26 @@
       "S",
       "S"
     ]
+  },
+  "HOOD_0001783879-26-000104": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SYNA_0001984784-26-000022": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gupta Vikram",
+    "transactions": [
+      "S"
+    ]
   }
 }
