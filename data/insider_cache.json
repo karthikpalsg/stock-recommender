@@ -7094,5 +7094,20 @@
     "is_ten_pct": false,
     "owner": "YESIL MAGDALENA",
     "transactions": []
+  },
+  "HOOD_0001870914-26-000021": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Bhatt Baiju",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
   }
 }

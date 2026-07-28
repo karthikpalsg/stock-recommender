@@ -1183,5 +1183,25 @@
     "score": 32,
     "reason": "Net losses, negative EBITDA, capex increase, production delay, cautious financing outlook",
     "filing_date": "2026-07-28"
+  },
+  "BE_0001628280-26-050150": {
+    "score": 92,
+    "reason": "Record revenue beat, 100% guidance raise, major profitability inflection",
+    "filing_date": "2026-07-28"
+  },
+  "JOBY_0001819848-26-000427": {
+    "score": 28,
+    "reason": "Administrative warrant expiration notice, no business guidance or operational updates provided.",
+    "filing_date": "2026-07-28"
+  },
+  "OKLO_0001849056-26-000039": {
+    "score": 32,
+    "reason": "Officer appointments only; no financial guidance or operational milestones disclosed.",
+    "filing_date": "2026-07-28"
+  },
+  "SATS_0001415404-26-000035": {
+    "score": 75,
+    "reason": "Debt repayment completion and spectrum asset sale demonstrate deleveraging success",
+    "filing_date": "2026-07-28"
   }
 }
