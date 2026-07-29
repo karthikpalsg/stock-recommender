@@ -1218,5 +1218,15 @@
     "score": 0,
     "reason": "Insufficient data. 8-K body contains no financial results or guidance metrics.",
     "filing_date": "2026-07-29"
+  },
+  "FTNT_0001262039-26-000018": {
+    "score": 78,
+    "reason": "Strong beat, raised FY guidance, excellent growth across metrics",
+    "filing_date": "2026-07-29"
+  },
+  "HOOD_0001783879-26-000113": {
+    "score": 82,
+    "reason": "Record revenues up 32% YoY, EPS up 48%, record net deposits, strong growth",
+    "filing_date": "2026-07-29"
   }
 }
