@@ -7284,5 +7284,73 @@
     "transactions": [
       "S"
     ]
+  },
+  "CRWV_0001769628-26-000336": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McBee Brannin",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000335": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McBee Brannin",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "LUNR_0001213900-26-082968": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Ghaffarian Kamal Seyed",
+    "transactions": [
+      "M",
+      "D",
+      "S"
+    ]
   }
 }
