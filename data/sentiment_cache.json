@@ -1238,5 +1238,20 @@
     "score": 45,
     "reason": "Financing announcement for expansion; bridge funding suggests execution risks remain",
     "filing_date": "2026-07-30"
+  },
+  "AMZN_0001018724-26-000024": {
+    "score": 87,
+    "reason": "Major beats across all segments, AWS fastest growth in 18 quarters, transformational AI momentum",
+    "filing_date": "2026-07-30"
+  },
+  "LITE_0001628280-26-051078": {
+    "score": 25,
+    "reason": "Executive departure with no operational guidance; neutral to cautious signal",
+    "filing_date": "2026-07-30"
+  },
+  "TEM_0001193125-26-326083": {
+    "score": 82,
+    "reason": "Strong beat, major guidance raise, transformational acquisition, exceptional growth rates",
+    "filing_date": "2026-07-30"
   }
 }
