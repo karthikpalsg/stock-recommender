@@ -7497,5 +7497,49 @@
       "S",
       "S"
     ]
+  },
+  "ADBE_0000796343-26-000137": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Forusz Jillian",
+    "transactions": [
+      "S"
+    ]
+  },
+  "SATS_0000904548-26-000015": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "ERGEN CHARLES W",
+    "transactions": []
+  },
+  "TE_0001213900-26-084009": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gualy Jaime Eduardo",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "TEM_0002024630-26-000018": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Rogers James William",
+    "transactions": [
+      "A"
+    ]
+  },
+  "TEM_0002024169-26-000014": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Polovin Andrew",
+    "transactions": [
+      "A"
+    ]
   }
 }
