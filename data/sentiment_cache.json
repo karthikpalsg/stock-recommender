@@ -1268,5 +1268,15 @@
     "score": 45,
     "reason": "Capital raise for facility expansion, neutral tone, no earnings guidance provided",
     "filing_date": "2026-07-31"
+  },
+  "QBTS_0001907982-26-000119": {
+    "score": 65,
+    "reason": "New strategic partnership with Nasdaq Verafin; proof-of-concept validates quantum application",
+    "filing_date": "2026-08-03"
+  },
+  "SATS_0001415404-26-000038": {
+    "score": 12,
+    "reason": "Chapter 11 bankruptcy filing; debt restructuring; major financial distress signal",
+    "filing_date": "2026-08-03"
   }
 }
