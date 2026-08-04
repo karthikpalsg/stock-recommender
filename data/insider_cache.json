@@ -7541,5 +7541,187 @@
     "transactions": [
       "A"
     ]
+  },
+  "CRWD_0001778564-26-000131": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000254": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Agarwal Amit",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "HON_0002004222-26-000009": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "West Kenneth J",
+    "transactions": [
+      "S"
+    ]
+  },
+  "HON_0002056381-26-000005": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Stepniak Michal",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "HON_0002004222-26-000008": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "West Kenneth J",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "HON_0001748614-26-000008": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Lu Su Ping",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "HOOD_0001783879-26-000118": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "MRVL_0001628280-26-051905": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Koopmans Chris",
+    "transactions": [
+      "S"
+    ]
+  },
+  "NVTS_0001104659-26-089813": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Saluja Dipender",
+    "transactions": [
+      "A",
+      "A"
+    ]
+  },
+  "SNOW_0001979088-26-000015": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kleinerman Christian",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SOUN_0001248294-26-000005": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "MARCUS LAWRENCE",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SOUN_0001917995-26-000011": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "MOHAJER KEYVAN",
+    "transactions": [
+      "A",
+      "A"
+    ]
+  },
+  "SOUN_0001920475-26-000014": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "EMAMI MAJID",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SOUN_0001921640-26-000011": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "ZAGORSEK MICHAEL",
+    "transactions": [
+      "A",
+      "A"
+    ]
+  },
+  "SOUN_0001920481-26-000010": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "HOM JAMES MING",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SOUN_0001920484-26-000007": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "SROKA DIANA",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SOUN_0001588852-26-000009": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ball Eric R.",
+    "transactions": [
+      "A"
+    ]
   }
 }

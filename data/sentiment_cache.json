@@ -1278,5 +1278,30 @@
     "score": 12,
     "reason": "Chapter 11 bankruptcy filing; debt restructuring; major financial distress signal",
     "filing_date": "2026-08-03"
+  },
+  "CIFR_0001819989-26-000038": {
+    "score": 45,
+    "reason": "Earnings announcement with no clear guidance raise or cut evident",
+    "filing_date": "2026-08-04"
+  },
+  "IPGP_0001111928-26-000150": {
+    "score": 68,
+    "reason": "Beat guidance, margin expansion, but Advanced Solutions decline offset gains",
+    "filing_date": "2026-08-04"
+  },
+  "IREN_0001140361-26-031053": {
+    "score": 75,
+    "reason": "Transformational acquisition completing vertical integration strategy with strong strategic rationale",
+    "filing_date": "2026-08-04"
+  },
+  "LUNR_0001193125-26-330778": {
+    "score": 75,
+    "reason": "Transformational acquisition, expanded infrastructure, multiple mission wins ahead",
+    "filing_date": "2026-08-03"
+  },
+  "PLTR_0001321655-26-000039": {
+    "score": 95,
+    "reason": "Massive beats, record growth, substantial guidance raises, transformational results",
+    "filing_date": "2026-08-03"
   }
 }
