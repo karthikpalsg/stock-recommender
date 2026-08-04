@@ -7723,5 +7723,114 @@
     "transactions": [
       "A"
     ]
+  },
+  "APLD_0002050897-26-000002": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Laltrello Laura",
+    "transactions": [
+      "A",
+      "F"
+    ]
+  },
+  "APLD_0001900445-26-000002": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Zhang Jason Gechen",
+    "transactions": [
+      "A",
+      "F"
+    ]
+  },
+  "HON_0002140736-26-000004": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Reilly Jennifer J",
+    "transactions": []
+  },
+  "HON_0001973103-26-000009": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hammoud Billal",
+    "transactions": []
+  },
+  "HON_0001490146-26-000006": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Mailloux Robert D.",
+    "transactions": []
+  },
+  "HON_0001821482-26-000002": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "LAU PETER JAMES",
+    "transactions": []
+  },
+  "HON_0002077291-26-000003": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Masso James",
+    "transactions": []
+  },
+  "HON_0002140736-26-000003": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Reilly Jennifer J",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "HON_0002056381-26-000006": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Stepniak Michal",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "HON_0001748614-26-000009": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Lu Su Ping",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "IPGP_0001111928-26-000157": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "IP FIBRE DEVICES LTD",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "IPGP_0001111928-26-000155": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "SCHERBAKOV EUGENE A",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
   }
 }

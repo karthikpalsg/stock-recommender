@@ -1303,5 +1303,30 @@
     "score": 95,
     "reason": "Massive beats, record growth, substantial guidance raises, transformational results",
     "filing_date": "2026-08-03"
+  },
+  "AMD_0000002488-26-000121": {
+    "score": 45,
+    "reason": "8-K structure only; actual guidance details not provided in excerpt",
+    "filing_date": "2026-08-04"
+  },
+  "ANET_0001596532-26-000174": {
+    "score": 85,
+    "reason": "First $3B quarter, 37.7% YoY revenue growth, raised Q3 guidance",
+    "filing_date": "2026-08-04"
+  },
+  "BKNG_0001075531-26-000036": {
+    "score": 0,
+    "reason": "8-K header only, no substantive business content or guidance provided",
+    "filing_date": "2026-08-04"
+  },
+  "KTOS_0001069258-26-000075": {
+    "score": 75,
+    "reason": "Beat expectations, raised FY guidance, strong organic growth across segments",
+    "filing_date": "2026-08-04"
+  },
+  "LUMN_0000018926-26-000058": {
+    "score": 62,
+    "reason": "Beat expectations, strategic revenue growth, acquisition closes, FCF improvement",
+    "filing_date": "2026-08-04"
   }
 }
