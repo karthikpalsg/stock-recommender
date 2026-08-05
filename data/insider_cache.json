@@ -7832,5 +7832,197 @@
       "S",
       "S"
     ]
+  },
+  "APLD_0001628280-26-052805": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Mohmand Mohammad Saidal LaVanway",
+    "transactions": [
+      "A",
+      "F",
+      "J"
+    ]
+  },
+  "APLD_0001391935-26-000005": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Cummins Wes",
+    "transactions": [
+      "A",
+      "F",
+      "J"
+    ]
+  },
+  "BE_0001193125-26-333129": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "CHAMBERS JOHN T",
+    "transactions": [
+      "S"
+    ]
+  },
+  "CRWD_0001778564-26-000133": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWD_0001778610-26-000020": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Podbere Burt W.",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "FTNT_0001476336-26-000012": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Whittle John",
+    "transactions": [
+      "M",
+      "M",
+      "M",
+      "F"
+    ]
+  },
+  "FTNT_0001475586-26-000018": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Xie Michael",
+    "transactions": [
+      "M",
+      "M",
+      "M",
+      "F",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "FTNT_0001475587-26-000014": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Xie Ken",
+    "transactions": [
+      "M",
+      "M",
+      "M",
+      "F",
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "FTNT_0002016813-26-000018": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ohlgart Christiane",
+    "transactions": [
+      "M",
+      "M",
+      "M",
+      "F",
+      "S"
+    ]
+  },
+  "GNRC_0001437749-26-025729": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "LAMPEREUR ANDREW",
+    "transactions": [
+      "A"
+    ]
+  },
+  "GNRC_0001437749-26-025727": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Zarcone Dominick P",
+    "transactions": [
+      "A"
+    ]
+  },
+  "GNRC_0001437749-26-025722": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Morgan Bennett J",
+    "transactions": [
+      "A"
+    ]
+  },
+  "GNRC_0001437749-26-025719": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Jagdfeld Aaron",
+    "transactions": [
+      "S"
+    ]
+  },
+  "NBIS_0001513845-26-000088": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Boynton John Wilson IV",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SNDK_0001363249-26-000058": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Shek Bernard",
+    "transactions": [
+      "S"
+    ]
   }
 }

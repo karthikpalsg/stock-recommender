@@ -1328,5 +1328,20 @@
     "score": 62,
     "reason": "Beat expectations, strategic revenue growth, acquisition closes, FCF improvement",
     "filing_date": "2026-08-04"
+  },
+  "CEG_0001868275-26-000089": {
+    "score": 42,
+    "reason": "Board transition announcement; no financial guidance, results, or strategic changes disclosed.",
+    "filing_date": "2026-08-05"
+  },
+  "IRM_0001020569-26-000068": {
+    "score": 40,
+    "reason": "8-K form only; actual earnings results not disclosed in excerpt",
+    "filing_date": "2026-08-05"
+  },
+  "QBTS_0001907982-26-000123": {
+    "score": 85,
+    "reason": "Major R&D breakthrough in quantum computing, Nature publication, transformational technical achievement",
+    "filing_date": "2026-08-05"
   }
 }
