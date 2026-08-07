@@ -1463,5 +1463,20 @@
     "score": 40,
     "reason": "Earnings announcement filing; insufficient detail provided to assess guidance direction",
     "filing_date": "2026-08-07"
+  },
+  "ONDS_0001193125-26-340352": {
+    "score": 25,
+    "reason": "Equity plan adoption; no business guidance, revenue targets, or outlook provided.",
+    "filing_date": "2026-08-07"
+  },
+  "SATS_0001415404-26-000042": {
+    "score": 75,
+    "reason": "Positive: strong 2030 vision, double-digit enterprise growth, defense 92% growth",
+    "filing_date": "2026-08-07"
+  },
+  "TE_0001213900-26-086689": {
+    "score": 25,
+    "reason": "Stock dilution from IP purchase; no operational or financial guidance provided",
+    "filing_date": "2026-08-07"
   }
 }

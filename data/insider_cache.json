@@ -8559,5 +8559,62 @@
       "S",
       "S"
     ]
+  },
+  "DDOG_0001561550-26-000258": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Pomel Olivier",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "HOOD_0001783879-26-000122": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "NVDA_0001197647-26-000007": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "COXE TENCH",
+    "transactions": [
+      "G"
+    ]
+  },
+  "PL_0001193125-26-340201": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Schingler Robert H",
+    "transactions": [
+      "G"
+    ]
+  },
+  "UNH_0000731766-26-000196": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Conway Patrick Hugh",
+    "transactions": [
+      "S"
+    ]
   }
 }
