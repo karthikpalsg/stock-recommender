@@ -1388,5 +1388,80 @@
     "score": 85,
     "reason": "Record revenue, 45% YoY growth, raised FY outlook, major enterprise deals",
     "filing_date": "2026-08-05"
+  },
+  "CEG_0001868275-26-000097": {
+    "score": 40,
+    "reason": "8-K filing header only; insufficient content to assess guidance tone.",
+    "filing_date": "2026-08-06"
+  },
+  "DDOG_0001628280-26-053829": {
+    "score": 75,
+    "reason": "Strong 36% YoY growth, 23% customer increase, AI innovation, robust guidance",
+    "filing_date": "2026-08-06"
+  },
+  "FIVN_0001288847-26-000121": {
+    "score": 62,
+    "reason": "Revenue beat, margin pressure, strong retention, $100M TCV win, macro caution",
+    "filing_date": "2026-08-06"
+  },
+  "INOD_0001104659-26-092133": {
+    "score": 20,
+    "reason": "Equity offering signals capital needs, dilutive, no growth guidance provided",
+    "filing_date": "2026-08-06"
+  },
+  "IONQ_0001193125-26-338998": {
+    "score": 32,
+    "reason": "Equity offering filing with no operational guidance or earnings discussion",
+    "filing_date": "2026-08-07"
+  },
+  "MP_0001801368-26-000047": {
+    "score": 40,
+    "reason": "8-K filing structure only; no guidance, earnings data, or strategic information provided.",
+    "filing_date": "2026-08-06"
+  },
+  "NEO_0001077183-26-000058": {
+    "score": 40,
+    "reason": "8-K form only; press release details needed for tone assessment.",
+    "filing_date": "2026-07-28"
+  },
+  "OSCR_0001568651-26-000066": {
+    "score": 40,
+    "reason": "8-K form only, no guidance content visible in excerpt provided",
+    "filing_date": "2026-08-06"
+  },
+  "OUST_0001628280-26-054297": {
+    "score": 56,
+    "reason": "Strong beat with margin expansion, but Q3 guidance flat-to-slightly-up.",
+    "filing_date": "2026-08-06"
+  },
+  "QBTS_0001907982-26-000127": {
+    "score": 85,
+    "reason": "Exceptional bookings growth 1120%, IDC Leader recognition, ambitious roadmaps",
+    "filing_date": "2026-08-06"
+  },
+  "RGTI_0001104659-26-091979": {
+    "score": 75,
+    "reason": "Strategic partnerships, $100M government funding LOI, strong cash position, expanding deployments",
+    "filing_date": "2026-08-06"
+  },
+  "SYNA_0000817720-26-000049": {
+    "score": 75,
+    "reason": "Double-digit revenue growth, 43% Core IoT growth, margin expansion, beat guidance",
+    "filing_date": "2026-08-06"
+  },
+  "TEAM_0001650372-26-000031": {
+    "score": 78,
+    "reason": "Strong beat, major guidance raise, accelerating cloud growth, profitability achieved",
+    "filing_date": "2026-08-06"
+  },
+  "TTD_0001671933-26-000085": {
+    "score": 28,
+    "reason": "Missed expectations, margin compression, growth deceleration despite partnerships",
+    "filing_date": "2026-08-06"
+  },
+  "VST_0001692819-26-000017": {
+    "score": 40,
+    "reason": "Earnings announcement filing; insufficient detail provided to assess guidance direction",
+    "filing_date": "2026-08-07"
   }
 }

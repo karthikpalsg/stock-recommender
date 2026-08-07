@@ -8281,5 +8281,283 @@
     "transactions": [
       "S"
     ]
+  },
+  "ANET_0001596532-26-000178": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Giancarlo Charles H",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "APLD_0001628280-26-054432": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Nottenburg Richard N",
+    "transactions": [
+      "S"
+    ]
+  },
+  "BKNG_0001214607-26-000014": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "MYLOD ROBERT J JR",
+    "transactions": [
+      "S"
+    ]
+  },
+  "CEG_0000905148-26-003498": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "CRANDALL ROGER W",
+    "transactions": [
+      "A"
+    ]
+  },
+  "CRWD_0001201326-26-000019": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "GANDHI SAMEER K",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWD_0001778564-26-000135": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000351": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Intrator Michael N",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000349": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Goldberg Chen",
+    "transactions": [
+      "S",
+      "M",
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000256": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Callahan Michael James",
+    "transactions": [
+      "C",
+      "S"
+    ]
+  },
+  "GNRC_0001437749-26-026286": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Taffe Norman P",
+    "transactions": [
+      "S",
+      "S",
+      "M",
+      "S",
+      "M",
+      "S"
+    ]
+  },
+  "IDCC_0001628280-26-054590": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Pankaj Rajesh",
+    "transactions": [
+      "S"
+    ]
+  },
+  "IPGP_0001111928-26-000159": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "IP FIBRE DEVICES LTD",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "KTOS_0001094718-26-000009": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Lund Deanna H",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "LUMN_0001831269-26-000002": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Johnson Kathleen E",
+    "transactions": [
+      "P"
+    ]
+  },
+  "LUMN_0001534787-26-000011": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Hinshaw John M",
+    "transactions": [
+      "A"
+    ]
+  },
+  "MRAM_0001628280-26-054360": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Dougherty Sean Michael",
+    "transactions": [
+      "A"
+    ]
+  },
+  "MRAM_0001628280-26-054358": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Cooper William Earl",
+    "transactions": [
+      "A"
+    ]
+  },
+  "MRAM_0001628280-26-054352": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "FINCH LAWRENCE G",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NEO_0001646370-26-000002": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Aunan Greg D",
+    "transactions": [
+      "S"
+    ]
+  },
+  "NVT_0000897069-26-001592": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wozniak Beth",
+    "transactions": [
+      "M",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "NVT_0000897069-26-001590": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wacker Randolph A.",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OUST_0001193125-26-336102": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "SPENCER DARIEN",
+    "transactions": [
+      "S"
+    ]
+  },
+  "SNOW_0001979088-26-000016": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kleinerman Christian",
+    "transactions": [
+      "S",
+      "S"
+    ]
   }
 }
