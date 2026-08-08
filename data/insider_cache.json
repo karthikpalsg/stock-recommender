@@ -8616,5 +8616,163 @@
     "transactions": [
       "S"
     ]
+  },
+  "ANET_0001596532-26-000186": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "BECHTOLSHEIM ANDREAS",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "ANET_0001596532-26-000185": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Ullal Jayshree",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "ANET_0001596532-26-000184": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Ullal Jayshree",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "ANET_0001596532-26-000183": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Ullal Jayshree",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "KTOS_0001509412-26-000009": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Carter David M",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "OUST_0001193125-26-340618": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "SKAGGS STEPHEN A",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "PLTR_0001840244-26-000015": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Stat Lauren Elaina Friedman",
+    "transactions": [
+      "S"
+    ]
   }
 }
