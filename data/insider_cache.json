@@ -8774,5 +8774,14 @@
     "transactions": [
       "S"
     ]
+  },
+  "IDCC_0001628280-26-054978": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Gillman Joan H",
+    "transactions": [
+      "S"
+    ]
   }
 }
