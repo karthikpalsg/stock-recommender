@@ -8783,5 +8783,79 @@
     "transactions": [
       "S"
     ]
+  },
+  "DDOG_0001561550-26-000260": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Agarwal Amit",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "GNRC_0001437749-26-026804": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Raabe Kyle Andrew",
+    "transactions": [
+      "S",
+      "M",
+      "S"
+    ]
+  },
+  "IPGP_0001111928-26-000161": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bucher Paulus",
+    "transactions": [
+      "F"
+    ]
+  },
+  "IRM_0001732058-26-000019": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kidd Mark",
+    "transactions": [
+      "S"
+    ]
+  },
+  "IRM_0001769841-26-000007": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McIntosh Greg W",
+    "transactions": [
+      "S",
+      "M",
+      "S"
+    ]
+  },
+  "IRM_0001566391-26-000022": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Meaney William L",
+    "transactions": [
+      "M",
+      "S",
+      "S",
+      "S"
+    ]
   }
 }
