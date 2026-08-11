@@ -8925,5 +8925,181 @@
       "S",
       "S"
     ]
+  },
+  "AMD_0000002488-26-000139": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hahn Ava",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "AMD_0000002488-26-000137": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hu Jean X.",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "AMD_0000002488-26-000135": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "GUIDO PHILIP",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "AMD_0000002488-26-000133": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "HUYNH JACK M",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "AMD_0000002488-26-000131": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Norrod Forrest Eugene",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "AMD_0000002488-26-000129": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Papermaster Mark D",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "AMD_0000002488-26-000127": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Su Lisa T",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "AMD_0000002488-26-000125": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "GRASBY PAUL DARREN",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "HOOD_0001783879-26-000124": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "NOW_0001667422-26-000029": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fipps Paul",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0001465391-26-000026": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Mastantuono Gina",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0001781064-26-000016": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Zavery Amit",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0001334944-26-000030": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "McDermott William R",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0001649609-26-000028": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Canney Jacqueline P",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0002111929-26-000012": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fontaine Danielle",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "NVT_0000897069-26-001604": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "van der Kolk Robert J.",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "TEM_0002024250-26-000024": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fukushima Ryan",
+    "transactions": [
+      "S"
+    ]
   }
 }

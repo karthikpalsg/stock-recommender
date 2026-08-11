@@ -1518,5 +1518,20 @@
     "score": 72,
     "reason": "Strategic acquisition, EBITDA-positive target, $100M+ revenue, 40% YoY growth",
     "filing_date": "2026-08-11"
+  },
+  "CRWV_0001769628-26-000362": {
+    "score": 40,
+    "reason": "8-K form structure only; actual earnings details and guidance not provided in excerpt",
+    "filing_date": "2026-08-11"
+  },
+  "LITE_0001628280-26-055726": {
+    "score": 85,
+    "reason": "Strong beat, massive revenue growth, Q1 guidance raise, AI tailwinds accelerating",
+    "filing_date": "2026-08-11"
+  },
+  "NEO_0001628280-26-055697": {
+    "score": 15,
+    "reason": "Executive departure; no guidance provided; negative signal",
+    "filing_date": "2026-08-11"
   }
 }
