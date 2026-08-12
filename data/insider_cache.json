@@ -9101,5 +9101,52 @@
     "transactions": [
       "S"
     ]
+  },
+  "CRWV_0001769628-26-000367": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Jain Sachin",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "SATS_0001602724-26-000004": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "BYE STEPHEN J",
+    "transactions": [
+      "M",
+      "S",
+      "M",
+      "S"
+    ]
+  },
+  "SNOW_0001979088-26-000017": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kleinerman Christian",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "SNOW_0001433644-26-000016": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Speiser Michael L",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
   }
 }
