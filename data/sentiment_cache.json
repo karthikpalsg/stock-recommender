@@ -1543,5 +1543,20 @@
     "score": 72,
     "reason": "Strategic wins and IP acquisition offset near-term losses and capex increases",
     "filing_date": "2026-08-12"
+  },
+  "AMPG_0001493152-26-037338": {
+    "score": 25,
+    "reason": "Vendor delinquency, price reduction, product delays, development setbacks",
+    "filing_date": "2026-08-12"
+  },
+  "COHR_0001193125-26-346860": {
+    "score": 85,
+    "reason": "Record revenue, major margin expansion, strong EPS growth, AI tailwinds",
+    "filing_date": "2026-08-12"
+  },
+  "INFQ_0001628280-26-056222": {
+    "score": 78,
+    "reason": "Record revenue growth, guidance raise, major government funding, strong execution",
+    "filing_date": "2026-08-12"
   }
 }

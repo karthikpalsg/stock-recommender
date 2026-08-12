@@ -9148,5 +9148,59 @@
       "S",
       "S"
     ]
+  },
+  "DDOG_0001561550-26-000262": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Le-Quoc Alexis",
+    "transactions": [
+      "C",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "MRAM_0001628280-26-056229": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Choudhary Vikas",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NVDA_0001310264-26-000008": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "NORA JOHNSON SUZANNE M",
+    "transactions": [
+      "A",
+      "A"
+    ]
   }
 }
