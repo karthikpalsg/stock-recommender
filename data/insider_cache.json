@@ -9321,5 +9321,96 @@
       "G",
       "G"
     ]
+  },
+  "AMD_0000002488-26-000141": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hahn Ava",
+    "transactions": [
+      "S"
+    ]
+  },
+  "BKNG_0001574918-26-000006": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Steenbergen Ewout L",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CEG_0000905148-26-003642": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "CRANDALL ROGER W",
+    "transactions": [
+      "P"
+    ]
+  },
+  "FTNT_0001661859-26-000006": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "STAVRIDIS JAMES G.",
+    "transactions": []
+  },
+  "FTNT_0001646293-26-000006": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Sim Judith",
+    "transactions": []
+  },
+  "FTNT_0001218470-26-000016": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "GOLDMAN KENNETH A",
+    "transactions": []
+  },
+  "FTNT_0001452385-26-000006": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hu Jean X.",
+    "transactions": []
+  },
+  "FTNT_0001821008-26-000006": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Napolitano Janet",
+    "transactions": []
+  },
+  "FTNT_0001302110-26-000028": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hsieh Ming",
+    "transactions": []
+  },
+  "FTNT_0001899894-26-000004": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kan Derek T.",
+    "transactions": []
+  },
+  "HOOD_0001783879-26-000126": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
   }
 }
