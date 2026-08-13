@@ -9202,5 +9202,124 @@
       "A",
       "A"
     ]
+  },
+  "CRWD_0001778564-26-000139": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000374": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McBee Brannin",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000372": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McBee Brannin",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000369": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "HUTCHINS GLENN H",
+    "transactions": [
+      "M"
+    ]
+  },
+  "LUNR_0001213900-26-088540": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Ghaffarian Kamal Seyed",
+    "transactions": [
+      "M",
+      "D",
+      "S",
+      "S"
+    ]
+  },
+  "PLTR_0001824159-26-000013": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Sankar Shyam",
+    "transactions": [
+      "G",
+      "G"
+    ]
   }
 }

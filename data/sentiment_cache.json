@@ -1558,5 +1558,30 @@
     "score": 78,
     "reason": "Record revenue growth, guidance raise, major government funding, strong execution",
     "filing_date": "2026-08-12"
+  },
+  "IREN_0001140361-26-032638": {
+    "score": 82,
+    "reason": "Major contract delivery, NVIDIA certification, strong expansion targets announced",
+    "filing_date": "2026-08-13"
+  },
+  "LUNR_0001628280-26-056476": {
+    "score": 85,
+    "reason": "Record revenue 4x YoY, $1.8B backlog, major contract wins, positive guidance",
+    "filing_date": "2026-08-13"
+  },
+  "ONDS_0001193125-26-347973": {
+    "score": 85,
+    "reason": "Record revenue, 13x YoY growth, raised guidance, strong backlog",
+    "filing_date": "2026-08-13"
+  },
+  "REKR_0001437749-26-027481": {
+    "score": 45,
+    "reason": "Q2 results filing with neutral tone, no guidance raise mentioned",
+    "filing_date": "2026-08-13"
+  },
+  "RKLB_0001753926-26-001463": {
+    "score": 45,
+    "reason": "Neutral. ATM equity program replacement with no new funding announced.",
+    "filing_date": "2026-08-13"
   }
 }
