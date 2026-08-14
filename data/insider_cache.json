@@ -9412,5 +9412,35 @@
       "S",
       "S"
     ]
+  },
+  "CRWV_0001769628-26-000376": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Intrator Michael N",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "UNH_0000731766-26-000199": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Stankiewicz Dennis Andrew",
+    "transactions": [
+      "F"
+    ]
   }
 }
