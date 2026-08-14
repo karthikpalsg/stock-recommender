@@ -9442,5 +9442,32 @@
     "transactions": [
       "F"
     ]
+  },
+  "JOBY_0001819848-26-000437": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Sciarra Paul Cahill",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OKLO_0002080717-26-000009": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Goodwin William Carroll Murphy",
+    "transactions": [
+      "M"
+    ]
+  },
+  "TEM_0002024250-26-000026": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fukushima Ryan",
+    "transactions": [
+      "G"
+    ]
   }
 }
