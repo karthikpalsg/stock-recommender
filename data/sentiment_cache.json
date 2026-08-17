@@ -1608,5 +1608,10 @@
     "score": 45,
     "reason": "Board appointment announcement; positive language but no financial guidance or metrics provided",
     "filing_date": "2026-08-17"
+  },
+  "AMD_0001193125-26-354029": {
+    "score": 45,
+    "reason": "Debt offering announcement; no earnings guidance or operational updates provided",
+    "filing_date": "2026-08-17"
   }
 }

@@ -9777,5 +9777,105 @@
       "S",
       "G"
     ]
+  },
+  "ADBE_0000796343-26-000139": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Day Steven",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "AMD_0000002488-26-000143": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "VANDERSLICE ELIZABETH W",
+    "transactions": [
+      "G",
+      "G"
+    ]
+  },
+  "DDOG_0001540517-26-000002": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Agarwal Amit",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "DDOG_0001193125-26-354158": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Jacobson Matthew",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "HOOD_0001783879-26-000128": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "MRVL_0001628280-26-057399": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Scarpulla Justin",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0001659774-26-000010": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Chamberlain Paul Edward",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OKLO_0002146828-26-000002": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hanson John",
+    "transactions": [
+      "M"
+    ]
+  },
+  "OKLO_0001849056-26-000051": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Renner Alexandra",
+    "transactions": [
+      "M"
+    ]
   }
 }
