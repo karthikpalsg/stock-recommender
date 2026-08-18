@@ -9949,5 +9949,214 @@
       "S",
       "S"
     ]
+  },
+  "AMD_0000002488-26-000161": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "GRASBY PAUL DARREN",
+    "transactions": [
+      "M",
+      "F",
+      "F",
+      "S"
+    ]
+  },
+  "AMD_0000002488-26-000159": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Norrod Forrest Eugene",
+    "transactions": [
+      "M",
+      "F",
+      "F"
+    ]
+  },
+  "AMD_0000002488-26-000157": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Su Lisa T",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "AMD_0000002488-26-000155": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hahn Ava",
+    "transactions": [
+      "M",
+      "F",
+      "F"
+    ]
+  },
+  "AMD_0000002488-26-000153": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "GUIDO PHILIP",
+    "transactions": [
+      "M",
+      "F",
+      "F"
+    ]
+  },
+  "AMD_0000002488-26-000151": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hu Jean X.",
+    "transactions": [
+      "M",
+      "F",
+      "F"
+    ]
+  },
+  "AMD_0000002488-26-000149": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "HUYNH JACK M",
+    "transactions": [
+      "M",
+      "F",
+      "F"
+    ]
+  },
+  "AMD_0000002488-26-000147": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ellis Emily",
+    "transactions": []
+  },
+  "AMD_0000002488-26-000145": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Papermaster Mark D",
+    "transactions": [
+      "M",
+      "S",
+      "M",
+      "F",
+      "F"
+    ]
+  },
+  "BKNG_0001229265-26-000022": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "WITTMAN VANESSA AMES",
+    "transactions": [
+      "S"
+    ]
+  },
+  "BKNG_0001214612-26-000007": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "MILLONES PETER J",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "EQT_0001597385-26-000015": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Rice Toby Z.",
+    "transactions": [
+      "S"
+    ]
+  },
+  "HOOD_0001870914-26-000023": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Bhatt Baiju",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "JOBY_0001819848-26-000439": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Bevirt JoeBen",
+    "transactions": [
+      "S"
+    ]
+  },
+  "LZ_0001867504-26-000015": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Miller Nicole",
+    "transactions": [
+      "F",
+      "S",
+      "S"
+    ]
+  },
+  "LZ_0001334852-26-000012": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Stibel Jeffrey M",
+    "transactions": [
+      "F"
+    ]
+  },
+  "LZ_0001669081-26-000014": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Watson Noel Bertram",
+    "transactions": [
+      "F"
+    ]
+  },
+  "LZ_0001772584-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Thomas Charles C.",
+    "transactions": [
+      "F"
+    ]
+  },
+  "PRGS_0000876167-26-000102": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "FOLGER ANTHONY",
+    "transactions": [
+      "S"
+    ]
+  },
+  "TEM_0001787802-26-000004": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "West Nadja",
+    "transactions": [
+      "S"
+    ]
   }
 }
