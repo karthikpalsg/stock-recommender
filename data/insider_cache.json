@@ -10158,5 +10158,440 @@
     "transactions": [
       "S"
     ]
+  },
+  "ACHR_0002064297-26-000008": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Rungta Harsh",
+    "transactions": [
+      "M",
+      "M",
+      "S"
+    ]
+  },
+  "ACHR_0002036956-26-000014": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gupta Priya",
+    "transactions": [
+      "M",
+      "M",
+      "M",
+      "S"
+    ]
+  },
+  "ACHR_0002016416-26-000020": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Lentell Eric",
+    "transactions": [
+      "M",
+      "M",
+      "M",
+      "M",
+      "M",
+      "M",
+      "S"
+    ]
+  },
+  "ACHR_0001870608-26-000009": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Lyon Benjamin",
+    "transactions": [
+      "M",
+      "M",
+      "S"
+    ]
+  },
+  "ASTS_0001493152-26-039055": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gupta Shanti B.",
+    "transactions": [
+      "F"
+    ]
+  },
+  "ASTS_0001493152-26-039056": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Johnson Andrew Martin",
+    "transactions": [
+      "F",
+      "F"
+    ]
+  },
+  "ASTS_0001493152-26-039054": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bernal Maya",
+    "transactions": [
+      "F"
+    ]
+  },
+  "ASTS_0001493152-26-039053": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wisniewski Scott",
+    "transactions": [
+      "F",
+      "F"
+    ]
+  },
+  "BE_0001193125-26-355898": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Joshi Aman",
+    "transactions": [
+      "S"
+    ]
+  },
+  "BE_0001193125-26-355897": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "IMMELT JEFFREY R",
+    "transactions": [
+      "S"
+    ]
+  },
+  "BE_0001193125-26-355894": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Chitoori Satish",
+    "transactions": [
+      "S"
+    ]
+  },
+  "BE_0001193125-26-355893": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "SODERBERG SHAWN MARIE",
+    "transactions": [
+      "S"
+    ]
+  },
+  "CRWD_0001778564-26-000143": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001104659-26-098473": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Magnetar Financial LLC",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "LITE_0001648256-26-000005": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Retort Vincent",
+    "transactions": [
+      "F",
+      "A",
+      "F",
+      "S"
+    ]
+  },
+  "LITE_0001570465-26-000004": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kim Jae",
+    "transactions": [
+      "F",
+      "A",
+      "F",
+      "S"
+    ]
+  },
+  "LITE_0001573338-26-000014": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "HURLSTON MICHAEL E.",
+    "transactions": [
+      "F"
+    ]
+  },
+  "LITE_0001561100-26-000004": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ali Wajid",
+    "transactions": [
+      "F",
+      "A",
+      "F"
+    ]
+  },
+  "LITE_0001489550-26-000003": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wupen Yuen",
+    "transactions": [
+      "F",
+      "A",
+      "F"
+    ]
+  },
+  "NBIS_0001513845-26-000092": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Ryan Charles E",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "NOW_0001667422-26-000031": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fipps Paul",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0002103469-26-000012": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Nowbar Hossein",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0001649609-26-000030": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Canney Jacqueline P",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0001781064-26-000018": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Zavery Amit",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0001465391-26-000028": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Mastantuono Gina",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0002111929-26-000014": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fontaine Danielle",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0001334944-26-000032": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "McDermott William R",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "QBTS_0002129321-26-000013": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "AMES SOPHIE C",
+    "transactions": [
+      "F"
+    ]
+  },
+  "QBTS_0001974777-26-000016": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Nguyen Diane",
+    "transactions": [
+      "F"
+    ]
+  },
+  "RKLB_0002001011-26-000116": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Spice Adam C.",
+    "transactions": [
+      "G"
+    ]
+  },
+  "RNG_0002057569-26-000026": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Arora Tarun",
+    "transactions": [
+      "A",
+      "F"
+    ]
+  },
+  "RNG_0001772661-26-000017": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Agarwal Vaibhav",
+    "transactions": [
+      "A",
+      "F",
+      "S"
+    ]
+  },
+  "RNG_0001586648-26-000028": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Makagon Kira",
+    "transactions": [
+      "A",
+      "F"
+    ]
+  },
+  "TTD_0002109272-26-000008": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Davis Tahnil R.",
+    "transactions": [
+      "F",
+      "F",
+      "F",
+      "F"
+    ]
+  },
+  "TTD_0001867888-26-000006": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kundra Vivek",
+    "transactions": [
+      "F",
+      "F"
+    ]
+  },
+  "TTD_0001826731-26-000008": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "GRANT JAY R",
+    "transactions": [
+      "F",
+      "F",
+      "F",
+      "F"
+    ]
+  },
+  "TTD_0001671445-26-000008": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Green Jeffrey Terry",
+    "transactions": [
+      "G",
+      "G"
+    ]
   }
 }
