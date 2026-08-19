@@ -10593,5 +10593,77 @@
       "G",
       "G"
     ]
+  },
+  "HOOD_0002108589-26-000020": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Verma Shiv",
+    "transactions": [
+      "S"
+    ]
+  },
+  "HOOD_0001783879-26-000130": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "NOW_0001649609-26-000032": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Canney Jacqueline P",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0001667422-26-000033": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fipps Paul",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0002111929-26-000016": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fontaine Danielle",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0001465391-26-000030": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Mastantuono Gina",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0001334944-26-000034": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "McDermott William R",
+    "transactions": [
+      "M",
+      "F"
+    ]
   }
 }
