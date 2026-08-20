@@ -10665,5 +10665,357 @@
       "M",
       "F"
     ]
+  },
+  "AMZN_0001936006-26-000020": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Herrington Douglas J",
+    "transactions": [
+      "M",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "ASTS_0001493152-26-039321": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Yao Huiwen",
+    "transactions": [
+      "X"
+    ]
+  },
+  "ASTS_0001493152-26-039319": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Avellan Abel Antonio",
+    "transactions": [
+      "A"
+    ]
+  },
+  "ASTS_0001493152-26-039317": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bernal Maya",
+    "transactions": [
+      "A"
+    ]
+  },
+  "ASTS_0001493152-26-039316": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Johnson Andrew Martin",
+    "transactions": [
+      "A"
+    ]
+  },
+  "ASTS_0001493152-26-039315": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gupta Shanti B.",
+    "transactions": [
+      "A"
+    ]
+  },
+  "ASTS_0001493152-26-039311": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wisniewski Scott",
+    "transactions": [
+      "A"
+    ]
+  },
+  "ASTS_0001493152-26-039310": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Turco Christopher Edward",
+    "transactions": [
+      "A"
+    ]
+  },
+  "CRWV_0001769628-26-000389": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McBee Brannin",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000388": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McBee Brannin",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000387": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McBee Brannin",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000386": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Goldberg Chen",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "KTOS_0001660112-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Mendoza Marie",
+    "transactions": [
+      "S"
+    ]
+  },
+  "KTOS_0001509409-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Carrai Phillip D",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "OUST_0001193125-26-357357": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gianella Kenneth P.",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "PLTR_0001823952-26-000020": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Moore Alexander D.",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SOFI_0002034857-26-000012": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Schuppenhauer Eric",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "SOFI_0002012135-26-000021": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Pinto Arun",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "SYNA_0001846472-26-000015": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Rizvi Ken",
+    "transactions": [
+      "A",
+      "A",
+      "F"
+    ]
+  },
+  "SYNA_0002014633-26-000018": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ganesan Satish",
+    "transactions": [
+      "A",
+      "A",
+      "F"
+    ]
+  },
+  "SYNA_0001984784-26-000026": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gupta Vikram",
+    "transactions": [
+      "A",
+      "A",
+      "F",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SYNA_0001785783-26-000012": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Patel Rahul G.",
+    "transactions": [
+      "A",
+      "A",
+      "F",
+      "S"
+    ]
+  },
+  "SYNA_0001213272-26-000021": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bodensteiner Lisa",
+    "transactions": [
+      "A",
+      "A",
+      "F",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SYNA_0002014632-26-000016": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Song Esther",
+    "transactions": [
+      "A",
+      "F",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SYNA_0002014632-26-000014": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Song Esther",
+    "transactions": []
+  },
+  "SYNA_0002014633-26-000016": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ganesan Satish",
+    "transactions": []
+  },
+  "SYNA_0001984784-26-000024": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gupta Vikram",
+    "transactions": []
+  },
+  "SYNA_0001213272-26-000019": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bodensteiner Lisa",
+    "transactions": []
   }
 }
