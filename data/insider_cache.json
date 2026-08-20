@@ -11017,5 +11017,97 @@
     "is_ten_pct": false,
     "owner": "Bodensteiner Lisa",
     "transactions": []
+  },
+  "AMD_0000002488-26-000172": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "RYAN TIMOTHY",
+    "transactions": []
+  },
+  "AMD_0000002488-26-000167": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Su Lisa T",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "AMD_0000002488-26-000165": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hahn Ava",
+    "transactions": [
+      "S"
+    ]
+  },
+  "COHR_0000899140-26-000912": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Luther Sherri R",
+    "transactions": [
+      "S"
+    ]
+  },
+  "ONDS_0001213900-26-092185": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "COHEN RICHARD M",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OSCR_0001525020-26-000013": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Blackley Richard Scott",
+    "transactions": [
+      "S"
+    ]
+  },
+  "RGTI_0001123292-26-001153": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bertelsen Jeffrey A.",
+    "transactions": [
+      "S"
+    ]
+  },
+  "RGTI_0001123292-26-001152": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Rivas David",
+    "transactions": [
+      "S"
+    ]
+  },
+  "RGTI_0001123292-26-001151": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bestwick Andrew Joseph",
+    "transactions": [
+      "A",
+      "S"
+    ]
   }
 }
