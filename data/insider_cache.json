@@ -11326,5 +11326,56 @@
     "transactions": [
       "S"
     ]
+  },
+  "AMPG_0001493152-26-039666": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Maqbool Fawad",
+    "transactions": [
+      "P",
+      "P"
+    ]
+  },
+  "DDOG_0001783990-26-000002": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Pomel Olivier",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "HOOD_0001783879-26-000132": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "QUBT_0001213900-26-092621": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Huang Yuping",
+    "transactions": [
+      "A"
+    ]
   }
 }
