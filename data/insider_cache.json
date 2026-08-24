@@ -11580,5 +11580,23 @@
       "S",
       "S"
     ]
+  },
+  "BABA_0001193125-26-361902": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Tsai Joseph C",
+    "transactions": [
+      "P"
+    ]
+  },
+  "BABA_0001193125-26-361711": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wu Yongming",
+    "transactions": [
+      "P"
+    ]
   }
 }
