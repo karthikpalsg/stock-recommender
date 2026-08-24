@@ -11598,5 +11598,53 @@
     "transactions": [
       "P"
     ]
+  },
+  "RNG_0002057569-26-000028": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Arora Tarun",
+    "transactions": [
+      "F",
+      "S"
+    ]
+  },
+  "RNG_0001772661-26-000019": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Agarwal Vaibhav",
+    "transactions": [
+      "F",
+      "S"
+    ]
+  },
+  "RNG_0001586648-26-000030": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Makagon Kira",
+    "transactions": [
+      "F"
+    ]
+  },
+  "RNG_0001586695-26-000012": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Marlow John H",
+    "transactions": [
+      "A",
+      "F"
+    ]
+  },
+  "VST_0001268406-26-000007": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "BURKE JAMES A",
+    "transactions": [
+      "P"
+    ]
   }
 }
