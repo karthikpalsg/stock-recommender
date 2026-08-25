@@ -11990,5 +11990,192 @@
     "transactions": [
       "P"
     ]
+  },
+  "AMZN_0002024813-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Garman Matthew S",
+    "transactions": [
+      "M",
+      "M",
+      "M",
+      "M",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "AMZN_0001936006-26-000022": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Herrington Douglas J",
+    "transactions": [
+      "M",
+      "M",
+      "M",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "AMZN_0001557979-26-000008": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Zapolsky David",
+    "transactions": [
+      "M",
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "AMZN_0001639902-26-000008": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Olsavsky Brian T",
+    "transactions": [
+      "M",
+      "M",
+      "S"
+    ]
+  },
+  "AMZN_0001397333-26-000006": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Reynolds Shelley",
+    "transactions": [
+      "M",
+      "M",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "AMZN_0001374545-26-000010": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Jassy Andrew R",
+    "transactions": [
+      "M",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWD_0000950103-26-012856": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "HOOD_0001783879-26-000134": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "NEO_0001628280-26-058913": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Stone Warren",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "OKLO_0002147680-26-000002": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Renner Alexandra",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OKLO_0002146828-26-000004": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hanson John",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OKLO_0002080717-26-000011": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Goodwin William Carroll Murphy",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OKLO_0002146790-26-000004": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Narayanadas Vivek",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "TEM_0002113721-26-000016": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Schoenherr Thomas Edward",
+    "transactions": [
+      "S"
+    ]
+  },
+  "TEM_0002024250-26-000033": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fukushima Ryan",
+    "transactions": [
+      "S"
+    ]
+  },
+  "UNH_0000731766-26-000201": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Conway Patrick Hugh",
+    "transactions": [
+      "S"
+    ]
   }
 }

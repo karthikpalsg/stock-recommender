@@ -1658,5 +1658,10 @@
     "score": 45,
     "reason": "Merger announcement with Claros Inc.; no financial guidance or earnings data provided.",
     "filing_date": "2026-08-25"
+  },
+  "QBTS_0001907982-26-000138": {
+    "score": 28,
+    "reason": "CFO departure, no earnings/guidance data provided, neutral/cautious tone",
+    "filing_date": "2026-08-25"
   }
 }
