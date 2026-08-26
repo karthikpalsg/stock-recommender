@@ -12255,5 +12255,145 @@
       "S",
       "S"
     ]
+  },
+  "AMD_0000002488-26-000176": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Norrod Forrest Eugene",
+    "transactions": [
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000264": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Le-Quoc Alexis",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "IONQ_0001914275-26-000012": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Baxter Timothy E",
+    "transactions": [
+      "A"
+    ]
+  },
+  "IONQ_0001588852-26-000014": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ball Eric R.",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NVT_0000897069-26-001714": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Padmanabhan Aravind",
+    "transactions": [
+      "G"
+    ]
+  },
+  "NVTS_0001104659-26-101516": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Moxam David",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NVTS_0001104659-26-101514": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "LONG BRIAN",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NVTS_0001104659-26-101511": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Wunderlich Gary Kent JR",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NVTS_0001104659-26-101508": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Amoruso Cristiano",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NVTS_0001104659-26-101506": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Fischer Gregory Michael",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NVTS_0001104659-26-101504": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "HENDRIX RICHARD J",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NVTS_0001104659-26-101502": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "LEE DAVIN",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NVTS_0001104659-26-101499": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Saluja Dipender",
+    "transactions": [
+      "A",
+      "A",
+      "A"
+    ]
   }
 }

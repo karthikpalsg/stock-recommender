@@ -1668,5 +1668,20 @@
     "score": 45,
     "reason": "Executive reorganization; no financial guidance or earnings commentary provided.",
     "filing_date": "2026-08-26"
+  },
+  "CRM_0001108524-26-000187": {
+    "score": 40,
+    "reason": "8-K form only, no earnings details or guidance language provided",
+    "filing_date": "2026-08-26"
+  },
+  "CRWD_0001535527-26-000029": {
+    "score": 40,
+    "reason": "8-K filing header only, no guidance or financial results disclosed",
+    "filing_date": "2026-08-26"
+  },
+  "NVDA_0001045810-26-000073": {
+    "score": 40,
+    "reason": "8-K filing structure only; actual results and guidance not disclosed in excerpt",
+    "filing_date": "2026-08-26"
   }
 }
