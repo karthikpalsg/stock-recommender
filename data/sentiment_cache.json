@@ -1663,5 +1663,10 @@
     "score": 28,
     "reason": "CFO departure, no earnings/guidance data provided, neutral/cautious tone",
     "filing_date": "2026-08-25"
+  },
+  "MU_0001104659-26-101067": {
+    "score": 45,
+    "reason": "Executive reorganization; no financial guidance or earnings commentary provided.",
+    "filing_date": "2026-08-26"
   }
 }
