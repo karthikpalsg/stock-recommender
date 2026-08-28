@@ -1683,5 +1683,15 @@
     "score": 40,
     "reason": "8-K filing structure only; actual results and guidance not disclosed in excerpt",
     "filing_date": "2026-08-26"
+  },
+  "IREN_0001878848-26-000051": {
+    "score": 40,
+    "reason": "8-K filing structure only; actual results and guidance details not provided in excerpt",
+    "filing_date": "2026-08-27"
+  },
+  "MRVL_0001835632-26-000022": {
+    "score": 40,
+    "reason": "Earnings report filing with standard disclosure format, no guidance details provided",
+    "filing_date": "2026-08-27"
   }
 }
