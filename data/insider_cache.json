@@ -12873,5 +12873,83 @@
       "S",
       "S"
     ]
+  },
+  "CRM_0001108524-26-000192": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Harris Parker",
+    "transactions": [
+      "G"
+    ]
+  },
+  "CRWV_0001769628-26-000414": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McVeety Kristen J",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "LUNR_0001213900-26-095148": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Vontur Steven",
+    "transactions": [
+      "S"
+    ]
+  },
+  "MU_0001798757-26-000007": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bjorlin Alexis",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OUST_0001193125-26-374910": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Frichtl Mark",
+    "transactions": [
+      "M"
+    ]
+  },
+  "RKLB_0002001011-26-000133": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Klein Frank",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "RKLB_0002001011-26-000132": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kampani Arjun",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "SNOW_0001821737-26-000012": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Dageville Benoit",
+    "transactions": [
+      "S",
+      "G"
+    ]
   }
 }

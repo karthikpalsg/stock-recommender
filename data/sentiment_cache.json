@@ -1693,5 +1693,20 @@
     "score": 40,
     "reason": "Earnings report filing with standard disclosure format, no guidance details provided",
     "filing_date": "2026-08-27"
+  },
+  "IONQ_0001193125-26-374694": {
+    "score": 32,
+    "reason": "Board composition change; no financial guidance, earnings, or business updates",
+    "filing_date": "2026-08-28"
+  },
+  "ONDS_0001213900-26-095097": {
+    "score": 28,
+    "reason": "Routine equity resale filing, no guidance or operational updates provided.",
+    "filing_date": "2026-08-28"
+  },
+  "TE_0001213900-26-095184": {
+    "score": 15,
+    "reason": "Administrative filing only; no earnings, guidance, or strategic announcements",
+    "filing_date": "2026-08-28"
   }
 }
