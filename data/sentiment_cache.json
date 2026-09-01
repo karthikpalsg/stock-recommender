@@ -1708,5 +1708,15 @@
     "score": 15,
     "reason": "Administrative filing only; no earnings, guidance, or strategic announcements",
     "filing_date": "2026-08-28"
+  },
+  "COHR_0001193125-26-375462": {
+    "score": 42,
+    "reason": "Executive compensation awards; no earnings guidance, revenue targets, or strategic updates provided",
+    "filing_date": "2026-08-31"
+  },
+  "FLNC_0001868941-26-000037": {
+    "score": 28,
+    "reason": "Director appointment only; no business guidance, earnings, or strategic updates provided.",
+    "filing_date": "2026-09-01"
   }
 }

@@ -12951,5 +12951,189 @@
       "S",
       "G"
     ]
+  },
+  "ANET_0001596532-26-000218": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "BECHTOLSHEIM ANDREAS",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "ASTS_0001104659-26-104326": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Cisneros Adriana",
+    "transactions": [
+      "P",
+      "P",
+      "P"
+    ]
+  },
+  "BE_0001193125-26-377301": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Edwards Simon Stephen",
+    "transactions": [
+      "A"
+    ]
+  },
+  "BKNG_0001875741-26-000006": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Pisano Paulo",
+    "transactions": [
+      "S"
+    ]
+  },
+  "CRWD_0001778564-26-000151": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "CRWD_0001778564-26-000150": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "GLW_0000024741-26-000257": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "STEVERSON LEWIS A",
+    "transactions": [
+      "S"
+    ]
+  },
+  "HON_0002004222-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "West Kenneth J",
+    "transactions": []
+  },
+  "HOOD_0001783879-26-000138": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "NOW_0001659774-26-000012": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Chamberlain Paul Edward",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OKLO_0002147680-26-000004": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Renner Alexandra",
+    "transactions": [
+      "M"
+    ]
+  },
+  "OSCR_0001844320-26-000016": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Schlosser Mario",
+    "transactions": [
+      "C",
+      "S",
+      "C",
+      "S"
+    ]
+  },
+  "RNG_0002057569-26-000032": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Arora Tarun",
+    "transactions": [
+      "S"
+    ]
+  },
+  "SOUN_0001920484-26-000010": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "SROKA DIANA",
+    "transactions": [
+      "S"
+    ]
+  },
+  "TEAM_0001946411-26-000008": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "LIU GENE",
+    "transactions": [
+      "S"
+    ]
+  },
+  "TEM_0001787802-26-000006": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "West Nadja",
+    "transactions": [
+      "S"
+    ]
   }
 }
