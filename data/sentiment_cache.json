@@ -1718,5 +1718,20 @@
     "score": 28,
     "reason": "Director appointment only; no business guidance, earnings, or strategic updates provided.",
     "filing_date": "2026-09-01"
+  },
+  "AVGO_0001730168-26-000076": {
+    "score": 95,
+    "reason": "Massive revenue beat, 86% YoY growth, AI acceleration, strong guidance raise",
+    "filing_date": "2026-09-02"
+  },
+  "SNOW_0001640147-26-000033": {
+    "score": 0,
+    "reason": "Cannot assess guidance tone. Press release content not included in filing excerpt.",
+    "filing_date": "2026-09-02"
+  },
+  "SOUN_0001213900-26-096796": {
+    "score": 65,
+    "reason": "Strategic acquisition announced; transformational but execution risk remains",
+    "filing_date": "2026-09-02"
   }
 }

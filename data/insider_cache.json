@@ -13135,5 +13135,235 @@
     "transactions": [
       "S"
     ]
+  },
+  "ANET_0001596532-26-000220": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Duda Kenneth",
+    "transactions": [
+      "J",
+      "J",
+      "J",
+      "J",
+      "J",
+      "J",
+      "J",
+      "J",
+      "J"
+    ]
+  },
+  "BKNG_0001214607-26-000016": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "MYLOD ROBERT J JR",
+    "transactions": [
+      "S"
+    ]
+  },
+  "COHR_0000899140-26-001040": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Place Jeffrey B.",
+    "transactions": [
+      "A"
+    ]
+  },
+  "COHR_0000899140-26-001039": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Mocciaro Ilaria",
+    "transactions": [
+      "A",
+      "A",
+      "F"
+    ]
+  },
+  "COHR_0000899140-26-001038": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Luther Sherri R",
+    "transactions": [
+      "A",
+      "F"
+    ]
+  },
+  "COHR_0000899140-26-001037": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Eng Julie Sheridan",
+    "transactions": [
+      "A",
+      "A",
+      "F",
+      "S",
+      "S"
+    ]
+  },
+  "COHR_0000899140-26-001036": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Beard Robert P",
+    "transactions": [
+      "A",
+      "F"
+    ]
+  },
+  "COHR_0000899140-26-001035": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "ANDERSON JAMES ROBERT",
+    "transactions": [
+      "A",
+      "F"
+    ]
+  },
+  "FIVN_0002000932-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Dignan Andy",
+    "transactions": [
+      "S"
+    ]
+  },
+  "GNRC_0001437749-26-029526": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Jagdfeld Aaron",
+    "transactions": [
+      "S"
+    ]
+  },
+  "HOOD_0001783879-26-000140": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S"
+    ]
+  },
+  "IRM_0001769841-26-000009": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McIntosh Greg W",
+    "transactions": [
+      "S"
+    ]
+  },
+  "IRM_0001732058-26-000021": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kidd Mark",
+    "transactions": [
+      "S"
+    ]
+  },
+  "IRM_0001566391-26-000024": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Meaney William L",
+    "transactions": [
+      "M",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "LITE_0001489550-26-000008": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wupen Yuen",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "MRVL_0001628280-26-060112": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Koopmans Chris",
+    "transactions": [
+      "S"
+    ]
+  },
+  "NBIS_0001513845-26-000094": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Alonso Sanchez Maria del Dado",
+    "transactions": [
+      "S"
+    ]
+  },
+  "NOW_0001667422-26-000036": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fipps Paul",
+    "transactions": [
+      "S"
+    ]
+  },
+  "NOW_0001649609-26-000035": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Canney Jacqueline P",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OKLO_0002021786-26-000019": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Cochran Caroline",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "OKLO_0002021433-26-000019": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "DeWitte Jacob",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "VST_0001268406-26-000009": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "BURKE JAMES A",
+    "transactions": [
+      "P",
+      "P"
+    ]
   }
 }
