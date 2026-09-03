@@ -13365,5 +13365,380 @@
       "P",
       "P"
     ]
+  },
+  "AMZN_0001936006-26-000024": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Herrington Douglas J",
+    "transactions": [
+      "S"
+    ]
+  },
+  "COHR_0000899140-26-001048": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Digirolomo Enrico",
+    "transactions": [
+      "S"
+    ]
+  },
+  "COHR_0000899140-26-001047": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "SKAGGS STEPHEN A",
+    "transactions": [
+      "S"
+    ]
+  },
+  "COHR_0000899140-26-001046": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Digirolomo Enrico",
+    "transactions": [
+      "M",
+      "M",
+      "S",
+      "G"
+    ]
+  },
+  "CRWD_0001201326-26-000021": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "GANDHI SAMEER K",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWD_0001778564-26-000153": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000284": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Galloreese David",
+    "transactions": [
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000283": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Le-Quoc Alexis",
+    "transactions": [
+      "C",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "HOOD_0002108589-26-000022": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Verma Shiv",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "HOOD_0001707112-26-000006": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bazzano Dara",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "HOOD_0001659211-26-000016": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Quirk Steven M.",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "HOOD_0001705560-26-000021": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gallagher Daniel Martin Jr",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "IPGP_0001111928-26-000165": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Valentin Gapontsev Trust I",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "JOBY_0001819848-26-000450": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Sciarra Paul Cahill",
+    "transactions": [
+      "S"
+    ]
+  },
+  "JOBY_0001819848-26-000449": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Brumana Rodrigo",
+    "transactions": [
+      "M",
+      "S",
+      "S"
+    ]
+  },
+  "NBIS_0001513845-26-000110": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Weigand Matthew Robert",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NBIS_0001513845-26-000108": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Ryan Charles E",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NBIS_0001513845-26-000106": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Grimme Arne",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NBIS_0001513845-26-000104": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Radinsky Kira",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NBIS_0001513845-26-000102": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Bunina Elena",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NBIS_0001513845-26-000100": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Nave Ophir",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NBIS_0001513845-26-000098": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Volozh Arkadiy",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NBIS_0001513845-26-000096": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Boynton John Wilson IV",
+    "transactions": [
+      "A"
+    ]
+  },
+  "NEO_0001628280-26-060499": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Olivo Alicia C",
+    "transactions": [
+      "F"
+    ]
+  },
+  "NVDA_0001199039-26-000012": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "STEVENS MARK A",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "NVDA_0001696841-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Teter Timothy S.",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "OKLO_0002147680-26-000006": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Renner Alexandra",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OKLO_0001855623-26-000019": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bealmear Richard Craig",
+    "transactions": [
+      "M",
+      "S",
+      "M"
+    ]
+  },
+  "RKLB_0002001011-26-000135": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Saintil Merline",
+    "transactions": [
+      "G",
+      "G"
+    ]
+  },
+  "SNDK_0001363249-26-000074": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Shek Bernard",
+    "transactions": [
+      "S"
+    ]
+  },
+  "TEM_0002024250-26-000035": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fukushima Ryan",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "TEM_0001739090-26-000012": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Doudna Jennifer A",
+    "transactions": [
+      "S"
+    ]
+  },
+  "TEM_0001445826-26-000012": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Epstein David R",
+    "transactions": [
+      "S"
+    ]
   }
 }
