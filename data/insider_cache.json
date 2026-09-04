@@ -13740,5 +13740,265 @@
     "transactions": [
       "S"
     ]
+  },
+  "ANET_0001596532-26-000222": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Breithaupt Chantelle Yvette",
+    "transactions": [
+      "S"
+    ]
+  },
+  "BE_0001193125-26-382495": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Sridhar KR",
+    "transactions": [
+      "G",
+      "M"
+    ]
+  },
+  "COHR_0000899140-26-001054": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Neal-Graves Lisa",
+    "transactions": [
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000416": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McVeety Kristen J",
+    "transactions": [
+      "M",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000415": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Intrator Michael N",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000300": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Pomel Olivier",
+    "transactions": [
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000299": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "OBSTLER DAVID M",
+    "transactions": [
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000298": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Le-Quoc Alexis",
+    "transactions": [
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000297": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Walters Sean Michael",
+    "transactions": [
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000296": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Galloreese David",
+    "transactions": [
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000295": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Acocella Kerry",
+    "transactions": [
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000294": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Li Yanbing",
+    "transactions": [
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000293": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Blitzer Adam",
+    "transactions": [
+      "S"
+    ]
+  },
+  "GNRC_0001437749-26-029645": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Taffe Norman P",
+    "transactions": [
+      "F"
+    ]
+  },
+  "INOD_0001104659-26-105529": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "FORLENZA LOUISE C",
+    "transactions": [
+      "M",
+      "M",
+      "S"
+    ]
+  },
+  "LITE_0001489550-26-000009": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wupen Yuen",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "NVDA_0001197647-26-000009": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "COXE TENCH",
+    "transactions": [
+      "G"
+    ]
+  },
+  "PLTR_0001840244-26-000016": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Stat Lauren Elaina Friedman",
+    "transactions": [
+      "S"
+    ]
+  },
+  "RGTI_0001123292-26-001228": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bertelsen Jeffrey A.",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "RNG_0001586695-26-000014": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Marlow John H",
+    "transactions": [
+      "F"
+    ]
+  },
+  "RNG_0002057569-26-000035": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Arora Tarun",
+    "transactions": [
+      "F",
+      "S"
+    ]
+  },
+  "RNG_0001772661-26-000021": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Agarwal Vaibhav",
+    "transactions": [
+      "F",
+      "S"
+    ]
+  },
+  "RNG_0001586648-26-000032": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Makagon Kira",
+    "transactions": [
+      "F"
+    ]
+  },
+  "RNG_0001586647-26-000010": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Shmunis Vladimir",
+    "transactions": [
+      "A",
+      "F",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SNOW_0001979088-26-000018": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kleinerman Christian",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "UNH_0000731766-26-000203": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "DeVeydt Wayne S",
+    "transactions": [
+      "F"
+    ]
   }
 }

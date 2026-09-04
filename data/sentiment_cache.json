@@ -1743,5 +1743,30 @@
     "score": 82,
     "reason": "Record revenue 58% YoY growth, landmark contracts, strong cash position",
     "filing_date": "2026-09-03"
+  },
+  "ACHR_0001824502-26-000068": {
+    "score": 15,
+    "reason": "Warrant expiration notice, NYSE trading halt, no operational updates",
+    "filing_date": "2026-09-04"
+  },
+  "CRM_0001108524-26-000197": {
+    "score": 35,
+    "reason": "Executive compensation plan approval; no financial guidance or performance metrics disclosed.",
+    "filing_date": "2026-09-04"
+  },
+  "GLW_0001206774-26-000517": {
+    "score": 35,
+    "reason": "Conference presentation notice only; no financial guidance or material updates disclosed",
+    "filing_date": "2026-09-04"
+  },
+  "SOUN_0001213900-26-097712": {
+    "score": 78,
+    "reason": "Transformational acquisition, $500M revenue target, debt-free balance sheet, market expansion",
+    "filing_date": "2026-09-04"
+  },
+  "TTD_0001193125-26-382690": {
+    "score": 18,
+    "reason": "15% workforce reduction, $39-51M restructuring charges, operational distress",
+    "filing_date": "2026-09-04"
   }
 }
