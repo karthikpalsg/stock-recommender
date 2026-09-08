@@ -14095,5 +14095,111 @@
       "S",
       "S"
     ]
+  },
+  "DDOG_0001561550-26-000304": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Richardson Julie",
+    "transactions": [
+      "C",
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000303": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Blitzer Adam",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "GLW_0000024741-26-000259": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gullo Michelle L",
+    "transactions": [
+      "S"
+    ]
+  },
+  "NVDA_0001199039-26-000014": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "STEVENS MARK A",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "OKLO_0002146790-26-000008": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Narayanadas Vivek",
+    "transactions": [
+      "M",
+      "S",
+      "M"
+    ]
+  },
+  "OSCR_0001911946-26-000006": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Baltrus Victoria",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OSCR_0001568651-26-000070": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Liang Janet",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OSCR_0001525020-26-000015": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Blackley Richard Scott",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OSCR_0001842979-26-000005": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McAnaney Adam",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OSCR_0001844320-26-000018": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Schlosser Mario",
+    "transactions": [
+      "S"
+    ]
   }
 }

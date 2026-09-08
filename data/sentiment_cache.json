@@ -1768,5 +1768,35 @@
     "score": 18,
     "reason": "15% workforce reduction, $39-51M restructuring charges, operational distress",
     "filing_date": "2026-09-04"
+  },
+  "ADBE_0000796343-26-000144": {
+    "score": 45,
+    "reason": "Leadership transition announcement; no financial guidance or earnings data provided.",
+    "filing_date": "2026-09-08"
+  },
+  "IONQ_0001193125-26-384388": {
+    "score": 78,
+    "reason": "Increased guidance, major acquisition integration, optimistic management tone.",
+    "filing_date": "2026-09-08"
+  },
+  "IPGP_0001111928-26-000169": {
+    "score": 75,
+    "reason": "Material acquisition completed, transformational medical laser asset, significant investment",
+    "filing_date": "2026-09-08"
+  },
+  "QBTS_0001907982-26-000141": {
+    "score": 85,
+    "reason": "Major government funding award, transformational $100M CHIPS Act agreement, accelerates R&D roadmap",
+    "filing_date": "2026-09-08"
+  },
+  "RGTI_0001104659-26-105662": {
+    "score": 92,
+    "reason": "Major $100M government contract, transformational R&D acceleration, strategic validation",
+    "filing_date": "2026-09-08"
+  },
+  "UNH_0000731766-26-000205": {
+    "score": 40,
+    "reason": "Conference presentation announcement only; no earnings data or guidance provided",
+    "filing_date": "2026-09-08"
   }
 }
