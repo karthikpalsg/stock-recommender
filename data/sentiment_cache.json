@@ -1798,5 +1798,15 @@
     "score": 40,
     "reason": "Conference presentation announcement only; no earnings data or guidance provided",
     "filing_date": "2026-09-08"
+  },
+  "AMZN_0001018724-26-000036": {
+    "score": 25,
+    "reason": "Director appointment only, no earnings guidance or business outlook provided",
+    "filing_date": "2026-09-09"
+  },
+  "JOBY_0001819848-26-000453": {
+    "score": 25,
+    "reason": "Internal accounting officer appointment; no operational or financial guidance provided.",
+    "filing_date": "2026-09-09"
   }
 }

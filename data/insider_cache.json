@@ -14201,5 +14201,194 @@
     "transactions": [
       "S"
     ]
+  },
+  "AMZN_0001595602-26-000007": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Mandia Kevin R.",
+    "transactions": []
+  },
+  "AMZN_0001284323-26-000002": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "SMITH BRAD D",
+    "transactions": []
+  },
+  "DDOG_0001466857-26-000012": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Richardson Julie",
+    "transactions": [
+      "C",
+      "S",
+      "S"
+    ]
+  },
+  "FIVN_0002063775-26-000013": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Lee Bryan M",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "FIVN_0001886762-26-000014": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Meriweather Tiffany N.",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "FIVN_0002000932-26-000015": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Dignan Andy",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "FIVN_0001846877-26-000012": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Mansharamani Leena",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "JOBY_0001819848-26-000455": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Evans Aicha",
+    "transactions": [
+      "G",
+      "G"
+    ]
+  },
+  "OKLO_0002146790-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Narayanadas Vivek",
+    "transactions": [
+      "S"
+    ]
+  },
+  "QBTS_0001346345-26-000008": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "DiLullo John D",
+    "transactions": [
+      "S"
+    ]
+  },
+  "SNDK_0001242648-26-000029": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ilkbahar Alper",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "F"
+    ]
+  },
+  "SNDK_0001242648-26-000028": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ilkbahar Alper",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SNDK_0001242648-26-000027": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Shek Bernard",
+    "transactions": [
+      "F",
+      "S"
+    ]
+  },
+  "SNDK_0001242648-26-000026": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Goeckeler David",
+    "transactions": [
+      "F"
+    ]
+  },
+  "SNDK_0001242648-26-000025": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Visoso Luis Felipe",
+    "transactions": [
+      "F"
+    ]
+  },
+  "SNDK_0001242648-26-000024": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Pokorny Michael",
+    "transactions": [
+      "F"
+    ]
   }
 }
