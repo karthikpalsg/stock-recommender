@@ -14390,5 +14390,153 @@
     "transactions": [
       "F"
     ]
+  },
+  "CRWD_0001778564-26-000157": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000306": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Pomel Olivier",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "GNRC_0001437749-26-030003": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Taffe Norman P",
+    "transactions": [
+      "S",
+      "S",
+      "M",
+      "S"
+    ]
+  },
+  "HOOD_0001817425-26-000012": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Treseder Oluwadara Johnson",
+    "transactions": [
+      "S"
+    ]
+  },
+  "IDCC_0001628280-26-061178": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Pankaj Rajesh",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OKLO_0002146790-26-000012": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Narayanadas Vivek",
+    "transactions": [
+      "S"
+    ]
+  },
+  "REKR_0001697851-26-000015": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "SHAKERDGE-HENNESSY DEBRA",
+    "transactions": [
+      "F"
+    ]
+  },
+  "RGTI_0001123292-26-001272": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Kulkarni Subodh K",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "SNOW_0001246215-26-000003": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "GARRETT MARK",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "SNOW_0001231919-26-001154": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Speiser Michael L",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SOUN_0001806386-26-000024": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Collins John DeNeen",
+    "transactions": [
+      "A",
+      "A"
+    ]
+  },
+  "VST_0001940494-26-000006": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Moldovan Kristopher E.",
+    "transactions": [
+      "S"
+    ]
+  },
+  "VST_0001728553-26-000006": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "HUDSON SCOTT A",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
   }
 }
