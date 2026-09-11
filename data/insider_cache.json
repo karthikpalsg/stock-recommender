@@ -14538,5 +14538,208 @@
       "S",
       "S"
     ]
+  },
+  "ANET_0001596532-26-000226": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "TEMPLETON MARK B",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "ANET_0001596532-26-000225": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Duda Kenneth",
+    "transactions": [
+      "J",
+      "J",
+      "J"
+    ]
+  },
+  "COHR_0000899140-26-001056": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Beard Robert P",
+    "transactions": [
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000419": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McVeety Kristen J",
+    "transactions": [
+      "M",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000418": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Intrator Michael N",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000417": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Goldberg Chen",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "LITE_0001489550-26-000010": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wupen Yuen",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "LUNR_0001213900-26-098884": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Ghaffarian Kamal Seyed",
+    "transactions": [
+      "M",
+      "D",
+      "S",
+      "S",
+      "M",
+      "D",
+      "S"
+    ]
+  },
+  "NVDA_0002152188-26-000005": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Parker Nicholas P.",
+    "transactions": [
+      "A"
+    ]
+  },
+  "OUST_0001193125-26-388227": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Chung Megan",
+    "transactions": [
+      "G"
+    ]
+  },
+  "SNOW_0001640147-26-000038": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kleinerman Christian",
+    "transactions": [
+      "F",
+      "F",
+      "S"
+    ]
+  },
+  "SNOW_0001431768-26-000005": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "ROBINS BRIAN G",
+    "transactions": [
+      "F",
+      "F"
+    ]
+  },
+  "SNOW_0001821737-26-000013": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Dageville Benoit",
+    "transactions": [
+      "F",
+      "F",
+      "S",
+      "G"
+    ]
+  },
+  "SNOW_0001715472-26-000009": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Ramaswamy Sridhar",
+    "transactions": [
+      "F",
+      "F"
+    ]
+  },
+  "SNOW_0002038740-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Raghunathan Vivek",
+    "transactions": [
+      "F",
+      "F"
+    ]
+  },
+  "SNOW_0002012024-26-000008": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ho Emily",
+    "transactions": [
+      "F"
+    ]
+  },
+  "SNOW_0002127025-26-000006": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Beaulier Jonathan Mead",
+    "transactions": [
+      "F",
+      "F"
+    ]
   }
 }

@@ -1818,5 +1818,30 @@
     "score": 15,
     "reason": "Government share resale filing; no earnings, guidance, or operational updates.",
     "filing_date": "2026-09-10"
+  },
+  "GLW_0001193125-26-389321": {
+    "score": 35,
+    "reason": "Equity offering announcement; neutral capital raising activity, no earnings/guidance disclosure",
+    "filing_date": "2026-09-11"
+  },
+  "JOBY_0001628280-26-061440": {
+    "score": 45,
+    "reason": "Routine stock issuance filing; no guidance provided or material updates",
+    "filing_date": "2026-09-11"
+  },
+  "OCC_0001437749-26-030174": {
+    "score": 40,
+    "reason": "8-K filing structure only; actual results and guidance not provided in excerpt",
+    "filing_date": "2026-09-11"
+  },
+  "OKLO_0001104659-26-106897": {
+    "score": 75,
+    "reason": "Major $1B ATM equity offering signals confidence, capital for growth.",
+    "filing_date": "2026-09-11"
+  },
+  "SNDK_0001193125-26-389293": {
+    "score": 45,
+    "reason": "Refinanced revolving credit facility; no earnings or guidance details provided",
+    "filing_date": "2026-09-11"
   }
 }
