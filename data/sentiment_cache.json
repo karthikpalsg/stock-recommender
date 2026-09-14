@@ -1843,5 +1843,15 @@
     "score": 45,
     "reason": "Refinanced revolving credit facility; no earnings or guidance details provided",
     "filing_date": "2026-09-11"
+  },
+  "AMZN_0001104659-26-107526": {
+    "score": 40,
+    "reason": "Filing contains only structural SEC disclosures, no substantive guidance or earnings information provided.",
+    "filing_date": "2026-09-14"
+  },
+  "ONDS_0001213900-26-099531": {
+    "score": 75,
+    "reason": "Transformational acquisition with $130M EBITDA contribution, strategic expansion",
+    "filing_date": "2026-09-14"
   }
 }

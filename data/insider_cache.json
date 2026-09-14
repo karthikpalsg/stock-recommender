@@ -14741,5 +14741,111 @@
       "F",
       "F"
     ]
+  },
+  "AMD_0000002488-26-000178": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Su Lisa T",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "G"
+    ]
+  },
+  "APLD_0001900445-26-000004": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Zhang Jason Gechen",
+    "transactions": [
+      "F"
+    ]
+  },
+  "BABA_0001193125-26-389757": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wu Yongming",
+    "transactions": [
+      "M"
+    ]
+  },
+  "CRWD_0001778564-26-000159": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "HOOD_0001870914-26-000025": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Bhatt Baiju",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "IONQ_0001193125-26-389607": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Raymond John w",
+    "transactions": [
+      "S"
+    ]
+  },
+  "RNG_0002057569-26-000038": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Arora Tarun",
+    "transactions": [
+      "S",
+      "S"
+    ]
   }
 }
