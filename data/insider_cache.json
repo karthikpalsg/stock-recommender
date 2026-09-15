@@ -14847,5 +14847,134 @@
       "S",
       "S"
     ]
+  },
+  "ANET_0001596532-26-000228": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Duda Kenneth",
+    "transactions": [
+      "J",
+      "J",
+      "J"
+    ]
+  },
+  "DDOG_0001561550-26-000310": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Walters Sean Michael",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000309": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Li Yanbing",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "INOD_0001104659-26-107933": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "FORLENZA LOUISE C",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "OKLO_0002147680-26-000008": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Renner Alexandra",
+    "transactions": [
+      "M"
+    ]
+  },
+  "OKLO_0002021774-26-000011": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Jansen John M",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OKLO_0002146828-26-000006": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hanson John",
+    "transactions": [
+      "M"
+    ]
+  },
+  "OKLO_0002146790-26-000014": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Narayanadas Vivek",
+    "transactions": [
+      "M"
+    ]
+  },
+  "SNOW_0001979088-26-000019": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kleinerman Christian",
+    "transactions": [
+      "G"
+    ]
+  },
+  "TTD_0002109272-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Davis Tahnil R.",
+    "transactions": [
+      "A"
+    ]
+  },
+  "TTD_0001826731-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "GRANT JAY R",
+    "transactions": [
+      "A"
+    ]
+  },
+  "TTD_0001867888-26-000008": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kundra Vivek",
+    "transactions": [
+      "A"
+    ]
+  },
+  "TTD_0001776828-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Olmstead Nathan",
+    "transactions": [
+      "A"
+    ]
   }
 }
