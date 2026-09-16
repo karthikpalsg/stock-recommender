@@ -1883,5 +1883,30 @@
     "score": 45,
     "reason": "Executive compensation grant; no business performance, guidance, or earnings data disclosed.",
     "filing_date": "2026-09-15"
+  },
+  "FLNC_0001104659-26-108270": {
+    "score": 12,
+    "reason": "Massive guidance cut: revenue down 20%, EBITDA swings to $200M loss",
+    "filing_date": "2026-09-16"
+  },
+  "GNRC_0001437749-26-030550": {
+    "score": 85,
+    "reason": "Transformational Amazon deal: $8B supply agreement, strategic warrant issuance",
+    "filing_date": "2026-09-16"
+  },
+  "NVT_0001104659-26-108250": {
+    "score": 35,
+    "reason": "Debt offering announced; no earnings guidance, revenue growth, or positive operational updates provided.",
+    "filing_date": "2026-09-16"
+  },
+  "OSCR_0001568651-26-000074": {
+    "score": 75,
+    "reason": "Guidance raise on earnings and MLR; reaffirmed revenue targets",
+    "filing_date": "2026-09-16"
+  },
+  "SNDK_0001628280-26-062267": {
+    "score": 18,
+    "reason": "Executive compensation adjustments only; no business guidance or financial outlook",
+    "filing_date": "2026-09-16"
   }
 }

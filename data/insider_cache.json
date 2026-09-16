@@ -14976,5 +14976,234 @@
     "transactions": [
       "A"
     ]
+  },
+  "BKNG_0001875741-26-000008": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Pisano Paulo",
+    "transactions": [
+      "S"
+    ]
+  },
+  "COHR_0000899140-26-001064": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Digirolomo Enrico",
+    "transactions": [
+      "S",
+      "G"
+    ]
+  },
+  "CRWD_0001061632-26-000008": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "AUSTIN ROXANNE S",
+    "transactions": [
+      "M",
+      "S",
+      "S"
+    ]
+  },
+  "CRWD_0001778564-26-000161": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000426": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Agrawal Nitin",
+    "transactions": [
+      "M",
+      "S",
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000316": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "OBSTLER DAVID M",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000315": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "OBSTLER DAVID M",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000314": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Acocella Kerry",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "FIVN_0001846877-26-000014": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Mansharamani Leena",
+    "transactions": [
+      "G"
+    ]
+  },
+  "FTNT_0001476336-26-000014": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Whittle John",
+    "transactions": [
+      "M",
+      "S",
+      "S",
+      "M",
+      "S"
+    ]
+  },
+  "IONQ_0001193125-26-392335": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "DACIER PAUL T",
+    "transactions": [
+      "F"
+    ]
+  },
+  "IONQ_0001193125-26-392334": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Singh Inder M",
+    "transactions": [
+      "F"
+    ]
+  },
+  "IONQ_0001193125-26-392333": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "de Masi Niccolo",
+    "transactions": [
+      "F"
+    ]
+  },
+  "LITE_0001489550-26-000011": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wupen Yuen",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "MRVL_0001628280-26-062124": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "MURPHY MATTHEW J",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OKLO_0002147680-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Renner Alexandra",
+    "transactions": [
+      "G"
+    ]
   }
 }
