@@ -1908,5 +1908,25 @@
     "score": 18,
     "reason": "Executive compensation adjustments only; no business guidance or financial outlook",
     "filing_date": "2026-09-16"
+  },
+  "CRM_0001108524-26-000210": {
+    "score": 45,
+    "reason": "Investor Day presentation disclosed; insufficient financial data for tone assessment",
+    "filing_date": "2026-09-17"
+  },
+  "CRWV_0001769628-26-000429": {
+    "score": 45,
+    "reason": "Capital raise announcement; neutral on operational performance or guidance.",
+    "filing_date": "2026-09-17"
+  },
+  "NVT_0001104659-26-108580": {
+    "score": 75,
+    "reason": "Major acquisition financing for $1.75B transformational deal announced.",
+    "filing_date": "2026-09-17"
+  },
+  "QBTS_0001907982-26-000150": {
+    "score": 35,
+    "reason": "Conference announcement; no financial guidance, earnings data, or material updates",
+    "filing_date": "2026-09-17"
   }
 }
