@@ -15762,5 +15762,260 @@
     "is_ten_pct": true,
     "owner": "Green Jeffrey Terry",
     "transactions": []
+  },
+  "ASTS_0001493152-26-043183": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Yao Huiwen",
+    "transactions": [
+      "S"
+    ]
+  },
+  "ASTS_0001493152-26-043182": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gupta Shanti B.",
+    "transactions": [
+      "S"
+    ]
+  },
+  "AVGO_0001730168-26-000084": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "O'Toole Amie Thuener",
+    "transactions": [
+      "F"
+    ]
+  },
+  "AVGO_0001730168-26-000082": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Brazeal Mark David",
+    "transactions": [
+      "F"
+    ]
+  },
+  "CRWD_0001445832-26-000011": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Watzinger Gerhard",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWD_0001778564-26-000163": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000430": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Intrator Michael N",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "M",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "GNRC_0001437749-26-030749": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Taffe Norman P",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "GNRC_0001437749-26-030747": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Raabe Kyle Andrew",
+    "transactions": [
+      "S",
+      "M",
+      "S"
+    ]
+  },
+  "KTOS_0001660112-26-000011": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Mendoza Marie",
+    "transactions": [
+      "S"
+    ]
+  },
+  "KTOS_0001509409-26-000011": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Carrai Phillip D",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "LITE_0001489550-26-000012": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wupen Yuen",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "NVDA_0001283854-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Shoquist Debora",
+    "transactions": [
+      "F"
+    ]
+  },
+  "NVDA_0001696841-26-000012": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Teter Timothy S.",
+    "transactions": [
+      "F"
+    ]
+  },
+  "NVDA_0001588670-26-000014": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kress Colette",
+    "transactions": [
+      "F",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "NVDA_0001243821-26-000007": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "GAWEL SCOTT",
+    "transactions": [
+      "F"
+    ]
+  },
+  "NVDA_0001197649-26-000012": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "HUANG JEN HSUN",
+    "transactions": [
+      "F",
+      "G"
+    ]
+  },
+  "PL_0001193125-26-395503": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Marshall William Spencer",
+    "transactions": [
+      "G"
+    ]
+  },
+  "PL_0001193125-26-394792": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Marshall William Spencer",
+    "transactions": [
+      "F"
+    ]
+  },
+  "PL_0001193125-26-394658": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Johnson Ashley F.",
+    "transactions": [
+      "A",
+      "F",
+      "F",
+      "J",
+      "J",
+      "S"
+    ]
+  },
+  "PL_0001193125-26-394651": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Schingler Robert H",
+    "transactions": [
+      "F",
+      "J",
+      "J",
+      "S"
+    ]
+  },
+  "PLTR_0001823952-26-000022": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Moore Alexander D.",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
   }
 }
