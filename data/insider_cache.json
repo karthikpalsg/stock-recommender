@@ -16017,5 +16017,198 @@
       "S",
       "S"
     ]
+  },
+  "ADBE_0001224154-26-000003": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "NARAYEN SHANTANU",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "BE_0001193125-26-395806": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Joshi Aman",
+    "transactions": [
+      "S"
+    ]
+  },
+  "BE_0001193125-26-395797": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurzymski Maciej",
+    "transactions": [
+      "S"
+    ]
+  },
+  "BE_0001193125-26-395790": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "SODERBERG SHAWN MARIE",
+    "transactions": [
+      "S"
+    ]
+  },
+  "BE_0001193125-26-395779": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Chitoori Satish",
+    "transactions": [
+      "S"
+    ]
+  },
+  "CRWV_0001104659-26-109005": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Magnetar Financial LLC",
+    "transactions": []
+  },
+  "FIVN_0002000932-26-000018": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Dignan Andy",
+    "transactions": [
+      "S"
+    ]
+  },
+  "NBIS_0001513845-26-000116": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Boroditsky Marc",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "OSCR_0001193125-26-395853": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kushner Joshua",
+    "transactions": [
+      "J",
+      "J",
+      "J",
+      "J",
+      "J",
+      "J",
+      "J",
+      "J"
+    ]
+  },
+  "OSCR_0001193125-26-395847": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Thrive Partners II GP, LLC",
+    "transactions": [
+      "J",
+      "J",
+      "J",
+      "J",
+      "J",
+      "J",
+      "J",
+      "J"
+    ]
+  },
+  "SOUN_0001920484-26-000014": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "SROKA DIANA",
+    "transactions": [
+      "S"
+    ]
+  },
+  "SYNA_0001213272-26-000023": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bodensteiner Lisa",
+    "transactions": [
+      "F",
+      "S"
+    ]
+  },
+  "SYNA_0002014632-26-000018": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Song Esther",
+    "transactions": [
+      "F",
+      "S"
+    ]
+  },
+  "SYNA_0002014633-26-000020": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ganesan Satish",
+    "transactions": [
+      "F"
+    ]
+  },
+  "TEM_0001114357-26-000038": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "LEFKOFSKY ERIC P",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "TEM_0001754464-26-000018": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bartolucci Ryan M",
+    "transactions": [
+      "S"
+    ]
+  },
+  "TEM_0002024169-26-000020": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Polovin Andrew",
+    "transactions": [
+      "S"
+    ]
+  },
+  "TEM_0002024250-26-000037": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fukushima Ryan",
+    "transactions": [
+      "S"
+    ]
   }
 }

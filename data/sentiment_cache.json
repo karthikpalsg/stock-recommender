@@ -1928,5 +1928,15 @@
     "score": 35,
     "reason": "Conference announcement; no financial guidance, earnings data, or material updates",
     "filing_date": "2026-09-17"
+  },
+  "NVTS_0001104659-26-109125": {
+    "score": 42,
+    "reason": "Strategic investment disclosed; no earnings guidance or revenue impact stated",
+    "filing_date": "2026-09-21"
+  },
+  "QBTS_0001907982-26-000152": {
+    "score": 35,
+    "reason": "Board appointment announcement; no financial guidance or operational metrics provided.",
+    "filing_date": "2026-09-21"
   }
 }
