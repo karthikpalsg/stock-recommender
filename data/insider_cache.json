@@ -16210,5 +16210,261 @@
     "transactions": [
       "S"
     ]
+  },
+  "ANET_0001596532-26-000230": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "BECHTOLSHEIM ANDREAS",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRM_0001108524-26-000212": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Kirk David Blair",
+    "transactions": [
+      "P"
+    ]
+  },
+  "CRWD_0001778564-26-000165": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWD_0001319245-26-000014": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Schumacher Laura J",
+    "transactions": [
+      "A"
+    ]
+  },
+  "CRWD_0001872303-26-000008": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Flower Johanna",
+    "transactions": [
+      "A"
+    ]
+  },
+  "CRWD_0001253512-26-000015": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "OLEARY DENIS",
+    "transactions": [
+      "A"
+    ]
+  },
+  "CRWD_0001201326-26-000023": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "GANDHI SAMEER K",
+    "transactions": [
+      "A"
+    ]
+  },
+  "CRWD_0001445832-26-000013": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Watzinger Gerhard",
+    "transactions": [
+      "A"
+    ]
+  },
+  "CRWD_0001220632-26-000006": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "DAVIS CARY",
+    "transactions": [
+      "S",
+      "S",
+      "A"
+    ]
+  },
+  "FLNC_0001868941-26-000050": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "BULLS HERMAN E",
+    "transactions": [
+      "P"
+    ]
+  },
+  "FLNC_0001868941-26-000048": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "von Heynitz Harald",
+    "transactions": [
+      "P"
+    ]
+  },
+  "LUNR_0001213900-26-102212": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Crain Timothy Price II",
+    "transactions": [
+      "M",
+      "D",
+      "S",
+      "S",
+      "M",
+      "D",
+      "S"
+    ]
+  },
+  "NVDA_0001199039-26-000016": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "STEVENS MARK A",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "OSCR_0001229265-26-000024": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "WITTMAN VANESSA AMES",
+    "transactions": [
+      "S"
+    ]
+  },
+  "SNDK_0001242648-26-000043": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Pokorny Michael",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SNDK_0001242648-26-000042": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Visoso Luis Felipe",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SNDK_0001242648-26-000041": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Goeckeler David",
+    "transactions": [
+      "A",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SNDK_0001242648-26-000040": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Shek Bernard",
+    "transactions": [
+      "A",
+      "F"
+    ]
+  },
+  "SNDK_0001242648-26-000039": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ilkbahar Alper",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SYNA_0001785783-26-000015": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Patel Rahul G.",
+    "transactions": [
+      "S"
+    ]
+  },
+  "TEAM_0002122855-26-000007": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "CHUONG JAMES",
+    "transactions": [
+      "A"
+    ]
+  },
+  "TEAM_0002051813-26-000012": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "DUFFY BRIAN",
+    "transactions": [
+      "A"
+    ]
   }
 }
