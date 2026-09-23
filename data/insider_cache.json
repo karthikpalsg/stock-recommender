@@ -16466,5 +16466,242 @@
     "transactions": [
       "A"
     ]
+  },
+  "CRWD_0001921602-26-000010": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Saha Anurag",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "CRWD_0001968270-26-000015": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Sentonas Michael",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWD_0001778564-26-000169": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S"
+    ]
+  },
+  "CRWD_0001778564-26-000168": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWD_0001778610-26-000022": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Podbere Burt W.",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000433": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Venturo Brian M",
+    "transactions": [
+      "C",
+      "G"
+    ]
+  },
+  "DDOG_0001561550-26-000318": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "OBSTLER DAVID M",
+    "transactions": [
+      "S",
+      "C",
+      "S",
+      "C",
+      "S"
+    ]
+  },
+  "HOOD_0001871006-26-000008": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Tenev Vladimir",
+    "transactions": [
+      "C",
+      "S",
+      "S"
+    ]
+  },
+  "JOBY_0001819848-26-000472": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bowles Gregory",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "LITE_0001489550-26-000013": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wupen Yuen",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "NVDA_0001696841-26-000014": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Teter Timothy S.",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SNOW_0001628280-26-063114": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Slootman Frank",
+    "transactions": [
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SNOW_0001628280-26-063112": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Ramaswamy Sridhar",
+    "transactions": [
+      "F",
+      "F"
+    ]
+  },
+  "SNOW_0001628280-26-063110": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Raghunathan Vivek",
+    "transactions": [
+      "F"
+    ]
+  },
+  "SNOW_0001628280-26-063108": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Dageville Benoit",
+    "transactions": [
+      "F",
+      "F"
+    ]
+  },
+  "SNOW_0001628280-26-063106": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Beaulier Jonathan Mead",
+    "transactions": [
+      "F",
+      "F",
+      "F"
+    ]
+  },
+  "SNOW_0001628280-26-063104": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kleinerman Christian",
+    "transactions": [
+      "F",
+      "F",
+      "S"
+    ]
+  },
+  "SNOW_0001628280-26-063102": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ho Emily",
+    "transactions": [
+      "F",
+      "F"
+    ]
   }
 }
