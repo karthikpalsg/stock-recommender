@@ -16703,5 +16703,301 @@
       "F",
       "F"
     ]
+  },
+  "ACHR_0001870608-26-000012": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Lyon Benjamin",
+    "transactions": [
+      "S"
+    ]
+  },
+  "ANET_0001596532-26-000232": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Duda Kenneth",
+    "transactions": [
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRM_0001108524-26-000225": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Harris Parker",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "CRM_0001108524-26-000220": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Washington Robin L",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "CRM_0001108524-26-000217": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Niles Sabastian",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "CRM_0001108524-26-000214": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Milano Miguel",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "HOOD_0001871006-26-000010": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Tenev Vladimir",
+    "transactions": [
+      "C",
+      "S",
+      "S"
+    ]
+  },
+  "KTOS_0001094718-26-000010": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Lund Deanna H",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "LUMN_0002087595-26-000002": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Holt Donald Leroy",
+    "transactions": [
+      "F"
+    ]
+  },
+  "QBTS_0002156505-26-000004": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "GOLKOV GREGORY",
+    "transactions": [
+      "F",
+      "A"
+    ]
+  },
+  "SOFI_0002032458-26-000028": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Keough Kelli",
+    "transactions": [
+      "S"
+    ]
+  },
+  "SOFI_0001934200-26-000011": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Rishel Jeremy",
+    "transactions": [
+      "S"
+    ]
+  },
+  "TEM_0001114357-26-000040": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "LEFKOFSKY ERIC P",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "UNH_0000731766-26-000235": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "MCNABB FREDERICK WILLIAM III",
+    "transactions": [
+      "A"
+    ]
+  },
+  "UNH_0000731766-26-000234": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Stankiewicz Dennis Andrew",
+    "transactions": [
+      "A"
+    ]
+  },
+  "UNH_0000731766-26-000233": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Baker Charles D.",
+    "transactions": [
+      "A"
+    ]
+  },
+  "UNH_0000731766-26-000232": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "FLYNN TIMOTHY PATRICK",
+    "transactions": [
+      "A"
+    ]
+  },
+  "UNH_0000731766-26-000231": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Noseworthy John H",
+    "transactions": [
+      "A"
+    ]
+  },
+  "UNH_0000731766-26-000230": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Gottlieb Scott",
+    "transactions": [
+      "A"
+    ]
+  },
+  "UNH_0000731766-26-000229": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Zaetta Christopher R",
+    "transactions": [
+      "A"
+    ]
+  },
+  "UNH_0000731766-26-000228": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "HEMSLEY STEPHEN J",
+    "transactions": [
+      "A"
+    ]
+  },
+  "UNH_0000731766-26-000227": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "MONTGOMERY RICE VALERIE MD",
+    "transactions": [
+      "A"
+    ]
+  },
+  "UNH_0000731766-26-000226": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "GARCIA PAUL R",
+    "transactions": [
+      "A"
+    ]
+  },
+  "UNH_0000731766-26-000225": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Gil Kristen",
+    "transactions": [
+      "A"
+    ]
+  },
+  "UNH_0000731766-26-000224": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Conway Patrick Hugh",
+    "transactions": [
+      "A"
+    ]
+  },
+  "UNH_0000731766-26-000223": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "DeVeydt Wayne S",
+    "transactions": [
+      "A"
+    ]
+  },
+  "UNH_0000731766-26-000222": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Noel Timothy John",
+    "transactions": [
+      "A"
+    ]
+  },
+  "UNH_0000731766-26-000221": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McSweeney Erin",
+    "transactions": [
+      "A"
+    ]
   }
 }
