@@ -16999,5 +16999,14 @@
     "transactions": [
       "A"
     ]
+  },
+  "SNOW_0001628280-26-063476": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Beaulier Jonathan Mead",
+    "transactions": [
+      "S"
+    ]
   }
 }
