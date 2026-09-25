@@ -17008,5 +17008,206 @@
     "transactions": [
       "S"
     ]
+  },
+  "AVGO_0001104659-26-110983": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "SAMUELI HENRY",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "G"
+    ]
+  },
+  "BABA_0001193125-26-401514": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wu Maggie Wei",
+    "transactions": [
+      "A"
+    ]
+  },
+  "BABA_0001193125-26-401512": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Misra Kabir",
+    "transactions": [
+      "A"
+    ]
+  },
+  "BABA_0001193125-26-401507": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Martello Wan Ling",
+    "transactions": [
+      "A"
+    ]
+  },
+  "BABA_0001193125-26-401505": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Shan Weijian",
+    "transactions": [
+      "A"
+    ]
+  },
+  "BABA_0001193125-26-401501": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Lee Irene Yun-Lien",
+    "transactions": [
+      "A"
+    ]
+  },
+  "BABA_0001193125-26-401499": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ng Kong Ping Albert",
+    "transactions": [
+      "A"
+    ]
+  },
+  "BABA_0001193125-26-401495": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "YANG JERRY",
+    "transactions": [
+      "A"
+    ]
+  },
+  "CRWD_0001778564-26-000171": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000435": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Intrator Michael N",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000434": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Agrawal Nitin",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000320": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Le-Quoc Alexis",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "FTNT_0002016813-26-000020": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ohlgart Christiane",
+    "transactions": [
+      "S"
+    ]
+  },
+  "ONDS_0001213900-26-103173": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "LAIRD NEIL J",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "RDW_0001104659-26-110960": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "AE RED HOLDINGS, LLC",
+    "transactions": [
+      "S"
+    ]
+  },
+  "SNOW_0001628280-26-063478": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Dageville Benoit",
+    "transactions": [
+      "G",
+      "S"
+    ]
   }
 }

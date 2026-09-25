@@ -1968,5 +1968,20 @@
     "score": 28,
     "reason": "Debt offering completion; no earnings beat, guidance raise, or operational updates",
     "filing_date": "2026-09-24"
+  },
+  "CIFR_0001819989-26-000043": {
+    "score": 75,
+    "reason": "Major contract win: 10-year AI lab lease commitment at Barber Lake Facility",
+    "filing_date": "2026-09-25"
+  },
+  "LUMN_0000947871-26-000891": {
+    "score": 28,
+    "reason": "Exchange listing transfer only; no financial guidance, earnings data, or operational updates provided.",
+    "filing_date": "2026-09-25"
+  },
+  "MRVL_0001628280-26-063592": {
+    "score": 25,
+    "reason": "Dividend announcement only; no business guidance or operational updates provided",
+    "filing_date": "2026-09-25"
   }
 }
