@@ -494656,12 +494656,12 @@
       ]
     },
     {
-      "run_id": "2026-09-25T21:06:27",
+      "run_id": "2026-09-25T21:56:34",
       "run_date": "2026-09-25",
-      "run_time": "21:06:27",
+      "run_time": "21:56:34",
       "run_label": "7am Final Signal",
-      "run_timestamp_local": "2026-09-25T21:06:27",
-      "run_timestamp_utc": "2026-09-25T21:06:27Z",
+      "run_timestamp_local": "2026-09-25T21:56:34",
+      "run_timestamp_utc": "2026-09-25T21:56:34Z",
       "timezone": "Australia/Sydney (AEST/AEDT \u2014 DST-aware)",
       "total_stocks": 94,
       "score_weights": {
@@ -494710,7 +494710,7 @@
             "analyst": "3 upgrade(s), 0 downgrade(s) in last 7d | 91% of 58 analysts bullish",
             "momentum": "$1082.28 | 4-wk return: +16.0% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $1516 (+40% upside) | Revenue growth: 346% | Gross margin: 73% | Median tgt: $1545 | \u26a0 target spread 6.1x | \u26a0 fwd P/E deep-discount \u2014 possible peak-cycle earnings",
-            "social": "Rank #3 on social | 150 mentions | \u2191 rising (+34 vs yesterday)",
+            "social": "Rank #3 on social | 147 mentions | \u2191 rising (+34 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral",
             "revisions": "Fwd EPS estimates \u2191 +3.8% vs 90d ago",
             "insider": "0 buy(s), 1 sell(s) in last 30d (net -1.0)"
@@ -495100,7 +495100,7 @@
             "analyst": "81% of 26 analysts bullish",
             "momentum": "$73.95 | 4-wk return: +14.8% | above 50-day MA | Volume ratio: 1.1x",
             "fundamentals": "Target: $109 (+48% upside) | Revenue growth: 62% | Gross margin: 37% | Median tgt: $110",
-            "social": "Rank #14 on social | 29 mentions | \u2191 rising (+11 vs yesterday)",
+            "social": "Rank #15 on social | 26 mentions | \u2191 rising (+7 vs yesterday)",
             "filing": "[2026-09-15] Major acquisition fully funded, bridge facility eliminated, cost-effective permanent financing secured",
             "revisions": "Fwd EPS estimates \u2193 -64.8% vs 90d ago",
             "insider": "0 buy(s), 7 sell(s) in last 30d (net -10.5) | \u26a0 cluster selling"
@@ -495230,7 +495230,7 @@
             "analyst": "2 upgrade(s), 0 downgrade(s) in last 7d | 72% of 25 analysts bullish",
             "momentum": "$237.33 | 4-wk return: +13.5% | above 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $284 (+19% upside) | Revenue growth: 454% | Gross margin: 74% | Median tgt: $300 | \u26a0 target spread 4.9x",
-            "social": "Rank #9 on social | 48 mentions | \u2193 falling (-7 vs yesterday)",
+            "social": "Rank #11 on social | 44 mentions | \u2193 falling (-17 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral",
             "revisions": "Fwd EPS estimates \u2193 -94.8% vs 90d ago",
             "insider": "0 buy(s), 14 sell(s) in last 30d (net -21.0) | \u26a0 cluster selling"
@@ -495490,7 +495490,7 @@
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 85% of 33 analysts bullish",
             "momentum": "$1777.80 | 4-wk return: +19.7% | above 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $2137 (+20% upside) | Revenue growth: 372% | Gross margin: 71% | Median tgt: $2150 | \u26a0 target spread 3.6x | \u26a0 fwd P/E deep-discount \u2014 possible peak-cycle earnings",
-            "social": "Rank #10 on social | 48 mentions | \u2193 falling (-10 vs yesterday)",
+            "social": "Rank #10 on social | 47 mentions | \u2193 falling (-11 vs yesterday)",
             "filing": "[2026-09-16] Executive compensation adjustments only; no business guidance or financial outlook",
             "revisions": "Fwd EPS estimates \u2191 +23.1% vs 90d ago",
             "insider": "0 buy(s), 65 sell(s) in last 30d (net -97.5) | \u26a0 cluster selling"
@@ -495620,7 +495620,7 @@
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 78% of 23 analysts bullish",
             "momentum": "$44.12 | 4-wk return: +24.5% | above 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $78 (+77% upside) | Revenue growth: -27% | Gross margin: 69% | Median tgt: $80 | \u26a0 target spread 3.3x",
-            "social": "Rank #96 on social | 4 mentions | \u2191 rising (+2 vs yesterday)",
+            "social": "Rank #85 on social | 4 mentions | \u2191 rising (+2 vs yesterday)",
             "filing": "[2026-08-27] 8-K filing structure only; actual results and guidance details not provided in excerpt",
             "revisions": "Fwd EPS estimates \u2193 -1077.6% vs 90d ago",
             "insider": "No insider open-market activity in last 30d \u2014 neutral"
@@ -495880,7 +495880,7 @@
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 83% of 59 analysts bullish",
             "momentum": "$630.63 | 4-wk return: +35.5% | above 50-day MA | Volume ratio: 1.2x",
             "fundamentals": "Target: $619 (-2% upside) | Revenue growth: 50% | Gross margin: 56% | Median tgt: $616 | \u26a0 target spread 3.4x",
-            "social": "Rank #5 on social | 67 mentions | \u2192 flat (+0 vs yesterday)",
+            "social": "Rank #5 on social | 68 mentions | \u2193 falling (-5 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral",
             "revisions": "Fwd EPS estimates \u2191 +10.5% vs 90d ago",
             "insider": "0 buy(s), 39 sell(s) in last 30d (net -58.5) | \u26a0 cluster selling"
@@ -496270,7 +496270,7 @@
             "analyst": "91% of 11 analysts bullish",
             "momentum": "$14.51 | 4-wk return: +13.4% | above 50-day MA | Volume ratio: 1.1x",
             "fundamentals": "Target: $22 (+50% upside) | Revenue growth: 156% | Gross margin: 29% | Median tgt: $22",
-            "social": "Rank #63 on social | 6 mentions | \u2193 falling (-5 vs yesterday)",
+            "social": "Rank #54 on social | 6 mentions | \u2193 falling (-5 vs yesterday)",
             "filing": "[2026-09-24] Key roadmap milestone achieved, customer traction, clear path to 100 qubits",
             "revisions": "Fwd EPS estimates \u2193 -47.7% vs 90d ago",
             "insider": "No insider open-market activity in last 30d \u2014 neutral"
@@ -496530,8 +496530,8 @@
             "analyst": "2 upgrade(s), 0 downgrade(s) in last 7d | 86% of 50 analysts bullish",
             "momentum": "$261.93 | 4-wk return: +20.9% | above 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $289 (+10% upside) | Revenue growth: 36% | Gross margin: 52% | Median tgt: $284",
-            "social": "Rank #83 on social | 4 mentions | \u2191 rising (+3 vs yesterday)",
-            "filing": "8-K 2026-09-25: Dividend announcement only; no business guidance or operational updates provided",
+            "social": "Rank #98 on social | 4 mentions | \u2191 rising (+3 vs yesterday)",
+            "filing": "[2026-09-25] Dividend announcement only; no business guidance or operational updates provided",
             "revisions": "Fwd EPS estimates \u2191 +6.7% vs 90d ago",
             "insider": "0 buy(s), 2 sell(s) in last 30d (net -3.0) | \u26a0 cluster selling"
           },
@@ -496911,7 +496911,7 @@
             "analyst": "94% of 69 analysts bullish",
             "momentum": "$225.07 | 4-wk return: +3.6% | above 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $328 (+46% upside) | Revenue growth: 106% | Gross margin: 75% | Median tgt: $315",
-            "social": "Rank #11 on social | 47 mentions | \u2191 rising (+2 vs yesterday)",
+            "social": "Rank #9 on social | 49 mentions | \u2191 rising (+3 vs yesterday)",
             "filing": "[2026-09-03] Major acquisition at $11.9B signals strategic expansion in AI ecosystem",
             "revisions": "Fwd EPS estimates \u2191 +14.0% vs 90d ago",
             "insider": "0 buy(s), 25 sell(s) in last 30d (net -37.5) | \u26a0 cluster selling"
@@ -497301,7 +497301,7 @@
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 86% of 35 analysts bullish",
             "momentum": "$941.65 | 4-wk return: +5.2% | above 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $1149 (+22% upside) | Revenue growth: 109% | Gross margin: 44% | Median tgt: $1168",
-            "social": "Rank #84 on social | 4 mentions | \u2191 rising (+3 vs yesterday)",
+            "social": "Rank #97 on social | 4 mentions | \u2191 rising (+3 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral",
             "revisions": "Fwd EPS estimates \u2191 +20.8% vs 90d ago",
             "insider": "0 buy(s), 55 sell(s) in last 30d (net -55.0) | \u26a0 cluster selling"
@@ -497432,7 +497432,7 @@
             "momentum": "$17.73 | 4-wk return: +16.9% | below 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $31 (+73% upside) | Revenue growth: -43% | Gross margin: -10% | Median tgt: $28 | \u26a0 target spread 3.8x",
             "social": "Not in top social mentions (neutral score)",
-            "filing": "8-K 2026-09-25: Major contract win: 10-year AI lab lease commitment at Barber Lake Facility",
+            "filing": "[2026-09-25] Major contract win: 10-year AI lab lease commitment at Barber Lake Facility",
             "revisions": "Fwd EPS estimates \u2193 -96.0% vs 90d ago",
             "insider": "No insider open-market activity in last 30d \u2014 neutral"
           },
@@ -497691,7 +497691,7 @@
             "analyst": "79% of 43 analysts bullish",
             "momentum": "$148.68 | 4-wk return: +5.1% | above 50-day MA | Volume ratio: 0.7x",
             "fundamentals": "Target: $222 (+50% upside) | Revenue growth: 92% | Gross margin: 52% | Median tgt: $220 | \u26a0 target spread 3.2x",
-            "social": "Rank #42 on social | 10 mentions | \u2192 flat (+0 vs yesterday)",
+            "social": "Rank #34 on social | 12 mentions | \u2192 flat (+0 vs yesterday)",
             "filing": "CIK not found in EDGAR \u2014 neutral",
             "revisions": "Fwd EPS estimates \u2191 +496.6% vs 90d ago",
             "insider": "CIK not found in EDGAR \u2014 neutral"
@@ -497951,7 +497951,7 @@
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 74% of 61 analysts bullish",
             "momentum": "$252.13 | 4-wk return: +15.4% | above 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $236 (-7% upside) | Revenue growth: 26% | Gross margin: 75% | Median tgt: $245",
-            "social": "Rank #71 on social | 5 mentions | \u2193 falling (-5 vs yesterday)",
+            "social": "Rank #75 on social | 5 mentions | \u2193 falling (-6 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral",
             "revisions": "Fwd EPS estimates \u2193 -1.6% vs 90d ago",
             "insider": "0 buy(s), 282 sell(s) in last 30d (net -292.5) | \u26a0 cluster selling"
@@ -498211,7 +498211,7 @@
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 77% of 31 analysts bullish",
             "momentum": "$295.83 | 4-wk return: +6.0% | below 50-day MA | Volume ratio: 1.0x",
             "fundamentals": "Target: $415 (+40% upside) | Revenue growth: 34% | Gross margin: 37% | Median tgt: $420",
-            "social": "Rank #85 on social | 4 mentions | \u2191 rising (+3 vs yesterday)",
+            "social": "Rank #96 on social | 4 mentions | \u2191 rising (+3 vs yesterday)",
             "filing": "[2026-08-31] Executive compensation awards; no earnings guidance, revenue targets, or strategic updates provided",
             "revisions": "Fwd EPS estimates \u2191 +13.4% vs 90d ago",
             "insider": "0 buy(s), 8 sell(s) in last 30d (net -8.0) | \u26a0 cluster selling"
@@ -498731,7 +498731,7 @@
             "analyst": "91% of 57 analysts bullish",
             "momentum": "$352.81 | 4-wk return: -4.2% | below 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $532 (+51% upside) | Revenue growth: 86% | Gross margin: 76% | Median tgt: $535 | \u26a0 target spread 3.3x",
-            "social": "Rank #19 on social | 19 mentions | \u2191 rising (+3 vs yesterday)",
+            "social": "Rank #20 on social | 19 mentions | \u2191 rising (+1 vs yesterday)",
             "filing": "[2026-09-02] Massive revenue beat, 86% YoY growth, AI acceleration, strong guidance raise",
             "revisions": "Fwd EPS estimates \u2192 -0.1% vs 90d ago",
             "insider": "0 buy(s), 16 sell(s) in last 30d (net -24.0)"
@@ -500941,7 +500941,7 @@
             "analyst": "1 upgrade(s), 0 downgrade(s) in last 7d | 91% of 55 analysts bullish",
             "momentum": "$135.62 | 4-wk return: -6.3% | above 50-day MA | Volume ratio: 0.7x",
             "fundamentals": "Target: $145 (+7% upside) | Revenue growth: 24% | Gross margin: 75% | Median tgt: $142 | \u26a0 target spread 3.4x",
-            "social": "Rank #66 on social | 5 mentions | \u2193 falling (-1 vs yesterday)",
+            "social": "Rank #65 on social | 6 mentions | \u2192 flat (+0 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral",
             "revisions": "Fwd EPS estimates \u2192 -0.9% vs 90d ago",
             "insider": "0 buy(s), 3 sell(s) in last 30d (net -4.5) | \u26a0 cluster selling"
@@ -501071,7 +501071,7 @@
             "analyst": "62% of 39 analysts bullish",
             "momentum": "$288.70 | 4-wk return: +37.0% | above 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $280 (-3% upside) | Revenue growth: 166% | Gross margin: 32% | Median tgt: $296 | \u26a0 target spread 4.0x",
-            "social": "Rank #34 on social | 13 mentions | \u2191 rising (+2 vs yesterday)",
+            "social": "Rank #31 on social | 13 mentions | \u2191 rising (+2 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral",
             "revisions": "Fwd EPS estimates \u2191 +19.7% vs 90d ago",
             "insider": "0 buy(s), 4 sell(s) in last 30d (net -4.0) | \u26a0 cluster selling"
@@ -503151,7 +503151,7 @@
             "analyst": "93% of 74 analysts bullish",
             "momentum": "$249.67 | 4-wk return: -6.3% | below 50-day MA | Volume ratio: 1.1x",
             "fundamentals": "Target: $330 (+32% upside) | Revenue growth: 20% | Gross margin: 51% | Median tgt: $330",
-            "social": "Rank #16 on social | 24 mentions | \u2191 rising (+3 vs yesterday)",
+            "social": "Rank #16 on social | 24 mentions | \u2191 rising (+1 vs yesterday)",
             "filing": "[2026-09-14] Filing contains only structural SEC disclosures, no substantive guidance or earnings information provided.",
             "revisions": "Fwd EPS estimates \u2191 +26.9% vs 90d ago",
             "insider": "0 buy(s), 1 sell(s) in last 30d (net -1.5)"
@@ -504451,7 +504451,7 @@
             "analyst": "52% of 21 analysts bullish",
             "momentum": "$61.81 | 4-wk return: +6.5% | below 50-day MA | Volume ratio: 0.9x",
             "fundamentals": "Target: $80 (+29% upside) | Revenue growth: 2627% | Gross margin: 39% | Median tgt: $82",
-            "social": "Rank #39 on social | 11 mentions | \u2193 falling (-3 vs yesterday)",
+            "social": "Rank #38 on social | 11 mentions | \u2193 falling (-4 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral",
             "revisions": "Fwd EPS estimates \u2193 -60.9% vs 90d ago",
             "insider": "3 buy(s), 2 sell(s) in last 30d (net +1.5)"
@@ -505491,7 +505491,7 @@
             "analyst": "45% of 31 analysts bullish",
             "momentum": "$16.58 | 4-wk return: -8.2% | below 50-day MA | Volume ratio: 1.4x",
             "fundamentals": "Target: $20 (+23% upside) | Revenue growth: 43% | Gross margin: 84% | Median tgt: $19",
-            "social": "Not in top social mentions (neutral score)",
+            "social": "Rank #71 on social | 5 mentions | \u2191 rising (+4 vs yesterday)",
             "filing": "No 8-K filed in last 30 days \u2014 neutral",
             "revisions": "Fwd EPS estimates \u2191 +1.2% vs 90d ago",
             "insider": "0 buy(s), 2 sell(s) in last 30d (net -3.0) | \u26a0 cluster selling"
@@ -505881,7 +505881,7 @@
             "analyst": "39% of 46 analysts bullish",
             "momentum": "$235.47 | 4-wk return: -19.2% | below 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $278 (+18% upside) | Revenue growth: 13% | Gross margin: 89% | Median tgt: $270",
-            "social": "Rank #77 on social | 4 mentions | \u2191 rising (+3 vs yesterday)",
+            "social": "Not in top social mentions (neutral score)",
             "filing": "[2026-09-10] Record Q3 results, 150% AI-ARR growth, 1B MAU milestone, guidance raise",
             "revisions": "Fwd EPS estimates \u2192 +0.4% vs 90d ago",
             "insider": "0 buy(s), 12 sell(s) in last 30d (net -18.0)"
@@ -506012,7 +506012,7 @@
             "momentum": "$5.71 | 4-wk return: -5.5% | below 50-day MA | Volume ratio: 0.8x",
             "fundamentals": "Target: $8 (+34% upside) | Revenue growth: -9% | Gross margin: 48% | Median tgt: $8",
             "social": "Not in top social mentions (neutral score)",
-            "filing": "8-K 2026-09-25: Exchange listing transfer only; no financial guidance, earnings data, or operational updates provided.",
+            "filing": "[2026-09-25] Exchange listing transfer only; no financial guidance, earnings data, or operational updates provided.",
             "revisions": "Fwd EPS estimates \u2193 -1.6% vs 90d ago",
             "insider": "No insider open-market activity in last 30d \u2014 neutral"
           },
@@ -506726,5 +506726,5 @@
   ],
   "total_runs": 45,
   "first_run": "2026-05-30T09:31:16",
-  "last_run": "2026-09-25T21:06:27"
+  "last_run": "2026-09-25T21:56:34"
 }
