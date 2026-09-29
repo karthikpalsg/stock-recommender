@@ -1983,5 +1983,30 @@
     "score": 25,
     "reason": "Dividend announcement only; no business guidance or operational updates provided",
     "filing_date": "2026-09-25"
+  },
+  "AMD_0000002488-26-000182": {
+    "score": 72,
+    "reason": "Major acquisition signals growth strategy, transformational deal, positive expansion",
+    "filing_date": "2026-09-28"
+  },
+  "ASTS_0001493152-26-044647": {
+    "score": 25,
+    "reason": "Executive severance policy adoption; no operational or financial guidance provided.",
+    "filing_date": "2026-09-28"
+  },
+  "NVT_0001104659-26-111938": {
+    "score": 40,
+    "reason": "Debt issuance filing; no guidance or earnings information provided.",
+    "filing_date": "2026-09-29"
+  },
+  "RNG_0001384905-26-000050": {
+    "score": 25,
+    "reason": "Administrative filing with no guidance, earnings, or business updates provided.",
+    "filing_date": "2026-09-28"
+  },
+  "TE_0001213900-26-104291": {
+    "score": 65,
+    "reason": "Material $50M funding raise for expansion, positive growth signal",
+    "filing_date": "2026-09-29"
   }
 }
