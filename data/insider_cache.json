@@ -17354,5 +17354,25 @@
     "transactions": [
       "S"
     ]
+  },
+  "ANET_0001596532-26-000234": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Ullal Jayshree",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CIFR_0001123292-26-001333": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "V3 Holding Ltd",
+    "transactions": [
+      "J"
+    ]
   }
 }
