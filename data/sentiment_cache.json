@@ -2018,5 +2018,35 @@
     "score": 45,
     "reason": "Mixed results: revenue down 2%, ARR +1% growth, strong margins and EPS gains",
     "filing_date": "2026-09-30"
+  },
+  "ACHR_0001824502-26-000078": {
+    "score": 25,
+    "reason": "Legal ruling narrowed claims but allowed some to proceed; mixed litigation outcome",
+    "filing_date": "2026-10-02"
+  },
+  "QBTS_0001907982-26-000159": {
+    "score": 65,
+    "reason": "Beta launch milestone, strategic partnerships, peer-reviewed validation, positive momentum",
+    "filing_date": "2026-10-01"
+  },
+  "QUBT_0001213900-26-106409": {
+    "score": 68,
+    "reason": "Strong market positioning, $1.3B cash, multiple value milestones ahead, no debt.",
+    "filing_date": "2026-10-02"
+  },
+  "SATS_0001415404-26-000048": {
+    "score": 8,
+    "reason": "Subsidiary bankruptcy filing, major financial distress, negative catalyst",
+    "filing_date": "2026-10-02"
+  },
+  "SNOW_0001640147-26-000043": {
+    "score": 45,
+    "reason": "Debt offering neutral; no earnings guidance or business outlook provided",
+    "filing_date": "2026-10-02"
+  },
+  "SYNA_0001140361-26-038301": {
+    "score": 72,
+    "reason": "Merger restructure with lower cost, immediate EPS accretion, synergy expansion",
+    "filing_date": "2026-10-01"
   }
 }
