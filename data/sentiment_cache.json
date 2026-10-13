@@ -2058,5 +2058,40 @@
     "score": 35,
     "reason": "Routine credit facility extension. No earnings, guidance, or strategic developments.",
     "filing_date": "2026-10-05"
+  },
+  "APLD_0001144879-26-000057": {
+    "score": 35,
+    "reason": "8-K references press release only; no guidance details provided in filing",
+    "filing_date": "2026-10-07"
+  },
+  "EQT_0001104659-26-114364": {
+    "score": 35,
+    "reason": "Neutral financing arrangement; no earnings, guidance, or operational updates provided.",
+    "filing_date": "2026-10-07"
+  },
+  "FLNC_0001104659-26-115056": {
+    "score": 25,
+    "reason": "Executive departure with severance; no guidance provided or mentioned.",
+    "filing_date": "2026-10-09"
+  },
+  "NVTS_0001104659-26-114051": {
+    "score": 82,
+    "reason": "Transformational acquisition closing, SAM doubled to $8B, AI infrastructure leadership",
+    "filing_date": "2026-10-06"
+  },
+  "REKR_0001437749-26-032180": {
+    "score": 25,
+    "reason": "Bylaw amendment to reduce quorum; no business or financial guidance provided",
+    "filing_date": "2026-10-06"
+  },
+  "RNG_0001384905-26-000055": {
+    "score": 25,
+    "reason": "Administrative filing only; rescheduled annual meeting; no business guidance",
+    "filing_date": "2026-10-09"
+  },
+  "TE_0001213900-26-107289": {
+    "score": 35,
+    "reason": "Neutral filing. IP asset purchase, shelf registration update, no guidance provided.",
+    "filing_date": "2026-10-06"
   }
 }
