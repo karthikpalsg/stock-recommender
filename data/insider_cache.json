@@ -18995,5 +18995,293 @@
     "transactions": [
       "S"
     ]
+  },
+  "ANET_0001596532-26-000244": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Ullal Jayshree",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "APLD_0001391935-26-000007": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Cummins Wes",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "COHR_0000899140-26-001104": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Luther Sherri R",
+    "transactions": [
+      "F"
+    ]
+  },
+  "CRWD_0001778564-26-000183": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWD_0001778564-26-000182": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000449": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Agrawal Nitin",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000448": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Jones Jonathan",
+    "transactions": [
+      "M",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "HOOD_0001783879-26-000153": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "HOOD_0001783879-26-000151": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Robinhood Markets, Inc.",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "INOD_0001104659-26-115510": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Rogers Michael S",
+    "transactions": [
+      "A"
+    ]
+  },
+  "JOBY_0001819848-26-000521": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "DeHoff Kate",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "JOBY_0001819848-26-000520": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Allison Eric",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "MP_0002059140-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Infuso David Gregory",
+    "transactions": [
+      "F"
+    ]
+  },
+  "NBIS_0001513845-26-000128": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Boroditsky Marc",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "NVDA_0002152188-26-000007": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Parker Nicholas P.",
+    "transactions": [
+      "A"
+    ]
+  },
+  "OKLO_0002147680-26-000014": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Renner Alexandra",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "OKLO_0002146828-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hanson John",
+    "transactions": [
+      "M"
+    ]
+  },
+  "OKLO_0002146790-26-000019": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Narayanadas Vivek",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "OSCR_0001844229-26-000011": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Plouffe David",
+    "transactions": []
+  },
+  "OSCR_0001509066-26-000008": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Sankaran Sid",
+    "transactions": []
+  },
+  "OSCR_0001954883-26-000015": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Gassen William",
+    "transactions": []
+  },
+  "PL_0002058452-26-000009": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Raymond John w",
+    "transactions": [
+      "S"
+    ]
+  },
+  "PLTR_0001930526-26-000013": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Woersching Eric H.",
+    "transactions": [
+      "S"
+    ]
+  },
+  "PLTR_0001840244-26-000020": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Stat Lauren Elaina Friedman",
+    "transactions": [
+      "S"
+    ]
+  },
+  "PLTR_0001823923-26-000013": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Taylor Ryan D.",
+    "transactions": [
+      "S"
+    ]
+  },
+  "QBTS_0002160029-26-000004": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "GAVGANI BERNARD",
+    "transactions": [
+      "A"
+    ]
+  },
+  "TEAM_0001946411-26-000010": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "LIU GENE",
+    "transactions": [
+      "S"
+    ]
   }
 }

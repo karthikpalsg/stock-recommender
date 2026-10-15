@@ -2093,5 +2093,40 @@
     "score": 35,
     "reason": "Neutral filing. IP asset purchase, shelf registration update, no guidance provided.",
     "filing_date": "2026-10-06"
+  },
+  "CIFR_0001193125-26-421035": {
+    "score": 60,
+    "reason": "Significant capital raise shows confidence; convertible structure neutral signal",
+    "filing_date": "2026-10-14"
+  },
+  "EQT_0000033213-26-000046": {
+    "score": 45,
+    "reason": "Derivative gains reported, but preliminary results lack forward guidance or strategic direction.",
+    "filing_date": "2026-10-13"
+  },
+  "IONQ_0001193125-26-419609": {
+    "score": 78,
+    "reason": "Strategic acquisition, $10B market opportunity, strong revenue growth, government tailwinds",
+    "filing_date": "2026-10-13"
+  },
+  "ONDS_0001213900-26-108757": {
+    "score": 78,
+    "reason": "Major strategic partnership, new sovereign AI platform launch, transformational positioning",
+    "filing_date": "2026-10-13"
+  },
+  "RKLB_0001819994-26-000067": {
+    "score": 28,
+    "reason": "Neutron launch delayed to 2027, soft language, schedule push back",
+    "filing_date": "2026-10-14"
+  },
+  "SYNA_0000817720-26-000081": {
+    "score": 25,
+    "reason": "Leadership departure, CFO transition, accounting uncertainty, no guidance provided",
+    "filing_date": "2026-10-15"
+  },
+  "UNH_0000731766-26-000255": {
+    "score": 0,
+    "reason": "Cannot assess: 8-K body text missing, only cover page provided",
+    "filing_date": "2026-10-13"
   }
 }
