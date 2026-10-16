@@ -19283,5 +19283,322 @@
     "transactions": [
       "S"
     ]
+  },
+  "APLD_0001166816-26-000007": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Nottenburg Richard N",
+    "transactions": [
+      "S"
+    ]
+  },
+  "BKNG_0001875741-26-000010": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Pisano Paulo",
+    "transactions": [
+      "S"
+    ]
+  },
+  "CIFR_0002090886-26-000012": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Mumford Gregory J.D.",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "CRWD_0001778564-26-000185": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "MRVL_0001628280-26-066132": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Casper Mark",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "MRVL_0001628280-26-066130": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "MURPHY MATTHEW J",
+    "transactions": [
+      "S",
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "MU_0001242654-26-000016": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "MEHROTRA SANJAY",
+    "transactions": [
+      "A",
+      "F",
+      "F",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "MU_0001593199-26-000005": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "RAY MICHAEL CHARLES",
+    "transactions": [
+      "S"
+    ]
+  },
+  "MU_0001593199-26-000004": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "RAY MICHAEL CHARLES",
+    "transactions": [
+      "A",
+      "F",
+      "F",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "MU_0001498287-26-000001": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Murphy Mark J.",
+    "transactions": [
+      "A",
+      "F",
+      "F",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "MU_0001689498-26-000002": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "BHATIA MANISH H",
+    "transactions": [
+      "A",
+      "F",
+      "F",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "MU_0001568238-26-000001": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Deboer Scott J",
+    "transactions": [
+      "A",
+      "F",
+      "F",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "MU_0001632063-26-000005": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "ARNZEN APRIL S",
+    "transactions": [
+      "A",
+      "F",
+      "F",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F",
+      "G"
+    ]
+  },
+  "MU_0001201490-26-000004": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "CORDANO MICHAEL D",
+    "transactions": [
+      "A",
+      "F"
+    ]
+  },
+  "MU_0001652149-26-000006": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "ALLEN SCOTT R.",
+    "transactions": [
+      "A",
+      "F",
+      "F",
+      "F",
+      "F",
+      "F"
+    ]
+  },
+  "MU_0001453368-26-000002": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Dugle Lynn A",
+    "transactions": []
+  },
+  "MU_0002058769-26-000006": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Liu Teyin M",
+    "transactions": [
+      "A"
+    ]
+  },
+  "MU_0002058781-26-000003": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Simons Anna C",
+    "transactions": [
+      "A"
+    ]
+  },
+  "MU_0001224095-26-000003": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "GOMO STEVEN J",
+    "transactions": [
+      "A"
+    ]
+  },
+  "MU_0001798757-26-000009": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bjorlin Alexis",
+    "transactions": [
+      "A"
+    ]
+  },
+  "MU_0001790292-26-000003": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Haynesworth Linnie M",
+    "transactions": []
+  },
+  "MU_0001354116-26-000001": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wright MaryAnn",
+    "transactions": []
+  },
+  "MU_0001218363-26-000005": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "SWAN ROBERT HOLMES",
+    "transactions": []
+  },
+  "NBIS_0001513845-26-000130": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Grimme Arne",
+    "transactions": [
+      "P",
+      "P"
+    ]
   }
 }

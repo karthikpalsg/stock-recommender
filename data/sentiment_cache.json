@@ -2128,5 +2128,10 @@
     "score": 0,
     "reason": "Cannot assess: 8-K body text missing, only cover page provided",
     "filing_date": "2026-10-13"
+  },
+  "REKR_0001437749-26-032811": {
+    "score": 32,
+    "reason": "Administrative shareholder meeting filing; no business guidance or performance updates provided.",
+    "filing_date": "2026-10-16"
   }
 }
