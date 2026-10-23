@@ -2133,5 +2133,75 @@
     "score": 32,
     "reason": "Administrative shareholder meeting filing; no business guidance or performance updates provided.",
     "filing_date": "2026-10-16"
+  },
+  "ASTS_0001493152-26-047766": {
+    "score": 28,
+    "reason": "Executive employment agreement renewal; no guidance, earnings, or operational updates provided.",
+    "filing_date": "2026-10-20"
+  },
+  "BE_0001628280-26-066890": {
+    "score": 85,
+    "reason": "Record revenue, 138% YoY growth, third guidance raise, S&P 500 addition",
+    "filing_date": "2026-10-22"
+  },
+  "CIFR_0001193125-26-424297": {
+    "score": 28,
+    "reason": "Administrative notice only; no guidance, earnings, or business updates provided.",
+    "filing_date": "2026-10-16"
+  },
+  "CRM_0001193125-26-425881": {
+    "score": 82,
+    "reason": "Transformational acquisition, $5.66B deal, strategic AI/marketing expansion",
+    "filing_date": "2026-10-20"
+  },
+  "HON_0000773840-26-000141": {
+    "score": 82,
+    "reason": "Strong beat, raised full-year guidance, 7% organic growth, 34% EPS growth",
+    "filing_date": "2026-10-22"
+  },
+  "IONQ_0001193125-26-424230": {
+    "score": 28,
+    "reason": "Capital raise filing; no guidance, earnings, or operational updates provided.",
+    "filing_date": "2026-10-16"
+  },
+  "LUMN_0000018926-26-000065": {
+    "score": 35,
+    "reason": "Administrative severance plan restructuring, no business guidance or financial impact disclosed.",
+    "filing_date": "2026-10-23"
+  },
+  "LUNR_0001628280-26-066926": {
+    "score": 45,
+    "reason": "Board appointment positive but no financial guidance or operational updates provided",
+    "filing_date": "2026-10-22"
+  },
+  "MRVL_0001193125-26-430424": {
+    "score": 62,
+    "reason": "Credit facility expansion from $1.5B to $3B signals confidence and operational growth.",
+    "filing_date": "2026-10-23"
+  },
+  "REKR_0001437749-26-032880": {
+    "score": 15,
+    "reason": "Litigation disclosure; no business guidance; material uncertainty and risk.",
+    "filing_date": "2026-10-19"
+  },
+  "RNG_0001384905-26-000058": {
+    "score": 72,
+    "reason": "Beat guidance, raised outlook, strong margins, AI momentum offset modest growth",
+    "filing_date": "2026-10-22"
+  },
+  "TE_0001213900-26-111378": {
+    "score": 45,
+    "reason": "Neutral. IP acquisition disclosed; no earnings guidance or forward outlook provided.",
+    "filing_date": "2026-10-21"
+  },
+  "TEM_0001193125-26-429533": {
+    "score": 85,
+    "reason": "Major contract wins: $192.5M over 5 years with BMS and Pathos",
+    "filing_date": "2026-10-23"
+  },
+  "TTD_0001671933-26-000108": {
+    "score": 15,
+    "reason": "Stock option repricing indicates depressed stock price; no business guidance.",
+    "filing_date": "2026-10-20"
   }
 }
