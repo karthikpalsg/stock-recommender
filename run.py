@@ -762,6 +762,15 @@ def get_insider_score(symbol, cik, recent, insider_cache):
 # ============================================================
 # SCORING ENGINE — combines all 5 signals
 # ============================================================
+def volatility_stop_pct(closes):
+    """Stop distance as 3x daily volatility (last 20 returns). STOP_LOSS_PCT is
+    the floor, so stops only widen for volatile names, capped at 25%."""
+    if len(closes) < 21:
+        return float(STOP_LOSS_PCT)
+    daily_vol = float(pd.Series(closes[-21:]).pct_change().std()) * 100
+    return round(max(float(STOP_LOSS_PCT), min(25.0, daily_vol * 3)), 1)
+
+
 def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None, insider_cache=None):
     """Returns a dict with all scores and details for one ticker."""
     try:
@@ -873,8 +882,6 @@ def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None, ins
         if current_price > 0 and target_price > 0:
             upside = ((target_price - current_price) / current_price) * 100
 
-        stop_loss = round(current_price * (1 - STOP_LOSS_PCT / 100), 2) if current_price else 0
-
         # ── 3-month daily close prices for sparkline (dashboard trend charts) ──
         prices_3m = []
         prices_1m = []
@@ -885,6 +892,9 @@ def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None, ins
         except Exception:
             pass
 
+        stop_pct  = volatility_stop_pct(prices_3m)
+        stop_loss = round(current_price * (1 - stop_pct / 100), 2) if current_price else 0
+
         return {
             'Ticker':              symbol,
             'Company':             company_name,
@@ -892,6 +902,7 @@ def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None, ins
             'Target':              round(target_price, 2),
             'Upside %':            round(upside, 1),
             'Stop Loss':           stop_loss,
+            'Stop %':              stop_pct,
             'Score':               round(composite, 1),
             'Analyst Score':       round(analyst_score, 1),
             'Momentum Score':      round(momentum_score, 1),
@@ -923,7 +934,7 @@ def score_ticker(symbol, apewisdom_data, cik_map=None, sentiment_cache=None, ins
     except Exception as e:
         return {
             'Ticker': symbol, 'Company': symbol,
-            'Price': 0, 'Target': 0, 'Upside %': 0, 'Stop Loss': 0,
+            'Price': 0, 'Target': 0, 'Upside %': 0, 'Stop Loss': 0, 'Stop %': 0,
             'Score': 0, 'Analyst Score': 0, 'Momentum Score': 0,
             'Fundamental Score': 0, 'Social Score': 0, 'Filing Score': 50,
             'Analyst Detail': 'Error', 'Momentum Detail': 'Error',
@@ -1023,7 +1034,7 @@ def generate_report(df, output_dir="picks"):
             f"### #{rank} — {row['Ticker']} ({row['Company']})",
             f"**Composite Score: {row['Score']}/100** | {action_label(row['Score'])}",
             f"- Entry: **${row['Price']:.2f}** → Target: **${row['Target']:.0f}** "
-            f"({row['Upside %']:+.0f}% upside) | Stop-loss: **${row['Stop Loss']:.2f}** (-{STOP_LOSS_PCT}%)",
+            f"({row['Upside %']:+.0f}% upside) | Stop-loss: **${row['Stop Loss']:.2f}** (-{row['Stop %']:.1f}%)",
             f"",
             f"| Signal | Score | Detail |",
             f"|--------|-------|--------|",
@@ -1063,7 +1074,7 @@ def generate_report(df, output_dir="picks"):
         f"Fundamentals {int(SCORE_WEIGHTS['fundamentals']*100)}% | "
         f"Social {int(SCORE_WEIGHTS['social']*100)}% | "
         f"Filing {int(SCORE_WEIGHTS.get('filing', 0)*100)}%*",
-        f"*Stop-loss: -{STOP_LOSS_PCT}% | Target return: +{TARGET_RETURN_PCT}% | Hold: 6 months*",
+        f"*Stop-loss: 3x daily volatility, minimum -{STOP_LOSS_PCT}%, maximum -25% | Target return: +{TARGET_RETURN_PCT}% | Hold: 6 months*",
         f"*Data sources: Yahoo Finance · Finnhub (optional) · Apewisdom*",
         f"*Shadow model v2 (not yet ranking): direction-based analyst, median target + "
         f"dispersion, forward P/E, EPS estimate revisions. Weights: "
@@ -1221,7 +1232,7 @@ def send_email(df):
         Weights: Analyst 30% · Momentum 25% · Fundamentals 25% · Social 10% · Filing 10%<br>
         Shadow v2 (not yet ranking): direction-based analyst · median target + dispersion ·
         forward P/E · EPS revisions &nbsp;|&nbsp; ⚠-flagged names are excluded from Top {TOP_N_PICKS}<br>
-        Stop-loss: -{STOP_LOSS_PCT}% from entry &nbsp;|&nbsp;
+        Stop-loss: 3x daily volatility, minimum -{STOP_LOSS_PCT}%, maximum -25% &nbsp;|&nbsp;
         Target return: +{TARGET_RETURN_PCT}% &nbsp;|&nbsp; Hold: {HOLD_MONTHS} months<br>
         <i>Personal research tool — not financial advice.</i>
       </div>
@@ -1334,6 +1345,7 @@ def save_json(df, output_dir="data", filename="history.json"):
             "analyst_target_price": round(float(row["Target"]), 2),
             "upside_pct":           round(float(row["Upside %"]), 2),
             "stop_loss_price":      round(float(row["Stop Loss"]), 2),
+            "stop_loss_pct":        round(float(row["Stop %"]), 1),
             "scores": {
                 "analyst":      round(float(row["Analyst Score"]), 2),
                 "momentum":     round(float(row["Momentum Score"]), 2),
