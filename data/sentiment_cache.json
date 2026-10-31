@@ -2203,5 +2203,95 @@
     "score": 15,
     "reason": "Stock option repricing indicates depressed stock price; no business guidance.",
     "filing_date": "2026-10-20"
+  },
+  "AMZN_0001018724-26-000038": {
+    "score": 82,
+    "reason": "Record margins, 39% AWS growth, major customer wins, bullish guidance",
+    "filing_date": "2026-10-29"
+  },
+  "AVGO_0001193125-26-434271": {
+    "score": 28,
+    "reason": "Contingent liability, low probability event, no revenue/earnings guidance provided",
+    "filing_date": "2026-10-27"
+  },
+  "EQT_0000033213-26-000054": {
+    "score": 85,
+    "reason": "Transformational Range acquisition, beat guidance, strong free cash flow, dividend raise",
+    "filing_date": "2026-10-27"
+  },
+  "FTNT_0001262039-26-000024": {
+    "score": 82,
+    "reason": "Strong beat, raised guidance multiple times, robust growth across segments",
+    "filing_date": "2026-10-28"
+  },
+  "GLW_0000024741-26-000273": {
+    "score": 85,
+    "reason": "Beat guidance, 19% sales growth, major customer wins, strong margins expansion",
+    "filing_date": "2026-10-27"
+  },
+  "GNRC_0001437749-26-033685": {
+    "score": 45,
+    "reason": "Q3 results filing with non-GAAP metrics; insufficient detail for stronger assessment",
+    "filing_date": "2026-10-28"
+  },
+  "HOOD_0001783879-26-000164": {
+    "score": 68,
+    "reason": "Record revenue +12% YoY, strong deposit growth, offset by declining EPS metrics",
+    "filing_date": "2026-10-27"
+  },
+  "IDCC_0001405495-26-000076": {
+    "score": 87,
+    "reason": "Beat guidance, raised FY26 outlook, record ARR, strong growth YoY",
+    "filing_date": "2026-10-29"
+  },
+  "MRAM_0001628280-26-067890": {
+    "score": 65,
+    "reason": "Record revenue beat, strong growth across segments, raised guidance slightly",
+    "filing_date": "2026-10-28"
+  },
+  "NEO_0001077183-26-000078": {
+    "score": 40,
+    "reason": "8-K form only; insufficient content to assess guidance tone",
+    "filing_date": "2026-10-28"
+  },
+  "NOW_0001373715-26-000092": {
+    "score": 40,
+    "reason": "8-K filing structure only; no earnings or guidance details provided in excerpt",
+    "filing_date": "2026-10-28"
+  },
+  "NVT_0001628280-26-068391": {
+    "score": 88,
+    "reason": "Record sales/orders, 44% growth, massive guidance raise, M&A",
+    "filing_date": "2026-10-30"
+  },
+  "QBTS_0001907982-26-000169": {
+    "score": 65,
+    "reason": "Non-binding MOU with LG CNS, customer award win, expansion signals",
+    "filing_date": "2026-10-28"
+  },
+  "REKR_0001437749-26-033604": {
+    "score": 15,
+    "reason": "Stock delisting warning; failed minimum bid price requirement; very negative",
+    "filing_date": "2026-10-27"
+  },
+  "SNDK_0001628280-26-068243": {
+    "score": 85,
+    "reason": "Strong beat, major guidance raise, datacenter surge, robust execution",
+    "filing_date": "2026-10-29"
+  },
+  "SOFI_0001818874-26-000065": {
+    "score": 0,
+    "reason": "8-K filing body contains no financial results or guidance content.",
+    "filing_date": "2026-10-27"
+  },
+  "SYNA_0000817720-26-000088": {
+    "score": 35,
+    "reason": "Administrative filing; no business guidance, earnings, or strategic updates provided.",
+    "filing_date": "2026-10-29"
+  },
+  "TE_0001213900-26-114466": {
+    "score": 15,
+    "reason": "Debt issuance filing, no earnings or guidance disclosure, dilutive capital raise",
+    "filing_date": "2026-10-30"
   }
 }
