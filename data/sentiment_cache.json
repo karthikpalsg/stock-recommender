@@ -2323,5 +2323,40 @@
     "score": 85,
     "reason": "Record revenue, accelerating growth, major partnerships, guidance raise, strong momentum",
     "filing_date": "2026-11-02"
+  },
+  "AMD_0000002488-26-000188": {
+    "score": 40,
+    "reason": "8-K filing shell; actual guidance details in exhibits not provided",
+    "filing_date": "2026-11-03"
+  },
+  "ANET_0001596532-26-000252": {
+    "score": 88,
+    "reason": "Massive beat, record growth, guidance raise, transformational AI positioning",
+    "filing_date": "2026-11-03"
+  },
+  "BKNG_0001075531-26-000044": {
+    "score": 0,
+    "reason": "Filing contains only header/cover page data, no substantive content",
+    "filing_date": "2026-11-03"
+  },
+  "IPGP_0001111928-26-000178": {
+    "score": 75,
+    "reason": "Double-digit growth, margin expansion, beat guidance, transformational acquisition pending",
+    "filing_date": "2026-11-03"
+  },
+  "NVTS_0001628280-26-069489": {
+    "score": 75,
+    "reason": "Strong sequential/YoY growth, margin expansion, transformational AI pivot",
+    "filing_date": "2026-11-03"
+  },
+  "OUST_0001628280-26-069487": {
+    "score": 72,
+    "reason": "Strong revenue growth, record shipments, positive momentum into 2027",
+    "filing_date": "2026-11-03"
+  },
+  "SATS_0001415404-26-000057": {
+    "score": 45,
+    "reason": "Routine shareholder meeting results, no business guidance or financial metrics disclosed.",
+    "filing_date": "2026-11-03"
   }
 }

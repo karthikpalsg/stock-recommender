@@ -20805,5 +20805,204 @@
       "S",
       "S"
     ]
+  },
+  "BE_0001193125-26-445581": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "CHAMBERS JOHN T",
+    "transactions": [
+      "S"
+    ]
+  },
+  "FTNT_0001476336-26-000016": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Whittle John",
+    "transactions": [
+      "M",
+      "M",
+      "M",
+      "F"
+    ]
+  },
+  "FTNT_0001475587-26-000016": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Xie Ken",
+    "transactions": [
+      "M",
+      "M",
+      "M",
+      "F",
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "FTNT_0001475586-26-000020": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Xie Michael",
+    "transactions": [
+      "M",
+      "M",
+      "M",
+      "F",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "FTNT_0002016813-26-000022": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ohlgart Christiane",
+    "transactions": [
+      "M",
+      "M",
+      "M",
+      "F"
+    ]
+  },
+  "GNRC_0001437749-26-034660": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Zarcone Dominick P",
+    "transactions": [
+      "A"
+    ]
+  },
+  "GNRC_0001437749-26-034657": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Morgan Bennett J",
+    "transactions": [
+      "A"
+    ]
+  },
+  "GNRC_0001437749-26-034653": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "LAMPEREUR ANDREW",
+    "transactions": [
+      "A"
+    ]
+  },
+  "GNRC_0001437749-26-034651": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Jagdfeld Aaron",
+    "transactions": [
+      "S"
+    ]
+  },
+  "IRM_0001769841-26-000013": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McIntosh Greg W",
+    "transactions": [
+      "S"
+    ]
+  },
+  "JOBY_0001819848-26-000523": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Sciarra Paul Cahill",
+    "transactions": [
+      "S"
+    ]
+  },
+  "MRVL_0001628280-26-069600": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Koopmans Chris",
+    "transactions": [
+      "S"
+    ]
+  },
+  "SYNA_0001924898-26-000009": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Nathamuni Venkatesh",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SYNA_0001874002-26-000002": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Kummrow Patricia",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SYNA_0001730131-26-000005": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Lee Vivie",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SYNA_0001185652-26-000002": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Hardman Susan",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SYNA_0001216815-26-000002": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Whims James",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SYNA_0001196198-26-000005": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Geeslin Keith",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SYNA_0001242653-26-000002": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Chan Nelson",
+    "transactions": [
+      "A"
+    ]
   }
 }
