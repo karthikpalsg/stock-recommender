@@ -20723,5 +20723,41 @@
       "S",
       "S"
     ]
+  },
+  "GNRC_0001437749-26-034458": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Nguyen Nam Tran",
+    "transactions": [
+      "G"
+    ]
+  },
+  "NBIS_0001513845-26-000147": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Boynton John Wilson IV",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OKLO_0002146828-26-000012": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hanson John",
+    "transactions": [
+      "S"
+    ]
+  },
+  "OKLO_0002147680-26-000016": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Renner Alexandra",
+    "transactions": [
+      "S"
+    ]
   }
 }

@@ -2293,5 +2293,35 @@
     "score": 15,
     "reason": "Debt issuance filing, no earnings or guidance disclosure, dilutive capital raise",
     "filing_date": "2026-10-30"
+  },
+  "CIFR_0001819989-26-000047": {
+    "score": 78,
+    "reason": "First HPC revenue, major lease expansion, strong pipeline growth, positive regulatory progress",
+    "filing_date": "2026-11-02"
+  },
+  "FLNC_0001104659-26-120941": {
+    "score": 15,
+    "reason": "CEO transition, interim appointment signals organizational uncertainty and instability.",
+    "filing_date": "2026-11-02"
+  },
+  "LITE_0001193125-26-442758": {
+    "score": 85,
+    "reason": "Transformational merger, $550B TAM expansion, $1B+ synergies, accretive year one",
+    "filing_date": "2026-11-02"
+  },
+  "MRVL_0001193125-26-442717": {
+    "score": 75,
+    "reason": "Transformational M&A event with Lumentum acquisition, strategic expansion",
+    "filing_date": "2026-11-02"
+  },
+  "PLTR_0001321655-26-000045": {
+    "score": 96,
+    "reason": "Massive 96% YoY growth, guidance raised significantly, historic milestones",
+    "filing_date": "2026-11-02"
+  },
+  "TEM_0001193125-26-442619": {
+    "score": 85,
+    "reason": "Record revenue, accelerating growth, major partnerships, guidance raise, strong momentum",
+    "filing_date": "2026-11-02"
   }
 }
