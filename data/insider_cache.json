@@ -21063,5 +21063,136 @@
     "is_ten_pct": false,
     "owner": "Hele John C.R.",
     "transactions": []
+  },
+  "AMZN_0001936006-26-000028": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Herrington Douglas J",
+    "transactions": [
+      "S"
+    ]
+  },
+  "ANET_0001596532-26-000258": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "TEMPLETON MARK B",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CIFR_0001123292-26-001460": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "V3 Holding Ltd",
+    "transactions": [
+      "J"
+    ]
+  },
+  "GNRC_0001437749-26-034927": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Raabe Kyle Andrew",
+    "transactions": [
+      "S",
+      "M",
+      "S"
+    ]
+  },
+  "HOOD_0001707112-26-000008": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bazzano Dara",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "INFQ_0001628280-26-070304": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hart Ilan",
+    "transactions": [
+      "F"
+    ]
+  },
+  "IPGP_0001111928-26-000184": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Valentin Gapontsev Trust I",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "OKLO_0001855623-26-000022": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bealmear Richard Craig",
+    "transactions": [
+      "M",
+      "S",
+      "M"
+    ]
+  },
+  "OKLO_0002021433-26-000023": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "DeWitte Jacob",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "OKLO_0002021786-26-000023": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Cochran Caroline",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "TEM_0001445826-26-000017": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Epstein David R",
+    "transactions": [
+      "S"
+    ]
+  },
+  "TEM_0002024250-26-000039": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fukushima Ryan",
+    "transactions": [
+      "A",
+      "S"
+    ]
   }
 }

@@ -2358,5 +2358,40 @@
     "score": 45,
     "reason": "Routine shareholder meeting results, no business guidance or financial metrics disclosed.",
     "filing_date": "2026-11-03"
+  },
+  "COHR_0001193125-26-447200": {
+    "score": 85,
+    "reason": "Major beat, 60% guidance raise, margin expansion, transformational growth",
+    "filing_date": "2026-11-04"
+  },
+  "DDOG_0001628280-26-069792": {
+    "score": 75,
+    "reason": "35% YoY growth, 20% increase in $100k+ customers, strong margins",
+    "filing_date": "2026-11-04"
+  },
+  "JOBY_0001819848-26-000531": {
+    "score": 75,
+    "reason": "Revenue guidance raised 15%, FAA certification progress, expanded defense contracts.",
+    "filing_date": "2026-11-04"
+  },
+  "LUMN_0000018926-26-000071": {
+    "score": 68,
+    "reason": "Strong strategic growth, EBITDA inflection on track, but FCF concerns.",
+    "filing_date": "2026-11-04"
+  },
+  "LZ_0001286139-26-000035": {
+    "score": 35,
+    "reason": "Beat revenue guidance but cut EBITDA outlook; customer acquisition pressure headwind",
+    "filing_date": "2026-11-04"
+  },
+  "QBTS_0001907982-26-000172": {
+    "score": 72,
+    "reason": "Product enhancement with significant performance improvement, new training initiative",
+    "filing_date": "2026-11-04"
+  },
+  "RDW_0001819810-26-000139": {
+    "score": 75,
+    "reason": "Record backlog up 75% YoY, record gross margins, strong contract wins",
+    "filing_date": "2026-11-04"
   }
 }
