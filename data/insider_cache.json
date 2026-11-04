@@ -21004,5 +21004,64 @@
     "transactions": [
       "A"
     ]
+  },
+  "ANET_0001596532-26-000256": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "BECHTOLSHEIM ANDREAS",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "RKLB_0002001011-26-000145": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Armagno Nina",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "RKLB_0002001011-26-000144": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Spice Adam C.",
+    "transactions": [
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SNDK_0001242648-26-000049": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Shek Bernard",
+    "transactions": [
+      "S"
+    ]
+  },
+  "SOFI_0001460835-26-000004": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Hele John C.R.",
+    "transactions": []
   }
 }
