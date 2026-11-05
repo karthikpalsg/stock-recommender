@@ -21281,5 +21281,52 @@
     "transactions": [
       "S"
     ]
+  },
+  "BE_0001193125-26-450213": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Burger Barbara J",
+    "transactions": [
+      "S"
+    ]
+  },
+  "HOOD_0001705560-26-000027": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gallagher Daniel Martin Jr",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "NVT_0000897069-26-001895": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "DUCKER MICHAEL L",
+    "transactions": [
+      "G",
+      "G"
+    ]
+  },
+  "OKLO_0002146790-26-000025": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Narayanadas Vivek",
+    "transactions": [
+      "M"
+    ]
+  },
+  "PLTR_0001840244-26-000023": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Stat Lauren Elaina Friedman",
+    "transactions": [
+      "S"
+    ]
   }
 }
