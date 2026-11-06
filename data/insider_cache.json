@@ -21338,5 +21338,128 @@
       "G",
       "S"
     ]
+  },
+  "APLD_0001144879-26-000065": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Lee Rachel H.",
+    "transactions": [
+      "A"
+    ]
+  },
+  "APLD_0001166816-26-000009": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Nottenburg Richard N",
+    "transactions": [
+      "A"
+    ]
+  },
+  "APLD_0001899880-26-000002": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "HASTINGS CHUCK",
+    "transactions": [
+      "A"
+    ]
+  },
+  "APLD_0001695650-26-000002": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Benson Ella G.",
+    "transactions": [
+      "A"
+    ]
+  },
+  "APLD_0001193054-26-000002": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "MILLER DOUGLAS S",
+    "transactions": [
+      "A"
+    ]
+  },
+  "CRWD_0000950103-26-017094": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000453": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Goldberg Chen",
+    "transactions": [
+      "M",
+      "S",
+      "S"
+    ]
+  },
+  "GNRC_0001437749-26-035598": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Taffe Norman P",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "IDCC_0001628280-26-071345": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Pankaj Rajesh",
+    "transactions": [
+      "S"
+    ]
+  },
+  "NVDA_0001197647-26-000013": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "COXE TENCH",
+    "transactions": [
+      "G"
+    ]
+  },
+  "PL_0001193125-26-451910": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Schingler Robert H",
+    "transactions": [
+      "G"
+    ]
   }
 }
