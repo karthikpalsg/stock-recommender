@@ -21328,5 +21328,15 @@
     "transactions": [
       "S"
     ]
+  },
+  "SNOW_0001821737-26-000018": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Dageville Benoit",
+    "transactions": [
+      "G",
+      "S"
+    ]
   }
 }
