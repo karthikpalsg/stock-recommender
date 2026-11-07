@@ -21461,5 +21461,34 @@
     "transactions": [
       "G"
     ]
+  },
+  "NVTS_0001104659-26-124038": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Saluja Dipender",
+    "transactions": [
+      "A"
+    ]
+  },
+  "TE_0001628280-26-071822": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Mahrer Thomas",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "TE_0001628280-26-071821": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gualy Jaime Eduardo",
+    "transactions": [
+      "M",
+      "F"
+    ]
   }
 }
