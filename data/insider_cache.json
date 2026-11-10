@@ -21490,5 +21490,74 @@
       "M",
       "F"
     ]
+  },
+  "ANET_0001596532-26-000260": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "BECHTOLSHEIM ANDREAS",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000457": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Baker Jeff",
+    "transactions": []
+  },
+  "IRM_0001566391-26-000028": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Meaney William L",
+    "transactions": [
+      "M",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "LUMN_0000018926-26-000076": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Johnson Kathleen E",
+    "transactions": [
+      "P"
+    ]
+  },
+  "LUMN_0000018926-26-000074": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "GOLDBERG MICHELLE J",
+    "transactions": [
+      "P"
+    ]
+  },
+  "SATS_0001393025-26-000007": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wall William P",
+    "transactions": [
+      "P"
+    ]
   }
 }

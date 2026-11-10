@@ -2473,5 +2473,45 @@
     "score": 40,
     "reason": "Routine quarterly earnings announcement, no guidance changes disclosed",
     "filing_date": "2026-11-06"
+  },
+  "ACHR_0001824502-26-000087": {
+    "score": 40,
+    "reason": "Standard quarterly earnings filing with no guidance detail provided in excerpt",
+    "filing_date": "2026-11-09"
+  },
+  "ASTS_0001193125-26-453758": {
+    "score": 78,
+    "reason": "Major milestones achieved: service activation, $1B funding, Blacklift rocket, spectrum secured",
+    "filing_date": "2026-11-09"
+  },
+  "CEG_0001868275-26-000116": {
+    "score": 40,
+    "reason": "Insufficient content; standard earnings announcement without guidance details",
+    "filing_date": "2026-11-09"
+  },
+  "QUBT_0001628280-26-072163": {
+    "score": 62,
+    "reason": "Strong revenue growth, acquisitions, $1.3B cash, but low margins and net losses.",
+    "filing_date": "2026-11-09"
+  },
+  "RKLB_0001819994-26-000073": {
+    "score": 78,
+    "reason": "Record revenue, 52% backlog growth, guidance raise, margin expansion.",
+    "filing_date": "2026-11-09"
+  },
+  "TTD_0001671933-26-000115": {
+    "score": 28,
+    "reason": "Revenue flat YoY, margins compressed, cautious CEO tone despite innovations",
+    "filing_date": "2026-11-09"
+  },
+  "UNH_0000731766-26-000274": {
+    "score": 35,
+    "reason": "Board appointment announcement. No financial guidance, earnings, or strategic direction disclosed.",
+    "filing_date": "2026-11-09"
+  },
+  "VST_0001140361-26-042795": {
+    "score": 35,
+    "reason": "Securities filing only; no operational guidance, earnings, or strategic announcements provided.",
+    "filing_date": "2026-11-09"
   }
 }
