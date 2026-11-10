@@ -2513,5 +2513,25 @@
     "score": 35,
     "reason": "Securities filing only; no operational guidance, earnings, or strategic announcements provided.",
     "filing_date": "2026-11-09"
+  },
+  "ASTS_0001493152-26-050865": {
+    "score": 85,
+    "reason": "Major JV with $1B government funding, transformational satellite constellation deal",
+    "filing_date": "2026-11-10"
+  },
+  "CRWV_0001769628-26-000461": {
+    "score": 40,
+    "reason": "8-K references earnings results but lacks substantive guidance or forward commentary",
+    "filing_date": "2026-11-10"
+  },
+  "QBTS_0001907982-26-000180": {
+    "score": 85,
+    "reason": "Strong revenue growth, massive booking surge, $100M government funding secured",
+    "filing_date": "2026-11-10"
+  },
+  "RGTI_0001104659-26-125152": {
+    "score": 72,
+    "reason": "Strong tech milestones, 110% YoY revenue growth, $100M government contract signed",
+    "filing_date": "2026-11-10"
   }
 }

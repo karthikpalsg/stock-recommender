@@ -21559,5 +21559,94 @@
     "transactions": [
       "P"
     ]
+  },
+  "CRWV_0001769628-26-000462": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Jain Sachin",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "GNRC_0001437749-26-036155": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Taffe Norman P",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "NVT_0000897069-26-001913": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Parker Herbert K",
+    "transactions": [
+      "P"
+    ]
+  },
+  "OKLO_0002146790-26-000027": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Narayanadas Vivek",
+    "transactions": [
+      "M"
+    ]
+  },
+  "SNOW_0001433644-26-000019": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Speiser Michael L",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SNOW_0001433644-26-000018": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Speiser Michael L",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
   }
 }
