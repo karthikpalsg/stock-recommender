@@ -21771,5 +21771,96 @@
     "is_ten_pct": false,
     "owner": "Mahrer Thomas",
     "transactions": []
+  },
+  "COHR_0000899140-26-001276": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "ANDERSON JAMES ROBERT",
+    "transactions": [
+      "P"
+    ]
+  },
+  "COHR_0000899140-26-001275": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Digirolomo Enrico",
+    "transactions": [
+      "P"
+    ]
+  },
+  "DDOG_0001783984-26-000002": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Le-Quoc Alexis",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "MP_0001832050-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Rosenthal Michael Stuart",
+    "transactions": [
+      "P",
+      "P",
+      "P"
+    ]
+  },
+  "MP_0001031609-26-000009": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "WEISENBURGER RANDALL J",
+    "transactions": [
+      "P"
+    ]
+  },
+  "MP_0001831686-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Corbett Ryan",
+    "transactions": [
+      "P",
+      "P"
+    ]
+  },
+  "NVT_0000897069-26-001919": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Nelson Wills Courtney",
+    "transactions": [
+      "A"
+    ]
+  },
+  "OUST_0001193125-26-458398": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Heystee Susan",
+    "transactions": [
+      "S"
+    ]
+  },
+  "TEAM_0001666120-26-000033": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Cannon-Brookes Michael",
+    "transactions": [
+      "P",
+      "P",
+      "P",
+      "P"
+    ]
   }
 }

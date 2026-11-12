@@ -2533,5 +2533,45 @@
     "score": 72,
     "reason": "Strong tech milestones, 110% YoY revenue growth, $100M government contract signed",
     "filing_date": "2026-11-10"
+  },
+  "AMPG_0001493152-26-051408": {
+    "score": 62,
+    "reason": "Revenue growth modest, margins expand, backlog strong, near-term investments drag",
+    "filing_date": "2026-11-12"
+  },
+  "LUNR_0001628280-26-073106": {
+    "score": 85,
+    "reason": "Record financials, $10B NASA contract, $450M bookings, positive FCF",
+    "filing_date": "2026-11-12"
+  },
+  "MRVL_0001835632-26-000026": {
+    "score": 68,
+    "reason": "Positive board expansion with AI growth commentary, no financial guidance provided",
+    "filing_date": "2026-11-12"
+  },
+  "NVDA_0001045810-26-000082": {
+    "score": 5,
+    "reason": "CEO resignation immediately. Major leadership disruption, extreme negative catalyst.",
+    "filing_date": "2026-11-12"
+  },
+  "ONDS_0001193125-26-457088": {
+    "score": 92,
+    "reason": "Record revenue, massive guidance raise, strong backlog, profitability inflection",
+    "filing_date": "2026-11-12"
+  },
+  "QBTS_0001907982-26-000183": {
+    "score": 45,
+    "reason": "Third-party recognition; no financial guidance, earnings, or contract wins disclosed.",
+    "filing_date": "2026-11-12"
+  },
+  "REKR_0001437749-26-036563": {
+    "score": 40,
+    "reason": "Earnings report filing; no guidance raise or major announcements evident.",
+    "filing_date": "2026-11-12"
+  },
+  "TE_0001213900-26-118327": {
+    "score": 68,
+    "reason": "Strong contract wins, capacity guidance raised, offset by financing uncertainty and losses",
+    "filing_date": "2026-11-12"
   }
 }
