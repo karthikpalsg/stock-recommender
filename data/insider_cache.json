@@ -21869,5 +21869,73 @@
     "is_ten_pct": false,
     "owner": "GORELICK JAMIE S",
     "transactions": []
+  },
+  "AMD_0000002488-26-000195": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Papermaster Mark D",
+    "transactions": [
+      "G"
+    ]
+  },
+  "AMD_0000002488-26-000193": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Denzel Nora",
+    "transactions": [
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000466": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "HUTCHINS GLENN H",
+    "transactions": [
+      "M"
+    ]
+  },
+  "NBIS_0001513845-26-000149": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Boroditsky Marc",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "TEAM_0001666120-26-000034": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Cannon-Brookes Michael",
+    "transactions": [
+      "P",
+      "P",
+      "P",
+      "P",
+      "P"
+    ]
+  },
+  "TTD_0001671933-26-000118": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Jacobson Samantha",
+    "transactions": [
+      "S"
+    ]
+  },
+  "UNH_0000731766-26-000280": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Noel Timothy John",
+    "transactions": [
+      "F"
+    ]
   }
 }

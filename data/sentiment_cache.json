@@ -2573,5 +2573,25 @@
     "score": 68,
     "reason": "Strong contract wins, capacity guidance raised, offset by financing uncertainty and losses",
     "filing_date": "2026-11-12"
+  },
+  "ALOY_0001185185-26-005348": {
+    "score": 75,
+    "reason": "Major contract win with U.S. Army, clear execution milestones, strong cash position",
+    "filing_date": "2026-11-13"
+  },
+  "BKNG_0001104659-26-127223": {
+    "score": 0,
+    "reason": "Filing contains only debt securities registration data, no guidance or earnings information provided.",
+    "filing_date": "2026-11-13"
+  },
+  "IONQ_0001193125-26-461016": {
+    "score": 35,
+    "reason": "Leadership transition signals operational refinement, not growth acceleration or earnings beat.",
+    "filing_date": "2026-11-13"
+  },
+  "SOUN_0001213900-26-119843": {
+    "score": 28,
+    "reason": "Administrative staffing change; no financial guidance, earnings data, or strategic announcements provided.",
+    "filing_date": "2026-11-13"
   }
 }
