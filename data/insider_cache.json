@@ -21937,5 +21937,79 @@
     "transactions": [
       "F"
     ]
+  },
+  "CRWD_0001778564-26-000209": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "CRWD_0001778564-26-000208": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "KTOS_0001695434-26-000012": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fendley Steven S.",
+    "transactions": [
+      "S"
+    ]
+  },
+  "PLTR_0001824159-26-000017": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Sankar Shyam",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S"
+    ]
   }
 }
