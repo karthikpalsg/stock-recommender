@@ -2593,5 +2593,25 @@
     "score": 28,
     "reason": "Administrative staffing change; no financial guidance, earnings data, or strategic announcements provided.",
     "filing_date": "2026-11-13"
+  },
+  "INFQ_0001628280-26-074184": {
+    "score": 72,
+    "reason": "Strong tech milestone, revenue growth, maintained guidance, expanding contracts",
+    "filing_date": "2026-11-16"
+  },
+  "OSCR_0001568651-26-000098": {
+    "score": 25,
+    "reason": "Board appointments only; no business guidance, earnings, or strategic announcements",
+    "filing_date": "2026-11-16"
+  },
+  "TE_0001213900-26-120101": {
+    "score": 25,
+    "reason": "AT&M offering signals capital need; no earnings/guidance updates provided",
+    "filing_date": "2026-11-16"
+  },
+  "VST_0001140361-26-044139": {
+    "score": 25,
+    "reason": "Routine tax payment disclosure; no guidance, earnings, or strategic content.",
+    "filing_date": "2026-11-16"
   }
 }

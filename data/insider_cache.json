@@ -22011,5 +22011,105 @@
       "C",
       "S"
     ]
+  },
+  "AMD_0000002488-26-000197": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Su Lisa T",
+    "transactions": [
+      "G",
+      "G"
+    ]
+  },
+  "AMZN_0001018724-26-000044": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "BEZOS JEFFREY P",
+    "transactions": [
+      "G",
+      "G"
+    ]
+  },
+  "IRM_0001020569-26-000086": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "RAKOWICH WALTER C",
+    "transactions": [
+      "G"
+    ]
+  },
+  "KTOS_0001803860-26-000005": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "King David Arnold",
+    "transactions": [
+      "P"
+    ]
+  },
+  "MP_0001831686-26-000012": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Corbett Ryan",
+    "transactions": [
+      "P"
+    ]
+  },
+  "MRAM_0001628280-26-074117": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Dougherty Sean Michael",
+    "transactions": [
+      "A"
+    ]
+  },
+  "MRVL_0001628280-26-074228": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Bettinger Douglas R",
+    "transactions": []
+  },
+  "MRVL_0001628280-26-074226": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Morris Donna",
+    "transactions": []
+  },
+  "MRVL_0001628280-26-074222": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Goodarzi Sasan K",
+    "transactions": []
+  },
+  "OKLO_0002080717-26-000015": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Goodwin William Carroll Murphy",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "TEAM_0001666120-26-000035": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Cannon-Brookes Michael",
+    "transactions": [
+      "P",
+      "P",
+      "P",
+      "P",
+      "P"
+    ]
   }
 }
