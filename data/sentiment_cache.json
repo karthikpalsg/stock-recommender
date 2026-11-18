@@ -2613,5 +2613,25 @@
     "score": 25,
     "reason": "Routine tax payment disclosure; no guidance, earnings, or strategic content.",
     "filing_date": "2026-11-16"
+  },
+  "ASTS_0001493152-26-052865": {
+    "score": 28,
+    "reason": "Share issuance to Firefly, no guidance provided, neutral corporate action",
+    "filing_date": "2026-11-17"
+  },
+  "NVDA_0001045810-26-000088": {
+    "score": 40,
+    "reason": "8-K filing header only; no earnings data or guidance provided",
+    "filing_date": "2026-11-17"
+  },
+  "OKLO_0001849056-26-000055": {
+    "score": 72,
+    "reason": "Material HALEU supply agreement secured through 2039, strategic fuel commitment",
+    "filing_date": "2026-11-17"
+  },
+  "SYNA_0000817720-26-000111": {
+    "score": 0,
+    "reason": "Merger vote filing, no operational guidance or financial results disclosed",
+    "filing_date": "2026-11-17"
   }
 }
