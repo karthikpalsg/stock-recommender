@@ -22760,5 +22760,138 @@
     "transactions": [
       "F"
     ]
+  },
+  "ACHR_0002064297-26-000010": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Rungta Harsh",
+    "transactions": [
+      "M",
+      "M",
+      "S"
+    ]
+  },
+  "ACHR_0001870608-26-000014": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Lyon Benjamin",
+    "transactions": [
+      "M",
+      "M",
+      "S"
+    ]
+  },
+  "ACHR_0002016416-26-000024": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Lentell Eric",
+    "transactions": [
+      "M",
+      "M",
+      "M",
+      "M",
+      "M",
+      "S"
+    ]
+  },
+  "ACHR_0002036956-26-000016": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gupta Priya",
+    "transactions": [
+      "M",
+      "M",
+      "M",
+      "S"
+    ]
+  },
+  "CRWD_0001778564-26-000211": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "MP_0001831686-26-000014": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Corbett Ryan",
+    "transactions": [
+      "P"
+    ]
+  },
+  "PLTR_0001823952-26-000026": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Moore Alexander D.",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "SNDK_0001363249-26-000080": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Suzuki Miyuki",
+    "transactions": [
+      "F"
+    ]
+  },
+  "SOFI_0002012135-26-000025": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Pinto Arun",
+    "transactions": [
+      "M"
+    ]
+  },
+  "SOFI_0002034857-26-000016": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Schuppenhauer Eric",
+    "transactions": [
+      "M"
+    ]
+  },
+  "SOFI_0001460835-26-000006": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Hele John C.R.",
+    "transactions": [
+      "M"
+    ]
   }
 }
