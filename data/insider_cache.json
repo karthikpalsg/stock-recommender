@@ -22893,5 +22893,128 @@
     "transactions": [
       "M"
     ]
+  },
+  "AMD_0000002488-26-000213": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Su Lisa T",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "RKLB_0002001011-26-000147": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ricupati Agostino",
+    "transactions": [
+      "A"
+    ]
+  },
+  "RNG_0001772661-26-000024": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Agarwal Vaibhav",
+    "transactions": [
+      "A",
+      "F",
+      "S"
+    ]
+  },
+  "RNG_0002057569-26-000040": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Arora Tarun",
+    "transactions": [
+      "A",
+      "F"
+    ]
+  },
+  "RNG_0001586648-26-000037": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Makagon Kira",
+    "transactions": [
+      "A",
+      "F",
+      "S"
+    ]
+  },
+  "SYNA_0001785783-26-000021": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Patel Rahul G.",
+    "transactions": [
+      "F"
+    ]
+  },
+  "SYNA_0001984784-26-000032": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Gupta Vikram",
+    "transactions": [
+      "F"
+    ]
+  },
+  "SYNA_0002014633-26-000024": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ganesan Satish",
+    "transactions": [
+      "F"
+    ]
+  },
+  "SYNA_0001213272-26-000027": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bodensteiner Lisa",
+    "transactions": [
+      "F"
+    ]
+  },
+  "TEAM_0001666120-26-000037": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Cannon-Brookes Michael",
+    "transactions": [
+      "P",
+      "P",
+      "P",
+      "P",
+      "P",
+      "P",
+      "P"
+    ]
   }
 }

@@ -2633,5 +2633,30 @@
     "score": 0,
     "reason": "Merger vote filing, no operational guidance or financial results disclosed",
     "filing_date": "2026-11-17"
+  },
+  "ASTS_0001493152-26-053080": {
+    "score": 45,
+    "reason": "Neutral filing on share issuance obligations; no guidance or operational updates",
+    "filing_date": "2026-11-18"
+  },
+  "ONDS_0001213900-26-121852": {
+    "score": 25,
+    "reason": "Administrative filing for equity resale; no operational guidance or earnings updates provided.",
+    "filing_date": "2026-11-18"
+  },
+  "SNDK_0001628280-26-074848": {
+    "score": 40,
+    "reason": "Annual meeting voting results only. No financial guidance or earnings commentary provided.",
+    "filing_date": "2026-11-18"
+  },
+  "TE_0001213900-26-121846": {
+    "score": 28,
+    "reason": "Executive appointment only; no financial guidance, earnings, or business updates provided.",
+    "filing_date": "2026-11-18"
+  },
+  "TEM_0001193125-26-466240": {
+    "score": 78,
+    "reason": "Major contract extension: $200M AstraZeneca commitment, 5-year renewal through 2031",
+    "filing_date": "2026-11-18"
   }
 }
