@@ -23016,5 +23016,33 @@
       "P",
       "P"
     ]
+  },
+  "CIFR_0001887623-26-000023": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Page Tyler",
+    "transactions": [
+      "G"
+    ]
+  },
+  "KTOS_0001509409-26-000013": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Carrai Phillip D",
+    "transactions": [
+      "S",
+      "S"
+    ]
+  },
+  "SOFI_0002034857-26-000018": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Schuppenhauer Eric",
+    "transactions": [
+      "F"
+    ]
   }
 }
