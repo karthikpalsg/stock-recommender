@@ -2658,5 +2658,15 @@
     "score": 78,
     "reason": "Major contract extension: $200M AstraZeneca commitment, 5-year renewal through 2031",
     "filing_date": "2026-11-18"
+  },
+  "COHR_0001193125-26-467737": {
+    "score": 45,
+    "reason": "Share buyback authorization signals confidence but lacks forward guidance",
+    "filing_date": "2026-11-19"
+  },
+  "SNDK_0001628280-26-075127": {
+    "score": 25,
+    "reason": "Stock split announcement only; no earnings, guidance, or business updates provided.",
+    "filing_date": "2026-11-19"
   }
 }

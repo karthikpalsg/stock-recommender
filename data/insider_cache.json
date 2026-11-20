@@ -23044,5 +23044,287 @@
     "transactions": [
       "F"
     ]
+  },
+  "AMD_0000002488-26-000215": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hahn Ava",
+    "transactions": [
+      "S"
+    ]
+  },
+  "ANET_0001596532-26-000267": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Ullal Jayshree",
+    "transactions": [
+      "G"
+    ]
+  },
+  "CRWD_0000950103-26-017861": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "HOOD_0001870914-26-000031": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Bhatt Baiju",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "LUNR_0001628280-26-075138": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Vontur Steven",
+    "transactions": [
+      "S"
+    ]
+  },
+  "NOW_0001334944-26-000042": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "McDermott William R",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0001667422-26-000044": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fipps Paul",
+    "transactions": [
+      "M",
+      "F",
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0001465391-26-000038": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Mastantuono Gina",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "NOW_0001649609-26-000043": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Canney Jacqueline P",
+    "transactions": [
+      "M",
+      "F",
+      "S"
+    ]
+  },
+  "NOW_0002111929-26-000022": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fontaine Danielle",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "OKLO_0002146790-26-000031": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Narayanadas Vivek",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "SNDK_0001558880-26-000005": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "KUMAR DEVINDER",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SNDK_0001363249-26-000092": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Suzuki Miyuki",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SNDK_0001363249-26-000091": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Shook Ellyn",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SNDK_0001363249-26-000090": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Sayiner Necip",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SNDK_0001363249-26-000089": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Caulfield Thomas",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SNDK_0001363249-26-000088": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Cassidy Richard B. II",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SNDK_0001363249-26-000087": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Bradley Alexander R.",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SOFI_0002012135-26-000027": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Pinto Arun",
+    "transactions": [
+      "F"
+    ]
+  },
+  "TEAM_0001666120-26-000038": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Cannon-Brookes Michael",
+    "transactions": [
+      "P",
+      "P",
+      "P",
+      "P",
+      "P",
+      "P",
+      "P"
+    ]
+  },
+  "TEM_0002024169-26-000025": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Polovin Andrew",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "TEM_0001114357-26-000046": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "LEFKOFSKY ERIC P",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "TEM_0002024630-26-000029": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Rogers James William",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "TEM_0002024250-26-000044": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fukushima Ryan",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "TEM_0001754464-26-000023": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bartolucci Ryan M",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
   }
 }
