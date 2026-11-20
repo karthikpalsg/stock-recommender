@@ -23347,5 +23347,122 @@
       "G",
       "G"
     ]
+  },
+  "AMZN_0001018724-26-000056": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Huttenlocher Daniel P",
+    "transactions": [
+      "S"
+    ]
+  },
+  "APLD_0001493152-26-053504": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "Applied Digital Corp.",
+    "transactions": []
+  },
+  "FTNT_0001475586-26-000022": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Xie Michael",
+    "transactions": [
+      "G"
+    ]
+  },
+  "INOD_0001104659-26-130596": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Massey Stewart R",
+    "transactions": [
+      "P"
+    ]
+  },
+  "NBIS_0001513845-26-000156": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Almog Yael",
+    "transactions": [
+      "A"
+    ]
+  },
+  "RGTI_0001123292-26-001552": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bertelsen Jeffrey A.",
+    "transactions": [
+      "S"
+    ]
+  },
+  "RGTI_0001123292-26-001551": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bestwick Andrew Joseph",
+    "transactions": [
+      "S"
+    ]
+  },
+  "RGTI_0001123292-26-001550": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Rivas David",
+    "transactions": [
+      "S"
+    ]
+  },
+  "TEAM_0002051813-26-000014": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "DUFFY BRIAN",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "TEAM_0002122855-26-000009": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "CHUONG JAMES",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "TEAM_0001666120-26-000039": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Cannon-Brookes Michael",
+    "transactions": [
+      "P",
+      "P",
+      "P",
+      "P",
+      "P",
+      "P",
+      "P"
+    ]
   }
 }

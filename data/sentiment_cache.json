@@ -2668,5 +2668,15 @@
     "score": 25,
     "reason": "Stock split announcement only; no earnings, guidance, or business updates provided.",
     "filing_date": "2026-11-19"
+  },
+  "AMD_0000002488-26-000218": {
+    "score": 25,
+    "reason": "Bylaw amendments only; no financial guidance, earnings, or business updates provided.",
+    "filing_date": "2026-11-20"
+  },
+  "COHR_0001193125-26-470356": {
+    "score": 25,
+    "reason": "Annual meeting filing only. No earnings, guidance, or business updates provided.",
+    "filing_date": "2026-11-20"
   }
 }
