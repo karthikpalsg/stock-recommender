@@ -23326,5 +23326,26 @@
       "S",
       "S"
     ]
+  },
+  "ASTS_0001493152-26-053327": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Yao Huiwen",
+    "transactions": [
+      "X"
+    ]
+  },
+  "KTOS_0001114923-26-000003": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "HOGLUND WILLIAM A",
+    "transactions": [
+      "G",
+      "G",
+      "G",
+      "G"
+    ]
   }
 }
