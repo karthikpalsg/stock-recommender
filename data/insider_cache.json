@@ -23464,5 +23464,140 @@
       "P",
       "P"
     ]
+  },
+  "ANET_0001596532-26-000269": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": true,
+    "owner": "BECHTOLSHEIM ANDREAS",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "LITE_0001489550-26-000017": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Wupen Yuen",
+    "transactions": [
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "LITE_0001607990-26-000002": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Thad Trent",
+    "transactions": [
+      "A"
+    ]
+  },
+  "LITE_0001714910-26-000004": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Small Ian",
+    "transactions": [
+      "A"
+    ]
+  },
+  "LITE_0001688179-26-000001": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Lundstrom Paul",
+    "transactions": [
+      "S",
+      "A"
+    ]
+  },
+  "LITE_0001648231-26-000005": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Lillie Brian",
+    "transactions": [
+      "A"
+    ]
+  },
+  "LITE_0001232019-26-000006": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "HERSCHER PENNY",
+    "transactions": [
+      "A"
+    ]
+  },
+  "LITE_0001866503-26-000007": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Harris Isaac Hosojiro",
+    "transactions": [
+      "A"
+    ]
+  },
+  "LITE_0001711035-26-000003": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Fletcher Pamela",
+    "transactions": [
+      "A"
+    ]
+  },
+  "SNOW_0001821737-26-000019": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Dageville Benoit",
+    "transactions": [
+      "S",
+      "G"
+    ]
+  },
+  "SNOW_0001402348-26-000021": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Slootman Frank",
+    "transactions": [
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
   }
 }
