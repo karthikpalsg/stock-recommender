@@ -2678,5 +2678,30 @@
     "score": 25,
     "reason": "Annual meeting filing only. No earnings, guidance, or business updates provided.",
     "filing_date": "2026-11-20"
+  },
+  "CRWD_0001104659-26-130785": {
+    "score": 85,
+    "reason": "Transformational $43.9B acquisition, $185B TAM expansion, $10B ARR combined",
+    "filing_date": "2026-11-23"
+  },
+  "FLNC_0001868941-26-000056": {
+    "score": 40,
+    "reason": "Neutral filing; earnings announcement without guidance details provided",
+    "filing_date": "2026-11-23"
+  },
+  "LITE_0001628280-26-075535": {
+    "score": 25,
+    "reason": "Routine annual meeting filing; no business guidance or financial updates provided",
+    "filing_date": "2026-11-23"
+  },
+  "NVDA_0001045810-26-000090": {
+    "score": 25,
+    "reason": "Leadership change amid security concerns, no financial guidance provided.",
+    "filing_date": "2026-11-23"
+  },
+  "ONDS_0001213900-26-122950": {
+    "score": 72,
+    "reason": "Record Q3 revenue, 64% YoY growth, $214M new orders, cautious macro tone",
+    "filing_date": "2026-11-23"
   }
 }

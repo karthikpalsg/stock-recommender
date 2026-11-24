@@ -23599,5 +23599,444 @@
       "S",
       "S"
     ]
+  },
+  "COHR_0000899140-26-001409": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "VIJ SANDEEP",
+    "transactions": [
+      "A"
+    ]
+  },
+  "COHR_0000899140-26-001408": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Patrick Elizabeth",
+    "transactions": [
+      "A"
+    ]
+  },
+  "COHR_0000899140-26-001407": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "SADASIVAM SHAKER",
+    "transactions": [
+      "A"
+    ]
+  },
+  "COHR_0000899140-26-001406": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "SKAGGS STEPHEN A",
+    "transactions": [
+      "A"
+    ]
+  },
+  "COHR_0000899140-26-001405": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Hatter Patricia",
+    "transactions": [
+      "A"
+    ]
+  },
+  "COHR_0000899140-26-001404": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "STERLING MICHELLE M",
+    "transactions": [
+      "A"
+    ]
+  },
+  "COHR_0000899140-26-001403": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Dreyer Michael L",
+    "transactions": [
+      "A"
+    ]
+  },
+  "COHR_0000899140-26-001402": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Neal-Graves Lisa",
+    "transactions": [
+      "A"
+    ]
+  },
+  "COHR_0000899140-26-001401": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "CORASANTI JOSEPH J",
+    "transactions": [
+      "A"
+    ]
+  },
+  "COHR_0000899140-26-001400": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Xia Howard H.",
+    "transactions": [
+      "A"
+    ]
+  },
+  "COHR_0000899140-26-001399": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "MOTLEY DAVID L",
+    "transactions": [
+      "A"
+    ]
+  },
+  "COHR_0000899140-26-001398": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Digirolomo Enrico",
+    "transactions": [
+      "A"
+    ]
+  },
+  "COHR_0000899140-26-001397": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "PAGLIUCA STEPHEN G",
+    "transactions": [
+      "A"
+    ]
+  },
+  "CRM_0001108524-26-000255": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Niles Sabastian",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "CRM_0001108524-26-000253": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Milano Miguel",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "CRM_0001108524-26-000251": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Roos John Victor",
+    "transactions": [
+      "M"
+    ]
+  },
+  "CRM_0001108524-26-000249": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "MUNOZ OSCAR",
+    "transactions": [
+      "M"
+    ]
+  },
+  "CRM_0001108524-26-000247": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "SACHIN J. MEHRA",
+    "transactions": [
+      "M"
+    ]
+  },
+  "CRM_0001108524-26-000245": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "KROES NEELIE",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "CRM_0001108524-26-000243": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Kirk David Blair",
+    "transactions": [
+      "M"
+    ]
+  },
+  "CRM_0001108524-26-000241": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "DONALD ARNOLD W",
+    "transactions": [
+      "M"
+    ]
+  },
+  "CRM_0001108524-26-000239": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Conway Craig",
+    "transactions": [
+      "M"
+    ]
+  },
+  "CRM_0001108524-26-000237": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Chang Amy",
+    "transactions": [
+      "M"
+    ]
+  },
+  "CRM_0001108524-26-000235": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "ALBER LAURA",
+    "transactions": [
+      "M"
+    ]
+  },
+  "CRWD_0001778564-26-000213": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kurtz George",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "NVDA_0001696841-26-000016": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Teter Timothy S.",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "OKLO_0002146790-26-000033": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Narayanadas Vivek",
+    "transactions": [
+      "S"
+    ]
+  },
+  "ONDS_0001213900-26-122852": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "SOOD JASPREET K",
+    "transactions": [
+      "M",
+      "S",
+      "M",
+      "S"
+    ]
+  },
+  "ONDS_0001213900-26-122851": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "COHEN RICHARD M",
+    "transactions": [
+      "M",
+      "S",
+      "M",
+      "S"
+    ]
+  },
+  "ONDS_0001213900-26-122850": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Huston Robert Patrick",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "PLTR_0001824159-26-000019": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Sankar Shyam",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "RDW_0001819810-26-000146": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Cannito Peter Anthony Jr",
+    "transactions": [
+      "P"
+    ]
+  },
+  "SOFI_0002032458-26-000032": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Keough Kelli",
+    "transactions": [
+      "S"
+    ]
+  },
+  "TE_0000912282-26-001539": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "TRINA SOLAR (SCHWEIZ) AG",
+    "transactions": [
+      "J"
+    ]
+  },
+  "TEAM_0001666120-26-000040": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Cannon-Brookes Michael",
+    "transactions": [
+      "P",
+      "P",
+      "P",
+      "P",
+      "P",
+      "P",
+      "P"
+    ]
+  },
+  "TEM_0001114357-26-000050": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "LEFKOFSKY ERIC P",
+    "transactions": []
+  },
+  "TEM_0001114357-26-000048": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "LEFKOFSKY ERIC P",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "TTD_0001857556-26-000004": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Tawakol Omar",
+    "transactions": [
+      "S"
+    ]
+  },
+  "UNH_0000731766-26-000284": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "HEMSLEY STEPHEN J",
+    "transactions": [
+      "G"
+    ]
   }
 }
