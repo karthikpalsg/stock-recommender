@@ -24038,5 +24038,708 @@
     "transactions": [
       "G"
     ]
+  },
+  "AMZN_0001374545-26-000012": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Jassy Andrew R",
+    "transactions": [
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "AMZN_0002024813-26-000012": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Garman Matthew S",
+    "transactions": [
+      "M",
+      "M",
+      "M",
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "AMZN_0001936006-26-000032": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Herrington Douglas J",
+    "transactions": [
+      "M",
+      "M",
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "AMZN_0001557979-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Zapolsky David",
+    "transactions": [
+      "M",
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "AMZN_0001639902-26-000010": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Olsavsky Brian T",
+    "transactions": [
+      "M",
+      "M",
+      "S"
+    ]
+  },
+  "AMZN_0001018724-26-000058": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Reynolds Shelley",
+    "transactions": [
+      "M",
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "ANET_0001596532-26-000293": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Ullal Jayshree",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "ANET_0001596532-26-000292": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Nightingale Todd",
+    "transactions": [
+      "M",
+      "F"
+    ]
+  },
+  "ANET_0001596532-26-000291": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Duda Kenneth",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "M",
+      "M",
+      "M",
+      "M",
+      "M",
+      "F"
+    ]
+  },
+  "ANET_0001596532-26-000290": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Duda Kenneth",
+    "transactions": [
+      "M",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "ANET_0001596532-26-000289": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Breithaupt Chantelle Yvette",
+    "transactions": [
+      "M",
+      "M",
+      "F"
+    ]
+  },
+  "ANET_0001596532-26-000288": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Wassenaar Yvonne",
+    "transactions": [
+      "M"
+    ]
+  },
+  "ANET_0001596532-26-000287": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "TEMPLETON MARK B",
+    "transactions": [
+      "M"
+    ]
+  },
+  "ANET_0001596532-26-000286": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Scheinman Daniel",
+    "transactions": [
+      "M"
+    ]
+  },
+  "ANET_0001596532-26-000285": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Lavender Robert G",
+    "transactions": [
+      "M"
+    ]
+  },
+  "ANET_0001596532-26-000284": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Giancarlo Charles H",
+    "transactions": [
+      "M"
+    ]
+  },
+  "ANET_0001596532-26-000283": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "CHEW LEWIS",
+    "transactions": [
+      "M"
+    ]
+  },
+  "ANET_0001596532-26-000282": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Battles Kelly Bodnar",
+    "transactions": [
+      "M"
+    ]
+  },
+  "ASTS_0001104659-26-131559": {
+    "is_officer": false,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Cisneros Adriana",
+    "transactions": [
+      "P",
+      "P",
+      "P"
+    ]
+  },
+  "COHR_0000899140-26-001411": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "PAGLIUCA STEPHEN G",
+    "transactions": [
+      "P",
+      "P",
+      "P",
+      "P",
+      "P",
+      "P",
+      "P",
+      "P"
+    ]
+  },
+  "CRWV_0001769628-26-000482": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Venturo Brian M",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000480": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McVeety Kristen J",
+    "transactions": [
+      "M",
+      "M",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000478": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "McBee Brannin",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000476": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Jain Sachin",
+    "transactions": [
+      "M",
+      "M",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000474": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": true,
+    "owner": "Intrator Michael N",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000472": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Goldberg Chen",
+    "transactions": [
+      "M",
+      "M",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000470": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Baker Jeff",
+    "transactions": [
+      "M",
+      "M",
+      "S"
+    ]
+  },
+  "CRWV_0001769628-26-000468": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Agrawal Nitin",
+    "transactions": [
+      "M",
+      "M",
+      "S"
+    ]
+  },
+  "DDOG_0001561550-26-000328": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Le-Quoc Alexis",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "FTNT_0001475587-26-000017": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Xie Ken",
+    "transactions": [
+      "G"
+    ]
+  },
+  "INFQ_0001628280-26-075844": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Kinsella Matthew John",
+    "transactions": [
+      "M"
+    ]
+  },
+  "JOBY_0001819848-26-000537": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Bowles Gregory",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "MRVL_0001628280-26-075833": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "MURPHY MATTHEW J",
+    "transactions": []
+  },
+  "OKLO_0002147680-26-000020": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Renner Alexandra",
+    "transactions": [
+      "M",
+      "S"
+    ]
+  },
+  "PLTR_0001211060-26-000012": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "THIEL PETER",
+    "transactions": [
+      "P",
+      "P",
+      "P"
+    ]
+  },
+  "PLTR_0001823923-26-000017": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Taylor Ryan D.",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "PLTR_0001824159-26-000021": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Sankar Shyam",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "PLTR_0001823951-26-000013": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Karp Alexander C.",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "PLTR_0001823951-26-000011": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Karp Alexander C.",
+    "transactions": [
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "C",
+      "G"
+    ]
+  },
+  "PLTR_0001823940-26-000014": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Glazer David A.",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "PLTR_0001705189-26-000019": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Buckley Jeffrey",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "RNG_0002057569-26-000043": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Arora Tarun",
+    "transactions": [
+      "F",
+      "S"
+    ]
+  },
+  "RNG_0001772661-26-000026": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Agarwal Vaibhav",
+    "transactions": [
+      "F",
+      "S"
+    ]
+  },
+  "RNG_0001586648-26-000039": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Makagon Kira",
+    "transactions": [
+      "F",
+      "S"
+    ]
+  },
+  "RNG_0001586695-26-000017": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Marlow John H",
+    "transactions": [
+      "A",
+      "F"
+    ]
+  },
+  "SNDK_0001242648-26-000059": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Pokorny Michael",
+    "transactions": [
+      "F",
+      "S"
+    ]
+  },
+  "SNDK_0001242648-26-000058": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Visoso Luis Felipe",
+    "transactions": [
+      "F"
+    ]
+  },
+  "SNDK_0001242648-26-000057": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Goeckeler David",
+    "transactions": [
+      "F"
+    ]
+  },
+  "SNDK_0001242648-26-000056": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Shek Bernard",
+    "transactions": [
+      "F"
+    ]
+  },
+  "SNDK_0001242648-26-000055": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Ilkbahar Alper",
+    "transactions": [
+      "F",
+      "S"
+    ]
+  },
+  "TEAM_0001666120-26-000041": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Cannon-Brookes Michael",
+    "transactions": [
+      "P",
+      "P",
+      "P",
+      "P",
+      "P"
+    ]
   }
 }
