@@ -2718,5 +2718,15 @@
     "score": 72,
     "reason": "Major acquisition completion with $1.5B consideration, debt financing secured",
     "filing_date": "2026-11-25"
+  },
+  "APLD_0001144879-26-000069": {
+    "score": 25,
+    "reason": "8-K contains only investor presentation update; no earnings, guidance, or material news disclosed.",
+    "filing_date": "2026-11-27"
+  },
+  "NVTS_0001104659-26-132343": {
+    "score": 28,
+    "reason": "Patent acquisition with contingent payments; no revenue/guidance impact evident",
+    "filing_date": "2026-11-27"
   }
 }

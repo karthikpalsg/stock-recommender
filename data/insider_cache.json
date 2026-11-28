@@ -24935,5 +24935,78 @@
     "transactions": [
       "F"
     ]
+  },
+  "ANET_0001596532-26-000299": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Ullal Jayshree",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "ANET_0001596532-26-000298": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "Duda Kenneth",
+    "transactions": [
+      "J",
+      "J",
+      "J",
+      "J",
+      "J",
+      "J"
+    ]
+  },
+  "RKLB_0002001011-26-000159": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Klein Frank",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "RKLB_0002001011-26-000158": {
+    "is_officer": true,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Kampani Arjun",
+    "transactions": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  "TEM_0002024169-26-000027": {
+    "is_officer": false,
+    "is_director": false,
+    "is_ten_pct": false,
+    "owner": "Polovin Andrew",
+    "transactions": [
+      "S"
+    ]
+  },
+  "VST_0001268406-26-000011": {
+    "is_officer": true,
+    "is_director": true,
+    "is_ten_pct": false,
+    "owner": "BURKE JAMES A",
+    "transactions": [
+      "F"
+    ]
   }
 }
